@@ -1,0 +1,16 @@
+.main.storage {
+  height: 100%;
+  flex: 0 0 60%;
+	background-color: $Cool_Gray_Light_3;
+}
+
+.portal-side-menu.storage {
+  .menu-item-name {
+    @include Text-Style-9;
+    color: $DCBLOX_Gray;
+  }
+  .menu-item-name.active {
+    @include Text-Style-9;
+    color: $Dark_Emerald;
+  }
+}

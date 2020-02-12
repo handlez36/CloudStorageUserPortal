@@ -1,0 +1,106 @@
+.top-right-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: $White;
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+	.name-avatar-section {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 1vh;
+		opacity: 0;
+		transition: all 0.5s ease;
+		&.show {
+			opacity: 1;
+			margin-bottom: calculateVw(15, 1440);
+			margin-top: calculateVw(25, 1440);
+		}
+		.share-avatar {
+			margin-top: -3.5vh;
+			img {
+				width: calculateVw(13.5, $standard-screen-width-mid);
+				height: calculateVw(14.4, $standard-screen-height-mid);
+			}
+		}
+		.share-name {
+			margin-top: -3.3vh;
+			margin-left: 0.5vw;
+		}
+	}
+	.primary-location-screen {
+		width: auto;
+		height: auto;
+		img {
+			width: calculateVw(70px, $standard-screen-width-mid);
+			height: calculateVh(70px, $standard-screen-height-mid);
+		}
+	}
+	.primary-location-screen .storage-location-icon {
+		width: auto;
+		height: auto;
+	}
+	.redundancy-screen {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 100%;
+		.storage-location-icon {
+			//border: 1px solid green;
+			// flex: 0 1 40%;
+			// // width: auto;
+			// width: 40%;
+			// height: auto;
+		}
+		.generic-icon-wrapper {
+			padding-left: 15px;
+		}
+
+		.storage-location-icon .name {
+			//letter-spacing: normal;
+		}
+		.storage-location-icon:nth-child(1) {
+			// .location-image,
+			// .name {
+			// 	margin-left: 1vw;
+			// 	@include Status-Head;
+			// }
+		}
+		div:nth-child(3) {
+			//margin-left: auto;
+			.location-image,
+			.name {
+				//margin-left: -1.3vw;
+			}
+		}
+		.redundancy-icon-wrapper {
+			width: auto;
+			.redundancy-icon {
+				width: calculateVw(26px, $standard-screen-width-mid);
+				height: calculateVh(21.4px, $standard-screen-height-mid);
+				margin-top: 30%;
+				// margin-left: -0.2vw;
+			}
+			@media screen and (max-width: 1425px) {
+				.redundancy-icon {
+					margin-left: 0;
+				}
+			}
+		}
+		.generic-icon-wrapper {
+			flex: 0 1 40%;
+			width: 40%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-start;
+			img {
+				width: calculateVw(39.5px, $standard-screen-width-mid);
+				height: calculateVh(39.5px, $standard-screen-height-mid);
+				margin-left: -1.3vw;
+			}
+		}
+	}
+}

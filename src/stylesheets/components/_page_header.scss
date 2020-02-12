@@ -1,0 +1,61 @@
+.page-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: calculateVh(100px);
+	background-color: $DCBLOX_Purple;
+	width: 32.48vw;
+	.support-button {
+		margin-right: 4vw;
+		margin-top: 0.5vh;
+		$map: (
+			576: 12,
+			1440: 14,
+			2560: 18,
+		);
+		font-size: least-squares-fit($map);
+		letter-spacing: 0.8px;
+		font-family: $font-family-primary-subheads;
+	}
+
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: calculateVh(50px);
+		margin-bottom: 0.8vh;
+
+		.icon {
+			margin-left: calculateVw(30px);
+			flex: 0 1 calculateVw(60px);
+			height: calculateVh(60px);
+			padding-right: 0;
+			margin-top: -0.3vh;
+
+			& img {
+				width: 5vw;
+				height: 5vh;
+			}
+		}
+		.title {
+			flex: 1 0 calculateVw(186.9px);
+			margin-top: -0.1vh;
+			& .page-title {
+				@include Text-Style-Header-Page-Title;
+			}
+			& .module-title {
+				@include Text-Style-Header-Page-SubTitle;
+			}
+		}
+		.status {
+			flex: 1 0 auto;
+			align-self: center;
+			button {
+				width: 110px;
+				right: 0;
+				margin-left: 30%;
+			}
+		}
+	}
+}

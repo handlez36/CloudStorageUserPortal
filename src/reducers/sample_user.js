@@ -1,0 +1,41 @@
+export const sampleUser = {
+    userId: 12345,
+    userName: 'Sample User',
+    firstName: 'Sample',
+    lastName: 'User',
+    middleInitial: 'J',
+    userTitle: 'Engineer',
+    userEmail: 'user@email.com',
+    userSecondaryEmail: 'user2@email.com',
+    userPrimaryPhone: '999-999-9999',
+    userCellPhone: '888-888-8888',
+    userHomePhone: '777-777-7777',
+    userOtherPhone: '555-555-5555',
+    userDepartment: 'Department',
+    userMailingAddress: '789 Street, City, State, Country',
+    userMailingAddress2: '789 Street, City, State, Country',
+    mailingStreet: '160 South Industrial Boulevard',
+    mailingSuite: 'Goergia Division',
+    mailingCity: 'Calhoun',
+    mailingState: 'Georgia',
+    mailingZip: '30701',
+    company: {
+        name: 'Mohawk Industries',
+        displayName: 'Mohawk Industries',
+        website: 'https://www.google.com',
+        primaryEmail: 'mohawk@email.com',
+        emergencyEmail: 'mohawk@emailemergency.com',
+        mailingAddress: '123 Street, City, State, Country',
+        billingAddress: '123 Street, City, State, Country',
+        companyLogo: 'https://www.dcblox.com/wp-content/uploads/Mohawk_Industries_logo.jpg',
+        primaryContact: {
+            firstName: 'First',
+            middleName: 'Middle',
+            lastName: 'Last',
+            title: 'Boss',
+            department: 'All of them',
+            email: 'boss@mohawk.com',
+            phone: '999-999-9991'
+        }
+    }
+};

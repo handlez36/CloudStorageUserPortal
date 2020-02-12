@@ -1,0 +1,23 @@
+.portal-modal {
+	.modal-content {
+		width: 100%;
+	}
+	.modal-footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.footer-content {
+			padding-left: 0.1vw;
+		}
+
+		button {
+			// width: 8vw;
+			// height: 5vh;
+			// padding-right: 1vw;
+			// @include Text-Style-36;
+			// text-align: center;
+			// color: $White;
+		}
+	}
+}

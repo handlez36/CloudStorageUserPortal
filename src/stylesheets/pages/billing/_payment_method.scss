@@ -1,0 +1,102 @@
+.payment-method {
+	padding-left: calculateVw(35px, $standard_screen_width_mid);
+	.step-instructions {
+		margin-top: calculateVh(17px, $standard_screen_height_mid);
+		margin-bottom: calculateVh(23px, $standard_screen_height_mid);
+		@include Text-Style-Online-Payment-Instructions;
+		span {
+			letter-spacing: 1.05px;
+		}
+	}
+
+	/**
+  * Payment form styles
+  */
+	.payment-form {
+		width: calculateVw(400px, $standard_screen_width_mid);
+	}
+	.payment-form .field-wrapper {
+		opacity: 0;
+		transition: opacity 1s ease;
+		margin-top: calculateVh(26px, $standard_screen_height_mid);
+		&:not(.cc-num-wrapper) {
+			width: calculateVw(102px, $standard_screen_width_mid);
+		}
+		label {
+			margin-bottom: 0;
+			@include Text-Style-Text-Input-Label;
+		}
+		.validation-message {
+			display: none;
+			margin-top: 0.5vh;
+			@include Text-Style-Text-Input-Content;
+			color: red;
+		}
+		&.invalid {
+			.validation-message {
+				display: block;
+			}
+		}
+		&.visible {
+			opacity: 1;
+		}
+	}
+	.payment-form .hosted-field {
+		height: calculateVh(25px, $standard_screen_height_mid);
+		border-bottom: 1px solid $Purple;
+		@include Text-Style-Text-Input-Content;
+	}
+	.blox-text-input {
+		width: 100%;
+		.active-field {
+			width: calculateVw(220.9, $standard_screen_width_mid);
+		}
+		input {
+			// font-family: 'helvetica, tahoma, calibri, sans-serif';
+			@include Text-Style-Text-Input-Content;
+		}
+	}
+	.cc-num-wrapper {
+		position: relative;
+		width: calculateVw(220.9, $standard_screen_width_mid);
+		.card-image {
+			position: absolute;
+			right: 0;
+			width: calculateVw(80px);
+			height: calculateVh(40px);
+			// border: 1px solid black;
+		}
+		.card-image img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	button {
+		margin-top: calculateVh(20px, $standard_screen_height_mid);
+	}
+}
+
+// .payment-method-dropin {
+// 	.braintree-sheet__container.braintree-sheet--active {
+// 		background-color: #edefef;
+// 	}
+// 	.braintree-sheet {
+// 		width: calculateVw(800px);
+// 		background-color: #edefef;
+// 		border: none;
+// 	}
+// 	.braintree-sheet__content--form
+// 		.braintree-form__field-group
+// 		.braintree-form__field
+// 		.braintree-form__hosted-field {
+// 		border: none;
+// 		border-bottom: 1px solid #8134c3;
+// 	}
+// 	.braintree-sheet__content.braintree-sheet__content--form {
+// 		display: flex;
+// 		flex-direction: column;
+// 	}
+// 	.braintree-form__flexible-fields {
+// 		display: block;
+// 	}
+// }

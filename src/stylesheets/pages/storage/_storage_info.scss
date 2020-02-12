@@ -1,0 +1,94 @@
+/* Storage - Storage Info */
+.storage-outer-wrapper {
+	margin-top: 1.3vh;
+	@include Text-Style-60;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	@media screen and (min-width: 1440px) and (max-width: 2560px) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@media screen and (min-width: 2560px) {
+		padding-left: 63.5px;
+		padding-right: 63.5px;
+	}
+
+	.storage-title {
+		@include Text-Style-2;
+	}
+	h6 {
+		margin-bottom: 0.5rem;
+		font-family: 'BourgeoisBoldCondensed';
+		font-weight: 500;
+		line-height: 1.2;
+		color: inherit;
+		font-size: 1.5rem;
+	}
+	h6 {
+		margin-bottom: 0.5rem;
+		font-family: 'BourgeoisBoldCondensed';
+		font-weight: 500;
+		line-height: 1.2;
+		color: inherit;
+		font-size: 1.5rem;
+	}
+
+	.storage-field {
+		margin-top: 0.5vw;
+		height: 3vh;
+		max-width: 100%;
+		word-wrap: break-word;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.storage-name {
+		display: inline-block;
+	}
+
+	.storage-value {
+		margin-top: 0.4vh;
+		max-width: 75%;
+		word-wrap: break-word;
+	}
+
+	.storage-confirm {
+		position: absolute;
+		top: 20%;
+		right: 30%;
+		background-color: $White;
+		padding: 1.5vh 1.5vw;
+		filter: drop-shadow(0 0 0.75rem $DCBLOX_Red);
+		border-radius: 5px;
+	}
+}
+
+.storage-delete-btn {
+	button {
+		background-color: $Bright_Emerald;
+		color: $DCBLOX_White;
+		border: none;
+		font-family: 'ProximaNovaAltRegular';
+		font-family: 'BourgeoisMediumCondensed';
+		border-radius: 0.5vh;
+		font-size: 0.9rem;
+		padding: 0.5vw;
+		padding: 0.3vw;
+		width: 8.7vw;
+		height: 3.8vh;
+		letter-spacing: 0.9px;
+		font-size: 1rem;
+		margin-left: 6.5vw;
+		cursor: pointer;
+		outline: none;
+	}
+
+	button:hover {
+		background-color: $Dark_Emerald;
+		opacity: 0.8;
+	}
+}

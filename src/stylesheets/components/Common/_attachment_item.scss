@@ -1,0 +1,13 @@
+.attachment-item {
+	display: flex;
+	flex-direction: row;
+	.icon-section {
+		img {
+			width: calculateVw(17px, $standard-screen-width-mid);
+			height: calculateVh(29.9px, $standard-screen-height-mid);
+		}
+	}
+	.detail-section {
+		margin-left: calculateVw(6px, $standard-screen-width-mid);
+	}
+}

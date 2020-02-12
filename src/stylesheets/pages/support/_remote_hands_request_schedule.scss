@@ -1,0 +1,116 @@
+.remote-hands-request-schedule {
+	padding-top: calculateVh(23px, $standard-screen-height-mid);
+	padding-left: calculateVw(35px, $standard-screen-width-mid);
+	padding-right: calculateVw(35px, $standard-screen-width-mid);
+	/**
+  * React date/time styling
+  */
+	.rdt {
+		width: calculateVw(171.5px);
+		margin-top: 0.5vh;
+	}
+	.rdt input {
+		width: calculateVw(320px);
+		background-color: transparent;
+		padding-left: 1.3vw;
+		padding-bottom: 0;
+		height: auto;
+		cursor: pointer;
+		@include Text-Style-DateTime-Selector;
+	}
+
+	.date-time-input {
+		width: calculateVw(320px);
+		background-color: transparent;
+		padding-bottom: 0;
+		height: auto;
+		cursor: pointer;
+		@include Text-Style-DateTime-Selector;
+	}
+	/**
+  *
+  */
+	.date-and-time {
+		position: relative;
+		width: calculateVw(320px);
+		height: 4.5vh;
+		.date-time {
+			padding-left: 2vw;
+			@supports (-ms-ime-align: auto) {
+				padding-left: 1vw;
+			}
+		}
+
+		.date-field-label {
+			@include Text-Style-Text-Input-Label;
+		}
+		.calendar-icon {
+			position: absolute;
+			margin-top: 2.3vh;
+			z-index: 100;
+		}
+		.checkmark-icon {
+			z-index: 100;
+			position: absolute;
+			right: -18%;
+			top: 50%;
+			width: calculateVw(23px);
+			height: calculateVw(23px);
+			opacity: 1;
+			transition: all 0.5s ease;
+		}
+	}
+
+	.recurring {
+		position: relative;
+		width: calculateVw(320px);
+		margin-top: calculateVh(50px);
+		transition: opacity 0.5s ease;
+		opacity: 0;
+
+		.default-filter-wrapper {
+			width: calculateVw(320px);
+			border-bottom-width: 1px;
+			.default-filter {
+				ul {
+					display: block;
+				}
+			}
+			.default-filter span {
+				margin-left: 0;
+			}
+			.default-filter .dd-title {
+				margin-left: -1.6vw;
+			}
+
+			.default-filter::after {
+				// top: 3vh;
+				// left: 10vw;
+			}
+		}
+
+		.recurring-checkmark-icon {
+			position: absolute;
+			top: 30%;
+			right: -7%;
+			opacity: 0;
+			width: calculateVw(23px);
+			height: calculateVw(23px);
+			margin-top: 1vh;
+			margin-left: 11.5vw;
+			transition: all 0.5s ease;
+		}
+		.recurring-checkmark-icon.active {
+			opacity: 1;
+			z-index: 100;
+		}
+
+		&.active {
+			opacity: 1;
+		}
+	}
+
+	button {
+		margin-top: calculateVh(28px);
+	}
+}

@@ -1,0 +1,280 @@
+// The stylesheet folder follows sass guidelines using the 7-1 pattern
+// https://sass-guidelin.es/#the-7-1-pattern
+// Main Sass file
+
+/*
+===============================================================
+This file should not contain anything but @import and comments.
+===============================================================
+*/
+
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/font_styles';
+@import 'abstracts/font_styles_new';
+@import 'base/animations';
+@import 'base/color_control';
+@import 'base/devices';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/color';
+@import 'base/font/fonts';
+
+@import 'components/react_grid_layout';
+@import 'components/datetime';
+@import 'components/account_info_block';
+@import 'components/billing_history';
+@import 'components/drop_down_filter';
+@import 'components/account_info_with_button';
+@import 'components/large-card';
+@import 'components/buttons';
+@import 'components/canvas';
+@import 'components/display_bill';
+@import 'components/dropdown';
+@import 'components/field';
+@import 'components/footer';
+@import 'components/icon_input';
+@import 'components/index';
+@import 'components/loader';
+@import 'components/login_input';
+@import 'components/login_page';
+@import 'components/message_text';
+@import 'components/nav_arrows';
+@import 'components/password_registration';
+@import 'components/portal_modal';
+@import 'components/portal';
+@import 'components/print';
+@import 'components/profile_card';
+@import 'components/sandbox';
+@import 'components/side_menu';
+@import 'components/text_input';
+@import 'components/ticket_history_row';
+@import 'components/ticket_information';
+@import 'components/ticket';
+@import 'components/accordian_item';
+@import 'components/accordian_item_details';
+@import 'components/accordian_list';
+@import 'components/accordian_field';
+@import 'components/expandable_section';
+@import 'components/expandable_content_component';
+@import 'components/expandable_content_heading';
+@import 'components/expandable_content_body';
+@import 'components/expandable_content_field';
+@import 'components/blox_text_input';
+@import 'components/blox_scroll_view';
+@import 'components/radio';
+@import 'components/tooltip';
+@import 'components/new-ticket';
+@import 'components/blox_duration_slider';
+@import 'components/page_header';
+@import 'components/page_status';
+@import 'components/error_modal';
+@import 'components/ticket_docu_sign';
+@import 'components/map';
+@import 'components/blox_cycle_view';
+@import 'components/ticket_number';
+@import 'components/mfa_options';
+@import 'components/menu_header';
+@import 'components/modal_wizard';
+@import 'components/modal_header';
+@import 'components/user_add_modal';
+@import 'components/user_name_screen';
+@import 'components/user_block';
+@import 'components/toggle_switch';
+@import 'components/portal_user_list';
+@import 'components/roster_add_modal';
+@import 'components/invoice_payment_item';
+@import 'components/blox_wizard';
+@import 'components/total_amount';
+@import 'components/animated_icon';
+@import 'components/forgot_password';
+@import 'components/portal_user_overview_block';
+@import 'components/roster_user_overview_block';
+@import 'components/portal_user_overview_selected_block';
+@import 'components/portal_user_overview';
+@import 'components/roster_user_overview';
+@import 'components/info_card';
+@import 'components/interactive_icon';
+@import 'components/_horizontal_grid';
+@import 'components/graph';
+@import 'components/copy_link';
+@import 'components/carousel';
+@import 'components/date_time_picker';
+@import 'components/time_picker';
+@import 'components/ticket_count_row';
+
+/**
+* Storage components
+*/
+@import 'components/Storage/share_card_container';
+@import 'components/Storage/small_share_card';
+@import 'components/Storage/location_icon';
+@import 'components/Storage/storage_usage_graph';
+@import 'components/Storage/resolution_picker';
+@import 'components/Storage/graph_type_picker';
+@import 'components/Storage/location_icon';
+@import 'components/Storage/white_list_container';
+@import 'components/Storage/white_list_row';
+@import 'components/Storage/storage_add_wizard';
+@import 'components/Storage/top_section';
+@import 'components/Storage/storage_type_selection';
+@import 'components/Storage/storage_primary_location_selection';
+@import 'components/Storage/storage_redundancy_selection';
+@import 'components/Storage/_storage_accessibility_selection';
+@import 'components/Storage/storage_name_selection';
+@import 'components/Storage/top_right_section';
+@import 'components/Storage/avatar_grid';
+@import 'components/Storage/storage_whitelist_selection';
+@import 'components/Storage/storage_add_review';
+@import 'components/Storage/top_nav_bar';
+@import 'components/Storage/storage_add_confirmation';
+
+/**
+* Layout components
+*/
+@import 'components/Layout/cross_grid';
+@import 'components/Layout/blox_grid';
+@import 'components/Layout/component_wrapper';
+
+/**
+* Layoutv3 components
+*/
+@import 'components/Layoutv3/portal_layout';
+@import 'components/Layoutv3/header_section';
+@import 'components/Layoutv3/content_section';
+
+/**
+* Navigationv3 components
+*/
+@import 'components/Navigationv3/blox_navigation_section';
+@import 'components/Navigationv3/primary_nav';
+@import 'components/Navigationv3/secondary_nav';
+
+/**
+* Billingv3 components
+*/
+@import 'components/Billingv3/calendar_day';
+@import 'components/Billingv3/call_to_action';
+
+/**
+* Storagev3 components
+*/
+@import 'components/Storage/usage_bar';
+@import 'components/Storagev3/graph_details';
+@import 'components/Storagev3/location_bar';
+
+/**
+* Common components
+*/
+@import 'components/Common/upload_section';
+@import 'components/Common/file_upload';
+@import 'components/Common/attachment_section';
+@import 'components/Common/attachment_item_container';
+@import 'components/Common/attachment_item';
+
+@import 'layout/app';
+@import 'layout/index';
+@import 'layout/footer';
+@import 'layout/forms';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/sidebar';
+
+@import 'pages/404';
+@import 'pages/portal';
+@import 'pages/eula';
+@import 'pages/feedback';
+@import 'pages/page_styles';
+
+@import 'pages/release';
+@import 'pages/release/release_section';
+@import 'pages/release/release_list';
+@import 'pages/release/release_modal';
+@import 'pages/release/detail_view';
+
+@import 'pages/billing';
+@import 'pages/billing/invoice_nav_tabs';
+@import 'pages/billing/invoice_section';
+@import 'pages/billing/invoice_table';
+@import 'pages/billing/invoice_type_selector';
+@import 'pages/billing/current_invoices';
+@import 'pages/billing/calendar';
+@import 'pages/billing/invoice_calendar_action';
+@import 'pages/billing/invoice_calendar_address';
+@import 'pages/billing/invoice_calendar_container';
+@import 'pages/billing/invoice_calendar_container_overview';
+@import 'pages/billing/online_payment';
+@import 'pages/billing/payments';
+@import 'pages/billing/select_invoice_screen';
+@import 'pages/billing/payment_method';
+@import 'pages/billing/payment_summary';
+@import 'pages/billing/recent_payment';
+@import 'pages/billing/recent_invoices';
+@import 'pages/billing//billing_overview';
+
+@import 'pages/profile';
+@import 'pages/profile/avatar_section';
+@import 'pages/profile/company_info';
+@import 'pages/profile/customer_contact_section';
+@import 'pages/profile/password_section';
+@import 'pages/profile/primary_contact';
+@import 'pages/profile/user_contact_section';
+@import 'pages/profile/user_info';
+@import 'pages/profile/portal';
+@import 'pages/profile/user_management';
+@import 'pages/profile/roster_block';
+@import 'pages/profile/roster_user_list';
+@import 'pages/profile/overview';
+@import 'pages/profile/profile_overview';
+
+@import 'pages/storage';
+@import 'pages/storage/data_table';
+@import 'pages/storage/share_details';
+@import 'pages/storage/storage_add';
+@import 'pages/storage/storage_info';
+@import 'pages/storage/storage_modal';
+@import 'pages/storage/storage_remove';
+@import 'pages/storage/storage_view';
+@import 'pages/storage/whitelist_form';
+@import 'pages/storage/whitelist_modal';
+@import 'pages/storage//add_storage_container';
+@import 'pages/storage/delete_storage';
+@import 'pages/storage/configuration';
+@import 'pages/storage/storage_overview';
+
+@import 'pages/support';
+@import 'pages/support/attachment_modal';
+@import 'pages/support/upload_component';
+@import 'pages/support/comment';
+@import 'pages/support/conversation_body';
+@import 'pages/support/conversation_header';
+@import 'pages/support/conversation_subheader';
+@import 'pages/support/ticket_conversation';
+@import 'pages/support/ticket_create';
+@import 'pages/support/ticket_description';
+@import 'pages/support/ticket_detail';
+@import 'pages/support/ticket_history';
+@import 'pages/support/ticket_severity';
+@import 'pages/support/ticket_summary';
+@import 'pages/support/ticket_type';
+@import 'pages/support/ticket_buttons';
+@import 'pages/support/remote_hands_request';
+@import 'pages/support/remote_hands_request_description';
+@import 'pages/support/remote_hands_request_contacts';
+@import 'pages/support/remote_hands_request_schedule';
+@import 'pages/support/remote_hands_request_review';
+@import 'pages/support/remote_hands_confirmation';
+@import 'pages/support/ticket_request_schedule_GA';
+@import 'pages/support/ticket_request_contacts_ga';
+@import 'pages/support/ticket_history_detail';
+@import 'pages/support/ticket_history_detail_logistics';
+@import 'pages/support/new_ticket_type';
+@import 'pages/support/selection_page';
+@import 'pages/support/support_overview';
+@import 'pages/storage/manage_storage';
+
+@import 'themes/theme';
+
+// @import 'vendors/bootstrap';

@@ -1,0 +1,71 @@
+/* Invoice Section */
+.outer-wrapper.invoice-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 85.97vh;
+
+  .message-text {
+    .start {
+      color: #a9ab36;
+    }
+  }
+
+  .banner {
+    // background-color: $orangey-yellow;
+    background-image: linear-gradient(29deg, #8e902c 15.5%, #a9ab36 10%);
+    font-family: $font-family-primary-heads;
+    padding: 1vh 2.7vw 1.2vh;
+    color: $White;
+    letter-spacing: 0.1em;
+    width: 32.5vw;
+  }
+
+  .invoice-section {
+    // flex: 0 1 13.89vh;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #262626;
+
+    .invoice-table-section {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .invoice-table {
+        align-self: center;
+      }
+
+      .arrow.up {
+        margin-top: 0.49vh;
+        margin-bottom: 0.49vh;
+        margin-left: 15.82vw;
+      }
+      .arrow.down {
+        margin-top: 0.63vh;
+        margin-bottom: 0.83vh;
+        margin-left: 15.82vw;
+      }
+    }
+  }
+
+  .invoice-table {
+    .table-nav {
+      flex: 0 0 26.09vw;
+      height: 5vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 3.24vw;
+      margin-top: 2vh;
+
+      div {
+        cursor: pointer;
+      }
+    }
+  }
+}

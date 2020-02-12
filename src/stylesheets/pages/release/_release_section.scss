@@ -1,0 +1,70 @@
+/* Invoice Section */
+.outer-wrapper.release-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 85.97vh;
+
+	.message-text {
+		.start {
+			color: #a9ab36;
+		}
+	}
+	.release-list {
+		padding: 15px 15px;
+		div {
+			cursor: pointer;
+		}
+	}
+}
+.release-notes-modal {
+	.error-modal {
+		.error-modal-header {
+			.error-modal-title {
+				@include User-Management-Menu;
+				margin-left: -1vw;
+			}
+		}
+		height: 0px;
+		.modal-body {
+			width: calculateVw(615, 1440);
+			height: calculateVh(650, 1440);
+			// height: calculateVh(600, 1440);
+			background-color: $Cool_Gray_Light_3;
+			min-height: 300px;
+			padding: 0;
+
+			&.success {
+				height: calculateVh(380, 1440);
+				min-height: 220px;
+				border: none;
+			}
+		}
+		.modal-header {
+			width: calculateVw(615, 1440);
+			background-color: $Extra_Dark_Purple;
+			.modal-icon {
+				img {
+					opacity: 0;
+				}
+			}
+		}
+
+		.modal-content {
+			margin-top: 18vh;
+			border: none;
+
+			.modal-footer {
+				border: none;
+			}
+		}
+		.exit {
+			z-index: 200;
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				margin-top: -1.2vh;
+			}
+		}
+	}
+}

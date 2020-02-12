@@ -1,0 +1,81 @@
+// /* Screen Size: 2560px */
+// .invoice-calendar-action {
+// 	background-color: $White;
+// 	width: 11vw;
+// 	padding-left: 0.5vw;
+
+// 	.invoice-calendar-amount-due {
+// 		// font-size: calc() //2.5rem;
+// 		color: rgba(91, 89, 91, 0.75);
+// 		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+// 		position: relative;
+// 		line-height: normal;
+// 		height: 5vh;
+// 		padding-top: 0.7vh;
+
+// 		.invoice-lift-dollar {
+// 			font-size: 1.57vw;
+// 			position: relative;
+// 			top: -10px;
+// 		}
+// 		.invoice-amount-due {
+// 			font-size: 2.35vw;
+// 			letter-spacing: -0.18vw;
+// 		}
+// 		.invoice-lift-cents {
+// 			font-size: 1.094vw;
+// 			position: relative;
+// 			top: -1.57vh;
+// 			left: 0.05vw;
+// 		}
+// 	}
+// 	.invoice-calendar-next-payment-due {
+// 		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+// 		line-height: 1.5vh;
+// 		padding: 0.5vh 0 0 0.23vw;
+// 		.invoice-calendar-payment-action {
+// 			color: $DCBLOX_Gray;
+// 			font-size: 0.83vw;
+// 		}
+// 		.invoice-calendar-payment-date {
+// 			color: $DCBLOX_Red;
+// 			font-size: 0.86vw;
+// 			padding-left: 0.23vw;
+// 			font-family: $proxima-nova-bold;
+// 		}
+// 		.invoice-calendar-payment-date.overdue {
+// 			font-family: $proxima-nova-bold;
+// 		}
+// 	}
+// }
+
+// @media screen and (max-width: 1440px) {
+// 	/* Crazy CSS overrides here */
+// 	.invoice-calendar-action {
+// 		width: 20.76vw;
+
+// 		.invoice-calendar-amount-due {
+// 			height: 6.3vh;
+// 			padding-top: 1.2vh;
+
+// 			.invoice-lift-dollar {
+// 				font-size: 2.09vw;
+// 				top: -0.9vh;
+// 			}
+// 			.invoice-amount-due {
+// 				font-size: 3.13vw;
+// 			}
+// 			.invoice-lift-cents {
+// 				font-size: 1.4vw;
+// 				top: -1.81vh;
+// 			}
+// 		}
+// 		.invoice-calendar-next-payment-due {
+// 			line-height: 1vh;
+// 			padding-left: 0.23vw;
+// 		}
+// 		.invoice-calendar-next-payment-due .invoice-calendar-payment-action {
+// 			padding-left: 0.23vw;
+// 		}
+// 	}
+// }

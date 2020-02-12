@@ -1,0 +1,16 @@
+.secondary-location-selection {
+	display: flex;
+	flex-direction: row;
+	// justify-content: space-evenly;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	.storage-location-icon {
+		height: auto;
+		cursor: pointer;
+		img {
+			width: calculateVw(67, $standard-screen-width-mid);
+			height: calculateVh(67, $standard-screen-height-mid);
+		}
+	}
+}

@@ -1,0 +1,192 @@
+.recent-invoices-wrapper {
+	min-width: 218px;
+	min-height: 200px;
+	background-color: $White;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	.months {
+		flex: 1;
+		align-self: center;
+		$map: (
+			576: 14,
+			1440: 16,
+			2560: 20,
+		);
+		font-size: least-squares-fit($map);
+		font-family: $proxima-nova-regular;
+		color: $DCBLOX_Gray;
+	}
+	.invoices {
+		flex: 4;
+		display: flex;
+		flex-direction: row;
+		padding-top: 3vh;
+		.recent-invoice {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: $DCBLOX_Gray;
+			// border: 1px solid red;
+			& > * {
+				// border: 1px solid blue;
+			}
+			.image {
+				// flex: 1;
+				img {
+					width: calculateVw(30, 1440);
+					height: calculateVh(90, 1440);
+				}
+				@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+					margin-bottom: 2vh;
+				}
+			}
+
+			.invoice-number {
+				// flex: 1;
+				@include Drop-Down-Selection;
+			}
+			.date-sent {
+				// flex: 1;
+				@include Drop-Down-Selection;
+			}
+			.invoice-amount {
+				&.overdue {
+					color: $DCBLOX_Red;
+				}
+				display: flex;
+				flex-direction: row;
+				// flex: 1;
+				@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+					margin-top: -2vh;
+					padding-bottom: 1vh;
+				}
+				.dollar,
+				.cents {
+					font-family: $proxima-nova-regular;
+					align-self: flex-start;
+					$map: (
+						576: 8,
+						1440: 12,
+						2560: 16,
+					);
+					font-size: least-squares-fit($map);
+				}
+
+				.dollars {
+					@include Billing-Amount-Medium;
+				}
+			}
+		}
+
+		// .recent-invoice:after {
+		// 	content: '';
+		// 	display: block;
+		// 	top: -14vh;
+		// 	width: 0vw;
+		// 	height: 14vh;
+		// 	left: 4vw;
+		// 	position: relative;
+		// 	margin-right: 0.1vw;
+		// 	border-right: 1px solid rgba(0, 0, 0, 0.16);
+		// 	margin-bottom: 0.2vh;
+		// }
+
+		.recent-invoice:nth-last-of-type(1):after {
+			border-right: none;
+		}
+	}
+	.invoice-history-button {
+		flex: 1;
+		align-self: center;
+		margin-top: -12vh;
+		.support-button {
+			&.gradient {
+				width: calculateVw(125, 1440);
+				height: calculateVw(30, 1440);
+				font-size: calculateVw(14, 1440);
+				background-color: $Med_Lime;
+				background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 37%, $Med_Lime 10%);
+			}
+		}
+	}
+}
+
+.recent-invoices {
+	width: 100%;
+	height: 100%;
+	min-height: auto;
+	min-width: auto;
+	display: flex;
+	flex-direction: column;
+	.invoice-list {
+		flex: 1 0 100%;
+		padding-top: 0;
+		padding-top: GetSize(3);
+		padding-bottom: GetSize(2);
+		.recent-invoice {
+			& > div,
+			& > span {
+				flex: 0 1 auto !important;
+			}
+		}
+		.recent-invoice:not(:first-child) {
+			border-left: 1px solid rgba(0, 0, 0, 0.16);
+		}
+		.recent-invoice .invoice-image {
+			width: GetSize(3);
+			height: GetSize(5);
+		}
+		.recent-invoice .invoice-image img {
+			width: 100%;
+			height: 100%;
+		}
+		.recent-invoice .invoice-amount {
+			margin-top: GetSize(1);
+			height: GetSize(2);
+			// height: GetSize(2);
+		}
+		.recent-invoice .invoice-number {
+			margin-top: GetSize(1);
+			height: GetSize(2);
+		}
+		.recent-invoice .invoice-date {
+			margin-top: GetSize(1);
+			height: GetSize(2);
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		.invoice-list {
+			padding-top: GetSize(2);
+			.recent-invoice .invoice-number {
+				height: GetSize(1);
+			}
+			.recent-invoice .invoice-date {
+				display: none;
+			}
+		}
+	}
+	@media screen and (min-width: 1441px) and (max-width: 2560px) {
+		.invoice-list {
+			padding-top: GetSize(2);
+			.recent-invoice .invoice-image {
+				width: GetSize(8);
+				height: GetSize(14);
+			}
+			.recent-invoice .invoice-amount {
+				margin-top: GetSize(3);
+				height: GetSize(4);
+			}
+			.recent-invoice .invoice-number {
+				// margin-top: GetSize(1);
+				height: GetSize(1);
+			}
+			.recent-invoice .invoice-date {
+				margin-top: GetSize(2);
+				height: GetSize(2);
+			}
+		}
+	}
+}

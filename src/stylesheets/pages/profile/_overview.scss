@@ -1,0 +1,272 @@
+.support-overview-page,
+.profile-overview-page,
+.billing-overview-page,
+.storage-overview-page {
+	//position: relative;
+	width: calculateVw(940px, 1440);
+	height: 100%;
+	min-height: 600px;
+	padding: 0;
+	margin: 0;
+	.react-grid-item {
+		// border: 2px solid lightblue;
+	}
+
+	.active-shares {
+		color: $DCBLOX_Gray;
+		@include Small-Text-Profile;
+		margin-left: 0.8vw;
+	}
+	.under-construction-text {
+		color: $DCBLOX_Aqua;
+		font-family: $font-family-primary-subheads;
+		position: absolute;
+		top: 33%;
+		left: 54%;
+		z-index: 2000;
+		$map: (
+			576: 10,
+			1440: 25,
+			2560: 35,
+		);
+		font-size: least-squares-fit($map);
+	}
+	.whitelist {
+		width: calculateVw(130px, 1440);
+		height: calculateVh(50px, 1440);
+		min-height: 30px;
+		min-width: 80px;
+		cursor: pointer;
+		position: relative;
+		box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+		background-color: $Dark_Emerald;
+		margin-left: 1vw;
+		margin-top: 0.8vh;
+
+		img {
+			width: calculateVw(53px, 1440);
+			height: calculateVh(20px, 1440);
+			position: absolute;
+			left: 5%;
+			top: 30%;
+		}
+		.manage {
+			position: absolute;
+			top: 20%;
+			left: 55%;
+			color: $White;
+			@include Status-Head;
+			opacity: 0.5;
+			$map: (
+				576: 12,
+				1440: 14,
+				2560: 16,
+			);
+			font-size: least-squares-fit($map);
+			letter-spacing: 0.8px;
+		}
+		&.selected {
+			.manage {
+				opacity: 1;
+			}
+		}
+	}
+	.whitelist:hover {
+		.manage {
+			opacity: 1;
+		}
+	}
+	.access {
+		position: relative;
+		img {
+			width: 80%;
+			height: 80%;
+			position: absolute;
+			top: 25%;
+			left: -20%;
+		}
+	}
+	.type {
+		background-color: $White;
+		position: relative;
+		box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+		img {
+			width: 80%;
+			height: 80%;
+			position: absolute;
+			top: 12%;
+			left: 12%;
+		}
+	}
+	.single-share-graph {
+		width: calculateVw(430, 1440);
+		.header {
+			width: 100%;
+			height: calculateVh(52, 1440);
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			.file-storage-resolution-picker,
+			.object-storage-resolution-picker {
+				position: absolute;
+				bottom: 0%;
+				right: 0%;
+			}
+		}
+	}
+
+	.share-config {
+		background-color: $White;
+		height: 100%;
+		position: relative;
+		.expandable-component-body {
+			padding-top: 0.5vh;
+			.expandable-row {
+				.left-side {
+					margin-left: 1vw;
+					border-right: none;
+					.content {
+						width: 9vw;
+						word-wrap: break-word;
+					}
+
+					.label {
+						padding-top: 1vh;
+						@include Text-Style-Expandable-Section-Label;
+						$map: (
+							576: 14,
+							1440: 16,
+							2560: 18,
+						);
+						font-size: least-squares-fit($map);
+					}
+					.content {
+						padding-top: 1vh;
+						width: 8vw;
+						$map: (
+							576: 10,
+							1440: 11,
+							2560: 14,
+						);
+						font-size: least-squares-fit($map);
+					}
+				}
+				.right-side {
+					.label {
+						padding-top: 1vh;
+						@include Text-Style-Expandable-Section-Label;
+						$map: (
+							576: 14,
+							1440: 16,
+							2560: 18,
+						);
+						font-size: least-squares-fit($map);
+					}
+					.content {
+						padding-top: 1vh;
+						width: 9vw;
+						$map: (
+							576: 8,
+							1440: 9,
+							2560: 10,
+						);
+						font-size: least-squares-fit($map);
+					}
+				}
+			}
+		}
+		.api-key {
+			@include Text-Style-Expandable-Section-Label;
+			cursor: pointer;
+			width: 9vw;
+			position: absolute;
+			top: 34%;
+			left: 56%;
+			word-break: break-all;
+		}
+		.reset-button {
+			position: absolute;
+			top: 54%;
+			left: 56%;
+			@media screen and (min-width: 2000px) {
+				top: 47%;
+			}
+			.support-button {
+				@include Status-Head;
+				.title {
+					opacity: 0.8;
+					letter-spacing: 0.1vw;
+				}
+			}
+			.support-button:hover {
+				.title {
+					opacity: 1;
+				}
+			}
+			&.selected {
+				.support-button:hover {
+					.title {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	.network-config {
+		background-color: $White;
+		box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+		height: 100%;
+
+		.expandable-component-body {
+			.expandable-row {
+				.left-side {
+					margin-top: 0.6vh;
+					margin-left: 1vw;
+				}
+				.right-side {
+					margin-top: 0.6vh;
+				}
+			}
+		}
+	}
+
+	.add-storage-icon {
+		background-color: $Cool_Gray_Light_2;
+		height: calculateVh(170, $standard-screen-height-mid);
+		width: calculateVw(130, 1440);
+		position: relative;
+		cursor: pointer;
+		img {
+			height: calculateVh(120, 1440);
+			width: calculateVw(82.9, 1440);
+			position: absolute;
+			top: 12%;
+			left: 18%;
+		}
+		.text {
+			@include Create-Ticket-Label;
+			color: $DCBLOX_Gray;
+			position: absolute;
+			top: 65%;
+			left: 25%;
+		}
+	}
+	.gray-horizontal-bar {
+		position: absolute;
+		left: 0;
+		width: 100% !important;
+		height: 18px !important;
+		opacity: 0.27 !important;
+		border: none !important;
+		background-color: $Cool_Gray_Light_1;
+	}
+	.title.grid-item {
+		@include Support-Section-Header;
+	}
+}
+
+.support-overview-page > .blox-grid > .react-grid-layout {
+	min-width: 450px;
+	background-color: $Cool_Gray_Light_3 !important;
+	height: 100% !important;
+}

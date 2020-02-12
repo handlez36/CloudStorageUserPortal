@@ -1,0 +1,61 @@
+.eula-header {
+  font-family: "Frutiger Neue W02 Book",Arial,Helvetica,sans-serif;
+  font-size: calculateFontSize(15px,30px);
+  color: grey;
+}
+
+div {
+  .modal-footer {
+    position: relative;
+  }
+  .eula-keepscrolling {
+    position: absolute;
+    top: 1vh;
+    right: 23vw;
+    color: grey;
+  }
+}
+
+.eula {
+  background-color: $White;
+  z-index: 600;
+
+  .eula-scroller {
+    height: 70vh;
+    overflow-y: scroll;
+    text-align: left;
+    p {
+      font-family: "Frutiger Neue W02 Book",Arial,Helvetica,sans-serif;
+      font-size: calculateFontSize(9px,30px);
+      line-height: 3vh;
+      margin-top: 2vh;
+      color: grey;
+      letter-spacing: normal;
+      ul {  
+        li {
+          font-family: "Frutiger Neue W02 Book",Arial,Helvetica,sans-serif;
+          font-size: calculateFontSize(9px,30px);
+          line-height: 3vh;
+          margin-top: 2vh;
+          color: grey;
+          text-align: left;
+          letter-spacing: normal;
+        }
+      }
+    }
+    h3 {
+      font-family: "Frutiger Neue W02 Book",Arial,Helvetica,sans-serif;
+      font-weight: 700;
+      font-size: calculateFontSize(15px,30px);
+      line-height: 3vh;
+      margin-top: 4vh;
+      color: grey;
+    }
+  }
+  .eula-timestamp {
+    font-family: "Frutiger Neue W02 Book",Arial,Helvetica,sans-serif;
+    font-size: calculateFontSize(9px,15px);
+    line-height: 3vh;
+    color: grey;
+  }
+}

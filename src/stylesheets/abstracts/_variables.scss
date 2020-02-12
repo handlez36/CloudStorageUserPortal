@@ -1,0 +1,29 @@
+$minScreenSize: 375px;
+$maxScreenSize: 2560px;
+/*$input-box-width: 29.96vw;*/
+
+$standard-screen-width: 2560;
+$standard-screen-height: 1440;
+$standard-screen-width-mid: 1440;
+$standard-screen-height-mid: 1024;
+$standard-screen-width-low: 1024;
+$standard-screen-height-low: 800;
+
+/* v3 screen ranges */
+$low-res: 928px;
+$medium-res: 1344px;
+$high-res: 2240px;
+// $low-res: 1024;
+// $medium-res: 1440;
+// $high-res: 2560;
+
+/* LOGIN PAGE */
+$primary-color: white;
+
+/* LOGIN INPUT */
+$input-box-width: 23.61vw;
+$input-box-height: 4.88vh;
+$input-text-color: #ffffff;
+
+/* GRID VARIABLES */
+$cell-unit: 8;

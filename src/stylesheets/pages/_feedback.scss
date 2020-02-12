@@ -1,0 +1,212 @@
+.feedback-modal-wrapper {
+	z-index: 500;
+	position: absolute;
+	right: 0%;
+	bottom: 9%;
+
+	.feedback-selection {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 0 1 auto;
+		height: calculateVh(370, 1440);
+		.image {
+			img {
+				position: absolute;
+				top: -15%;
+				left: 42%;
+				width: calculateVw(247, 1440);
+			}
+		}
+		.title {
+			margin-top: 5vh;
+			z-index: 100;
+			@include Roster-Modal;
+			$map: (
+				576: 10,
+				1440: 16,
+				2560: 24,
+			);
+			font-size: least-squares-fit($map);
+		}
+		.blox-text-input {
+			min-height: calculateVh(120px, $standard-screen-height-mid);
+		}
+		.feedback-submit-button {
+			position: absolute;
+			// margin-top: calculateVh(22px, $standard-screen-height-mid);
+			// bottom: calculateVh(51px, $standard-screen-height-mid);
+			bottom: 14%;
+			z-index: 200;
+			button {
+				width: calculateVw(100px, $standard-screen-width-mid);
+				height: calculateVh(34px, $standard-screen-height-mid);
+				// height: 100%;
+			}
+		}
+		@media screen and (max-height: 700px) {
+			.feedback-submit-button {
+				bottom: 5%;
+			}
+		}
+		@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+			.feedback-submit-button {
+				left: 38% !important;
+			}
+		}
+
+		// .feedback {
+		// 	margin-top: 3vh;
+		// 	max-height: calculateVh(120px, $standard-screen-height-mid);
+		.blox-text-input {
+			&.active {
+				.label-row {
+					label {
+						color: $White;
+					}
+				}
+				textarea {
+					//border-bottom: 1px solid $White;
+					color: $White;
+				}
+				textarea::placeholder {
+					color: $White;
+				}
+
+				::-ms-input-placeholder {
+					color: $White !important;
+				}
+				textarea:focus {
+					height: 37px;
+				}
+			}
+			.scrollbar-track.show {
+				height: 100% !important;
+			}
+		}
+		// }
+	}
+	.modal-content {
+		border: none;
+		width: calculateVw(403px, $standard-screen-width-mid);
+		margin-top: 15vh;
+		overflow: hidden;
+		.modal-header {
+			border: none;
+			background-color: $Dark_Purple;
+			.error-modal-header {
+				min-height: calculateVh(44px, $standard-screen-height-mid);
+				justify-content: flex-end;
+				align-items: center;
+			}
+			.error-modal-header .exit {
+				position: relative;
+				z-index: 15;
+			}
+		}
+		.modal-body {
+			height: calculateVh(460, 1440);
+			background-color: $Dark_Purple;
+			border: none;
+			padding-left: 0;
+			padding-right: 0;
+			.error-modal-body {
+				height: calc(433 / 1440 * 100 * 1vh);
+			}
+			.error-modal-body .feedback-selection {
+				height: 100%;
+			}
+			&.success {
+				height: calculateVh(360, 1440);
+			}
+		}
+	}
+
+	.feedback-modal {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 0 1 auto;
+		height: calculateVh(370, 1440);
+		.feedback-image-modal {
+			img {
+				z-index: 10;
+				position: absolute;
+				top: -15%;
+				left: calculateVw(150px, $standard-screen-width-mid);
+				width: calculateVw(247, 1440);
+			}
+		}
+
+		.success-message {
+			@include Body-Copy-Proxima-Medium;
+			color: $White;
+			margin-top: 4vh;
+			z-index: 100;
+			width: 22vw;
+		}
+		.message {
+			margin-top: 5vh;
+			z-index: 110;
+			@include Roster-Modal;
+		}
+		.options {
+			width: 100%;
+			height: 100%;
+			z-index: 12;
+			position: relative;
+			z-index: 12;
+			.text {
+				top: 30%;
+				left: 40%;
+				position: absolute;
+				@include Body-Copy-Proxima-Medium;
+				color: $White;
+			}
+			img {
+				margin-top: 0.8vh;
+				position: absolute;
+				left: 30%;
+				width: calculateVh(47, 1440);
+			}
+			.happy {
+				height: calculateVh(70, 1440);
+				width: 100%;
+				position: absolute;
+				top: 15%;
+				left: 0%;
+			}
+			.happy:hover,
+			.sad:hover,
+			.idea:hover {
+				cursor: pointer;
+				background-color: rgba(87, 58, 107, 0.3);
+			}
+			.sad {
+				height: calculateVh(70, 1440);
+				width: 100%;
+				position: absolute;
+				top: 45%;
+				left: 0%;
+			}
+			.idea {
+				height: calculateVh(70, 1440);
+				width: 100%;
+				position: absolute;
+				top: 75%;
+				left: 0%;
+			}
+		}
+	}
+}
+#feedback-image {
+	z-index: 500;
+	position: absolute;
+	right: 0%;
+	bottom: 9%;
+	width: 8vw;
+	height: 5.5vw;
+	cursor: pointer;
+}

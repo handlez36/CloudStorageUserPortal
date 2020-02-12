@@ -1,0 +1,53 @@
+.storage-add-layout.confirmation {
+	.message {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.share-name {
+			color: $Emerald;
+		}
+
+		.bottom-message {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			.share-name {
+				color: $Emerald;
+				padding-right: calculateVw(20, 1440);
+				font-family: $font-family-primary-subheads;
+				$map: (
+					576: 24,
+					1440: 34,
+					2560: 36,
+				);
+				font-size: least-squares-fit($map);
+			}
+		}
+	}
+	.left-confirmation-card,
+	.right-confirmation-card {
+		margin-left: calculateVw(-7px, $standard-screen-width-mid);
+	}
+	& + .image-shadow {
+		display: none;
+		position: absolute;
+		top: 21.3vh;
+		left: 22.1vw;
+		width: 650.8px;
+		height: 693.9px;
+		opacity: 0.17;
+		background-image: linear-gradient(
+			129deg,
+			$Cool_Gray_Med_1,
+			$Cool_Gray_Med_2 12%,
+			$Cool_Gray_Med_3 36%,
+			$Cool_Gray_Light_2 58%,
+			$Cool_Gray_Light_3 80%,
+			$White
+		);
+		border: 1px solid red;
+	}
+}

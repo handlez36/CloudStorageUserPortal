@@ -1,0 +1,46 @@
+.remote-hands-request-page {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 auto;
+	background-color: $White;
+	width: calculateVw(470px, 1440);
+
+	.request-wrapper {
+		flex: 1 0 auto;
+		padding-left: calculateVw(36px);
+		padding-right: calculateVw(36px);
+		padding-top: calculateVh(26px);
+		background-color: $White;
+	}
+	.exit-button {
+		position: absolute;
+		margin-left: 32.5vw;
+		background-color: $Warm_Gray_Light_2;
+		width: 2vw;
+		height: 3vh;
+		font-size: 1.3vw;
+		color: $DCBLOX_Gray;
+		text-align: center;
+		cursor: pointer;
+		z-index: 200;
+	}
+
+	@media all and (-ms-high-contrast: none) {
+		.exit-button {
+			margin-top: -2vh;
+		} /* IE10 */
+		*::-ms-backdrop,
+		.exit-button {
+			margin-top: -7vh;
+		} /* IE11 */
+	}
+
+	.blox-wizard-populate {
+		background: $White;
+		height: 94vh;
+	}
+	.blox-wizard-review {
+		background: $Warm_Gray_Light_3;
+		height: 94vh;
+	}
+}

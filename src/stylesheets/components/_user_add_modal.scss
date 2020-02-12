@@ -1,0 +1,81 @@
+.user-add-modal {
+	padding-left: calculateVw(54px);
+	padding-right: calculateVw(19px);
+	margin: 0;
+	padding: 0;
+	margin-left: 30vw;
+	margin-top: calculateVh(140px, $standard-screen-height-mid);
+	.modal-content {
+		width: calculateVw(350px, $standard-screen-width-mid);
+		min-height: calculateVh(336px, $standard-screen-height-mid);
+		height: auto;
+		border-radius: 0;
+		background-color: $Cool_Gray_Light_3;
+	}
+	.modal-header {
+		padding-top: 0;
+		border-bottom: 0;
+		.modal-title {
+			width: 100%;
+		}
+	}
+	.modal-body {
+		padding-top: 0;
+		.buttons-row {
+			margin-top: calculateVh(40px, $standard-screen-height-mid);
+		}
+		.buttons-row button span,
+		.buttons-row .prev {
+			$map: (
+				576: 12,
+				1440: 16,
+				2560: 18,
+			);
+			font-size: least-squares-fit($map);
+		}
+		.username-screen-confirmation + .buttons-row {
+			margin-top: calculateVh(20px, $standard-screen-height-mid);
+		}
+	}
+	.modal-footer {
+		display: none;
+	}
+
+	.username-screen-firstname,
+	.username-screen-lastname,
+	.username-screen-email,
+	.username-screen-confirmation {
+		.title {
+			@include Text-Style-Modal-Wizard-TItle;
+			text-align: left;
+		}
+		.blox-text-input {
+			width: 100%;
+			margin-top: calculateVh(20px, $standard-screen-height-mid);
+		}
+		.blox-text-input.active .active-field {
+			transform: translateY(-2px);
+		}
+		.validation-row {
+			margin-top: 0;
+			margin-bottom: 0.8vh;
+		}
+	}
+
+	.username-screen-confirmation {
+		margin-bottom: calculateVh(25.7px, $standard-screen-height-mid);
+		.title {
+			text-align: center;
+		}
+		.sub-title {
+			margin-top: calculateVh(10px, $standard-screen-height-mid);
+			@include Text-Style-Modal-Wizard-Subtitle;
+		}
+	}
+}
+
+.user-add-modal.confirmation {
+	.modal-content {
+		min-height: calculateVh(276.3px, $standard-screen-height-mid);
+	}
+}

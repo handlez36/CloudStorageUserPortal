@@ -1,0 +1,231 @@
+/* Portal - Block */
+
+.block {
+	width: calculateVw(250, 1440);
+	height: calculateVh(1100, 1440);
+	align-content: center;
+	pointer-events: none;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	&.top {
+		margin-left: 0vw;
+		width: calculateVw(170, 1440);
+	}
+	&.left {
+		margin-left: -9.5vw;
+	}
+}
+.block:hover {
+	cursor: pointer;
+}
+
+.blox-clickable {
+	pointer-events: auto;
+	transition: transform 0.5s ease-in-out;
+}
+
+.blox-clickable:hover {
+	transform: translateY(-30px);
+}
+
+/* Portal - Home */
+.home-back-ground {
+	width: 100%;
+	height: 100%;
+	background-color: $White;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	opacity: 1;
+	transition: opacity 0.2s ease-in;
+	// &.visible {
+	// 	transition: opacity 0.2s ease-in;
+	// 	opacity: 1;
+	// 	&.logged-in {
+	// 		transition: opacity 0s linear;
+	// 		opacity: 1;
+	// 	}
+	// }
+
+	.home-page-grid {
+		background-color: $White !important;
+		width: 100%;
+		height: 100%;
+
+		position: relative;
+
+		.react-grid-layout {
+			background-color: $White;
+			width: 100% !important;
+			height: 100% !important;
+
+			.react-grid-item {
+				//border: 1px solid blue;
+
+				.block {
+					margin-left: 1.3vw;
+				}
+
+				.block:hover {
+					cursor: pointer;
+				}
+
+				&.right {
+					.block {
+						margin-left: 5vw !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Portal - Home Background */
+.blocks-container-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	// top: -15vh;
+	// left: -6vw;
+	z-index: 300;
+	opacity: 0.75;
+	pointer-events: none;
+	background: radial-gradient(circle, rgba(255, 255, 255, 0) 28%, rgba(94, 93, 93, 0.4) 60%);
+}
+
+.blocks-profile-overlay {
+	position: absolute;
+	top: 9.9%;
+	left: 40.5%;
+	z-index: 5;
+	width: 14.6vw;
+	height: auto;
+}
+
+.blocks-container-parent {
+	width: 100%;
+	max-width: 100vw;
+	max-height: 100vh;
+	height: 100vh;
+	position: relative;
+
+	.blocks-container {
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+
+		.wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			flex-wrap: wrap;
+			width: 40.31vw;
+			height: 16vh;
+
+			position: relative;
+
+			/*
+      * This supports IE11 and above
+      */
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+				&.top {
+					margin-top: -55.6vh !important; // previously -34vh
+				}
+			}
+
+			/*
+      * This supports Edge
+      */
+			@supports (-ms-ime-align: auto) {
+				&.top {
+					margin-top: -55.6vh !important; // previously -34vh
+				}
+			}
+
+			&.top {
+				margin-left: -7.1vw;
+				margin-top: -40vh; // previously -34vh
+			}
+			&.right {
+				margin-left: -16.5vw;
+				margin-top: 7vh;
+			}
+			&.left {
+				margin-left: -7vw;
+				margin-top: 0.3vh; // previously -1vh
+			}
+			&.right-third {
+				margin-left: -16.5vw;
+				margin-top: -0.4vh; // previously -2.3vh
+			}
+			&.left-fourth {
+				margin-left: -7vw;
+				margin-top: 0.9vh; // previously -2.1vh
+			}
+			&.right-fifth {
+				margin-left: -16.5vw;
+				margin-top: 1.6vh; // previously -2.4vh
+			}
+			&.last {
+				height: 10vh;
+				overflow: hidden;
+			}
+			&.raised {
+				z-index: 2;
+			}
+		}
+	}
+}
+
+/* Portal - Home Portal Message */
+.message-home-portal {
+	// border: black solid;
+	position: absolute;
+	width: 11vw; //300px;
+	height: 8.667vw; //200px;
+	z-index: 200;
+	margin-left: 3.5vw;
+	margin-top: 6vh;
+	text-transform: uppercase;
+	font-synthesis: none;
+
+	.home-welcome {
+		font-family: $font-family-primary-heads; //Bourgeois
+		font-size: 3vw; //30px;
+		//font-weight: bold;
+		font-stretch: condensed;
+		letter-spacing: 0.3vw;
+		line-height: 3.5vh;
+		color: $DCBLOX_Purple;
+		font-synthesis: none;
+	}
+	.home-name {
+		font-family: $font-family-primary-heads; //Bourgeois
+		font-size: calculateFontSize(20px, 50px); //50px;
+		font-weight: bold;
+		font-stretch: condensed;
+		letter-spacing: 0.09em; //3.8px;
+		text-align: left;
+		color: $DCBLOX_Gray;
+		font-synthesis: none;
+	}
+	.home-subtext {
+		font-family: $font-family-primary-heads; //Bourgeois
+		font-size: calculateFontSize(8px, 30px); //30px;
+		font-weight: bold;
+		font-stretch: condensed;
+		line-height: 2.2vh;
+		letter-spacing: 0.12em; //2.3px;
+		text-align: left;
+		color: $DCBLOX_Gray;
+		width: 11vw;
+		margin-top: 1vh;
+		font-synthesis: none;
+	}
+}

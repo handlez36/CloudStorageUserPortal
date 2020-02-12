@@ -1,0 +1,57 @@
+.portal {
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 auto;
+	overflow: hidden;
+}
+.portal-home-page {
+	.react-grid-layout {
+		overflow: hidden;
+		z-index: 100;
+		transition: opacity 1s ease;
+		transition-delay: 1s;
+
+		&.login {
+			opacity: 1;
+		}
+
+		&.home-page-layout {
+			opacity: 1;
+			transition: opacity 2s linear;
+			background: $White !important;
+		}
+	}
+
+	&.reveal {
+		.react-grid-layout {
+			transition: opacity 4s ease;
+			opacity: 1;
+		}
+		.login-section,
+		.forgot-password {
+			opacity: 0;
+			transition: opacity 2s ease;
+		}
+
+		.react-grid-layout:before {
+			transform: rotate(45deg) translateX(0%) translateY(-140%);
+		}
+	}
+	.react-grid-layout:before {
+		transform: rotate(45deg) translateX(0%) translateY(50%);
+		content: '';
+		background: $White;
+		width: 260%;
+		height: 240%;
+		left: -80%;
+		position: absolute;
+		top: 60%;
+		overflow: hidden;
+		z-index: 1;
+		transition: transform 6s ease;
+		transform-origin: center center;
+	}
+}

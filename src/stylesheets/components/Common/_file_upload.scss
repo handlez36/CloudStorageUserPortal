@@ -1,0 +1,157 @@
+.file-upload {
+	display: flex;
+	flex-direction: row;
+	width: calculateVw(274.6px, $standard-screen-width-mid);
+	height: calculateVh(45px, $standard-screen-height-mid);
+	box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.16);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: $White;
+	.file-upload-icon {
+		flex: 0 1 calculateVw(31px, $standard-screen-width-mid);
+		flex-basis: calculateVw(31px, $standard-screen-width-mid);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+			width: calculateVw(17px, $standard-screen-width-mid);
+			height: calculateVh(30px, $standard-screen-height-mid);
+		}
+	}
+	.file-upload-details {
+		flex: 1 0 auto;
+		.file-upload-title {
+			padding-top: calculateVh(6px, $standard-screen-height-mid);
+			opacity: 0.8;
+		}
+		.file-upload-progress {
+			flex-direction: row;
+			justify-content: space-between;
+			align-content: center;
+		}
+		.progress-details {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-top: calculateVh(5px, $standard-screen-height-mid);
+			padding-right: calculateVw(6px, $standard-screen-width-mid);
+		}
+		@media screen and (max-height: 870px) {
+			.progress-details {
+				margin-top: 0;
+			}
+		}
+		.progress-details .file-size {
+			opacity: 0.6;
+		}
+		.progress-details .percent-complete {
+			opacity: 0.6;
+			// animation: makeVisibileTo60 0.5s forwards;
+			animation-delay: 1.5s;
+		}
+		.progress-details .speed {
+			opacity: 0.6;
+			// animation: makeVisibileTo60 0.5s forwards;
+			// animation-delay: 1.5s;
+			text-align: right;
+		}
+		/**
+    * React Sweet Progress styling
+    */
+		.react-sweet-progress {
+			margin-top: calculateVh(5px, $standard-screen-height-mid);
+			width: 97%;
+			.react-sweet-progress-line {
+				height: 2px;
+				background-color: $Warm_Gray_Light_3 !important;
+			}
+			.react-sweet-progress-line-inner {
+				min-height: auto;
+				height: 2px;
+				background-color: $DCBLOX_Aqua !important;
+			}
+			.react-sweet-progress-symbol {
+				display: none;
+			}
+		}
+	}
+	.delete-file-link {
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		padding-right: calculateVw(5px, $standard-screen-width-mid);
+	}
+}
+.file-upload.in-progress {
+	.file-upload-details {
+		.react-sweet-progress {
+			// margin-top: calculateVh(5px, $standard-screen-height-mid);
+		}
+		.file-upload-progress {
+			display: flex;
+		}
+		.progress-details {
+			// margin-top: calculateVh(5px, $standard-screen-height-mid);
+		}
+		.progress-details .file-size {
+			display: none;
+		}
+	}
+	.delete-file-link {
+		display: none;
+		margin-right: calculateVw(2px, $standard-screen-width-mid);
+	}
+}
+.file-upload.complete {
+	.file-upload-details {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.file-upload-title {
+			// padding-top: calculateVh(6px, $standard-screen-height-mid);
+		}
+		.file-upload-progress {
+			display: none;
+		}
+		.progress-details {
+			margin-top: 0;
+		}
+		.progress-details .file-size {
+			display: block;
+		}
+		.progress-details .percent-complete {
+			display: none;
+		}
+		.progress-details .speed {
+			display: none;
+		}
+	}
+	.delete-file-link {
+		display: flex;
+		opacity: 0.5;
+		margin-right: calculateVw(2px, $standard-screen-width-mid);
+		cursor: pointer;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
+
+// @keyframes makeVisibile {
+// 	0% {
+// 		display: none;
+// 		opacity: 0;
+// 	}
+// 	25% {
+// 		opacity: 0.15;
+// 	}
+// 	50% {
+// 		opacity: 0.3;
+// 	}
+// 	75% {
+// 		opacity: 0.45;
+// 	}
+// 	100% {
+// 		display: block;
+// 		opacity: 0.6;
+// 	}
+// }

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="372.53" height="995.36" viewBox="0 0 372.53 995.36"><defs>
+<style>.a{fill:url(#a);}.b{fill:url(#b);}.c{fill:url(#c);}</style>
+<linearGradient id="a" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#F7F7F7"/>
+<stop offset="0.75" stop-color="#F8F8F8"/>
+<stop offset="100" stop-color="#EFEFEF"/>
+</linearGradient>
+<linearGradient id="b" y1="569.63" x2="186.67" y2="569.63" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#E6E6E6"/>
+<stop offset="0.25" stop-color="#F0F0F0"/>
+<stop offset="0.5" stop-color="#F3F3F3"/>
+<stop offset="0.72" stop-color="#FBFBFB"/>
+<stop offset="0.92" stop-color="#FDFDFD"/></linearGradient>
+<linearGradient id="c" x1="186.67" y1="569.99" x2="372.53" y2="569.99" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#E1E2E3"/>
+<stop offset="0.92" stop-color="#F7F8FA"/>
+</linearGradient></defs><title>BLOXModules_Single_Blank_TemporaryLighterVersion</title><polygon class="a" points="372.53 144.62 186.67 0 0 144 186.67 287.71 372.53 144.62"/><polygon class="b" points="186.67 954.83 186.67 954.83 186.67 287.71 0 144 0 892.34 134.17 995.27 186.67 954.83"/><polygon class="c" points="186.67 287.71 186.67 954.83 239.3 995.36 372.53 892.34 372.53 144.62 186.67 287.71"/></svg>

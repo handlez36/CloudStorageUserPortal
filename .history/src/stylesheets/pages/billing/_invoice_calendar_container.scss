@@ -1,0 +1,77 @@
+.invoice-calendar-container {
+	width: 25.4vw;
+	display: flex;
+
+	.column {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// 	.row {
+	// 		display: flex;
+
+	// 		.invoice-calendar-footnote {
+	// 			background-color: $White;
+	// 			padding: 0 0 1vh 0.7vw;
+	// 			color: $DCBLOX_Gray;
+	// 			width: 98, 1% .footnote-remember {
+	// 				font-size: calc(13px + (13 - 13) * (100vw - 1440px) / (2560 - 1440));
+	// 				font-family: $proxima-nova-bold;
+	// 			}
+	// 			.footnote-remaining {
+	// 				font-size: calc(12px + (12 - 11) * (100vw - 1440px) / (2560 - 1440));
+	//
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	@media screen and (max-width: 1440px) {
+		.invoice-calendar-container {
+			display: flex;
+
+			.call-to-action {
+				width: 20.21vw;
+				height: 12.23vh;
+				padding: 0.5vh 0 0 0.5vw;
+			}
+		}
+
+		.invoice-calendar-leftovers {
+			display: flex;
+			flex-direction: row;
+			width: 25.3vw;
+			// background-color: $White;
+			padding-top: 0.5vh;
+
+			.invoice-calendar-footnote {
+				.footnote-remember {
+					font-family: $proxima-nova-bold;
+				}
+			}
+			.billing-address {
+				justify-content: flex-end;
+				display: flex;
+				width: 14.89vw;
+
+				.invoice-calendar-address {
+					// background-color: $White;
+					width: 15.3vw;
+					font-size: 0.7em;
+					text-align: right;
+					line-height: 1.5vh;
+					padding: 0;
+				}
+			}
+			.invoice-calendar-footnote {
+				font-family: $proxima-nova-regular;
+				// background-color: $White;
+				padding: 0;
+				font-size: 0.69em;
+				justify-content: flex-start;
+				width: 13vw;
+				line-height: 1.45vh;
+			}
+		}
+	}
+}

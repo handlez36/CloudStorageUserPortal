@@ -1,0 +1,44 @@
+.expandable-component-body {
+	.expandable-row {
+		display: flex;
+		flex-direction: row;
+		min-height: calculateVh(40px);
+
+		.left-side {
+			flex: 1 0 50%;
+			border-right: 1px solid gray;
+		}
+
+		.right-side {
+			flex: 1 0 50%;
+			padding-left: calculateVw(12.5px);
+		}
+
+		.full {
+			flex: 1 0 100%;
+			margin-bottom: 0.5vh;
+		}
+
+		.label {
+			@include Text-Style-Expandable-Section-Label;
+		}
+
+		.label .field-tagline {
+			@include Text-Style-Expandable-Section-Tagline;
+		}
+
+		.field-content {
+			@include Text-Style-Expandable-Section-Content;
+
+			.tool-tip {
+				margin-top: -0.3vh;
+				margin-left: 0.3vw;
+			}
+		}
+
+		.field {
+			padding-top: 0.3vh;
+			padding-bottom: 0.3vh;
+		}
+	}
+}

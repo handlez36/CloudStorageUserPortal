@@ -1,0 +1,79 @@
+//Official Fonts
+
+// Old Official Fonts
+$font-family-primary-heads: 'Bourgeois-BoldCondensed';
+$font-family-primary-subheads: 'Bourgeois-MediumCondensed';
+
+$proxima-nova-bold: 'ProximaNova-Bold';
+$proxima-nova-it-regular: 'ProximaNova-RegularIt';
+$proxima-nova-regular: 'ProximaNova-Regular';
+$proxima-nova-light: 'ProximaNova-Light';
+$proxima-nova-it-light: 'ProximaNova-LightIt';
+$proxima-nova-semibold: 'ProximaNova-Semibold';
+
+/** Proxima Nova **/
+
+@font-face {
+	font-family: 'ProximaNova-Semibold';
+	src: url('../../stylesheets/base/webfonts/38D7F6_B_0.eot');
+	src: url('../../stylesheets/base/webfonts/38D7F6_B_0.eot?#iefix') format('embedded-opentype'),
+		url('../../stylesheets/base/webfonts/38D7F6_B_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'ProximaNova-Bold';
+	src: url('../../stylesheets/base/webfonts/38D7F6_5_0.eot');
+	src: url('../../stylesheets/base/webfonts/38D7F6_5_0.eot?#iefix') format('embedded-opentype'),
+		url('../../stylesheets/base/webfonts/38D7F6_5_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'ProximaNova-Regular';
+	src: url('../../stylesheets/base/webfonts/38D7F6_8_0.eot');
+	src: url('../../stylesheets/base/webfonts/38D7F6_8_0.eot?#iefix') format('embedded-opentype'),
+		url('../../stylesheets/base/webfonts/38D7F6_8_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'ProximaNova-RegularIt';
+	src: url('../../stylesheets/base/webfonts/38D7F6_11_0.eot');
+	src: url('../../stylesheets/base/webfonts/38D7F6_11_0.eot?#iefix') format('embedded-opentype'),
+		url('../../stylesheets/base/webfonts/38D7F6_11_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'ProximaNova-Light';
+	src: url('../../stylesheets/base/webfonts/38DD44_5_0.eot');
+	src: url('../../stylesheets/base/webfonts/38DD44_5_0.eot?#iefix') format('embedded-opentype'),
+		url('../../stylesheets/base/webfonts/38DD44_5_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'ProximaNova-LightIt';
+	src: url('../../stylesheets/base/webfonts/38DD44_3_0.eot');
+	src: url('../../stylesheets/base/webfonts/38DD44_3_0.eot?#iefix') format('embedded-opentype'),
+		url('../../stylesheets/base/webfonts/38DD44_3_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'ProximaNova-Bold';
+	src: url('../../stylesheets/base/webfonts/38D7F6_5_0.eot');
+	src: url('../../stylesheets/base/webfonts/38D7F6_5_0.eot?#iefix') format('embedded-opentype'),
+		url('../../stylesheets/base/webfonts/38D7F6_5_0.ttf') format('truetype');
+}
+
+/** Bourgeois **/
+
+@font-face {
+	font-family: 'Bourgeois-BoldCondensed';
+	src: url('../../stylesheets/base/webfonts/38DD44_6_0.eot');
+	src: url('../../stylesheets/base/webfonts/38DD44_6_0.eot?#iefix') format('embedded-opentype'),
+		url('../../stylesheets/base/webfonts/38DD44_6_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Bourgeois-MediumCondensed';
+	src: url('../../stylesheets/base/webfonts/38DD44_7_0.eot');
+	src: url('../../stylesheets/base/webfonts/38DD44_7_0.eot?#iefix') format('embedded-opentype'),
+		url('../../stylesheets/base/webfonts/38DD44_7_0.ttf') format('truetype');
+}

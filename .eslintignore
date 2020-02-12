@@ -1,0 +1,14 @@
+# *
+vscode/*
+assets/*
+build/*
+config/*
+node_modules/*
+public/*
+scripts/*
+src/assets/*
+
+.env*
+
+yarn-error.log
+yarn.lock

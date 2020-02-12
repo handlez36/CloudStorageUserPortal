@@ -1,0 +1,198 @@
+.ticket-count-section {
+	// margin-left:20vw;
+	//box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	//width: 27.5vw;
+	//height: 15.5vh;
+	z-index: 100;
+
+	.progress-background {
+		width: calculateVw(90px, 1440);
+		height: calculateVh(190px, 1440);
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			width: calculateVw(90px, 1440);
+			height: calculateVh(190px, 1440);
+		}
+	}
+
+	.progress-circle {
+		width: calculateVw(100, 1440);
+		cursor: pointer;
+		&:hover {
+			transform: translateY(-7px);
+		}
+	}
+
+	.progress-circle.v3 {
+		width: 100%;
+		height: 100%;
+		.CircularProgressbar {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.new-title {
+		@include Text-Style-Ticket-Indicator;
+		align-self: center !important;
+	}
+	.count {
+		@include Count;
+		z-index: 3000;
+	}
+	.CircularProgressbar {
+		width: calculateVw(100, 1440);
+		height: 100%;
+		@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+			height: calculateVh(173, 1440);
+		}
+	}
+	.CircularProgressbar + div {
+		top: 0;
+		margin-top: 0 !important;
+	}
+	.CircularProgressbar-path {
+		stroke: #b4d333;
+	}
+	.CircularProgressbar-trail {
+		stroke: $Dark_Purple;
+	}
+	.CircularProgressbar-background {
+		fill: #573a6b;
+	}
+	&.v3 {
+		.progress-circle {
+			width: 100%;
+			height: 100%;
+		}
+		.CircularProgressbar {
+			// width: calculateVw(100, 1440);
+			width: 100%;
+			height: 100%;
+			@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+				// height: calculateVh(173, 1440);
+			}
+		}
+	}
+}
+
+.progress-circle-wrapper {
+	margin-top: 5vh;
+	padding-right: 0.5vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	// height: 11vh;
+	height: 8vh;
+
+	position: relative;
+	// @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+	// 	margin-top: 12vh;
+	// }
+	.total {
+		@include Text-Style-Ticket-Indicator;
+		$map: (
+			576: 8,
+			1440: 10,
+			2560: 14,
+		);
+		line-height: 9px;
+		font-size: least-squares-fit($map);
+		position: absolute;
+		top: -12%;
+		left: 22%;
+	}
+	.progress-background {
+		width: calculateVw(100px, 1440);
+		height: calculateVh(140px, 1440);
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			margin-top: 7vh;
+			width: calculateVw(95px, 1440);
+			height: calculateVh(137px, 1440);
+		}
+	}
+	.circle {
+		display: flex;
+		flex-direction: row;
+		margin-left: calculateVw(11px, 1440);
+		justify-content: center;
+		align-items: center;
+		transition: transform 0.5s ease-in-out;
+		transform: translateY(0px);
+	}
+
+	svg {
+		position: absolute;
+		width: calculateVw(120px, 1440);
+		height: calculateVh(150px, 1440);
+
+		@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+			top: 0%;
+			left: -8%;
+			width: calculateVw(111px, 1440);
+			height: calculateVh(141px, 1440);
+			margin-top: 7vh;
+		}
+
+		.indicator {
+			transition: stroke-dashoffset 1s;
+			transform-origin: center center;
+			transform: rotate(-90deg);
+			stroke-dasharray: 220;
+			stroke-dashoffset: 220;
+		}
+
+		.percentage {
+			@include Count;
+			$map: (
+				576: 10,
+				1440: 12,
+				2560: 14,
+			);
+			font-size: least-squares-fit($map);
+		}
+
+		.type {
+			@include Text-Style-Ticket-Indicator;
+			position: absolute;
+			top: -22vw;
+			$map: (
+				576: 10,
+				1440: 12,
+				2560: 14,
+			);
+			font-size: least-squares-fit($map);
+			@media screen and (min-width: 2560px) {
+				$map: (
+					576: 8,
+					1440: 10,
+					2560: 14,
+				);
+				font-size: least-squares-fit($map);
+			}
+		}
+	}
+
+	.title {
+		z-index: 30;
+		position: relative;
+		top: -26.5vh;
+		left: 2vw;
+		@include Text-Style-Ticket-Indicator;
+	}
+	&.monthly {
+		.percentage {
+			@include long-shadow(text, rgb(0, 131, 136), 70, true, true);
+		}
+		.total {
+			top: -15%;
+			left: 1%;
+		}
+	}
+}

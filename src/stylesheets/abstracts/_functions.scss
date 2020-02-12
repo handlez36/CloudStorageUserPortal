@@ -1,0 +1,92 @@
+/* Strip the unit off of a measurement (i.e., 10px -> 10). Needed for the fluid typography calculation */
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+/* minFontSize + unitless(maxFontSize - minFontSize) * (11vw - minScreenSize) / unitless(maxScreenSize - minScreenSize) */
+@function calculateFontSize($minFontSize, $maxFontSize) {
+	@return calc(
+		#{$minFontSize} + #{strip-unit($maxFontSize - $minFontSize)} * (100vw - #{$minScreenSize}) / #{strip-unit(
+				$maxScreenSize - $minScreenSize
+			)}
+	);
+}
+
+/// least-squares-fit
+/// Calculate the least square fit linear regression of provided values
+/// @param {map} $map - A SASS map of viewport width and size value combinations
+/// @return Linear equation as a calc() function
+
+@function least-squares-fit($map) {
+	// Get the number of provided breakpoints
+	$length: length(map-keys($map));
+	// Error if the number of breakpoints is < 2
+	@if ($length < 2) {
+		@error "leastSquaresFit() $map must be at least 2 values";
+	}
+
+	//Calculate the Means
+	$resTotal: 0;
+	$valueTotal: 0;
+	@each $res, $value in $map {
+		$resTotal: $resTotal + $res;
+		$valueTotal: $valueTotal + $value;
+	}
+	$resMean: $resTotal/$length;
+	$valueMean: $valueTotal/$length;
+
+	// Calculate some other stuff
+	$multipliedDiff: 0;
+	$squaredDiff: 0;
+	@each $res, $value in $map {
+		// Differences from means
+		$resDiff: $res - $resMean;
+		$valueDiff: $value - $valueMean;
+
+		// Sum of multiplied differences
+		$multipliedDiff: $multipliedDiff + ($resDiff * $valueDiff);
+
+		// Sum of squared resolution differences
+		$squaredDiff: $squaredDiff + ($resDiff * $resDiff);
+	}
+
+	// Calculate the Slope
+	$m: $multipliedDiff / $squaredDiff;
+
+	// Calculate the Y-Intercept
+	$b: $valueMean - ($m * $resMean);
+
+	// Return the CSS calc equation
+	@return calc(#{$m * 100}vw + #{$b}px);
+}
+
+@function calculateVh($pixels, $screen-size: $standard-screen-height) {
+	$unitless-pixels: strip-unit($pixels);
+	$val: calc(#{$unitless-pixels} / #{$screen-size} * 100 * 1vh);
+
+	@return $val;
+}
+
+@function calculateVw($pixels, $screen-size: $standard-screen-width) {
+	$unitless-pixels: strip-unit($pixels);
+	$val: calc(#{$unitless-pixels} / #{$screen-size} * 100 * 1vw);
+	// $val: calc(#{$unitless-pixels} / #{$standard-screen-width} * 100 * 1vw);
+
+	@return $val;
+}
+
+@function GetHeight($cells) {
+	@return $cells * $cell-unit * 1px;
+}
+
+@function GetSize($cells) {
+	@return $cells * $cell-unit * 1px;
+}
+
+@function ShrinkPadding($res, $width) {
+	@return calc(#{$width} - ((#{$res} - 100vw) / 2));
+}

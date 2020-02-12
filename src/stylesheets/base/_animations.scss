@@ -1,0 +1,101 @@
+// This holder will hold any @keyframes associated with the page
+@keyframes beat {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.3);
+	}
+
+	100% {
+		// box-shadow: 2px 2px 25px darkgreen;
+	}
+}
+
+@keyframes beat-before {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	3% {
+		transform: scale(1.5);
+		opacity: 0.9;
+	}
+
+	5% {
+		transform: scale(2);
+		opacity: 0.2;
+	}
+
+	10% {
+		transform: scale(3);
+		opacity: 0.1;
+	}
+
+	50% {
+		transform: scale(4);
+	}
+
+	100% {
+		transform: scale(5);
+	}
+}
+
+@keyframes makeVisibileTo60 {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.15;
+	}
+	50% {
+		opacity: 0.3;
+	}
+	75% {
+		opacity: 0.45;
+	}
+	100% {
+		display: block;
+		opacity: 0.6;
+	}
+}
+
+@keyframes makeVisibile {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	75% {
+		opacity: 0.75;
+	}
+	100% {
+		display: block;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	25% {
+		display: flex;
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 0.35;
+	}
+	75% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 0;
+		display: flex;
+	}
+}

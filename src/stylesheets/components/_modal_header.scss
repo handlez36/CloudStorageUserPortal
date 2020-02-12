@@ -1,0 +1,55 @@
+.add-user-modal-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: calculateVw(54px, $standard-screen-width-mid);
+	padding-right: calculateVw(19px);
+	.user-icon {
+		width: calculateVw(170px, $standard-screen-width-mid);
+		height: calculateVw(90px, $standard-screen-width-mid);
+	}
+	.user-icon img {
+		height: 100%;
+	}
+	.exit {
+		position: relative;
+		align-self: flex-start;
+	}
+	.exit img {
+		position: absolute;
+		top: 0;
+		margin-top: calculateVh(19px);
+		margin-left: calculateVw(-19px);
+		width: calculateVw(16px, $standard-screen-width-mid);
+		height: calculateVw(16px, $standard-screen-width-mid);
+	}
+}
+
+.roster-add-user-modal-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	//140 x 66
+	padding-left: calculateVw(120px);
+	padding-right: calculateVw(19px);
+	.user-icon {
+		width: calculateVw(270px);
+		height: calculateVw(120px);
+	}
+	.user-icon img {
+		height: 100%;
+	}
+	.exit {
+		position: relative;
+		align-self: flex-start;
+	}
+	.exit img {
+		position: absolute;
+		top: 0;
+		margin-top: calculateVh(25px);
+		margin-left: calculateVw(-29px);
+		//16 zx16
+		width: calculateVw(27px);
+		height: calculateVw(27px);
+	}
+}

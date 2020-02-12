@@ -1,0 +1,11 @@
+.detail-view {
+	height: 100%;
+	.wrapper {
+		height: 100%;
+		padding-bottom: calculateVh(20px, $standard-screen-height-mid);
+	}
+	.all-release-list-button {
+		text-align: left;
+		margin-top: calculateVh(12.4, $standard_screen_height_mid);
+	}
+}

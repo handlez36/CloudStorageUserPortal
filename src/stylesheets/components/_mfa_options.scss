@@ -1,0 +1,160 @@
+.mfa-option {
+	position: absolute;
+	top: -100px;
+	margin-top: 1vh;
+	width: calculateVw(340, 1440);
+	height: calculateVw(172, 1440);
+	border-radius: 4px;
+	background-color: rgba(255, 255, 255, 0.1);
+	position: relative;
+	-webkit-animation: slide 1s forwards;
+	animation: slide 1s forwards;
+	@media (max-width: 1023px) {
+		width: calculateVw(1020, 1440);
+		height: calculateVw(250, 1440);
+	}
+
+	&.hide {
+		display: none;
+	}
+	@-webkit-keyframes slide {
+		0% {
+			display: none;
+			opacity: 0;
+		}
+
+		50% {
+			display: block;
+			opacity: 0.5;
+		}
+		100% {
+			top: 0;
+			opacity: 1;
+		}
+	}
+
+	@keyframes slide {
+		0% {
+			display: none;
+			opacity: 0;
+		}
+
+		50% {
+			display: block;
+			opacity: 0.5;
+		}
+		100% {
+			top: 0;
+		}
+	}
+	.radio-wrapper {
+		margin-left: 1vh;
+		.options {
+			span {
+				margin-bottom: 0.4vh;
+			}
+		}
+	}
+	.detail-wrapper {
+		display: flex;
+		width: 15.5vw;
+		flex-direction: row;
+		justify-content: start;
+		@media (max-width: 1023px) {
+			width: 30vw;
+		}
+	}
+	.radio-label {
+		flex: 1;
+		margin-top: 0.7vh;
+		@include Login-MFA-Radio-Label;
+	}
+	.radio-label-details {
+		margin-top: 0.7vh;
+		margin-left: -3.8vw;
+
+		flex: 1;
+		@include Login-MFA-Radio-Label-Small;
+		width: 100%;
+	}
+
+	.submit-button {
+		margin-top: 2vh;
+		position: absolute;
+		left: 7.5vw;
+		width: calculateVw(122, $standard-screen-width-mid);
+		height: calculateVh(40, $standard-screen-height-mid);
+		// height: calculateVh(34, $standard-screen-height-mid);
+		border: none;
+		border-radius: 0px;
+		background: linear-gradient(45deg, $Warm_Gray_Med_3 10%, $Purple 60%);
+		background-size: 250% 100%;
+		background-position: right bottom;
+		transition: all 2s ease-in-out;
+		&.disabled {
+			background: linear-gradient(45deg, $Warm_Gray_Med_3);
+			background-size: 350% 100%;
+			background-position: left bottom;
+		}
+
+		// &.animation {
+		// 	background-position: left bottom;
+		// }
+		@include Login-MFA-Button;
+		@media (max-width: 1023px) {
+			left: 30.5vw;
+			margin-top: 0vh;
+			width: calculateVw(222, 1440);
+			height: calculateVw(64, 1440);
+		}
+		span {
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+		}
+		&:hover {
+			background: $Bright_Purple;
+			border: none;
+			background: linear-gradient(45deg, $Purple 10%, $Bright_Purple 60%);
+			background-size: 250% 100%;
+			background-position: right bottom;
+			transition: all 2s ease-in-out;
+			//background-position: left bottom;
+		}
+	}
+	.mfa-option-wrapper {
+		margin-left: 0.5vw;
+		label {
+			.check {
+				margin-top: 0.7vh;
+				margin-left: -0.2vw;
+				border: solid 1px $White;
+				height: calculateVw(16, 1440);
+				width: calculateVw(16, 1440);
+			}
+			.check::before {
+				transition: none;
+				-webkit-transition: none;
+			}
+			input[type='radio']:checked ~ .check {
+				border: none;
+				transition: none;
+				-webkit-transition: none;
+			}
+			input[type='radio']:checked ~ .check::before {
+				background: $DCBLOX_Lime;
+				box-shadow: 0px 0px 15px $DCBLOX_Lime !important;
+				height: calculateVw(16, 1440);
+				width: calculateVw(16, 1440);
+				position: absolute;
+				left: 0.02vw;
+				top: -0.2vh;
+				transition: none;
+				-webkit-transition: none;
+			}
+		}
+		padding-top: 5%;
+		margin-left: 5%;
+	}
+	span {
+		display: block;
+	}
+}

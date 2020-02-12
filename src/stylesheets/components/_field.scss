@@ -1,0 +1,48 @@
+.share-detail-field {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 1.3vh;
+	height: 2.5vh;
+	text-align: left;
+	word-wrap: break-word;
+
+	.field-name {
+		width: 50%;
+		position: relative;
+	}
+
+	.field-name:hover::before {
+		content: attr(data-tip);
+		position: absolute;
+		top: 0.9vh;
+		left: 52%;
+		white-space: normal;
+		z-index: 999;
+		font-size: 1.3vh;
+		line-height: 1.3vh;
+		width: 300px;
+		height: auto;
+		background-color: $DCBLOX_Black;
+		color: $White;
+		padding: 0.2vw 0.5vw;
+		border-radius: 2px;
+		transition: opacity 0.2s ease-out;
+		opacity: 1;
+		text-transform: none;
+	}
+
+	.field-value {
+		width: 70%;
+		flex: 0 0 60%;
+		max-width: 70%;
+		word-wrap: break-word;
+		float: right;
+		text-align: right;
+		margin-top: 0.3vw;
+	}
+
+	.field-value.click-to-show {
+		color: $DCBLOX_Red;
+	}
+}

@@ -1,0 +1,84 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3726660, 2019-02-27T15:43:24-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: ProximaNovaA-Light by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/a-light/
+ * Copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ * Licensed pageviews: 1,000,000
+ * 
+ * Webfont: ProximaNovaA-LightIt by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/a-light-it/
+ * Copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ * Licensed pageviews: 1,000,000
+ * 
+ * Webfont: ProximaNovaS-LightIt by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/s-light-it/
+ * Copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ * Licensed pageviews: 1,000,000
+ * 
+ * Webfont: ProximaNova-LightIt by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/light-it/
+ * Copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ * Licensed pageviews: 1,000,000
+ * 
+ * Webfont: ProximaNovaS-Light by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/s-light/
+ * Copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ * Licensed pageviews: 1,000,000
+ * 
+ * Webfont: ProximaNova-Light by Mark Simonson
+ * URL: https://www.myfonts.com/fonts/marksimonson/proxima-nova/light/
+ * Copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ * Licensed pageviews: 1,000,000
+ * 
+ * Webfont: Bourgeois-BoldCondensed by Barnbrook Fonts
+ * URL: https://www.myfonts.com/fonts/virusfonts/bourgeois/bold-cond/
+ * Copyright: Copyright (c) 2005 VirusFonts. All rights reserved.
+ * Licensed pageviews: 10,000
+ * 
+ * Webfont: Bourgeois-MediumCondensed by Barnbrook Fonts
+ * URL: https://www.myfonts.com/fonts/virusfonts/bourgeois/medium-condensed/
+ * Copyright: Copyright (c) 2005 VirusFonts. All rights reserved.
+ * Licensed pageviews: 10,000
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3726660
+ * 
+ * © 2019 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/38dd44");
+
+  
+@font-face {font-family: 'ProximaNovaA-Light';src: url('webfonts/38DD44_0_0.eot');src: url('webfonts/38DD44_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/38DD44_0_0.woff2') format('woff2'),url('webfonts/38DD44_0_0.woff') format('woff'),url('webfonts/38DD44_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-LightIt';src: url('webfonts/38DD44_1_0.eot');src: url('webfonts/38DD44_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/38DD44_1_0.woff2') format('woff2'),url('webfonts/38DD44_1_0.woff') format('woff'),url('webfonts/38DD44_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-LightIt';src: url('webfonts/38DD44_2_0.eot');src: url('webfonts/38DD44_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/38DD44_2_0.woff2') format('woff2'),url('webfonts/38DD44_2_0.woff') format('woff'),url('webfonts/38DD44_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNova-LightIt';src: url('webfonts/38DD44_3_0.eot');src: url('webfonts/38DD44_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/38DD44_3_0.woff2') format('woff2'),url('webfonts/38DD44_3_0.woff') format('woff'),url('webfonts/38DD44_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-Light';src: url('webfonts/38DD44_4_0.eot');src: url('webfonts/38DD44_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/38DD44_4_0.woff2') format('woff2'),url('webfonts/38DD44_4_0.woff') format('woff'),url('webfonts/38DD44_4_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNova-Light';src: url('webfonts/38DD44_5_0.eot');src: url('webfonts/38DD44_5_0.eot?#iefix') format('embedded-opentype'),url('webfonts/38DD44_5_0.woff2') format('woff2'),url('webfonts/38DD44_5_0.woff') format('woff'),url('webfonts/38DD44_5_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Bourgeois-BoldCondensed';src: url('webfonts/38DD44_6_0.eot');src: url('webfonts/38DD44_6_0.eot?#iefix') format('embedded-opentype'),url('webfonts/38DD44_6_0.woff2') format('woff2'),url('webfonts/38DD44_6_0.woff') format('woff'),url('webfonts/38DD44_6_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Bourgeois-MediumCondensed';src: url('webfonts/38DD44_7_0.eot');src: url('webfonts/38DD44_7_0.eot?#iefix') format('embedded-opentype'),url('webfonts/38DD44_7_0.woff2') format('woff2'),url('webfonts/38DD44_7_0.woff') format('woff'),url('webfonts/38DD44_7_0.ttf') format('truetype');}
+ 

@@ -1,0 +1,69 @@
+/* Data Table */
+.data-table {
+	// width: 30vw;
+}
+
+h7 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.2;
+	color: inherit;
+	font-size: 0.7rem;
+}
+
+.manage-whitelist-section,
+.manage-password-section {
+	font-family: 'BourgeoisMediumCondensed';
+}
+.buttonDisplay {
+	display: inline-block;
+}
+
+.manage-password-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 4vh;
+	bottom: 27vh;
+}
+
+.manage-whitelist {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 5vh;
+}
+
+.whitelist-tooltip {
+	padding: 0.3vw;
+	opacity: 1;
+	position: relative;
+	float: left;
+}
+.whitelist-tooltip:hover::before {
+	content: attr(data-tip);
+	position: absolute;
+	margin-top: calc(-7.2vh - 20px);
+	left: -50%;
+	white-space: normal;
+	z-index: 999;
+	width: 15vw;
+	height: auto;
+	background-color: $DCBLOX_Black;
+	color: $White;
+	padding: 0.2vw 0.2vw;
+	border-radius: 2px;
+	transition: opacity 0.2s ease-out;
+	opacity: 1;
+	text-align: center;
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		line-height: 13px;
+		margin-top: -10vh;
+	}
+}
+
+.password-modal {
+	.modal-body {
+		font-size: 1.9vh;
+	}
+}

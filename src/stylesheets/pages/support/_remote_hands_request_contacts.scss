@@ -1,0 +1,45 @@
+.remote-hands-request-contacts {
+	padding-top: calculateVh(23px, $standard-screen-height-mid);
+	padding-left: calculateVw(35px, $standard-screen-width-mid);
+	padding-right: calculateVw(35px, $standard-screen-width-mid);
+
+	.form-subtitle {
+		@include Text-Style-Ticket-Request-Message;
+	}
+	.request-field {
+		transition: opacity 0.5s ease;
+	}
+	.requestor-name {
+		margin-top: calculateVh(18px);
+	}
+	.requestor-email {
+		margin-top: calculateVh(25px);
+	}
+	.requestor-phone {
+		margin-top: calculateVh(25px);
+	}
+	.requestor-preference {
+		margin-top: calculateVh(28px);
+
+		.label {
+			margin-bottom: calculateVh(10px);
+			@include Text-Style-Ticket-Request-Pref-Label;
+		}
+		.radio-wrapper {
+			.detail-wrapper {
+				display: flex;
+				flex-direction: row;
+				margin-right: 0.5vw;
+			}
+			width: auto;
+		}
+		.options {
+			span:nth-child(3) {
+				margin-left: calculateVw(45px);
+			}
+		}
+	}
+	button {
+		margin-top: calculateVh(29.7px);
+	}
+}

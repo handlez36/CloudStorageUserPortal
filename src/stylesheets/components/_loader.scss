@@ -1,0 +1,15 @@
+.loader.visible {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: transparent;
+
+  img {
+      width: 10.63vw;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+.loader.invisible {
+  display: none;
+}

@@ -1,0 +1,605 @@
+// Newest Fonts Styles - from Niamh
+
+@mixin Primary {
+	font-size: 18px;
+	font-family: $font-family-primary-subheads;
+	line-height: 18px;
+	color: $Cool_Gray_Dark_2;
+	letter-spacing: 0.75px;
+	text-transform: uppercase;
+	@media screen and (max-width: 1024px) {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	@media screen and (min-width: 2560px) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+@mixin Secondary {
+	font-size: 18px;
+	font-family: $font-family-primary-subheads;
+	line-height: 18px;
+	color: $Cool_Gray_Dark_2;
+	text-align: center;
+	@media screen and (max-width: 1024px) {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	@media screen and (min-width: 2560px) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+@mixin Menu {
+	font-size: 18px;
+	letter-spacing: 1px;
+	font-family: $font-family-primary-heads;
+	line-height: 18px;
+	color: $Cool_Gray_Dark_2;
+	text-align: center;
+	@media screen and (max-width: 1024px) {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	@media screen and (min-width: 2560px) {
+		font-size: 22px;
+		line-height: 22px;
+	}
+}
+@mixin Menu-Active {
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-family: $font-family-primary-heads;
+	line-height: 20px;
+	color: $Cool_Gray_Dark_2;
+	text-align: center;
+	@media screen and (max-width: 1024px) {
+		font-size: 16px;
+		line-height: 16px;
+	}
+	@media screen and (min-width: 2560px) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+
+@mixin Text-Flow-Active($active_color) {
+	font-family: $font-family-primary-heads;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+	animation: flow 1s linear;
+	animation-direction: reverse;
+	background-image: linear-gradient(
+		to left,
+		$Cool_Gray_Dark_2 40%,
+		$Cool_Gray_Dark_2 40%,
+		$active_color 0%
+	);
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		background-image: none;
+		color: $active_color;
+	}
+}
+
+@mixin Text-Flow-Animate {
+	font-family: $font-family-primary-subheads;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+	animation: flow 1s linear;
+	animation-direction: alternate-reverse;
+	animation-delay: 1.7s;
+	&.billing {
+		background-image: linear-gradient(
+			to left,
+			$Dark_Lime 40%,
+			$Dark_Lime 35%,
+			$Cool_Gray_Dark_2 30%,
+			$Cool_Gray_Dark_2 0%
+		);
+	}
+	&.profile {
+		background-image: linear-gradient(
+			to left,
+			$Dark_Blue 40%,
+			$Dark_Blue 35%,
+			$Cool_Gray_Dark_2 30%,
+			$Cool_Gray_Dark_2 0%
+		);
+	}
+	&.storage {
+		background-image: linear-gradient(
+			to left,
+			$Emerald 40%,
+			$Emerald 35%,
+			$Cool_Gray_Dark_2 30%,
+			$Cool_Gray_Dark_2 0%
+		);
+	}
+	&.support {
+		background-image: linear-gradient(
+			to left,
+			$DCBLOX_Purple 40%,
+			$DCBLOX_Purple 35%,
+			$Cool_Gray_Dark_2 30%,
+			$Cool_Gray_Dark_2 0%
+		);
+	}
+	background-size: 127% 50%;
+	-webkit-background-clip: text;
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		background-image: none;
+	}
+}
+
+/**
+* 2019 Styles from Zeplin typography sheet - Brandon
+*/
+@mixin Active-Nav-Menu($active_color) {
+	font-family: $font-family-primary-heads;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+	animation: flow 1s linear;
+	animation-direction: reverse;
+	background-image: linear-gradient(
+		to left,
+		$Cool_Gray_Dark_2 40%,
+		$Cool_Gray_Dark_2 40%,
+		$active_color 0%
+	);
+	background-size: 127% 50%;
+	-webkit-background-clip: text;
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		background-image: none;
+		color: $active_color;
+	}
+}
+
+/** Nav fonts */
+@mixin NavPrimary {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	line-height: 1px;
+	letter-spacing: 1.05px;
+	text-transform: uppercase;
+	padding-top: 8px;
+	height: 14px;
+	cursor: pointer;
+	color: $DCBLOX_Gray;
+	&.active {
+		font-family: $font-family-primary-heads;
+		animation-direction: reverse;
+		&.billing {
+			@include Active-Nav-Menu($Dark_Lime);
+		}
+		&.storage {
+			@include Active-Nav-Menu($Emerald);
+		}
+		&.profile {
+			@include Active-Nav-Menu($DCBLOX_Purple);
+		}
+		&.support {
+			@include Active-Nav-Menu($Dark_Blue);
+		}
+	}
+	// &.inactive {
+	// 	font-family: $font-family-primary-heads;
+	// 	animation-direction: alternate-reverse;
+	// 	animation-delay: 1.7s;
+	// 	&.billing {
+	// 		@include Active-Nav-Menu($Dark_Lime);
+	// 	}
+	// 	&.storage {
+	// 		@include Active-Nav-Menu($Emerald);
+	// 	}
+	// 	&.profile {
+	// 		@include Active-Nav-Menu($DCBLOX_Purple);
+	// 	}
+	// 	&.support {
+	// 		@include Active-Nav-Menu($Dark_Blue);
+	// 	}
+	// }
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 18px;
+		height: 18px;
+		letter-spacing: 1.35px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 24px;
+		height: 24px;
+		letter-spacing: 1.8px;
+	}
+}
+
+@mixin NavSecondary {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	line-height: 1px;
+	letter-spacing: normal;
+	text-transform: capitalize;
+	padding-top: 8px;
+	height: 14px;
+	cursor: pointer;
+	color: $DCBLOX_Gray;
+	&.active {
+		font-family: $font-family-primary-heads;
+		&.billing {
+			@include Active-Nav-Menu($Dark_Lime);
+		}
+		&.storage {
+			@include Active-Nav-Menu($Emerald);
+		}
+		&.profile {
+			@include Active-Nav-Menu($DCBLOX_Purple);
+		}
+		&.support {
+			@include Active-Nav-Menu($Dark_Blue);
+		}
+	}
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 18px;
+		height: 18px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 24px;
+		height: 24px;
+	}
+}
+
+@mixin NavMenu {
+	font-family: $font-family-primary-heads;
+	font-size: 14px;
+	line-height: 1px;
+	letter-spacing: 1.4px;
+	text-transform: capitalize;
+	padding-top: 8px;
+	height: 16px;
+	cursor: pointer;
+	color: $DCBLOX_Gray;
+	&.active {
+		font-family: $font-family-primary-heads;
+		font-size: 14px;
+		letter-spacing: 1.6px;
+		&.billing {
+			@include Active-Nav-Menu($Dark_Lime);
+		}
+		&.storage {
+			@include Active-Nav-Menu($Emerald);
+		}
+		&.profile {
+			@include Active-Nav-Menu($DCBLOX_Purple);
+		}
+		&.support {
+			@include Active-Nav-Menu($Dark_Blue);
+		}
+	}
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 18px;
+		height: 18px;
+		letter-spacing: 1.8px;
+		.active {
+			font-size: 20px;
+			height: 20px;
+			letter-spacing: 2px;
+		}
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 22px;
+		height: 22px;
+		letter-spacing: 2.2px;
+		.active {
+			font-size: 24px;
+			height: 24px;
+			letter-spacing: 2.4px;
+		}
+	}
+}
+
+/** Heading fonts */
+@mixin Heading30 {
+	font-family: $font-family-primary-subheads;
+	font-size: 20px;
+	line-height: 1px;
+	letter-spacing: 1px;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 24px;
+		letter-spacing: 1.2px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 34px;
+		letter-spacing: 1.7px;
+	}
+}
+@mixin Headings60 {
+	font-family: $font-family-primary-subheads;
+	font-size: 20px;
+	// line-height: 1;
+	letter-spacing: 1px;
+	line-height: 12px;
+	// text-transform: uppercase;
+	color: $DCBLOX_Gray;
+	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 24px;
+		letter-spacing: 1.2px;
+		line-height: 13px;
+	}
+	// @media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 34px;
+		letter-spacing: 1.7px;
+		line-height: 16px;
+	}
+}
+@mixin Headings71 {
+	font-family: $font-family-primary-subheads;
+	font-size: 16px;
+	// line-height: 1;
+	line-height: 10px;
+	letter-spacing: normal;
+	color: $DCBLOX_Gray;
+	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 20px;
+		line-height: 14px;
+	}
+	// @media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 30px;
+		line-height: 14px;
+	}
+}
+@mixin Headings80 {
+	font-family: $font-family-primary-heads;
+	font-size: 14px;
+	line-height: 1.05px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 18px;
+		letter-spacing: 1.35px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 22px;
+		letter-spacing: 1.65px;
+	}
+}
+@mixin Headings90 {
+	font-family: $font-family-primary-subheads;
+	font-size: 12px;
+	line-height: 1.05;
+	letter-spacing: 0.6px;
+	text-transform: uppercase;
+	color: $DCBLOX_Gray;
+	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 14px;
+		letter-spacing: 0.7px;
+	}
+	// @media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		letter-spacing: 0.9px;
+	}
+}
+
+/** Number fonts */
+@mixin Numbers5 {
+	font-family: $proxima-nova-regular;
+	font-size: 12px;
+	line-height: 1px;
+	letter-spacing: -0.6px;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 14px;
+		letter-spacing: -0.7px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 16px;
+		letter-spacing: -0.8px;
+	}
+}
+@mixin Numbers10 {
+	font-family: $proxima-nova-regular;
+	font-size: 14px;
+	line-height: 1px;
+	letter-spacing: -0.7px;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-family: $proxima-nova-light;
+		font-size: 20px;
+		letter-spacing: -1px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-family: $proxima-nova-light;
+		font-size: 28px;
+		letter-spacing: -1.4px;
+	}
+}
+
+@mixin Numbers20 {
+	font-family: $proxima-nova-light;
+	font-size: 26px;
+	line-height: 1;
+	letter-spacing: -1.3px;
+	color: $DCBLOX_Gray;
+	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 28px;
+		letter-spacing: -1.4px;
+	}
+	// @media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 46px;
+		letter-spacing: -2.3px;
+	}
+}
+
+@mixin Numbers30 {
+	font-family: $proxima-nova-light;
+	font-size: 36px;
+	line-height: 1px;
+	letter-spacing: -1.8px;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 46px;
+		letter-spacing: -2.3px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 60px;
+		letter-spacing: -3px;
+	}
+}
+
+/** Body fonts */
+@mixin Body10 {
+	font-family: $proxima-nova-regular;
+	font-size: 12px;
+	line-height: 1.5px;
+	letter-spacing: normal;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 14px;
+		line-height: 1.43px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 16px;
+		line-height: 1.38px;
+	}
+}
+@mixin Body20 {
+	font-family: $proxima-nova-regular;
+	font-size: 14px;
+	line-height: 1.43px;
+	letter-spacing: normal;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 16px;
+		line-height: 1.38px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 18px;
+		line-height: 1.33px;
+	}
+}
+@mixin Body21 {
+	font-family: $proxima-nova-bold;
+	font-size: 14px;
+	line-height: 1.43px;
+	letter-spacing: normal;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 16px;
+		line-height: 1.38px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 18px;
+		line-height: 1.33px;
+	}
+}
+@mixin Body30 {
+	font-family: $proxima-nova-regular;
+	font-size: 16px;
+	line-height: 1.38px;
+	letter-spacing: normal;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 18px;
+		line-height: 1.33px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 20px;
+		line-height: 1.3px;
+	}
+}
+
+@mixin Body40 {
+	font-family: $proxima-nova-regular;
+	font-size: 18px;
+	line-height: 1.33px;
+	letter-spacing: normal;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 20px;
+		line-height: 1.3px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 22px;
+		line-height: 1.27px;
+	}
+}
+
+/** Misc styles */
+@mixin GlobalBubbles10 {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	letter-spacing: normal;
+	line-height: 1px;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 16px;
+	}
+	@media screen and (min-width: 1441px) {
+		font-size: 18px;
+	}
+}
+
+/** Temporary styles */
+@mixin Total-Amount-Due {
+	font-family: $proxima-nova-regular;
+	font-size: 24px;
+	letter-spacing: normal;
+	color: $DCBLOX_Gray;
+	text-align: center;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 32px;
+	}
+	@media screen and (min-width: 1441px) and (max-width: 2560px) {
+		font-size: 48px;
+	}
+}
+
+@mixin Total-Amount-Due-Subtext {
+	font-family: $proxima-nova-bold;
+	font-size: 16px;
+	letter-spacing: normal;
+	color: $DCBLOX_Red;
+	text-align: center;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 16px;
+	}
+	@media screen and (min-width: 1441px) and (max-width: 2560px) {
+		font-size: 16px;
+	}
+}
+@mixin Total-Amount-Due-Subtext-Bold {
+	font-family: $proxima-nova-bold;
+	font-size: 16px;
+	letter-spacing: normal;
+	color: $DCBLOX_Red;
+	text-align: center;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 16px;
+	}
+	@media screen and (min-width: 1441px) and (max-width: 2560px) {
+		font-size: 16px;
+	}
+}
+@mixin Total-Amount-Due-Dollars-And-Cents {
+	font-family: $proxima-nova-light;
+	font-size: 24px;
+	letter-spacing: normal;
+	color: $DCBLOX_Gray;
+	text-align: center;
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 28px;
+	}
+	@media screen and (min-width: 1441px) and (max-width: 2560px) {
+		font-size: 32px;
+	}
+}

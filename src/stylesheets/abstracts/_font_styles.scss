@@ -1,0 +1,967 @@
+//Newest Fonts Styles
+
+@mixin Primary {
+	font-size: 18px;
+	font-family: $font-family-primary-subheads;
+	line-height: 18px;
+	color: $Cool_Gray_Dark_2;
+	letter-spacing: 0.75px;
+	text-transform: uppercase;
+	@media screen and (max-width: 1024px) {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	@media screen and (min-width: 2560px) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+@mixin Secondary {
+	font-size: 18px;
+	font-family: $font-family-primary-subheads;
+	line-height: 18px;
+	color: $Cool_Gray_Dark_2;
+
+	@media screen and (max-width: 1024px) {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	@media screen and (min-width: 2560px) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+@mixin Menu {
+	font-size: 18px;
+	letter-spacing: 1px;
+	font-family: $font-family-primary-heads;
+	line-height: 18px;
+	color: $Cool_Gray_Dark_2;
+	@media screen and (max-width: 1024px) {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	@media screen and (min-width: 2560px) {
+		font-size: 22px;
+		line-height: 22px;
+	}
+}
+@mixin Menu-Active {
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-family: $font-family-primary-heads;
+	line-height: 20px;
+	color: $Cool_Gray_Dark_2;
+	@media screen and (max-width: 1024px) {
+		font-size: 16px;
+		line-height: 16px;
+	}
+	@media screen and (min-width: 2560px) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+
+@mixin Text-Flow-Active {
+	font-family: $font-family-primary-heads;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+	animation: flow 1s linear;
+	animation-direction: reverse;
+	&.billing {
+		//color: $Dark_Lime;
+		background-image: linear-gradient(
+			to left,
+			$Cool_Gray_Dark_2 40%,
+			$Cool_Gray_Dark_2 40%,
+			$Dark_Lime 0%
+		);
+
+		background-size: 127% 50%;
+		-webkit-background-clip: text;
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background-image: none;
+			color: $Dark_Lime;
+		}
+	}
+	&.storage {
+		//color: $Dark_Lime;
+		background-image: linear-gradient(
+			to left,
+			$Cool_Gray_Dark_2 40%,
+			$Cool_Gray_Dark_2 40%,
+			$Emerald 0%
+		);
+
+		background-size: 127% 50%;
+		-webkit-background-clip: text;
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background-image: none;
+			color: $Emerald;
+		}
+	}
+	&.support {
+		//color: $Dark_Lime;
+		background-image: linear-gradient(
+			to left,
+			$Cool_Gray_Dark_2 40%,
+			$Cool_Gray_Dark_2 40%,
+			$DCBLOX_Purple 0%
+		);
+
+		background-size: 127% 50%;
+		-webkit-background-clip: text;
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background-image: none;
+			color: $DCBLOX_Purple;
+		}
+	}
+	&.profile {
+		//color: $Dark_Lime;
+		background-image: linear-gradient(
+			to left,
+			$Cool_Gray_Dark_2 40%,
+			$Cool_Gray_Dark_2 40%,
+			$Dark_Blue 0%
+		);
+
+		background-size: 127% 50%;
+		-webkit-background-clip: text;
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background-image: none;
+			color: $Dark_Blue;
+		}
+	}
+}
+
+@mixin Text-Flow-Animate {
+	font-family: $font-family-primary-subheads;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+	animation: flow 1s linear;
+	animation-direction: alternate-reverse;
+	animation-delay: 1.7s;
+
+	&.billing {
+		background-image: linear-gradient(
+			to left,
+			$Dark_Lime 40%,
+			$Dark_Lime 35%,
+			$Cool_Gray_Dark_2 30%,
+			$Cool_Gray_Dark_2 0%
+		);
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background-image: none;
+		}
+	}
+	&.profile {
+		background-image: linear-gradient(
+			to left,
+			$Dark_Blue 40%,
+			$Dark_Blue 35%,
+			$Cool_Gray_Dark_2 30%,
+			$Cool_Gray_Dark_2 0%
+		);
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background-image: none;
+		}
+	}
+	&.storage {
+		background-image: linear-gradient(
+			to left,
+			$Emerald 40%,
+			$Emerald 35%,
+			$Cool_Gray_Dark_2 30%,
+			$Cool_Gray_Dark_2 0%
+		);
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background-image: none;
+		}
+	}
+	&.support {
+		background-image: linear-gradient(
+			to left,
+			$DCBLOX_Purple 40%,
+			$DCBLOX_Purple 35%,
+			$Cool_Gray_Dark_2 30%,
+			$Cool_Gray_Dark_2 0%
+		);
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			background-image: none;
+		}
+	}
+	background-size: 127% 50%;
+	-webkit-background-clip: text;
+}
+
+//END
+
+@mixin Text-Style-Expandable-Section-Label {
+	$map: (
+		576: 10,
+		1440: 12,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-heads;
+	line-height: 1;
+	letter-spacing: 0.3px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Expandable-Section-Label {
+	$map: (
+		576: 10,
+		1440: 12,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-heads;
+	line-height: 1;
+	letter-spacing: 0.3px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Expandable-Section-Tagline {
+	$map: (
+		576: 9,
+		1440: 10,
+		2560: 14,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	line-height: 1.14;
+	letter-spacing: normal;
+	text-align: left;
+	color: rgba(91, 89, 91, 0.8);
+}
+
+@mixin Text-Style-Expandable-Section-Content {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 8,
+		1440: 9,
+		2560: 10,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.18;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Expandable-Section-Content-New {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 9,
+		1440: 11,
+		2560: 12,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.18;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Expandable-Section-Content-Bold {
+	font-family: $proxima-nova-bold;
+	$map: (
+		576: 8,
+		1440: 9,
+		2560: 9,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.18;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Expandable-Section-Title {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 14,
+		1440: 16,
+		2560: 22,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: 1.1px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Expandable-Section-Edit {
+	font-family: $font-family-primary-subheads;
+	font-size: 16px;
+	$map: (
+		576: 10,
+		1440: 12,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1;
+	letter-spacing: 0.8px;
+	text-align: left;
+	color: $Purple;
+}
+
+@mixin Text-Style-Text-Input-Label {
+	$map: (
+		576: 9,
+		1440: 12,
+		2560: 19,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-heads;
+	line-height: 1;
+	letter-spacing: 0.3px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Text-Input-LabelSubText {
+	font-family: $font-family-primary-heads;
+	$map: (
+		576: 12,
+		1440: 14,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.14;
+	letter-spacing: normal;
+	text-align: left;
+	color: rgba(91, 89, 91, 0.8);
+}
+
+@mixin Text-Style-Text-Input-Content {
+	$map: (
+		576: 10,
+		1440: 12,
+		2560: 15,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+	line-height: 1;
+	letter-spacing: 0.3px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Text-Input-Validation {
+	$map: (
+		576: 9,
+		1440: 10,
+		2560: 11,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+	line-height: 1;
+	letter-spacing: 0.3px;
+	text-align: left;
+	color: $DCBLOX_Red;
+}
+
+@mixin Text-Style-Text-Input-Char-Count-Message {
+	font-family: $font-family-primary-heads;
+	$map: (
+		576: 10,
+		1440: 11,
+		2560: 14,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: normal;
+	text-align: right;
+	color: $Med_Lime;
+}
+
+@mixin Text-Style-Text-Input-Char-Count {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 16,
+		1440: 22,
+		2560: 30,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: -1.8px;
+	text-align: center;
+	color: $Med_Lime;
+}
+
+@mixin Text-Style-Slider-Time {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 8,
+		1440: 10,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: 0.8px;
+	text-align: left;
+	color: $White;
+}
+
+@mixin Text-Style-Slider-Label {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 8,
+		1440: 11,
+		2560: 15,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.2;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Header-Page-Title {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 11,
+		1440: 16,
+		2560: 24,
+	);
+	font-size: least-squares-fit($map);
+	opacity: 0.8;
+	line-height: 1;
+	margin-left: 0.1vw;
+	letter-spacing: 1.1px;
+	text-align: left;
+	color: #e3b9ff;
+}
+
+@mixin Text-Style-Header-Page-SubTitle {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 16,
+		1440: 25,
+		2560: 34,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: 1.7px;
+	text-align: left;
+	color: $White;
+}
+
+@mixin Text-Style-Ticket-Request-Message {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 12,
+		1440: 16,
+		2560: 22,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.38;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Ticket-Request-Pref-Label {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 9,
+		1440: 10,
+		2560: 13,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.38;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Error-Modal-Header {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 16,
+		1440: 22,
+		2560: 26,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_White;
+}
+
+@mixin Text-Style-Error-Modal-Body-Bold {
+	font-family: $proxima-nova-bold;
+	$map: (
+		576: 9,
+		1440: 13,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.23;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Error-Modal-Body-Normal {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 9,
+		1440: 13,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.23;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Error-Modal-Body-Email {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 10,
+		1440: 14,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: 0.8px;
+	text-align: center;
+	color: $Purple;
+}
+
+@mixin Text-Style-DateTime-Selector {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 10,
+		1440: 12,
+		2560: 15,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.2;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Ticket-Detail-Logistics-Label {
+	font-family: $font-family-primary-heads;
+	$map: (
+		576: 9,
+		1440: 12,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: 0.5px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Ticket-Detail-Logistics-Name {
+	font-family: $font-family-primary-heads;
+	$map: (
+		576: 8,
+		1440: 10,
+		2560: 14,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: 0.7px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Ticket-Detail-Logistics-Datetime {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 7,
+		1440: 9,
+		2560: 11,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.18;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Ticket-Detail-Logistics-Status {
+	font-family: $proxima-nova-bold;
+	$map: (
+		576: 7,
+		1440: 9,
+		2560: 11,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.18;
+	letter-spacing: normal;
+	text-align: left;
+	color: $Med_Lime;
+}
+
+@mixin Text-Style-Ticket-Flag {
+	font-family: $font-family-primary-heads;
+	$map: (
+		576: 10,
+		1440: 12,
+		2560: 15,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 0.87;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Purple;
+}
+
+@mixin Text-Style-Confirmation-Title {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 12,
+		1440: 20,
+		2560: 28,
+	);
+	font-size: least-squares-fit($map);
+	letter-spacing: 1.1px;
+	line-height: 22px;
+	text-align: center;
+	//color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Confirmation-Message {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 8,
+		1440: 12,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 16px;
+	text-align: center;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Modal-Wizard-TItle {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 12,
+		1440: 18,
+		2560: 34,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1;
+	letter-spacing: 1.7px;
+	text-align: center;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Modal-Wizard-Subtitle {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 8,
+		1440: 10,
+		2560: 13,
+	);
+	font-size: least-squares-fit($map);
+	font-stretch: normal;
+	line-height: 1.08;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Online-Payment-Instructions {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 18,
+		1440: 22,
+		2560: 26,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.1;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Online-Payment-Print-Options {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 12,
+		1440: 14,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 1.14;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+/**
+* Common DC Blox font styles
+*/
+/** HEADINGS */
+@mixin Text-Style-Ticket-Modal {
+	font-family: $font-family-primary-subheads;
+	$size_map: (
+		576: 26,
+		1440: 34,
+		2560: 38,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: 1;
+	letter-spacing: 1.7px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+/**
+* Use Screen-High-Styles to set font size, letter-spacing, line-height from 1441px to 2560px and beyond
+* Use Screen-Mid-Styles to set font size, letter-spacing, line-height from 1025px to 1440px
+* Use Screen-Mid-Tmp-Styles to set font size, letter-spacing, line-height from 0px to 1440px (used until 1024px styles are avaiable)
+* Use Screen-Low-Styles to set font size, letter-spacing, line-height from 0px to 1024px
+* Arguments:
+*   - font-size (i.e., 45px) - required
+*   - letter-spacing (i.e., 1px) - optional; default is normal
+*   - line-height (i.e., 1 or 100%) - optional; default is 1
+*/
+@mixin Text-Style-New-Ticket-Modal {
+	@include Screen-High-Styles(45px, 2px, 120%);
+	@include Screen-Mid-Styles(34px, 0.5em, 100%);
+	@include Screen-Low-Styles(25px, 0.2em, 1);
+	font-family: $font-family-primary-subheads;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Section-Head {
+	font-family: $font-family-primary-subheads;
+	$size_map: (
+		576: 16,
+		1440: 22,
+		2560: 28,
+	);
+	$line_height_map: (
+		576: 16,
+		1440: 22,
+		2560: 29,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: least-squares-fit($line_height_map);
+	letter-spacing: 0px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+/** BODY COPY */
+@mixin Text-Style-Body-Copy {
+	font-family: $proxima-nova-regular;
+	$size_map: (
+		576: 11,
+		1440: 13,
+		2560: 15,
+	);
+	line-height: 1.08;
+	letter-spacing: normal;
+	font-size: least-squares-fit($size_map);
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+/** BODY COPY SMALL */
+@mixin Text-Style-Body-Copy-Small-Regular {
+	font-family: $proxima-nova-regular;
+	$size_map: (
+		576: 9,
+		1440: 11,
+		2560: 12,
+	);
+	$line_height_map: (
+		576: 12,
+		1440: 13,
+		2560: 14,
+	);
+	$letter_spacing_map: (
+		1440: 0,
+		// 2560: 14,
+			2560: 4,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: least-squares-fit($line_height_map);
+	letter-spacing: least-squares-fit($letter_spacing_map);
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+	@media screen AND (max-width: 1440px) {
+		letter-spacing: 0px;
+	}
+}
+
+/** CALLOUTS */
+@mixin Text-Style-Callouts-Small {
+	font-family: $font-family-primary-subheads;
+	$size_map: (
+		576: 10,
+		1440: 12,
+		2560: 14,
+	);
+	$line_height_map: (
+		576: 10,
+		1440: 12,
+		2560: 15,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: least-squares-fit($line_height_map);
+	letter-spacing: 0px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+/** STATUS */
+@mixin Text-Style-Status-Head {
+	font-family: $font-family-primary-subheads;
+	$size_map: (
+		576: 12,
+		1440: 13,
+		2560: 14,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: 1.08;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+@mixin Text-Style-Callouts-Large {
+	font-family: $font-family-primary-subheads;
+	$size_map: (
+		576: 13,
+		1440: 15,
+		2560: 17,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: 1.2;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+/** STATUS */
+@mixin Text-Style-Status-Head {
+	font-family: $font-family-primary-subheads;
+	$size_map: (
+		576: 11,
+		1440: 13,
+		2560: 15,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: 1.08;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+/** FORMS */
+@mixin Text-Style-Form-Dropdown-Selection {
+	font-family: $font-family-primary-subheads;
+	$size_map: (
+		576: 11,
+		1440: 16,
+		2560: 20,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: 1.19;
+	letter-spacing: 0.8px;
+	text-transform: capitalize;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+@mixin Text-Style-Form-Labels-Float {
+	font-family: $font-family-primary-heads;
+	$size_map: (
+		576: 12,
+		1440: 16,
+		2560: 20,
+	);
+	$line_height_map: (
+		576: 16,
+		1440: 16,
+		2560: 16,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: least-squares-fit($line_height_map);
+	// letter-spacing: 50px;
+	letter-spacing: 0px;
+	text-transform: capitalize;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+@mixin Text-Style-Form-Hint-Text {
+	font-family: $font-family-primary-subheads;
+	$size_map: (
+		576: 12,
+		1440: 14,
+		2560: 16,
+	);
+	$line_height_map: (
+		576: 12,
+		1440: 14,
+		2560: 16,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: least-squares-fit($line_height_map);
+	letter-spacing: 0px;
+	text-transform: capitalize;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}
+
+@mixin Text-Style-Form-Ghost-Text {
+	font-family: $proxima-nova-regular;
+	$size_map: (
+		576: 13,
+		1440: 15,
+		2560: 16,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: 1.2;
+	letter-spacing: normal;
+}
+
+@mixin Text-Style-Form-Character-Count {
+	font-family: $font-family-primary-subheads;
+	$size_map: (
+		576: 22,
+		1440: 30,
+		2560: 34,
+	);
+	font-size: least-squares-fit($size_map);
+	line-height: 1;
+	letter-spacing: -1.2px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
+}

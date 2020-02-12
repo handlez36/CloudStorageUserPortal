@@ -1,0 +1,154 @@
+/* Attachment Modal */
+.attachment-modal {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	.modal-header {
+		display: none;
+	}
+	.modal-footer {
+		display: none;
+	}
+	.modal-body {
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 0;
+	}
+	.modal-content {
+		border-radius: 0px;
+	}
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+
+		.exit-button {
+			margin-top: 0.2vh !important;
+			align-self: flex-end;
+		}
+
+		.error {
+			text-align: center;
+			margin-bottom: 0.5em;
+			color: $DCBLOX_Red;
+			font-style: italic;
+		}
+
+		.attachment-options-section {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+
+			.submit-button {
+				width: calculateVw(100, 1440);
+				height: calculateVh(50, 1440);
+				margin-bottom: 1vh;
+				color: $White;
+				text-align: center;
+			}
+			.submit-button:nth-child(2) {
+				margin-left: 2vw;
+				margin-top: 1vw;
+			}
+		}
+
+		.attachment-display-section {
+			border-top: 1px solid gray;
+			padding-top: 1vh;
+			border-radius: 0px;
+			.attachment-row {
+				display: flex;
+				flex-direction: row;
+				height: 4vw;
+				padding: 0 1vw;
+				margin-bottom: 1vh;
+
+				.progress-icon {
+					flex: 0 1 4vw;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					height: 100%;
+					border: 1px solid #563f6c;
+					background-color: #563f6c;
+
+					.progress-background {
+						width: 3vw;
+						height: 3vw;
+					}
+
+					.animated-progress {
+						position: absolute;
+						width: 3vw;
+						height: 3vw;
+						stroke-dasharray: 1000;
+						// stroke-dashoffset: 2;
+					}
+
+					svg {
+						position: absolute;
+						width: 3vw;
+						height: 3vw;
+
+						.indicator {
+							transition: stroke-dashoffset 1s;
+							transform-origin: center center;
+							transform: rotate(-90deg);
+							stroke-dasharray: 220;
+							stroke-dashoffset: 220;
+						}
+					}
+
+					@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+						svg {
+							margin-top: -2.9vh;
+						}
+					}
+				}
+
+				.file-name {
+					flex: 0 1 70%;
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
+					@include Text-Style-61;
+					text-align: left;
+					color: gray;
+					padding-bottom: 0.5vh;
+					padding-left: 0.3vw;
+				}
+
+				.status {
+					flex: 0 1 20%;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
+					align-items: center;
+					height: 100%;
+					text-align: center;
+					opacity: 0;
+					transition: opacity 0.5s;
+
+					img {
+						width: 60%;
+						height: 60%;
+					}
+
+					.file-size {
+						text-align: center;
+					}
+				}
+			}
+
+			.attachment-row.scanned-successfully {
+				.indicator {
+					stroke-dashoffset: 0 !important;
+				}
+				.status {
+					opacity: 1 !important;
+				}
+			}
+		}
+	}
+}

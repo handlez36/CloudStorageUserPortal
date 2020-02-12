@@ -1,0 +1,71 @@
+.roster-user-overview-block {
+	width: 6vh;
+	text-align: center;
+
+	.name {
+		$map: (
+			576: 8,
+			1440: 10,
+			2560: 15,
+		);
+		position: relative;
+		font-size: least-squares-fit($map);
+		font-family: $font-family-primary-subheads;
+		background-color: $DCBLOX_Gray;
+		color: $White;
+		line-height: 2vh;
+	}
+	.name-tip {
+		position: absolute;
+		bottom: -15%;
+		right: 42%;
+		border-left: 0.25vw solid transparent;
+		border-right: 0.25vw solid transparent;
+		border-top: 0.25vh solid $DCBLOX_Gray;
+	}
+	.image img {
+		width: 100%;
+	}
+	.roster-count {
+		margin-top: 0.25vh;
+		width: 1.5vh;
+		height: 1.5vh;
+		border-radius: 50%;
+		background-color: $Bright_Blue;
+		font-family: Bourgeois;
+		font-size: 1vh;
+		//font-weight: bold;
+		font-style: normal;
+		font-stretch: condensed;
+		line-height: 1.5vh;
+		letter-spacing: normal;
+		text-align: center;
+		color: $White;
+	}
+	&:hover {
+		.block-wrapper {
+			box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+		}
+		.name {
+			background-color: $Bright_Blue;
+		}
+		.name-tip {
+			border-top: 0.5vh solid $Bright_Blue;
+		}
+	}
+}
+.two-rows .roster-user-overview-block .name {
+	display: none;
+}
+.two-rows .roster-user-overview-block .name-tip {
+	display: none;
+}
+.two-rows .roster-user-overview-block .badge {
+	display: none;
+}
+.two-rows .roster-user-overview-block {
+	padding-left: 1vh;
+}
+.roster-user-overview-block.disabled {
+	opacity: 0.3;
+}

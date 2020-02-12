@@ -1,0 +1,131 @@
+.ticket-conversation-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 100%;
+	.ticket-conversation-background {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-size: cover;
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.banner.conversation-banner {
+		height: 4.65vh;
+		background-color: $Dark_Purple;
+		@include Text-Style-74;
+		span {
+			cursor: pointer;
+		}
+	}
+	.error {
+		@include Text-Style-Text-Input-Char-Count-Message;
+		$map: (
+			576: 16,
+			1440: 18,
+			2560: 20,
+		);
+		font-size: least-squares-fit($map);
+		margin-top: calculateVh(20, 1440);
+		padding: calculateVw(20, 1440);
+	}
+	.ticket-conversation {
+		padding-top: calculateVh(160.4px);
+		height: 100%;
+		z-index: 2000;
+		.conversation {
+			width: calculateVw(415.8, 1440);
+			display: inline-block;
+		}
+		.conversation .comment {
+			min-height: calculateVh(70px, $standard-screen-height-mid);
+		}
+		.table-nav {
+			position: absolute;
+			display: inline-block;
+			height: 100%;
+			width: auto;
+			padding-top: 26.46vh;
+			padding-left: 0.98vw;
+			font-size: 12px;
+			.arrow {
+				display: flex;
+				width: 0.9vw;
+				height: 1.39vh;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.arrow:nth-child(2) {
+				margin-top: 1.11vh;
+				margin-left: 0;
+			}
+		}
+		.lower-filter,
+		.upper-filter {
+			width: 26.9vw !important;
+			background-color: ghostwhite;
+		}
+	}
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		.modal {
+			position: absolute;
+			overflow: visible;
+			margin-top: -1px;
+			height: 0px;
+			border: 1px solid black;
+		}
+		.modal .attachment-modal {
+			height: 0px;
+		}
+		.modal .modal-content {
+			left: 0;
+			width: 97%;
+		}
+	}
+
+	.modal-content {
+		position: absolute;
+		width: 97%;
+		margin-top: 55%;
+	}
+
+	.attachment-done-modal {
+		position: absolute;
+		margin-top: 12.3vh;
+		z-index: 3000;
+		border: 1px solid $DCBLOX_Purple;
+		background-color: $DCBLOX_Purple;
+		border-radius: 5px;
+		left: 30%;
+		width: 12.58vw;
+		height: 19.86vh;
+		visibility: hidden;
+		opacity: 0.95;
+		transition: all 0.25s ease-in;
+		.attachment-modal-image {
+			height: calculateVh(150, 1440);
+			width: 100%;
+			z-index: 200;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		&.done {
+			visibility: visible;
+			opacity: 0.95;
+			transform: translateY(3.47vh);
+			-ms-transform: translateY(50%);
+		}
+		.msg {
+			color: $White;
+			text-align: center;
+			width: 100%;
+		}
+	}
+}

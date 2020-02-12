@@ -1,0 +1,77 @@
+.header-manage-storage {
+	background-color: $White;
+	display: flex;
+	display: -ms-flexbox;
+	flex-direction: column;
+	height: calculateVh(80, 1440);
+
+	.title {
+		margin-top: 1.5vh;
+		align-self: center;
+		@include User-Management-Menu;
+		color: $DCBLOX_Gray;
+	}
+}
+.header-container {
+	display: flex;
+	flex-direction: row;
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		width: calculateVw(880, 1440);
+	}
+	.header-share-detail {
+		flex: 9;
+		background-color: $White;
+		display: flex;
+		flex-direction: row;
+		height: calculateVh(80, 1440);
+
+		.back-arrow {
+			width: 2vw;
+			align-self: center;
+			margin-left: 1vw;
+			cursor: pointer;
+		}
+		.lady-bug {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			img {
+				width: calculateVw(25, 1440);
+				height: calculateVh(35, 1440);
+			}
+		}
+
+		.title {
+			margin-left: 1vw;
+			align-self: center;
+			@include User-Management-Menu;
+			color: $DCBLOX_Gray;
+		}
+	}
+
+	.delete-button {
+		flex: 1;
+		.support-button {
+			height: calculateVh(80, 1440);
+			width: calculateVw(147, 1440);
+			background-color: $Cool_Gray_Light_2;
+			color: $DCBLOX_Gray;
+			.title {
+				margin-left: 2.5vw;
+				@include Create-Ticket-Label;
+			}
+			#delete-button {
+				height: calculateVh(45, 1440);
+				width: calculateVw(35, 1440);
+				margin-left: -0.5vw;
+				margin-top: 0.2vw;
+			}
+		}
+		.support-button:hover {
+			color: $White;
+			background-color: $Med_Rust;
+			background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Med_Rust 48%);
+		}
+	}
+}

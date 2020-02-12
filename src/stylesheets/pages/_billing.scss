@@ -1,0 +1,45 @@
+.main.billing {
+	height: 100%;
+	flex: 0 0 60%;
+
+	.menu-selection {
+		margin-left: 3.8vw;
+	}
+}
+
+.portal-side-menu.billing {
+	.menu-item-name {
+		@include Text-Style-9;
+		color: $DCBLOX_Gray;
+	}
+	.menu-item-name.active {
+		@include Text-Style-9;
+		color: $Dark_Lime;
+	}
+}
+
+.billing-error-modal {
+	position: absolute;
+	margin-top: 12.3vh;
+	z-index: 10;
+	border: 1px solid $DCBLOX_Purple;
+	background-color: $DCBLOX_Purple;
+	border-radius: 5px;
+	margin-left: 10%;
+	width: 12.58vw;
+	height: 19.86vh;
+	visibility: hidden;
+	opacity: 0.9;
+	transition: all 0.25s ease-in;
+	line-height: 20;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+
+	&.fail {
+		visibility: visible;
+		opacity: 0.9;
+		transform: translateY(3.47vh);
+		background-image: url('https://mydcblox.com/cdn/library/support/Support_SubmitTicket_FAILURE_320x286.png');
+	}
+}

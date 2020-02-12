@@ -1,0 +1,230 @@
+// to change entire portal colors we just need to change .column-one-and-two .main , .supporting-content , .extra-content
+.client-portal {
+	height: 100%;
+	display: flex;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	margin-bottom: -1px;
+	align-content: flex-start;
+	flex: 1 0 auto;
+	height: 85.9vh;
+
+	.portal-header {
+		width: 100%;
+		min-height: 6vh !important;
+		max-height: 6vh !important;
+		//background-color: $White;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		background-color: $White;
+
+		// border-right: 1px solid rgba(91, 89, 91, 0.1);
+
+		.company-name {
+			flex: 0 1 auto;
+			align-self: center;
+			padding-left: 1.88vw;
+			@include Text-Style-31;
+		}
+
+		.menu-selection {
+			margin-left: 2.7vw;
+			margin-top: 0.9vh;
+			@include Text-Style-30;
+		}
+	}
+
+	.portal-body {
+		height: 100%;
+		width: 100%;
+		align-content: flex-start;
+		display: flex;
+		flex-direction: row;
+		background-color: $Cool_Gray_Light_2;
+
+		.portal-left {
+			display: flex;
+			flex-direction: column;
+			width: 25.39%;
+			height: 100%;
+			align-content: flex-start;
+
+			.column-one-and-two {
+				display: flex;
+				flex-direction: row;
+				height: 100%;
+				box-shadow: 3px 3px 8px 0px rgba($DCBLOX_Black, 0.15);
+				background-color: $Cool_Gray_Light_2;
+
+				.portal-module-section {
+					flex: 0 0 50.77%;
+					height: 85.97vh;
+					display: flex;
+					flex-direction: column;
+					.image {
+						flex: 1 0 auto;
+
+						.homeImage {
+							position: fixed;
+							margin-left: 1.9vw;
+							width: 9vw;
+							height: auto;
+							top: 77vh;
+							cursor: pointer;
+						}
+						.clickable {
+							transition: transform 0.5s ease-in-out;
+						}
+
+						.clickable:hover {
+							transform: translateY(-40px);
+						}
+					}
+
+					@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+						/* IE10+ specific styles go here */
+						.module_image {
+							left: 0vw !important;
+						}
+					}
+
+					.module_image {
+						width: 12.89vw;
+						height: 87%;
+						position: absolute;
+						top: 18vh;
+						left: 0vw;
+
+						img {
+							width: 25.39vw;
+						}
+					}
+
+					.welcome-section {
+						display: flex;
+						flex-direction: row;
+						margin-top: 0.78vw;
+						margin-left: 0px;
+						width: 12.89vw;
+						position: relative;
+						z-index: 1;
+
+						.welcome-avatar {
+							flex: 0 1 47.11%;
+							text-align: right;
+							padding-right: 0.2vw;
+
+							img {
+								width: 3.9vw;
+								height: 3.9vw;
+							}
+						}
+
+						.welcome-text-section {
+							flex: 0 1 52.89%;
+							padding-left: 0.2vw;
+
+							.welcome-title {
+								@include Text-Style-Medium;
+							}
+
+							.welcome-user-name {
+								@include Text-Style-7;
+								margin-top: 0.6vw;
+							}
+							.home a {
+								@include Text-Style-7;
+								text-decoration: none;
+							}
+						}
+					}
+				}
+
+				.portal-side-menu {
+					flex: 0 0 49.23%;
+					width: 12.85%;
+					height: 85.97vh;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+
+					.side-menu-section {
+						height: 254px;
+						font-size: 12px;
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-start;
+						flex: 1 0 auto;
+					}
+				}
+			}
+		}
+
+		.portal-main {
+			width: 74.61%;
+			height: auto;
+			display: flex;
+			flex-direction: row;
+			& > .main {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				background-color: $Cool_Gray_Light_3;
+				.portal-header {
+					height: 5.56vh;
+					max-height: 5.56vh;
+				}
+				.delete-storage-error-modal {
+					.modal-content {
+						margin-left: 8vw;
+						margin-top: 10vh;
+					}
+				}
+
+				.outer-wrapper .message-text {
+					margin: 2.5vh 2.7vw;
+					padding: 0;
+
+					.start {
+						font-family: $font-family-primary-heads;
+						font-size: 1.1vw;
+						//font-weight: 500;
+						padding-right: 0.1em;
+					}
+					.content {
+						font-family: $font-family-primary-subheads;
+						font-size: 1.02vw;
+						color: $DCBLOX_Gray;
+						letter-spacing: -0.01em;
+						line-height: 1.2em;
+					}
+				}
+			}
+
+			& > .supporting-content {
+				flex: 1 0 auto;
+				background-color: $Cool_Gray_Light_3;
+				.content {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			& > .extra-content {
+				.content {
+					flex: 1 0 auto;
+					height: 150%;
+					width: calculateVw(236, 2560);
+					box-shadow: 3px 3px 8px 0px rgba($DCBLOX_Black, 0.15);
+					background-color: $Cool_Gray_Light_3;
+				}
+			}
+		}
+	}
+
+	.portal-footer {
+		width: 100%;
+		background-color: $Warm_Gray_Dark_1;
+	}
+}

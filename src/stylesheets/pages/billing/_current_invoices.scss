@@ -1,0 +1,100 @@
+.current-invoices-page {
+	padding-left: 3.63vw;
+	width: calculateVw(450, 1440);
+	/** NEW */
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - 5.56vh - 9vh);
+
+	.page-title {
+		margin-bottom: 0.8vh;
+	}
+	.pay-now-large {
+		background-color: transparent;
+		text-align: right;
+		margin-right: 3.4vw;
+		margin-top: 1vh;
+	}
+	.amount-due-section {
+		margin-top: 2.36vh;
+
+		/** NEW */
+		flex: 0 1 auto;
+		height: auto;
+	}
+	.current-invoices-section {
+		margin-top: 2vh;
+		/** NEW */
+		display: flex;
+		flex-direction: column;
+		flex: 1 0 auto;
+
+		.accordian-list {
+			display: flex;
+			height: 100%;
+			overflow-y: hidden;
+		}
+
+		.accordian-list .blox-cycle-view {
+			height: 100%;
+		}
+	}
+	.amount-due-section {
+		width: 25.35vw;
+		.calendar {
+			margin-right: 0.5vw;
+		}
+		.invoice-calendar-container-overview {
+			width: calculateVw(365, 1440);
+			height: calculateVw(110, 1440);
+			.invoice-calendar-action {
+				position: relative;
+			}
+			.next-payment-date {
+				color: $DCBLOX_Red;
+				font-family: $proxima-nova-bold;
+			}
+			.invoice-calendar-amount-due {
+				text-align: left;
+			}
+			.invoice-calendar-next-payment-due {
+				text-align: left;
+			}
+			.invoice-calendar-leftover {
+				text-align: left;
+			}
+			.invoice-calendar-address {
+				position: absolute;
+				right: 0;
+				background-color: transparent;
+				width: 7.4vw;
+				font-size: 0.51vw;
+				text-align: left;
+				line-height: 1.48vh;
+				padding: 0vh 1vw 0 0;
+				color: $DCBLOX_Gray;
+
+				.address-bold {
+					font-family: $proxima-nova-bold;
+				}
+				.address {
+					font-family: $proxima-nova-regular;
+				}
+			}
+		}
+		.invoice-calendar-footnote {
+			color: $DCBLOX_Gray;
+			margin-top: -0.2vh;
+
+			.footnote-remember {
+				color: $DCBLOX_Gray;
+				font-family: $proxima-nova-bold;
+				font-size: 0.8vw;
+			}
+			.footnote-remaining {
+				@include SubHead-Text;
+			}
+		}
+	}
+}

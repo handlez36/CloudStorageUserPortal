@@ -1,0 +1,206 @@
+#sandbox {
+	background-color: White;
+	text-align: center;
+	// padding: 5vw;
+	height: 100%;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	-ms-overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	// border: 2px solid blue;
+	position: relative;
+
+	.menu-gradient-testing {
+		.top-diamond {
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			width: 200px;
+			height: 200px;
+			border: 1px solid blue;
+		}
+		.sides {
+			.left-side {
+				position: absolute;
+				top: 150px;
+				left: 50px;
+				width: 100px;
+				height: 600px;
+				border: 1px solid red;
+			}
+			.right-side {
+				position: absolute;
+				top: 150px;
+				left: 150px;
+				width: 100px;
+				height: 600px;
+				border: 1px solid green;
+			}
+		}
+		.bottom-diamond {
+			position: absolute;
+			top: 650px;
+			left: 50px;
+			width: 200px;
+			height: 200px;
+			border: 1px solid blue;
+		}
+	}
+
+	// .sandbox-test-grid {
+	// 	height: 100%;
+	// }
+
+	// .vertical-grid {
+	// 	width: auto;
+	// 	opacity: 0.5;
+	// 	.react-grid-item {
+	// 		height: 100% !important;
+	// 		background-color: lightcoral;
+	// 		border: 1px solid red;
+	// 	}
+	// }
+
+	// .horizontal-grid {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	width: auto;
+	// 	opacity: 0.5;
+	// 	.react-grid-item {
+	// 		background-color: lightblue;
+	// 		border: 1px solid blue;
+	// 	}
+	// }
+	// .content-grid {
+	// 	width: auto;
+	// 	z-index: 4000;
+	// 	.react-grid-item {
+	// 		background-color: lightsteelblue;
+	// 		border: 1px solid green;
+	// 	}
+	// }
+
+	.test-expandable-section {
+		margin-top: 5vh;
+	}
+
+	.box {
+		width: calculateVw(430, 1440);
+		height: calculateVw(252, 1440);
+	}
+	.toggle-slider {
+		cursor: pointer;
+		height: 2.25vh;
+		width: 2.5vw;
+		vertical-align: text-top;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+		-webkit-tap-highlight-color: transparent;
+
+		.slot {
+			transition: fill 0.5s;
+		}
+		.slider {
+			transition: transform 0.5s;
+		}
+		g {
+			transition: transform 0.5s;
+		}
+
+		&.on {
+			.slider {
+				transform: translate(10.5px, 0);
+			}
+			g {
+				transform: translate(10px, 0);
+			}
+		}
+
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			width: 2.3vw;
+			g {
+				transition: transform 0.5s;
+			}
+
+			&.on {
+				g {
+					transform: translate(20px, 0);
+				}
+			}
+		}
+	}
+
+	.test-text-input {
+		margin-top: 5vh;
+	}
+	.calendar-label {
+		width: 100%;
+		text-align: left;
+		font-size: calc(0.30506vw + 8.01345px);
+		font-family: 'BourgeoisBoldCondensed';
+		line-height: 1;
+		letter-spacing: 0.3px;
+		text-align: left;
+		color: #5b595b;
+	}
+	#calendar {
+		z-index: 6;
+		width: 1.3vw;
+		position: absolute;
+		left: 5.2vw;
+		top: 66vh;
+	}
+
+	.ticket-count {
+		padding-left: 20vw;
+	}
+	.tickets {
+		width: 20vw;
+		height: 30vh;
+		.niamh {
+			position: relative;
+			height: 20vh;
+		}
+	}
+	.sorting {
+		margin-left: 10vw;
+	}
+	.small-share-card {
+		// margin-top: 100px;
+		// margin-left: 100px;
+	}
+}
+
+.radioButtons {
+	position: relative;
+	display: inline-block;
+	background-color: White;
+	border: solid 1px black;
+}
+
+#sandbox,
+.add-user-management {
+	.modal-content {
+		// width: calculateVw(350px);
+		// height: calculateVh(336px);
+	}
+	.modal-header {
+		padding: 0;
+	}
+}
+
+#op_sandbox {
+	background-color: #edefef;
+	height: 100%;
+	padding: 5em;
+	.sample-third-column {
+		width: calculateVw(470px, 1440);
+		height: calculateVh(964, 1024);
+		margin-left: calculateVw(360px, 1440);
+		border: 1px solid black;
+	}
+}

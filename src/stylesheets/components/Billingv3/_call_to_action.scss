@@ -1,0 +1,47 @@
+.call-to-action.v3 {
+	@include FlexboxColumnCenter;
+	.balance-summary {
+		@include FlexboxRow;
+	}
+	.balance-summary .dollar-sign {
+	}
+	.balance-summary .dollars {
+	}
+	.balance-summary .cents {
+	}
+	.balance-action {
+		display: none;
+		.due-today-amount,
+		.overdue-amount {
+			display: none;
+		}
+	}
+	.next-invoice {
+		display: none;
+	}
+	@media screen and (min-width: 1025px) and (max-width: 1440) {
+		.balance-action {
+			display: block;
+			.due-today-amount {
+				display: block;
+			}
+		}
+	}
+	@media screen and (min-width: 1441) and (max-width: 2560) {
+		.balance-action {
+			display: block;
+			.due-today-amount {
+				display: block;
+			}
+			.due-today-more-detail {
+				display: block;
+			}
+		}
+		.next-invoice {
+			display: block;
+		}
+	}
+
+	.text-alert {
+	}
+}

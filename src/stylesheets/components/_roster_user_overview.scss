@@ -1,0 +1,69 @@
+.roster-user-overview {
+	width: 100%;
+	height: 100%;
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+	background-color: $White;
+	padding: 2.5vh;
+	min-width: 225px;
+	.header {
+		width: 100%;
+		height: 5vh;
+		.manage-roster {
+			cursor: pointer;
+			width: 14vh;
+			height: 3.5vh;
+			object-fit: contain;
+			box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+			padding: 0;
+			border: 0;
+			float: right;
+			background-color: #2a7de1;
+			background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, #2a7de1 10%);
+			span {
+				display: block;
+				width: 100%;
+				height: 100%;
+				text-shadow: 1px 1px 0.5px rgba(0, 0, 0, 0.15);
+				font-family: $font-family-primary-subheads;
+				font-size: 1.55vh;
+				font-weight: 500;
+				font-style: normal;
+				font-stretch: condensed;
+				line-height: 3.375vh;
+				letter-spacing: 0.8px;
+				text-align: center;
+				color: $White;
+			}
+		}
+		.title-wrapper {
+			width: 30%;
+			display: inline-block;
+			float: left;
+			.title {
+				$map: (
+					576: 14,
+					1440: 16,
+					2560: 22,
+				);
+				font-family: $font-family-primary-heads;
+				color: $Dark_Blue;
+				line-height: 1;
+				text-align: left;
+				font-size: least-squares-fit($map);
+			}
+			.sub-title {
+				opacity: 0.8;
+				color: $DCBLOX_Gray;
+				text-align: left;
+				@include SubHead_Text;
+			}
+		}
+	}
+	.row-wrapper {
+		display: block;
+	}
+	.row-1 {
+		display: flex;
+		justify-content: space-between;
+	}
+}

@@ -1,0 +1,20 @@
+.ticket-history-row {
+	overflow: hidden;
+	width: 30vw;
+	height: auto;
+	//padding-left: 0.74vw;
+	margin-bottom: 1vh;
+	padding-top: 1vh;
+
+	.ticket:nth-child(2),
+	.ticket:nth-child(3) {
+		margin-left: 1.8vw;
+	}
+}
+
+.ticket-history-row.empty {
+	.no-tickets {
+		@include Text-Style-Medium;
+		color: $White;
+	}
+}

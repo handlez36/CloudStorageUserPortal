@@ -1,0 +1,57 @@
+.blox-grid {
+	.layout {
+		//z-index: 2000;
+		background-color: $Cool_Gray_Light_3;
+	}
+	.layout.widget-outline {
+		.react-grid-item {
+			border: 1px solid red;
+		}
+	}
+}
+
+.blox-micro-grid {
+	width: 100%;
+	height: 100%;
+	.vertical-grid,
+	.horizontal-grid {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.5;
+	}
+	.vertical-grid .react-grid-item {
+		height: 100% !important;
+		// background-color: lightcoral;
+		// border: 1px solid red;
+	}
+	// .horizontal-grid .react-grid-item {
+	// 	background-color: lightblue;
+	// 	border: 1px solid blue;
+	// }
+	.content-grid {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 4000;
+		overflow: hidden;
+	}
+	&.debug {
+		.vertical-grid .react-grid-item {
+			background-color: lightcoral;
+			border: 1px solid red;
+		}
+		.horizontal-grid .react-grid-item {
+			background-color: lightblue;
+			border: 1px solid blue;
+		}
+		.content-grid .react-grid-item {
+			// background-color: lightsteelblue;
+			//background-color: white;
+			border: 1px solid yellow;
+		}
+	}
+}

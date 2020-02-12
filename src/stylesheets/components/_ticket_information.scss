@@ -1,0 +1,18 @@
+.supporting-content.outer-wrapper {
+	height: 100%;
+
+	.ticket-summary {
+		.header {
+			height: 5.63vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+		}
+	}
+
+	.banner.conversation-banner {
+		height: 4.65vh;
+		background-color: $Dark_Purple;
+		@include Text-Style-74;
+	}
+}

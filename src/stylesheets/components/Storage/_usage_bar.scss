@@ -1,0 +1,55 @@
+.usage-bar {
+	// height: calculateVh(220px, 1140);
+	.cls-1 {
+		fill: rgba(0, 0, 0, 0.05);
+		// fill: transparent;
+		// stroke: red;
+	}
+	.cls-2 {
+		fill: #edefef;
+		stroke: lightgrey;
+	}
+	.cls-2,
+	.cls-3,
+	.cls-4 {
+		fill-rule: evenodd;
+	}
+	.cls-3 {
+		fill: #cfd2d3;
+	}
+	.cls-4 {
+		fill: #dfe1e1;
+	}
+	&.atl {
+		.usage-side,
+		.usage-line {
+			stroke: #df6a2e;
+			fill: #df6a2e;
+		}
+	}
+	&.cha {
+		.usage-side,
+		.usage-line {
+			stroke: #8060a9;
+			fill: #8060a9;
+		}
+	}
+	&.hsv {
+		.usage-side,
+		.usage-line {
+			stroke: #416ba9;
+			fill: #416ba9;
+		}
+	}
+	&.bhm {
+		.usage-side,
+		.usage-line {
+			stroke: #a8ad00;
+			fill: #a8ad00;
+		}
+	}
+	text {
+		@include Headings90;
+		color: $Cool_Gray_Dark_3;
+	}
+}

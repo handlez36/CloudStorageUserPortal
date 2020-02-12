@@ -1,0 +1,29 @@
+.invoice-calendar-address {
+	background-color: $White;
+	width: 7.4vw;
+	font-size: 0.51vw;
+	text-align: left;
+	line-height: 1.48vh;
+	padding: 1.5vh 1vw 0 0;
+	color: $DCBLOX_Gray;
+
+	.address-bold {
+		font-family: $proxima-nova-bold;
+	}
+	.address {
+		font-family: $proxima-nova-regular;
+	}
+}
+
+// @media screen and (max-width: 1440px) {
+// 	.invoice-calendar-address {
+// 		color: $DCBLOX_Gray;
+// 		background-color: $White;
+// 		line-height: 1.45vh;
+// 		width: 16.3vw;
+// 		padding-right: 0.6vw;
+// 		padding-top: 1vw;
+// 		font-size: 0.67vw;
+// 		text-align: right;
+// 	}
+//}

@@ -1,0 +1,135 @@
+.portal-layout {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	.portal-header {
+		// flex: 0 1 80px;
+		position: relative;
+		background-color: whitesmoke;
+		// border: 1px solid black;
+	}
+	.portal-main {
+		display: flex;
+		flex-direction: row;
+		flex: 1 0 auto;
+		// border: 1px solid red;
+		.main-nav {
+			flex: 1 0 192px;
+			min-width: 192px;
+			max-width: 192px;
+			@media screen and (max-width: 1024px) {
+				flex: 1 0 160px;
+				min-width: 160px;
+				max-width: 160px;
+			}
+			@media screen and (min-width: 2560px) {
+				flex: 1 0 320px;
+				min-width: 320px;
+				max-width: 320px;
+			}
+			position: relative;
+			// border: 1px solid green;
+		}
+		.main-content {
+			flex: 6 0 auto;
+			position: relative;
+			background-color: $Cool_Gray_Light_3;
+			// border: 1px solid purple;
+		}
+		.main-content .sample-content-grid {
+			position: relative;
+		}
+		@media screen and (min-width: 1441px) and (max-width: 2560px) {
+			.main-content {
+				// padding-left: GetSize(20);
+				// padding-right: GetSize(20);
+			}
+		}
+	}
+	.portal-footer {
+		// flex: 0 1 80px;
+		background-color: black;
+	}
+}
+
+/** v3 Grid styles */
+.portal-layout.v3 {
+	width: 100% !important;
+	.portal-header,
+	.portal-footer {
+		width: 100%;
+		height: GetSize(5);
+	}
+	.portal-main {
+		.main-nav {
+			width: GetSize(20);
+			min-width: GetSize(20);
+			max-width: GetSize(20);
+		}
+		.main-content {
+			flex: 0 1 100%;
+			position: relative;
+			background-color: $Cool_Gray_Light_3;
+			padding-left: ShrinkPadding(1024px, 48px);
+			padding-right: ShrinkPadding(1024px, 48px);
+			// border: 1px solid red;
+		}
+	}
+	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		.portal-header,
+		.portal-footer {
+			height: GetSize(8);
+		}
+		.portal-main {
+			.main-nav {
+				width: GetSize(24);
+				min-width: GetSize(24);
+				max-width: GetSize(24);
+			}
+			.main-content {
+				padding-left: ShrinkPadding(1440px, 48px);
+				padding-right: ShrinkPadding(1440px, 48px);
+				// border: 1px solid blue;
+			}
+		}
+	}
+	// @media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
+		.portal-header,
+		.portal-footer {
+			height: GetSize(10);
+		}
+		.portal-main {
+			.main-nav {
+				width: GetSize(40);
+				min-width: GetSize(40);
+				max-width: GetSize(40);
+			}
+			.main-content {
+				padding-left: ShrinkPadding(2560px, 160px);
+				padding-right: ShrinkPadding(2560px, 160px);
+			}
+		}
+	}
+}
+
+.client-portal .portal-body {
+	.company-name .default-filter-wrapper {
+		width: 12vw;
+		border-bottom: none;
+		.default-filter {
+			position: relative;
+			height: 100%;
+			bottom: 1%;
+			.dd-title {
+				position: absolute;
+				top: auto;
+				bottom: 0.6vh;
+				width: auto;
+				margin-top: 1.7vh;
+			}
+		}
+	}
+}

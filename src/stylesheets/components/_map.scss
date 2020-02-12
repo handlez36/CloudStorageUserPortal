@@ -1,0 +1,141 @@
+.map-wrapper {
+	position: relative;
+	z-index: 5;
+	display: inline-block;
+
+	@media screen and (max-width: 1440px) {
+		#map-image {
+			width: 25vw;
+		}
+	}
+	.svg {
+		width: 2vw;
+	}
+	.dot {
+		position: absolute;
+		box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.16);
+		width: 11px;
+		height: 11px;
+		border-radius: 50%;
+		background-color: #b4d334;
+		border: 6px solid transparent;
+	}
+
+	.location-image svg {
+		position: absolute;
+		width: calc(75 / 2560 * 100 * 1vw);
+		height: calc(44 / 1440 * 100 * 1vh);
+		bottom: calc(20 / 1440 * 100 * 1vh);
+		right: calc(20 / 2560 * 100 * 1vw);
+		font-family: $font-family-primary-heads;
+	}
+	@keyframes grow-up {
+		from {
+			transform: scaleY(0);
+		}
+		to {
+			transform: scaleY(1);
+		}
+	}
+
+	#atlanta-building {
+		position: absolute;
+		z-index: 10;
+		left: -10px;
+		top: -14px;
+		transform: scaleX(0);
+		transform-origin: bottom;
+		animation: grow-up cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.6s forwards;
+		animation-delay: 0.5s;
+	}
+
+	#chat-building {
+		position: absolute;
+		left: -12px;
+		top: -12px;
+		transform: scaleX(0);
+		transform-origin: bottom;
+		animation: grow-up cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.6s forwards;
+		animation-delay: 0.5s;
+	}
+
+	#huntsville-building {
+		position: absolute;
+		left: -12px;
+		top: -12px;
+		transform: scaleX(0);
+		transform-origin: bottom;
+		animation: grow-up cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.6s forwards;
+		animation-delay: 0.5s;
+	}
+	#birmingham-building {
+		position: absolute;
+		left: -12px;
+		top: -12px;
+		transform: scaleX(0);
+		transform-origin: bottom;
+		animation: grow-up cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.6s forwards;
+		animation-delay: 0.5s;
+	}
+	.dot-1 {
+		top: 49%;
+		left: 55%;
+
+		#dot-1 {
+			margin-left: -0.9vw;
+			margin-top: -4vh;
+			pointer-events: none;
+			img {
+				animation: grow-up cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.6s forwards;
+				animation-delay: 0.5s;
+			}
+		}
+	}
+	.dot-2 {
+		padding: 0.5px;
+		z-index: 6;
+		top: 41%;
+		left: 41%;
+		#dot-2 {
+			margin-left: -1vw;
+			margin-top: -4vh;
+			pointer-events: none;
+		}
+	}
+	.dot-3 {
+		padding: 0.5px;
+		top: 26%;
+		left: 34%;
+		#dot-3 {
+			margin-left: -1vw;
+			margin-top: -4vh;
+			pointer-events: none;
+		}
+	}
+	.dot-4 {
+		padding: 0.5px;
+		z-index: 6;
+		top: 61%;
+		left: 38%;
+		#dot-4 {
+			margin-left: -1vw;
+			margin-top: -4vh;
+			pointer-events: none;
+		}
+	}
+
+	@keyframes dot-grow {
+		from {
+			box-shadow: 0 0 0 0 #b4d334;
+		}
+
+		to {
+			box-shadow: 0 0 0 18px transparent;
+		}
+	}
+
+	.dot:hover {
+		animation: dot-grow 1.5s infinite;
+		cursor: pointer;
+	}
+}

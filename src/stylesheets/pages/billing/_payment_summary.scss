@@ -1,0 +1,352 @@
+.payment-summary-page {
+	padding-top: calculateVh(21px, $standard-screen-height-mid);
+	padding-left: calculateVw(35px, $standard-screen-width-mid);
+	padding-right: calculateVw(35px, $standard-screen-width-mid);
+	.expandable-content {
+		width: calculateVw(400, $standard-screen-width-mid);
+		min-height: calculateVh(187px, $standard-screen-height-mid);
+		margin-top: calculateVh(10px, $standard-screen-height-mid);
+	}
+
+	.user-actions-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		.icon img {
+			width: calculateVw(18.5px, $standard-screen-width-mid);
+			height: calculateVw(18.5px, $standard-screen-width-mid);
+			cursor: pointer;
+		}
+		.action {
+			margin-left: calculateVw(3.3px, $standard-screen-width-mid);
+			cursor: pointer;
+			@include Text-Style-Online-Payment-Print-Options;
+		}
+	}
+	.payment-details-section {
+		.expandable-content {
+			min-height: calculateVh(113px, $standard-screen-height-mid);
+		}
+		.right-side .field-content {
+			margin-top: calculateVh(-5px, $standard-screen-height-mid);
+			.content {
+				order: 2;
+				padding-left: calculateVw(6px, $standard-screen-width-mid);
+				align-self: center;
+			}
+			svg {
+				order: 1;
+				width: calculateVw(33px, $standard-screen-width-mid);
+				height: calculateVw(21.2px, $standard-screen-height-mid);
+			}
+		}
+	}
+	.invoices-section {
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			.expandable-component-header {
+				.title {
+					flex: 7;
+				}
+				.edit {
+					flex: 2;
+				}
+			}
+		}
+
+		.edit {
+			margin-right: 0.5vw;
+		}
+
+		.value,
+		.header {
+			$map: (
+				576: 10,
+				1440: 13,
+				2560: 16,
+			);
+			font-size: least-squares-fit($map);
+		}
+		.invoices .invoice-row {
+			display: flex;
+			flex-direction: row;
+			margin-top: calculateVh(9px, $standard-screen-height-mid);
+			border-bottom: 1px solid $Cool_Gray_Light_3;
+			padding-bottom: calculateVh(13px, $standard-screen-height-mid);
+			& .invoicenum {
+				order: 1;
+				width: calculateVw(58px, $standard-screen-width-mid);
+			}
+			& .datedue {
+				order: 2;
+				width: calculateVw(60px, $standard-screen-width-mid);
+				margin-left: calculateVw(18px, $standard-screen-width-mid);
+				padding-left: 0;
+			}
+			& .amountduetoday {
+				order: 3;
+				width: calculateVw(60px, $standard-screen-width-mid);
+				margin-left: calculateVw(10px, $standard-screen-width-mid);
+			}
+			& .amountpaid {
+				order: 4;
+				width: calculateVw(72px, $standard-screen-width-mid);
+				margin-left: calculateVw(70.2px, $standard-screen-width-mid);
+			}
+		}
+	}
+	.total-payment-section {
+		margin-top: calculateVh(10px, $standard-screen-height-mid);
+		background-color: $White;
+	}
+	.support-button.circle-large {
+		display: none;
+	}
+}
+.payment-summary-page.review {
+	.user-actions-row {
+		display: none;
+	}
+	.payer-details-section {
+		display: none;
+	}
+
+	.value,
+	.header {
+		$map: (
+			576: 10,
+			1440: 13,
+			2560: 16,
+		);
+		font-size: least-squares-fit($map);
+	}
+	.invoices-section {
+		.expandable-row {
+			margin-left: calculateVw(10px, $standard-screen-width-mid);
+		}
+		.edit {
+			flex: 0 1 calculateVw(70px, $standard-screen-width-mid);
+		}
+		.accordian-field.amountduetoday {
+			padding-left: 0;
+			width: calculateVw(68px, $standard-screen-width-mid);
+			margin-left: calculateVw(15px, $standard-screen-width-mid);
+		}
+		.accordian-field.invoicenum {
+			order: 1;
+			padding-left: 0;
+			width: calculateVw(38px, $standard-screen-width-mid);
+		}
+		.accordian-field.datesent {
+			order: 2;
+			width: calculateVw(48px, $standard-screen-width-mid);
+		}
+		.accordian-field.amountpaid {
+			margin-left: calculateVw(40.2px, $standard-screen-width-mid);
+			border-bottom: 2px solid $Purple;
+			.value {
+				$map: (
+					576: 12,
+					1440: 15,
+					2560: 18,
+				);
+				font-size: least-squares-fit($map);
+			}
+		}
+	}
+	.support-button.circle-large {
+		display: block;
+		margin-top: calculateVh(11px, $standard-screen-height-mid);
+		width: calculateVw(51px, $standard-screen-width-mid);
+		height: calculateVw(50px, $standard-screen-width-mid);
+	}
+}
+
+@media print {
+	/**
+  * Disable all columns except third/main column
+  */
+	html,
+	body {
+		height: 99%;
+	}
+	.portal-left {
+		display: none !important;
+		flex: 0 1 0 !important;
+	}
+	.portal-main .supporting-content {
+		display: none !important;
+		flex: 0 1 0 !important;
+	}
+	.footerContainer {
+		display: none !important;
+	}
+	#feedback-image {
+		display: none !important;
+	}
+	.extra-content {
+		.content {
+			display: none;
+		}
+	}
+	.page-header {
+		display: none;
+	}
+
+	/**
+  * Restyle third/main column
+  */
+	.client-portal .portal-body .portal-main > .main {
+		max-width: 100% !important;
+		// flex: 0 1 calculateVw(1280px, $standard-screen-width-mid) !important;
+		flex: 0 1 50% !important;
+		// flex-basis: calculateVw(1280px, $standard-screen-width-mid) !important;
+		// width: calculateVw(1280px, $standard-screen-width-mid) !important;
+		width: 50% !important;
+	}
+
+	.expandable-content {
+		width: 100% !important;
+		border: 1px solid black !important;
+	}
+	.user-actions-row {
+		display: none !important;
+	}
+}
+
+@media print {
+	.portal-main .extra-content {
+		display: none;
+	}
+	.page-header {
+		.status {
+			display: none;
+		}
+	}
+	.payment-summary-page #formButton {
+		display: none;
+	}
+	.total-amount-due-wrapper {
+		.total-amount {
+			font-size: 40px;
+		}
+		.total-amount-due {
+			font-size: 30px;
+			border-bottom: none;
+		}
+	}
+	.page-status {
+		.wrapper {
+			.progress-indicator,
+			circle {
+				display: none;
+			}
+		}
+	}
+	.wrapper {
+		.icon {
+			display: none;
+		}
+	}
+
+	.module-title,
+	.menu-selection {
+		display: none;
+	}
+	_::-webkit-full-page-media,
+	_:future,
+	:root .payment-summary-page {
+		width: 200%;
+		margin-left: calculateVw(-15, 1440);
+	}
+	.payment-summary-page {
+		@supports (-moz-appearance: none) {
+			width: 250%;
+			margin-left: calculateVw(-30, 1440);
+		}
+		@supports (-ms-ime-align: auto) {
+			width: 275%;
+		}
+		width: 250%;
+		margin-left: calculateVw(50, 1440);
+		.content {
+			font-size: 24px;
+			margin-left: 15px;
+		}
+		.icon {
+			img {
+				width: 50px;
+				height: 50px;
+			}
+		}
+
+		.payer-details-section {
+			.title {
+				font-size: 40px;
+				margin-left: 40px;
+			}
+			.label {
+				font-size: 28px;
+				margin-left: 15px;
+			}
+		}
+		.payment-details-section {
+			.title {
+				font-size: 40px;
+				margin-left: 40px;
+			}
+			.label {
+				font-size: 28px;
+				margin-left: 15px;
+			}
+		}
+		.invoices-section {
+			.title {
+				font-size: 40px;
+				margin-left: 40px;
+			}
+			.expandable-content {
+				.invoices {
+					.invoice-row {
+						.accordian-field {
+							width: 60%;
+							//padding: 2vw;
+
+							.header {
+								margin-bottom: 2vh;
+								margin-right: 2vw;
+							}
+
+							&.amountduetoday,
+							&.datedue,
+							&.amountpaid {
+								padding: 2vw;
+								margin-left: calculateVw(5, 1440);
+								margin-right: calculateVw(25, 1440);
+							}
+
+							&.invoicenum {
+								padding: 2vw;
+								margin-left: -10vw;
+							}
+						}
+					}
+				}
+			}
+
+			.accordian-field {
+				width: 150%;
+			}
+			.header {
+				font-size: 26px;
+				width: 120%;
+				margin-left: 15px;
+				color: $DCBLOX_Gray;
+			}
+			.value {
+				font-size: 26px;
+				margin-left: 15px;
+			}
+		}
+	}
+}

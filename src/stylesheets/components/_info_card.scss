@@ -1,0 +1,161 @@
+.cards-holder {
+	width: 100%;
+	height: 100%;
+	.top-card {
+		@media screen and (min-width: 2560px) {
+			padding-bottom: 1.7vw;
+		}
+		padding-bottom: 1.8vw;
+		&.expanded {
+			padding-bottom: 1vh;
+		}
+		z-index: 400;
+	}
+
+	.bottom-card {
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			margin-top: 3vh;
+		}
+		tr {
+			min-height: calculateVw(30, 1440);
+		}
+
+		z-index: 300;
+	}
+
+	.card-wrapper {
+		transition: transform 0.5s ease-in-out;
+		box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+		width: 100%;
+		height: 100%;
+		min-height: 110px;
+		.card-container {
+			min-width: 135px;
+
+			display: flex;
+			flex-direction: column;
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				height: calculateVh(220, 1440);
+			}
+			.card-top-section {
+				min-height: 80px;
+				flex: 4;
+				max-height: calculateVh(180, 1440);
+				height: calculateVh(220, 1440);
+				// @media screen and (max-width: 1440px) {
+				// 	max-height: calculateVh(170, 1440);
+				// }
+				img {
+					min-height: 80px;
+					width: 100%;
+					max-height: calculateVh(220, 1440);
+					height: 100%;
+				}
+			}
+			.card-bottom-section {
+				min-height: 30px;
+				flex: 1;
+				background-color: $White;
+
+				.card-title-container {
+					display: flex;
+					flex-direction: row;
+					min-height: calculateVh(45, 1440);
+					max-height: calculateVh(89, 1440);
+					height: calculateVh(75, 1440);
+					@media screen and (min-width: 2560px) {
+						height: calculateVh(89, 1440);
+					}
+					z-index: 400;
+					background-color: $White;
+					.card-title {
+						display: flex;
+						flex-direction: column;
+						margin-top: 1vh;
+						cursor: pointer;
+						flex: 4;
+						@include Section-Head;
+						margin-left: 0.5vw;
+						color: $DCBLOX_Gray;
+						font-size: 1.2vw;
+						.admin {
+							opacity: 0.8;
+							font-size: 1vw;
+							margin-top: -1.2vh;
+						}
+					}
+					.card-image {
+						margin-top: 1vh;
+						flex: 1;
+						cursor: pointer;
+
+						img {
+							margin-left: 0.5vw;
+							width: calculateVw(20, 1440);
+							height: calculateVw(20, 1440);
+						}
+					}
+				}
+
+				.expanded {
+					//min-height: calculateVh(124, 1440);
+					display: flex;
+					flex-direction: column;
+					background-color: $White;
+					position: relative;
+					z-index: 400;
+					.card-button {
+						align-self: center;
+						margin-bottom: 1vh;
+						.support-button {
+							&.gradient {
+								width: calculateVw(125, 1440);
+								font-size: calculateVw(16, 1440);
+								background-color: $Blue;
+								background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 37%, $Blue 10%);
+							}
+						}
+					}
+					.field-name {
+						flex: 1;
+						@include Small-Text-Profile;
+						color: $DCBLOX_Gray;
+						opacity: 0.8;
+						padding-left: 0.5vw;
+						min-width: 3.5vw;
+						padding-bottom: 0.5vh;
+					}
+					.field-value {
+						padding-left: 0.5vw;
+						padding-bottom: 0.5vh;
+						flex: 3;
+						width: 100%;
+						@include Small-Text-Profile;
+						color: $DCBLOX_Gray;
+						word-break: break-all;
+					}
+
+					tr:after {
+						content: '';
+						display: block;
+						top: 0;
+						width: 80%;
+						height: 0vh;
+						left: 1vw;
+						position: relative;
+						margin-right: 0.1vw;
+						border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+						margin-bottom: 0.2vh;
+					}
+
+					tr:nth-last-of-type(1):after {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+}
+.card-wrapper:hover {
+	transform: translateY(-7px);
+}

@@ -1,0 +1,36 @@
+/* Conversation Body */
+.conversation-body {
+	background-color: rgba(87, 57, 107, 0.3);
+	padding-top: 1.04vh;
+	padding-bottom: 1.04vh;
+	overflow: hidden;
+
+	.comment.empty-form {
+		display: none;
+
+		.details {
+			.detail-box {
+				padding: 0.1vw 0.1vw;
+				min-height: 58px;
+				height: auto;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.detail-box textarea {
+				width: 100%;
+				height: 100%;
+				background-color: $White;
+				border: 1px solid $White;
+				font-size: 8px;
+				padding: 0.8vw;
+			}
+
+			.detail-box button {
+				margin-top: 0.8vh;
+				font-size: 6px;
+				width: 100%;
+			}
+		}
+	}
+}

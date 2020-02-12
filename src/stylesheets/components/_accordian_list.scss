@@ -1,0 +1,32 @@
+.accordian-list {
+	width: 27.32vw;
+	.invoice-row {
+		margin-top: 1vh;
+	}
+	.table-nav {
+		position: absolute;
+		display: inline-block;
+		height: 100%;
+		width: auto;
+		padding-top: 26.46vh;
+		padding-left: 0.98vw;
+		font-size: 12px;
+	}
+	.arrow {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 0.9vw;
+		height: 1.39vh;
+		margin-top: 1vh;
+		img {
+			margin-left: 23vw;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.arrow:nth-child(2) {
+		margin-top: 1.11vh;
+		margin-left: 0;
+	}
+}

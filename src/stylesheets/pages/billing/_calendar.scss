@@ -1,0 +1,103 @@
+.calendar {
+	// padding: 1.95vh 1.57vw;
+	background-color: $Med_Lime;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 6.96vw;
+	flex: 2;
+
+	.cls-1 {
+		fill: #7c7a7c;
+	}
+
+	.cls-2 {
+		fill: #3e3e3e;
+	}
+
+	.cls-3 {
+		fill: #b5d334;
+	}
+
+	.cls-4 {
+		fill: #949300;
+	}
+
+	.calendar-container {
+		position: relative;
+		svg {
+			width: calculateVw(110, 1440);
+			height: calculateVh(150, 1440);
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				width: calculateVw(100, 1440);
+			}
+		}
+
+		.days-left-container {
+			position: absolute;
+			width: 93%;
+			bottom: 5%;
+			left: 0.1vw;
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				bottom: 0%;
+			}
+			@supports (-ms-ime-align: auto) {
+				bottom: 0%;
+			}
+
+			.days-left {
+				font-family: $font-family-primary-subheads;
+				font-size: calc(12px + 5 * (100vw - 1440px) / (2560 - 1440)); //1.38vh;
+				color: $White;
+				letter-spacing: 0.033vw;
+				text-align: center;
+			}
+		}
+	}
+}
+
+/** Billing v3 styles */
+.calendar-day {
+	position: relative;
+	flex: 1 0 auto;
+	width: 32.5%;
+	background-color: $Med_Lime;
+	@include FlexboxCenter;
+	.cls-1 {
+		fill: #7c7a7c;
+	}
+	.cls-2 {
+		fill: #3e3e3e;
+	}
+	.cls-3 {
+		fill: #b5d334;
+	}
+	.cls-4 {
+		fill: #949300;
+	}
+	svg {
+		width: 128px;
+		height: 175px;
+		// @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		// 	width: calculateVw(100, 1440);
+		// }
+	}
+	@media screen and (max-width: 1024) {
+		svg {
+			width: 52px;
+			height: 72px;
+		}
+	}
+	@media screen and (min-width: 1025px) and (max-width: 1440) {
+		svg {
+			width: 73px;
+			height: 100px;
+		}
+	}
+	@media screen and (min-width: 1441) and (max-width: 2560) {
+		svg {
+			width: 128px;
+			height: 175px;
+		}
+	}
+}

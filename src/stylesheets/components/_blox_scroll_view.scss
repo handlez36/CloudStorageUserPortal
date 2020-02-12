@@ -1,0 +1,64 @@
+.scroll-view {
+	.scrollbar-track {
+		display: none;
+		position: absolute;
+		right: 0;
+		width: calculateVw(11px);
+	}
+	.scrollbar-line {
+		margin-left: 40%;
+		height: 100%;
+		border-left: 1px solid rgba(0, 0, 0, 0.16);
+	}
+	.scrollbar-img {
+		display: none;
+		position: absolute;
+		right: 0%;
+		background-color: $Purple;
+		width: calculateVw(11px);
+		height: calculateVh(31px);
+	}
+}
+.scroll-view.expanded {
+	.scrollbar-track.show {
+		display: block;
+	}
+	.scrollbar-img.show {
+		display: block;
+	}
+}
+
+.ScrollbarsCustom-TrackY {
+	width: 10px;
+	background: transparent !important;
+	border-radius: 0 !important;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 5px;
+		border-left: 1px solid $Cool_Gray_Med_3;
+		transform: translate(-50%);
+	}
+}
+.ScrollbarsCustom-ThumbY {
+	background: none !important;
+	background-color: $Cool_Gray_Med_3 !important;
+	border-radius: 0 !important;
+	&.purple {
+		background-color: $Dark_Purple !important;
+	}
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.ScrollbarsCustom-Content {
+		min-height: auto;
+	}
+	.ScrollbarsCustom-TrackY.hide {
+		opacity: 1;
+		&.hide {
+			opacity: 0;
+		}
+	}
+}

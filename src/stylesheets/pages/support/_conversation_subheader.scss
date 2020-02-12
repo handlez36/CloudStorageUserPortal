@@ -1,0 +1,118 @@
+/* Conversation SubHeader */
+.conversation-sub-header {
+	min-height: 12.29vh;
+	display: flex;
+	flex-direction: column;
+	padding-top: 1vh;
+	background-color: $DCBLOX_Purple;
+
+	.new-comment-section {
+		display: flex;
+		flex-direction: row;
+		padding-left: 0.74vw;
+
+		.new-comment-image {
+			width: calculateVw(32, 1440);
+			height: calculateVw(50, 1440);
+		}
+
+		.new-comment-text-field {
+			padding-left: 0.43vw;
+			position: relative;
+
+			.small-avatar {
+				position: absolute;
+				display: inline-block;
+				width: 1.17vw;
+				height: 1.17vw;
+				border-radius: 50px;
+				overflow: hidden;
+				z-index: 1000;
+				margin-left: 0.27vw;
+				margin-top: 0.9vh;
+
+				img {
+					position: absolute;
+					width: 100%;
+				}
+			}
+
+			textarea {
+				width: calculateVw(330, 1440);
+				height: calculateVh(90, 1440);
+				border-style: none;
+				padding-left: 1.76vw;
+				box-shadow: 1.9px 2.3px 9.5px 0.5px rgba($DCBLOX_Black, 0.16);
+				background-color: $White;
+				line-height: 0;
+				padding-top: 0.97vh;
+				resize: none;
+				overflow: hidden;
+				caret-color: $DCBLOX_Red;
+				@include Text-Style-69;
+				color: #543c68;
+			}
+
+			.attachment-icon {
+				position: absolute;
+				display: inline-block;
+				width: 0.51vw;
+				height: 1.46vh;
+				bottom: 17%;
+				right: 2%;
+				cursor: pointer;
+
+				.attachment-count {
+					position: absolute;
+					@include Text-Style-69;
+					margin-top: 0.5vh;
+					margin-left: -2vw;
+					width: 2vw;
+				}
+
+				img {
+					position: absolute;
+					width: 100%;
+					transition: transform 0.3s;
+				}
+
+				img:hover {
+					transform: scale(1.6);
+				}
+
+				.attachment-details {
+					width: 12vw;
+					min-height: 10vh;
+					margin-left: -12vw;
+					margin-top: 1vh;
+					background-color: #543c68;
+					border-radius: 5px;
+					padding: 0.3em;
+					opacity: 0.95;
+					border: 1px solid #543c68;
+
+					.attachment-detail {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						@include Text-Style-User-Contact-Field-Value;
+						color: $White;
+					}
+				}
+			}
+		}
+	}
+
+	.submit-button-section {
+		width: calculateVw(379, 1440);
+		padding-top: 1.5vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+
+		button {
+			width: calculateVw(100, 1440);
+			height: calcualteVh(50, 1440);
+		}
+	}
+}

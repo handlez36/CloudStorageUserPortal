@@ -1,0 +1,28 @@
+.canvasContainer {
+    position: absolute;
+    top: 135px;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 74%;
+}
+
+canvas {
+    position: absolute;
+    left: 0px;
+    max-width: 100%;
+    min-width: 100%;
+    pointer-events: none;
+}
+
+.controls {
+    margin-top: 400px;
+    height: 300px;
+}
+
+.btn {
+    position: relative;
+    // margin-top: 300px;
+    margin-left: 50px;
+    padding: 5px;
+    margin-top: 5px;
+}

@@ -1,0 +1,33 @@
+.whitelist-selection-stage {
+	width: 100%;
+	// height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: calculateVh(350px, $standard-screen-height-mid);
+	.scroll-view {
+		height: calculateVh(285px, $standard-screen-height-mid);
+		& .scrollbar-track {
+			height: 100%;
+			right: 0.5%;
+		}
+	}
+	.whitelist-section {
+		// height: calculateVh(350px, $standard-screen-height-mid);
+		height: calculateVh(285px, $standard-screen-height-mid);
+	}
+	.whitelist-section .white-list-container {
+		display: block;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		height: calculateVh(285px, $standard-screen-height-mid);
+		padding-right: calculateVw(14px, $standard-screen-width-mid);
+		padding-left: calculateVw(14px, $standard-screen-width-mid);
+	}
+	@media screen and (max-height: 830px) {
+		.blox-text-input .label-row {
+			display: none;
+		}
+	}
+}

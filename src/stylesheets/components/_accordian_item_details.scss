@@ -1,0 +1,86 @@
+.accordian-item-details {
+	opacity: 0;
+	background-color: $White;
+	transition: all 0.7s ease;
+
+	&.expanded {
+		opacity: 1;
+	}
+
+	.header {
+		display: flex;
+		flex-direction: row;
+		margin-top: 0.93vh;
+		margin-left: 0.59vw;
+		margin-right: 0.59vw;
+		padding-left: 0.31vw;
+		@include Text-Style-Accordian-Detail-Headers;
+
+		div:nth-child(1) {
+			width: 2.86vw;
+		}
+		div:nth-child(2) {
+			padding-left: 0.68vw;
+			width: 14.32vw;
+		}
+		div:nth-child(3) {
+			width: 2.83vw;
+			text-align: right;
+		}
+		&.blue {
+			background-color: $Bright_Blue;
+		}
+		&.orange {
+			background-color: $Bright_Rust;
+		}
+		&.purple {
+			background-color: $Dark_Purple;
+		}
+	}
+	.details-grid {
+		margin-top: 0.94vh;
+
+		.data-row {
+			display: flex;
+			flex-direction: row;
+			padding: 0.1em 0.59vw 0.1em 0.1em;
+			color: $DCBLOX_Black;
+			.accordian-detail-data-field {
+				@include Text-Style-Accordian-Detail-Value;
+				&:nth-child(1) {
+					padding-left: 0.59vw;
+					flex: 0 0 3.8vw;
+					min-width: 4.2vw;
+				}
+				&:nth-child(2) {
+					padding-left: 0.2vw;
+					flex: 0 1 calculateVw(170px, $standard-screen-width-mid);
+				}
+				&:nth-child(3) {
+					flex: 1 0 auto;
+					text-align: right;
+					padding-right: calculateVw(2px, $standard-screen-width-mid);
+				}
+			}
+		}
+	}
+
+	.buttons {
+		margin-top: 1.53vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		cursor: pointer;
+
+		.button1,
+		.button2 {
+			width: 3.52vw;
+			height: 2.08vh;
+			box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+		}
+		.button2 {
+			margin-left: 0.5vw;
+			margin-bottom: 1.5vh;
+		}
+	}
+}

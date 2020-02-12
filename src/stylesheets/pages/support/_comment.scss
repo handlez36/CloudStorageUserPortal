@@ -1,0 +1,81 @@
+/* Comment */
+.comment {
+	display: flex;
+	flex-direction: row;
+	margin-top: 0.5vh;
+	transition: transform 0.1s ease;
+	transition: opacity 1s ease;
+	background-color: transparent;
+	.avatar {
+		flex: 0 1 3.79vw;
+
+		img {
+			width: 1.91vw;
+			height: 1.91vw;
+			margin-left: 1.09vw;
+			border-radius: 50px;
+		}
+	}
+
+	.details {
+		flex: 1 1 auto;
+		height: auto;
+
+		.detail-box {
+			width: calculateVw(330, 1440);
+			background-color: $White;
+			box-shadow: 1.9px 2.3px 9.5px 0.5px rgba(0, 0, 0, 0.25);
+			padding-left: 0.47vw;
+			padding-top: 1.32vh;
+			padding-bottom: 1.11vh;
+			height: auto;
+			word-break: break-all;
+
+			.detail-header {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+
+				.user {
+					flex: 0 1 auto;
+					@include Text-Style-67;
+					position: relative;
+
+					.dot {
+						position: absolute;
+						bottom: 40%;
+						padding-left: 0.15vw;
+					}
+
+					.company-user {
+						color: cyan;
+					}
+				}
+
+				.timestamp {
+					display: flex;
+					flex-direction: column;
+					align-content: flex-end;
+					@include Text-Style-68;
+					padding-left: 0.5vw;
+				}
+			}
+
+			.detail-text {
+				margin-top: 0.4vh;
+				padding-right: 1.41vw;
+				@include Text-Style-70;
+			}
+
+			.detail-attachments {
+				margin-top: 0.4vh;
+				@include Proxima-Bold;
+
+				span {
+					@include Text-Style-69;
+					color: $DCBLOX_Purple;
+				}
+			}
+		}
+	}
+}

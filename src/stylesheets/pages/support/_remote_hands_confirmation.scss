@@ -1,0 +1,90 @@
+.remote-hands-confirmation-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: auto;
+
+	.title {
+		flex: 1 0 auto;
+		margin-top: calculateVh(51px);
+		@include Text-Style-Confirmation-Title;
+	}
+	.message {
+		flex: 1 0 auto;
+		width: 11.75vw;
+		margin-top: 2vh;
+		@include Text-Style-Confirmation-Message;
+	}
+	.ticket-confirmation {
+		margin-top: calculateVh(50px);
+		transition: transform 0.5s ease-in-out;
+		height: auto;
+		position: relative;
+		cursor: pointer;
+		svg {
+			width: calculateVw(300, 1440);
+			height: calculateVh(200, 1440);
+			text {
+				$map: (
+					576: 20,
+					1440: 45,
+					2560: 50,
+				);
+				font-size: least-squares-fit($map);
+			}
+		}
+		.cls-1 {
+			fill: url(#linear-gradient);
+		}
+		.cls-2 {
+			fill: #fff;
+			opacity: 0.1;
+		}
+		.cls-3 {
+			filter: url(#Path_2064);
+		}
+		.ticket-number {
+			position: absolute;
+			height: calculateVw(50, 1440);
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			position: absolute;
+			top: 0%;
+			right: 0;
+			width: calculateVw(140, 1440);
+			text-align: center;
+			z-index: 100;
+		}
+
+		.ticket-background {
+			width: calculateVw(240, 1440);
+			height: calculateVh(200, 1440);
+			z-index: 110;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.ticket-confirmation:hover {
+		transform: translateY(-7px);
+	}
+	.buttons {
+		margin-top: calculateVh(65.8px);
+		button {
+			width: calculateVw(110, 1440);
+			height: calculateVh(45, 1440);
+			margin-top: 20px;
+			.title {
+				$map: (
+					576: 12,
+					1440: 14,
+					2560: 16,
+				);
+				font-size: least-squares-fit($map);
+				margin: 0.5vw;
+			}
+		}
+	}
+}

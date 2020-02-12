@@ -1,0 +1,84 @@
+.online-payment-page {
+	width: calculateVw(470px, 1440);
+	.page-header {
+		width: calculateVw(470px, 1440);
+		height: calculateVw(100px, 1440);
+		background-color: $Med_Lime;
+		background-image: linear-gradient(29deg, $Med_Lime 61.5%, #959817 10%);
+		.wrapper {
+			.module-title {
+				font-size: calculateVw(34px, 1440);
+				font-family: $font-family-primary-subheads;
+				letter-spacing: 1.7px;
+			}
+			.icon {
+				img {
+					width: calculateVw(60px, 1440);
+					height: calculateVw(60px, 1440);
+					margin-top: -1vh;
+					margin-right: 1vw;
+				}
+			}
+			.title {
+				.page-title {
+					color: $White;
+				}
+			}
+		}
+	}
+	.section-title {
+		margin-top: 1vh;
+		margin-bottom: 0.5vh;
+		@include Section-Head;
+		color: $DCBLOX_Gray;
+		margin-left: 2.5vw;
+	}
+	.page-status {
+		.wrapper {
+			.progress-indicator {
+				background-color: $DCBLOX_Black;
+				justify-content: center;
+				align-items: center;
+				flex: 0 1 calculateVw(34px, 1440);
+				flex-basis: calculateVw(34px, 1440);
+				height: calculateVw(34px, 1440);
+				border-radius: 50%;
+				margin-left: calculateVw(6px);
+
+				img {
+					width: calculateVw(15px, 1440);
+					height: calculateVw(15px, 1440);
+				}
+			}
+
+			.progress-indicator.active {
+				background-color: $DCBLOX_Black;
+			}
+			svg {
+				width: calculateVw(42px, 1440);
+				height: calculateVw(38px, 1440);
+				margin-left: calculateVw(-3px, $standard-screen-width-mid);
+				margin-top: calculateVh(-1.2px, $standard-screen-height-mid);
+			}
+		}
+	}
+	.review {
+		svg .indicator.indicator-1 {
+			stroke-dashoffset: 0 !important;
+		}
+	}
+	.soft-error {
+		.support-button {
+			margin-top: 0.5vh;
+		}
+	}
+	.successful-payment-modal {
+		.error-modal {
+			.modal-content {
+				.modal-body {
+					height: calculateVw(154px, 1440);
+				}
+			}
+		}
+	}
+}

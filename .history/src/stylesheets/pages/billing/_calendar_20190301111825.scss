@@ -1,0 +1,50 @@
+.calendar {
+	// padding: 1.95vh 1.57vw;
+	background-color: $Med_Lime;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 6.96vw;
+	flex: 2;
+
+	.calendar-container {
+		position: relative;
+
+		img {
+			width: 3.56vw;
+			height: 9.39vh;
+		}
+
+		.days-left-container {
+			position: absolute;
+			width: 93%;
+			bottom: 0.95vh;
+			left: 0.1vw;
+
+			.days-left {
+				font-family: $font-family-primary-subheads;
+				font-size: calc(12px + 5 * (100vw - 1440px) / (2560 - 1440)); //1.38vh;
+				color: $White;
+				letter-spacing: 0.033vw;
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1440px) {
+	.calendar {
+		padding: 1.3vh 1.57vw;
+		width: 7.7vw;
+
+		.calendar-container {
+			.days-left-container {
+				bottom: 1vh;
+
+				.days-left {
+					left: 1.3vw;
+				}
+			}
+		}
+	}
+}

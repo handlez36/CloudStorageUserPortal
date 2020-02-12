@@ -1,0 +1,440 @@
+.graph-container {
+	width: calculateVw(430, 1440);
+	height: calculateVh(380, 1440);
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 auto;
+	background-color: $White;
+
+	.info-wrapper {
+		display: flex;
+		flex-direction: row;
+		overflow: hidden;
+		flex: 1;
+		height: 100%;
+		.side-info {
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			background-color: $Dark_Emerald;
+			width: calculateVw(130, 1440);
+			max-width: 200px;
+			position: relative;
+			.type-image {
+				width: calculateVw(70, 1440);
+				height: calculateVh(100, 1440);
+				align-self: center;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.package-type {
+				@include Text-Style-Small;
+				font-size: 2vh;
+				height: calculateVh(40, 1440);
+				margin-top: 1vh;
+				text-align: center;
+			}
+
+			.total-storage {
+				margin-top: -2vh;
+				max-height: 80px;
+				@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+					margin-top: -9vh;
+				}
+			}
+			.text {
+				position: absolute;
+				@include Text-Style-Small;
+				align-items: center;
+				bottom: 4%;
+				left: 13%;
+			}
+		}
+		.main-graph {
+			min-height: 200px;
+
+			width: calculateVw(300, 1440);
+			height: 100%;
+			overflow: hidden;
+			display: flex;
+			flex-direction: row;
+			flex: 1;
+			background-color: $White;
+			align-items: flex-end;
+			position: relative;
+			margin-left: 1.4vw;
+			.graph-bar {
+				position: absolute;
+				top: 4%;
+				&.inactive {
+					opacity: 0.3;
+					.location-image {
+						opacity: 0.3;
+					}
+				}
+			}
+			#graphATLobject,
+			#graphATLfile {
+				left: 0%;
+			}
+			#graphBHMobject,
+			#graphBHMfile {
+				left: 20%;
+			}
+			#graphCHAobject,
+			#graphCHAfile {
+				left: 40%;
+			}
+			#graphHSVobject,
+			#graphHSVfile {
+				left: 60%;
+			}
+			.location-icon-row {
+				// border: 1px solid red;
+				// width: calc(70 / 1440 * 100 * 1vw);
+				// height: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				// float: right;
+				// margin-top: 1vh;
+			}
+
+			// .location-image {
+			// 	position: absolute;
+			// 	top: 5%;
+			// 	// width: calculateVw(55, 1440);
+			// 	// height: calculateVh(60, 1440);
+			// 	margin-left: 0.3vw;
+			// 	//border: 1px solid blue;
+			// 	// img {
+			// 	// 	height: 100%;
+			// 	// 	width: 100%;
+			// 	// }
+			// }
+			.name {
+				color: $DCBLOX_Gray;
+				//margin-left: 0.65vw;
+				margin-top: 0.1vw;
+				//position: absolute;
+				//padding-top: 3vh;
+				//top: 9%;
+				z-index: 1000;
+				//@include Status-Head;
+				&.ATL {
+					//margin-left: 1.25vw;
+				}
+				&.HSV {
+					//	margin-left: 0.9vw;
+				}
+			}
+			.size {
+				margin-left: 0.8vw;
+				@include Status-Head;
+				z-index: 2000;
+				position: absolute;
+				top: 40%;
+				color: $DCBLOX_Gray;
+				$map: (
+					576: 10,
+					1440: 12,
+					2560: 14,
+				);
+				font-size: least-squares-fit($map);
+			}
+
+			.bar-image {
+				margin-top: 0.3vh;
+				margin-left: 0.5vw;
+				position: relative;
+				width: calculateVw(50, 1440);
+				height: 100%;
+				flex: 2;
+
+				img {
+					height: auto;
+					width: calculateVw(90.3, 1440);
+				}
+				@media screen and (min-height: 860px) {
+					@media screen and (max-width: 1750px) {
+						margin-top: 1vh;
+					}
+					@media screen and (max-width: 1650px) {
+						margin-top: 2vh;
+					}
+					@media screen and (max-width: 1550px) {
+						margin-top: 3vh;
+					}
+					@media screen and (max-width: 1450px) {
+						margin-top: 4vh;
+					}
+					@media screen and (max-width: 1450px) {
+						margin-top: 5vh;
+					}
+					@media screen and (max-width: 1350px) {
+						margin-top: 6vh;
+					}
+					@media screen and (max-width: 1250px) {
+						margin-top: 7vh;
+					}
+					@media screen and (max-width: 1150px) {
+						margin-top: 8vh;
+					}
+					@media screen and (max-width: 1000px) {
+						margin-top: 9vh;
+					}
+					@media screen and (max-width: 900px) {
+						margin-top: 10vh;
+					}
+				}
+
+				.shadow {
+					width: calculateVw(22, 1440);
+					//min-height: 48px;
+					height: calculateVh(95, 1440);
+					position: absolute;
+					z-index: -10;
+					bottom: 0;
+					left: 0;
+					@media screen and (max-height: 800px) {
+						@media screen and (min-width: 1400px) {
+							height: calculateVh(100, 1440);
+						}
+					}
+					@media screen and (max-height: 750px) {
+						@media screen and (min-width: 1400px) {
+							height: calculateVh(110, 1440);
+						}
+					}
+					@media screen and (max-height: 700px) {
+						@media screen and (min-width: 1400px) {
+							height: calculateVh(115, 1440);
+						}
+					}
+					@media screen and (min-height: 800px) {
+						@media screen and (max-width: 1400px) {
+							height: calculateVh(80, 1440);
+						}
+						@media screen and (max-width: 1300px) {
+							height: calculateVh(75, 1440);
+						}
+						@media screen and (max-width: 1200px) {
+							height: calculateVh(70, 1440);
+						}
+						@media screen and (max-width: 1100px) {
+							height: calculateVh(65, 1440);
+						}
+						@media screen and (max-width: 1000px) {
+							height: calculateVh(60, 1440);
+						}
+						@media screen and (max-width: 900px) {
+							height: calculateVh(55, 1440);
+						}
+						@media screen and (max-width: 800px) {
+							height: calculateVh(50, 1440);
+						}
+						@media screen and (max-width: 700px) {
+							height: calculateVh(45, 1440);
+						}
+						@media screen and (max-width: 600px) {
+							height: calculateVh(35, 1440);
+						}
+						@media screen and (max-width: 500px) {
+							height: calculateVh(30, 1440);
+						}
+					}
+					// @media screen and (max-width: 1600px) {
+					// 	height: calculateVh(85, 1440);
+					// }
+					// @media screen and (max-width: 1540px) {
+					// 	height: calculateVh(80, 1440);
+					// 	@media screen and (max-height: 900px) {
+					// 		height: calculateVh(90, 1440);
+					// 	}
+					// 	@media screen and (max-height: 750px) {
+					// 		height: calculateVh(100, 1440);
+					// 	}
+					// }
+					// @media screen and (max-height: 900px) {
+					// 	height: calculateVh(95, 1440);
+					// }
+					// @media screen and (max-height: 800px) {
+					// 	height: calculateVh(105, 1440);
+					// }
+					// @media screen and (max-height: 400px) {
+					// 	height: calculateVh(120, 1440);
+					// }
+					// @media screen and (max-width: 1440px) {
+					// 	height: calculateVh(75, 1440);
+
+					// 	@media screen and (max-height: 900px) {
+					// 		height: calculateVh(85, 1440);
+					// 	}
+					// 	@media screen and (max-height: 750px) {
+					// 		height: calculateVh(100, 1440);
+					// 	}
+					// }
+					// @media screen and (max-width: 1380px) {
+					// 	height: calculateVh(80, 1440);
+					// 	@media screen and (max-height: 900px) {
+					// 		height: calculateVh(80, 1440);
+					// 	}
+					// 	@media screen and (max-height: 750px) {
+					// 		height: calculateVh(100, 1440);
+					// 	}
+					// 	@media screen and (max-height: 650px) {
+					// 		height: calculateVh(110, 1440);
+					// 	}
+					// }
+					// @media screen and (max-width: 1200px) {
+					// 	height: calculateVh(80, 1440);
+					// 	@media screen and (max-height: 900px) {
+					// 		height: calculateVh(70, 1440);
+					// 	}
+					// 	@media screen and (max-height: 750px) {
+					// 		height: calculateVh(100, 1440);
+					// 	}
+					// 	@media screen and (max-height: 650px) {
+					// 		height: calculateVh(110, 1440);
+					// 	}
+					// }
+					// @media screen and (max-width: 1000px) {
+					// 	height: calculateVh(80, 1440);
+					// 	@media screen and (max-height: 900px) {
+					// 		height: calculateVh(60, 1440);
+					// 	}
+					// 	@media screen and (max-height: 750px) {
+					// 		height: calculateVh(100, 1440);
+					// 	}
+					// 	@media screen and (max-height: 650px) {
+					// 		height: calculateVh(110, 1440);
+					// 	}
+					// }
+				}
+
+				.fill {
+					width: calculateVw(22.4, 1440);
+					height: calculateVh(60, 1440);
+					//	border: 1px solid green;
+					position: absolute;
+					left: 43%;
+					//top: 43%;
+					bottom: 20%;
+					-moz-transform: skewY(-32deg);
+					-webkit-transform: skewY(-32deg);
+					-o-transform: skewY(-32deg);
+					-ms-transform: skewY(-32deg);
+					transform: skewY(-32deg);
+				}
+
+				.size {
+					position: absolute;
+					top: 5%;
+					left: 5%;
+				}
+			}
+		}
+	}
+}
+
+.graph-container.v3 {
+	display: flex;
+	flex-direction: row;
+	width: 368px;
+	height: 168px;
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+	.info-wrapper {
+		flex: 0 1 112px;
+		// width: 100%;
+		height: 100%;
+		.package-type {
+			height: auto;
+			margin-top: 8px;
+			@include Headings71;
+		}
+	}
+	.graph-data-section {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: column;
+		padding-left: 20px;
+		.main-graph {
+			position: relative;
+			flex: 1 0 auto;
+			// overflow-y: hidden;
+			overflow-x: hidden;
+			// .usage-bar {
+			.bar {
+				position: absolute;
+				// transform: scale(0.6);
+				bottom: 0;
+				left: 0;
+				width: 113px;
+				height: 160px;
+				&:nth-child(2) {
+					margin-left: 50px;
+				}
+				&:nth-child(3) {
+					margin-left: 100px;
+				}
+				&:nth-child(4) {
+					margin-left: 150px;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.graph-container.v3 {
+		width: 544px;
+		height: 240px;
+		.info-wrapper {
+			flex: 0 1 160px;
+			width: 160px;
+		}
+		.info-wrapper .usage-bar {
+		}
+		.graph-data-section .main-graph {
+			.bar {
+				&:nth-child(2) {
+					margin-left: 90px;
+				}
+				&:nth-child(3) {
+					margin-left: 180px;
+				}
+				&:nth-child(4) {
+					margin-left: 270px;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.graph-container.v3 {
+		width: 752px;
+		height: 352px;
+		.info-wrapper {
+			flex: 0 1 216px;
+			width: 216px;
+		}
+		.info-wrapper .usage-bar {
+		}
+		.graph-data-section .main-graph {
+			.bar {
+				&:nth-child(2) {
+					margin-left: 90px;
+				}
+				&:nth-child(3) {
+					margin-left: 180px;
+				}
+				&:nth-child(4) {
+					margin-left: 270px;
+				}
+			}
+		}
+	}
+}

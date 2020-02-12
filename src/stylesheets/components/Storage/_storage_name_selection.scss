@@ -1,0 +1,38 @@
+.name-selection-stage {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.blox-text-input {
+		width: auto;
+		height: auto;
+		margin-bottom: calculateVh(15, 1440);
+		.active-field input {
+			width: calculateVw(320px, $standard-screen-width-mid);
+			height: calculateVh(49px, $standard-screen-height-mid);
+			background-color: $Cool_Gray_Light_3;
+			border: none;
+			caret-color: $Bright_Emerald;
+			padding-left: calculateVw(13px, $standard-screen-width-mid);
+			@include Text-Style-Form-Dropdown-Selection;
+			text-transform: none !important;
+			$map: (
+				576: 16,
+				1440: 19,
+				2560: 22,
+			);
+			font-size: least-squares-fit($map);
+		}
+	}
+	#formButton {
+		margin-top: calculateVh(30px, $standard-screen-height-mid);
+		// width: calculateVw(100px, $standard-screen-width-mid);
+		// height: calculateVh(34px, $standard-screen-height-mid);
+		// box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+		// background-color: $Bright_Emerald;
+		@include Text-Style-Form-Dropdown-Selection;
+		text-align: center;
+		color: $White;
+		padding-top: 3px;
+	}
+}

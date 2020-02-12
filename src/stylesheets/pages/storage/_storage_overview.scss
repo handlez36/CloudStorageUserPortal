@@ -1,0 +1,230 @@
+.storage-overview-page {
+	z-index: 20;
+	width: calculateVw(940px, 1440);
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+
+	.react-grid-layout:not(.vertical-grid) {
+		opacity: 1;
+		background: none;
+		&.six-column {
+			background: none;
+		}
+	}
+
+	.password-modal {
+		.error-modal {
+			.modal-content {
+				margin-left: 5vw;
+				margin-top: 7vh;
+			}
+		}
+	}
+	.storage-graphs {
+		min-height: 500px;
+	}
+	.file-graph {
+		margin-bottom: 1vh;
+		min-height: 220px;
+	}
+	.storage-graph-header {
+		position: relative;
+		width: calculateVw(430, 1440);
+		.graph-resolution-picker {
+			position: absolute;
+			right: 20%;
+			bottom: 0%;
+		}
+		.graph-title {
+			@include Support-Section-Header;
+		}
+		.graph-picker {
+			position: absolute;
+			right: 0%;
+			bottom: 0%;
+		}
+	}
+	.top-section {
+		width: calculateVw(940px, 1440);
+		height: 100%;
+		background-color: $Cool_Gray_Light_3;
+		position: absolute;
+	}
+	.bottom-section {
+		width: calculateVw(940px, 1440);
+		height: calculateVh(900px, 1440);
+		background-color: $Cool_Gray_Light_3;
+		position: absolute;
+		margin-top: calculateVh(350px, 1440);
+	}
+
+	.ticket-count-section {
+		.CircularProgressbar-path {
+			stroke: $DCBLOX_Lime;
+		}
+		.CircularProgressbar-trail {
+			stroke: $Bright_Emerald;
+		}
+		.CircularProgressbar-background {
+			fill: $Dark_Emerald;
+		}
+	}
+
+	.share-name-label {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		.lady-bug {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			img {
+				width: calculateVw(25, 1440);
+				height: calculateVh(35, 1440);
+			}
+		}
+		.title {
+			margin-left: 1vw;
+			align-self: center;
+			@include User-Management-Menu;
+			color: $DCBLOX_Gray;
+		}
+	}
+	.ticket-type-selection {
+		min-width: auto;
+		min-height: auto;
+		max-width: none;
+		max-height: none;
+		height: 100%;
+	}
+	.large-card-wrapper {
+		min-width: auto;
+		min-height: auto;
+		max-width: none;
+		max-height: none;
+		width: 100%;
+	}
+}
+
+/** portal layout v3 */
+.storage-overview-detail.v3 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	.storage-graph-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		height: GetSize(5);
+		// border: 1px solid black;
+		.graph-title,
+		.graph-picker {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			margin-bottom: GetSize(2);
+		}
+		.graph-picker {
+			width: GetSize(6);
+			height: GetSize(2);
+			// margin-bottom: GetSize(2);
+			align-self: flex-end;
+		}
+		.graph-resolution-picker {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			.storage-graph-resolution-picker {
+				margin-bottom: GetSize(2);
+			}
+		}
+	}
+	.storage-graphs {
+		// flex: 0 1 50%;
+		width: 368px;
+		// border: 1px solid red;
+		.file-graph,
+		.object-graph {
+			width: 368px;
+			height: 168px + GetSize(5);
+		}
+	}
+	.share-list-section {
+		flex: 0 1 50%;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		padding-right: GetSize(8);
+		// border: 1px solid blue;
+		.share-list {
+			width: 240px;
+			height: 304px;
+		}
+		.share-list .graph-title {
+			flex-direction: row;
+			align-self: flex-end;
+		}
+		.share-list .graph-title span {
+			margin-top: 1px;
+		}
+	}
+}
+
+// @media screen and (min-width: 1025px) and (max-width: 1440px) {
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.storage-overview-detail.v3 {
+		.storage-graphs {
+			width: 544px;
+		}
+		.storage-graphs .file-graph,
+		.storage-graphs .object-graph {
+			width: 544px !important;
+			height: 240px + GetSize(7);
+			// border: 1px solid blue;
+		}
+		.storage-graph-header {
+			height: GetSize(7);
+		}
+		.storage-graph-header .graph-picker {
+			width: GetSize(10);
+			height: GetSize(3);
+		}
+		.share-list-section {
+			padding-right: GetSize(12);
+			.share-list {
+				width: 352px;
+				height: 432px;
+			}
+		}
+	}
+}
+
+// @media screen and (min-width: 1441px) {
+@media screen and (min-width: $high-res + 1) {
+	.storage-overview-detail.v3 {
+		.storage-graphs {
+			width: 752px;
+		}
+		.storage-graphs .file-graph,
+		.storage-graphs .object-graph {
+			width: 752px;
+			height: 352px + 64px;
+		}
+		.storage-graph-header {
+			height: GetSize(8);
+		}
+		.storage-graph-header .graph-picker {
+			width: GetSize(10);
+			height: GetSize(3);
+		}
+		.share-list-section {
+			padding-right: GetSize(40);
+			.share-list {
+				width: 592px;
+				height: 669px;
+			}
+		}
+	}
+}

@@ -1,0 +1,1454 @@
+//New Mixins -> 2560 straight zeplin
+//please add any that are not here but in stylesheet some are very similar
+//so havent made specific mixin for all.
+
+@mixin ProximaNovaBoldLarge {
+	font-family: $proxima-nova-bold;
+	$map: (
+		576: 20,
+		1440: 40,
+		2560: 45,
+	);
+	font-size: least-squares-fit($map);
+}
+@mixin ProximaNovaBoldMedium {
+	font-family: $proxima-nova-bold;
+	$map: (
+		576: 15,
+		1440: 25,
+		2560: 30,
+	);
+	font-size: least-squares-fit($map);
+}
+@mixin Semi-Bold-Heading {
+	$map: (
+		576: 10,
+		1440: 15,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-semibold;
+	color: $DCBLOX_Gray;
+}
+@mixin Billing-Amount-Medium {
+	$map: (
+		576: 20,
+		1440: 25,
+		2560: 35,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+	letter-spacing: -1.6px;
+	line-height: 1;
+}
+@mixin Text-Style-Small {
+	$map: (
+		576: 8,
+		1440: 10,
+		2560: 12,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	line-height: 11px;
+	color: $White;
+}
+
+@mixin Forgot-Password {
+	$map: (
+		576: 12,
+		1440: 15,
+		2560: 20,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	line-height: 18px;
+	letter-spacing: 0.75px;
+	color: $White;
+	text-decoration: underline;
+}
+@mixin Roster-Modal {
+	$map: (
+		576: 17,
+		1440: 34,
+		2560: 44,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	// line-height: 34px;
+	line-height: normal;
+	letter-spacing: 1.7px;
+	color: $White;
+}
+@mixin User-Management-Menu {
+	$map: (
+		576: 15,
+		1440: 22,
+		2560: 30,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	line-height: 23px;
+	letter-spacing: 1.1px;
+}
+
+@mixin long-shadow($type, $color, $length, $fadeout: true, $skew: false, $direction: right) {
+	$shadow: '';
+	@if $skew == false or $type == text {
+		@if $direction == right {
+			@for $i from 0 to $length - 1 {
+				$shadow: $shadow + $i + 'px ' + $i + 'px 0 ' + $color + ',';
+			}
+		}
+		@if $direction == left {
+			@for $i from 0 to $length - 1 {
+				$shadow: $shadow + $i * -1 + 'px ' + $i + 'px 0 ' + $color + ',';
+			}
+		}
+	}
+
+	@if $fadeout == true {
+		@for $i from 1 to $length - 1 {
+			@if $type == text or $skew == false {
+				@if $direction == right {
+					$shadow: $shadow + $i + 'px ' + $i + 'px 0 ' + rgba($color, 1 - $i / $length) + ',';
+				}
+				@if $direction == left {
+					$shadow: $shadow + $i * -1 + 'px ' + $i + 'px 0 ' + rgba($color, 1 - $i / $length) + ',';
+				}
+			}
+			@if ($type == box) and $skew == true {
+				@if $direction == right {
+					$shadow: $shadow +
+						$i +
+						'px ' +
+						$i +
+						'px 0 ' +
+						$i *
+						0.2 +
+						'px ' +
+						rgba($color, 1 - $i / $length) +
+						',';
+				}
+				@if $direction == left {
+					$shadow: $shadow +
+						$i *
+						-1 +
+						'px ' +
+						$i +
+						'px 0 ' +
+						$i *
+						0.2 +
+						'px ' +
+						rgba($color, 1 - $i / $length) +
+						',';
+				}
+			}
+		}
+		$shadow: $shadow + $length + 'px ' + $length + 'px 0 ' + rgba($color, 0);
+	}
+	@if $fadeout == false {
+		@if $skew == true and ($type == box) {
+			@for $i from 0 to $length - 1 {
+				$shadow: $shadow + $i + 'px ' + $i + 'px 0 ' + $i * 0.1 + 'px ' + $color + ',';
+			}
+		}
+		$shadow: $shadow + $length + 'px ' + $length + 'px 0 ' + rgba(0, 0, 0, 0);
+	}
+	$shadow: unquote($shadow);
+	@if $type == 'box' {
+		box-shadow: $shadow;
+	}
+	@if $type == 'text' {
+		text-shadow: $shadow;
+	}
+}
+
+@mixin Price-Large {
+	$map: (
+		576: 20,
+		1440: 45,
+		2560: 60,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-light;
+	line-height: 7vmin;
+	letter-spacing: 0.4vmin;
+}
+
+@mixin Price-Medium {
+	$map: (
+		576: 15,
+		1440: 30,
+		2560: 40,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-light;
+	line-height: 7vmin;
+}
+@mixin Price-Small {
+	$map: (
+		576: 12,
+		1440: 20,
+		2560: 28,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-light;
+	line-height: 4vmin;
+	letter-spacing: 0.25vmin;
+}
+@mixin Head-Light {
+	$map: (
+		576: 15,
+		1440: 18,
+		2560: 24,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-light;
+	line-height: 4.5vmin;
+}
+@mixin Head-Bold {
+	$map: (
+		576: 10,
+		1440: 13,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+	line-height: 4.5vmin;
+	letter-spacing: 0.1vmin;
+}
+
+@mixin Body-Copy {
+	$map: (
+		576: 10,
+		1440: 13,
+		2560: 13,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-it-light;
+	line-height: 2vmin;
+}
+@mixin Body-Copy-2560 {
+	$map: (
+		576: 10,
+		1440: 13,
+		2560: 13,
+	);
+	line-height: 17px;
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+}
+@mixin Body-Copy-Proxima-Medium {
+	$map: (
+		576: 10,
+		1440: 13,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+	line-height: 2vmin;
+}
+
+@mixin Sub-Head {
+	$map: (
+		576: 9,
+		1440: 12,
+		2560: 13,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+	line-height: 2vmin;
+}
+
+@mixin Page-Head {
+	$map: (
+		576: 10,
+		1440: 22,
+		2560: 28,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-heads;
+	line-height: 20px;
+	letter-spacing: 1.1px;
+}
+// Originally had 10, 15, 20 as the map values in the scss file
+// The mixin file had 9, 22, 28
+@mixin Section-Head {
+	$map: (
+		576: 9,
+		1440: 11,
+		2560: 15,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	// line-height: 23px;
+	line-height: 1.2;
+	letter-spacing: 0.8px;
+	color: $DCBLOX_Gray;
+}
+@mixin Callouts {
+	$map: (
+		576: 9,
+		1440: 12,
+		2560: 14,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	line-height: 15px;
+}
+@mixin Status-Head {
+	$map: (
+		576: 9,
+		1440: 13,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	line-height: 16px;
+}
+@mixin Head-Text {
+	$map: (
+		576: 9,
+		1440: 13,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-light;
+	line-height: 17px;
+}
+@mixin SubHead-Text {
+	$map: (
+		576: 9,
+		1440: 12,
+		2560: 13,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+	line-height: 14px;
+}
+
+@mixin Page-Head {
+	$map: (
+		576: 9,
+		1440: 22,
+		2560: 28,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-heads;
+	line-height: 3vh;
+	letter-spacing: 1.4px;
+}
+@mixin Section-Head {
+	$map: (
+		576: 9,
+		1440: 22,
+		2560: 28,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	line-height: 3vh;
+	letter-spacing: 1.4px;
+}
+
+@mixin Text-Style-Radio-Label {
+	font-family: $proxima-nova-light;
+	font-size: calculateFontSize(10px, 12px);
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Black;
+}
+
+@mixin Create-Ticket-Label {
+	$map: (
+		576: 9,
+		1440: 16,
+		2560: 22,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	line-height: 3vh;
+	letter-spacing: 1.4px;
+}
+
+@mixin Drop-Down-Options {
+	$map: (
+		576: 6,
+		1440: 13,
+		2560: 14,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+}
+@mixin Small-Text-Profile {
+	$map: (
+		576: 6,
+		1440: 11,
+		2560: 15,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+}
+
+@mixin Drop-Down-Options {
+	$map: (
+		576: 6,
+		1440: 13,
+		2560: 14,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+}
+@mixin Small-Text {
+	$map: (
+		576: 10,
+		1440: 14,
+		2560: 16,
+	);
+	line-height: 16px;
+	font-size: least-squares-fit($map);
+	font-family: $proxima-nova-regular;
+}
+@mixin Drop-Down-Selection {
+	$map: (
+		576: 9,
+		1440: 16,
+		2560: 18,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+}
+
+@mixin Large-Ticket-Number {
+	font-family: $proxima-nova-light;
+	color: $White;
+	letter-spacing: 2.25px;
+}
+
+/* IMPORTED FROM ZEPLIN (Bigger Fonts to Smaller)*/
+
+/* IMPORTED FROM ZEPLIN (Bigger Fonts to Smaller)*/
+// only used in 404 page
+
+//Large text  30px +                 Text-Style
+@mixin Text-Style-Large {
+	font-family: $font-family-primary-heads; //Bourgeois
+	font-size: calculateFontSize(30px, 80px); //80px;
+	font-stretch: condensed;
+	line-height: 1;
+	letter-spacing: 0.11em; //6px;
+	text-align: left;
+	color: $DCBLOX_Purple;
+}
+
+//used in sharedetails for the pdf download section
+
+@mixin Text-Style-3 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	font-size: calculateFontSize(20px, 50px); //50px;
+	font-stretch: condensed;
+	line-height: 1;
+	letter-spacing: 0.09em; //3.8px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+//portal title    Text-Style-6
+@mixin Main-Title-Large {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 34px;
+	font-size: calculateFontSize(17px, 34px);
+	font-stretch: condensed;
+	line-height: 0.76;
+	letter-spacing: 3.4px;
+	text-align: left;
+	color: $DCBLOX_Purple;
+}
+
+@mixin Text-Style-2 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	font-size: calculateFontSize(26px, 30px); //30px;
+	font-stretch: condensed;
+	line-height: 1.67;
+	letter-spacing: 2.3px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+//medium text 20px-30px
+
+@mixin Text-Style-30 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 32px;
+	font-size: calculateFontSize(14px, 32px);
+	font-stretch: condensed;
+	line-height: 2.31;
+	letter-spacing: 2.4px;
+	text-align: left;
+	color: rgb(84, 88, 90);
+}
+
+//ticket severity username  -Text-style-34  and  text-style  21
+@mixin Text-Style-Medium {
+	font-family: $font-family-primary-heads; //Bourgeois
+	font-size: calculateFontSize(16px, 29px);
+	font-stretch: condensed;
+	line-height: 1.03;
+	letter-spacing: 2.9px;
+	text-align: left;
+	color: $DCBLOX_Purple;
+}
+
+@mixin Text-Style-36 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 25px;
+	font-size: calculateFontSize(14px, 25px);
+	font-stretch: condensed;
+	line-height: 1.04;
+	text-align: left;
+	color: $Dark_Purple;
+}
+
+@mixin Text-Style-31 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 24px;
+	font-size: calculateFontSize(19px, 24px);
+	font-stretch: condensed;
+	line-height: 1.08;
+	letter-spacing: 2.4px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-37 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 24px;
+	font-size: calculateFontSize(11px, 18px);
+	font-stretch: condensed;
+	line-height: 1.08;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-11 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 22px;
+	font-size: calculateFontSize(10px, 22px);
+	font-stretch: condensed;
+	line-height: 2.27;
+	letter-spacing: 2.2px;
+	text-align: left;
+	color: $pea-soup-two;
+}
+
+@mixin Text-Style-41 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 20px;
+	// font-size: calculateFontSize(8px,20px);
+	font-size: calculateFontSize(8px, 16px);
+	font-stretch: condensed;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	text-align: left;
+	color: $Dark_Purple;
+}
+
+@mixin Text-Style-38 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 20px;
+	font-size: calculateFontSize(12px, 20px);
+	font-stretch: condensed;
+	line-height: 1.5;
+	letter-spacing: 2px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-25 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 20px;
+	font-size: calculateFontSize(12px, 20px);
+	font-stretch: condensed;
+	line-height: 1.5;
+	letter-spacing: 2px;
+	text-align: left;
+	color: $DCBLOX_Purple;
+}
+@mixin Text-Style-7 {
+	font-family: $font-family-primary-subheads; //Bourgeois
+	// font-size: 20px;
+	font-size: calculateFontSize(12px, 20px);
+	font-stretch: condensed;
+	line-height: 1.3;
+	letter-spacing: 2px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-9 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 20px;
+	font-size: calculateFontSize(9px, 20px);
+	font-stretch: condensed;
+	line-height: 2.5;
+	letter-spacing: 2px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-50 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 18px;
+	// font-size: calculateFontSize(9px,18px);
+	font-size: calculateFontSize(9px, 16px);
+	font-stretch: condensed;
+	line-height: 1.67;
+	letter-spacing: 1.4px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-49 {
+	font-family: $proxima-nova-light; //ProximaNovaThin;
+	font-size: calculateFontSize(10px, 18px);
+	line-height: 0.83;
+	text-align: left;
+	color: $DCBLOX_Red;
+}
+@mixin Text-Style-45 {
+	font-family: $proxima-nova-light; //ProximaNovaThin;
+	font-size: calculateFontSize(13px, 18px);
+	line-height: 1.67;
+	letter-spacing: 1.4px;
+	text-align: left;
+	color: $DCBLOX_Red;
+}
+@mixin Text-Style-14 {
+	font-family: $proxima-nova-light; //ProximaNovaThin;
+	font-size: calculateFontSize(11px, 18px);
+	line-height: 1.44;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-44 {
+	font-family: $proxima-nova-light; //ProximaNovaThin;
+	font-size: calculateFontSize(13px, 16px);
+	line-height: 1.88;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-24 {
+	font-family: $font-family-primary-heads; //Bourgeois
+	font-size: 14px;
+	font-size: calculateFontSize(8px, 14px);
+	font-stretch: condensed;
+	line-height: 1.29;
+	letter-spacing: 1.1px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-47 {
+	font-family: $proxima-nova-light; //ProximaNovaThin;
+	font-size: 14px;
+	line-height: 1.14;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-48 {
+	font-family: $proxima-nova-light; //ProximaNovaThin;
+	// font-size: 14px;
+	font-size: calculateFontSize(10px, 14px);
+	line-height: 1.07;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-23 {
+	font-family: $proxima-nova-light; //ProximaNovaThin;
+	// font-size: 14px;
+	font-size: calculateFontSize(7px, 14px);
+	line-height: 1.29;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-th {
+	font-family: $font-family-primary-subheads;
+	// font-size: 9px;
+	font-size: calculateFontSize(5px, 9px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 2.08;
+	letter-spacing: 0.9px;
+	text-align: center;
+	color: $White;
+}
+@mixin Text-Style-td-over-gray {
+	font-family: $proxima-nova-regular;
+	font-size: 15.5px;
+	font-size: calculateFontSize(7px, 15.5px);
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 2.29;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-td-over-white {
+	font-size: calculateFontSize(7px, 15.5px);
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 2.29;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-td-highlighted {
+	font-family: $proxima-nova-regular;
+	font-size: calculateFontSize(7px, 15.5px);
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 2.29;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Red;
+}
+@mixin Text-Style-exit-button {
+	font-family: $font-family-primary-heads;
+	// font-size: 32px;
+	font-size: calculateFontSize(12px, 32px);
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: center;
+	color: $White;
+}
+@mixin Text-Style-User-Contact-Name {
+	font-family: $font-family-primary-heads;
+	// font-size: 18px;
+	font-size: 15px;
+	font-size: calculateFontSize(8px, 15px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.67;
+	letter-spacing: 1.8px;
+	text-align: center;
+	color: $DCBLOX_Black;
+}
+@mixin Text-Style-User-Contact-Section-Title {
+	// width: 105px;
+	// height: 7px;
+	font-family: $font-family-primary-heads;
+	// font-size: 12px;
+	font-size: calculateFontSize(7px, 12px);
+	font-style: normal;
+	font-stretch: condensed;
+	// line-height: 2.5;
+	letter-spacing: 1.2px;
+	text-align: left;
+	color: $DCBLOX_Black;
+}
+@mixin Text-Style-Storage-Form-Section-Title {
+	font-family: $font-family-primary-heads;
+	font-size: calculateFontSize(14px, 20px);
+	font-style: normal;
+	font-stretch: condensed;
+	// line-height: 2.5;
+	letter-spacing: 1.2px;
+	text-align: left;
+	color: $DCBLOX_Black;
+}
+@mixin Text-Style-User-Contact-Field-Name {
+	font-family: $font-family-primary-subheads;
+	// font-size: 8px;
+	font-size: calculateFontSize(6px, 8px);
+	font-style: normal;
+	font-stretch: condensed;
+	// line-height: 3.75;
+	letter-spacing: 0.8px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-Storage-Form-Field-Name {
+	font-family: $font-family-primary-subheads;
+	// font-size: 8px;
+	font-size: calc(12px + 10 * (100vw - 1024px) / 1536);
+	font-style: normal;
+	font-stretch: condensed;
+	// line-height: 3.75;
+	letter-spacing: 2.2px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-User-Contact-Field-Value {
+	font-family: $proxima-nova-light;
+	font-size: calculateFontSize(8px, 12px);
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Black;
+}
+@mixin Text-Style-Storage-Form-Field-Value {
+	font-family: $proxima-nova-light;
+	font-size: calculateFontSize(8px, 18px);
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Black;
+}
+@mixin Text-Style-Profile-Card-Name {
+	font-family: $font-family-primary-heads;
+	font-size: calculateFontSize(8px, 18px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.67;
+	letter-spacing: 1.8px;
+	text-align: center;
+	color: $DCBLOX_Black;
+}
+@mixin Text-Style-Credential-Icons {
+	font-size: calculateFontSize(9px, 18px);
+}
+@mixin Text-Style-57 {
+	font-family: $font-family-primary-heads;
+	font-size: calculateFontSize(5px, 13px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.17;
+	letter-spacing: 0.9px;
+	text-align: center;
+	color: $DCBLOX_Purple;
+}
+@mixin Text-Style-58 {
+	font-family: $font-family-primary-heads;
+	font-size: calculateFontSize(16px, 26px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 0.92;
+	letter-spacing: 2.6px;
+	text-align: right;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-Button {
+	font-family: $font-family-primary-heads;
+	$map: (
+		576: 12,
+		1440: 15,
+		2560: 25,
+	);
+	font-size: least-squares-fit($map);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.17;
+	letter-spacing: 0.9px;
+	text-align: center;
+	color: $DCBLOX_Purple;
+}
+@mixin Text-Style-59 {
+	font-family: $font-family-primary-heads;
+	// font-size: 30px;
+	font-size: calculateFontSize(18px, 30px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 0.8;
+	letter-spacing: 3px;
+	text-align: right;
+	color: $DCBLOX_Red;
+}
+@mixin Text-Style-60 {
+	font-family: $font-family-primary-heads;
+	// font-size: 22px;
+	font-size: calculateFontSize(12px, 22px);
+	// font-size: calculateFontSize(16px, 26px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.09;
+	letter-spacing: 2.2px;
+	text-align: right;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-61 {
+	font-family: $font-family-primary-heads;
+	// font-size: 22px;
+	font-size: calculateFontSize(12px, 22px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.09;
+	letter-spacing: 2.2px;
+	text-align: right;
+	color: $DCBLOX_Red;
+}
+@mixin Text-Style-Conversation-Header {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 15,
+		1440: 18,
+		2560: 22,
+	);
+	font-size: least-squares-fit($map);
+	line-height: 22px;
+	letter-spacing: 1px;
+	text-align: left;
+	color: $White;
+}
+@mixin Text-Style-62 {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 10,
+		1440: 14,
+		2560: 16,
+	);
+	font-size: least-squares-fit($map);
+	letter-spacing: 1px;
+
+	text-align: right;
+}
+@mixin Text-Style-63 {
+	font-family: $font-family-primary-heads;
+	// font-size: 24px;
+	font-size: calculateFontSize(9px, 24px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1;
+	letter-spacing: 2.4px;
+	text-align: right;
+	color: $DCBLOX_Red;
+}
+
+@mixin Text-Style-Conversation-Add-Comment {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	font-size: calculateFontSize(7px, 14px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.14;
+	letter-spacing: 1.1px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-67 {
+	font-family: $font-family-primary-heads;
+	// font-size: 17px;
+	font-size: calculateFontSize(8px, 17px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 0.94;
+	letter-spacing: 0.9px;
+	text-align: left;
+	color: $DCBLOX_Purple;
+}
+@mixin Text-Style-68 {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 10,
+		1440: 10,
+		2560: 11,
+	);
+	font-size: least-squares-fit($map);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 13px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-69 {
+	font-family: $proxima-nova-regular;
+	// font-size: 14px;
+	font-size: calculateFontSize(5px, 13.5px);
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.14;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Black;
+}
+@mixin Proxima-Bold {
+	font-family: $proxima-nova-bold;
+	$map: (
+		576: 9,
+		1440: 10,
+		2560: 11,
+	);
+	font-size: least-squares-fit($map);
+
+	line-height: 13px;
+	//letter-spacing: 1.1px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-70 {
+	font-family: $proxima-nova-regular;
+	$map: (
+		576: 9,
+		1440: 11,
+		2560: 13,
+	);
+	font-size: least-squares-fit($map);
+
+	line-height: 13px;
+	//letter-spacing: 1.1px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-71 {
+	font-family: $font-family-primary-heads;
+	// font-size: 24px;
+	font-size: calculateFontSize(10px, 24px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1;
+	letter-spacing: 2.4px;
+	text-align: left;
+	color: $Dark_Purple;
+}
+@mixin Text-Style-72 {
+	font-family: $font-family-primary-heads;
+	// font-size: 20px;
+	// font-size: calculateFontSize(7px,20px);
+	font-size: calculateFontSize(7px, 16px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-73 {
+	font-family: $font-family-primary-heads;
+	// font-size: 18px;
+	// font-size: calculateFontSize(6px,18px);
+	font-size: calculateFontSize(6px, 14px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: normal;
+	letter-spacing: 0.9px;
+	text-align: right;
+	color: $DCBLOX_Gray;
+}
+@mixin Text-Style-74 {
+	font-family: $font-family-primary-heads;
+	// font-size: 20px;
+	font-size: calculateFontSize(12px, 20px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.5;
+	letter-spacing: 1.5px;
+	text-align: center;
+	color: $DCBLOX_White;
+}
+@mixin Ticket-Description-Style {
+	font-family: $proxima-nova-light;
+	// font-size: 14px;
+	font-size: calculateFontSize(8px, 14px);
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.29;
+	letter-spacing: normal;
+	text-align: left;
+}
+@mixin Login-Input-Text-Style {
+	font-family: $proxima-nova-light;
+	font-size: calculateVw(16, 1440);
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 20px;
+	color: $White;
+}
+@mixin Login-Lg-Message-Text-Style {
+	font-family: $font-family-primary-heads;
+	font-size: calculateVw(40, 1440);
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: 4px;
+	color: $Cool_Gray_Med_2;
+	line-height: 48px;
+	text-shadow: 0 2px 15px $DCBLOX_Black;
+}
+@mixin Login-Sm-Message-Text-Style {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 18,
+		1440: 22,
+		2560: 26,
+	);
+	font-size: least-squares-fit($map);
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: 1px;
+	line-height: 34px;
+	color: $White;
+	text-shadow: 0 2px 15px $DCBLOX_Black;
+}
+@mixin Login-Md-Message-Text-Style {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 20,
+		1440: 28,
+		2560: 32,
+	);
+	font-size: least-squares-fit($map);
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: 2.8px;
+	line-height: 34px;
+	color: $White;
+	text-shadow: 0 2px 15px $DCBLOX_Black;
+}
+@mixin Text-Style-75 {
+	font-family: $font-family-primary-subheads;
+	font-size: 20px;
+	font-size: calculateFontSize(6px, 20px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.5;
+	letter-spacing: 2px;
+	text-align: center;
+	color: $DCBLOX_White;
+}
+@mixin Text-Style-Whitelist-Format {
+	font-family: $proxima-nova-light;
+	font-size: calculateFontSize(10px, 18px);
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Black;
+}
+@mixin Text-Style-Password-Registration-Username {
+	font-family: $font-family-primary-heads; //Bourgeois
+	// font-size: 29px;
+	font-size: calculateFontSize(8px, 29px);
+	font-stretch: condensed;
+	line-height: 1.03;
+	letter-spacing: 2.9px;
+	text-align: left;
+	color: $Blue;
+}
+@mixin Text-Style-Password-Registration-Start {
+	font-family: $font-family-primary-heads; //Bourgeois
+	font-size: calculateFontSize(7px, 25px);
+	font-stretch: condensed;
+	line-height: 1.04;
+	text-align: left;
+	color: $Blue;
+	letter-spacing: 0.01vw;
+}
+@mixin Text-Style-Password-Registration-Content {
+	font-family: $proxima-nova-light; //ProximaNovaThin;
+	font-size: calculateFontSize(6px, 18px);
+	line-height: 1.44;
+	text-align: left;
+	color: $DCBLOX_Gray;
+	letter-spacing: 0.01vw;
+}
+@mixin Text-Style-Billing-Nav {
+	font-family: $font-family-primary-heads; //Bourgeois
+	font-size: calculateFontSize(7px, 19.5px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.33;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #707372;
+}
+@mixin Text-Style-Billing-Nav-Active {
+	font-family: $font-family-primary-heads; //Bourgeois
+	font-size: calculateFontSize(8px, 20.5px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.32;
+	letter-spacing: 2.1px;
+	text-align: center;
+	color: $Blue;
+}
+
+@mixin Text-Style-Billing-Tickets-Number {
+	font-family: $font-family-primary-subheads;
+	letter-spacing: 1.6px;
+	line-height: 0vh;
+	font-size: 1vw;
+	text-align: center;
+	font-stretch: condensed;
+}
+@mixin Count {
+	color: $White;
+	font-family: $proxima-nova-light;
+	$map: (
+		576: 10,
+		1440: 45,
+		2560: 50,
+	);
+	font-size: least-squares-fit($map);
+	text-align: center;
+}
+@mixin Text-Style-Ticket-Indicator {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 10,
+		1440: 12,
+		2560: 22,
+	);
+	font-size: least-squares-fit($map);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 16px;
+	letter-spacing: 0.8px;
+	text-align: center;
+	color: $White;
+}
+@mixin Text-Style-Small-Gray {
+	font-family: $proxima-nova-regular;
+
+	$map: (
+		576: 8,
+		1440: 12,
+		2560: 14,
+	);
+	font-size: least-squares-fit($map);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 20px;
+	letter-spacing: 0.75px;
+	text-align: center;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Accordian-Header {
+	font-family: $font-family-primary-subheads;
+	font-size: calculateFontSize(6px, 16px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.06;
+	letter-spacing: normal;
+	text-align: left;
+	color: rgba(91, 89, 91, 0.6);
+}
+
+@mixin Text-Style-Accordian-Value {
+	font-family: $proxima-nova-regular;
+	font-size: calculateFontSize(6px, 16px);
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.06;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Accordian-Bold-Value {
+	font-family: $proxima-nova-regular;
+	font-size: calculateFontSize(6px, 16px);
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.06;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Accordian-Alerted-Value {
+	font-family: $proxima-nova-regular;
+	font-size: calculateFontSize(6px, 16px);
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.06;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Red;
+}
+
+@mixin Text-Style-Accordian-Detail-Headers {
+	font-family: $font-family-primary-subheads;
+	font-size: calculateFontSize(6px, 16px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.19;
+	letter-spacing: normal;
+	text-align: left;
+	color: $White;
+}
+
+@mixin Text-Style-Accordian-Detail-Value {
+	font-family: $proxima-nova-regular;
+	font-size: calculateFontSize(6px, 16px);
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.22;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Text-Style-Page-Title {
+	font-family: $font-family-primary-subheads;
+	font-size: calculateFontSize(12px, 22px);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 1.05;
+	letter-spacing: normal;
+	text-align: left;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Support-Section-Header {
+	$map: (
+		576: 9,
+		1440: 22,
+		2560: 28,
+	);
+	// font-size: calculateFontSize(16px, 27px);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	line-height: 3vh;
+	letter-spacing: 1.4px;
+	color: $DCBLOX_Gray;
+}
+
+@mixin Login-MFA-Radio-Label {
+	font-family: $font-family-primary-heads;
+	$map: (
+		576: 10,
+		1440: 16,
+		2560: 22,
+	);
+	font-size: least-squares-fit($map);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 13px;
+	letter-spacing: normal;
+	text-align: left;
+	color: $White;
+	@media (max-width: 1023px) {
+		font-size: 2.5vw;
+	}
+}
+@mixin Login-MFA-Radio-Label-Small {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 10,
+		1440: 16,
+		2560: 22,
+	);
+	font-size: least-squares-fit($map);
+	font-style: normal;
+	font-stretch: condensed;
+	line-height: 13px;
+	letter-spacing: normal;
+	text-align: left;
+	color: $White;
+	@media (max-width: 1023px) {
+		font-size: 2.5vw;
+	}
+}
+
+@mixin Login-MFA-Button {
+	font-family: $font-family-primary-subheads;
+	$map: (
+		576: 10,
+		1440: 16,
+		2560: 22,
+	);
+	font-size: least-squares-fit($map);
+	font-style: normal;
+	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+	font-stretch: condensed;
+	line-height: 16px;
+	letter-spacing: 0.8px;
+	text-align: center;
+	color: $White;
+}
+
+/**
+* Font styling mixin (responsive to 0px)
+*/
+@mixin ScaleFontSizeBelowLowestResolution($lowest_font_size) {
+	@media screen AND (max-width: 576px) {
+		font-size: $lowest_font_size * (100vw / 576);
+	}
+}
+
+@mixin ScaleFontBeyondHighestResolution() {
+	@media screen and (min-width: 2561px) {
+		font-size: 1vw;
+	}
+}
+
+/**
+* Set font styles for 1441px to 2560px screen width
+*/
+@mixin Screen-High-Styles($font_size, $letter_spacing: normal, $line_height: 1) {
+	@media screen and (min-width: 1441px) and (max-width: 2560px) {
+		font-size: calculateVw($font_size, $standard-screen-width);
+		letter-spacing: $letter_spacing;
+		line-height: $line_height;
+	}
+	@include ScaleFontBeyondHighestResolution();
+}
+
+/**
+* Set font styles for 1025px to 1440px screen width
+*/
+@mixin Screen-Mid-Styles($font_size, $letter_spacing: normal, $line_height: 1) {
+	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+		font-size: calculateVw($font_size, $standard-screen-width-mid);
+		letter-spacing: $letter_spacing;
+		line-height: $line_height;
+	}
+}
+
+/**
+* Set font styles for 0px to 1440px screen width. No 1024px styles available yet.
+*/
+@mixin Screen-Mid-Tmp-Styles($font_size, $letter_spacing: normal, $line_height: 1) {
+	@media screen and (max-width: 1440px) {
+		font-size: calculateVw($font_size, $standard-screen-width-mid);
+		letter-spacing: $letter_spacing;
+		line-height: $line_height;
+	}
+}
+
+/**
+* Set font styles for 0px to 1024 screen width
+*/
+@mixin Screen-Low-Styles($font_size, $letter_spacing: normal, $line_height: 1) {
+	@media screen and (max-width: 1024px) {
+		font-size: calculateVw($font_size, $standard-screen-width-low);
+		letter-spacing: $letter_spacing;
+		line-height: $line_height;
+	}
+}
+
+/**
+* Layout mixings
+*/
+@mixin FlexboxRow {
+	display: flex;
+	flex-direction: row;
+}
+@mixin FlexboxColumn {
+	display: flex;
+	flex-direction: column;
+}
+@mixin FlexboxCenter {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+@mixin FlexboxColumnCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin lhCrop($line-height) {
+	&::before {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+		margin-top: calc((1 - #{$line-height}) * 0.5em);
+	}
+}

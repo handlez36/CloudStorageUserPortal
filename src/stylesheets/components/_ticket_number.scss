@@ -1,0 +1,12 @@
+.ticket-number {
+	cursor: pointer;
+	@include Large-Ticket-Number;
+	width: 100%;
+	height: 100%;
+	$map: (
+		576: 20,
+		1440: 30,
+		2560: 60,
+	);
+	font-size: least-squares-fit($map);
+}

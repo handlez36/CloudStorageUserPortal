@@ -1,0 +1,143 @@
+.storage-add-page {
+	position: relative;
+	z-index: 20;
+	width: calculateVw(940px, 1440);
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	.modal {
+		.modal-content {
+			width: calculateVw(533px, $standard-screen-width-mid);
+			height: calculateVh(372px, $standard-screen-height-mid);
+		}
+		.modal-body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.modal-content .modal-header,
+		.modal-content .modal-footer {
+			display: none;
+		}
+		.avatar-grid-container {
+			width: calculateVw(472px, $standard-screen-width-mid);
+			height: calculateVh(234px, $standard-screen-height-mid);
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	.lower-half-background {
+		position: absolute;
+		background-color: $White;
+		width: 100%;
+		height: 100%;
+	}
+	.layout {
+		z-index: 2000;
+		background-color: $Cool_Gray_Light_3;
+	}
+	.react-grid-layout {
+		opacity: 1;
+		background: none;
+		&.six-column {
+			background: none;
+		}
+	}
+
+	.left-arrow {
+		width: calculateVw(24.1px, $standard-screen-width-mid);
+		height: calculateVw(23.3px, $standard-screen-height-mid);
+		cursor: pointer;
+		&.disabled {
+			transform: rotate(180deg);
+			cursor: not-allowed;
+		}
+	}
+	.right-arrow {
+		width: calculateVw(24.1px, $standard-screen-width-mid);
+		height: calculateVw(23.3px, $standard-screen-height-mid);
+		cursor: pointer;
+		transform: rotate(180deg);
+		&.disabled {
+			cursor: not-allowed;
+		}
+	}
+	.top-nav-bar {
+		width: 100% !important;
+		@media screen and (max-width: 1420px) {
+			transform: translate(0px, 0px) !important;
+		}
+	}
+	.gray-horizontal-bar {
+		position: absolute;
+		left: 0;
+		width: 100% !important;
+		height: 18px !important;
+		opacity: 0.27 !important;
+		border: none !important;
+		background-color: $Cool_Gray_Light_2;
+	}
+	.storage-add-right-side-disabled {
+		display: none;
+	}
+
+	.wizard-label,
+	.wizard-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+}
+
+.storage-add-page .storage-add-layout {
+	position: relative;
+	& > div {
+		//	border: 1px solid orange;
+	}
+	&.type {
+		.left-arrow,
+		.right-arrow {
+			display: none;
+		}
+		.right-arrow.allow {
+			display: block;
+			margin-left: calculateVw(-60px, $standard-screen-width-mid);
+		}
+		.add-storage-top-section {
+			// margin-left: calculateVw(70px, $standard-screen-width-mid);
+			transition: all 0.5s ease;
+		}
+	}
+	&.primary {
+		.left-arrow,
+		.right-arrow {
+			display: none;
+		}
+	}
+	&.redundant,
+	&.secondary,
+	&.public,
+	&.name,
+	&.avatar,
+	&.whitelist {
+		.left-arrow {
+			margin-left: calculateVw(33px, $standard-screen-width-mid);
+		}
+	}
+	&.review,
+	&.confirmation {
+		.left-arrow,
+		.right-arrow {
+			display: none;
+		}
+	}
+	&.review {
+		.user-icon {
+			cursor: pointer;
+		}
+	}
+
+	/** Needed to ensure white overlay stays in place */
+	height: 0px !important;
+}

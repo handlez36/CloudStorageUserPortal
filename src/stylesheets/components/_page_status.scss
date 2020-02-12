@@ -1,0 +1,57 @@
+.page-status {
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		padding-left: calculateVw(24px);
+		margin-top: calculateVw(30px);
+		.indicator-wrapper {
+			width: calculateVw(35, 1440);
+			height: calcualteVh(35, 1440);
+			margin-left: calculateVw(6, 1440);
+		}
+		img {
+			width: calculateVw(25, 1440);
+			height: calculateVh(25, 1440);
+		}
+
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			img {
+				margin-top: -8px;
+			}
+			.CircularProgressbar {
+				height: calculateVw(40, 1440);
+			}
+		}
+
+		.CircularProgressbar {
+			.CircularProgressbar-trail {
+				stroke: $Dark_Purple;
+			}
+
+			.CircularProgressbar-background {
+				fill: $DCBLOX_Purple;
+			}
+		}
+		.progress-indicator {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex: 0 1 calculateVw(34px);
+			flex-basis: calculateVw(34px);
+			height: calculateVh(34px);
+			border-radius: 50%;
+			margin-left: calculateVw(6px);
+			background-color: $Dark_Purple;
+			img {
+				width: calculateVw(18px);
+				height: calculateVw(18px);
+			}
+		}
+
+		.progress-indicator.active {
+			background-color: $DCBLOX_Black;
+		}
+	}
+}

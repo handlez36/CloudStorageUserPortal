@@ -1,0 +1,19 @@
+.sample-content-grid {
+	.sample-card-1 {
+		height: 100%;
+		position: relative;
+		svg {
+			height: 100%;
+			border: 1px solid black;
+		}
+	}
+	.vertical-grid .react-grid-item {
+		height: 100% !important;
+		background-color: lightblue;
+		border: 1px solid blue;
+	}
+	.horizontal-grid .react-grid-item {
+		background-color: lightgray;
+		border: 1px solid black;
+	}
+}

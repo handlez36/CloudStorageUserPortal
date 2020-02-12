@@ -1,0 +1,44 @@
+.expandable-component-header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-top: calculateVh(15px);
+	padding-left: calculateVw(19px);
+	margin-bottom: 0.8vh;
+	.icon {
+		flex: 0 1 calculateVw(27px, $standard-screen-width-mid);
+		flex-basis: calculateVw(27px, $standard-screen-width-mid);
+		// flex: 0 1 calculateVw(27px);
+		// flex-basis: calculateVw(27px);
+		// margin-top: -1vh;
+		// margin-top: calculateVh(3px, $standard-screen-height-mid);
+		align-self: flex-start;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.title {
+		flex: 1 0 auto;
+		margin-top: calculateVh(-15px, $standard-screen-height-mid);
+		margin-left: calculateVw(11px);
+		@include Text-Style-Expandable-Section-Title;
+	}
+
+	.edit {
+		flex: 0 1 calculateVw(75px);
+		flex-basis: calculateVw(75px);
+		cursor: pointer;
+
+		img {
+			width: calculateVw(12px);
+			height: calculateVw(12px);
+		}
+		span {
+			padding-left: calculateVw(10.6vw);
+			@include Text-Style-Expandable-Section-Edit;
+		}
+	}
+}

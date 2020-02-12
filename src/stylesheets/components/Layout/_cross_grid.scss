@@ -1,0 +1,21 @@
+.cross-grid {
+	.horizontal-grid,
+	.new-horizontal-grid {
+		position: absolute;
+		background-color: transparent !important;
+		z-index: 1100;
+		div {
+			border: 0.5px solid lightcoral;
+			opacity: 0.3;
+		}
+	}
+	.vertical-grid {
+		position: absolute;
+		background-color: transparent !important;
+		z-index: 1050;
+		div {
+			border: 1px solid green;
+			opacity: 0.5;
+		}
+	}
+}

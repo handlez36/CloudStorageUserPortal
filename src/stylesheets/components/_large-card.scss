@@ -1,0 +1,104 @@
+.large-card-wrapper {
+	cursor: pointer;
+	width: 100%;
+	overflow: hidden;
+	height: 100%;
+	max-height: calculateVw(214, 1440);
+	box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+	transition: transform 0.5s ease-in-out;
+	background-color: $White;
+	min-width: 90px;
+	@media screen and (max-width: 600px) {
+		max-height: 90px;
+	}
+
+	&.expanded {
+		height: auto;
+		max-height: calculateVw(314, 1440);
+		.large-card-image {
+			height: calculateVw(130, 1440);
+		}
+	}
+	.large-card-image {
+		position: relative;
+		height: 75%;
+		max-height: calculateVw(162, 1440);
+		background-color: $DCBLOX_Aqua;
+		//overflow: hidden;
+		&.guest-access {
+			background-color: $Purple;
+			img {
+				width: calculateVw(180, 1440);
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				@media screen and (max-height: 750px) {
+					width: calculateVw(150, 1440);
+				}
+			}
+		}
+		img {
+			position: absolute;
+			width: 90%;
+			right: 0;
+			bottom: 0;
+			@media screen and (max-height: 750px) {
+				width: calculateVw(130, 1440);
+			}
+		}
+	}
+
+	.description {
+		padding: 0.5vw;
+		text-align: left;
+		@include Drop-Down-Options;
+		color: $DCBLOX_Gray;
+		max-width: 9.5vw;
+		margin-left: 0.4vw;
+		background-color: $White;
+	}
+	.button {
+		padding-bottom: 1vw;
+		margin-left: 3vw;
+
+		.support-button {
+			$map: (
+				576: 10,
+				1440: 16,
+				2560: 18,
+			);
+			font-size: least-squares-fit($map);
+			line-height: 1.17;
+			letter-spacing: 0.9px;
+			text-align: center;
+		}
+	}
+
+	.large-card {
+		position: relative;
+		height: calculateVh(50, 1440);
+		padding-top: 0.6vh;
+		background-color: $White;
+		border-bottom: none;
+		color: $DCBLOX_Gray;
+		display: flex;
+		flex-direction: row;
+
+		span {
+			flex: 4;
+			padding-left: calculateVw(20px);
+			@include Section-Head;
+		}
+		img {
+			position: absolute;
+			right: calculateVw(8px);
+			flex: 1;
+			margin-top: 0.2vh;
+			width: calculateVw(18, 1440);
+		}
+	}
+}
+
+.large-card-wrapper:hover {
+	transform: translateY(-7px);
+}

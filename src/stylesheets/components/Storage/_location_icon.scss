@@ -1,0 +1,35 @@
+.storage-location-icon {
+	// width: calculateVw(50, 1440);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.location-image {
+		img {
+			width: calculateVw(36.4, $standard-screen-width-mid);
+			height: calculateVh(36.4, $standard-screen-height-mid);
+		}
+	}
+
+	.name {
+		margin-top: 0.25vh;
+		@include Status-Head;
+		margin-bottom: calculateVh(15, 1440);
+		color: $DCBLOX_Gray;
+		&.form-dropdown-selection {
+			$size_map: (
+				576: 11,
+				1440: 16,
+				2560: 20,
+			);
+			font-size: least-squares-fit($size_map);
+			letter-spacing: 0;
+		}
+	}
+
+	.storage-location-icon-redundant {
+		display: flex;
+		flex-direction: row;
+		z-index: 2100;
+	}
+}

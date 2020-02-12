@@ -1,0 +1,91 @@
+.ticket-request-schedule-ga {
+	padding-top: calculateVh(23px, $standard-screen-height-mid);
+	padding-left: calculateVw(35px, $standard-screen-width-mid);
+	padding-right: calculateVw(35px, $standard-screen-width-mid);
+	/**
+  * React date/time styling
+  */
+	.rdt {
+		width: calculateVw(171.5px);
+		margin-top: 0.5vh;
+	}
+	.rdt input {
+		width: calculateVw(400px);
+		background-color: transparent;
+		padding-left: 1.3vw;
+		padding-bottom: 0;
+		height: auto;
+		cursor: pointer;
+		@include Text-Style-DateTime-Selector;
+	}
+	/**
+  *
+  */
+
+	.date-and-time {
+		position: relative;
+		height: 4.5vh;
+		// width: calculateVw(320px);
+		width: calculateVw(400px);
+		.date-time {
+			padding-left: 2vw;
+		}
+		.date-field-label {
+			@include Text-Style-Text-Input-Label;
+			padding-bottom: 1vh;
+		}
+		.calendar-icon {
+			position: absolute;
+			margin-top: 3.4vh;
+			z-index: 100;
+		}
+		.checkmark-icon {
+			z-index: 100;
+			position: absolute;
+			top: 2.8vh;
+			right: -1vw;
+			width: calculateVw(23px);
+			height: calculateVw(23px);
+			opacity: 1;
+			transition: all 0.5s ease;
+		}
+	}
+
+	.recurring {
+		position: relative;
+		margin-top: calculateVh(70px);
+		width: calculateVw(400px);
+		opacity: 0;
+		transition: opacity 0.5s ease;
+		.date-field-label {
+			@include Text-Style-Text-Input-Label;
+			padding-bottom: 1vh;
+		}
+		.slider {
+			padding-top: 3.5vh;
+		}
+
+		.recurring-checkmark-icon {
+			position: absolute;
+			top: 2.8vh;
+			right: -1vw;
+			width: calculateVw(23px);
+			height: calculateVw(23px);
+			transition: all 0.5s ease;
+			opacity: 1;
+		}
+
+		.recurring-checkmark-icon.active {
+			opacity: 1;
+			z-index: 100;
+		}
+
+		&.active {
+			opacity: 1;
+		}
+	}
+
+	button {
+		margin-top: calculateVh(28px);
+	}
+}

@@ -1,0 +1,20 @@
+/* INVOICE NAV TABS */
+.nav.nav-tabs {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: none;
+  background-color: $DCBLOX_Black;
+
+  .tab {
+    flex: 0 1 7.54vw;
+    height: 2.29vh;
+    @include Text-Style-Billing-Nav;
+    cursor: pointer;
+  }
+
+  .tab.active {
+    @include Text-Style-Billing-Nav-Active;
+    background-color: #262626;
+  }
+}

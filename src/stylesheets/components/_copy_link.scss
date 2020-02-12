@@ -1,0 +1,35 @@
+.copy-link-container {
+	width: calculateVw(280, 1440);
+	height: 100%;
+	background-color: $White;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	.link-container-overlay {
+		flex: 9;
+		@include Body-Copy-2560;
+		color: $DCBLOX_Gray;
+		background-color: $Cool_Gray_Light_3;
+		height: calculateVh(40, 1440);
+		min-height: 30px;
+		margin-left: 1vw;
+		border: 2px solid $Cool_Gray_Light_3;
+	}
+	.link-container {
+		opacity: 0;
+		position: absolute;
+	}
+	.copy-button {
+		background-color: $White;
+		cursor: pointer;
+		flex: 1;
+		height: calculateVh(40, 1440);
+		margin-right: 0.5vw;
+		position: relative;
+		img {
+			position: absolute;
+			top: 13%;
+			left: 30%;
+		}
+	}
+}

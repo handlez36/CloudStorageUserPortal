@@ -1,0 +1,11 @@
+/* Ticket Create */
+.support-page {
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	.outer-wrapper {
+		width: calculateVw(467px, 1440);
+		display: flex;
+		flex-direction: column;
+	}
+}

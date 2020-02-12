@@ -1,0 +1,183 @@
+/**
+* HEADINGS
+*/
+.heading-ticket-modal {
+	@include Text-Style-Ticket-Modal;
+}
+.heading-page-head {
+}
+.heading-section-head {
+	@include Text-Style-Section-Head;
+}
+.heading-head-light {
+}
+.heading-head-bold-caps {
+}
+
+/**
+* BODY COPY
+*/
+.body-copy {
+	@include Text-Style-Body-Copy;
+}
+
+/**
+* BODY COPY SMALL
+*/
+.body-copy-small-regular {
+	@include Text-Style-Body-Copy-Small-Regular;
+}
+
+/**
+* CALLOUTS
+*/
+.callout-sm {
+	@include Text-Style-Callouts-Small;
+}
+.callout-sm-allcaps {
+	@include Text-Style-Callouts-Small;
+	text-transform: uppercase;
+}
+.callout-md {
+	@include Text-Style-Callouts-Small;
+}
+.callout-lg {
+	@include Text-Style-Callouts-Large;
+}
+
+/**
+* STATUS
+*/
+.status-status-head {
+	@include Text-Style-Status-Head;
+}
+
+/**
+* FORMS
+*/
+.form-dropdown-selection {
+	@include Text-Style-Form-Dropdown-Selection;
+}
+.form-label-float {
+	@include Text-Style-Form-Labels-Float;
+}
+.form-hint-text {
+	@include Text-Style-Form-Hint-Text;
+}
+.form-ghost-text {
+	@include Text-Style-Form-Ghost-Text;
+}
+.form-character-count-text {
+	@include Text-Style-Form-Character-Count;
+}
+
+/**
+* TEST FONTS
+*/
+.test-ticket-modal {
+	@include Text-Style-New-Ticket-Modal;
+}
+
+/**
+* NAVIGATION
+*/
+.nav-primary {
+	@include Primary;
+	&.active {
+		font-family: $font-family-primary-heads;
+		@include Text-Flow-Active($Dark_Lime);
+	}
+	&.animate {
+		@include Text-Flow-Animate;
+	}
+}
+.nav-primary:hover {
+	font-family: $font-family-primary-heads;
+}
+
+.nav-secondary {
+	cursor: pointer;
+	@include Secondary;
+
+	&.active {
+		@include Text-Flow-Active($Dark_Lime);
+	}
+	&.animate {
+		@include Text-Flow-Animate;
+	}
+}
+.nav-secondary:hover {
+	font-family: $font-family-primary-heads;
+}
+.nav-menu {
+	@include Menu;
+	&.active {
+		@include Menu-Active;
+	}
+}
+
+.total-amount-due-primary-text {
+	@include Total-Amount-Due;
+}
+.total-amount-due-subtext {
+	@include Total-Amount-Due-Subtext;
+}
+.total-amount-due-subtext-bold {
+	@include Total-Amount-Due-Subtext-Bold;
+}
+.total-amount-dollars-and-cents {
+	@include Total-Amount-Due-Dollars-And-Cents;
+}
+
+/** HEADINGS */
+.heading30 {
+	@include Heading30;
+}
+.heading60 {
+	@include Headings60;
+}
+.heading71 {
+	@include Headings71;
+}
+.heading80 {
+	@include Headings80;
+}
+.heading90 {
+	@include Headings90;
+}
+
+/** NUMBERS */
+.numbers5 {
+	@include Numbers5;
+}
+.numbers10 {
+	@include Numbers10;
+}
+.numbers20 {
+	@include Numbers20;
+}
+.numbers30 {
+	@include Numbers30;
+}
+
+/** BODY */
+.body10 {
+	@include Body10;
+}
+.body20 {
+	@include Body20;
+}
+.body21 {
+	@include Body21;
+}
+.body30 {
+	@include Body30;
+}
+.body40 {
+	@include Body40;
+}
+
+/** MISC */
+.globalbubbles10 {
+	@include GlobalBubbles10;
+}

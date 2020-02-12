@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Home-support-module-2019" width="372.53" height="995.36" viewBox="0 0 372.53 995.36">
+    <defs>
+        <style>
+            .cls-1{fill:#583a6b}.cls-2{fill:url(#linear-gradient)}.cls-3{fill:url(#linear-gradient-2)}.cls-4{opacity:.2}.cls-5{fill:#fff}
+        </style>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset=".26" stop-color="#9aa2a8"/>
+            <stop offset=".4" stop-color="#9fa7ad"/>
+            <stop offset=".57" stop-color="#afb5ba"/>
+            <stop offset=".76" stop-color="#c8cdcf"/>
+            <stop offset=".96" stop-color="#ebedee"/>
+            <stop offset="1" stop-color="#f4f5f5"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1=".5" x2=".5" y1="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#7b868c"/>
+            <stop offset=".33" stop-color="#7d888e"/>
+            <stop offset=".48" stop-color="#858f94"/>
+            <stop offset=".6" stop-color="#929ba0"/>
+            <stop offset=".7" stop-color="#a4acb0"/>
+            <stop offset=".79" stop-color="#bcc1c4"/>
+            <stop offset=".87" stop-color="#d9dcdd"/>
+            <stop offset=".92" stop-color="#f2f3f3"/>
+        </linearGradient>
+    </defs>
+    <g id="Layer_1" data-name="Layer 1">
+        <g id="SUPPORT_MODULE" data-name="SUPPORT MODULE">
+            <path id="TOP" d="M372.53 144.62L186.67 0 0 144l186.67 143.71z" class="cls-1"/>
+            <g id="LEFT_SIDE" data-name="LEFT SIDE">
+                <path id="Path_6796" d="M186.67 954.83V287.71L0 144v748.34L133.06 994.4l1.11.87z" class="cls-2" data-name="Path 6796"/>
+            </g>
+            <g id="RIGHT_SIDE" data-name="RIGHT SIDE">
+                <path id="Path_6797" d="M186.67 287.71v667.12l52.63 40.53 133.23-103.02V144.62z" class="cls-3" data-name="Path 6797"/>
+            </g>
+            <g id="Support">
+                <path id="Type_Shadow" d="M234.08 251.32l-125.25-96.67h9.31l-.34-12.4-9.35-4.73v-7.55l11.98-2.22 10.14 7.89 5.25 2.84 6.21 4.77 5.2 2.89.2-19.77 9.64 7.81.66-6.37 12-.67 10.5 8.52 1.64-7.95 10.86-.57 10.17 8.2 5.12 3.9 6.88 4.7h1.69l.31-18.13 12.83 10.13 5.19-7.5 6.48-1.63 14.67 11.86 5.16 15.98v-23.84l5.49-4.52 64.97 49.79z" class="cls-4" data-name="Type Shadow"/>
+                <g id="Support-2" data-name="Support">
+                    <path id="S" d="M105.82 149.89v-4H111v2.75a1.5 1.5 0 0 0 1.4 1.65h2.8a1.54 1.54 0 0 0 1.5-1.65v-3.8a1.4 1.4 0 0 0-.9-1.3L109 141a4.32 4.32 0 0 1-3-4.15V131a5.25 5.25 0 0 1 5.25-5.25h5.5a5.23 5.23 0 0 1 5.2 5.25v3.55h-5.2v-2.3a1.5 1.5 0 0 0-1.4-1.65h-2.6a1.54 1.54 0 0 0-1.5 1.65v3.4a1.35 1.35 0 0 0 .9 1.3l6.85 2.5a4.33 4.33 0 0 1 3.06 4.15v6.25a5.26 5.26 0 0 1-5.26 5.25H111a5.24 5.24 0 0 1-5.18-5.21z" class="cls-5"/>
+                    <path id="U" d="M130.57 149.89v-23.6h5.25v22.35a1.51 1.51 0 0 0 1.46 1.65h3.29a1.48 1.48 0 0 0 1.46-1.65v-22.35h5.25v23.6a5.18 5.18 0 0 1-5.21 5.25h-6.3a5.21 5.21 0 0 1-5.2-5.25z" class="cls-5"/>
+                    <path id="P" d="M171.78 131.39v8.55a4.92 4.92 0 0 1-5.25 5.05h-4.21v9.7h-5.25v-28.4h9.46a4.93 4.93 0 0 1 5.25 5.1zm-5.21.9a1.5 1.5 0 0 0-1.55-1.55h-2.7v9.8H165a1.5 1.5 0 0 0 1.55-1.55z" class="cls-5"/>
+                    <path id="P-2" d="M194.77 131.39v8.55a4.91 4.91 0 0 1-5.25 5.05h-4.2v9.7h-5.25v-28.4h9.45a4.92 4.92 0 0 1 5.25 5.1zm-5.2.9a1.5 1.5 0 0 0-1.55-1.55h-2.7v9.8H188a1.5 1.5 0 0 0 1.55-1.55z" class="cls-5" data-name="P"/>
+                    <path id="O" d="M202.77 149.94v-18.85a5.25 5.25 0 0 1 5.25-5.25h6.75a5.23 5.23 0 0 1 5.3 5.25v18.85a5.22 5.22 0 0 1-5.3 5.2H208a5.24 5.24 0 0 1-5.23-5.2zm10.55.4a1.5 1.5 0 0 0 1.5-1.6v-16.5a1.5 1.5 0 0 0-1.5-1.6h-3.8a1.53 1.53 0 0 0-1.5 1.6v16.5a1.53 1.53 0 0 0 1.5 1.6z" class="cls-5"/>
+                    <path id="R" d="M236.47 144.29h-1.55v10.4h-5.15v-28.4h9.55a5.22 5.22 0 0 1 5.25 5.25v7.55a5.35 5.35 0 0 1-2.9 4.65l4.45 10.95h-5.85zm-1.55-4.2h3a1.56 1.56 0 0 0 1.5-1.6v-6.3a1.56 1.56 0 0 0-1.5-1.6h-3z" class="cls-5"/>
+                    <path id="T" d="M266.72 131.14h-5.5v23.55H256v-23.55h-5.5v-4.85h16.2z" class="cls-5"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

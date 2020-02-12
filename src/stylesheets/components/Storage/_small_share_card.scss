@@ -1,0 +1,136 @@
+.small-share-card {
+	position: relative;
+	width: calculateVw(108px, $standard-screen-width-mid);
+	height: calculateVh(108px, $standard-screen-height-mid);
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+	.provisioning {
+		position: absolute;
+		@include Status-Head;
+		color: $White;
+		font-size: 1.1vw;
+		z-index: 500;
+		top: 25%;
+		left: 20%;
+	}
+	.overlay {
+		display: none;
+		position: absolute;
+		transition: opacity 0.5s ease;
+		width: calculateVw(110px, $standard-screen-width-mid);
+		height: calculateVh(108px, $standard-screen-height-mid);
+		background-color: $DCBLOX_Black;
+		opacity: 0;
+		z-index: 350;
+	}
+	.quick-view {
+		position: absolute;
+		opacity: 0;
+		left: 10%;
+		top: 42%;
+		width: calculateVw(90, $standard-screen-width-mid);
+		height: calculateVh(27, $standard-screen-height-mid);
+		transition: all 0.5s ease;
+		background-color: $Bright_Emerald;
+		z-index: 400;
+	}
+	.top-card-section {
+		position: relative;
+		height: calculateVh(70px, $standard-screen-height-mid);
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		background-color: #df6a2e;
+		.small-accessibility {
+			position: absolute;
+			width: calculateVw(15, $standard-screen-width-mid);
+			height: calculateVh(15, $standard-screen-height-mid);
+			top: 6%;
+			right: 2%;
+		}
+		&.Atlanta {
+			background-color: $Med_Rust;
+		}
+		&.Brimingham {
+			background-color: $Med_Lime;
+		}
+		&.Birmingham {
+			background-color: $Med_Lime;
+		}
+		&.Huntsville {
+			background-color: $Blue;
+		}
+		&.Chattanooga {
+			background-color: $Purple;
+		}
+		&.pending {
+			background-color: $Cool_Gray_Dark_3;
+			opacity: 0.3;
+		}
+		.redundancy-icon,
+		.generic-location {
+			position: absolute;
+			width: calculateVw(16px, $standard-screen-width-mid);
+			height: calculateVh(14.8px, $standard-screen-height-mid);
+			left: 5%;
+			top: 10%;
+		}
+		.icon {
+			width: 80%;
+			height: 80%;
+		}
+	}
+	.bottom-card-section {
+		height: calculateVh(38px, $standard-screen-height-mid);
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		&.pending {
+			.share-details {
+				color: $DCBLOX_Gray;
+				opacity: 0.3;
+				background-color: $White;
+				.new {
+					color: $DCBLOX_Gray;
+				}
+			}
+			.share-icon {
+				opacity: 0.3;
+				background-color: $White;
+			}
+		}
+		.share-icon {
+			flex: 1 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				width: calculateVw(14.4, $standard-screen-width-mid);
+				height: calculateVh(21.4, $standard-screen-height-mid);
+			}
+		}
+		.share-details {
+			flex: 1.5 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			.new {
+				color: $Bright_Emerald;
+			}
+		}
+	}
+	&:hover {
+		.overlay {
+			display: block;
+			opacity: 0.5;
+			z-index: 350;
+		}
+
+		.quick-view {
+			display: block;
+			transform: translateY(-10px);
+			opacity: 1;
+			z-index: 400;
+		}
+	}
+}

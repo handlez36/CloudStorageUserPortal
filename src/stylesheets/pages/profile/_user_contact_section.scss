@@ -1,0 +1,27 @@
+/* Profile - User Contact Section */
+.outer-wrapper.user-page {
+	// display: flex;
+	// flex-direction: column;
+	// flex: 1 0 auto;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
+
+	.banner {
+		background-image: linear-gradient(29deg, $profile-banner-swipe 15.5%, $profile-banner 10%);
+		font-family: $font-family-primary-heads;
+		padding: 1vh 2.7vw 1.2vh;
+		color: $White;
+		letter-spacing: 0.1em;
+		width: 32.4vw;
+	}
+
+	.start {
+		color: $Dark_Blue;
+	}
+
+	.user-information {
+		height: 80%;
+		padding-top: 2.4vh;
+	}
+}

@@ -1,0 +1,149 @@
+.dcblox-date-time-picker-wrapper {
+	width: calculateVw(400.5, 1440);
+	height: calculateVh(490, 1440);
+	background-color: $White;
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+	position: relative;
+	margin-top: calculateVh(-55, 1440);
+	z-index: 200;
+
+	&.time {
+		height: calculateVh(610, 1440);
+	}
+	.shadow-image-one {
+		border: 1px solid blue;
+		position: absolute;
+		bottom: 0%;
+		right: 10%;
+		z-index: 50;
+		width: calculateVw(367.4, 1440);
+		height: calculateVh(400, 1440);
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.shadow-image-two {
+		border: 1px solid blue;
+		position: absolute;
+		bottom: 0%;
+		right: -50%;
+		z-index: 50;
+		width: calculateVw(360, 1440);
+		height: calculateVh(400, 1440);
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.done-button {
+		position: absolute;
+		bottom: 4%;
+		left: 36%;
+	}
+	.error {
+		position: absolute;
+		color: $DCBLOX_Red;
+		@include Body-Copy-2560;
+		bottom: 16%;
+		left: 20%;
+	}
+	.back-arrow {
+		transform: rotate(180deg);
+		position: absolute;
+		left: 30%;
+		cursor: pointer;
+		width: calculateVw(24, 1440);
+		height: calculateVh(30, 1440);
+		top: 3%;
+		z-index: 210;
+	}
+
+	.select-button {
+		position: relative;
+		top: -30%;
+		left: 35%;
+	}
+	.display-date {
+		@include Body-Copy-Proxima-Medium;
+		color: $DCBLOX_Gray;
+		position: absolute;
+		left: 38%;
+		padding: 0.5vw;
+	}
+
+	.DayPicker {
+		width: 100%;
+		height: 100%;
+		z-index: 250;
+		.DayPicker-wrapper {
+			.DayPicker-Month {
+				margin-left: calculateVw(5, 1440);
+				margin-right: calculateVw(5, 1440);
+				background-color: $White;
+			}
+			.DayPicker-Day--0,
+			.DayPicker-Day--1 {
+				opacity: 0.5;
+			}
+
+			.DayPicker-Months {
+				flex-wrap: nowrap;
+			}
+			.DayPicker-Weekday {
+				$map: (
+					576: 5,
+					1440: 11,
+					2560: 13,
+				);
+				font-size: least-squares-fit($map);
+				padding: 0em;
+			}
+			.DayPicker-Day {
+				$map: (
+					576: 5,
+					1440: 11,
+					2560: 13,
+				);
+				font-size: least-squares-fit($map);
+				color: $DCBLOX_Gray;
+				font-family: $proxima-nova-semibold;
+				border-radius: 0;
+				cursor: pointer;
+				border: 0.5px solid rgba(91, 89, 91, 0.2);
+				&.selected {
+					background-color: $Bright_Purple;
+					color: $White;
+				}
+			}
+			.DayPicker-Day:hover {
+				background-color: $Bright_Purple !important;
+				color: $White;
+				opacity: 1;
+			}
+			.DayPicker-Caption {
+				@include Semi-Bold-Heading;
+
+				text-align: center;
+			}
+			.DayPicker-NavButton {
+				right: 0em;
+				width: 2em;
+				height: 2em;
+				top: -2%;
+			}
+			.DayPicker-Day--today {
+				border: 2px solid $DCBLOX_Gray;
+				color: $DCBLOX_Gray;
+			}
+			.DayPicker-NavButton--next {
+				background-image: url('https://mydcblox.com/cdn/library/common/icons-arrow-circle.svg');
+			}
+			.DayPicker-NavButton--prev {
+				transform: rotate(180deg);
+				background-image: url('https://mydcblox.com/cdn/library/common/icons-arrow-circle.svg');
+			}
+		}
+	}
+}

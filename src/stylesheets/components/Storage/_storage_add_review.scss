@@ -1,0 +1,204 @@
+.storage-add-review {
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.modal {
+		z-index: 5050;
+	}
+	.review-data-section {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		// padding-left: calculateVw(38px, $standard-screen-width-mid);
+		// padding-right: calculateVw(38px, $standard-screen-width-mid);
+		padding-left: calculateVw(50px, $standard-screen-width-mid);
+		padding-right: calculateVw(50px, $standard-screen-width-mid);
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			justify-content: flex-start !important;
+		}
+		.share-details-pane {
+			display: flex;
+			flex-direction: column;
+			flex: 0 1 calculateVw(376px, $standard-screen-width-mid);
+			flex-basis: calculateVw(376px, $standard-screen-width-mid);
+			min-width: calculateVw(376px, $standard-screen-width-mid);
+			min-height: calculateVh(307px, $standard-screen-height-mid);
+			width: calculateVw(376px, $standard-screen-width-mid);
+			padding-top: calculateVh(10px, $standard-screen-height-mid);
+			padding-left: calculateVw(21px, $standard-screen-width-mid);
+			padding-right: calculateVw(21px, $standard-screen-width-mid);
+			background-color: $Cool_Gray_Light_3;
+			& > .label {
+				flex: 0 1 auto;
+			}
+		}
+		.share-whitelist-pane {
+			flex: 0 1 calculateVw(376px, $standard-screen-width-mid);
+			flex-basis: calculateVw(376px, $standard-screen-width-mid);
+			min-width: calculateVw(376px, $standard-screen-width-mid);
+			min-height: calculateVh(307px, $standard-screen-height-mid);
+			padding-top: calculateVh(10px, $standard-screen-height-mid);
+			padding-left: calculateVw(21px, $standard-screen-width-mid);
+			background-color: $Cool_Gray_Light_3;
+			.scroll-view.section-content {
+				position: relative;
+				.scrollbar-track.show {
+				}
+				.scrollbar-img.show {
+					right: 0.5%;
+					background-color: $Cool_Gray_Med_3;
+				}
+			}
+			// .white-list-scroll-container,
+			.whitelist-section {
+				// overflow-y: ;
+				height: calculateVh(307px, $standard-screen-height-mid);
+			}
+			.white-list-container {
+				display: block;
+				height: calculateVh(307px, $standard-screen-height-mid);
+				overflow-y: hidden;
+				overflow-x: hidden;
+				border: none;
+				padding-right: 2.5vw;
+				padding-left: 1.6vw;
+				.ip {
+					// min-width: calculateVw(255px, $standard-screen-width-mid) !important;
+					min-width: auto;
+					width: calculateVw(250px, $standard-screen-width-mid) !important;
+					background-color: $White;
+				}
+				.ip .default-filter-wrapper {
+					// margin-top: 1vh;
+				}
+				.ip input {
+					margin-top: -0.5vh;
+				}
+			}
+			.whitelist-next-button {
+				display: none;
+			}
+		}
+		@media screen and (max-width: 1425px) {
+			.share-details-pane,
+			.share-whitelist-pane {
+				min-width: 48% !important;
+			}
+		}
+		@media screen and (max-width: 1300px) {
+			.share-details-pane .data-section {
+				justify-content: space-between;
+			}
+			.share-details-pane .radio-wrapper.primary {
+				span label {
+					width: calculateVw(92px, $standard-screen-width-mid) !important;
+				}
+			}
+			.share-whitelist-pane {
+				min-width: 48% !important;
+			}
+		}
+		.data-section {
+			flex: 1 0 auto;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.left-side {
+				margin-top: calculateVh(14.1px, $standard-screen-height-mid);
+				margin-bottom: calculateVh(23px, $standard-screen-height-mid);
+				width: calculateVw(129px, $standard-screen-width-mid);
+				height: auto;
+				.options span label {
+					width: calculateVw(60px, $standard-screen-width-mid) !important;
+				}
+			}
+			.right-side {
+				margin-top: calculateVh(14.1px, $standard-screen-height-mid);
+				margin-bottom: calculateVh(23px, $standard-screen-height-mid);
+				margin-left: calculateVw(13px, $standard-screen-width-mid);
+				width: calculateVw(193px, $standard-screen-width-mid);
+				height: auto;
+				.options span label {
+					width: calculateVw(85px, $standard-screen-width-mid);
+				}
+			}
+			.storage-settings-pane {
+				padding-top: calculateVh(6px, $standard-screen-height-mid);
+				padding-bottom: calculateVh(6px, $standard-screen-height-mid);
+				padding-left: calculateVw(9px, $standard-screen-width-mid);
+				padding-right: calculateVw(9px, $standard-screen-width-mid);
+				background-color: $White;
+				.label {
+					margin-bottom: calculateVh(9px, $standard-screen-height-mid);
+				}
+			}
+			.storage-settings-pane:nth-child(n + 2) {
+				margin-top: calculateVh(10px, $standard-screen-height-mid);
+			}
+			.radio-wrapper {
+				.check {
+					width: calculateVw(12px, $standard-screen-width-mid) !important;
+					height: calculateVw(12px, $standard-screen-width-mid) !important;
+				}
+				.radio-label {
+					margin-left: calculateVw(17px, $standard-screen-width-mid);
+					@include Text-Style-Body-Copy-Small-Regular;
+				}
+				label {
+					.check {
+						width: calculateVw(12px, $standard-screen-width-mid);
+						height: calculateVw(12px, $standard-screen-width-mid);
+						border: solid 1px $Cool_Gray_Med_1;
+					}
+					.check::before {
+						transition: none;
+						-webkit-transition: none;
+					}
+					input[type='radio']:checked ~ .check {
+						border: none;
+						transition: none;
+						-webkit-transition: none;
+					}
+					input[type='radio']:checked ~ .check::before {
+						background: $DCBLOX_Lime;
+						box-shadow: 0px 0px 15px $DCBLOX_Lime !important;
+						height: calculateVw(12, 1440);
+						width: calculateVw(12, 1440);
+						position: absolute;
+						transition: none;
+						-webkit-transition: none;
+					}
+				}
+			}
+		}
+	}
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		.review-data-section {
+			justify-content: space-between !important;
+			padding-left: calculateVw(20px, $standard-screen-width-mid);
+			padding-right: calculateVw(20px, $standard-screen-width-mid);
+		}
+	}
+	button {
+		margin-top: 1vh;
+		flex: 1 0 auto;
+		width: calculateVw(100px, $standard-screen-width-mid);
+		height: calculateVh(34px, $standard-screen-height-mid);
+		box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+		background-color: $Bright_Emerald;
+		@include Text-Style-Form-Dropdown-Selection;
+		text-align: center;
+		color: $White;
+
+		padding-top: 3px;
+
+		&.disabled {
+			cursor: not-allowed;
+		}
+	}
+}

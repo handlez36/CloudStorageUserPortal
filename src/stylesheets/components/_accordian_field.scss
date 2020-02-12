@@ -1,0 +1,85 @@
+.accordian-field {
+	padding-top: 0.2vh;
+	padding-right: 0;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	// border: 1px solid green;
+	&.amountduetoday {
+		.header {
+			width: 5vw;
+		}
+	}
+	&.amountpaid {
+		.header {
+		}
+	}
+	.header {
+		flex: 1 0 auto;
+		height: 1.11vh;
+		text-align: left;
+		@include Text-Style-Accordian-Header;
+
+		&.has-alert {
+			color: $DCBLOX_Red;
+		}
+	}
+	.value {
+		flex: 1 0 auto;
+		padding-top: calculateVw(12px, $standard-screen-width-mid);
+		@include Text-Style-Accordian-Value;
+		// border: 1px solid red;
+		&.has-alert {
+			@include Text-Style-Accordian-Alerted-Value;
+		}
+	}
+	@media screen and (max-width: 1000px) {
+		.value {
+			// top: calculateVh(20px, $standard-screen-height-mid);
+		}
+	}
+	.alert-icon {
+		margin-bottom: 0.3vh;
+		margin-left: 0.1vw;
+		width: 0.66vw;
+		height: 0.97vh;
+	}
+	&.invoice {
+		width: 3.44vw;
+		max-width: 3.44vw;
+		padding-left: 0.51vw;
+		.header {
+			padding-left: 0.31vw;
+		}
+	}
+	&.sent {
+		width: 3.63vw;
+		max-width: 3.63vw;
+		padding-left: 0.7vw;
+	}
+	&.total {
+		width: 3.79vw;
+		max-width: 3.79vw;
+		padding-left: 0.86vw;
+		.header {
+			padding-left: 0.39vw;
+		}
+	}
+	&.due {
+		width: 4.92vw;
+		max-width: 4.92vw;
+		padding-left: 1.99vw;
+	}
+	&.balance {
+		width: 4.92vw;
+	}
+	&.duetoday {
+		// flex: 1 0 auto;
+		width: 5vw;
+		max-width: 7vw;
+		padding-left: 0.78vw;
+	}
+	&.amountduetoday {
+		//width: 25vw;
+	}
+}

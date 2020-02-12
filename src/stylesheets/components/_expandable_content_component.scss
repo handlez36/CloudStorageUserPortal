@@ -1,0 +1,22 @@
+.expandable-content {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 1.5vh;
+	width: calculateVw(400px);
+	height: auto;
+	background-color: $White;
+	// box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.16);
+
+	.expandable-component-header {
+		flex: 0 1 calculateVh(54px);
+		flex-basis: calculateVh(54px);
+	}
+
+	.expandable-component-body {
+		flex: 1 0 auto;
+		padding-top: calculateVh(10px);
+		// padding-top: calculateVh(4.7px);
+		padding-left: calculateVw(19px);
+		padding-right: calculateVw(19px);
+	}
+}

@@ -1,0 +1,170 @@
+// .support-page {
+.support-button {
+	width: calculateVw(125px, $standard-screen-width-mid);
+	height: calculateVw(34px, $standard-screen-width-mid);
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+	background-color: $Purple;
+	margin-left: 0;
+	border: 0px;
+	cursor: pointer;
+	color: $White;
+	font-family: $font-family-primary-heads;
+	$map: (
+		576: 12,
+		1440: 14,
+		2560: 18,
+	);
+	font-size: least-squares-fit($map);
+	letter-spacing: 0.9px;
+	text-align: center;
+	position: relative;
+	.title {
+	}
+
+	.icon {
+		position: absolute;
+		left: 10%;
+		top: 20%;
+	}
+}
+
+.support-button:hover {
+	background-color: $Bright_Purple;
+	color: $White;
+	box-shadow: 1px 5px 6px 0 rgba(0, 0, 0, 0.15);
+}
+
+.support-button.disabled {
+	background-color: $Warm_Gray_Light_1;
+	color: $White;
+	box-shadow: none;
+}
+
+.support-button.white {
+	box-shadow: none;
+	background-color: transparent;
+	color: $Purple;
+}
+
+.support-button.white.edit {
+	&::before {
+		background: url('https://mydcblox.com/cdn/library/support/Common_PurpleEditPencil.svg')
+			no-repeat;
+		background-size: 75% 75%;
+		display: inline-block;
+		width: 10%;
+		height: 50%;
+		vertical-align: middle;
+		content: '';
+	}
+}
+
+.support-button.gradient {
+	width: calculateVw(125px, $standard-screen-width-mid);
+	height: calculateVw(34px, $standard-screen-width-mid);
+	$map: (
+		576: 14,
+		1440: 16,
+		2560: 22,
+	);
+	font-size: least-squares-fit($map);
+	font-family: $font-family-primary-subheads;
+	background-color: $Purple;
+	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 37%, $Purple 10%);
+	box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+}
+.support-button.green-gradient {
+	background-color: $Dark_Lime;
+	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Med_Lime 48%);
+}
+.support-button.bright-emerald-gradient {
+	background-color: $Bright_Emerald;
+	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Bright_Emerald 48%);
+	&.disabled {
+		background-image: linear-gradient(40deg, $Warm_Gray_Light_1 37%, $Warm_Gray_Light_1 10%);
+	}
+}
+.support-button.emerald-gradient {
+	background-color: $Dark_Emerald;
+	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Emerald 48%);
+	&.disabled {
+		background-image: linear-gradient(40deg, $Warm_Gray_Light_1 37%, $Warm_Gray_Light_1 10%);
+	}
+}
+.support-button.gray-gradient {
+	background-color: $Cool_Gray_Med_1;
+	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Cool_Gray_Med_1 48%);
+}
+.support-button.orange-gradient {
+	background-color: $Med_Rust;
+	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Med_Rust 48%);
+	&.disabled {
+		background: $Warm_Gray_Light_2;
+		cursor: none;
+	}
+}
+
+.support-button.gradient:hover {
+	background-color: $Purple;
+	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.15) 37%, $Purple 10%);
+	box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+}
+
+.support-button.white:hover {
+	background: $Warm_Gray_Light_3;
+	color: $Purple;
+	box-shadow: none;
+}
+
+.support-button.white.disabled {
+	visibility: hidden;
+	cursor: default;
+}
+
+.support-button.circle-large {
+	height: 5.66vh;
+	width: 5.66vh;
+	border-radius: 50%;
+	span {
+		$map: (
+			576: 8,
+			1440: 12,
+			2560: 15,
+		);
+		font-size: least-squares-fit($map);
+		position: relative;
+		text-align: center;
+	}
+	&::after {
+		display: block;
+		content: '';
+		height: 3vh;
+		width: 3vh;
+		margin: auto;
+	}
+}
+
+.support-button.circle-large.disabled {
+	background: $Warm_Gray_Light_2;
+	cursor: default;
+}
+
+.circle-small {
+	height: 2.5vh;
+	width: 2.5vh;
+	border-radius: 50%;
+	box-shadow: none;
+	background-size: contain;
+	box-shadow: none;
+}
+
+.circle-small:hover {
+	background-size: contain;
+	box-shadow: none;
+}
+
+.circle-small.disabled {
+	visibility: hidden;
+}
+
+// }

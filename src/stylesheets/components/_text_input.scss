@@ -1,0 +1,64 @@
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+	.text-field {
+		font-size: 0.8em !important;
+		letter-spacing: 0.1vw !important;
+	}
+}
+
+@supports (-ms-ime-align: auto) {
+	.text-field {
+		font-size: 0.8em !important;
+		letter-spacing: 0.1vw !important;
+	}
+}
+
+.text-field {
+	color: $White;
+	font-size: 1.833em; //22px;
+	width: 300px;
+	height: 50px;
+	background-color: rgba(129, 113, 153, 1);
+	border: 1px solid rgba(129, 113, 153, 1);
+	opacity: 0.7;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+
+	&:focus {
+		outline-width: 0;
+	}
+
+	&::placeholder {
+		color: $White;
+	}
+}
+
+.tippy-popper {
+	position: relative;
+	transform: 0;
+	max-width: 500px;
+}
+
+div.tippy-tooltip-content {
+	.rule {
+		// color: $Warm_Gray_Dark_1;
+		color: $White;
+		transition: all 0.2s;
+	}
+
+	.rule.valid {
+		// color: green;
+		color: $Bright_Emerald;
+
+		&:after {
+			content: '   \2713';
+			color: $Bright_Emerald;
+		}
+	}
+
+	.rule.invalid {
+		// color: $Warm_Gray_Dark_1;
+	}
+	.rule.invalid.show {
+		color: $White;
+	}
+}

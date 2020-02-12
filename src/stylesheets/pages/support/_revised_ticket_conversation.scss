@@ -1,0 +1,91 @@
+/* Ticket Conversation */
+.revised-ticket-conversation-section {
+	height: 62.5vh;
+
+	.banner.conversation-banner {
+		height: 4.65vh;
+		background-color: $Dark_Purple;
+		@include Text-Style-74;
+
+		span {
+			cursor: pointer;
+		}
+	}
+
+	.ticket-conversation {
+		padding-top: 2.85vh;
+		padding-left: 3.67vw;
+		padding-right: 3.67vw;
+		background-size: cover;
+		height: 100%;
+
+		.conversation {
+			width: calculateVw(415.8, 2560);
+			display: inline-block;
+		}
+
+		.table-nav {
+			position: absolute;
+			display: inline-block;
+			height: 100%;
+			width: auto;
+			padding-top: 26.46vh;
+			padding-left: 0.98vw;
+			font-size: 12px;
+
+			.arrow {
+				display: flex;
+				width: 0.9vw;
+				height: 1.39vh;
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.arrow:nth-child(2) {
+				margin-top: 1.11vh;
+				margin-left: 0;
+			}
+		}
+	}
+
+	.modal-content {
+		position: absolute;
+		left: 90%;
+		margin-top: 55%;
+	}
+
+	.attachment-done-modal {
+		position: absolute;
+		margin-top: 12.3vh;
+		z-index: 10;
+		border: 1px solid $DCBLOX_Purple;
+		background-color: $DCBLOX_Purple;
+		border-radius: 5px;
+		margin-left: 10%;
+		width: 12.58vw;
+		height: 19.86vh;
+		padding-top: 14vh;
+		visibility: hidden;
+		opacity: 0.95;
+		transition: all 0.25s ease-in;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 40%;
+
+		&.done {
+			visibility: visible;
+			opacity: 0.95;
+			transform: translateY(3.47vh);
+			-ms-transform: translateY(50%);
+		}
+
+		.msg {
+			color: $White;
+			text-align: center;
+			width: 100%;
+		}
+	}
+}

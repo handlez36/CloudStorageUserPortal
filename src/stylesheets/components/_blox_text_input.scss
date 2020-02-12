@@ -1,0 +1,199 @@
+.blox-text-input {
+	position: relative;
+	width: calculateVw(400px);
+
+	.label-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		label {
+			cursor: pointer;
+			@include Text-Style-Text-Input-Label;
+			transition: all 1s ease;
+		}
+		.subtext {
+			@include Text-Style-Text-Input-LabelSubText;
+		}
+		.checkmark {
+			position: absolute;
+			display: none;
+		}
+	}
+	.active-field {
+		height: 0;
+		opacity: 0;
+		transition: all 0.6s ease;
+		transform: translateY(-10px);
+		input {
+			height: 0;
+			opacity: 0;
+		}
+		textarea {
+			height: 0;
+			opacity: 0;
+		}
+	}
+	.validation-row {
+		display: none;
+	}
+}
+
+.blox-text-input.active {
+	.label-row {
+		.checkmark {
+			display: block;
+		}
+		label {
+			width: 100%;
+			text-align: left;
+			transform: translateY(0px);
+			@include Text-Style-Text-Input-Label;
+		}
+		.checkmark {
+			width: calculateVw(23px);
+			height: calculateVw(23px);
+			opacity: 0;
+			transition: all 0.5s ease;
+			top: 2.8vh;
+			right: -1vw;
+			&.success {
+				opacity: 1;
+			}
+		}
+	}
+
+	.active-field {
+		opacity: 1;
+		transform: translateY(5px);
+		min-height: calculateVh(30px, $standard-screen-height-mid);
+	}
+
+	&.error {
+		input {
+			border-bottom: 1px solid $DCBLOX_Red;
+		}
+	}
+	// &.error {
+	// 	input,
+	// 	textarea {
+	// 		border-bottom: 1px solid $DCBLOX_Red;
+	// 	}
+	// }
+	input {
+		display: block;
+		width: 100%;
+		min-height: calculateVh(25px);
+		height: auto;
+		border: none;
+		border-bottom: 1px solid $Purple;
+		padding-bottom: 0.5vh;
+		transition: all 0.2s ease;
+		opacity: 1;
+		background-color: transparent;
+		@include Text-Style-Text-Input-Content;
+
+		&:focus {
+			outline: none;
+		}
+
+		&::placeholder {
+			color: $Warm_Gray_Med_1;
+		}
+	}
+
+	textarea {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		min-height: calculateVh(30px);
+		padding-right: 1.1vw;
+		height: auto;
+		border: none;
+		scrollbar-width: none;
+		opacity: 1;
+		background-color: transparent;
+		@include Text-Style-Text-Input-Content;
+
+		&:focus {
+			outline: none;
+		}
+
+		&::placeholder {
+			color: $Warm_Gray_Med_1;
+		}
+
+		&::-webkit-scrollbar {
+			width: 0px;
+			height: 10px;
+		}
+	}
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		textarea {
+			display: block;
+			opacity: 1;
+			height: 26px;
+		}
+	}
+
+	.validation-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		opacity: 1;
+		margin-top: 0.8vh;
+
+		.validation-messages {
+			flex: 1 0 auto;
+			margin-top: 0.2em;
+			@include Text-Style-Text-Input-Validation;
+		}
+		.character-count {
+			flex: 1 0 auto;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-self: stretch;
+			padding-top: calculateVh(11px);
+			position: relative;
+			.message {
+				flex: 1 0 auto;
+				padding-right: calculateVw(8px);
+				text-align: right;
+				@include Text-Style-Text-Input-Char-Count-Message;
+			}
+			.counter {
+				min-width: 1vw;
+				flex: 0 1 calculateVw(36px);
+				margin-top: -0.6vh;
+				right: 0;
+				text-align: center;
+				background-image: url('https://mydcblox.com/cdn/library/common/images-countdown-timer-background.svg');
+				@include Text-Style-Text-Input-Char-Count;
+			}
+		}
+		.character-count.error {
+			color: $DCBLOX_Red;
+			.counter,
+			.message {
+				color: $DCBLOX_Red;
+			}
+		}
+	}
+}
+
+.blox-text-input.text-area-field {
+	.label-row .checkmark {
+		top: 0;
+		right: -0.8vw;
+	}
+	.validation-row {
+		border-top: 1px solid #9164cc;
+	}
+	&.error {
+		.validation-row {
+			border-top: 1px solid $DCBLOX_Red;
+		}
+	}
+}

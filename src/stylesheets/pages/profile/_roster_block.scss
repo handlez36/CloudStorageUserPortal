@@ -1,0 +1,157 @@
+.roster-block-wrapper {
+	padding-right: 1vh;
+	padding-top: 0.9vh;
+	align-items: center;
+	.roster-block {
+		width: 28.2vw;
+		min-height: 5.6vh;
+		height: auto;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding-right: 1vw;
+		background-color: $White;
+		opacity: 1;
+
+		.location-icon {
+			flex: 0 1 3.9vw;
+			img {
+				cursor: pointer;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.expand-button {
+			width: 2.7vw;
+			height: 2.7vh;
+			cursor: pointer;
+			color: $DCBLOX_Black;
+			margin-top: 0.6vh;
+			margin-right: -0.5vw;
+			margin-left: 0.5vw;
+		}
+		.details {
+			height: 0vh;
+			background-color: $White;
+
+			&.expanded {
+				height: 14.93vh;
+			}
+		}
+		.roster-details {
+			flex: 1 0 auto;
+			padding-left: calculateVw(10px);
+			margin-top: -0.8vh;
+			.user-name {
+				display: inline-flex;
+				position: relative;
+				color: rgba(91, 89, 91, 0.6);
+				@include Status_Head;
+			}
+			.badge-access {
+				position: relative;
+				margin-right: 0.6vw;
+			}
+			.user-email {
+				@include SubHead_Text;
+				color: $DCBLOX_Gray;
+			}
+		}
+		.toggle-switch {
+			flex: 0 1 auto;
+		}
+
+		&.disabled {
+			opacity: 0.4;
+		}
+
+		&.expanded {
+			height: 15vh;
+			align-items: flex-start;
+			.roster-details {
+				margin-top: 1.4vh;
+			}
+			.toggle-switch {
+				margin-top: 1.7vh;
+			}
+			.expand-button {
+				margin-top: 1.7vh;
+			}
+		}
+	}
+	.expanded-details {
+		position: relative;
+		width: calculateVw(352px, $standard-screen-width-mid);
+		height: 10vh;
+		background-color: $White;
+		align-items: flex-start;
+		margin-left: 3.8vw;
+		.badge-info {
+			position: absolute;
+			right: 12vw;
+			top: 2.5vh;
+			background-color: $White;
+			color: $DCBLOX_Gray;
+			@include SubHead_Text;
+		}
+		.locations {
+			position: absolute;
+			left: 1vw;
+			top: 2.5vh;
+			li {
+				list-style-type: none;
+				margin-bottom: 0.2vh;
+				color: $DCBLOX_Gray;
+				@include SubHead_Text;
+			}
+		}
+		.header {
+			position: relative;
+			width: calculateVw(330px, $standard-screen-width-mid);
+			height: 2vh;
+			background-color: $Dark_Blue;
+			margin-left: 0.8vw;
+			color: $White;
+			@include Section-Head;
+			$map: (
+				576: 7,
+				1440: 13,
+				2560: 16,
+			);
+			font-size: least-squares-fit($map);
+			.location {
+				position: absolute;
+				left: 0.5vw;
+				top: -0.5vh;
+				img {
+					margin-right: 0.2vw;
+					margin-top: -0.4vh;
+				}
+			}
+
+			.badge-access {
+				position: absolute;
+				right: 7vw;
+				top: -0.6vh;
+				img {
+					margin-right: 0.2vw;
+					margin-top: -0.3vh;
+				}
+			}
+		}
+		&.disabled {
+			opacity: 0.4;
+		}
+	}
+}
+.hover-label {
+	position: relative;
+	pointer-events: none;
+
+	img {
+		position: absolute;
+		top: -0.3vh;
+		left: 0.2vw;
+		pointer-events: none;
+	}
+}

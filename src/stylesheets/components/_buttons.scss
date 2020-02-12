@@ -1,0 +1,54 @@
+.exit-button-section {
+	margin-top: 1.3vh;
+	margin-right: 0.42vw;
+	padding-bottom: 0.2vh;
+	background-color: #b7b8b8;
+	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+	@include Text-Style-exit-button;
+	width: 1.21vw;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 1%;
+}
+
+.style-one {
+	width: 9.47vw;
+	height: 4.3vh;
+	background-color: #2f2f2f;
+	color: $White;
+	margin: 0.5vw;
+	text-align: center;
+	font-family: $font-family-primary-subheads;
+	font-size: 20px;
+}
+
+.style-one-vertical {
+	@extend .style-one;
+	display: block;
+}
+
+.submit-button {
+	width: 5.66vw;
+	height: 2.5vh;
+	margin-left: 0;
+
+	background-color: $DCBLOX_Purple;
+	border: 1px solid $DCBLOX_Purple;
+	cursor: pointer;
+	@include Text-Style-57;
+	color: $White;
+}
+
+.submit-button:hover {
+	background-color: $DCBLOX_Purple;
+	border: 1px solid $DCBLOX_Purple;
+	color: $White;
+}
+
+.submit-button.disabled {
+	pointer-events: none;
+	background-color: #e7deed;
+	border: 1px solid #e7deed;
+	color: $White;
+}

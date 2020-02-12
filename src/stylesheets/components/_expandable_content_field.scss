@@ -1,0 +1,20 @@
+.field {
+	.label {
+		margin-bottom: 0.3vh;
+
+		&.tagline {
+		}
+	}
+
+	.field-content {
+		display: flex;
+		flex-direction: row;
+
+		.field-icon {
+			width: calculateVw(30px);
+			height: calculateVw(30px);
+			margin-top: -1vh;
+			padding-left: 0.2vw;
+		}
+	}
+}

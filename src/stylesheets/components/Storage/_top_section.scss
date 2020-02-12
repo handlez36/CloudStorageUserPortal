@@ -1,0 +1,81 @@
+.add-storage-top-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+
+	.new-storage-container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+		.name {
+			opacity: 0.5;
+		}
+		.icon-section {
+			position: relative;
+			flex: 0 1 calculateVh(126.3px, $standard-screen-height-mid);
+			flex-basis: calculateVh(126.3px, $standard-screen-height-mid);
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			background-color: $Cool_Gray_Dark_3;
+			&.Atlanta {
+				background-color: $Med_Rust;
+			}
+			&.Birmingham {
+				background-color: $Med_Lime;
+			}
+			&.Chattanooga {
+				background-color: $Purple;
+			}
+			&.Huntsville {
+				background-color: $Dark_Blue;
+			}
+			img {
+				width: calculateVw(71.9px, $standard-screen-width-mid);
+				height: calculateVh(79.2px, $standard-screen-height-mid);
+			}
+			.small-redundancy {
+				position: absolute;
+				width: calculateVw(30.9, $standard-screen-width-mid);
+				height: calculateVh(28.7, $standard-screen-height-mid);
+				top: 2%;
+				left: 2%;
+			}
+			.small-accessibility {
+				position: absolute;
+				width: calculateVw(23.2, $standard-screen-width-mid);
+				height: calculateVh(25.2, $standard-screen-height-mid);
+				top: 4%;
+				right: 3%;
+			}
+		}
+		.details-section {
+			flex: 0 1 calculateVh(74, $standard-screen-height-mid);
+			flex-basis: calculateVh(74, $standard-screen-height-mid);
+			display: flex;
+			flex-direction: row;
+			background-color: $White;
+		}
+		.details-section .user-icon {
+			flex: 0 1 calculateVw(40px, $standard-screen-width-mid);
+			display: flex;
+			flex-direction: column;
+			padding-left:0.2vw;
+			padding-top: calculateVh(19.3px, $standard-screen-height-mid);
+			align-items: center;
+			img {
+				width: calculateVw(28.9px, $standard-screen-width-mid);
+				height: calculateVh(28.3px, $standard-screen-height-mid);
+			}
+		}
+		.details-section .details {
+			flex: 1 0 auto;
+			padding-top: calculateVh(13px, $standard-screen-height-mid);
+		}
+	}
+}

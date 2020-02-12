@@ -1,0 +1,85 @@
+.upload-section {
+	display: flex;
+	flex-direction: column;
+	width: calculateVw(400px, $standard-screen-width-mid);
+	height: calculateVh(151px, $standard-screen-height-mid);
+	// border: 1px solid black;
+	.top-upload-section {
+		display: flex;
+		flex-direction: row;
+		flex: 0 1 calculateVh(18px, $standard-screen-height-mid);
+		flex-basis: calculateVh(18px, $standard-screen-height-mid);
+		.title {
+			flex: 1 0 auto;
+			// border: 1px solid red;
+		}
+		.status {
+			flex: 1 0 auto;
+			padding-right: calculateVw(15px, $standard-screen-width-mid);
+			text-align: right;
+			// border: 1px solid green;
+		}
+	}
+	.bottom-upload-section {
+		display: flex;
+		flex-direction: row;
+		flex: 1 0 auto;
+		padding-top: calculateVh(10px, $standard-screen-height-mid);
+		// border: 1px solid blue;
+		.icon {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			flex: 0 1 calculateVw(100px, $standard-screen-width-mid);
+			flex-basis: calculateVw(100px, $standard-screen-width-mid);
+			min-width: calculateVw(100px, $standard-screen-width-mid);
+			img {
+				width: calculateVw(80.2px, $standard-screen-width-mid);
+				cursor: pointer;
+			}
+			// border: 1px solid green;
+		}
+		.upload-wrapper {
+			width: calculateVw(305px, $standard-screen-width-mid);
+			height: calculateVh(123px, $standard-screen-height-mid);
+			position: relative;
+			// border: 1px solid orange;
+			border-bottom: 2px solid $Bright_Purple;
+			&.closed {
+				display: none;
+			}
+			&.open {
+				animation: makeVisibile 0.5s forwards;
+			}
+		}
+		.upload-wrapper .upload-content {
+			height: 100%;
+			padding-bottom: 1.3vh;
+			// border: 1px solid red;
+		}
+		.upload-wrapper .upload-content .file-upload:not(:first-child) {
+			margin-top: calculateVh(5px, $standard-screen-height-mid);
+		}
+		.upload-wrapper .filter {
+			position: absolute;
+			width: calculateVw(274.6px, $standard-screen-width-mid);
+			bottom: 3px;
+			height: calculateVh(10px, $standard-screen-height-mid);
+			background-color: $White;
+			filter: blur(5px);
+			-webkit-filter: blur(5px);
+		}
+	}
+}
+
+.scroll-view {
+	position: relative;
+}
+.test-upload-component {
+	width: calculateVw(274.6px, $standard-screen-width-mid);
+	height: calculateVh(45px, $standard-screen-height-mid);
+	border: 1px solid black;
+}
+.test-upload-component:not(:first-child) {
+	margin-top: calculateVh(5px, $standard-screen-height-mid);
+}

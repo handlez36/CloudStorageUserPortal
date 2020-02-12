@@ -1,0 +1,33 @@
+/* Conversation Header */
+.conversation-header {
+	min-height: 3.19vh;
+	height: 3.19vh;
+	padding-left: 0.74vw;
+	background-color: $DCBLOX_Purple;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.conversation-header-text {
+	position: absolute;
+	margin-top: -2.5vh;
+	padding-left: 0.74vw;
+	padding-right: 0.82vw;
+	width: 23.75vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.title {
+		flex: 0 1 auto;
+		@include Text-Style-Conversation-Header;
+	}
+
+	.id {
+		margin-top: 0.6vh;
+		flex: 0 1 auto;
+		@include Text-Style-62;
+		color: $DCBLOX_White;
+	}
+}

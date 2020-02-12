@@ -1,0 +1,107 @@
+.release-notes-modal {
+	max-width: calculateVw(615, $standard_screen_width_mid);
+	max-height: calculateVh(474, $standard_screen_height_mid);
+	width: calculateVw(615, $standard_screen_width_mid);
+	height: calculateVh(474, $standard_screen_height_mid);
+	.modal-body {
+		background-color: $Cool_Gray_Light_3;
+	}
+	.modal-content {
+		height: 100%;
+		.scrollbar-track.show {
+			height: calculateVh(650, $standard_screen_height_mid) !important;
+		}
+		.section-content {
+			height: calculateVh(650, $standard_screen_height_mid);
+		}
+		.content {
+			height: 100%;
+			// height: calculateVh(650px, $standard_screen_height_mid);
+		}
+		.wrapper {
+			-ms-overflow-style: none;
+			padding-top: calculateVh(28px, $standard_screen_height_mid);
+			padding-left: calculateVw(18.4px, $standard_screen_width_mid);
+			padding-right: calculateVw(18.7px, $standard_screen_width_mid);
+			padding-bottom: calculateVh(31px, $standard_screen_height_mid);
+		}
+		.wrapper li {
+			display: block;
+		}
+	}
+	.modal-icon {
+		display: none;
+	}
+	.error-modal-header {
+		height: 100%;
+		align-items: center;
+		.exit img {
+			width: calculateVw(15.4, $standard_screen_width_mid);
+			height: calculateVw(15.4, $standard_screen_width_mid);
+		}
+	}
+	.error-modal-body {
+		-ms-overflow-style: none;
+		height: 100%;
+		.version-content {
+			padding-right: calculateVw(15px, $standard_screen_width_mid);
+		}
+		.content {
+			background-color: $Cool_Gray_Light_3;
+		}
+		.content .detail-view {
+			.version-content.body-copy {
+				width: 100%;
+			}
+			.version-content.body-copy img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.scroll-view {
+			background-color: $Cool_Gray_Light_3;
+
+			&.expanded {
+				.scrollbar-img {
+					height: calculateVh(105px, 1440);
+					width: calculateVw(11px, 1440);
+					margin-right: -0.1vw;
+				}
+				.scrollbar-track {
+					margin-right: 0.5vw;
+				}
+			}
+		}
+	}
+	.error-modal-title {
+		width: 100% !important;
+		.release-modal-title {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding-right: 4%;
+		}
+		.release-modal-title .title-section {
+			flex: 1 0 auto;
+			color: $White;
+		}
+		.release-modal-title .title-options-section {
+			flex: 1 0 auto;
+			text-align: right;
+			color: $White;
+		}
+	}
+
+	/** Modal font styling */
+	.version-logistics {
+		@include Text-Style-Body-Copy-Small-Regular;
+	}
+	h2 {
+		@include Text-Style-Section-Head;
+	}
+	.version-content.body-copy li {
+		@include Text-Style-Body-Copy;
+	}
+}

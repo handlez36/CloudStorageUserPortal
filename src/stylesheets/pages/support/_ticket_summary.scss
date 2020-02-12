@@ -1,0 +1,115 @@
+/* Ticket Summary */
+.outer-wrapper.ticket-summary {
+	flex: 1 0 50%;
+	flex-direction: column;
+	padding-left: 0;
+	padding-right: 0;
+	background: $White;
+
+	.header {
+		.ticket-identifier-row {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding-left: 2vw;
+			padding-right: 3.3vw;
+			padding-top: 4vh;
+
+			.ticket-id {
+				flex: 0 0 auto;
+				@include Text-Style-58;
+
+				span {
+					@include Text-Style-59;
+				}
+			}
+
+			.ticket-status {
+				flex: 0 0 auto;
+				@include Text-Style-60;
+
+				span {
+					@include Text-Style-61;
+				}
+			}
+		}
+	}
+
+	.body {
+		border-top: 1px solid $DCBLOX_Gray;
+		border-bottom: 1px solid $DCBLOX_Gray;
+		margin-top: 0.42vh;
+
+		.ticket-summary-details {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			height: auto;
+			padding-top: 1.94vh;
+			padding-bottom: 3.13vh;
+			padding-right: 3.2vw;
+
+			.text-detail {
+				flex: 1 0 23.98vw;
+				padding-left: 2vw;
+
+				table {
+					tr {
+						td:nth-child(1) {
+							width: 7.35vw;
+							letter-spacing: 0.1vw;
+							@include Text-Style-50;
+						}
+						.requestor {
+							@include Text-Style-48;
+						}
+						.ticket-overview-type {
+							@include Text-Style-45;
+							color: $DCBLOX_Gray;
+						}
+						.priority {
+							@include Text-Style-45;
+						}
+						.description-text {
+							padding-bottom: 8.5vh;
+						}
+						.description {
+							@include Text-Style-49;
+							textarea {
+								@include Text-Style-47;
+								width: 12.23vw;
+								height: 9.1vh;
+								letter-spacing: 0.07vw;
+								background: #fffefe;
+								padding: 0.5vw;
+								border: 0.01vw dotted $DCBLOX_Gray;
+								-ms-overflow-style: none;
+								-ms-overflow-y: scroll;
+							}
+						}
+						.date {
+							@include Text-Style-48;
+							padding-top: 0.3vw;
+							letter-spacing: 0.1px;
+						}
+					}
+				}
+
+				textarea {
+					background-color: $Warm_Gray_Light_2;
+				}
+			}
+
+			.icon-detail {
+				width: 5.2vw;
+				height: 5.2vw;
+				margin-left: -1em;
+
+				img {
+					width: 5vw;
+					height: 5vw;
+				}
+			}
+		}
+	}
+}

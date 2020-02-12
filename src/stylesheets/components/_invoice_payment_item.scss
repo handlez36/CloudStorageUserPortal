@@ -1,0 +1,81 @@
+.invoice-payment-item {
+	display: flex;
+	flex-direction: row;
+	width: calculateVw(394.4px, $standard-screen-width-mid);
+	//min-height: calculateVw(50px, $standard-screen-width-mid);
+	max-height: calculateVw(50px, $standard-screen-width-mid);
+	height: auto;
+	background-color: $White;
+	.icon {
+		display: flex;
+		height: auto;
+		max-width: calculateVw(50px, $standard-screen-width-mid);
+		.selected-checkbox {
+			position: absolute;
+			&.selected img {
+				position: absolute;
+				width: calculateVw(11px, $standard-screen-width-mid);
+				height: calculateVw(11px, $standard-screen-width-mid);
+			}
+			&.unselected img {
+				position: absolute;
+				width: calculateVw(9px, $standard-screen-width-mid);
+				height: calculateVw(9px, $standard-screen-width-mid);
+			}
+		}
+		& > img {
+			flex: 0 1 calculateVw(50px, $standard-screen-width-mid);
+			flex-basis: calculateVw(50px, $standard-screen-width-mid);
+			height: 100%;
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				height: calculateVw(50px, $standard-screen-width-mid);
+			}
+		}
+	}
+	.accordian-field {
+		.value {
+			padding-top: 0px;
+		}
+	}
+	.details {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: row;
+		cursor: pointer;
+
+		& .invoicenum {
+			width: calculateVw(58px, $standard-screen-width-mid);
+			margin-left: calculateVw(9.4px, $standard-screen-width-mid);
+		}
+		& .datedue {
+			width: calculateVw(60px, $standard-screen-width-mid);
+			margin-left: calculateVw(9px, $standard-screen-width-mid);
+		}
+		& .amountdue {
+			width: calculateVw(72.6px, $standard-screen-width-mid);
+			margin-left: calculateVw(9px, $standard-screen-width-mid);
+		}
+		& .amounttopay {
+			width: calculateVw(87.6px, $standard-screen-width-mid);
+			margin-left: calculateVw(27.4px, $standard-screen-width-mid);
+			.value .blox-text-input {
+				width: 100%;
+				margin-top: -0.3vh;
+			}
+			.value .blox-text-input .active-field {
+				transform: none;
+				height: 100%;
+			}
+			.value .blox-text-input .label-row,
+			.value .blox-text-input .validation-row {
+				display: none;
+			}
+		}
+		.value {
+			margin-top: calculateVh(8.6px, $standard-screen-height-mid);
+		}
+	}
+}
+.invoice-payment-item.unselected {
+	opacity: 0.4;
+}

@@ -1,0 +1,27 @@
+.particles {
+	position: absolute;
+	bottom: 3vh;
+	right: 0.45vw;
+}
+
+.question-mark {
+	animation: 3s ease-in 2s 1 forwards fadeAnimation;
+}
+
+@keyframes fadeAnimation {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 0.3;
+	}
+	40% {
+		opacity: 0.8;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

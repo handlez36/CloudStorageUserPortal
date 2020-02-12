@@ -1,0 +1,186 @@
+/* Ticket History */
+.ticket-history-page {
+	height: 100%;
+	overflow: none;
+	-ms-overflow-style: none;
+	.upper-filter {
+		position: absolute;
+		width: 27.45vw;
+		height: 4.5vh;
+		margin-top: 1vh;
+		margin-left: 0.4vw;
+		background-color: $DCBLOX_White;
+		opacity: 0.85;
+		filter: blur(5px);
+		-webkit-filter: blur(5px);
+		z-index: 750;
+	}
+	.lower-filter {
+		position: absolute;
+		bottom: 2.5vh;
+		width: 28.45vw;
+		height: 10vh;
+		margin-top: -12vh;
+		margin-left: 0.5vw;
+		background-color: $DCBLOX_White;
+		opacity: 0.85;
+		filter: blur(5px);
+		-webkit-filter: blur(5px);
+	}
+	.ticket-history-filters {
+		margin-left: 1vw;
+		.default-filter-wrapper {
+			margin-right: 2.55vw;
+		}
+	}
+
+	.message-text {
+		height: 2em;
+		.user-name {
+			@include Text-Style-Medium;
+		}
+		.start {
+			@include Text-Style-36;
+		}
+		.content {
+			@include Text-Style-14;
+		}
+	}
+
+	.banner-no-background {
+		padding-top: 0vh;
+		margin-top: 0vh;
+		padding-bottom: 0.9vh;
+		margin-left: 1.5vw;
+		@include Text-Style-71;
+	}
+
+	.open-section {
+		flex: 0 0 auto;
+		display: flex;
+		flex-direction: column;
+		// padding-top: 0.8vh;
+		//padding-left: 1.2vw;
+
+		.ticket-history-down-arrow {
+			img {
+				position: absolute;
+				left: 13.1vw;
+				top: 73.5vh;
+				width: 2vw;
+				opacity: 0.6;
+				z-index: 800;
+				cursor: pointer;
+				@media screen and (max-width: 1200px) {
+					top: 65vh;
+				}
+				@media screen and (max-height: 850px) {
+					top: 65vh;
+				}
+				@media screen and (max-height: 500px) {
+					top: 60vh;
+				}
+			}
+
+			img:hover {
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+
+		.ticket-history-up-arrow {
+			img {
+				z-index: 800;
+				position: absolute;
+				left: 13.1vw;
+				top: 4vh;
+				width: 2vw;
+				opacity: 0.6;
+				cursor: pointer;
+			}
+
+			img:hover {
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+
+		.ticket-history-row:nth-child(3) {
+			margin-top: 1.11vh;
+		}
+
+		.ticket .ticket-header {
+			color: $DCBLOX_Gray;
+
+			span {
+				color: $Dark_Purple;
+			}
+		}
+
+		.empty {
+			background-color: transparent;
+			margin-bottom: 1em;
+
+			.no-tickets {
+				color: $DCBLOX_Black;
+			}
+		}
+
+		.no-nav-arrows-spacer {
+			height: 0.86vw;
+		}
+	}
+
+	.closed-section {
+		flex: 0 0 auto;
+		display: flex;
+		flex-direction: column;
+		padding-left: 2.46vw;
+		padding-bottom: 8vh;
+		min-height: 31vh;
+		background-color: $Extra_Dark_Purple;
+
+		.ticket-history-row {
+			background-color: $Dark_Purple;
+		}
+
+		.banner-no-background {
+			padding-top: 1vh;
+			color: $Bright_Purple;
+		}
+
+		.ticket-history-row:nth-child(3) {
+			margin-top: 1vh;
+		}
+
+		.ticket .ticket-header {
+			color: $White;
+
+			span {
+				color: $DCBLOX_Lime;
+			}
+		}
+		.ticket .ticket-footer {
+			span:nth-child(1) {
+				color: $White;
+			}
+
+			span:nth-child(2) {
+				color: $DCBLOX_Lime;
+			}
+		}
+
+		.empty {
+			background-color: transparent;
+			margin-bottom: 1em;
+
+			.no-tickets {
+				color: $White;
+			}
+		}
+
+		.no-nav-arrows-spacer {
+			height: 0.86vw;
+		}
+	}
+}

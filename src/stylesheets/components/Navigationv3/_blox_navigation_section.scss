@@ -1,0 +1,18 @@
+.nav-grid {
+	background-color: $Cool_Gray_Light_2;
+	.blox-micro-grid .content-grid .react-grid-item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.vertical-grid .react-grid-item {
+		height: 100% !important;
+		background-color: transparent;
+		border: 1px solid green !important;
+	}
+	.horizontal-grid .react-grid-item {
+		background-color: transparent;
+		border: 1px solid blue !important;
+	}
+}

@@ -1,0 +1,22 @@
+.accessibility-selection-stage {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	.accessibility-selection {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		&.private {
+			margin-right: calculateVh(40, 1440);
+		}
+		img {
+			width: calculateVw(45px, $standard-screen-width-mid);
+			height: calculateVw(45px, $standard-screen-height-mid);
+			margin-left: calculateVh(17, 1440);
+			cursor: pointer;
+		}
+	}
+}

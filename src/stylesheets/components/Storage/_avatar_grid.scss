@@ -1,0 +1,36 @@
+.avatar-grid {
+	display: flex;
+	flex-direction: column;
+	width: calculateVw(430px, $standard-screen-width-mid);
+	height: calculateVh(234px, $standard-screen-height-mid);
+	padding-top: calculateVh(10px, $standard-screen-height-mid);
+	padding-right: calculateVw(10px, $standard-screen-width-mid);
+	padding-bottom: calculateVh(15px, $standard-screen-height-mid);
+	padding-left: calculateVw(10px, $standard-screen-width-mid);
+	border: 1px solid $Bright_Emerald;
+	margin-top: 3vh;
+	.avatar-grid-row {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: row;
+		.cell {
+			flex: 1 0 auto;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			&:hover {
+				background-color: #b5cdce;
+			}
+		}
+		.cell img,
+		.cell svg {
+			width: calculateVw(17px, $standard-screen-width-mid);
+			height: calculateVh(25px, $standard-screen-height-mid);
+		}
+		.cell.selected {
+			background-color: $Bright_Emerald;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+.ticket-sign {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: calculateVh(23px, $standard-screen-height-mid);
+	padding-left: calculateVw(35px, $standard-screen-width-mid);
+	padding-right: calculateVw(35px, $standard-screen-width-mid);
+
+	.ticket-sign-image {
+		margin-bottom: 1vh;
+	}
+	.date-field-label {
+		width: 100%;
+		color: $DCBLOX_Gray;
+		font-family: $proxima-nova-regular;
+		$map: (
+			576: 10,
+			1440: 14,
+			2560: 18,
+		);
+		font-size: least-squares-fit($map);
+		text-align: center;
+	}
+	.sign-button {
+		margin-top: 1vh;
+		margin-bottom: 1vh;
+	}
+	.support-button {
+		align-self: flex-start;
+	}
+}

@@ -1,0 +1,72 @@
+.ticket-history-detail {
+	width: calculateVw(450, 1440);
+	.ticket-cancel-request {
+		.cancel-message {
+			margin-top: calculateVh(36px);
+		}
+		.buttons-row {
+			margin-top: calculateVh(36px);
+			height: auto;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.buttons-row .no-option {
+			width: calculateVw(140px);
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.buttons-row .yes-option {
+			width: calculateVw(140px);
+			button {
+				width: calculateVw(140px);
+			}
+		}
+	}
+
+	.detail-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		.severity-icon {
+			position: absolute;
+			// margin-top: -0.5vh;
+			margin-top: calculateVh(91px);
+			right: 1.3vw;
+			@include Text-Style-Ticket-Flag;
+			svg text {
+				@include Text-Style-Ticket-Flag;
+			}
+			.image-flag-med {
+				@include Text-Style-Ticket-Flag;
+			}
+		}
+
+		.logistics-row {
+			padding-left: calculateVw(35px);
+			padding-right: calculateVw(35px);
+		}
+
+		.detail-cards {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			margin-top: calculateVh(15px);
+		}
+
+		.what-details {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			padding-left: calculateVw(35px);
+			padding-right: calculateVw(35px);
+
+			.expandable-content {
+				width: 100%;
+			}
+		}
+	}
+}

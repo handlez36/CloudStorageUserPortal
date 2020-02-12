@@ -1,0 +1,32 @@
+.request-wrapper {
+	width: calculateVw(467px, 1440);
+	height: calculateVw(900px, 1440);
+	background-color: $White;
+	&.review {
+		background-color: $Warm_Gray_Light_3;
+	}
+}
+.remote-hands-request-review {
+	padding-left: calculateVw(35px, $standard-screen-width-mid);
+	padding-right: calculateVw(35px, $standard-screen-width-mid);
+	.field-icon {
+		margin-left: 1vw;
+	}
+	.review-message {
+		margin-top: calculateVh(26px);
+		margin-bottom: calculateVh(1px);
+		@include Text-Style-Ticket-Request-Message;
+	}
+	.expandable-content {
+		width: 100%;
+		margin-top: calculateVh(10px);
+	}
+	.submit-request-button {
+		margin-top: calculateVh(29.9px);
+	}
+
+	.modal-content {
+		margin-top: 30vh;
+		margin-left: -2vw;
+	}
+}

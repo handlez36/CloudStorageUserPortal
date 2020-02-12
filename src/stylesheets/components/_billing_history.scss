@@ -1,0 +1,191 @@
+.billing-history,
+.current-invoices-page2 {
+	//width: calculateVw(505, 1440);
+	align-content: center;
+	display: flex;
+	flex-direction: column;
+
+	/** NEW */
+	height: calc(100vh - 5.56vh);
+	padding-bottom: 9vh;
+
+	.list-container {
+		margin-left: 3.7vw;
+		margin-right: 3.7vw;
+	}
+	.accordian-list {
+		width: calculateVw(450, 1440);
+		overflow: hidden;
+		height: 100%;
+	}
+	.accordian-list .blox-cycle-view {
+		height: 100%;
+	}
+	.accordian-list .upper-filter,
+	.accordian-list .lower-filter {
+		margin-left: 3.7vw;
+		margin-right: 3.7vw;
+		width: 25.45vw !important;
+	}
+}
+
+// #billing-history-img {
+.billing-history-img {
+	margin-left: 3.8vw;
+	margin-right: 2vw;
+	width: calculateVw(365, 1440);
+	// height: auto;
+	height: calculateVh(215px, 1440);
+	align-content: center;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.dd-title {
+	padding: 0px;
+	@include Drop-Down-Selection;
+	top: -0.45vw;
+	left: 1.7vw;
+	position: absolute;
+	width: 8vw;
+	color: $DCBLOX_Gray;
+}
+
+.billing-filter-wrapper-2 {
+	margin-top: 0.5vw;
+	width: 8vw;
+	margin-left: 1vw;
+	height: 2.5vw;
+	border-radius: 2px;
+	border-bottom: 2px solid $DCBLOX_Lime;
+	display: inline-block;
+
+	.billing-history-filter {
+		display: inline;
+		position: relative;
+
+		span {
+			margin-top: 1.1vw;
+			margin-left: 0.1vw;
+			border-style: none;
+		}
+	}
+	.billing-history-filter li {
+		list-style: none;
+		padding: 0.3vw;
+		padding-left: 1vw;
+		color: $DCBLOX_Gray;
+		height: 3.1vh;
+		width: 8vw;
+		@include Drop-Down-Options;
+	}
+	.billing-history-filter li:hover {
+		background-color: rgba(181, 211, 52, 0.3);
+	}
+	.billing-history-filter ul {
+		z-index: 2100;
+		font-family: $font-family-primary-subheads;
+		top: 2.4vw;
+		font-size: 1vw;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		width: 8vw;
+		padding: 0px 0px;
+		background-color: $White;
+		background-image: none;
+		border: none;
+		-ms-word-break: normal;
+		word-break: normal;
+		position: absolute;
+		cursor: pointer;
+	}
+	select::-ms-expand {
+		display: none;
+	}
+	.billing-history-filter:after {
+		content: '>';
+		font: 1.5vh 'Consolas', monospace;
+		color: $DCBLOX_Gray;
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+		top: 2vh;
+		left: 7.2vw;
+		position: absolute;
+		pointer-events: none;
+	}
+}
+
+.billing-filter-wrapper {
+	@extend .billing-filter-wrapper-2;
+	margin-left: 8vw;
+}
+
+.billing-history-title {
+	font-family: $font-family-primary-subheads;
+	font-size: calculateFontSize(13px, 28px);
+	color: $DCBLOX_Gray;
+	margin-bottom: 0.3vw;
+	margin-left: 2vw;
+}
+
+.billing-history-span {
+	font-family: $font-family-primary-subheads;
+	font-size: calculateFontSize(13px, 28px);
+	color: $DCBLOX_Gray;
+	margin-bottom: 0.3vw;
+	margin-left: 1.8vw;
+	letter-spacing: 0.1vw;
+}
+
+.billing-icon {
+	margin-top: 0.9vw;
+	top: 0.1vw;
+	left: 0.1vw;
+	width: 1vw;
+	position: absolute;
+}
+
+@media screen and (max-width: 1440px) {
+	.billing-icon {
+		margin-top: 0.9vw;
+		top: 0vw;
+		left: 0.5vw;
+		position: absolute;
+	}
+
+	.billing-filter-wrapper-2 {
+		.billing-history-filter:after {
+			content: '>';
+			font: 1.5vh 'Consolas', monospace;
+			color: $DCBLOX_Gray;
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+			top: 1.6vh;
+			left: 7.2vw;
+			position: absolute;
+			pointer-events: none;
+		}
+	}
+
+	.billing-history {
+		.list-container {
+			margin-left: 6.2vh;
+			margin-right: 6.9vh;
+		}
+	}
+
+	#billing-history-img {
+		margin-left: 3.8vw;
+		margin-right: 2vw;
+		width: calculateVw(365, 1440);
+		height: auto;
+		align-content: center;
+	}
+}

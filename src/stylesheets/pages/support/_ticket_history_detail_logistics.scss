@@ -1,0 +1,33 @@
+.logistics-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: calculateVh(32px);
+	padding-left: calculateVw(57px);
+
+	.opened-section {
+		.open-by-text {
+			@include Text-Style-Ticket-Detail-Logistics-Label;
+		}
+		.requestor-name {
+			margin-left: 0.3vw;
+			@include Text-Style-Ticket-Detail-Logistics-Name;
+
+			&:after {
+				content: '\00B7';
+				margin-left: 0.2vw;
+			}
+		}
+		.open-time {
+			margin-left: 0.2vw;
+			@include Text-Style-Ticket-Detail-Logistics-Datetime;
+		}
+	}
+	.status-text {
+		@include Text-Style-Ticket-Detail-Logistics-Label;
+		.status {
+			@include Text-Style-Ticket-Detail-Logistics-Status;
+		}
+	}
+}

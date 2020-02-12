@@ -1,0 +1,104 @@
+/* Share Details */
+.outer-wrapper.share-details {
+	padding-top: 3vh;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: 1440px) and (max-width: 2560px) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@media screen and (min-width: 2560px) {
+		padding-left: 63.5px;
+		padding-right: 63.5px;
+	}
+
+	h6 {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+		font-family: 'BourgeoisBoldCondensed';
+		font-weight: 500;
+		line-height: 1.2;
+		color: inherit;
+	}
+
+	.info-section {
+		.check {
+			color: green;
+		}
+		.no-check {
+			color: $DCBLOX_Red;
+		}
+	}
+
+	.manage-whitelist-section,
+	.manage-password-section {
+		width: 100%;
+		margin-top: 6vh;
+	}
+
+	.manage-whitelist-section {
+		margin-top: 1vh;
+	}
+
+	.modal-content {
+		.modal-title {
+			@include Text-Style-Medium;
+			color: $Blue;
+		}
+
+		.help-section {
+			margin-top: 3.5vh;
+
+			.title {
+				margin-top: 2vh;
+				margin-left: 12vw;
+				@include Text-Style-36;
+			}
+
+			.pdf-download-section {
+				margin-top: 1vh;
+				@include Text-Style-3;
+				font-stretch: condensed;
+				line-height: 1.04;
+
+				div {
+					width: 10vw;
+					height: 6vh;
+					display: inline-block;
+					text-align: center;
+					margin-left: 4vw;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer;
+					background-color: $Bright_Emerald;
+					color: $DCBLOX_White;
+					font-family: 'BourgeoisMediumCondensed';
+					border-radius: 0.5vh;
+					font-size: 1rem;
+					padding: 0.5vw;
+					letter-spacing: 0.9px;
+				}
+
+				.mac {
+					margin-top: 2vh;
+				}
+				.cloudBerry {
+					margin-left: 10.7vw;
+					margin-top: 1vh;
+					position: absolute;
+				}
+			}
+		}
+	}
+	h6 {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+		font-family: 'BourgeoisBoldCondensed';
+		font-weight: 500;
+		line-height: 1.2;
+		color: inherit;
+	}
+}

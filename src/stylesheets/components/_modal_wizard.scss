@@ -1,0 +1,23 @@
+.blox-modal-wizard {
+	.buttons-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		height: auto;
+		margin-top: calculateVh(15px);
+		.prev {
+			align-self: center;
+			margin-right: calculateVw(25px);
+			cursor: pointer;
+			@include Text-Style-Error-Modal-Body-Email;
+
+			&.disabled {
+				pointer-events: none;
+			}
+		}
+		.next-button {
+			width: calculateVw(100px, $standard-screen-width-mid);
+			height: calculateVh(34px, $standard-screen-height-mid);
+		}
+	}
+}

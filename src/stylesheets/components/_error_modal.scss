@@ -1,0 +1,95 @@
+.error-modal {
+	.modal-content {
+		border-radius: 0;
+		width: calculateVw(300px, 1440);
+
+		.modal-header {
+			min-height: calculateVh(44px, $standard-screen-height-mid);
+			padding-top: calculateVw(10, 1440);
+			padding-left: calculateVw(19.5px);
+			padding-bottom: 0;
+			background-color: $DCBLOX_Purple;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+
+			.modal-title {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.modal-body {
+			padding-top: calculateVh(27px);
+			padding-left: calculateVw(29.4px);
+			padding-right: calculateVw(21.1px);
+		}
+
+		.modal-footer {
+			display: none;
+		}
+	}
+	.error-modal-header {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		position: relative;
+		@include Text-Style-Error-Modal-Header;
+
+		img {
+			width: calculateVw(20px, 1440);
+			height: calculateVw(23px, 1440);
+			margin-top: calculateVh(-5px);
+		}
+		.error-modal-title {
+			padding-left: calculateVw(10px, 1440);
+			margin-top: calculateVw(0px, 1440);
+		}
+		.header-message {
+			@include Body-Copy;
+			align-self: flex-end;
+			position: absolute;
+			right: 10%;
+			.underline {
+				text-decoration: underline;
+			}
+		}
+		.exit {
+			position: absolute;
+			right: 0;
+			cursor: pointer;
+		}
+	}
+
+	.error-modal-body {
+		@include Text-Style-Error-Modal-Body-Bold;
+
+		.bottom-message {
+			margin-top: 2vh;
+			@include Text-Style-Error-Modal-Body-Normal;
+			margin-bottom: 2vh;
+			&.bold {
+				@include Text-Style-Error-Modal-Body-Bold;
+			}
+		}
+	}
+
+	.buttons-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: calculateVh(15px);
+		height: calculateVh(40px);
+		.email-option {
+			align-self: center;
+			margin-top: -0.5vh;
+			@include Text-Style-Error-Modal-Body-Email;
+		}
+
+		.try-again-option {
+			// margin-left: calculateVw(15.2px);
+		}
+	}
+}

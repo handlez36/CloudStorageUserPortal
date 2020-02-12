@@ -1,0 +1,35 @@
+@import 'color';
+
+//portal
+
+$portal-header-content: $DCBLOX_Gray;
+$portal-footer-links: $Cool_Gray_Med_2;
+$portal-menu-item: $DCBLOX_Gray;
+
+//profile specific
+$profile-start: $Blue;
+$profile-menu-item: $Dark_Blue;
+$profile-banner: $Blue;
+$profile-banner-swipe: $Dark_Blue;
+$password-indicator: $DCBLOX_Purple;
+
+//billing specific
+$billing-start: $Med_Lime;
+$billing-menu-item: $Dark_Lime;
+$billing-banner: $Med_Lime;
+$billing-banner-swipe: $Dark_Lime;
+
+//support specific
+
+$support-menu-item: $Dark_Purple;
+
+//storage specific
+$storage-start: $Emerald;
+$storage-menu-item: $Dark_Emerald;
+$storage-banner: $Emerald;
+$storage-banner-swipe: $Dark_Emerald;
+
+// Ticket Priority colors
+$low-severity: $DCBLOX_Aqua;
+$medium-severity: $White;
+$high-severity: $DCBLOX_Orange;

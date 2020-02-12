@@ -1,0 +1,19 @@
+.attachment-wrapper {
+	height: calculateVh(70px, $standard-screen-height-mid);
+	overflow-y: hidden;
+	.attachment-content {
+		display: flex;
+		flex-direction: column;
+		height: calculateVh(70px, $standard-screen-height-mid);
+		.attachment-row {
+			display: flex;
+			flex-direction: row;
+		}
+		.attachment-row:not(:first-child) {
+			margin-top: calculateVh(5px, $standard-screen-height-mid);
+		}
+		.attachment-item {
+			flex: 1 0 auto;
+		}
+	}
+}
