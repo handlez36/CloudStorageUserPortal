@@ -55,7 +55,6 @@
 		"jsdom": "11.12.0",
 		"lodash": "4.17.10",
 		"mdbreact": "^4.8.2",
-		"mixpanel-browser": "^2.24.0",
 		"moment": "2.22.0",
 		"netmask": "^1.0.6",
 		"npm": "^6.2.0",
