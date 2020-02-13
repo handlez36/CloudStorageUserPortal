@@ -228,4 +228,13 @@
 		margin-top: 1vh;
 		font-synthesis: none;
 	}
+	.company-link {
+		font-family: $font-family-primary-subheads;
+		font-size: calculateFontSize(10px, 25px); //22px;
+		color: $DCBLOX_Gray;
+		&.selected {
+			font-family: $font-family-primary-heads;
+			color: $DCBLOX_Purple;
+		}
+	}
 }

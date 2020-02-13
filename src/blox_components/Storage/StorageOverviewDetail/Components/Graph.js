@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { Decimal } from 'decimal.js';
 
-import { Sorting } from '../../services/sorting';
-import SmallProgressCircle from './../../containers/Storage/SmallProgressCircle';
-import GraphBar from './../../containers/Storage/GraphBar';
+import * as StorageUtils from 'utils/StorageUtils';
 import GraphDetail from './GraphDetails';
-import UsageBar from './UsageBar';
 import LocationBar from './LocationBar';
-import * as StorageUtils from './../../containers/Storage/Utils/StorageUtils';
+import UsageBar from './UsageBar';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const ProgressCircleDarkEmerald = `${CDN_URL}storage/progress-circle-emerald.svg`;

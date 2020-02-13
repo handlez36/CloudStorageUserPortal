@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import CalendarDay from './../sub_components/Billing/CalendarDay';
-import CallToAction from './../sub_components/Billing/CallToAction';
-import { BillingApi } from './../services/billing';
+import CalendarDay from 'sub_components/Billing/CalendarDay';
+import CallToAction from 'sub_components/Billing/CallToAction';
+import { BillingApi } from 'services/billing';
 
 class TotalAmountDue extends Component {
 	state = {

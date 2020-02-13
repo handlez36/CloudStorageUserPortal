@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import each from 'lodash/each';
 
-import { DIMENSIONS } from './../../services/layoutManager';
-import BloxPage from './../../sub_components/Layout/BloxPage';
-import ComponentWrapper from './../../sub_components/Layout/ComponentWrapper';
-import TicketCount from './../../blox_components/Common/TicketCountRow';
-// import StorageDetail from './../../components/Storagev3/StorageOverviewDetail';
-import { TicketUtils } from './../../services/ticket';
-import { RESOLUTIONS } from './../../services/config';
+import { DIMENSIONS } from 'services/layoutManager';
+import BloxPage from 'sub_components/Layout/BloxPage';
+import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
+import TicketCount from 'blox_components/Common/TicketCountRow';
+import StorageDetail from 'blox_components/Storage/StorageOverviewDetail/StorageOverviewDetail';
+import { TicketUtils } from 'services/ticket';
+import { RESOLUTIONS } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -56,7 +56,7 @@ class OverviewPage extends Component {
 				</div>
 				<div key='storageDetails' className='storageDetails'>
 					<ComponentWrapper collapseTitle hideBorder>
-						{/* <StorageDetail breakpoint={breakpoint} /> */}
+						<StorageDetail breakpoint={breakpoint} />
 					</ComponentWrapper>
 				</div>
 			</BloxPage>

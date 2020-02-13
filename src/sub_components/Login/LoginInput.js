@@ -8,9 +8,9 @@ import { faUser, faLock, faKey } from '@fortawesome/free-solid-svg-icons';
 // import MfaOption from '../components/Login/MfaOption';
 // import MessageText from '../components/Common/MessageText';
 // import CredentialInputComponent from '../components/Common/CredentialInputComponent';
+import MessageText from 'sub_components/Common/MessageText';
+import CredentialInputComponent from 'sub_components/Common/CredentialInputComponent';
 import MfaOption from './MfaOption';
-import MessageText from './../Common/MessageText';
-import CredentialInputComponent from './../Common/CredentialInputComponent';
 
 // ActionCreator actions
 import {

@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import { string, bool } from 'prop-types';
 
-import ToolTip from '../Components/LocationLabel';
+// import ToolTip from '../Components/LocationLabel';
+import ToolTip from './LocationLabel';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const MirrorArrows = `${CDN_URL}storage/mirror-arrows.svg`;

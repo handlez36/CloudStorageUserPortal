@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { setAxiosDefaults } from 'services/config';
+import { setAxiosDefaults } from './services/config';
 import {
 	validateAuthState,
 	makeJwtValidationRequest,
 	requestLoginUsernameReset,
-	switchCompany,
-} from 'actions/auth';
-import { getCompanyInfo } from 'actions/company';
+} from './actions/auth';
+import { switchCompany } from './actions/auth';
+import { getCompanyInfo } from './actions/company';
 
 class App extends Component {
 	/**

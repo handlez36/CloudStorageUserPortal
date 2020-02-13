@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
-import paymentImage from '../../assets/billing/payment-art.png';
-import { BillingApi } from '../../services/billing';
-import { Utils } from '../../services/utils';
+import { BillingApi } from 'services/billing';
+import { Utils } from 'services/utils';
+import paymentImage from 'assets/billing/payment-art.png';
+// import { BillingApi } from '../../services/billing';
+// import { Utils } from '../../services/utils';
+// import paymentImage from '../../assets/billing/payment-art.png';
 
 class RecentPayment extends Component {
 	state = {

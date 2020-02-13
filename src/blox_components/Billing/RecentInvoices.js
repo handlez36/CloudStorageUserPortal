@@ -2,13 +2,19 @@ import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
 
-import { BillingUtils, BillingApi } from '../../services/billing';
-import { Sorting } from '../../services/sorting';
-import { Utils } from '../../services/utils';
-import Button from '../../components/Common/BloxButton';
-import dueIcon from '../../assets/billing/due-icon.svg';
-import overdueIcon from '../../assets/billing/icon_Invoice_pastdue.svg';
-import paidIcon from '../../assets/billing/invoice-icon-paid.svg';
+import { BillingUtils, BillingApi } from 'services/billing';
+import { Sorting } from 'services/sorting';
+import { Utils } from 'services/utils';
+import dueIcon from 'assets/billing/due-icon.svg';
+import overdueIcon from 'assets/billing/icon_Invoice_pastdue.svg';
+import paidIcon from 'assets/billing/invoice-icon-paid.svg';
+
+// import { BillingUtils, BillingApi } from '../../services/billing';
+// import { Sorting } from '../../services/sorting';
+// import { Utils } from '../../services/utils';
+// import dueIcon from '../../assets/billing/due-icon.svg';
+// import overdueIcon from '../../assets/billing/icon_Invoice_pastdue.svg';
+// import paidIcon from '../../assets/billing/invoice-icon-paid.svg';
 
 class RecentInvoices extends Component {
 	state = {

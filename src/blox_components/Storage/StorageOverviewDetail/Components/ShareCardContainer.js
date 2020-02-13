@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Decimal } from 'decimal.js';
+
 import FrontSide from './FrontSide';
 import BackSide from './BackSide';
+// import FrontSide from '../../containers/Storage/Components/FrontSide';
+// import BackSide from '../../containers/Storage/Components/BackSide';
 
 const SIDES = {
 	FRONT: 'front',
@@ -15,18 +17,11 @@ class ShareCardContainer extends Component {
 		selectedShare: null,
 		error: null,
 		scrollTop: 0,
-		total: 0,
-		size: '',
 	};
 
 	flipCard = (shareId = null) => {
 		const { side: flippingFrom } = this.state;
-		const { stats } = this.props;
 		const share = this.getSelectedShareDetails(shareId);
-
-		if (stats && share) {
-			this.getTotalUsedStorage(stats, share.type);
-		}
 
 		this.setState({
 			side: flippingFrom === SIDES.FRONT ? SIDES.BACK : SIDES.FRONT,
@@ -54,33 +49,6 @@ class ShareCardContainer extends Component {
 
 		return null;
 	};
-	getTotalUsedStorage = (stats, storageType) => {
-		let data;
-		if (storageType === 'file') {
-			data = stats.file;
-		} else {
-			data = stats.object;
-		}
-
-		const rawTotalUsed = data.reduce((sum, bar) => (sum += bar.sizeMB), 0);
-		let totalUsed = new Decimal(rawTotalUsed);
-		let size;
-		if (rawTotalUsed < 1000) {
-			size = 'MB';
-		} else if (rawTotalUsed < 1000000) {
-			totalUsed = totalUsed.dividedBy(1000);
-			size = 'GB';
-		} else if (rawTotalUsed < 1000000000) {
-			totalUsed = totalUsed.dividedBy(1000000);
-			size = 'TB';
-		} else {
-			totalUsed = totalUsed.dividedBy(1000000000);
-			size = 'PB';
-		}
-		console.log('total used', totalUsed.toNumber());
-
-		this.setState({ total: totalUsed.toNumber(), size });
-	};
 
 	componentDidMount() {
 		/** Needed for Firefox. For some reason it retains scrollTop values after a browser refresh */
@@ -93,7 +61,7 @@ class ShareCardContainer extends Component {
 	}
 
 	render() {
-		const { side, selectedShare, scrollTop, total, size } = this.state;
+		const { side, selectedShare, scrollTop } = this.state;
 		const {
 			stats,
 			shares,
@@ -102,9 +70,12 @@ class ShareCardContainer extends Component {
 			fileCommitment,
 			selectMenuItem,
 		} = this.props;
-
+		let total = 0;
+		if (selectedShare) {
+			total = selectedShare.type === 'file' ? fileCommitment : objectCommitment;
+		}
 		return (
-			<div className={`shares-card-container ${side}`}>
+			<div className={`shares-card-container v3 ${side}`}>
 				{side === SIDES.FRONT && (
 					<FrontSide
 						onFlip={this.flipCard}
@@ -121,7 +92,6 @@ class ShareCardContainer extends Component {
 						share={selectedShare}
 						stats={stats}
 						viewShare={viewShare}
-						size={size}
 						changeToManageStorage={this.props.changeToManageStorage}
 					/>
 				)}

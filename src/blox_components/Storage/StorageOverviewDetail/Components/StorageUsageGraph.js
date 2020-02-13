@@ -2,17 +2,17 @@ import React, { Component, Fragment } from 'react';
 import * as Victory from 'victory';
 import moment from 'moment';
 
-import GraphDetail from './GraphDetails';
-import { StorageApi } from '../../services/storage';
-import { LOCATION_THEME } from '../../containers/Storage/StorageConstants';
-import * as StorageUtils from '../../containers/Storage/Utils/StorageUtils';
-import { Utils } from '../../services/utils';
-import { ClientData } from '../../services/clientData';
+import { StorageApi } from 'services/storage';
+import { LOCATION_THEME } from 'utils/StorageConstants';
+import * as StorageUtils from 'utils/StorageUtils';
+import { Utils } from 'services/utils';
+import { ClientData } from 'services/clientData';
 // import FileStorageIcon from '../../assets/storage/Storage-file-icon-transparent.svg';
 // import ObjectStorageIcon from '../../assets/storage/Storage-object-icon-transparent.svg';
 // import LeftArrow from '../../assets/storage/Storage-left-Arrow.svg';
-import { determineDataUnit } from '../../containers/Storage/Utils/StorageUtils';
-import { RESOLUTIONS as BREAKPOINTS } from './../../services/config';
+import { determineDataUnit } from 'utils/StorageUtils';
+import { RESOLUTIONS as BREAKPOINTS } from 'services/config';
+import GraphDetail from './GraphDetails';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const FileStorageIcon = `${CDN_URL}storage/Storage-file-icon-transparent.svg`;

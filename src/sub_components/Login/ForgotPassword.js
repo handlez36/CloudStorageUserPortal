@@ -1,17 +1,11 @@
 import React, { Component, Fragment } from 'react';
 
-// import ForgotPasswordModal from './../Common/ErrorModal';
-// import Button from './../Common/BloxButton';
-// import TextInput from './../Common/BloxTextInput';
-// import { INPUT_TYPES } from './../../utils/Misc/CommonConstants';
-// import { UserApi } from './../../services/user';
-
 /** v3 imports */
-import ForgotPasswordModal from './../Common/ErrorModal';
-import Button from './../Common/BloxButton';
-import TextInput from './../Common/BloxTextInput';
-import { INPUT_TYPES } from './../../utils/Misc/CommonConstants';
-import { UserApi } from './../../services/user';
+import ForgotPasswordModal from 'sub_components/Common/ErrorModal';
+import Button from 'sub_components/Common/BloxButton';
+import TextInput from 'sub_components/Common/BloxTextInput';
+import { INPUT_TYPES } from 'utils/Misc/CommonConstants';
+import { UserApi } from 'services/user';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const ForgotPasswordImage = `${CDN_URL}common/set-password-modal-icon.svg`;

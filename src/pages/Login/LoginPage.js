@@ -7,8 +7,8 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 // import ForgotPassword from '../../components/Login/ForgotPassword';
 
 /** v3 imports */
-import LoginInput from './../../sub_components/Login/LoginInput';
-import ForgotPassword from './../../sub_components/Login/ForgotPassword';
+import LoginInput from 'sub_components/Login/LoginInput';
+import ForgotPassword from 'sub_components/Login/ForgotPassword';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 /**

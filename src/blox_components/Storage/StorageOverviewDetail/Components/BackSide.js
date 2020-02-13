@@ -1,11 +1,11 @@
 import React from 'react';
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { Decimal } from 'decimal.js';
-import Button from '../../../components/Common/BloxButton';
-import LocationIcon from './LocationIcon';
-import SmallProgressCircle from '../SmallProgressCircle';
-import * as StorageUtils from '../Utils/StorageUtils';
-import { STORAGE_AVATAR_URL_PREFIX } from '../../../components/Common/CommonConstants';
+
+import Button from 'sub_components/Common/BloxButton';
+import LocationIcon from 'sub_components/Storage/LocationIcon';
+import * as StorageUtils from 'utils/StorageUtils';
+import { STORAGE_AVATAR_URL_PREFIX } from 'utils/Misc/CommonConstants';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 

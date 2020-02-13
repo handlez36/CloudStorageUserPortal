@@ -2,7 +2,9 @@ import axios from 'axios';
 import moment from 'moment';
 import { Netmask } from 'netmask';
 
-import { TICKET_LIST_CYCLE_DIRECTION } from '../containers/Support/TicketConstants';
+// import { TICKET_LIST_CYCLE_DIRECTION } from '../containers/Support/TicketConstants';
+// import { TICKET_LIST_CYCLE_DIRECTION } from './../utils/TicketConstants';
+import { TICKET_LIST_CYCLE_DIRECTION } from 'utils/TicketConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Atlanta = `${CDN_URL}profile/image-building-atlanta.svg`;
 const Huntsville = `${CDN_URL}profile/image-building-huntsville.svg`;

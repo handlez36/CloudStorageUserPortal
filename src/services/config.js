@@ -11,6 +11,10 @@ export const setCompanyIdHeader = id => {
 	axios.defaults.headers.common['companyid'] = id;
 };
 
+export const getCompanyIdHeader = id => {
+	return axios.defaults.headers.common['companyid'];
+};
+
 export const RESOLUTIONS = {
 	LOW: 928,
 	MED: 1344,

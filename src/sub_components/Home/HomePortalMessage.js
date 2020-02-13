@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { switchCompany } from './../../actions/auth';
+import { switchCompany } from 'actions/auth';
+import { getCompanyInfo } from 'actions/company';
 
 class HomePortalMessage extends Component {
 	constructor(props) {
@@ -33,9 +34,28 @@ class HomePortalMessage extends Component {
 		return name;
 	}
 
-	testCompanySwitch = id => {
-		console.log('Switching Company...');
-		this.props.switchCompany(id);
+	companySwitch = id => {
+		this.props.getCompanyInfo(id);
+	};
+
+	renderCompanyList = memberships => {
+		const shouldRenderList = memberships && memberships.length > 1;
+
+		if (shouldRenderList) {
+			return memberships.map(company => {
+				const { fuseBillId: currentCompanyId } = this.props.company_info;
+				const isSelectedCompany = company.organizationId === parseInt(currentCompanyId);
+				return (
+					<div
+						className={`company-link${isSelectedCompany ? ' selected' : ''}`}
+						style={{ cursor: 'pointer' }}
+						onClick={() => this.companySwitch(company.organizationId)}
+					>
+						{company.organizationName}
+					</div>
+				);
+			});
+		}
 	};
 
 	render() {
@@ -49,6 +69,8 @@ class HomePortalMessage extends Component {
 				</div>
 				<div className='home-name'>{this.getUserName()}. </div>
 				<div className='home-subtext'>What would you like to do today?</div>
+				<br />
+				{this.renderCompanyList(memberships)}
 				{/* <span className=" home-welcome text-style-5">
           Explanation text for first timeusers? Hover instructional text over the BLOX Modules?
           </span> */}
@@ -66,5 +88,5 @@ function mapStateToProps(state) {
 
 export default connect(
 	mapStateToProps,
-	{ switchCompany },
+	{ switchCompany, getCompanyInfo },
 )(HomePortalMessage);

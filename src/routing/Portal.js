@@ -2,25 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom'; //IndexRoute has been removed (never used)
 
-/** v1 imports */
-// import Home from './SamplePortalHome/Home';      DELETED
-// import LoginPage from '../components/Login/LoginPage';   DELETED
-// import Release from './Release/Release';
-// import Footer from './../components/Common/Footer';      DELETED
-// import ModalPage from './Feedback/ModalPage';      DELETED
-// import Error404 from './../components/Common/Error404';    DELETED
-// import StorageOverview from '../components/Layoutv3/PortalLayout';   DELETED
-
 /** v3 imports */
-import Home from './../pages/Home/Home';
-import LoginPage from './../pages/Login/LoginPage';
-import StorageOverview from './../sub_components/Layout/PortalLayout';
+import Home from 'pages/Home/Home';
+import LoginPage from 'pages/Login/LoginPage';
+import StorageOverview from 'sub_components/Layout/PortalLayout';
 // import Release from './Release/Release';
-import Footer from './../sub_components/Layout/Footer';
-import ModalPage from './../sub_components/Misc/ModalPage';
-import Error404 from './../pages/Misc/Error404';
-import { Permissions } from './../services/permissions';
-import { getCompanyInfo } from './../actions/company';
+import Footer from 'sub_components/Layout/Footer';
+import ModalPage from 'sub_components/Misc/ModalPage';
+import Error404 from 'pages/Misc/Error404';
+import { Permissions } from 'services/permissions';
+import { getCompanyInfo } from 'actions/company';
 
 class Portal extends Component {
 	state = {
@@ -89,7 +80,7 @@ class Portal extends Component {
 							return hasStorageAccess ? <StorageOverview {...props} /> : <Home {...props} />;
 						}}
 					/>
-					<Route exact path='/portal/sandbox' component={Sandbox} /> */}
+					{/* <Route exact path='/portal/sandbox' component={Sandbox} /> */}
 					<Route exact path='/portal/storagev3' component={StorageOverview} />
 					<Route
 						exact
@@ -109,7 +100,7 @@ class Portal extends Component {
 					<Route component={Error404} />
 				</Switch>
 				<ModalPage />
-				{pathname !== '/portal/storagev3' && <Footer />}
+				{/* {pathname !== '/portal/storagev3' && <Footer />} */}
 			</div>
 		);
 	}

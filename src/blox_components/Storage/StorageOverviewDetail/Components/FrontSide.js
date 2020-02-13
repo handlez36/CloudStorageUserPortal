@@ -1,8 +1,11 @@
 import React, { Fragment } from 'react';
 
-import ScrollView from '../../../components/Common/BloxScrollViewNew';
+import ScrollView from 'sub_components/Common/BloxScrollViewNew';
+import Button from 'sub_components/Common/BloxButton';
 import SmallCard from './SmallShareCard';
-import Button from '../../../components/Common/BloxButton';
+// import ScrollView from '../../../components/Common/BloxScrollViewNew';
+// import SmallCard from './SmallShareCard';
+// import Button from '../../../components/Common/BloxButton';
 
 function renderShares(onClickFunc, shares = [1, 1, 1, 1, 1]) {
 	return shares.map((share, index) => (

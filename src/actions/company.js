@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import * as Config from 'services/config';
+
 /**
  * Action creator type constants for company info
  */
@@ -53,15 +55,25 @@ function companyRequestSuccess({ addressPreferences, customer, fuseBillId }) {
 /**
  * Exported function exposing an interface used to call company info request API
  */
-export function getCompanyInfo() {
+export function getCompanyInfo(id = null) {
 	return dispatch => {
 		dispatch(companyRequest());
+
+		const currentHeaderId = Config.getCompanyIdHeader();
+		if (id) {
+			Config.setCompanyIdHeader(id);
+		}
 
 		companyApiRequest()
 			.then(response => {
 				if (response.status !== 200 || response.data.error) {
+					if (id) {
+						Config.setCompanyIdHeader(currentHeaderId);
+					}
+					console.log('Switching company (ERROR)...');
 					dispatch(companyRequestError(response.data));
 				} else {
+					console.log('Switching company (SUCCESS)...');
 					dispatch(companyRequestSuccess(response.data));
 				}
 			})

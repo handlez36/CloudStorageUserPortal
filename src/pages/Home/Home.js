@@ -140,10 +140,13 @@ class Home extends Component {
 		const { containerPadding, margin, rowHeight } = this.state;
 		const { memberships } = this.props.auth;
 
-		const { access: hasBillingAccess } = Permissions.hasService(memberships, 'Billing');
+		// const { access: hasBillingAccess } = Permissions.hasService(memberships, 'Billing');
 		const { access: hasStorageAccess } = Permissions.hasService(memberships, 'Storage');
-		const { access: hasProfileAccess } = Permissions.hasService(memberships, 'Profile');
-		const { access: hasSupportAccess } = Permissions.hasService(memberships, 'Support');
+		// const { access: hasProfileAccess } = Permissions.hasService(memberships, 'Profile');
+		// const { access: hasSupportAccess } = Permissions.hasService(memberships, 'Support');
+		const hasBillingAccess = false;
+		const hasProfileAccess = false;
+		const hasSupportAccess = false;
 
 		return (
 			<div id='home-background' className='home-back-ground'>

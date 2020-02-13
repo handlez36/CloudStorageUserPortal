@@ -1,7 +1,13 @@
 import React from 'react';
 
-const CDN_URL = process.env.REACT_APP_CDN_URL;
+// import BarTypeIcon from '../../assets/storage/Storage-bar-type-selector.svg';
+// import HoverBarTypeIcon from '../../assets/storage/Storage-bar-type-selector-hover.svg';
+// import SelectedBarTypeIcon from '../../assets/storage/Storage-bar-type-selector-selected.svg';
+// import LineTypeIcon from '../../assets/storage/Storage-line-type-selector.svg';
+// import HoverLineTypeIcon from '../../assets/storage/Storage-line-type-selector-hover.svg';
+// import SelectedLineTypeIcon from '../../assets/storage/Storage-line-type-selector-selected.svg';
 
+const CDN_URL = process.env.REACT_APP_CDN_URL;
 const BarTypeIcon = `${CDN_URL}storage/Storage-bar-type-selector.svg`;
 const HoverBarTypeIcon = `${CDN_URL}storage/Storage-bar-type-selector-hover.svg`;
 const SelectedBarTypeIcon = `${CDN_URL}storage/Storage-bar-type-selector-selected.svg`;
