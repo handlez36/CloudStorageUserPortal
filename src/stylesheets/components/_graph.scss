@@ -431,17 +431,20 @@
 		}
 		.graph-data-section .main-graph {
 			.bar {
+				bottom: 65px;
 				&:nth-child(1) {
-					margin-left: 0;
+					margin-left: 20px;
 				}
 				&:nth-child(2) {
-					margin-left: 90px;
+					// margin-left: 130px;
+					margin-left: 140px;
 				}
 				&:nth-child(3) {
-					margin-left: 180px;
+					// margin-left: 250px;
+					margin-left: 260px;
 				}
 				&:nth-child(4) {
-					margin-left: 270px;
+					margin-left: 385px;
 				}
 			}
 		}
