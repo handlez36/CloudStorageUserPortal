@@ -129,8 +129,8 @@ class SecondaryMenu extends Component {
 
 	render() {
 		const { columnWidth, navHeight, percentage, showPrimaryMenu } = this.state;
-		const { section } = this.props;
-		const Assets = Utils.getNavigationAssets('support', 'md');
+		const { module } = this.props;
+		const Assets = Utils.getNavigationAssets(module, 'md');
 		const TopGraphic = Assets.top;
 		const BottomGraphic = Assets.bottom;
 		const Menu = [
@@ -172,12 +172,16 @@ class SecondaryMenu extends Component {
 					{showPrimaryMenu && (
 						<Fragment>
 							<div className='primary-menu-wrapper'>
-								<PrimaryMenu columnWidth={columnWidth} onMouseLeave={this.onMouseLeave} />
+								<PrimaryMenu
+									columnWidth={columnWidth}
+									onMouseLeave={this.onMouseLeave}
+									module={module}
+								/>
 							</div>
 							<div className='primary-menu-active-shadow' />
 						</Fragment>
 					)}
-					<MenuItems section={'support'} navigation='secondary' menu={Menu} />
+					<MenuItems section={module} navigation='secondary' menu={Menu} />
 					<div className={showPrimaryMenu ? 'menu active' : 'menu'}>
 						<span className='text nav-menu'>MENU</span>
 						<span className='arrow'>

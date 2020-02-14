@@ -9,7 +9,7 @@ const BloxNavigationSection = props => {
 	return (
 		<BloxGrid name='nav-grid' parentEl='.main-nav' contentGrid={grid}>
 			<div key='nav-wrapper' className='nav-wrapper'>
-				<NavMenu />
+				<NavMenu module={props.module} />
 			</div>
 		</BloxGrid>
 	);

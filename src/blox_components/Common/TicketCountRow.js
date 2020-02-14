@@ -12,10 +12,13 @@ class TicketCountRow extends Component {
 			customImage,
 			strokeColor,
 			text,
+			backgroundColor,
+			trailColor,
 		} = this.props;
 		const total = openCount + closeCount;
 		const openPercent = ((openCount / total) * 100) / 1;
 		const closePercent = ((closeCount / total) * 100) / 1;
+		console.log('TYPE', type);
 		return (
 			<div className='ticket-count-section'>
 				{type === 'open' && (
@@ -28,6 +31,9 @@ class TicketCountRow extends Component {
 							background={true}
 							styles={buildStyles({
 								strokeLinecap: 'butt',
+								backgroundColor,
+								pathColor: strokeColor,
+								trailColor,
 							})}
 						>
 							<div className='count' style={{}}>
@@ -49,6 +55,9 @@ class TicketCountRow extends Component {
 							background={true}
 							styles={buildStyles({
 								strokeLinecap: 'butt',
+								backgroundColor,
+								pathColor: strokeColor,
+								trailColor,
 							})}
 						>
 							{/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}

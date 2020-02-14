@@ -22,7 +22,7 @@
 	line-height: 18px;
 	color: $Cool_Gray_Dark_2;
 	text-align: center;
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1344px) {
 		font-size: 14px;
 		line-height: 14px;
 	}
@@ -38,7 +38,7 @@
 	line-height: 18px;
 	color: $Cool_Gray_Dark_2;
 	text-align: center;
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1344px) {
 		font-size: 14px;
 		line-height: 14px;
 	}
@@ -64,24 +64,24 @@
 	}
 }
 
-@mixin Text-Flow-Active($active_color) {
-	font-family: $font-family-primary-heads;
-	background-clip: text;
-	text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
-	animation: flow 1s linear;
-	animation-direction: reverse;
-	background-image: linear-gradient(
-		to left,
-		$Cool_Gray_Dark_2 40%,
-		$Cool_Gray_Dark_2 40%,
-		$active_color 0%
-	);
-	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-		background-image: none;
-		color: $active_color;
-	}
-}
+// @mixin Text-Flow-Active($active_color) {
+// 	font-family: $font-family-primary-heads;
+// 	background-clip: text;
+// 	text-fill-color: transparent;
+// 	-webkit-text-fill-color: transparent;
+// 	animation: flow 1s linear;
+// 	animation-direction: reverse;
+// 	background-image: linear-gradient(
+// 		to left,
+// 		$Cool_Gray_Dark_2 40%,
+// 		$Cool_Gray_Dark_2 40%,
+// 		$active_color 0%
+// 	);
+// 	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+// 		background-image: none;
+// 		color: $active_color;
+// 	}
+// }
 
 @mixin Text-Flow-Animate {
 	font-family: $font-family-primary-subheads;

@@ -74,6 +74,7 @@ class PortalLayout extends Component {
 
 	render() {
 		const { breakpoint } = this.state;
+		const { module, content } = this.props;
 
 		return (
 			<div className='portal-layout v3'>
@@ -82,10 +83,10 @@ class PortalLayout extends Component {
 				</div>
 				<div className='portal-main'>
 					<div className='main-nav'>
-						<NavSection />
+						<NavSection module={module} />
 					</div>
 					<div className='main-content'>
-						<ContentSection content={StorageOverview} breakpoint={breakpoint} />
+						<ContentSection content={content} breakpoint={breakpoint} />
 					</div>
 				</div>
 				<div className='portal-footer'>

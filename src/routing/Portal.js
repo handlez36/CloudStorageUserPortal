@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom'; //IndexRoute has been removed 
 import Home from '../pages/Home/Home';
 import LoginPage from '../pages/Login/LoginPage';
 import StorageOverview from '../sub_components/Layout/PortalLayout';
+import BillingOverview from '../pages/Billing/Overview';
 // import Release from './Release/Release';
 import Footer from '../sub_components/Layout/Footer';
 import ModalPage from '../sub_components/Misc/ModalPage';
@@ -82,6 +83,13 @@ class Portal extends Component {
 					/>
 					{/* <Route exact path='/portal/sandbox' component={Sandbox} /> */}
 					<Route exact path='/portal/storagev3' component={StorageOverview} />
+					<Route
+						path='/portal/billing'
+						// render={props => (hasStorageAccess ? <Storage {...props} /> : <Home {...props} />)}
+						render={props => {
+							return hasBillingAccess ? <BillingOverview {...props} /> : <Home {...props} />;
+						}}
+					/>
 					<Route
 						exact
 						path='/portal/'

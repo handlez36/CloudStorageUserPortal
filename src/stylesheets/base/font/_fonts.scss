@@ -85,7 +85,7 @@
 	@include Primary;
 	&.active {
 		font-family: $font-family-primary-heads;
-		@include Text-Flow-Active($Dark_Lime);
+		@include Text-Flow-Active;
 	}
 	&.animate {
 		@include Text-Flow-Animate;
@@ -100,7 +100,7 @@
 	@include Secondary;
 
 	&.active {
-		@include Text-Flow-Active($Dark_Lime);
+		@include Text-Flow-Active;
 	}
 	&.animate {
 		@include Text-Flow-Animate;

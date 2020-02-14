@@ -79,7 +79,7 @@
 		}
 	}
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $medium-res) {
 	.nav-primary-menu {
 		display: flex;
 		flex-direction: column;
@@ -176,7 +176,7 @@
 		}
 	}
 }
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: $high-res) {
 	.nav-primary-menu {
 		display: flex;
 		flex-direction: column;
