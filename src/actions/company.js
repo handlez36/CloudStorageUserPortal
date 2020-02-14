@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import * as Config from 'services/config';
+import * as Config from '../services/config';
 
 /**
  * Action creator type constants for company info

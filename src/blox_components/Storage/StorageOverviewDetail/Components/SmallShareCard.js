@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
-import Button from 'sub_components/Common/BloxButton';
-import { STORAGE_AVATAR_URL_PREFIX } from 'utils/Misc/CommonConstants';
+import Button from '../../../../sub_components/Common/BloxButton';
+import { STORAGE_AVATAR_URL_PREFIX } from '../../../../utils/Misc/CommonConstants';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const FileStorageIcon = `${CDN_URL}storage/Storage-file-icon-transparent.svg`;

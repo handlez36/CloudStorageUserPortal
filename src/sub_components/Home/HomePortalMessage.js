@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { switchCompany } from 'actions/auth';
-import { getCompanyInfo } from 'actions/company';
+import { switchCompany } from '../../actions/auth';
+import { getCompanyInfo } from '../../actions/company';
 
 class HomePortalMessage extends Component {
 	constructor(props) {
@@ -86,7 +86,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ switchCompany, getCompanyInfo },
-)(HomePortalMessage);
+export default connect(mapStateToProps, { switchCompany, getCompanyInfo })(HomePortalMessage);

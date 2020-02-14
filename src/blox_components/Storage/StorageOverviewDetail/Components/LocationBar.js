@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LocationIcon from 'sub_components/Storage/LocationIcon';
+import LocationIcon from '../../../../sub_components/Storage/LocationIcon';
 
 const locations = ['ATL', 'BHM', 'CHA', 'HSV'];
 

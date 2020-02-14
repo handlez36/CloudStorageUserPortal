@@ -4,7 +4,7 @@ import { Netmask } from 'netmask';
 
 // import { TICKET_LIST_CYCLE_DIRECTION } from '../containers/Support/TicketConstants';
 // import { TICKET_LIST_CYCLE_DIRECTION } from './../utils/TicketConstants';
-import { TICKET_LIST_CYCLE_DIRECTION } from 'utils/TicketConstants';
+import { TICKET_LIST_CYCLE_DIRECTION } from '../utils/TicketConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Atlanta = `${CDN_URL}profile/image-building-atlanta.svg`;
 const Huntsville = `${CDN_URL}profile/image-building-huntsville.svg`;
@@ -529,10 +529,10 @@ export class Utils {
 		let msg = '';
 		const everyOctetIsNum = pieces.every(
 			(piece, index) =>
-				!dirty[index] || (dirty[index] && (parseInt(piece) >= 0 && parseInt(piece) < 256)),
+				!dirty[index] || (dirty[index] && parseInt(piece) >= 0 && parseInt(piece) < 256),
 		);
 		const firstOctetValid =
-			!dirty[0] || (dirty[0] && (pieces[0] && parseInt(pieces[0]) && parseInt(pieces[0]) > 0));
+			!dirty[0] || (dirty[0] && pieces[0] && parseInt(pieces[0]) && parseInt(pieces[0]) > 0);
 		const subnetValid = Utils.checkSubnetValidity(subnet);
 
 		if (!everyOctetIsNum) {

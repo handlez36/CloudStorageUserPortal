@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom'; //IndexRoute has been removed (never used)
 
 /** v3 imports */
-import Home from 'pages/Home/Home';
-import LoginPage from 'pages/Login/LoginPage';
-import StorageOverview from 'sub_components/Layout/PortalLayout';
+import Home from '../pages/Home/Home';
+import LoginPage from '../pages/Login/LoginPage';
+import StorageOverview from '../sub_components/Layout/PortalLayout';
 // import Release from './Release/Release';
-import Footer from 'sub_components/Layout/Footer';
-import ModalPage from 'sub_components/Misc/ModalPage';
-import Error404 from 'pages/Misc/Error404';
-import { Permissions } from 'services/permissions';
-import { getCompanyInfo } from 'actions/company';
+import Footer from '../sub_components/Layout/Footer';
+import ModalPage from '../sub_components/Misc/ModalPage';
+import Error404 from '../pages/Misc/Error404';
+import { Permissions } from '../services/permissions';
+import { getCompanyInfo } from '../actions/company';
 
 class Portal extends Component {
 	state = {
@@ -112,7 +112,4 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(
-	mapStateToProps,
-	{ getCompanyInfo },
-)(Portal);
+export default connect(mapStateToProps, { getCompanyInfo })(Portal);
