@@ -1,20 +1,23 @@
 import React from 'react';
 
 import LocationIcon from 'sub_components/Storage/LocationIcon';
+import { RESOLUTIONS } from 'services/config';
 
 const locations = ['ATL', 'BHM', 'CHA', 'HSV'];
 
-const LocationBar = ({ data }) => {
+const LocationBar = ({ data, breakpoint }) => {
 	console.log('Data: ', data);
 	return (
 		<div className='location-bar'>
 			{data &&
 				data.map(loc => (
 					<LocationIcon
+						data={data}
 						location={loc.location}
 						disabled={!locations.includes(loc.location)}
-						showTopLabel={false}
-						showBottomLabel
+						breakpoint={breakpoint}
+						showTopLabel={breakpoint === RESOLUTIONS.LOW}
+						showBottomLabel={breakpoint !== RESOLUTIONS.LOW}
 					/>
 				))}
 		</div>

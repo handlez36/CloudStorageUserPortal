@@ -2,9 +2,11 @@ import React, { Fragment } from 'react';
 import { string, bool } from 'prop-types';
 
 // import ToolTip from '../Components/LocationLabel';
+import { RESOLUTIONS } from 'services/config';
+import * as StorageUtils from 'utils/StorageUtils';
 import ToolTip from './LocationLabel';
-const CDN_URL = process.env.REACT_APP_CDN_URL;
 
+const CDN_URL = process.env.REACT_APP_CDN_URL;
 const MirrorArrows = `${CDN_URL}storage/mirror-arrows.svg`;
 const BirminghamGrayIcon = `${CDN_URL}storage/Storage-birmingham-gray.svg`;
 const ChatanoogaGrayIcon = `${CDN_URL}storage/Storage-chattanooga-gray.svg`;
@@ -86,6 +88,16 @@ function parseLocation(location) {
 	// return city;
 }
 
+const determineHighUsageUnit = data => {
+	return data.reduce((type, item) => StorageUtils.determineDataUnit(item, type));
+};
+
+const getLocationData = (data, location) => {
+	const filteredData = data.filter(item => item.location === location);
+	console.log('Filtered Data: ', filteredData);
+	return filteredData && filteredData[0] ? filteredData[0] : null;
+};
+
 const LocationIcon = ({
 	location,
 	replication = false,
@@ -95,7 +107,13 @@ const LocationIcon = ({
 	formStyle = false,
 	showTopLabel = true,
 	showBottomLabel = false,
+	breakpoint,
+	data,
 }) => {
+	const noIcon = breakpoint === RESOLUTIONS.LOW;
+	const unitToUse = determineHighUsageUnit(data);
+	const locationData = getLocationData(data, location);
+
 	if (replication) {
 		const parsedLocationPrimary = parseLocation(share.primary_location);
 		const parsedLocationSecondary = parseLocation(share.secondary_location);
@@ -126,16 +144,23 @@ const LocationIcon = ({
 		const parsedLocation = parseLocation(location);
 		return (
 			<div className={disabled ? 'storage-location-icon disabled' : 'storage-location-icon'}>
-				{showTopLabel && (
+				{(showTopLabel || noIcon) && (
 					<span
 						className={formStyle ? `name ${location} form-dropdown-selection ` : `name ${location}`}
 					>
 						{parsedLocation.toUpperCase()}
 					</span>
 				)}
-				<div className='location-image'>
-					<img src={getLocationImage(parsedLocation, selected)} />
-				</div>
+				{noIcon && (
+					<div className='usage-data status-status-head'>
+						{`${locationData[`size${unitToUse}`]} ${unitToUse}`}
+					</div>
+				)}
+				{!noIcon && (
+					<div className='location-image'>
+						<img src={getLocationImage(parsedLocation, selected)} />
+					</div>
+				)}
 				{showBottomLabel && (
 					<span
 						className={formStyle ? `name ${location} form-dropdown-selection ` : `name ${location}`}
