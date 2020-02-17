@@ -89,12 +89,19 @@ function parseLocation(location) {
 }
 
 const determineHighUsageUnit = data => {
+	if (!data) {
+		return 'MB';
+	}
+
 	return data.reduce((type, item) => StorageUtils.determineDataUnit(item, type));
 };
 
 const getLocationData = (data, location) => {
+	if (!data) {
+		return [];
+	}
+
 	const filteredData = data.filter(item => item.location === location);
-	console.log('Filtered Data: ', filteredData);
 	return filteredData && filteredData[0] ? filteredData[0] : null;
 };
 

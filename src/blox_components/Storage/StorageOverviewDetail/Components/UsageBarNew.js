@@ -67,8 +67,6 @@ const UsageBar = ({ size, sizeArray, sizeType, location, breakpoint }) => {
 				/>
 				<path
 					id='UsageFill'
-					// d='M 101.009 232.23 V 100.115L62.8 123.146v131.785z'
-					// d={`M 101.009 232.23 V ${usageHeight} L 62.8 ${usageLeftAnchor} v 131.785z`}
 					d={`M 101.009 232.23 V ${usageHeight} L 62.8 ${usageLeftAnchor} V 253.285 z`}
 					class='usage-side'
 					transform='translate(-25.692 -42.912)'
