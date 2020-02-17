@@ -74,7 +74,7 @@ const UsageBar = ({ size, sizeArray, sizeType, location, breakpoint }) => {
 					transform='translate(-25.692 -42.912)'
 				/>
 				<text
-					x='50'
+					x='42'
 					y={POINT_ONE_Y_COORD - BAR_LENGTH}
 					class='small label'
 					transform='translate(-25.692 -41.268)'

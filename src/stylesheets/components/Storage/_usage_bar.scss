@@ -48,7 +48,8 @@
 	}
 	text {
 		@include Headings90;
-		color: $Cool_Gray_Dark_3;
+		color: $DCBLOX_Gray;
+		opacity: 0.8;
 	}
 }
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
