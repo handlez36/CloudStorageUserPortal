@@ -444,8 +444,8 @@ class StorageUsageGraph extends Component {
 									// height={customHeight ? customHeight : 232}
 									// height={185}
 									// width={384} // 384
-									height={breakpoint ? BREAKPOINT_MAP[breakpoint].height : 0}
-									width={breakpoint ? BREAKPOINT_MAP[breakpoint].width : 0} // 384
+									height={BREAKPOINT_MAP[breakpoint] ? BREAKPOINT_MAP[breakpoint].height : 0}
+									width={BREAKPOINT_MAP[breakpoint] ? BREAKPOINT_MAP[breakpoint].width : 0} // 384
 									responsive={false}
 								>
 									<Victory.VictoryAxis

@@ -1,6 +1,8 @@
 import React from 'react';
 import { string, number } from 'prop-types';
 
+import { RESOLUTIONS } from 'services/config';
+
 const POINT_ONE_Y_COORD = 230.587;
 const BAR_LENGTH = 161.527;
 const SLOPE = 22.7;
@@ -15,7 +17,7 @@ const calculatePercentage = (size, sizeArray) => {
 	return percent;
 };
 
-const UsageBar = ({ size, sizeArray, sizeType, location }) => {
+const UsageBar = ({ size, sizeArray, sizeType, location, breakpoint }) => {
 	if (!sizeArray) {
 		return <div>Loading...</div>;
 	}
@@ -25,24 +27,25 @@ const UsageBar = ({ size, sizeArray, sizeType, location }) => {
 	const usageLeftAnchor = usageHeight + SLOPE;
 
 	const hasStats = !!size;
-	const barLabel = size ? `${size} ${sizeType}` : '';
+	const barLabel = size && breakpoint !== RESOLUTIONS.LOW ? `${size} ${sizeType}` : '';
 
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
-			width='113.027'
-			// height='249.436'
-			height='160'
-			viewBox='0 0 113.027 249.436'
-			// viewBox='0 0 113.027 230'
+			// width='153.086'
+			// height='249.307'
+			// viewBox='0 0 153.086 249.307'
+			width='120'
+			height='249.307'
+			viewBox='0 0 120 249.307'
 			className={`usage-bar ${location.toLowerCase()} ${!hasStats ? 'no-stats' : ''}`}
 		>
 			<g id='building_bar_graph'>
 				<path
 					id='Shadow'
-					d='M 23504.031 1569.769 l 38.2 -22.834 l 75.715 60.612 h -67.2 z'
+					d='M23503.73 1569.64l38.209-22.635 77.773 59.995h-68.041z'
 					class='cls-1'
-					transform='translate(-23466.92 -1357.693)'
+					transform='translate(-23466.627 -1357.693)'
 				/>
 				<path
 					id='Top'
@@ -64,40 +67,23 @@ const UsageBar = ({ size, sizeArray, sizeType, location }) => {
 				/>
 				<path
 					id='UsageFill'
-					d={`M 101.01 230.587 V ${usageHeight} L 62.8 ${usageLeftAnchor} V 253.285 z`}
-					class={`usage-side`}
-					transform='translate(-25.692 -41.268)'
+					d={`M 101.009 232.23 V ${usageHeight} L 62.8 ${usageLeftAnchor} V 253.285 z`}
+					class='usage-side'
+					transform='translate(-25.692 -42.912)'
 				/>
 				<text
-					x='50'
+					x='42'
 					y={POINT_ONE_Y_COORD - BAR_LENGTH}
 					class='small label'
 					transform='translate(-25.692 -41.268)'
 				>
 					{barLabel}
 				</text>
-				{false && (
-					<text
-						x='103'
-						y={usageHeight - 2}
-						class='small usage'
-						width='25'
-						transform='translate(-25.692 -41.268)'
-					>
-						<tspan>Test</tspan>
-						<tspan>MB</tspan>
-						{/* {unitSize} */}
-					</text>
-				)}
-				{false && (
-					<path
-						id='UsageLine'
-						d={`M 101.01 ${usageHeight + 2} h ${30}`}
-						class={`usage-line`}
-						stroke-width={1}
-						transform='translate(-25.692 -41.268)'
-					/>
-				)}
+				{/* <text id='_250_TB' class='cls-6' data-name='250 TB' transform='translate(23.844 30.428)'>
+					<tspan x='0' y='0'>
+						250 TB
+					</tspan>
+				</text> */}
 			</g>
 		</svg>
 	);
