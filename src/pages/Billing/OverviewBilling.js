@@ -27,9 +27,9 @@ const LAYOUT_CONFIG = {
 		closedTickets: { x: 10, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
 	},
 	[RESOLUTIONS.HIGH]: {
-		recentInvoices: { x: 1, y: 31, dim: DIMENSIONS.TWO_BY_SIX },
+		recentInvoices: { x: 1, y: 51, dim: DIMENSIONS.TWO_BY_SIX },
 		totalAmountDue: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
-		recentPayment: { x: 8, y: 31, dim: DIMENSIONS.TWO_BY_THREE },
+		recentPayment: { x: 8, y: 51, dim: DIMENSIONS.TWO_BY_THREE },
 		openTickets: { x: 8, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
 		closedTickets: { x: 10, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
 	},
@@ -51,11 +51,8 @@ class OverviewBilling extends Component {
 						<TicketCount
 							type={TicketUtils.TICKET_STATUS.OPEN}
 							ticketType={TicketUtils.TICKET_TYPES.BILLING}
-							openCount={20}
-							closeCount={10}
-							totalCount={30}
 							trailColor={'#7e8200'}
-							strokeColor={'#b4d333'}
+							strokeColor={'#b4d334'}
 							backgroundColor={'rgba(131, 129, 5, 0.9)'}
 							text='OPEN'
 						/>
@@ -66,11 +63,8 @@ class OverviewBilling extends Component {
 						<TicketCount
 							type={TicketUtils.TICKET_STATUS.CLOSED}
 							ticketType={TicketUtils.TICKET_TYPES.BILLING}
-							openCount={20}
-							closeCount={10}
-							totalCount={30}
 							trailColor={'#7e8200'}
-							strokeColor={'#b4d333'}
+							strokeColor={'#b4d334'}
 							backgroundColor={'rgba(131, 129, 5, 0.9)'}
 						/>
 					</ComponentWrapper>

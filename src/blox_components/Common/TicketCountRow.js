@@ -1,12 +1,59 @@
 import React, { Component } from 'react';
 import { number } from 'prop-types';
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
-
+import { TicketApi } from '../../services/ticket';
+import { STATUS } from '../../utils/TicketConstants';
 class TicketCountRow extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { openCount: 0, closeCount: 0 };
+	}
+	getTickets = () => {
+		TicketApi.getAll()
+			.then(response => {
+				const validResponse = response.status === 200 && response.data && response.data.tickets;
+
+				if (validResponse) {
+					const { openCount, closedCount } = this.filterTickets(response);
+
+					this.setState({
+						openCount: openCount.length,
+						closeCount: closedCount.length,
+						totalCount: open.length + closed.length,
+					});
+				} else {
+					this.setState({ error: 'Error pulling billing ticket details' });
+				}
+			})
+			.catch(error => this.setState({ error }));
+	};
+	filterTickets(response) {
+		const { ticketType } = this.props;
+		const {
+			data: { tickets },
+		} = response;
+
+		const openCount = tickets.filter(
+			ticket =>
+				(ticket.status !== STATUS.SOLVED && ticket.type === ticketType) ||
+				(ticket.status !== STATUS.RESOLVED && ticket.type === ticketType),
+		);
+
+		const closedCount = tickets.filter(
+			ticket =>
+				(ticket.status === STATUS.SOLVED && ticket.type === ticketType) ||
+				(ticket.status === STATUS.RESOLVED && ticket.type === ticketType),
+		);
+
+		return { openCount, closedCount };
+	}
+
+	componentDidMount = () => {
+		this.getTickets();
+	};
+
 	render() {
 		const {
-			openCount,
-			closeCount,
 			goToTicketHistory,
 			type,
 			customImage,
@@ -15,6 +62,8 @@ class TicketCountRow extends Component {
 			backgroundColor,
 			trailColor,
 		} = this.props;
+		const { openCount, closeCount } = this.state;
+		console.log('open', openCount);
 		const total = openCount + closeCount;
 		const openPercent = ((openCount / total) * 100) / 1;
 		const closePercent = ((closeCount / total) * 100) / 1;
@@ -23,7 +72,7 @@ class TicketCountRow extends Component {
 			<div className='ticket-count-section'>
 				{type === 'open' && (
 					<div
-						className='progress-circle v3'
+						className='progress-circle '
 						onClick={goToTicketHistory ? () => goToTicketHistory('open') : function() {}}
 					>
 						<CircularProgressbarWithChildren
@@ -47,7 +96,7 @@ class TicketCountRow extends Component {
 				)}
 				{type === 'closed' && (
 					<div
-						className='progress-circle v3'
+						className='progress-circle '
 						onClick={goToTicketHistory ? () => goToTicketHistory('closed') : function() {}}
 					>
 						<CircularProgressbarWithChildren

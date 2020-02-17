@@ -1,64 +1,100 @@
 // Newest Fonts Styles - from Niamh
 
-@mixin Primary {
-	font-size: 18px;
+@mixin Count {
+	color: $White;
+	font-size: 36px;
+	font-family: $proxima-nova-light;
+	line-height: 36px;
+	letter-spacing: -1.8px;
+	text-transform: uppercase;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 46px;
+		line-height: 46px;
+		letter-spacing: -2.3px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 60px;
+		line-height: 60px;
+		letter-spacing: -3px;
+	}
+}
+@mixin Text-Style-Ticket-Indicator {
+	font-size: 16px;
 	font-family: $font-family-primary-subheads;
-	line-height: 18px;
+	line-height: 16px;
+	color: $White;
+	letter-spacing: 0.8px;
+	text-transform: uppercase;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 20px;
+		line-height: 20px;
+		letter-spacing: 1px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 30px;
+		line-height: 30px;
+		letter-spacing: 1.5px;
+	}
+}
+@mixin Primary {
+	font-size: 14px;
+	font-family: $font-family-primary-subheads;
+	line-height: 14px;
 	color: $Cool_Gray_Dark_2;
 	letter-spacing: 0.75px;
 	text-transform: uppercase;
-	@media screen and (max-width: 1024px) {
-		font-size: 14px;
-		line-height: 14px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
 	}
-	@media screen and (min-width: 2560px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		line-height: 24px;
 	}
 }
 @mixin Secondary {
-	font-size: 18px;
+	font-size: 14px;
 	font-family: $font-family-primary-subheads;
-	line-height: 18px;
+	line-height: 14px;
 	color: $Cool_Gray_Dark_2;
 	text-align: center;
-	@media screen and (max-width: 1344px) {
-		font-size: 14px;
-		line-height: 14px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
 	}
-	@media screen and (min-width: 2560px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		line-height: 24px;
 	}
 }
 @mixin Menu {
-	font-size: 18px;
+	font-size: 14px;
 	letter-spacing: 1px;
 	font-family: $font-family-primary-heads;
-	line-height: 18px;
+	line-height: 14px;
 	color: $Cool_Gray_Dark_2;
 	text-align: center;
-	@media screen and (max-width: 1344px) {
-		font-size: 14px;
-		line-height: 14px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
 	}
-	@media screen and (min-width: 2560px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 22px;
 		line-height: 22px;
 	}
 }
 @mixin Menu-Active {
-	font-size: 20px;
+	font-size: 16px;
 	letter-spacing: 1px;
 	font-family: $font-family-primary-heads;
-	line-height: 20px;
+	line-height: 16px;
 	color: $Cool_Gray_Dark_2;
 	text-align: center;
-	@media screen and (max-width: 1024px) {
-		font-size: 16px;
-		line-height: 16px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 20px;
+		line-height: 20px;
 	}
-	@media screen and (min-width: 2560px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		line-height: 24px;
 	}
@@ -202,12 +238,12 @@
 	// 		@include Active-Nav-Menu($Dark_Blue);
 	// 	}
 	// }
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
 		height: 18px;
 		letter-spacing: 1.35px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		height: 24px;
 		letter-spacing: 1.8px;
@@ -239,11 +275,11 @@
 			@include Active-Nav-Menu($Dark_Blue);
 		}
 	}
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
 		height: 18px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		height: 24px;
 	}
@@ -276,7 +312,7 @@
 			@include Active-Nav-Menu($Dark_Blue);
 		}
 	}
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
 		height: 18px;
 		letter-spacing: 1.8px;
@@ -286,7 +322,7 @@
 			letter-spacing: 2px;
 		}
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 22px;
 		height: 22px;
 		letter-spacing: 2.2px;
@@ -305,11 +341,11 @@
 	line-height: 1px;
 	letter-spacing: 1px;
 	color: $DCBLOX_Gray;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 24px;
 		letter-spacing: 1.2px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 34px;
 		letter-spacing: 1.7px;
 	}

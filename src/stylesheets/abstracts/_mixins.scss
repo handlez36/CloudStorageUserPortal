@@ -1171,32 +1171,7 @@
 	text-align: center;
 	font-stretch: condensed;
 }
-@mixin Count {
-	color: $White;
-	font-family: $proxima-nova-light;
-	$map: (
-		576: 10,
-		1440: 45,
-		2560: 50,
-	);
-	font-size: least-squares-fit($map);
-	text-align: center;
-}
-@mixin Text-Style-Ticket-Indicator {
-	font-family: $font-family-primary-subheads;
-	$map: (
-		576: 10,
-		1440: 12,
-		2560: 22,
-	);
-	font-size: least-squares-fit($map);
-	font-style: normal;
-	font-stretch: condensed;
-	line-height: 16px;
-	letter-spacing: 0.8px;
-	text-align: center;
-	color: $White;
-}
+
 @mixin Text-Style-Small-Gray {
 	font-family: $proxima-nova-regular;
 
