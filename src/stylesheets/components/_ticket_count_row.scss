@@ -34,7 +34,14 @@
 	.CircularProgressbar {
 		width: calculateVw(100, 1440);
 		height: 100%;
-		padding: 24px;
+		padding: 8px;
+		@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+			padding: 0px;
+		}
+		@media screen and (min-width: ($high-res + 1)) {
+			padding: 24px;
+		}
+
 		@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
 			height: calculateVh(173, 1440);
 		}

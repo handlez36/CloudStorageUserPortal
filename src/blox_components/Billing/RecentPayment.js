@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
+import ResizeObserver from 'resize-observer-polyfill';
 import { BillingApi } from '../../services/billing';
 import { Utils } from '../../services/utils';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
-const paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
+//const paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
 
 class RecentPayment extends Component {
 	state = {
@@ -12,12 +12,20 @@ class RecentPayment extends Component {
 		centAmount: '0',
 		date: null,
 		screenWidth: null,
+		paymentImage: null,
 	};
 
 	componentDidMount() {
+		this.myObserver = new ResizeObserver(entries => {
+			entries.forEach(() => {
+				this.getPaymentImage();
+			});
+		});
+		const wrapperElement = document.querySelector('.recent-payment');
+		this.myObserver.observe(wrapperElement);
+		this.getPaymentImage();
 		new BillingApi().getPayments(3).then(response => {
 			let priceArray;
-			console.log('RESPONSE', response);
 
 			if (response.data.transactions && response.data.transactions.length !== 0) {
 				priceArray = Utils.formatCurrency(response.data.transactions[0].arDebit).split('.');
@@ -31,11 +39,27 @@ class RecentPayment extends Component {
 		});
 	}
 
+	getPaymentImage() {
+		const screenWidth = document.querySelector('.portal-header').clientWidth;
+
+		console.log('Screensize PAYMENT', screenWidth);
+
+		let paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
+		if (screenWidth < 1344) {
+			paymentImage = `${CDN_URL}billing/recent-payment-image-sm.svg`;
+		} else if (screenWidth > 2240) {
+			paymentImage = `${CDN_URL}billing/recent-payment-image-lg.svg`;
+		}
+		console.log(paymentImage);
+
+		this.setState({ paymentImage });
+	}
+
 	render() {
-		const { dollarAmount, centAmount, date, screenWidth } = this.state;
-		console.log(screenWidth);
+		const { dollarAmount, centAmount, date, paymentImage } = this.state;
+
 		return (
-			<div className='recent-payment-wrapper recent-payment v3'>
+			<div className='recent-payment-wrapper recent-payment '>
 				<div className='payment-image'>
 					<img src={paymentImage} />
 				</div>

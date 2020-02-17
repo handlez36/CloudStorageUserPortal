@@ -31,15 +31,22 @@
 	color: $DCBLOX_Gray;
 }
 @mixin Billing-Amount-Medium {
-	$map: (
-		576: 20,
-		1440: 25,
-		2560: 35,
-	);
-	font-size: least-squares-fit($map);
-	font-family: $proxima-nova-regular;
-	letter-spacing: -1.6px;
-	line-height: 1;
+	color: $DCBLOX_Gray;
+	font-size: 26px;
+	font-family: $proxima-nova-light;
+	line-height: 26px;
+	letter-spacing: -1.3px;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 28px;
+		line-height: 28px;
+		letter-spacing: -1.4px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 46px;
+		line-height: 46px;
+		letter-spacing: -2.3px;
+	}
 }
 @mixin Text-Style-Small {
 	$map: (
