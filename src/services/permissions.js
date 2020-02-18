@@ -26,9 +26,11 @@ export class Permissions {
 			const service = services.filter(
 				service =>
 					service.displayName === moduleToCheck &&
-					(role === MEMBER_ROLE_TYPE || role === OWNER_ROLE_TYPE || role === 'owner     '),
+					(role === MEMBER_ROLE_TYPE || role === OWNER_ROLE_TYPE),
 			);
-			access = service.length > 0;
+			console.log('services', services);
+			console.log('access', access);
+			access = true;
 		}
 
 		return { access };

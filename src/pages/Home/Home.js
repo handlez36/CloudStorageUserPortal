@@ -139,13 +139,14 @@ class Home extends Component {
 	render() {
 		const { containerPadding, margin, rowHeight } = this.state;
 		const { memberships } = this.props.auth;
-
+		console.log('niamh memberships', memberships);
 		const { access: hasBillingAccess } = Permissions.hasService(memberships, 'Billing');
 		const { access: hasStorageAccess } = Permissions.hasService(memberships, 'Storage');
 		// const { access: hasProfileAccess } = Permissions.hasService(memberships, 'Profile');
 		// const { access: hasSupportAccess } = Permissions.hasService(memberships, 'Support');
 		const hasProfileAccess = false;
 		const hasSupportAccess = false;
+		console.log('BILLING ACCESS', hasBillingAccess);
 
 		return (
 			<div id='home-background' className='home-back-ground'>

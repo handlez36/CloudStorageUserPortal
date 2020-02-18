@@ -396,11 +396,12 @@ export class BillingUtils {
 	}
 
 	static getInvoices(invoices, amount) {
-		console.log('DATATO USE NIAMH', invoices);
-		const tempInvoices = [...invoices];
-		const sortedInvoices = BillingUtils.sort(tempInvoices);
+		if (invoices) {
+			const tempInvoices = [...invoices];
+			const sortedInvoices = BillingUtils.sort(tempInvoices);
 
-		return sortedInvoices.slice(0, amount);
+			return sortedInvoices.slice(0, amount);
+		}
 	}
 
 	static sort(invoices) {
