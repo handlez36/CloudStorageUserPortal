@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
+import capitalize from 'lodash/capitalize';
 
 // import NavSection from '../Navigationv3/BloxNavigationSection';
 // import ContentSection from './ContentSection';
@@ -18,6 +19,21 @@ import StorageOverview from './../../pages/Storage/OverviewPage';
 import { RESOLUTIONS } from './../../services/config';
 // import { SITE_MAP, SITE_PAGES } from './../Common/CommonConstants';
 
+const PAGES = {
+	Support: {
+		Overview: 'OverviewPage',
+	},
+	Storage: {
+		Overview: 'OverviewPage',
+	},
+	Profile: {
+		Overview: 'OverviewPage',
+	},
+	Billing: {
+		Overview: 'OverviewPage',
+	},
+};
+
 class PortalLayout extends Component {
 	constructor(props) {
 		super(props);
@@ -34,16 +50,33 @@ class PortalLayout extends Component {
 	 * For v3 URL driven portal requirements
 	 */
 	parseUrlParams = () => {
-		const urlRegex = /^\/(.*)\/?(.*)$/;
-		const pathname = '/sandbox';
+		const { location: { pathname = '' } = {} } = this.props;
+		// const urlRegex = /^\/(.*)\/?(.*)$/;
+		const urlRegex = /^\/portal\/?(\w*)\/?.*$/;
 		const matches = pathname.match(urlRegex);
 
 		if (matches) {
 			const [url, siteModule, sitePage] = matches;
+			this.loadPage(siteModule, sitePage);
 			return { siteModule, sitePage };
 		}
 
 		return { siteModule: 'HOME', sitePage: 'OVERVIEW' };
+	};
+
+	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
+		console.log('In loadPage. BloxModule: ', bloxModule);
+		console.log('In loadPage. BloxPage: ', bloxPage);
+		const mod = capitalize(bloxModule);
+		const page = capitalize(bloxPage);
+		console.log('Capitalized BloxModule: ', mod);
+		console.log('Capitalized BloxPage: ', page);
+		const pageName = PAGES[mod][page];
+
+		console.log('Load Path: ', `pages/${mod}/${pageName}`);
+		const Component = require(`../../pages/${mod}/${pageName}`).default;
+		console.log('Component: ', Component);
+		this.setState({ PageComponent: Component });
 	};
 
 	updateScreenBreakpoint = screenWidth => {
@@ -61,6 +94,9 @@ class PortalLayout extends Component {
 	};
 
 	componentDidMount() {
+		// Parse URL to determine module to load...
+		this.parseUrlParams();
+
 		this.screenObserver = new ResizeObserver(entries => {
 			entries.forEach(entry => {
 				const screenWidth = entry.contentRect.width;
@@ -73,8 +109,12 @@ class PortalLayout extends Component {
 	}
 
 	render() {
-		const { breakpoint } = this.state;
+		const { breakpoint, PageComponent } = this.state;
 
+		if (PageComponent) {
+			console.log('Page Component: ', PageComponent);
+			console.log('<PageComponent >: ', <PageComponent />);
+		}
 		return (
 			<div className='portal-layout v3'>
 				<div className='portal-header'>
@@ -85,7 +125,7 @@ class PortalLayout extends Component {
 						<NavSection />
 					</div>
 					<div className='main-content'>
-						<ContentSection content={StorageOverview} breakpoint={breakpoint} />
+						{PageComponent && <ContentSection content={PageComponent} breakpoint={breakpoint} />}
 					</div>
 				</div>
 				<div className='portal-footer'>
