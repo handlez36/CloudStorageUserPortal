@@ -587,55 +587,87 @@
 
 /** Temporary styles */
 @mixin Total-Amount-Due {
-	font-family: $proxima-nova-regular;
-	font-size: 24px;
-	letter-spacing: normal;
+	font-family: $proxima-nova-light;
+	font-size: 36px;
+	letter-spacing: -1.8px;
 	color: $DCBLOX_Gray;
 	text-align: center;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
-		font-size: 32px;
+	line-height: 36px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 46px;
+		letter-spacing: -2.3px;
+		line-height: 46px;
 	}
-	@media screen and (min-width: 1441px) and (max-width: 2560px) {
-		font-size: 48px;
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 60px;
+		letter-spacing: -3px;
+		line-height: 60px;
 	}
 }
 
 @mixin Total-Amount-Due-Subtext {
-	font-family: $proxima-nova-bold;
+	font-family: $proxima-nova-regular;
 	font-size: 16px;
-	letter-spacing: normal;
-	color: $DCBLOX_Red;
+	line-height: 20px;
+	color: $DCBLOX_Gray;
 	text-align: center;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 16px;
+		line-height: 22px;
 	}
-	@media screen and (min-width: 1441px) and (max-width: 2560px) {
-		font-size: 16px;
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		line-height: 24px;
 	}
 }
 @mixin Total-Amount-Due-Subtext-Bold {
 	font-family: $proxima-nova-bold;
 	font-size: 16px;
-	letter-spacing: normal;
+	line-height: 22px;
 	color: $DCBLOX_Red;
 	text-align: center;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 16px;
 	}
-	@media screen and (min-width: 1441px) and (max-width: 2560px) {
-		font-size: 16px;
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		line-height: 24px;
 	}
 }
 @mixin Total-Amount-Due-Dollars-And-Cents {
 	font-family: $proxima-nova-light;
-	font-size: 24px;
-	letter-spacing: normal;
+	font-size: 14px;
+	letter-spacing: -0.7px;
 	color: $DCBLOX_Gray;
 	text-align: center;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
-		font-size: 28px;
+	opacity: 0.8;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 20px;
+		letter-spacing: -1px;
 	}
-	@media screen and (min-width: 1441px) and (max-width: 2560px) {
-		font-size: 32px;
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 28px;
+		letter-spacing: -1.4px;
+	}
+}
+
+@mixin Button-Style-1 {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	letter-spacing: 0.7px;
+	color: $White;
+	text-align: center;
+	line-height: 14px;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 16px;
+		line-height: 16px;
+		letter-spacing: 0.8px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		line-height: 18px;
+		letter-spacing: 0.9px;
 	}
 }

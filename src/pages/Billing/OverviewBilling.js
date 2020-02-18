@@ -7,7 +7,7 @@ import ComponentWrapper from '../../sub_components/Layout/ComponentWrapper';
 import TicketCount from '../../blox_components/Common/TicketCountRow';
 import RecentPayment from '../../blox_components/Billing/RecentPayment';
 import RecentInvoices from '../../blox_components/Billing/RecentInvoices';
-
+import TotalAmountDue from '../../blox_components/Billing/TotalAmountDue/TotalAmountDue';
 import { TicketUtils } from './../../services/ticket';
 import { RESOLUTIONS } from './../../services/config';
 
@@ -81,7 +81,7 @@ class OverviewBilling extends Component {
 				</div>
 				<div key='totalAmountDue' className='totalAmountDue'>
 					<ComponentWrapper title='TOTAL Amount Due' hideBorder>
-						{/* <TotalAmountDue /> */}
+						<TotalAmountDue />
 					</ComponentWrapper>
 				</div>
 			</BloxPage>

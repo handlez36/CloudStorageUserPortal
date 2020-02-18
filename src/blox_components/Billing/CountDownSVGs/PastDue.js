@@ -97,6 +97,7 @@ class PastDue extends Component {
 						<feComposite in='SourceGraphic' />
 					</filter>
 				</defs>
+				<path id="Shadow" d="M-78.762 159.373l55.288 44.527-.026 90.1-76.671.072-46.963-37.678z" class="cls-1" transform="translate(149.342 -157.824)"/>
 				<g id='countndown_past-due' transform='translate(-73.356 -64.683)'>
 					<g
 						id='Countdown_Timer_PAST_DUE'

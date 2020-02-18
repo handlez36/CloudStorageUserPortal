@@ -49,6 +49,12 @@ export const FILTERS = {
 	PAID: 'Paid',
 	UNPAID: 'Unpaid',
 };
+export const INVOICES_STATUS = {
+	OVERDUE: 'OVERDUE',
+	DUE_TODAY: 'DUE_TODAY',
+	DUE_FUTURE: 'DUE_FUTURE',
+	NONE_DUE: 'NONE_DUE',
+};
 
 export const SORT_OPTIONS = {
 	INVOICE_DATE_DESC: 'Invoice Date (Des)',
@@ -256,6 +262,33 @@ export class BillingApi {
 }
 
 export class BillingUtils {
+	/**
+	 * Group invoices into buckets
+	 */
+	static splitInvoices = invoices => {
+		const today = moment().endOf('day');
+		const overdue = [];
+		const dueToday = [];
+		const dueFuture = [];
+		const notDue = [];
+
+		invoices.forEach(invoice => {
+			invoice.dueDate = moment(invoice.dueDate).endOf('day');
+			invoice.billcycle = moment(invoice.billcycle).endOf('day');
+
+			if (invoice.dueDate.isSame(today) && invoice.amountDue > 0) {
+				dueToday.push(invoice);
+			} else if (invoice.status === 'Due' && invoice.dueDate.isAfter(today)) {
+				dueFuture.push(invoice);
+			} else if (invoice.status === 'Overdue') {
+				overdue.push(invoice);
+			} else {
+				notDue.push(invoice);
+			}
+		});
+
+		return { overdue, dueToday, dueFuture, notDue, all: invoices };
+	};
 	static massageData = (data, headers) => {
 		return data.map(invoice => {
 			const formattedTransactions = invoice.transactions.map(txn => ({
@@ -300,6 +333,34 @@ export class BillingUtils {
 		} else {
 			return INVOICE_SUMMARY_HEADERS;
 		}
+	};
+	static getInvoiceStatus = invoices => {
+		const sampleInvoice = {
+			amountDue: 2442,
+			billcycle: '11.15.2019',
+			customerid: 346361,
+			dueDate: '12.14.2019',
+			filename: '346361-08152019-Invoice_1595.pdf',
+			invoiceAmount: 3160,
+			invoiceId: 517515,
+			invoiceNumber: 1599,
+			published: true,
+			status: 'Due',
+		};
+
+		let status = INVOICES_STATUS.NONE_DUE;
+		const splitInvoices = BillingUtils.splitInvoices(invoices);
+		// const splitInvoices = BillingUtils.splitInvoices(invoices.concat(sampleInvoice));
+
+		if (splitInvoices.dueToday.length > 0) {
+			status = INVOICES_STATUS.DUE_TODAY;
+		} else if (splitInvoices.overdue.length > 0) {
+			status = INVOICES_STATUS.OVERDUE;
+		} else if (splitInvoices.dueFuture.length > 0) {
+			status = INVOICES_STATUS.DUE_FUTURE;
+		}
+
+		return { invoices: splitInvoices, status };
 	};
 
 	static formatting(type, data) {

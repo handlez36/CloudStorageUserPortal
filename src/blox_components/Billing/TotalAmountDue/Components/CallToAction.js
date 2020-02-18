@@ -2,10 +2,10 @@ import React, { Fragment } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import moment from 'moment';
 
-import BloxButton from 'sub_components/Common/BloxButton';
-import { Permissions } from 'services/permissions';
-import { BillingUtils, INVOICES_STATUS } from 'services/billing';
-import { Utils } from 'services/utils';
+import BloxButton from '../../../../sub_components/Common/BloxButton';
+import { Permissions } from '../../../../services/permissions';
+import { BillingUtils, INVOICES_STATUS } from '../../../../services/billing';
+import { Utils } from '../../../../services/utils';
 
 const getCurrentUser = () => {
 	const { user } = useSelector(store => store.auth_status, shallowEqual);
@@ -69,7 +69,7 @@ const generateDueTodayCopy = splitInvoices => {
 			<span className='total-amount-due-subtext-bold'> due today.</span>
 			{amountOverdue > 0 && (
 				<span className='amount-overdue due-today-more-detail'>
-					&nbsp;${Utils.formatCurrency(amountOverdue)} due on {latestOverdueDate}
+					{` ${Utils.formatCurrency(amountOverdue)} due on ${latestOverdueDate}.`}
 				</span>
 			)}
 		</span>
@@ -82,7 +82,7 @@ const generateOverdueCopy = splitInvoices => {
 	return (
 		<span className='overdue-amount'>
 			{`$${Utils.formatCurrency(amountOverdue)}`}
-			<span className='total-amount-due-subtext-bold'> past due</span>
+			<span className='total-amount-due-subtext-bold'> past due. </span>
 		</span>
 	);
 };
@@ -150,17 +150,14 @@ const CallToAction = ({ invoices, summary }) => {
 	return (
 		<div className='call-to-action'>
 			<div className='balance-summary'>{summaryCopy}</div>
-			<div className='balance-action total-amount-due-subtext'>{statusCopy}</div>
-			{nextPaymentCopy && (
-				<span className='next-invoice total-amount-due-subtext'>{nextPaymentCopy}</span>
-			)}
-			{Permissions.hasAccess(user, 'billing') && Permissions.hasAccess(user, 'online_payments') && (
-				<BloxButton
-					title='PAY NOW'
-					customClass='support-button green-gradient'
-					onClick={() => {}}
-				/>
-			)}
+			<span className='balance-wrapper'>
+				<span className='balance-action total-amount-due-subtext'>{statusCopy}</span>
+				{nextPaymentCopy && (
+					<span className='next-invoice total-amount-due-subtext'>{nextPaymentCopy}</span>
+				)}
+			</span>
+
+			<BloxButton title='PAY NOW' customClass='support-button green-gradient' onClick={() => {}} />
 		</div>
 	);
 };

@@ -8,7 +8,6 @@
 	.amount-due-column {
 		display: flex;
 		flex-direction: column;
-		border: 1px solid green;
 	}
 
 	.calendar {
@@ -135,20 +134,5 @@
 				@include SubHead-Text;
 			}
 		}
-	}
-}
-
-/** Billing v3 styles */
-.total-amount-due.v3 {
-	width: 100%;
-	height: 100%;
-	@include FlexboxRow;
-	.calendar-day {
-		width: 32.5%;
-		border: 1px solid red;
-	}
-	.call-to-action {
-		width: 67.5%;
-		// border: 1px solid blue;
 	}
 }

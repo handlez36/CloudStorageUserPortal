@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import CalendarDay from 'sub_components/Billing/CalendarDay';
-import CallToAction from 'sub_components/Billing/CallToAction';
-import { BillingApi } from 'services/billing';
+import CalendarDay from '../../../blox_components/Billing/TotalAmountDue/Components/CalendarDay';
+import CallToAction from '../../../blox_components/Billing/TotalAmountDue/Components/CallToAction';
+import { BillingApi } from '../../../services/billing';
 
 class TotalAmountDue extends Component {
 	state = {
@@ -43,7 +43,7 @@ class TotalAmountDue extends Component {
 
 	render() {
 		const { invoices, summary, invoiceErr, summaryErr } = this.state;
-
+		console.log('Invoices nia mh', invoices);
 		return (
 			<div class='total-amount-due'>
 				<CalendarDay invoices={invoices} />

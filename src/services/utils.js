@@ -29,7 +29,45 @@ export const SIDES = {
 	RIGHT: 'right',
 };
 
+export const MENU = {
+	Billing: [{ name: 'Overview' }, { name: 'hello ' }],
+	Profile: [{ name: 'Overview' }, { name: 'hello ' }],
+	Support: [{ name: 'Overview' }, { name: 'hello ' }],
+	Storage: [{ name: 'Overview' }, { name: 'hello ' }],
+};
+
 export class Utils {
+	static getMenuItems = names => {
+		const menu = {};
+		for (let i = 0; i <= names.length - 1; i++) {
+			Object.assign(menu, { [names[i].toUpperCase()]: i + 1 });
+		}
+		return menu;
+	};
+	//Get menu names based on module
+	static getMenuNames = module => {
+		let menu = null;
+		switch (module) {
+			case 'billing':
+				menu = MENU.Billing;
+				break;
+			case 'profile':
+				menu = MENU.Profile;
+				break;
+			case 'support':
+				menu = MENU.Support;
+				break;
+			case 'Storage':
+				menu = MENU.Storage;
+				break;
+			default:
+				menu = [];
+
+				break;
+		}
+
+		return menu;
+	};
 	static getClientParams(ip, site) {
 		const clientJs = new ClientJS();
 

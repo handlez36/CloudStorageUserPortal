@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { BillingUtils } from '../../services/billing';
+import { BillingUtils, BillingApi } from '../../services/billing';
 import { Sorting } from '../../services/sorting';
 import Button from '../../blox_components/Common/BloxButton';
 
@@ -49,13 +49,13 @@ const data = [
 		},
 		detailHeaders: { effectiveDate: 'Date', description: 'Description', amount: 'Amount' },
 	},
-	// n
 ];
 class RecentInvoices extends Component {
 	constructor(props) {
 		super(props);
 
 		this.myObserver = null;
+		this.billingApi = new BillingApi();
 		this.state = {
 			invoicesToDisplay: null,
 			screenSize: null,
@@ -81,23 +81,25 @@ class RecentInvoices extends Component {
 		}
 	};
 
-	getRecentInvoices = () => {
-		// try {
-		// 	const response = await new BillingApi().getAll();
-		// 	const { data: { invoices = [] } = {} } = response;
-		// 	if (Utils.isValidResponse(response) && invoices) {
-		// 		const lastestThreeInvoices = BillingUtils.getLastThreeInvoices(invoices);
-		// 		this.setState({ lastestThreeInvoices });
-		// 	} else {
-		// 		this.setState({ showRecentPayment: false, error: 'Error pulling recent invoices' });
-		// 	}
-		// } catch (e) {
-		// 	this.setState({ error: e.message });
-		// }
-		console.log(data);
-		const lastestThreeInvoices = BillingUtils.getInvoices(data, 3);
-		console.log('LATEST THREE', lastestThreeInvoices);
-		this.setState({ invoicesToDisplay: lastestThreeInvoices });
+	getRecentInvoices = async () => {
+		console.log('NIAMH RESPONSE HEY');
+		try {
+			const response = await new BillingApi().getAll();
+			const { data: { invoices = [] } = {} } = response;
+
+			if (Utils.isValidResponse(response) && invoices) {
+				const lastestThreeInvoices = BillingUtils.getInvoices(data, 3);
+				this.setState({ invoicesToDisplay: lastestThreeInvoices, invoices: data.data.invoices });
+			} else {
+				this.setState({ showRecentPayment: false, error: 'Error pulling recent invoices' });
+			}
+		} catch (e) {
+			this.setState({ error: e.message });
+		}
+		// console.log(data);
+		// const lastestThreeInvoices = BillingUtils.getInvoices(data, 3);
+		// console.log('LATEST THREE', lastestThreeInvoices);
+		// this.setState({ invoicesToDisplay: lastestThreeInvoices });
 	};
 
 	formatAmount = amount => {
@@ -105,9 +107,9 @@ class RecentInvoices extends Component {
 		const newArray = amount.split('.');
 		return (
 			<Fragment>
-				<span className='dollar'>$</span>
+				<span className='dollar body10'>$</span>
 				<span className='dollars'>{newArray[0]}</span>
-				<span className='cents'>{newArray[1]}</span>
+				<span className='cents body10'>{newArray[1]}</span>
 			</Fragment>
 		);
 		// const regex = /(\d*)\.?(\d*)/;
@@ -128,21 +130,21 @@ class RecentInvoices extends Component {
 		return threeMonths;
 	};
 	getScreenSize = () => {
-		const screenWidth = document.querySelector('.portal-header').clientWidth;
-
-		console.log('Screensize', screenWidth);
-		if (screenWidth < 1344) {
-			const lastestTwo = BillingUtils.getInvoices(data, 2);
-			this.setState({ invoicesToDisplay: lastestTwo });
-		} else {
-			const lastestTwo = BillingUtils.getInvoices(data, 3);
-			this.setState({ invoicesToDisplay: lastestTwo });
-		}
+		try {
+			const screenWidth = document.querySelector('.portal-header').clientWidth;
+			const { invoices } = this.state;
+			if (screenWidth < 1344) {
+				const lastestTwo = BillingUtils.getInvoices(data, 2);
+				this.setState({ invoicesToDisplay: lastestTwo });
+			} else {
+				const lastestTwo = BillingUtils.getInvoices(data, 3);
+				this.setState({ invoicesToDisplay: lastestTwo });
+			}
+		} catch (e) {}
 	};
 
 	componentDidMount() {
 		this.getRecentInvoices();
-		console.log(screen.width);
 		this.setState({ screenSize: screen.width });
 		this.myObserver = new ResizeObserver(entries => {
 			entries.forEach(() => {
@@ -155,9 +157,14 @@ class RecentInvoices extends Component {
 
 	render() {
 		const { invoicesToDisplay } = this.state;
-
+		let customClass = '';
+		if (invoicesToDisplay) {
+			customClass = invoicesToDisplay.length === 1 ? 'one-invoice' : '';
+		}
+		console.log('invoicetOdISPLAY', invoicesToDisplay);
+		console.log('customclass', customClass);
 		return (
-			<div className='recent-invoices-wrapper recent-invoices v3'>
+			<div className={`recent-invoices-wrapper recent-invoices ${customClass}`}>
 				<div className='invoices invoice-list'>
 					{invoicesToDisplay &&
 						invoicesToDisplay.map(invoice => (
@@ -168,8 +175,10 @@ class RecentInvoices extends Component {
 								<span className={`invoice-amount${invoice.status === 'Overdue' ? ' overdue' : ''}`}>
 									{this.formatAmount(invoice.invoiceAmount)}
 								</span>
-								<span className='invoice-number'>{`Invoice: ${invoice.invoiceNumber}`} </span>
-								<span className='date-sent invoice-date'>
+								<span className='invoice-number body10'>
+									{`Invoice: ${invoice.invoiceNumber}`}{' '}
+								</span>
+								<span className='date-sent invoice-date body10'>
 									{`Date Sent: ${moment(invoice.billcycle).format('MM.DD.YY')}`}{' '}
 								</span>
 							</div>
