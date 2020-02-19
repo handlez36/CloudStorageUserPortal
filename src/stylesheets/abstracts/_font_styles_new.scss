@@ -1,23 +1,5 @@
 // Newest Fonts Styles - from Niamh
 
-@mixin Count {
-	color: $White;
-	font-size: 36px;
-	font-family: $proxima-nova-light;
-	line-height: 36px;
-	letter-spacing: -1.8px;
-	text-transform: uppercase;
-	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
-		font-size: 46px;
-		line-height: 46px;
-		letter-spacing: -2.3px;
-	}
-	@media screen and (min-width: ($high-res + 1)) {
-		font-size: 60px;
-		line-height: 60px;
-		letter-spacing: -3px;
-	}
-}
 @mixin Text-Style-Ticket-Indicator {
 	font-size: 16px;
 	font-family: $font-family-primary-subheads;
@@ -477,17 +459,21 @@
 }
 
 @mixin Numbers30 {
-	font-family: $proxima-nova-light;
+	color: $White;
 	font-size: 36px;
-	line-height: 1px;
+	font-family: $proxima-nova-light;
+	line-height: 36px;
 	letter-spacing: -1.8px;
-	color: $DCBLOX_Gray;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	text-transform: uppercase;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 46px;
+		line-height: 46px;
 		letter-spacing: -2.3px;
+		color: $White;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 60px;
+		line-height: 60px;
 		letter-spacing: -3px;
 	}
 }
@@ -635,7 +621,7 @@
 		line-height: 24px;
 	}
 }
-@mixin Total-Amount-Due-Dollars-And-Cents {
+@mixin Numbers10 {
 	font-family: $proxima-nova-light;
 	font-size: 14px;
 	letter-spacing: -0.7px;

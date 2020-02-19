@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import ResizeObserver from 'resize-observer-polyfill';
 import moment from 'moment';
 import { BillingUtils, BillingApi } from '../../services/billing';
+
 import { Sorting } from '../../services/sorting';
 import { Utils } from '../../services/utils';
 
@@ -96,9 +98,9 @@ class RecentInvoices extends Component {
 
 		return (
 			<Fragment>
-				<span className='dollar body10'>$</span>
-				<span className='dollars'>{newArray[0] ? newArray[0] : amount}</span>
-				<span className='cents body10'>{newArray[1] ? newArray[1] : '00'}</span>
+				<span className='dollar numbers5'>$</span>
+				<span className='dollars numbers20'>{newArray[0] ? newArray[0] : amount}</span>
+				<span className='cents numbers5'>{newArray[1] ? newArray[1] : '00'}</span>
 			</Fragment>
 		);
 	};
@@ -130,8 +132,10 @@ class RecentInvoices extends Component {
 				this.getScreenSize();
 			});
 		});
-		const wrapperElement = document.querySelector('.recent-invoices-wrapper');
-		this.myObserver.observe(wrapperElement);
+		try {
+			const wrapperElement = document.querySelector('.recent-invoices-wrapper');
+			this.myObserver.observe(wrapperElement);
+		} catch (e) {}
 	}
 
 	render() {
@@ -145,31 +149,36 @@ class RecentInvoices extends Component {
 		}
 
 		return (
-			<div className={'recent-invoices-wrapper recent-invoices'}>
-				<div className='invoices invoice-list'>
-					{invoicesToDisplay &&
-						invoicesToDisplay.map(invoice => (
-							<div key={invoice.invoiceId} className='recent-invoice'>
-								<div className='invoice-image image'>
-									{invoice.status && <img src={this.getIcon(invoice.status)} />}
+			<Fragment>
+				{invoicesToDisplay && (
+					<div className={'recent-invoices-wrapper recent-invoices'}>
+						<div className='invoices invoice-list'>
+							{invoicesToDisplay.map(invoice => (
+								<div key={invoice.invoiceId} className='recent-invoice'>
+									<div className='invoice-image image'>
+										{invoice.status && <img src={this.getIcon(invoice.status)} />}
+									</div>
+									<span
+										className={`invoice-amount${invoice.status === 'Overdue' ? ' overdue' : ''}`}
+									>
+										{invoice.invoiceAmount ? this.formatAmount(invoice.invoiceAmount) : ''}
+									</span>
+									<span className='invoice-number body10'>
+										{invoice.invoiceNumber
+											? `Invoice: #${invoice.invoiceNumber ? invoice.invoiceNumber : ''}`
+											: ''}
+									</span>
+									<span className='date-sent invoice-date body10'>
+										{invoice.billcycle
+											? `Date Sent: ${moment(invoice.billcycle).format('MM.DD.YY')}`
+											: ''}
+									</span>
 								</div>
-								<span className={`invoice-amount${invoice.status === 'Overdue' ? ' overdue' : ''}`}>
-									{invoice.invoiceAmount ? this.formatAmount(invoice.invoiceAmount) : ''}
-								</span>
-								<span className='invoice-number body10'>
-									{invoice.invoiceNumber
-										? `Invoice: #${invoice.invoiceNumber ? invoice.invoiceNumber : ''}`
-										: ''}
-								</span>
-								<span className='date-sent invoice-date body10'>
-									{invoice.billcycle
-										? `Date Sent: ${moment(invoice.billcycle).format('MM.DD.YY')}`
-										: ''}
-								</span>
-							</div>
-						))}
-				</div>
-			</div>
+							))}
+						</div>
+					</div>
+				)}
+			</Fragment>
 		);
 	}
 }

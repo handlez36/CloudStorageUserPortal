@@ -58,8 +58,6 @@ class SecondaryMenu extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		const { menu } = this.state;
-		console.log('heyoo niamh', prevState.menu);
-		console.log('heyoo', menu);
 		if (menu !== null && menu !== prevState.menu) {
 			let clientHeight;
 			try {

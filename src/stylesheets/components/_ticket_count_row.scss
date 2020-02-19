@@ -28,7 +28,7 @@
 		align-self: center !important;
 	}
 	.count {
-		@include Count;
+		@include Numbers30;
 		z-index: 3000;
 	}
 	.CircularProgressbar {
@@ -118,7 +118,7 @@
 		}
 
 		.percentage {
-			@include Count;
+			@include Numbers30;
 		}
 
 		.type {

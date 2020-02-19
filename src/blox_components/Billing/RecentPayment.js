@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import { BillingApi } from '../../services/billing';
 import { Utils } from '../../services/utils';
@@ -13,6 +13,7 @@ class RecentPayment extends Component {
 		date: null,
 		screenWidth: null,
 		paymentImage: null,
+		recentTransaction: false,
 	};
 
 	componentDidMount() {
@@ -21,8 +22,11 @@ class RecentPayment extends Component {
 				this.getPaymentImage();
 			});
 		});
-		const wrapperElement = document.querySelector('.recent-payment');
-		this.myObserver.observe(wrapperElement);
+		try {
+			const wrapperElement = document.querySelector('.recent-payment');
+			this.myObserver.observe(wrapperElement);
+		} catch (e) {}
+
 		this.getPaymentImage();
 		new BillingApi().getPayments(3).then(response => {
 			let priceArray;
@@ -34,7 +38,10 @@ class RecentPayment extends Component {
 					dollarAmount: priceArray[0],
 					centAmount: priceArray[1],
 					date: Utils.formatInvoiceDate(response.data.transactions[0].effectiveTimestamp),
+					recentTransaction: true,
 				});
+			} else {
+				this.setState({ recentTransaction: false });
 			}
 		});
 	}
@@ -43,36 +50,37 @@ class RecentPayment extends Component {
 		try {
 			const screenWidth = document.querySelector('.portal-header').clientWidth;
 
-			console.log('Screensize PAYMENT', screenWidth);
-
 			let paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
 			if (screenWidth < 1344) {
 				paymentImage = `${CDN_URL}billing/recent-payment-image-sm.svg`;
 			} else if (screenWidth > 2240) {
 				paymentImage = `${CDN_URL}billing/recent-payment-image-lg.svg`;
 			}
-			console.log(paymentImage);
 
 			this.setState({ paymentImage });
 		} catch (e) {}
 	}
 
 	render() {
-		const { dollarAmount, centAmount, date, paymentImage } = this.state;
+		const { dollarAmount, centAmount, date, paymentImage, recentTransaction } = this.state;
 
 		return (
-			<div className='recent-payment-wrapper recent-payment '>
-				<div className='payment-image'>
-					<img src={paymentImage} />
-				</div>
-				<div className='payment-amount'>
-					<span className='dollar body10'>$</span>
-					<span className='amount'>{dollarAmount}</span>
-					<span className='cents body10'>{centAmount}</span>
-				</div>
-				<div className='invoice-number body10'>Invoice: #34567</div>
-				<span className='date-recieved body10'>Date Received: {date}</span>
-			</div>
+			<Fragment>
+				{recentTransaction && (
+					<div className='recent-payment-wrapper recent-payment '>
+						<div className='payment-image'>
+							<img src={paymentImage} />
+						</div>
+						<div className='payment-amount'>
+							<span className='dollar numbers5'>$</span>
+							<span className='amount numbers20'>{dollarAmount}</span>
+							<span className='cents numbers5'>{centAmount}</span>
+						</div>
+						<div className='invoice-number body10'>Invoice: #34567</div>
+						<span className='date-recieved body10'>Date Received: {date}</span>
+					</div>
+				)}
+			</Fragment>
 		);
 	}
 }

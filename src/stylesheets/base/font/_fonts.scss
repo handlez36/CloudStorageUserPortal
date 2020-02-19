@@ -126,7 +126,7 @@
 	@include Total-Amount-Due-Subtext-Bold;
 }
 .total-amount-dollars-and-cents {
-	@include Total-Amount-Due-Dollars-And-Cents;
+	@include Numbers10;
 }
 
 /** HEADINGS */
