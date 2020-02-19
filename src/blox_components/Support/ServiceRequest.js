@@ -10,19 +10,21 @@ import GuestAccessImg from 'assets/guest_access_image.svg';
 // const guestAccess = `${CDN_URL}common/guest-access-icon.svg`;
 const REQUEST_DETAILS = {
 	REMOTE_HANDS: {
+		title: 'REMOTE Hands',
 		description: 'Need us to do something for you in the Data Center?',
 		image: RemoteHandsImg,
 		className: 'remote-hands',
 	},
 	GUEST_ACCESS: {
+		title: 'GUEST Access',
 		description: 'Let us know who’s coming to work on your equipment.',
 		image: GuestAccessImg,
 		className: 'guest-access',
 	},
 };
 
-const AdvancedRequest = ({ type, breakpoint }) => {
-	const { description, image, className } = REQUEST_DETAILS[type];
+const ServiceRequest = ({ type, breakpoint }) => {
+	const { title, description, image, className } = REQUEST_DETAILS[type];
 	const SubmitButton = (
 		<Button title='REQUEST SERVICE' customClass='support-button' onClick={() => {}} enabled />
 	);
@@ -30,7 +32,7 @@ const AdvancedRequest = ({ type, breakpoint }) => {
 	return (
 		<div className='advanced-request'>
 			<LargeCard
-				title='REMOTE Hands'
+				title={title}
 				button={SubmitButton}
 				description={description}
 				image={image}
@@ -41,4 +43,4 @@ const AdvancedRequest = ({ type, breakpoint }) => {
 	);
 };
 
-export default AdvancedRequest;
+export default ServiceRequest;

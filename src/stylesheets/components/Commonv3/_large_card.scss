@@ -34,10 +34,10 @@
 	&.expanded {
 		height: 232px;
 		.expanded-description {
-			margin-top: GetSize(1);
+			height: 120px;
 			@include FlexboxColumn;
-			justify-content: center;
-			padding: GetSize(1) GetSize(2) GetSize(1) GetSize(2);
+			justify-content: space-between;
+			padding: GetSize(1) GetSize(2) GetSize(2) GetSize(2);
 			font-size: 8px;
 			.button {
 				margin-top: GetSize(2);
@@ -50,7 +50,7 @@
 			}
 		}
 		.expanded-description .description {
-			max-height: GetSize(5);
+			max-height: GetSize(7);
 		}
 	}
 }
@@ -74,7 +74,7 @@
 		&.expanded {
 			height: 272px;
 			.expanded-description {
-				margin-top: GetSize(2);
+				height: 112px;
 				.button {
 					margin-top: GetSize(2);
 				}
@@ -85,6 +85,7 @@
 			}
 			.expanded-description .description {
 				max-height: GetSize(6);
+				@include Body10;
 			}
 		}
 	}
@@ -109,8 +110,11 @@
 		&.expanded {
 			height: 416px;
 			.expanded-description {
+				height: 144px;
+				padding-top: 0;
 				.button {
-					margin-top: GetSize(3);
+					// margin-top: GetSize(3);
+					margin-bottom: GetSize(2);
 				}
 				.button button {
 					width: 368px;
@@ -119,6 +123,7 @@
 			}
 			.expanded-description .description {
 				max-height: GetSize(5);
+				@include Body20;
 			}
 		}
 	}

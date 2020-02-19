@@ -32,8 +32,8 @@ class LargeCard extends Component {
 				</div>
 				{expanded && (
 					<div className='expanded-description'>
-						<div className='description'>{description}</div>
-						<div className='button'>{button}</div>
+						<div className='description numbers10'>{description}</div>
+						<div className='button body20'>{button}</div>
 					</div>
 				)}
 			</div>

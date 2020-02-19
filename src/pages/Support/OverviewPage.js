@@ -5,7 +5,7 @@ import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import TicketCount from 'blox_components/Common/TicketCountRow';
 import IssueRequest from 'blox_components/Support/IssueRequest/IssueRequest';
-import AdvancedRequest from 'blox_components/Support/AdvancedRequest';
+import ServiceRequest from 'blox_components/Support/ServiceRequest';
 import { TICKET_TYPES, HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';
 import { RESOLUTIONS } from 'services/config';
 
@@ -58,12 +58,12 @@ const OverviewPage = ({ breakpoint, location }) => {
 			</div>
 			<div key='remoteHandsRequest' className='remoteHandsRequest'>
 				<ComponentWrapper title='SERVICE Request' hideBorder>
-					<AdvancedRequest type='REMOTE_HANDS' breakpoint={breakpoint} />
+					<ServiceRequest type='REMOTE_HANDS' breakpoint={breakpoint} />
 				</ComponentWrapper>
 			</div>
 			<div key='guestAccessRequest' className='guestAccessRequest'>
 				<ComponentWrapper hideTitle hideBorder>
-					<AdvancedRequest type='GUEST_ACCESS' breakpoint={breakpoint} />
+					<ServiceRequest type='GUEST_ACCESS' breakpoint={breakpoint} />
 				</ComponentWrapper>
 			</div>
 		</BloxPage>
