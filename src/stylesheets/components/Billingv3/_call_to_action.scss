@@ -16,6 +16,12 @@
 		padding-bottom: GetSize(1);
 		padding-top: GetSize(1);
 	}
+	.balance-summary.no-button .dollar-sign {
+		padding-top: 0px;
+	}
+	.balance-summary.no-button .cents {
+		padding-top: 0px;
+	}
 	.balance-summary .dollar-sign {
 		padding-top: 4px;
 		padding-right: 2px;

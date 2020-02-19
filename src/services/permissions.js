@@ -28,8 +28,8 @@ export class Permissions {
 					service.displayName === moduleToCheck &&
 					(role === MEMBER_ROLE_TYPE || role === OWNER_ROLE_TYPE),
 			);
-			console.log('services', services);
-			console.log('access', access);
+
+			console.log('access REMOVE THIS LINE ', access);
 			access = true;
 		}
 

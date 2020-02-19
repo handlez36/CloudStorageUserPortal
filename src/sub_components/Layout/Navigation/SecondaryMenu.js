@@ -134,7 +134,7 @@ class SecondaryMenu extends Component {
 		const TopGraphic = Assets.top;
 		const BottomGraphic = Assets.bottom;
 		const Menu = Utils.getMenuNames(module);
-		console.log('MENU MENU MENU MENU ', Menu);
+
 		return (
 			<div className='nav-menu-secondary'>
 				<div className='columns-wrapper'>

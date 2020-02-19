@@ -4,91 +4,51 @@ import moment from 'moment';
 import { BillingUtils, BillingApi } from '../../services/billing';
 import { Sorting } from '../../services/sorting';
 import { Utils } from '../../services/utils';
-import Button from '../../blox_components/Common/BloxButton';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const dueIcon = `${CDN_URL}billing/due-icon.svg`;
 const overdueIcon = `${CDN_URL}billing/icon_Invoice_pastdue.svg`;
 const paidIcon = `${CDN_URL}billing/invoice-icon-paid.svg`;
 
-// const data = [
-// 	{
-// 		transactions: [
-// 			{
-// 				invoiceId: 585321,
-// 				customerId: 346361,
-// 				invoiceNumber: 1800,
-// 				amount: '$100.00',
-// 				outstandingBalance: '$3,000.00',
-// 				invoiceTotal: '$3,160.00',
-// 				uri: 'https://stg-secure.fusebill.com/v1/invoices/585321',
-// 				transactionId: 69042044,
-// 				effectiveDate: '01.16.20',
-// 				description: 'Credit Card',
-// 				transactionType: 'Credit Card',
-// 				reference: 'CCTransID:1hw4asfb',
-// 			},
-// 		],
-// 		invoiceNumber: '#1800',
-// 		billcycle: '01.15.20',
-// 		invoiceAmount: '3,160.00',
-// 		dueDate: '02.14.20',
-// 		amountDue: '3,000.00',
-// 		status: 'Due',
-// 		invoiceId: 585321,
-// 		billCycle: undefined,
-// 		theme: {
-// 			icon: 'https://test.mydcblox.com/cdn/library/billing/Billing_Due_Icon.svg',
-// 			bannerColor: 'blue',
-// 		},
-// 		summaryHeaders: {
-// 			invoiceNumber: 'Invoice',
-// 			billcycle: 'Sent',
-// 			invoiceAmount: 'Total',
-// 			dueDate: 'Due',
-// 			amountDue: 'Balance',
-// 		},
-// 		detailHeaders: { effectiveDate: 'Date', description: 'Description', amount: 'Amount' },
-// 	},
-// 	// {
-// 	// 	transactions: [
-// 	// 		{
-// 	// 			invoiceId: 585321,
-// 	// 			customerId: 346361,
-// 	// 			invoiceNumber: 1800,
-// 	// 			amount: '$100.00',
-// 	// 			outstandingBalance: '$3,000.00',
-// 	// 			invoiceTotal: '$3,160.00',
-// 	// 			uri: 'https://stg-secure.fusebill.com/v1/invoices/585321',
-// 	// 			transactionId: 69042044,
-// 	// 			effectiveDate: '01.16.20',
-// 	// 			description: 'Credit Card',
-// 	// 			transactionType: 'Credit Card',
-// 	// 			reference: 'CCTransID:1hw4asfb',
-// 	// 		},
-// 	// 	],
-// 	// 	invoiceNumber: '#1800',
-// 	// 	billcycle: '01.15.20',
-// 	// 	invoiceAmount: '3,160.00',
-// 	// 	dueDate: '02.14.20',
-// 	// 	amountDue: '3,000.00',
-// 	// 	status: 'Due',
-// 	// 	invoiceId: 585321,
-// 	// 	billCycle: undefined,
-// 	// 	theme: {
-// 	// 		icon: 'https://test.mydcblox.com/cdn/library/billing/Billing_Due_Icon.svg',
-// 	// 		bannerColor: 'blue',
-// 	// 	},
-// 	// 	summaryHeaders: {
-// 	// 		invoiceNumber: 'Invoice',
-// 	// 		billcycle: 'Sent',
-// 	// 		invoiceAmount: 'Total',
-// 	// 		dueDate: 'Due',
-// 	// 		amountDue: 'Balance',
-// 	// 	},
-// 	// 	detailHeaders: { effectiveDate: 'Date', description: 'Description', amount: 'Amount' },
-// 	// },
-// ];
+const EmptyInvoice = {
+	transactions: [
+		{
+			invoiceId: null,
+			customerId: null,
+			invoiceNumber: null,
+			amount: '',
+			outstandingBalance: '',
+			invoiceTotal: '',
+			uri: '',
+			transactionId: null,
+			effectiveDate: '',
+			description: '',
+			transactionType: '',
+			reference: '',
+		},
+	],
+	invoiceNumber: '',
+	billcycle: '',
+	invoiceAmount: '',
+	dueDate: '',
+	amountDue: '',
+	status: null,
+	invoiceId: null,
+	billCycle: undefined,
+	theme: {
+		icon: '',
+		bannerColor: '',
+	},
+	summaryHeaders: {
+		invoiceNumber: 'Invoice',
+		billcycle: 'Sent',
+		invoiceAmount: 'Total',
+		dueDate: 'Due',
+		amountDue: 'Balance',
+	},
+	detailHeaders: { effectiveDate: 'Date', description: 'Description', amount: 'Amount' },
+};
+
 class RecentInvoices extends Component {
 	constructor(props) {
 		super(props);
@@ -97,7 +57,7 @@ class RecentInvoices extends Component {
 		this.billingApi = new BillingApi();
 		this.state = {
 			invoicesToDisplay: null,
-			screenSize: null,
+			screenWidth: null,
 			invoices: null,
 		};
 	}
@@ -113,22 +73,14 @@ class RecentInvoices extends Component {
 		}
 	};
 
-	goToInvoiceHistory = () => {
-		const { callback } = this.props;
-
-		if (callback) {
-			callback('INVOICE HISTORY');
-		}
-	};
-
 	getRecentInvoices = async () => {
 		const response = await new BillingApi().getAll();
 		const { data: { invoices = [] } = {} } = response;
 
 		if (Utils.isValidResponse(response) && invoices) {
-			const lastestThreeInvoices = BillingUtils.getInvoices(invoices, 3);
-
-			this.setState({ invoicesToDisplay: lastestThreeInvoices, invoices });
+			this.setState({ invoices }, () => {
+				this.getScreenSize();
+			});
 		} else {
 			this.setState({ showRecentPayment: false, error: 'Error pulling recent invoices' });
 		}
@@ -149,17 +101,6 @@ class RecentInvoices extends Component {
 				<span className='cents body10'>{newArray[1] ? newArray[1] : '00'}</span>
 			</Fragment>
 		);
-		// const regex = /(\d*)\.?(\d*)/;
-		// const matches = `${amount}`.match(regex);
-		// const [dollars, cents] = matches;
-
-		// return (
-		// 	<Fragment>
-		// 		<span className='dollar'>$</span>
-		// 		<span className='dollars'>{dollars}</span>
-		// 		<span className='cents'>{cents}</span>
-		// 	</Fragment>
-		// );
 	};
 
 	getMonths = () => {
@@ -171,17 +112,17 @@ class RecentInvoices extends Component {
 		const { invoices } = this.state;
 		if (screenWidth < 1344) {
 			const lastestTwo = BillingUtils.getInvoices(invoices, 2);
-			this.setState({ invoicesToDisplay: lastestTwo });
+			this.setState({ invoicesToDisplay: lastestTwo, screenWidth });
 		} else {
-			const lastestTwo = BillingUtils.getInvoices(invoices, 3);
-			this.setState({ invoicesToDisplay: lastestTwo });
+			const lastestThree = BillingUtils.getInvoices(invoices, 3);
+			this.setState({ invoicesToDisplay: lastestThree, screenWidth });
 		}
 	};
 
 	componentDidMount() {
 		this.getRecentInvoices();
 
-		this.setState({ screenSize: screen.width });
+		this.setState({ screenWidth: screen.width });
 		this.myObserver = new ResizeObserver(entries => {
 			entries.forEach(() => {
 				this.getScreenSize();
@@ -192,29 +133,36 @@ class RecentInvoices extends Component {
 	}
 
 	render() {
-		const { invoicesToDisplay, invoices } = this.state;
-		let customClass = '';
+		const { invoicesToDisplay, screenWidth } = this.state;
+
 		if (invoicesToDisplay) {
-			customClass = invoicesToDisplay.length === 1 ? 'one-invoice' : '';
+			invoicesToDisplay.length === 1 ? invoicesToDisplay.push(EmptyInvoice) : '';
+			invoicesToDisplay.length === 2 && screenWidth > 1344
+				? invoicesToDisplay.push(EmptyInvoice)
+				: '';
 		}
-		console.log(invoices);
+		console.log(invoicesToDisplay);
 		return (
-			<div className={`recent-invoices-wrapper recent-invoices ${customClass}`}>
+			<div className={'recent-invoices-wrapper recent-invoices'}>
 				<div className='invoices invoice-list'>
 					{invoicesToDisplay &&
 						invoicesToDisplay.map(invoice => (
 							<div key={invoice.invoiceId} className='recent-invoice'>
 								<div className='invoice-image image'>
-									<img src={this.getIcon(invoice.status)} />
+									{invoice.status && <img src={this.getIcon(invoice.status)} />}
 								</div>
 								<span className={`invoice-amount${invoice.status === 'Overdue' ? ' overdue' : ''}`}>
-									{this.formatAmount(invoice.invoiceAmount)}
+									{invoice.invoiceAmount ? this.formatAmount(invoice.invoiceAmount) : ''}
 								</span>
 								<span className='invoice-number body10'>
-									{`Invoice: #${invoice.invoiceNumber}`}{' '}
+									{invoice.invoiceNumber
+										? `Invoice: #${invoice.invoiceNumber ? invoice.invoiceNumber : ''}`
+										: ''}
 								</span>
 								<span className='date-sent invoice-date body10'>
-									{`Date Sent: ${moment(invoice.billcycle).format('MM.DD.YY')}`}{' '}
+									{invoice.billCycle
+										? `Date Sent: ${moment(invoice.billcycle).format('MM.DD.YY')}`
+										: ''}
 								</span>
 							</div>
 						))}

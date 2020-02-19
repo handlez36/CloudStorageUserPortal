@@ -40,19 +40,21 @@ class RecentPayment extends Component {
 	}
 
 	getPaymentImage() {
-		const screenWidth = document.querySelector('.portal-header').clientWidth;
+		try {
+			const screenWidth = document.querySelector('.portal-header').clientWidth;
 
-		console.log('Screensize PAYMENT', screenWidth);
+			console.log('Screensize PAYMENT', screenWidth);
 
-		let paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
-		if (screenWidth < 1344) {
-			paymentImage = `${CDN_URL}billing/recent-payment-image-sm.svg`;
-		} else if (screenWidth > 2240) {
-			paymentImage = `${CDN_URL}billing/recent-payment-image-lg.svg`;
-		}
-		console.log(paymentImage);
+			let paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
+			if (screenWidth < 1344) {
+				paymentImage = `${CDN_URL}billing/recent-payment-image-sm.svg`;
+			} else if (screenWidth > 2240) {
+				paymentImage = `${CDN_URL}billing/recent-payment-image-lg.svg`;
+			}
+			console.log(paymentImage);
 
-		this.setState({ paymentImage });
+			this.setState({ paymentImage });
+		} catch (e) {}
 	}
 
 	render() {

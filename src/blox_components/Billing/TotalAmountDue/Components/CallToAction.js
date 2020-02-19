@@ -134,13 +134,14 @@ const getCallToActionCopy = (splitInvoices, status, summary) => {
 	return { summaryCopy, statusCopy, nextPaymentCopy };
 };
 
-const CallToAction = ({ invoices, summary }) => {
+const CallToAction = ({ invoices, summary, hasOnlinePaymentAccess }) => {
 	if (!invoices || !summary) {
 		return <div className='call-to-action'>Loading...</div>;
 	}
 
 	const user = getCurrentUser();
 	const { invoices: splitInvoices, status } = BillingUtils.getInvoiceStatus(invoices);
+	const customClass = hasOnlinePaymentAccess ? '' : 'no-button';
 	const { summaryCopy, statusCopy, nextPaymentCopy } = getCallToActionCopy(
 		splitInvoices,
 		status,
@@ -149,7 +150,7 @@ const CallToAction = ({ invoices, summary }) => {
 
 	return (
 		<div className='call-to-action'>
-			<div className='balance-summary'>{summaryCopy}</div>
+			<div className={`balance-summary ${customClass}`}>{summaryCopy}</div>
 			<span className='balance-wrapper'>
 				<span className='balance-action total-amount-due-subtext'>{statusCopy}</span>
 				{nextPaymentCopy && (
@@ -157,7 +158,13 @@ const CallToAction = ({ invoices, summary }) => {
 				)}
 			</span>
 
-			<BloxButton title='PAY NOW' customClass='support-button green-gradient' onClick={() => {}} />
+			{hasOnlinePaymentAccess && (
+				<BloxButton
+					title='PAY NOW'
+					customClass='support-button green-gradient'
+					onClick={() => {}}
+				/>
+			)}
 		</div>
 	);
 };
