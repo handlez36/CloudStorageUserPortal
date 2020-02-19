@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import CalendarDay from '../../../blox_components/Billing/TotalAmountDue/Components/CalendarDay';
 import CallToAction from '../../../blox_components/Billing/TotalAmountDue/Components/CallToAction';
 import { BillingApi } from '../../../services/billing';
+import { Permissions } from '../../../services/permissions';
 
 class TotalAmountDue extends Component {
 	state = {
@@ -36,35 +37,27 @@ class TotalAmountDue extends Component {
 			this.setState({ summaryErr: e.message });
 		}
 	};
-	getModulePages = async id => {
+	getModulePages = async () => {
 		const { memberships } = this.props.auth_status;
+		const response = await Permissions.getModulePermissions(4);
+		const { access: hasBillingAccess } = Permissions.hasService(memberships, 'Billing');
 
-		try {
-			const response = await Permissions.getModulePermissions(4, id);
-			const { access: hasBillingAccess } = Permissions.hasService(memberships, 'Billing');
+		if (response && !response.data.error) {
+			const pages = response.data.pages;
 
-			if (response && !response.data.error) {
-				const pages = response.data.pages;
-
-				const hasOnlinePaymentAccess =
-					hasBillingAccess && Permissions.checkComponentAccess(pages, 'Overview', 'pay-now');
-				this.setState({
-					eligibleForOnlinePaymentOverviewPage: hasOnlinePaymentAccess,
-					pages: response.data.pages,
-				});
-			}
-		} catch (e) {
-			console.log('error getting permissions');
+			const hasOnlinePaymentAccess =
+				hasBillingAccess && Permissions.checkComponentAccess(pages, 'Overview', 'pay-now');
+			this.setState({
+				eligibleForOnlinePaymentOverviewPage: hasOnlinePaymentAccess,
+				pages: response.data.pages,
+			});
 		}
 	};
 
 	componentDidMount() {
-		const {
-			company_info: { customer: { id } = {} },
-		} = this.props;
 		this.getInvoices();
 		this.getSummary();
-		this.getModulePages(id);
+		this.getModulePages();
 	}
 
 	render() {

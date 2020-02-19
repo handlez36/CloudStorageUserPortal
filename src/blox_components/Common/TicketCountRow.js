@@ -63,11 +63,11 @@ class TicketCountRow extends Component {
 			trailColor,
 		} = this.props;
 		const { openCount, closeCount } = this.state;
-		console.log('open', openCount);
+
 		const total = openCount + closeCount;
 		const openPercent = ((openCount / total) * 100) / 1;
 		const closePercent = ((closeCount / total) * 100) / 1;
-		console.log('TYPE', type);
+
 		return (
 			<div className='ticket-count-section'>
 				{type === 'open' && (

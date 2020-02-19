@@ -6,6 +6,7 @@ import MenuItems from './MenuItems';
 import PrimaryMenu from './PrimaryMenu';
 import { Utils, SIDES } from './../../../services/utils';
 import { RESOLUTIONS } from './../../../services/config';
+import { Permissions } from '../../../services/permissions';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Layer2 = `${CDN_URL}navigation/nav-layer-2.svg`;
@@ -22,14 +23,16 @@ class SecondaryMenu extends Component {
 			column: null,
 			columnWidth: null,
 			showPrimaryMenu: false,
+			menu: null,
 		};
 	}
 	componentDidMount() {
+		const { module } = this.props;
 		let clientHeight;
 		try {
 			clientHeight = document.getElementById('menu-secondary').clientHeight;
 		} catch (e) {}
-
+		this.getMenuNames(module);
 		this.setNavHeight(clientHeight);
 		this.setColumnWidth();
 		this.myObserver = new ResizeObserver(entries => {
@@ -51,6 +54,21 @@ class SecondaryMenu extends Component {
 				this.myObserver.observe(wrapperElement);
 			}
 		}, 500);
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		const { menu } = this.state;
+		console.log('heyoo niamh', prevState.menu);
+		console.log('heyoo', menu);
+		if (menu !== null && menu !== prevState.menu) {
+			let clientHeight;
+			try {
+				clientHeight = document.getElementById('menu-secondary').clientHeight;
+			} catch (e) {}
+
+			this.setNavHeight(clientHeight);
+			this.setColumnWidth();
+		}
 	}
 	setGradientPercentage = () => {
 		const { gradientLine, percentage, crossPoint } = Utils.calculateGradientPath(
@@ -126,14 +144,23 @@ class SecondaryMenu extends Component {
 			this.setState({ showPrimaryMenu: false });
 		}
 	};
+	getMenuNames = async module => {
+		const ModuleNumber = Utils.getModuleNumber(module);
+		const response = await Permissions.getModulePermissions(ModuleNumber);
+
+		if (response && !response.data.error) {
+			const pages = response.data.pages;
+			const menu = Permissions.checkMenuItemPermissions(pages);
+			this.setState({ menu });
+		}
+	};
 
 	render() {
-		const { columnWidth, navHeight, percentage, showPrimaryMenu } = this.state;
+		const { columnWidth, navHeight, percentage, showPrimaryMenu, menu } = this.state;
 		const { module } = this.props;
 		const Assets = Utils.getNavigationAssets(module, 'md');
 		const TopGraphic = Assets.top;
 		const BottomGraphic = Assets.bottom;
-		const Menu = Utils.getMenuNames(module);
 
 		return (
 			<div className='nav-menu-secondary'>
@@ -175,7 +202,7 @@ class SecondaryMenu extends Component {
 							<div className='primary-menu-active-shadow' />
 						</Fragment>
 					)}
-					<MenuItems section={module} navigation='secondary' menu={Menu} />
+					<MenuItems section={module} navigation='secondary' menu={menu} />
 					<div className={showPrimaryMenu ? 'menu active' : 'menu'}>
 						<span className='text nav-menu'>MENU</span>
 						<span className='arrow'>

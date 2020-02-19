@@ -1,7 +1,7 @@
 import React from 'react';
 import { string, number } from 'prop-types';
 
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS } from '../../../../services/config';
 
 const POINT_ONE_Y_COORD = 230.587;
 const BAR_LENGTH = 161.527;

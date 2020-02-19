@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import { string, bool } from 'prop-types';
 
 // import ToolTip from '../Components/LocationLabel';
-import { RESOLUTIONS } from 'services/config';
-import * as StorageUtils from 'utils/StorageUtils';
+import { RESOLUTIONS } from '../../services/config';
+import * as StorageUtils from '../../utils/StorageUtils';
 import ToolTip from './LocationLabel';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;

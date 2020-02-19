@@ -20,7 +20,6 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			color: $DCBLOX_Gray;
 
 			.invoice-amount {
 				&.overdue {
@@ -28,7 +27,12 @@
 				}
 				display: flex;
 				flex-direction: row;
-
+				.cents {
+					padding-left: 2px;
+				}
+				.dollar {
+					padding-right: 2px;
+				}
 				.dollar,
 				.cents {
 					align-self: flex-start;
@@ -84,12 +88,13 @@
 			height: 40px;
 		}
 		.recent-invoice .invoice-image img {
-			width: 100%;
+			width: 22px;
 			height: 100%;
 		}
 		.recent-invoice .invoice-amount {
-			margin-top: 12px;
+			margin-top: 10px;
 			height: GetSize(2);
+			margin-bottom: 2px;
 		}
 		.recent-invoice .invoice-number {
 			margin-top: GetSize(3);

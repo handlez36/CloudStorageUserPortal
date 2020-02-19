@@ -39,6 +39,12 @@
 			align-self: flex-start;
 			margin-top: GetSize(1);
 		}
+		.cents {
+			padding-left: 2px;
+		}
+		.dollar {
+			padding-right: 2px;
+		}
 	}
 	.invoice-number {
 		margin-top: GetSize(2);
@@ -60,8 +66,8 @@
 			}
 		}
 		.invoice-number {
-			margin-top: GetSize(3);
-			height: GetSize(3);
+			margin-top: 28px;
+			height: 22px;
 		}
 		.date-recieved {
 			height: GetSize(2);

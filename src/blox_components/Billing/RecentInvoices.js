@@ -108,15 +108,17 @@ class RecentInvoices extends Component {
 		return threeMonths;
 	};
 	getScreenSize = () => {
-		const screenWidth = document.querySelector('.portal-header').clientWidth;
-		const { invoices } = this.state;
-		if (screenWidth < 1344) {
-			const lastestTwo = BillingUtils.getInvoices(invoices, 2);
-			this.setState({ invoicesToDisplay: lastestTwo, screenWidth });
-		} else {
-			const lastestThree = BillingUtils.getInvoices(invoices, 3);
-			this.setState({ invoicesToDisplay: lastestThree, screenWidth });
-		}
+		try {
+			const screenWidth = document.querySelector('.portal-header').clientWidth;
+			const { invoices } = this.state;
+			if (screenWidth < 1344) {
+				const lastestTwo = BillingUtils.getInvoices(invoices, 2);
+				this.setState({ invoicesToDisplay: lastestTwo, screenWidth });
+			} else {
+				const lastestThree = BillingUtils.getInvoices(invoices, 3);
+				this.setState({ invoicesToDisplay: lastestThree, screenWidth });
+			}
+		} catch (e) {}
 	};
 
 	componentDidMount() {
@@ -141,7 +143,7 @@ class RecentInvoices extends Component {
 				? invoicesToDisplay.push(EmptyInvoice)
 				: '';
 		}
-		console.log(invoicesToDisplay);
+
 		return (
 			<div className={'recent-invoices-wrapper recent-invoices'}>
 				<div className='invoices invoice-list'>
@@ -160,7 +162,7 @@ class RecentInvoices extends Component {
 										: ''}
 								</span>
 								<span className='date-sent invoice-date body10'>
-									{invoice.billCycle
+									{invoice.billcycle
 										? `Date Sent: ${moment(invoice.billcycle).format('MM.DD.YY')}`
 										: ''}
 								</span>

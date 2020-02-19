@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Utils } from './utils';
 const MEMBER_ROLE_TYPE = 'member';
 const OWNER_ROLE_TYPE = 'owner';
-
+const BASE_URL = `${process.env.REACT_APP_API_BASE_URL}`;
 export class Permissions {
 	static hasService(membershipsOld, moduleToCheck) {
 		// Try getting the current membership from session storage
@@ -54,16 +54,18 @@ export class Permissions {
 		const MenuItems = Utils.getMenuItems(MenuNames);
 		return MenuItems;
 	}
-	static getModulePermissions = (serviceId, companyId) => {
+
+	static getModulePermissions = serviceId => {
 		const url = `${BASE_URL}/authenticate/permission`;
 		const params = { serviceId };
 		const config = {
 			withCredentials: true,
-			headers: { 'Content-Type': 'application/json', companyid: companyId },
+			headers: { 'Content-Type': 'application/json' },
 		};
 
 		return axios.post(url, params, config);
 	};
+
 	static checkComponentAccess = (pagePermissions, pageName, componentName) => {
 		if (!pagePermissions) {
 			return null;
@@ -73,9 +75,8 @@ export class Permissions {
 		if (PageToCheck.length > 0) {
 			const components = PageToCheck[0].components;
 			const componentToCheck = components.filter(component => component.name === componentName);
-
-			if (componentToCheck[0].access >= 10) {
-				access = true;
+			if (componentToCheck[0]) {
+				access = componentToCheck[0].access >= 10 ? true : false;
 			} else {
 				access = false;
 			}
