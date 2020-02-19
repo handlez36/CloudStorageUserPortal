@@ -443,16 +443,35 @@
 @mixin Numbers30 {
 	font-family: $proxima-nova-light;
 	font-size: 36px;
-	line-height: 1px;
+	line-height: 1;
 	letter-spacing: -1.8px;
 	color: $DCBLOX_Gray;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	text-align: left;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 46px;
 		letter-spacing: -2.3px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 60px;
 		letter-spacing: -3px;
+	}
+}
+
+/** Button fonts */
+@mixin Buttons10 {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	line-height: 1;
+	letter-spacing: 0.7px;
+	color: $DCBLOX_Gray;
+	text-transform: uppercase;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 16px;
+		letter-spacing: 0.8px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		letter-spacing: 0.9px;
 	}
 }
 

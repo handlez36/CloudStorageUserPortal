@@ -63,10 +63,10 @@ class TicketCountRow extends Component {
 							background={true}
 							styles={buildStyles({ strokeLinecap: 'butt', pathTransitionDuration: 0.5 })}
 						>
-							<div className='count' style={{}}>
+							<div className='count numbers30' style={{}}>
 								{count}
 							</div>
-							<div className='new-title' style={{ marginTop: -5 }}>
+							<div className='status-label buttons10' style={{ marginTop: -5 }}>
 								{text ? text : status}
 							</div>
 						</CircularProgressbarWithChildren>
