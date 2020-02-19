@@ -22,19 +22,19 @@ class LargeCard extends Component {
 		const { expanded } = this.state;
 
 		return (
-			<div onClick={this.onClick} className={`large-card-wrapper ${expanded ? 'expanded' : ''}`}>
-				<div className={`large-card-image ${customClass ? customClass : ''}`}>
+			<div onClick={this.onClick} className={`large-card ${expanded ? 'expanded' : ''}`}>
+				<div className={`image ${customClass ? customClass : ''}`}>
 					<img src={image} />
 				</div>
-				<div className={`large-card ${expanded ? 'expanded' : ''}`}>
+				<div className={`label ${expanded ? 'expanded' : ''}`}>
 					<span>{title}</span>
 					<img src={expanded ? upIcon : downIcon} alt='expand' />
 				</div>
 				{expanded && (
-					<Fragment>
+					<div className='expanded-description'>
 						<div className='description'>{description}</div>
 						<div className='button'>{button}</div>
-					</Fragment>
+					</div>
 				)}
 			</div>
 		);

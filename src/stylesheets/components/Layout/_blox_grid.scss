@@ -49,6 +49,7 @@
 			border: 1px solid blue;
 		}
 		.content-grid .react-grid-item {
+			box-sizing: content-box;
 			// background-color: lightsteelblue;
 			//background-color: white;
 			border: 1px solid yellow;

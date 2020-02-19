@@ -27,7 +27,7 @@ This file should not contain anything but @import and comments.
 @import 'components/billing_history';
 @import 'components/drop_down_filter';
 @import 'components/account_info_with_button';
-@import 'components/large-card';
+// @import 'components/large-card';
 @import 'components/buttons';
 @import 'components/display_bill';
 @import 'components/dropdown';
@@ -162,6 +162,18 @@ This file should not contain anything but @import and comments.
 @import 'components/Storage/usage_bar';
 @import 'components/Storagev3/graph_details';
 @import 'components/Storagev3/location_bar';
+
+/**
+* Supportv3 components
+*/
+@import 'components/Supportv3/issue_request';
+@import 'components/Supportv3/ticket_type_card';
+@import 'components/Supportv3/advanced_request';
+
+/**
+* Commonv3 components
+*/
+@import 'components/Commonv3/large_card';
 
 /**
 * Common components
