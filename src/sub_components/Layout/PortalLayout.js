@@ -65,17 +65,11 @@ class PortalLayout extends Component {
 	};
 
 	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
-		console.log('In loadPage. BloxModule: ', bloxModule);
-		console.log('In loadPage. BloxPage: ', bloxPage);
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
-		console.log('Capitalized BloxModule: ', mod);
-		console.log('Capitalized BloxPage: ', page);
 		const pageName = PAGES[mod][page];
 
-		console.log('Load Path: ', `pages/${mod}/${pageName}`);
 		const Component = require(`../../pages/${mod}/${pageName}`).default;
-		console.log('Component: ', Component);
 		this.setState({ PageComponent: Component });
 	};
 
@@ -111,10 +105,6 @@ class PortalLayout extends Component {
 	render() {
 		const { breakpoint, PageComponent } = this.state;
 
-		if (PageComponent) {
-			console.log('Page Component: ', PageComponent);
-			console.log('<PageComponent >: ', <PageComponent />);
-		}
 		return (
 			<div className='portal-layout v3'>
 				<div className='portal-header'>

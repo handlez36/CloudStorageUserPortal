@@ -6,12 +6,11 @@ import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import TicketCount from 'blox_components/Common/TicketCountRow';
 import IssueRequest from 'blox_components/Support/IssueRequest/IssueRequest';
 import AdvancedRequest from 'blox_components/Support/AdvancedRequest';
-import { TicketUtils } from 'services/ticket';
+import { TICKET_TYPES, HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';
 import { RESOLUTIONS } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		// storageDetails: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 52 },
 		issueRequest: { x: 1, y: 24, dim: DIMENSIONS.FOUR_BY_FOUR },
 		remoteHandsRequest: { x: 6, y: 24, dim: DIMENSIONS.FOUR_BY_THREE },
 		guestAccessRequest: { x: 9, y: 24, dim: DIMENSIONS.FOUR_BY_THREE },
@@ -22,13 +21,10 @@ const LAYOUT_CONFIG = {
 		issueRequest: { x: 1, y: 31, dim: DIMENSIONS.FOUR_BY_FOUR },
 		remoteHandsRequest: { x: 6, y: 31, dim: DIMENSIONS.FOUR_BY_THREE },
 		guestAccessRequest: { x: 9, y: 31, dim: DIMENSIONS.FOUR_BY_THREE },
-		// remoteHandsRequest: { x: 6, y: 31, dim: DIMENSIONS.TWO_BY_THREE },
-		// guestAccessRequest: { x: 9, y: 31, dim: DIMENSIONS.TWO_BY_THREE },
 		openTickets: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
 		closedTickets: { x: 3, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
 	},
 	[RESOLUTIONS.HIGH]: {
-		// storageDetails: { x: 1, y: 50, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 104 },
 		issueRequest: { x: 1, y: 50, dim: DIMENSIONS.FOUR_BY_FOUR },
 		remoteHandsRequest: { x: 6, y: 50, dim: DIMENSIONS.FOUR_BY_THREE },
 		guestAccessRequest: { x: 9, y: 50, dim: DIMENSIONS.FOUR_BY_THREE },
@@ -47,18 +43,12 @@ const OverviewPage = ({ breakpoint, location }) => {
 		>
 			<div key='openTickets' className='openTickets'>
 				<ComponentWrapper title='TICKET Status' hideBorder>
-					<TicketCount
-						type={TicketUtils.TICKET_STATUS.OPEN}
-						ticketType={TicketUtils.TICKET_TYPES.STORAGE}
-					/>
+					<TicketCount status={TICKET_STATUS.OPEN} ticketType={TICKET_TYPES.SUPPORT} />
 				</ComponentWrapper>
 			</div>
 			<div key='closedTickets' className='closedTickets'>
 				<ComponentWrapper hideTitle hideBorder>
-					<TicketCount
-						type={TicketUtils.TICKET_STATUS.CLOSED}
-						ticketType={TicketUtils.TICKET_TYPES.STORAGE}
-					/>
+					<TicketCount status={TICKET_STATUS.CLOSED} ticketType={TICKET_TYPES.SUPPORT} />
 				</ComponentWrapper>
 			</div>
 			<div key='issueRequest' className='issueRequest'>

@@ -63,7 +63,6 @@
 		}
 		.label {
 			height: GetSize(6);
-			padding: GetSize(1) GetSize(2) GetSize(1) GetSize(2);
 			span {
 				height: 18px;
 			}
@@ -76,7 +75,6 @@
 			height: 272px;
 			.expanded-description {
 				margin-top: GetSize(2);
-				padding: GetSize(1) GetSize(2) GetSize(1) GetSize(2);
 				.button {
 					margin-top: GetSize(2);
 				}
@@ -100,7 +98,6 @@
 		}
 		.label {
 			height: GetSize(10);
-			padding: GetSize(1) GetSize(2) GetSize(1) GetSize(2);
 			span {
 				height: 18px;
 			}
@@ -112,8 +109,6 @@
 		&.expanded {
 			height: 416px;
 			.expanded-description {
-				// margin-top: GetSize(2);
-				padding: GetSize(1) GetSize(2) GetSize(1) GetSize(2);
 				.button {
 					margin-top: GetSize(3);
 				}
