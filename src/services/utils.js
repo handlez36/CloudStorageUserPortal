@@ -29,44 +29,37 @@ export const SIDES = {
 	RIGHT: 'right',
 };
 
-export const MENU = {
-	Billing: [{ name: 'Overview' }, { name: 'hello ' }],
-	Profile: [{ name: 'Overview' }, { name: 'hello ' }],
-	Support: [{ name: 'Overview' }, { name: 'hello ' }],
-	Storage: [{ name: 'Overview' }, { name: 'hello ' }],
-};
-
 export class Utils {
 	static getMenuItems = names => {
-		const menu = {};
+		const menu = [];
 		for (let i = 0; i <= names.length - 1; i++) {
-			Object.assign(menu, { [names[i].toUpperCase()]: i + 1 });
+			menu.push({ name: names[i].toUpperCase() });
 		}
 		return menu;
 	};
-	//Get menu names based on module
-	static getMenuNames = module => {
-		let menu = null;
+	//Get menu number based on module
+	static getModuleNumber = module => {
+		let moduleNumber = null;
 		switch (module) {
 			case 'billing':
-				menu = MENU.Billing;
+				moduleNumber = 4;
 				break;
 			case 'profile':
-				menu = MENU.Profile;
+				moduleNumber = 1;
 				break;
 			case 'support':
-				menu = MENU.Support;
+				moduleNumber = 2;
 				break;
 			case 'Storage':
-				menu = MENU.Storage;
+				moduleNumber = 3;
 				break;
 			default:
-				menu = [];
+				moduleNumber = '';
 
 				break;
 		}
 
-		return menu;
+		return moduleNumber;
 	};
 	static getClientParams(ip, site) {
 		const clientJs = new ClientJS();
