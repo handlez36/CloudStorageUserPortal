@@ -1,9 +1,7 @@
 .usage-bar {
-	// height: calculateVh(220px, 1140);
+	transform: scale(0.5);
 	.cls-1 {
 		fill: rgba(0, 0, 0, 0.05);
-		// fill: transparent;
-		// stroke: red;
 	}
 	.cls-2 {
 		fill: #edefef;
@@ -50,6 +48,17 @@
 	}
 	text {
 		@include Headings90;
-		color: $Cool_Gray_Dark_3;
+		color: $DCBLOX_Gray;
+		opacity: 0.8;
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.usage-bar {
+		transform: scale(0.7);
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.usage-bar {
+		transform: scale(1);
 	}
 }

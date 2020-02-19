@@ -370,16 +370,18 @@
 			// .usage-bar {
 			.bar {
 				position: absolute;
-				// transform: scale(0.6);
-				bottom: 0;
+				bottom: 15px;
 				left: 0;
-				width: 113px;
+				width: 56px;
 				height: 160px;
+				&:nth-child(1) {
+					margin-left: -24px;
+				}
 				&:nth-child(2) {
-					margin-left: 50px;
+					margin-left: 37px;
 				}
 				&:nth-child(3) {
-					margin-left: 100px;
+					margin-left: 95px;
 				}
 				&:nth-child(4) {
 					margin-left: 150px;
@@ -400,6 +402,10 @@
 		}
 		.graph-data-section .main-graph {
 			.bar {
+				bottom: 35px;
+				&:nth-child(1) {
+					margin-left: 0;
+				}
 				&:nth-child(2) {
 					margin-left: 90px;
 				}
@@ -425,14 +431,20 @@
 		}
 		.graph-data-section .main-graph {
 			.bar {
+				bottom: 65px;
+				&:nth-child(1) {
+					margin-left: 20px;
+				}
 				&:nth-child(2) {
-					margin-left: 90px;
+					// margin-left: 130px;
+					margin-left: 140px;
 				}
 				&:nth-child(3) {
-					margin-left: 180px;
+					// margin-left: 250px;
+					margin-left: 260px;
 				}
 				&:nth-child(4) {
-					margin-left: 270px;
+					margin-left: 385px;
 				}
 			}
 		}

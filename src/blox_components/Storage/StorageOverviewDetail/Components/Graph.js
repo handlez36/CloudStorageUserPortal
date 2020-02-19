@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import * as StorageUtils from '../../../../utils/StorageUtils';
 import GraphDetail from './GraphDetails';
 import LocationBar from './LocationBar';
-import UsageBar from './UsageBar';
+// import UsageBar from './UsageBar';
+import UsageBar from './UsageBarNew';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const ProgressCircleDarkEmerald = `${CDN_URL}storage/progress-circle-emerald.svg`;
@@ -41,7 +42,7 @@ class Graph extends Component {
 	};
 
 	getGraphBars = () => {
-		const { stats, id } = this.props;
+		const { stats, id, breakpoint } = this.props;
 		const { sizeType } = this.state;
 
 		return (
@@ -57,6 +58,7 @@ class Graph extends Component {
 									sizeArray={this.getAllSizes()}
 									sizeType={sizeType}
 									location={bar.location}
+									breakpoint={breakpoint}
 								/>
 							</div>
 						);
@@ -73,7 +75,7 @@ class Graph extends Component {
 	};
 
 	render() {
-		const { id, stats, packageType } = this.props;
+		const { id, stats, packageType, breakpoint } = this.props;
 		const packageData = this.getPackageData(stats, id);
 
 		return (
@@ -82,7 +84,7 @@ class Graph extends Component {
 					<GraphDetail data={stats} packageData={packageData} packageType={packageType} id={id} />
 				)}
 				<div className='graph-data-section'>
-					<LocationBar data={stats[id]} />
+					<LocationBar data={stats[id]} breakpoint={breakpoint} />
 					{this.getGraphBars()}
 				</div>
 			</div>

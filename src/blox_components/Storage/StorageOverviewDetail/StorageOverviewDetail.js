@@ -247,7 +247,12 @@ class StorageOverviewDetail extends Component {
 								</div>
 							</div>
 							{fileGraphOptions.type === 'BAR' ? (
-								<Graph id='file' stats={data} packageType={packageType || ''} />
+								<Graph
+									id='file'
+									stats={data}
+									packageType={packageType || ''}
+									breakpoint={breakpoint}
+								/>
 							) : (
 								<StorageUsageGraph
 									id='file'
