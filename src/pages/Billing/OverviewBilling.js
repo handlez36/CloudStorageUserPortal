@@ -71,12 +71,12 @@ class OverviewBilling extends Component {
 				</div>
 				<div key='recentInvoices' className='recentInvoices'>
 					<ComponentWrapper title='RECENT Invoices' hideBorder>
-						<RecentInvoices />
+						<RecentInvoices breakpoint={breakpoint} />
 					</ComponentWrapper>
 				</div>
 				<div key='recentPayment' className='recentPayment'>
 					<ComponentWrapper title='RECENT Payment' hideBorder>
-						<RecentPayment />
+						<RecentPayment breakpoint={breakpoint} />
 					</ComponentWrapper>
 				</div>
 				<div key='totalAmountDue' className='totalAmountDue'>

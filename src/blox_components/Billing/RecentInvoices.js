@@ -1,12 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import ResizeObserver from 'resize-observer-polyfill';
 import moment from 'moment';
 import { BillingUtils, BillingApi } from '../../services/billing';
-
 import { Sorting } from '../../services/sorting';
 import { Utils } from '../../services/utils';
-
+import { RESOLUTIONS } from '../../services/config';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const dueIcon = `${CDN_URL}billing/due-icon.svg`;
 const overdueIcon = `${CDN_URL}billing/icon_Invoice_pastdue.svg`;
@@ -55,7 +53,6 @@ class RecentInvoices extends Component {
 	constructor(props) {
 		super(props);
 
-		this.myObserver = null;
 		this.billingApi = new BillingApi();
 		this.state = {
 			invoicesToDisplay: null,
@@ -81,7 +78,7 @@ class RecentInvoices extends Component {
 
 		if (Utils.isValidResponse(response) && invoices) {
 			this.setState({ invoices }, () => {
-				this.getScreenSize();
+				this.getInvoicesToDisplay();
 			});
 		} else {
 			this.setState({ showRecentPayment: false, error: 'Error pulling recent invoices' });
@@ -109,41 +106,36 @@ class RecentInvoices extends Component {
 		const threeMonths = Sorting.getPrev3Months(new Date());
 		return threeMonths;
 	};
-	getScreenSize = () => {
+	getInvoicesToDisplay = () => {
 		try {
-			const screenWidth = document.querySelector('.portal-header').clientWidth;
+			const { breakpoint } = this.props;
 			const { invoices } = this.state;
-			if (screenWidth < 1344) {
+			if (breakpoint === RESOLUTIONS.LOW) {
 				const lastestTwo = BillingUtils.getInvoices(invoices, 2);
-				this.setState({ invoicesToDisplay: lastestTwo, screenWidth });
+				this.setState({ invoicesToDisplay: lastestTwo });
 			} else {
 				const lastestThree = BillingUtils.getInvoices(invoices, 3);
-				this.setState({ invoicesToDisplay: lastestThree, screenWidth });
+				this.setState({ invoicesToDisplay: lastestThree });
 			}
 		} catch (e) {}
 	};
 
 	componentDidMount() {
 		this.getRecentInvoices();
-
-		this.setState({ screenWidth: screen.width });
-		this.myObserver = new ResizeObserver(entries => {
-			entries.forEach(() => {
-				this.getScreenSize();
-			});
-		});
-		try {
-			const wrapperElement = document.querySelector('.recent-invoices-wrapper');
-			this.myObserver.observe(wrapperElement);
-		} catch (e) {}
+	}
+	componentDidUpdate(prevProps) {
+		const { breakpoint } = this.props;
+		if (prevProps.breakpoint !== breakpoint) {
+			this.getInvoicesToDisplay();
+		}
 	}
 
 	render() {
-		const { invoicesToDisplay, screenWidth } = this.state;
-
+		const { invoicesToDisplay } = this.state;
+		const { breakpoint } = this.props;
 		if (invoicesToDisplay) {
 			invoicesToDisplay.length === 1 ? invoicesToDisplay.push(EmptyInvoice) : '';
-			invoicesToDisplay.length === 2 && screenWidth > 1344
+			invoicesToDisplay.length === 2 && breakpoint !== RESOLUTIONS.LOW
 				? invoicesToDisplay.push(EmptyInvoice)
 				: '';
 		}

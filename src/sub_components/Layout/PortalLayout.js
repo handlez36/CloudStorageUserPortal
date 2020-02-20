@@ -47,6 +47,7 @@ class PortalLayout extends Component {
 	};
 
 	updateScreenBreakpoint = screenWidth => {
+		console.log('screeeeen wiidtthhh', screenWidth);
 		let breakpoint = RESOLUTIONS.MED;
 
 		if (screenWidth > RESOLUTIONS.LOW && screenWidth <= RESOLUTIONS.MED) {

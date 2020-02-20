@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import ResizeObserver from 'resize-observer-polyfill';
 import { BillingApi } from '../../services/billing';
 import { Utils } from '../../services/utils';
-
+import { RESOLUTIONS } from '../../services/config';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
-//const paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
 
 class RecentPayment extends Component {
 	state = {
@@ -16,18 +14,19 @@ class RecentPayment extends Component {
 		recentTransaction: false,
 	};
 
-	componentDidMount() {
-		this.myObserver = new ResizeObserver(entries => {
-			entries.forEach(() => {
-				this.getPaymentImage();
-			});
-		});
-		try {
-			const wrapperElement = document.querySelector('.recent-payment');
-			this.myObserver.observe(wrapperElement);
-		} catch (e) {}
+	componentDidUpdate(prevProps) {
+		const { breakpoint } = this.props;
+		if (prevProps.breakpoint !== breakpoint) {
+			this.getPaymentImage();
+		}
+	}
 
+	componentDidMount() {
 		this.getPaymentImage();
+		this.getPayments();
+	}
+
+	getPayments = () => {
 		new BillingApi().getPayments(3).then(response => {
 			let priceArray;
 
@@ -44,16 +43,16 @@ class RecentPayment extends Component {
 				this.setState({ recentTransaction: false });
 			}
 		});
-	}
+	};
 
 	getPaymentImage() {
+		const { breakpoint } = this.props;
 		try {
-			const screenWidth = document.querySelector('.portal-header').clientWidth;
-
 			let paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
-			if (screenWidth < 1344) {
+			if (breakpoint === RESOLUTIONS.LOW) {
+				console.log('PAYMENT IMAGE LOW');
 				paymentImage = `${CDN_URL}billing/recent-payment-image-sm.svg`;
-			} else if (screenWidth > 2240) {
+			} else if (breakpoint === RESOLUTIONS.HIGH) {
 				paymentImage = `${CDN_URL}billing/recent-payment-image-lg.svg`;
 			}
 

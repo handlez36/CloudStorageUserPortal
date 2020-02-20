@@ -68,6 +68,7 @@ class TotalAmountDue extends Component {
 			summaryErr,
 			eligibleForOnlinePaymentOverviewPage,
 		} = this.state;
+		const { breakpoint } = this.props;
 
 		return (
 			<div class='total-amount-due'>
