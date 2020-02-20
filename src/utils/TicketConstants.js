@@ -161,6 +161,18 @@ export const STATUS = {
 	RESOLVED: 'Resolved',
 };
 
+export const HIGH_LEVEL_TICKET_STATUS = {
+	OPEN: 'OPEN',
+	CLOSED: 'CLOSED',
+};
+
+export const TICKET_TYPES = {
+	BILLING: 'Billing',
+	STORAGE: 'Storage',
+	SUPPORT: 'Support',
+	PROFILE: 'Profile',
+};
+
 export const TICKET_LIST_TYPE = {
 	OPEN: 'open',
 	CLOSED: 'closed',

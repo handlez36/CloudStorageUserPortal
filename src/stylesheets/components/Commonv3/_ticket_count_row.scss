@@ -1,0 +1,22 @@
+.ticket-count-section {
+	@include FlexboxCenter;
+	z-index: 100;
+	.count,
+	.status-label {
+		z-index: 3000;
+		color: $White;
+	}
+	.CircularProgressbar {
+		width: 100%;
+		height: 100%;
+	}
+	.CircularProgressbar-path {
+		stroke: #b4d333;
+	}
+	.CircularProgressbar-trail {
+		stroke: $Dark_Purple;
+	}
+	.CircularProgressbar-background {
+		fill: #573a6b;
+	}
+}

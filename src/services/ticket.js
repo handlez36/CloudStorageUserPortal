@@ -1,5 +1,8 @@
 import axios from 'axios';
 import moment from 'moment';
+
+import { Utils } from 'services/utils';
+
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const ChattanoogaIcon = `${CDN_URL}support/Chattanooga-icon-building.svg`;
 const AtlantaIcon = `${CDN_URL}support/Atlanta-icon-building.svg`;
@@ -86,11 +89,23 @@ export class TicketApi {
 		return axios.get(url, config);
 	}
 
-	static getAll() {
+	static async getAll() {
 		const url = `${BASE_URL}/ticket/`;
+		const response = await axios.get(url, config);
+		if (Utils.isValidResponse(response)) {
+			const { tickets } = response.data;
+			return { tickets, errors: null };
+		}
 
-		return axios.get(url, config);
+		const { error } = response.data;
+		return { tickets: null, error };
 	}
+
+	// static getAll() {
+	// 	const url = `${BASE_URL}/ticket/`;
+
+	// 	return axios.get(url, config);
+	// }
 
 	static constructTicket(finalizedTicket, auth_status) {
 		const {

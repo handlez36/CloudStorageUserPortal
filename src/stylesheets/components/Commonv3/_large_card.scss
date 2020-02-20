@@ -1,0 +1,130 @@
+.large-card {
+	transition: transform 0.5s ease-in-out;
+	background-color: $White;
+	box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	.image {
+		opacity: 0.7;
+		&.remote-hands {
+			background-color: $Purple;
+		}
+		&.guest-access {
+			background-color: $DCBLOX_Aqua;
+		}
+		img {
+			width: 100%;
+			height: GetSize(9);
+		}
+	}
+	.label {
+		height: GetSize(5);
+		padding: GetSize(1) GetSize(2) GetSize(1) GetSize(2);
+		@include FlexboxRow;
+		justify-content: space-between;
+		span {
+			height: 18px;
+			align-self: center;
+		}
+		img {
+			width: 24px;
+			height: 24px;
+			align-self: center;
+		}
+	}
+	&.expanded {
+		height: 232px;
+		.expanded-description {
+			height: 120px;
+			@include FlexboxColumn;
+			justify-content: space-between;
+			padding: GetSize(1) GetSize(2) GetSize(2) GetSize(2);
+			font-size: 8px;
+			.button {
+				margin-top: GetSize(2);
+				margin-left: 0;
+				align-self: center;
+			}
+			.button button {
+				width: 143.7px;
+				height: 32px;
+			}
+		}
+		.expanded-description .description {
+			max-height: GetSize(7);
+		}
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.large-card {
+		.image {
+			img {
+				height: GetSize(14);
+			}
+		}
+		.label {
+			height: GetSize(6);
+			span {
+				height: 18px;
+			}
+			img {
+				width: 32px;
+				height: 32px;
+			}
+		}
+		&.expanded {
+			height: 272px;
+			.expanded-description {
+				height: 112px;
+				.button {
+					margin-top: GetSize(2);
+				}
+				.button button {
+					width: 224px;
+					height: 32px;
+				}
+			}
+			.expanded-description .description {
+				max-height: GetSize(6);
+				@include Body10;
+			}
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.large-card {
+		.image {
+			img {
+				height: GetSize(24);
+			}
+		}
+		.label {
+			height: GetSize(10);
+			span {
+				height: 18px;
+			}
+			img {
+				width: 32px;
+				height: 32px;
+			}
+		}
+		&.expanded {
+			height: 416px;
+			.expanded-description {
+				height: 144px;
+				padding-top: 0;
+				.button {
+					// margin-top: GetSize(3);
+					margin-bottom: GetSize(2);
+				}
+				.button button {
+					width: 368px;
+					height: 48px;
+				}
+			}
+			.expanded-description .description {
+				max-height: GetSize(5);
+				@include Body20;
+			}
+		}
+	}
+}

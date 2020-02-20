@@ -1,0 +1,32 @@
+.issue-request {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	.ticket-type-card:nth-child(2n) {
+		margin-left: GetSize(2);
+	}
+	.ticket-type-card:nth-child(n + 3) {
+		margin-top: GetSize(2);
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.issue-request {
+		.ticket-type-card:nth-child(2n) {
+			margin-left: GetSize(4);
+		}
+		.ticket-type-card:nth-child(n + 3) {
+			margin-top: GetSize(4);
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.issue-request {
+		.ticket-type-card:nth-child(2n) {
+			margin-left: GetSize(6);
+		}
+		.ticket-type-card:nth-child(n + 3) {
+			margin-top: GetSize(4);
+		}
+	}
+}

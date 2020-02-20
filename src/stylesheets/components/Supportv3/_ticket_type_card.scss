@@ -1,0 +1,48 @@
+.ticket-type-card {
+	width: 112px;
+	height: 112px;
+	background-color: $White;
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+	@include FlexboxCenter;
+	.ticket-type {
+		align-items: center;
+		img {
+			width: 63.7px;
+			height: 63.7px;
+		}
+		.label {
+			margin-top: 8px;
+		}
+		@include FlexboxColumn;
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.ticket-type-card {
+		width: 160px;
+		height: 160px;
+		.ticket-type {
+			img {
+				width: 103px;
+				height: 103px;
+			}
+			.label {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.ticket-type-card {
+		width: 272px;
+		height: 272px;
+		.ticket-type {
+			img {
+				width: 160px;
+				height: 160px;
+			}
+			.label {
+				margin-top: 10px;
+			}
+		}
+	}
+}

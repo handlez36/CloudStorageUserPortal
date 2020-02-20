@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { number, any } from 'prop-types';
 
 const ContentSection = ({ breakpoint, content: ContentComponent }) => {
-	if (!breakpoint) {
+	if (!breakpoint || !ContentComponent) {
 		return;
 	}
 
