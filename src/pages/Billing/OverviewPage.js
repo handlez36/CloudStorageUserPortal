@@ -42,6 +42,8 @@ class OverviewPage extends Component {
 		amountDuePermission: false,
 		ticketCountPermission: false,
 		showTitleTicketCount: false,
+		showTitleRecentInvoices: false,
+		showTitleRecentPayment: false,
 	};
 	componentDidMount() {
 		this.checkOverviewPagePermissions();
@@ -63,16 +65,36 @@ class OverviewPage extends Component {
 
 		this.setState({ amountDuePermission, ticketCountPermission });
 	};
-	showTitle = show => {
+	showTitleTicketCount = show => {
 		const { showTitleTicketCount } = this.state;
 		if (showTitleTicketCount !== show) {
 			this.setState({ showTitleTicketCount: show });
 		}
 	};
+	showTitleRecentInvoices = show => {
+		console.log('show recent invoice calles');
+		const { showTitleRecentInvoices } = this.state;
+		if (showTitleRecentInvoices !== show) {
+			this.setState({ showTitleRecentInvoices: show });
+		}
+	};
+	showTitleRecentPayment = show => {
+		console.log('show recent payment calles');
+		const { showTitleRecentPayment } = this.state;
+		if (showTitleRecentPayment !== show) {
+			this.setState({ showTitleRecentPayment: show });
+		}
+	};
 
 	render() {
 		const { breakpoint, location } = this.props;
-		const { amountDuePermission, ticketCountPermission, showTitleTicketCount } = this.state;
+		const {
+			amountDuePermission,
+			ticketCountPermission,
+			showTitleTicketCount,
+			showTitleRecentInvoices,
+			showTitleRecentPayment,
+		} = this.state;
 
 		return (
 			<BloxPage
@@ -87,7 +109,7 @@ class OverviewPage extends Component {
 							<TicketCount
 								status={TICKET_STATUS.OPEN}
 								ticketType={TicketUtils.TICKET_TYPES.BILLING}
-								showTitle={this.showTitle}
+								showTitle={this.showTitleTicketCount}
 							/>
 						</ComponentWrapper>
 					)}
@@ -99,20 +121,20 @@ class OverviewPage extends Component {
 							<TicketCount
 								status={TICKET_STATUS.CLOSED}
 								ticketType={TicketUtils.TICKET_TYPES.BILLING}
-								showTitle={this.showTitle}
+								showTitle={this.showTitleTicketCount}
 							/>
 						</ComponentWrapper>
 					)}
 				</div>
 
 				<div key='recentInvoices' className='recentInvoices'>
-					<ComponentWrapper title='RECENT Invoices' hideBorder>
-						<RecentInvoices breakpoint={breakpoint} />
+					<ComponentWrapper title={showTitleRecentInvoices ? 'RECENT Invoices' : ''} hideBorder>
+						<RecentInvoices breakpoint={breakpoint} showTitle={this.showTitleRecentInvoices} />
 					</ComponentWrapper>
 				</div>
 				<div key='recentPayment' className='recentPayment'>
-					<ComponentWrapper title='RECENT Payment' hideBorder>
-						<RecentPayment breakpoint={breakpoint} />
+					<ComponentWrapper title={showTitleRecentPayment ? 'RECENT Payment' : ''} hideBorder>
+						<RecentPayment breakpoint={breakpoint} showTitle={this.showTitleRecentPayment} />
 					</ComponentWrapper>
 				</div>
 

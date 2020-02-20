@@ -14,13 +14,6 @@ class RecentPayment extends Component {
 		recentTransaction: false,
 	};
 
-	// componentDidUpdate(prevProps) {
-	// 	const { breakpoint } = this.props;
-	// 	if (prevProps.breakpoint !== breakpoint) {
-	// 		this.getPaymentImage();
-	// 	}
-	// }
-
 	componentDidMount() {
 		this.getPayments();
 	}
@@ -31,6 +24,7 @@ class RecentPayment extends Component {
 
 			if (response.data.transactions && response.data.transactions.length !== 0) {
 				priceArray = Utils.formatCurrency(response.data.transactions[0].arDebit).split('.');
+				this.props.showTitle(true);
 				this.setState({
 					payments: response.data.transactions,
 					dollarAmount: priceArray[0],
@@ -46,16 +40,15 @@ class RecentPayment extends Component {
 
 	getPaymentImage() {
 		const { breakpoint } = this.props;
-		try {
-			let paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
-			if (breakpoint === RESOLUTIONS.LOW) {
-				paymentImage = `${CDN_URL}billing/recent-payment-image-sm.svg`;
-			} else if (breakpoint === RESOLUTIONS.HIGH) {
-				paymentImage = `${CDN_URL}billing/recent-payment-image-lg.svg`;
-			}
 
-			return paymentImage;
-		} catch (e) {}
+		let paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
+		if (breakpoint === RESOLUTIONS.LOW) {
+			paymentImage = `${CDN_URL}billing/recent-payment-image-sm.svg`;
+		} else if (breakpoint === RESOLUTIONS.HIGH) {
+			paymentImage = `${CDN_URL}billing/recent-payment-image-lg.svg`;
+		}
+
+		return paymentImage;
 	}
 
 	render() {
