@@ -45,13 +45,13 @@ export class Utils {
 				moduleNumber = 4;
 				break;
 			case 'profile':
-				moduleNumber = 1;
+				moduleNumber = 3;
 				break;
 			case 'support':
 				moduleNumber = 2;
 				break;
 			case 'Storage':
-				moduleNumber = 3;
+				moduleNumber = 1;
 				break;
 			default:
 				moduleNumber = '';

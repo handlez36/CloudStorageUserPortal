@@ -4,7 +4,6 @@
 	justify-content: center;
 	align-items: center;
 	z-index: 100;
-
 	.progress-background {
 		width: calculateVw(90px, 1440);
 		height: calculateVh(190px, 1440);
@@ -30,6 +29,7 @@
 	.count {
 		@include Numbers30;
 		z-index: 3000;
+		color: $White;
 	}
 	.CircularProgressbar {
 		width: calculateVw(100, 1440);

@@ -425,15 +425,15 @@
 @mixin Numbers10 {
 	font-family: $proxima-nova-regular;
 	font-size: 14px;
-	line-height: 1px;
+	line-height: 1;
 	letter-spacing: -0.7px;
 	color: $DCBLOX_Gray;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-family: $proxima-nova-light;
 		font-size: 20px;
 		letter-spacing: -1px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-family: $proxima-nova-light;
 		font-size: 28px;
 		letter-spacing: -1.4px;
@@ -478,35 +478,52 @@
 	}
 }
 
+/** Button fonts */
+@mixin Buttons10 {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	line-height: 1;
+	letter-spacing: 0.7px;
+	color: $DCBLOX_Gray;
+	text-transform: uppercase;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 16px;
+		letter-spacing: 0.8px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		letter-spacing: 0.9px;
+	}
+}
+
 /** Body fonts */
 @mixin Body10 {
 	font-family: $proxima-nova-regular;
 	font-size: 12px;
-	line-height: 1.5px;
+	line-height: 1.5;
 	letter-spacing: normal;
-
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 14px;
-		line-height: 1.43px;
+		line-height: 1.43;
 	}
 	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 16px;
-		line-height: 1.38px;
+		line-height: 1.38;
 	}
 }
 @mixin Body20 {
 	font-family: $proxima-nova-regular;
 	font-size: 14px;
-	line-height: 1.43px;
+	line-height: 1.43;
 	letter-spacing: normal;
 	color: $DCBLOX_Gray;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 16px;
-		line-height: 1.38px;
+		line-height: 1.38;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 18px;
-		line-height: 1.33px;
+		line-height: 1.33;
 	}
 }
 @mixin Body21 {

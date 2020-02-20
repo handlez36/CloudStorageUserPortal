@@ -7,8 +7,8 @@ import TicketCount from '../../blox_components/Common/TicketCountRow';
 import RecentPayment from '../../blox_components/Billing/RecentPayment';
 import RecentInvoices from '../../blox_components/Billing/RecentInvoices';
 import TotalAmountDue from '../../blox_components/Billing/TotalAmountDue/TotalAmountDue';
-import { TicketUtils } from './../../services/ticket';
-import { RESOLUTIONS } from './../../services/config';
+import { TicketUtils } from '../../services/ticket';
+import { RESOLUTIONS } from '../../services/config';
 import { Utils } from '../../services/utils';
 import { Permissions } from '../../services/permissions';
 
@@ -36,7 +36,7 @@ const LAYOUT_CONFIG = {
 	},
 };
 
-class OverviewBilling extends Component {
+class OverviewPage extends Component {
 	state = {
 		amountDuePermission: false,
 		ticketCountPermission: false,
@@ -67,7 +67,7 @@ class OverviewBilling extends Component {
 
 		return (
 			<BloxPage
-				name='sample-content-grid'
+				name='page billing-overview-page'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
 				location={location}
@@ -78,10 +78,6 @@ class OverviewBilling extends Component {
 							<TicketCount
 								type={TicketUtils.TICKET_STATUS.OPEN}
 								ticketType={TicketUtils.TICKET_TYPES.BILLING}
-								trailColor={'#7e8200'}
-								strokeColor={'#b4d334'}
-								backgroundColor={'rgba(131, 129, 5, 0.9)'}
-								text='OPEN'
 							/>
 						</ComponentWrapper>
 					)}
@@ -93,9 +89,7 @@ class OverviewBilling extends Component {
 							<TicketCount
 								type={TicketUtils.TICKET_STATUS.CLOSED}
 								ticketType={TicketUtils.TICKET_TYPES.BILLING}
-								trailColor={'#7e8200'}
-								strokeColor={'#b4d334'}
-								backgroundColor={'rgba(131, 129, 5, 0.9)'}
+								text={'CLOSED'}
 							/>
 						</ComponentWrapper>
 					)}
@@ -131,4 +125,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps)(OverviewBilling);
+export default connect(mapStateToProps)(OverviewPage);

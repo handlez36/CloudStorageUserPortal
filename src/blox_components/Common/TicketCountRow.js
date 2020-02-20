@@ -1,120 +1,74 @@
 import React, { Component } from 'react';
-import { number } from 'prop-types';
+import { func, string } from 'prop-types';
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
+
 import { TicketApi } from '../../services/ticket';
-import { STATUS } from '../../utils/TicketConstants';
+import {
+	TICKET_TYPES,
+	HIGH_LEVEL_TICKET_STATUS,
+	STATUS as DETAILED_TICKET_STATUS,
+} from '../../utils/TicketConstants';
+
 class TicketCountRow extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { openCount: 0, closeCount: 0 };
-	}
-	getTickets = () => {
-		TicketApi.getAll()
-			.then(response => {
-				const validResponse = response.status === 200 && response.data && response.data.tickets;
-
-				if (validResponse) {
-					const { openCount, closedCount } = this.filterTickets(response);
-
-					this.setState({
-						openCount: openCount.length,
-						closeCount: closedCount.length,
-						totalCount: open.length + closed.length,
-					});
-				} else {
-					this.setState({ error: 'Error pulling billing ticket details' });
-				}
-			})
-			.catch(error => this.setState({ error }));
+	state = {
+		tickets: [],
+		error: null,
 	};
-	filterTickets(response) {
-		const { ticketType } = this.props;
-		const {
-			data: { tickets },
-		} = response;
 
-		const openCount = tickets.filter(
-			ticket =>
-				(ticket.status !== STATUS.SOLVED && ticket.type === ticketType) ||
-				(ticket.status !== STATUS.RESOLVED && ticket.type === ticketType),
+	getTickets = async bloxModule => {
+		const { tickets, error } = await TicketApi.getAll();
+		console.log('TICKETS', tickets);
+		this.setState({ tickets, error });
+	};
+
+	getCountAndPercentage = (type, status) => {
+		const { tickets } = this.state;
+		if (tickets.length < 1) {
+			return { count: 0, percentage: 0 };
+		}
+
+		const filteredTicketsByType = tickets.filter(
+			ticket => ticket.type.toLowerCase() === type.toLowerCase(),
 		);
+		const fullyFilteredTickets = filteredTicketsByType.filter(ticket => {
+			return status === HIGH_LEVEL_TICKET_STATUS.OPEN
+				? ticket.status !== DETAILED_TICKET_STATUS.SOLVED &&
+						ticket.status !== DETAILED_TICKET_STATUS.RESOLVED
+				: ticket.status === DETAILED_TICKET_STATUS.SOLVED &&
+						ticket.status === DETAILED_TICKET_STATUS.RESOLVED;
+		});
 
-		const closedCount = tickets.filter(
-			ticket =>
-				(ticket.status === STATUS.SOLVED && ticket.type === ticketType) ||
-				(ticket.status === STATUS.RESOLVED && ticket.type === ticketType),
-		);
+		return {
+			count: fullyFilteredTickets.length,
+			percentage: (fullyFilteredTickets.length / filteredTicketsByType.length) * 100,
+		};
+	};
 
-		return { openCount, closedCount };
-	}
-
-	componentDidMount = () => {
+	componentDidMount() {
 		this.getTickets();
-	};
+	}
 
 	render() {
-		const {
-			goToTicketHistory,
-			type,
-			customImage,
-			strokeColor,
-			text,
-			backgroundColor,
-			trailColor,
-		} = this.props;
-		const { openCount, closeCount } = this.state;
-
-		const total = openCount + closeCount;
-		const openPercent = ((openCount / total) * 100) / 1;
-		const closePercent = ((closeCount / total) * 100) / 1;
+		const { goToTicketHistory, ticketType, status, customImage, strokeColor, text } = this.props;
+		const { count, percentage } = this.getCountAndPercentage(ticketType, status);
 
 		return (
-			<div className='ticket-count-section'>
-				{type === 'open' && (
+			<div className={`ticket-count-section ${count === 0 ? 'hide' : ''}`}>
+				{true && (
 					<div
-						className='progress-circle '
-						onClick={goToTicketHistory ? () => goToTicketHistory('open') : function() {}}
+						className='progress-circle v3'
+						onClick={() => goToTicketHistory(status.toLowerCase())}
 					>
 						<CircularProgressbarWithChildren
-							value={openPercent}
+							value={percentage}
 							background={true}
-							styles={buildStyles({
-								strokeLinecap: 'butt',
-								backgroundColor,
-								pathColor: strokeColor,
-								trailColor,
-							})}
+							styles={buildStyles({ strokeLinecap: 'butt', pathTransitionDuration: 0.5 })}
 						>
-							<div className='count' style={{}}>
-								{openCount}
+							<div className='count numbers30' style={{}}>
+								{count}
 							</div>
-							<div className='new-title' style={{ marginTop: -5 }}>
-								{text ? text : 'OPEN'}
-							</div>
-						</CircularProgressbarWithChildren>
-					</div>
-				)}
-				{type === 'closed' && (
-					<div
-						className='progress-circle '
-						onClick={goToTicketHistory ? () => goToTicketHistory('closed') : function() {}}
-					>
-						<CircularProgressbarWithChildren
-							value={closePercent}
-							background={true}
-							styles={buildStyles({
-								strokeLinecap: 'butt',
-								backgroundColor,
-								pathColor: strokeColor,
-								trailColor,
-							})}
-						>
-							{/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
-							<div className='count' style={{}}>
-								{closeCount}
-							</div>
-							<div className='new-title' style={{ marginTop: -5 }}>
-								{text ? text : 'CLOSED'}
+							<div className='status-label buttons10' style={{ marginTop: -5 }}>
+								{text ? text : status}
 							</div>
 						</CircularProgressbarWithChildren>
 					</div>
@@ -125,15 +79,18 @@ class TicketCountRow extends Component {
 }
 
 TicketCountRow.propType = {
-	openCount: number,
-	closeCount: number,
-	totalCount: number,
+	goToTicketHistory: func,
+	ticketType: string,
+	status: string,
+	customImage: string,
+	strokeColor: string,
+	text: string,
 };
 
 TicketCountRow.defaultProps = {
-	openCount: 0,
-	closeCount: 0,
-	totalCount: 0,
+	goToTicketHistory: () => {},
+	ticketType: TICKET_TYPES.SUPPORT,
+	status: HIGH_LEVEL_TICKET_STATUS.OPEN,
 };
 
 export default TicketCountRow;

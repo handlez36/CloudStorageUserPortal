@@ -151,11 +151,8 @@ class Home extends Component {
 			this.props.company_info.fuseBillId,
 		);
 		// const { access: hasProfileAccess } = Permissions.hasService(memberships, 'Profile');
-		// const { access: hasSupportAccess } = Permissions.hasService(memberships, 'Support');
+		const { access: hasSupportAccess } = Permissions.hasService(memberships, 'Support');
 		const hasProfileAccess = false;
-		const hasSupportAccess = false;
-		console.log('BILLING ACCESS', hasBillingAccess);
-		console.log('stoage ACCESS', hasStorageAccess);
 
 		return (
 			<div id='home-background' className='home-back-ground'>
