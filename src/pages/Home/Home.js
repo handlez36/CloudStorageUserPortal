@@ -145,7 +145,7 @@ class Home extends Component {
 		// const { access: hasProfileAccess } = Permissions.hasService(memberships, 'Profile');
 		const { access: hasSupportAccess } = Permissions.hasService(memberships, 'Support');
 		const hasBillingAccess = false;
-		const hasProfileAccess = false;
+		const hasProfileAccess = true;
 		// const hasSupportAccess = false;
 
 		return (
