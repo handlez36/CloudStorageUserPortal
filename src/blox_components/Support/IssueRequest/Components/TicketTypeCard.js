@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TICKET_ICONS } from '../../../../utils/TicketConstants';
+import { TICKET_ICONS } from 'utils/TicketConstants';
 
 const TICKET_IMGS = {
 	BILLING: { img: TICKET_ICONS.BILLING, hover: TICKET_ICONS.BILLING_TICKET_HOVER },

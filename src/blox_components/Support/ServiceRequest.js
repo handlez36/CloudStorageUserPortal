@@ -1,9 +1,9 @@
 import React from 'react';
 
-import LargeCard from '../../sub_components/Common/LargeCard';
-import Button from '../../sub_components/Common/BloxButton';
-import RemoteHandsImg from '../../assets/remote_hands_image.svg';
-import GuestAccessImg from '../../assets/guest_access_image.svg';
+import LargeCard from 'sub_components/Common/LargeCard';
+import Button from 'sub_components/Common/BloxButton';
+import RemoteHandsImg from 'assets/remote_hands_image.svg';
+import GuestAccessImg from 'assets/guest_access_image.svg';
 
 // const CDN_URL = process.env.REACT_APP_CDN_URL;
 // const remoteHands = `${CDN_URL}common/remote-hands-icon-test.svg`;
