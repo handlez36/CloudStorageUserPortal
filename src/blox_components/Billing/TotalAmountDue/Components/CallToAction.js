@@ -149,12 +149,12 @@ const CallToAction = ({ invoices, summary, hasOnlinePaymentAccess }) => {
 	return (
 		<div className='call-to-action'>
 			<div className={`balance-summary ${customClass}`}>{summaryCopy}</div>
-			<span className='balance-wrapper'>
+			<div className='sub-text-section'>
 				<span className='balance-action total-amount-due-subtext'>{statusCopy}</span>
 				{nextPaymentCopy && (
 					<span className='next-invoice total-amount-due-subtext'>{nextPaymentCopy}</span>
 				)}
-			</span>
+			</div>
 
 			{hasOnlinePaymentAccess && (
 				<BloxButton

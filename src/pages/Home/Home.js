@@ -140,16 +140,8 @@ class Home extends Component {
 		const { containerPadding, margin, rowHeight } = this.state;
 		const { memberships } = this.props.auth;
 		console.log('niamh memberships', memberships);
-		const { access: hasBillingAccess } = Permissions.hasService(
-			memberships,
-			'Billing',
-			this.props.company_info.fuseBillId,
-		);
-		const { access: hasStorageAccess } = Permissions.hasService(
-			memberships,
-			'Storage',
-			this.props.company_info.fuseBillId,
-		);
+		const { access: hasBillingAccess } = Permissions.hasService(memberships, 'Billing');
+		const { access: hasStorageAccess } = Permissions.hasService(memberships, 'Storage');
 		// const { access: hasProfileAccess } = Permissions.hasService(memberships, 'Profile');
 		const { access: hasSupportAccess } = Permissions.hasService(memberships, 'Support');
 		const hasProfileAccess = false;

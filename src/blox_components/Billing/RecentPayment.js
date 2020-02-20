@@ -14,15 +14,14 @@ class RecentPayment extends Component {
 		recentTransaction: false,
 	};
 
-	componentDidUpdate(prevProps) {
-		const { breakpoint } = this.props;
-		if (prevProps.breakpoint !== breakpoint) {
-			this.getPaymentImage();
-		}
-	}
+	// componentDidUpdate(prevProps) {
+	// 	const { breakpoint } = this.props;
+	// 	if (prevProps.breakpoint !== breakpoint) {
+	// 		this.getPaymentImage();
+	// 	}
+	// }
 
 	componentDidMount() {
-		this.getPaymentImage();
 		this.getPayments();
 	}
 
@@ -55,19 +54,19 @@ class RecentPayment extends Component {
 				paymentImage = `${CDN_URL}billing/recent-payment-image-lg.svg`;
 			}
 
-			this.setState({ paymentImage });
+			return paymentImage;
 		} catch (e) {}
 	}
 
 	render() {
-		const { dollarAmount, centAmount, date, paymentImage, recentTransaction } = this.state;
+		const { dollarAmount, centAmount, date, recentTransaction } = this.state;
 
 		return (
 			<Fragment>
 				{recentTransaction && (
 					<div className='recent-payment-wrapper recent-payment '>
 						<div className='payment-image'>
-							<img src={paymentImage} />
+							<img src={this.getPaymentImage()} />
 						</div>
 						<div className='payment-amount'>
 							<span className='dollar numbers5'>$</span>

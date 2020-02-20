@@ -29,7 +29,6 @@ export class Permissions {
 					(role === MEMBER_ROLE_TYPE || role === OWNER_ROLE_TYPE),
 			);
 
-			//access = true;
 			access = service.length > 0;
 		}
 

@@ -11,6 +11,7 @@ import { TicketUtils } from '../../services/ticket';
 import { RESOLUTIONS } from '../../services/config';
 import { Utils } from '../../services/utils';
 import { Permissions } from '../../services/permissions';
+import { HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from '../../utils/TicketConstants';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -40,6 +41,7 @@ class OverviewPage extends Component {
 	state = {
 		amountDuePermission: false,
 		ticketCountPermission: false,
+		showTitleTicketCount: false,
 	};
 	componentDidMount() {
 		this.checkOverviewPagePermissions();
@@ -61,9 +63,16 @@ class OverviewPage extends Component {
 
 		this.setState({ amountDuePermission, ticketCountPermission });
 	};
+	showTitle = show => {
+		const { showTitleTicketCount } = this.state;
+		if (showTitleTicketCount !== show) {
+			this.setState({ showTitleTicketCount: show });
+		}
+	};
+
 	render() {
 		const { breakpoint, location } = this.props;
-		const { amountDuePermission, ticketCountPermission } = this.state;
+		const { amountDuePermission, ticketCountPermission, showTitleTicketCount } = this.state;
 
 		return (
 			<BloxPage
@@ -74,10 +83,11 @@ class OverviewPage extends Component {
 			>
 				<div key='openTickets' className='openTickets'>
 					{ticketCountPermission && (
-						<ComponentWrapper title='TICKET Status' hideBorder>
+						<ComponentWrapper title={showTitleTicketCount ? 'TICKET Status' : ''} hideBorder>
 							<TicketCount
-								type={TicketUtils.TICKET_STATUS.OPEN}
+								status={TICKET_STATUS.OPEN}
 								ticketType={TicketUtils.TICKET_TYPES.BILLING}
+								showTitle={this.showTitle}
 							/>
 						</ComponentWrapper>
 					)}
@@ -87,9 +97,9 @@ class OverviewPage extends Component {
 					{ticketCountPermission && (
 						<ComponentWrapper hideTitle hideBorder>
 							<TicketCount
-								type={TicketUtils.TICKET_STATUS.CLOSED}
+								status={TICKET_STATUS.CLOSED}
 								ticketType={TicketUtils.TICKET_TYPES.BILLING}
-								text={'CLOSED'}
+								showTitle={this.showTitle}
 							/>
 						</ComponentWrapper>
 					)}

@@ -31,7 +31,7 @@ const selectCalendarImage = (invoices, status) => {
 
 const CalendarDay = ({ invoices }) => {
 	if (!invoices) {
-		return <div className='calendar-day'>Error pulling invoices</div>;
+		return <div className='calendar-day'></div>;
 	}
 
 	const { invoices: splitInvoices, status } = BillingUtils.getInvoiceStatus(invoices);

@@ -17,21 +17,16 @@
 		padding-bottom: GetSize(1);
 		padding-top: GetSize(1);
 	}
-	.balance-summary.no-button .dollar-sign {
-		padding-top: 0px;
-	}
-	.balance-summary.no-button .cents {
-		padding-top: 0px;
-	}
+
 	.balance-summary .dollar-sign {
-		padding-top: 4px;
+		padding-top: 0px;
 		padding-right: 2px;
 		opacity: 0.8;
 	}
 	.balance-summary .dollars {
 	}
 	.balance-summary .cents {
-		padding-top: 4px;
+		padding-top: 0px;
 		padding-left: 2px;
 	}
 
@@ -47,7 +42,7 @@
 	}
 
 	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
-		.balance-wrapper {
+		.sub-text-section {
 			padding-bottom: GetSize(1);
 		}
 		.balance-summary {
@@ -86,7 +81,7 @@
 		.balance-summary .cents {
 			padding-top: 0px;
 		}
-		.balance-wrapper {
+		.sub-text-section {
 			padding-bottom: GetSize(3);
 		}
 		.support-button {

@@ -11,7 +11,6 @@ class TotalAmountDue extends Component {
 		summary: null,
 		invoiceErr: null,
 		summaryErr: null,
-		eligibleForOnlinePaymentOverviewPage: false,
 	};
 
 	getInvoices = async () => {
@@ -38,17 +37,10 @@ class TotalAmountDue extends Component {
 		}
 	};
 	getModulePages = async () => {
-		const { memberships } = this.props.auth_status;
 		const response = await Permissions.getModulePermissions(4);
-		const { access: hasBillingAccess } = Permissions.hasService(memberships, 'Billing');
 
 		if (response && !response.data.error) {
-			const pages = response.data.pages;
-
-			const hasOnlinePaymentAccess =
-				hasBillingAccess && Permissions.checkComponentAccess(pages, 'Overview', 'pay-now');
 			this.setState({
-				eligibleForOnlinePaymentOverviewPage: hasOnlinePaymentAccess,
 				pages: response.data.pages,
 			});
 		}
@@ -61,22 +53,20 @@ class TotalAmountDue extends Component {
 	}
 
 	render() {
-		const {
-			invoices,
-			summary,
-			invoiceErr,
-			summaryErr,
-			eligibleForOnlinePaymentOverviewPage,
-		} = this.state;
-		const { breakpoint } = this.props;
+		const { invoices, summary, invoiceErr, summaryErr, pages } = this.state;
 
+		const hasOnlinePaymentAccess = Permissions.checkComponentAccess(
+			pages,
+			'Overview',
+			'bill-paynow-component',
+		);
 		return (
 			<div class='total-amount-due'>
 				<CalendarDay invoices={invoices} />
 				<CallToAction
 					invoices={invoices}
 					summary={summary}
-					hasOnlinePaymentAccess={eligibleForOnlinePaymentOverviewPage}
+					hasOnlinePaymentAccess={hasOnlinePaymentAccess}
 				/>
 			</div>
 		);

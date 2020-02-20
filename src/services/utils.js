@@ -688,40 +688,41 @@ export class Utils {
 		if (!topEl || !bottomEl) {
 			return null;
 		}
+		try {
+			// Get DOM elements and relative points of the element
+			const { points: topDiamondPoints } = Utils.getElementPoints(topEl);
+			const { points: bottomDiamondPoints } = Utils.getElementPoints(bottomEl);
+			// console.log('Top Diamond Points: ', topDiamondPoints);
+			// console.log('Bottom Diamond Points: ', bottomDiamondPoints);
 
-		// Get DOM elements and relative points of the element
-		const { points: topDiamondPoints } = Utils.getElementPoints(topEl);
-		const { points: bottomDiamondPoints } = Utils.getElementPoints(bottomEl);
-		// console.log('Top Diamond Points: ', topDiamondPoints);
-		// console.log('Bottom Diamond Points: ', bottomDiamondPoints);
+			// Get line1 and line2 points based on sides being analyzed
+			const lineOneFromPoint = side === SIDES.LEFT ? topDiamondPoints.left : topDiamondPoints.right;
+			const lineOneToPoint = bottomDiamondPoints.bottom;
+			const lineTwoFromPoint =
+				side === SIDES.LEFT ? bottomDiamondPoints.left : bottomDiamondPoints.right;
+			const lineTwoToPoint = bottomDiamondPoints.top;
 
-		// Get line1 and line2 points based on sides being analyzed
-		const lineOneFromPoint = side === SIDES.LEFT ? topDiamondPoints.left : topDiamondPoints.right;
-		const lineOneToPoint = bottomDiamondPoints.bottom;
-		const lineTwoFromPoint =
-			side === SIDES.LEFT ? bottomDiamondPoints.left : bottomDiamondPoints.right;
-		const lineTwoToPoint = bottomDiamondPoints.top;
+			// Create line objects for menu and bottom diamond elements
+			const { line: lineOne } = Utils.createLine(lineOneFromPoint, lineOneToPoint);
+			const { line: lineTwo } = Utils.createLine(lineTwoFromPoint, lineTwoToPoint);
+			// console.log('Line One: ', lineOne);
+			// console.log('Line Two: ', lineTwo);
 
-		// Create line objects for menu and bottom diamond elements
-		const { line: lineOne } = Utils.createLine(lineOneFromPoint, lineOneToPoint);
-		const { line: lineTwo } = Utils.createLine(lineTwoFromPoint, lineTwoToPoint);
-		// console.log('Line One: ', lineOne);
-		// console.log('Line Two: ', lineTwo);
+			// Find cross point between both lines and calcuate cross point percentage
+			const { crossPoint } = Utils.findCrossPoint(lineOne, lineTwo);
+			const crossPointPercentage = Utils.findCrossPointPercentage(
+				lineOneFromPoint,
+				lineOneToPoint,
+				crossPoint,
+			);
+			// console.log('Cross Point: ', crossPoint);
+			// console.log('Cross Point Percentage: ', crossPointPercentage);
 
-		// Find cross point between both lines and calcuate cross point percentage
-		const { crossPoint } = Utils.findCrossPoint(lineOne, lineTwo);
-		const crossPointPercentage = Utils.findCrossPointPercentage(
-			lineOneFromPoint,
-			lineOneToPoint,
-			crossPoint,
-		);
-		// console.log('Cross Point: ', crossPoint);
-		// console.log('Cross Point Percentage: ', crossPointPercentage);
-
-		return {
-			gradientLine: lineOne,
-			percentage: crossPointPercentage,
-			crossPoint: crossPoint.point,
-		};
+			return {
+				gradientLine: lineOne,
+				percentage: crossPointPercentage,
+				crossPoint: crossPoint.point,
+			};
+		} catch (e) {}
 	};
 }
