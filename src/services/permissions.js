@@ -29,21 +29,13 @@ export class Permissions {
 					(role === MEMBER_ROLE_TYPE || role === OWNER_ROLE_TYPE),
 			);
 
-			console.log('access REMOVE THIS LINE ', access);
 			access = true;
+			//access = service.length > 0;
 		}
 
 		return { access };
 	}
 
-	// static hasOnlinePayment(userGroups) {
-	// 	if (!userGroups) {
-	// 		return false;
-	// 	}
-
-	// 	const onlinePaymentGroup = userGroups.filter(group => group.name === 'online_payments');
-	// 	return onlinePaymentGroup.length === 1;
-	// }
 	static checkMenuItemPermissions(pages) {
 		const MenuNames = [];
 		for (let i = 0; i <= pages.length - 1; i++) {

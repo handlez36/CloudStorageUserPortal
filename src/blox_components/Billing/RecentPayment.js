@@ -50,7 +50,6 @@ class RecentPayment extends Component {
 		try {
 			let paymentImage = `${CDN_URL}billing/recent-payment-image.svg`;
 			if (breakpoint === RESOLUTIONS.LOW) {
-				console.log('PAYMENT IMAGE LOW');
 				paymentImage = `${CDN_URL}billing/recent-payment-image-sm.svg`;
 			} else if (breakpoint === RESOLUTIONS.HIGH) {
 				paymentImage = `${CDN_URL}billing/recent-payment-image-lg.svg`;
