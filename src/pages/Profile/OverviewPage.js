@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { DIMENSIONS } from 'services/layoutManager';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
+import MyServices from 'blox_components/Profile/MyServices/MyServices';
 import { RESOLUTIONS } from 'services/config';
 
 const LAYOUT_CONFIG = {
@@ -41,7 +42,9 @@ class OverviewPage extends Component {
 				location={location}
 			>
 				<div key='myServices' className='myServices'>
-					<ComponentWrapper title='MY Services' hideBorder />
+					<ComponentWrapper title='MY Services' hideBorder>
+						<MyServices />
+					</ComponentWrapper>
 				</div>
 				<div key='myProfile' className='myProfile'>
 					<ComponentWrapper title='MY Profile' hideBorder />

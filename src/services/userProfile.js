@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { Utils } from 'services/utils';
+
 export class UserProfileApi {
 	constructor() {
 		this.baseUrl = process.env.REACT_APP_API_BASE_URL;
@@ -9,10 +11,23 @@ export class UserProfileApi {
 		};
 	}
 
-    getCompanyServices = () => {
-        const url = `${this.baseUrl}/companyservice/`;
-        return axios.get(url, this.config);
-    };
+	getCompanyServices = async () => {
+		const url = `${this.baseUrl}/companyservice/`;
+		const response = await axios.get(url, this.config);
+		if (Utils.isValidResponse(response)) {
+			const { companyServices } = response.data;
+			console.log('Response: ', response);
+			return { companyServices, errors: null };
+		}
+
+		const { error } = response.data;
+		return { companyServices: null, error };
+	};
+
+	// getCompanyServices = () => {
+	// 	const url = `${this.baseUrl}/companyservice/`;
+	// 	return axios.get(url, this.config);
+	// };
 
 	validateRegistrationCode = code => {
 		const url = `${this.baseUrl}/user/newuserreset/${code}`;
@@ -26,16 +41,16 @@ export class UserProfileApi {
 		return axios.post(url, params, this.config);
 	};
 
-    updatePasswordNewUser = params => {
-        const url = `${this.baseUrl}/user/newuserreset`;
-        return axios.post(url, params, this.config);
-    };
-    
-    updatePortalUserActivation = params => {
-        const url = `${this.baseUrl}/user/activation`;
+	updatePasswordNewUser = params => {
+		const url = `${this.baseUrl}/user/newuserreset`;
+		return axios.post(url, params, this.config);
+	};
 
-        return axios.put(url, params, this.config);
-    };
+	updatePortalUserActivation = params => {
+		const url = `${this.baseUrl}/user/activation`;
+
+		return axios.put(url, params, this.config);
+	};
 
 	updatePortalRosterActivation = params => {
 		const url = `${this.baseUrl}/roster/activation`;

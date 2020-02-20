@@ -171,6 +171,12 @@ This file should not contain anything but @import and comments.
 @import 'components/Supportv3/advanced_request';
 
 /**
+* Profilev3 components
+*/
+@import 'components/Profilev3/my_services';
+@import 'components/Profilev3/service_icon';
+
+/**
 * Commonv3 components
 */
 @import 'components/Commonv3/large_card';
