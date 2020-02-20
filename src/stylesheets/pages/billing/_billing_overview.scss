@@ -12,6 +12,9 @@
 		.count {
 			color: $White;
 		}
+		.status-label {
+			padding-top: GetSize(2);
+		}
 		&.hide {
 			display: none;
 		}
