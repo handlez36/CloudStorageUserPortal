@@ -1,8 +1,9 @@
 .ticket-count-section {
 	@include FlexboxCenter;
 	z-index: 100;
-	.count,
+
 	.status-label {
+		@include Text-Style-Ticket-Indicator;
 		z-index: 3000;
 		color: $White;
 	}

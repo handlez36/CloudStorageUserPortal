@@ -67,7 +67,7 @@ class TicketCountRow extends Component {
 							<div className='count numbers30' style={{}}>
 								{count}
 							</div>
-							<div className='status-label buttons10' style={{ marginTop: -5 }}>
+							<div className='status-label ' style={{ marginTop: -5 }}>
 								{text ? text : status}
 							</div>
 						</CircularProgressbarWithChildren>

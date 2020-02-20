@@ -11,6 +11,7 @@
 		}
 	}
 	.balance-summary {
+		color: $DCBLOX_Gray;
 		@include FlexboxRow;
 		padding: 0px;
 		padding-bottom: GetSize(1);
@@ -25,6 +26,7 @@
 	.balance-summary .dollar-sign {
 		padding-top: 4px;
 		padding-right: 2px;
+		opacity: 0.8;
 	}
 	.balance-summary .dollars {
 	}

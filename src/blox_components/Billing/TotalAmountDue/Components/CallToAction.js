@@ -39,10 +39,8 @@ const generateSummaryBalanceCopy = ({ balance }) => {
 	if (dollars && cents) {
 		return (
 			<Fragment>
-				<span className='dollar-sign total-amount-dollars-and-cents'>$</span>
-				<span className='dollars total-amount-due-primary-text'>
-					{Utils.formatCurrency(dollars, true)}
-				</span>
+				<span className='dollar-sign '>$</span>
+				<span className='dollars numbers30'>{Utils.formatCurrency(dollars, true)}</span>
 				<span className='cents total-amount-dollars-and-cents'>{cents}</span>
 			</Fragment>
 		);

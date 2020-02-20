@@ -9,8 +9,11 @@
 		.CircularProgressbar-background {
 			fill: rgba(131, 129, 5, 0.9);
 		}
+		.count {
+			color: $White;
+		}
 		&.hide {
-			display: none;
+			//display: none;
 		}
 	}
 }
