@@ -2,10 +2,10 @@ import React, { Fragment } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import moment from 'moment';
 
-import BloxButton from '../../../../sub_components/Common/BloxButton';
-import { Permissions } from '../../../../services/permissions';
-import { BillingUtils, INVOICES_STATUS } from '../../../../services/billing';
-import { Utils } from '../../../../services/utils';
+import BloxButton from 'sub_components/Common/BloxButton';
+
+import { BillingUtils, INVOICES_STATUS } from 'services/billing';
+import { Utils } from 'services/utils';
 
 const getCurrentUser = () => {
 	const { user } = useSelector(store => store.auth_status, shallowEqual);
