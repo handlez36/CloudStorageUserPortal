@@ -352,22 +352,32 @@
 		line-height: 16px;
 	}
 }
+@mixin Headings70 {
+	font-family: $font-family-primary-subheads;
+	font-size: 16px;
+	line-height: 1;
+	letter-spacing: 0.8px;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 20px;
+		letter-spacing: 1px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 30px;
+		letter-spacing: 1.2px;
+	}
+}
 @mixin Headings71 {
 	font-family: $font-family-primary-subheads;
 	font-size: 16px;
-	// line-height: 1;
-	line-height: 10px;
+	line-height: 1;
 	letter-spacing: normal;
 	color: $DCBLOX_Gray;
-	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 20px;
-		line-height: 14px;
 	}
-	// @media screen and (min-width: 1441px) {
 	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 30px;
-		line-height: 14px;
 	}
 }
 @mixin Headings80 {

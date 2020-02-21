@@ -82,6 +82,11 @@ class Portal extends Component {
 					/>
 					<Route
 						exact
+						path='/portal/profile'
+						render={props => (true ? <PortalLayout {...props} /> : <Home {...props} />)}
+					/>
+					<Route
+						exact
 						path='/portal/support'
 						render={props =>
 							hasSupportAccess ? (
@@ -93,7 +98,6 @@ class Portal extends Component {
 					/>
 					<Route
 						path='/portal/storage/:share'
-						// render={props => (hasStorageAccess ? <Storage {...props} /> : <Home {...props} />)}
 						render={props => {
 							return hasStorageAccess ? (
 								<PortalLayout module={'storage'} {...props} />

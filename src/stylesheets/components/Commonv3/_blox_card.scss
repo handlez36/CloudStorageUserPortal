@@ -1,0 +1,30 @@
+.blox-card {
+	width: GetSize(22);
+	height: 100%;
+	align-items: stretch;
+	@include FlexboxColumn;
+	.card-top-section {
+		flex: 0 1 GetSize(9);
+		height: GetSize(9);
+		width: GetSize(22);
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.card-bottom-section {
+		flex: 1 0 auto;
+		width: 100%;
+		.summary-content {
+			height: 100%;
+			@include FlexboxColumn;
+			justify-content: flex-end;
+			background-color: #fefefe;
+		}
+		.summary-content .name {
+			line-height: 8px;
+			margin-left: GetSize(2);
+			margin-bottom: GetSize(2);
+		}
+	}
+}
