@@ -31,7 +31,7 @@ class TicketCountRow extends Component {
 		const filteredTicketsByType = tickets.filter(
 			ticket => ticket.type.toLowerCase() === type.toLowerCase(),
 		);
-		if (filteredTicketsByType) {
+		if (filteredTicketsByType && showTitle) {
 			showTitle(true);
 		}
 

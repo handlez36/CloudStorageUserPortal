@@ -40,6 +40,7 @@ export class Utils {
 	//Get menu number based on module
 	static getModuleNumber = module => {
 		let moduleNumber = null;
+		console.log(module);
 		switch (module) {
 			case 'billing':
 				moduleNumber = 4;
@@ -50,7 +51,7 @@ export class Utils {
 			case 'support':
 				moduleNumber = 2;
 				break;
-			case 'Storage':
+			case 'storage':
 				moduleNumber = 1;
 				break;
 			default:
@@ -129,7 +130,7 @@ export class Utils {
 		let assets;
 		// console.log(module);
 		switch (module) {
-			case 'account':
+			case 'profile':
 				const topAssetAccount = size && size === 'md' ? NavTopAccountmd : NavTopAccount;
 				// console.log(topAssetAccount);
 				assets = {

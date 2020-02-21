@@ -83,7 +83,9 @@ class Portal extends Component {
 					<Route
 						exact
 						path='/portal/profile'
-						render={props => (true ? <PortalLayout {...props} /> : <Home {...props} />)}
+						render={props =>
+							true ? <PortalLayout module={'profile'} {...props} /> : <Home {...props} />
+						}
 					/>
 					<Route
 						exact

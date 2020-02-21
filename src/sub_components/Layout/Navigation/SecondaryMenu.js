@@ -69,13 +69,14 @@ class SecondaryMenu extends Component {
 		}
 	}
 	setGradientPercentage = () => {
-		const { gradientLine, percentage, crossPoint } = Utils.calculateGradientPath(
-			'top-graphic',
-			'bottom-graphic',
-			SIDES.LEFT,
-		);
-
-		this.setState({ percentage });
+		try {
+			const { gradientLine, percentage, crossPoint } = Utils.calculateGradientPath(
+				'top-graphic',
+				'bottom-graphic',
+				SIDES.LEFT,
+			);
+			this.setState({ percentage });
+		} catch (e) {}
 	};
 	checkScreenSize = () => {
 		const screenSize = window.innerWidth;
