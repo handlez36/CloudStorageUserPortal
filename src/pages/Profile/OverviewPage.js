@@ -4,6 +4,7 @@ import { DIMENSIONS } from 'services/layoutManager';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import MyServices from 'blox_components/Profile/MyServices/MyServices';
+import MyProfile from 'blox_components/Profile/MyProfile';
 import { RESOLUTIONS } from 'services/config';
 
 const LAYOUT_CONFIG = {
@@ -47,7 +48,9 @@ class OverviewPage extends Component {
 					</ComponentWrapper>
 				</div>
 				<div key='myProfile' className='myProfile'>
-					<ComponentWrapper title='MY Profile' hideBorder />
+					<ComponentWrapper title='MY Profile' hideBorder>
+						<MyProfile />
+					</ComponentWrapper>
 				</div>
 				<div key='portalUserManagement' className='portalUserManagement'>
 					<ComponentWrapper title='PORTAL User Management' hideBorder />

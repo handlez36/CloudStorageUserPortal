@@ -175,12 +175,14 @@ This file should not contain anything but @import and comments.
 */
 @import 'components/Profilev3/my_services';
 @import 'components/Profilev3/service_icon';
+@import 'components/Profilev3/my_profile';
 
 /**
 * Commonv3 components
 */
 @import 'components/Commonv3/large_card';
 @import 'components/Commonv3/ticket_count_row';
+@import 'components/Commonv3/blox_card';
 
 /**
 * Common components
