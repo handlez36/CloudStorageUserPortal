@@ -1,11 +1,119 @@
 import { Component } from 'react';
 import React from 'react';
+import BloxButton from 'sub_components/Common/BloxButton';
 import PortalUserOverviewBlock from './PortalUserOverviewBlock';
-import BloxButton from '../../../components/Common/BloxButton';
+
 import PortalUserOverviewSelectedBlock from './PortalUserOverviewSelectedBlock';
 import { UserApi } from '../../../services/user';
 import { CompanyProfileApi } from '../../../services/companyProfile';
 
+const users = [
+	{
+		mobilePhonePartial: null,
+		emailPartial: null,
+		contactDetails: {
+			country: '',
+			website: '',
+			address: '6349 Pollards Pond Road, PO Box 608',
+			city: 'Appling',
+			fax_number: '',
+		},
+		userProfile: {
+			twoFactorProvider: 'gauthify',
+			dashboardCardOrder: '1',
+			grantorEmailAddress: '',
+			profileImage: '5',
+			timeZone: '1',
+		},
+		userGroups: null,
+		authTypes: null,
+		pending: false,
+		firstname: 'Melanie',
+		icon: 'icons/default/icon_user.png',
+		creation_date: '2018-09-19 19:12:24.870',
+		userName: 'melanie.bass',
+		title: '',
+		created_by_user_id: '-1',
+		enabled: 'true',
+		lastname: 'Bass',
+		last_connection: '2019-12-20 14:59:25.065',
+		password: '',
+		manager_id: '0',
+		id: '601',
+		job_title: 'Graphic Designer | UX Design',
+		last_update_date: '2020-01-15 16:15:52.486',
+	},
+	{
+		mobilePhonePartial: null,
+		emailPartial: null,
+		contactDetails: {
+			country: '',
+			website: '',
+			address: '6349 Pollards Pond Road, PO Box 608',
+			city: 'Appling',
+			fax_number: '',
+		},
+		userProfile: {
+			twoFactorProvider: 'gauthify',
+			dashboardCardOrder: '1',
+			grantorEmailAddress: '',
+			profileImage: '5',
+			timeZone: '1',
+		},
+		userGroups: null,
+		authTypes: null,
+		pending: false,
+		firstname: 'Melanie',
+		icon: 'icons/default/icon_user.png',
+		creation_date: '2018-09-19 19:12:24.870',
+		userName: 'melanie.bass',
+		title: '',
+		created_by_user_id: '-1',
+		enabled: 'true',
+		lastname: 'Bass',
+		last_connection: '2019-12-20 14:59:25.065',
+		password: '',
+		manager_id: '0',
+		id: '601',
+		job_title: 'Graphic Designer | UX Design',
+		last_update_date: '2020-01-15 16:15:52.486',
+	},
+	{
+		mobilePhonePartial: null,
+		emailPartial: null,
+		contactDetails: {
+			country: '',
+			website: '',
+			address: '6349 Pollards Pond Road, PO Box 608',
+			city: 'Appling',
+			fax_number: '',
+		},
+		userProfile: {
+			twoFactorProvider: 'gauthify',
+			dashboardCardOrder: '1',
+			grantorEmailAddress: '',
+			profileImage: '5',
+			timeZone: '1',
+		},
+		userGroups: null,
+		authTypes: null,
+		pending: false,
+		firstname: 'Melanie',
+		icon: 'icons/default/icon_user.png',
+		creation_date: '2018-09-19 19:12:24.870',
+		userName: 'melanie.bass',
+		title: '',
+		created_by_user_id: '-1',
+		enabled: 'true',
+		lastname: 'Bass',
+		last_connection: '2019-12-20 14:59:25.065',
+		password: '',
+		manager_id: '0',
+		id: '601',
+		job_title: 'Graphic Designer | UX Design',
+		last_update_date: '2020-01-15 16:15:52.486',
+	},
+];
 export default class PortalUserOverview extends Component {
 	constructor(props) {
 		super(props);
@@ -69,10 +177,11 @@ export default class PortalUserOverview extends Component {
 	};
 
 	render() {
-		const { users } = this.state;
+		//const { users } = this.state;
+		console.log('users', users);
 		return (
 			<div className='portal-user-overview'>
-				<div className={'header'}>
+				{/* <div className={'header'}>
 					<div className={'title-wrapper'}>
 						<div className={'title'}>PORTAL</div>
 						<div className={'sub-title'}>{this.state.activeUserCount} Active</div>
@@ -84,37 +193,20 @@ export default class PortalUserOverview extends Component {
 						onClick={this.goToPortalUsers}
 						enabled={true}
 					/>
-				</div>
+				</div> */}
 
 				<div className={'overview-user-wrapper'}>
-					<div className={'users' + (users.length > 4 ? ' two-rows' : 'one-row')}>
-						<div className={'active-user'}>
-							{this.state.users.length > 4 && (
+					<div className={'users'}>
+						{/* <div className={'active-user'}>
+							{users.length > 4 && (
 								<PortalUserOverviewSelectedBlock user={this.state.focusedUser} />
 							)}
-						</div>
+						</div> */}
 						<div className={'row-wrapper-1'}>
 							<div className={'row-1'}>
-								{this.state.users &&
-									this.state.users.map((user, index) => {
+								{users &&
+									users.map((user, index) => {
 										if (index < 6) {
-											return [
-												<PortalUserOverviewBlock
-													key={index}
-													user={user}
-													position={index}
-													click={() => this.setFocused(user)}
-												/>,
-											];
-										}
-									})}
-							</div>
-						</div>
-						<div className={'row-wrapper-2'}>
-							<div className={'row-2'}>
-								{this.state.users.length > 4 &&
-									this.state.users.map((user, index) => {
-										if (index > 5 && index < 12) {
 											return [
 												<PortalUserOverviewBlock
 													key={index}

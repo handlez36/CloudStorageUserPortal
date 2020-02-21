@@ -5,6 +5,7 @@ import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import MyServices from 'blox_components/Profile/MyServices/MyServices';
 import MyProfile from 'blox_components/Profile/MyProfile';
+import UserManagement from 'containers_old/Profile/UserManagement/PortalUserOverview';
 import { RESOLUTIONS } from 'services/config';
 
 const LAYOUT_CONFIG = {
@@ -16,11 +17,11 @@ const LAYOUT_CONFIG = {
 		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.MED]: {
-		companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
-		rosterUserManagement: { x: 5, y: 43, dim: DIMENSIONS.TWO_BY_SIX },
-		myProfile: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_THREE },
+		// companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
+		// rosterUserManagement: { x: 5, y: 43, dim: DIMENSIONS.TWO_BY_SIX },
+		// myProfile: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_THREE },
 		portalUserManagement: { x: 5, y: 24, dim: DIMENSIONS.TWO_BY_SIX },
-		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
+		//myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.HIGH]: {
 		companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
@@ -53,7 +54,9 @@ class OverviewPage extends Component {
 					</ComponentWrapper>
 				</div>
 				<div key='portalUserManagement' className='portalUserManagement'>
-					<ComponentWrapper title='PORTAL User Management' hideBorder />
+					<ComponentWrapper title='PORTAL User Management' hideBorder>
+						<UserManagement />
+					</ComponentWrapper>
 				</div>
 				<div key='companyProfile' className='companyProfile'>
 					<ComponentWrapper title='COMPANY Profile' hideBorder />
