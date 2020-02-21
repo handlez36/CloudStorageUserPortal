@@ -5,7 +5,7 @@
 	flex-direction: column;
 	align-items: center;
 	position: relative;
-	height: 120px;
+	height: GetSize(15);
 	width: 100%;
 	min-width: auto;
 	min-height: auto;
@@ -18,7 +18,7 @@
 		@include FlexboxCenter;
 		min-width: auto;
 		width: 100%;
-		height: 48px;
+		height: GetSize(6);
 		background-color: $Med_Lime;
 
 		img {
@@ -38,7 +38,7 @@
 		.cents,
 		.dollar {
 			align-self: flex-start;
-			margin-top: 9px;
+			margin-top: GetSize(1);
 		}
 		.cents {
 			padding-left: 2px;
@@ -55,7 +55,7 @@
 		display: none;
 	}
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
-		height: 160px;
+		height: GetSize(20);
 		.payment-image {
 			height: GetSize(8);
 		}
@@ -75,7 +75,7 @@
 		}
 	}
 	@media screen and (min-width: ($high-res + 1)) {
-		height: 272px;
+		height: GetSize(34);
 		.payment-image {
 			height: GetSize(17);
 		}
@@ -84,12 +84,12 @@
 			height: GetSize(4);
 			.cents,
 			.dollar {
-				margin-top: 15px;
+				margin-top: 14px;
 			}
 		}
 		.invoice-number {
-			margin-top: GetSize(4);
-			height: GetSize(3);
+			margin-top: GetSize(2);
+			height: GetSize(2);
 		}
 		.date-recieved {
 			margin-top: GetSize(1);

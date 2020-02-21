@@ -1,6 +1,6 @@
 .recent-invoices-wrapper {
 	background-color: $White;
-	height: 160px;
+	height: GetSize(20);
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -37,7 +37,7 @@
 				.dollar,
 				.cents {
 					align-self: flex-start;
-					padding-top: 10px;
+					padding-top: GetSize(1);
 				}
 
 				.dollars {
@@ -54,7 +54,7 @@
 
 .recent-invoices {
 	width: 100%;
-	height: 160px;
+	height: GetSize(20);
 	min-height: auto;
 	min-width: auto;
 	display: flex;
@@ -85,14 +85,14 @@
 		.recent-invoice .invoice-image {
 			margin-top: GetSize(1);
 			width: GetSize(3);
-			height: 40px;
+			height: GetSize(5);
 		}
 		.recent-invoice .invoice-image img {
 			width: 22px;
 			height: 100%;
 		}
 		.recent-invoice .invoice-amount {
-			margin-top: 10px;
+			margin-top: GetSize(1);
 			height: GetSize(2);
 			margin-bottom: 2px;
 		}
@@ -105,7 +105,7 @@
 		}
 	}
 	@media screen and (max-width: $medium-res) {
-		height: 120px;
+		height: GetSize(15);
 		.invoice-list {
 			padding-top: 12px;
 			padding-bottom: GetSize(2);
@@ -120,7 +120,7 @@
 				height: GetSize(2);
 				.dollar,
 				.cents {
-					padding-top: 9px;
+					padding-top: GetSize(1);
 				}
 			}
 
@@ -145,15 +145,23 @@
 		}
 	}
 	@media screen and (min-width: $high-res) {
+		height: GetSize(34);
 		.invoice-list {
 			padding-top: GetSize(2);
 			.recent-invoice .invoice-image {
 				width: 60px;
-				height: 112px;
+				height: GetSize(14);
+				img {
+					width: 100%;
+				}
 			}
 			.recent-invoice .invoice-amount {
 				margin-top: GetSize(3);
 				height: GetSize(4);
+				.dollar,
+				.cents {
+					padding-top: 14px;
+				}
 			}
 			.recent-invoice .invoice-number {
 				// margin-top: GetSize(1);
