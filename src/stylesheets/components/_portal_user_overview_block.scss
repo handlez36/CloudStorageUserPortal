@@ -3,8 +3,8 @@
 	text-align: center;
 	.block-wrapper {
 		//max-width: 4.5vh;
-		width: calculateVw(60, 1440);
-		height: calculateVh(110, 1440);
+		width: GetSize(8);
+		height: GetSize(10);
 	}
 	.name {
 		position: relative;

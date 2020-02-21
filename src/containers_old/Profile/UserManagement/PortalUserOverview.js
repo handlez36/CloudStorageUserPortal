@@ -1,12 +1,14 @@
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
 import React from 'react';
+import { CarouselCycle } from 'containers_old/Storage/CarouselCycle';
 import BloxButton from 'sub_components/Common/BloxButton';
 import PortalUserOverviewBlock from './PortalUserOverviewBlock';
 
 import PortalUserOverviewSelectedBlock from './PortalUserOverviewSelectedBlock';
 import { UserApi } from '../../../services/user';
 import { CompanyProfileApi } from '../../../services/companyProfile';
-
+const CDN_URL = process.env.REACT_APP_CDN_URL;
+const Arrow = `${CDN_URL}common/left-arrow-active.png`;
 const users = [
 	{
 		mobilePhonePartial: null,
@@ -22,7 +24,7 @@ const users = [
 			twoFactorProvider: 'gauthify',
 			dashboardCardOrder: '1',
 			grantorEmailAddress: '',
-			profileImage: '5',
+			profileImage: '2',
 			timeZone: '1',
 		},
 		userGroups: null,
@@ -57,7 +59,7 @@ const users = [
 			twoFactorProvider: 'gauthify',
 			dashboardCardOrder: '1',
 			grantorEmailAddress: '',
-			profileImage: '5',
+			profileImage: '4',
 			timeZone: '1',
 		},
 		userGroups: null,
@@ -126,6 +128,30 @@ export default class PortalUserOverview extends Component {
 		};
 	}
 
+	cycleItems = (direction = 'next') => {
+		this.setState({ disabled: true });
+		const reverseDirection = direction === 'next' ? 'prev' : 'next';
+		const { currentItem } = this.state;
+		const { data } = this.props;
+		const nextItem = direction === 'next' ? parseInt(currentItem) - 1 : parseInt(currentItem) + 1;
+		if (
+			(currentItem === 3 && direction === 'next') ||
+			(currentItem === 4 && direction === 'prev')
+		) {
+		} else {
+			this.setState({ currentItem: nextItem }, () =>
+				CarouselCycle(
+					[],
+					{},
+					reverseDirection,
+					'.portal-user-overview-block',
+					'.overview-user-wrapper',
+					this.allowNextClick,
+				),
+			);
+		}
+	};
+
 	componentDidMount() {
 		this.getCompanyProfile();
 		this.setState({ focusedUser: this.state.users[0] });
@@ -177,50 +203,49 @@ export default class PortalUserOverview extends Component {
 	};
 
 	render() {
-		//const { users } = this.state;
-		console.log('users', users);
 		return (
-			<div className='portal-user-overview'>
-				{/* <div className={'header'}>
-					<div className={'title-wrapper'}>
-						<div className={'title'}>PORTAL</div>
-						<div className={'sub-title'}>{this.state.activeUserCount} Active</div>
-					</div>
-
-					<BloxButton
-						title={'MANAGE PORTAL USERS'}
-						customClass={'manage-users'}
-						onClick={this.goToPortalUsers}
-						enabled={true}
-					/>
-				</div> */}
-
-				<div className={'overview-user-wrapper'}>
-					<div className={'users'}>
-						{/* <div className={'active-user'}>
-							{users.length > 4 && (
-								<PortalUserOverviewSelectedBlock user={this.state.focusedUser} />
-							)}
-						</div> */}
-						<div className={'row-wrapper-1'}>
-							<div className={'row-1'}>
-								{users &&
-									users.map((user, index) => {
-										if (index < 6) {
-											return [
-												<PortalUserOverviewBlock
-													key={index}
-													user={user}
-													position={index}
-													click={() => this.setFocused(user)}
-												/>,
-											];
-										}
-									})}
+			<div className='carousel-container'>
+				<Fragment>
+					<div className='nav-container-right'>
+						{/* {currentItem !== data.length - 4 && data.length > 4 && ( */}
+						<div className='nav-arrow-right' onClick={() => this.cycleItems('prev')}>
+							<div className='arrow-image'>
+								<img src={Arrow} />
 							</div>
 						</div>
+						{/* )} */}
+					</div>
+				</Fragment>
+
+				<div className='portal-user-overview'>
+					<div className='overview-user-wrapper'>
+						{users &&
+							users.map((user, index) => {
+								if (index < 6) {
+									return [
+										<PortalUserOverviewBlock
+											key={index}
+											user={user}
+											position={index}
+											click={() => this.setFocused(user)}
+										/>,
+									];
+								}
+							})}
 					</div>
 				</div>
+
+				<Fragment>
+					<div className='nav-container-left'>
+						{/* {currentItem !== 0 && data.length > 4 && ( */}
+						<div className='nav-arrow-left' onClick={() => this.cycleItems('next')}>
+							<div className='arrow-image'>
+								<img src={Arrow} />
+							</div>
+						</div>
+						{/* )} */}
+					</div>
+				</Fragment>
 			</div>
 		);
 	}

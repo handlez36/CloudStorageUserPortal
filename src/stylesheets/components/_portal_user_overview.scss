@@ -1,107 +1,28 @@
 .portal-user-overview {
 	border: 1px solid blue;
-	width: 100%;
+	width: 368px;
 	height: GetSize(14);
 	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
 	background-color: $White;
-	padding: 2.5vh;
+	padding-top: GetSize(2);
+	padding-bottom: GetSize(2);
+	display: flex;
 
-	.header {
-		width: 100%;
-		height: 5vh;
-		.manage-users {
-			cursor: pointer;
-			width: calculateVw(139, 1440);
-			height: calculateVh(48, 1440);
-			object-fit: contain;
-			box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
-			padding: 0;
-			border: 0;
-			float: right;
-			background-color: $Blue;
-			background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Blue 10%);
-			span {
-				display: block;
-				width: 100%;
-				object-fit: contain;
-				height: 100%;
-				text-shadow: 1px 1px 0.5px rgba(0, 0, 0, 0.15);
-				font-family: $font-family-primary-subheads;
-				margin-top: 1px;
-				$map: (
-					576: 8,
-					1440: 16,
-					2560: 20,
-				);
-				font-size: least-squares-fit($map);
-				font-weight: 500;
-				font-style: normal;
-				font-stretch: condensed;
-				line-height: 3.375vh;
-				letter-spacing: 0.8px;
-				text-align: center;
-				color: $White;
-			}
-		}
-		.title-wrapper {
-			width: 30%;
-			display: inline-block;
-			float: left;
-			.title {
-				$map: (
-					576: 12,
-					1440: 16,
-					2560: 20,
-				);
-				font-family: $font-family-primary-heads;
-				color: $Dark_Blue;
-				line-height: 1;
-				text-align: left;
-				font-size: least-squares-fit($map);
-			}
-			.sub-title {
-				opacity: 0.8;
-				color: $DCBLOX_Gray;
-				text-align: left;
-				@include SubHead_Text;
-			}
-		}
-	}
 	.users {
 		overflow: hidden;
-		position: relative;
 	}
 	.overview-user-wrapper {
-		overflow: hidden;
-	}
-	.active-user {
-		float: left;
-	}
-	.users.two-rows {
-		width: 100%;
-	}
-	.row-wrapper-1 {
-	}
-	.row-wrapper-2 {
-		margin-top: 0.5vh;
-	}
-	.row-1 {
 		display: flex;
+		width: 100%;
+		border: 1px solid green;
+		height: GetSize(10);
 	}
+
 	.portal-user-overview-block {
-		margin-right: calculateVw(20, 1440);
+		margin-right: GetSize(1);
 	}
 }
 
-.two-rows .row-1,
-.two-rows .row-2 {
-	display: flex;
-	justify-content: space-between;
-
-	.portal-user-overview-block {
-		margin-right: 0;
-	}
-}
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 	border: 1px solid red;
 }
