@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
-
+import { Utils, SIDES } from 'services/utils';
+import { RESOLUTIONS } from 'services/config';
 import PrimaryColumn from './PrimaryColumnSide';
 import MenuItems from './MenuItems';
-import { Utils, SIDES } from './../../../services/utils';
-import { RESOLUTIONS } from './../../../services/config';
+
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const MenuTriangle = `${CDN_URL}navigation/nav-primary-module-top.svg`;
 const MenuTriangleBottom = `${CDN_URL}navigation/nav-primary-bottom-triangle.svg`;

@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { Decimal } from 'decimal.js';
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 
-import { SITE_COLORS } from '../../../../utils/Misc/CommonConstants';
-import * as StorageUtils from '../../../../utils/StorageUtils';
+import { SITE_COLORS } from 'utils/Misc/CommonConstants';
+import * as StorageUtils from 'utils/StorageUtils';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const ObjectStorage = `${CDN_URL}storage/object-storage-icon.png`;

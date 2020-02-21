@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CalendarDay from '../../../blox_components/Billing/TotalAmountDue/Components/CalendarDay';
-import CallToAction from '../../../blox_components/Billing/TotalAmountDue/Components/CallToAction';
-import { BillingApi } from '../../../services/billing';
-import { Permissions } from '../../../services/permissions';
+import CalendarDay from 'blox_components/Billing/TotalAmountDue/Components/CalendarDay';
+import CallToAction from 'blox_components/Billing/TotalAmountDue/Components/CallToAction';
+import { BillingApi } from 'services/billing';
+import { Permissions } from 'services/permissions';
 
 class TotalAmountDue extends Component {
 	state = {

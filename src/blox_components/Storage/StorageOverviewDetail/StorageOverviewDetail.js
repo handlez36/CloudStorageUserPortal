@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
-import { StorageApi } from '../../../services/storage';
-import * as StorageUtils from '../../../utils/StorageUtils';
+import { StorageApi } from 'services/storage';
+import * as StorageUtils from 'utils/StorageUtils';
 import Graph from './Components/Graph';
 // import Graph from './Graph_Old';
 import ShareCardContainer from './Components/ShareCardContainer';

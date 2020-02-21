@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as StorageUtils from '../../../../utils/StorageUtils';
+import * as StorageUtils from 'utils/StorageUtils';
 import GraphDetail from './GraphDetails';
 import LocationBar from './LocationBar';
 // import UsageBar from './UsageBar';

@@ -1,9 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 
-import Zero from '../Components/CountDownSVGs/Zero';
-import PastDue from '../Components/CountDownSVGs/PastDue';
-import DueToday from '../Components/CountDownSVGs/DueToday';
+import Zero from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/Zero';
+import PastDue from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/PastDue';
+import DueToday from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/DueToday';
 import { BillingApi, BillingUtils, INVOICES_STATUS } from '../../../../services/billing';
 
 const selectCalendarImage = (invoices, status) => {

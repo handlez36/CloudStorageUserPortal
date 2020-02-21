@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
-
+import { Utils, SIDES } from 'services/utils';
+import { RESOLUTIONS } from 'services/config';
+import { Permissions } from 'services/permissions';
 import ColumnSide from './ColumnSide';
 import MenuItems from './MenuItems';
 import PrimaryMenu from './PrimaryMenu';
-import { Utils, SIDES } from './../../../services/utils';
-import { RESOLUTIONS } from './../../../services/config';
-import { Permissions } from '../../../services/permissions';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Layer2 = `${CDN_URL}navigation/nav-layer-2.svg`;

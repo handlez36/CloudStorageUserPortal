@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { func, string } from 'prop-types';
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 
-import { TicketApi } from '../../services/ticket';
+import { TicketApi } from 'services/ticket';
 import {
 	TICKET_TYPES,
 	HIGH_LEVEL_TICKET_STATUS,
 	STATUS as DETAILED_TICKET_STATUS,
-} from '../../utils/TicketConstants';
+} from 'utils/TicketConstants';
 
 class TicketCountRow extends Component {
 	state = {

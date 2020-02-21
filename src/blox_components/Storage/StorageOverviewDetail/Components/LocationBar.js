@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LocationIcon from '../../../../sub_components/Storage/LocationIcon';
-import { RESOLUTIONS } from '../../../../services/config';
+import LocationIcon from 'sub_components/Storage/LocationIcon';
+import { RESOLUTIONS } from 'services/config';
 
 const locations = ['ATL', 'BHM', 'CHA', 'HSV'];
 

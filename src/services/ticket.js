@@ -1,7 +1,7 @@
 import axios from 'axios';
 import moment from 'moment';
 
-import { Utils } from '../services/utils';
+import { Utils } from 'services/utils';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const ChattanoogaIcon = `${CDN_URL}support/Chattanooga-icon-building.svg`;

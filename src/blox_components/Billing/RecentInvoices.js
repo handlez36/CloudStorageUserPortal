@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { BillingUtils, BillingApi } from '../../services/billing';
-import { Sorting } from '../../services/sorting';
-import { Utils } from '../../services/utils';
-import { RESOLUTIONS } from '../../services/config';
+import { BillingUtils, BillingApi } from 'services/billing';
+import { Sorting } from 'services/sorting';
+import { Utils } from 'services/utils';
+import { RESOLUTIONS } from 'services/config';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const dueIcon = `${CDN_URL}billing/due-icon.svg`;
 const overdueIcon = `${CDN_URL}billing/icon_Invoice_pastdue.svg`;

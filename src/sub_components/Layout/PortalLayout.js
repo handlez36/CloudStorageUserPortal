@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import capitalize from 'lodash/capitalize';
-
+import { RESOLUTIONS } from 'services/config';
 // import NavSection from '../Navigationv3/BloxNavigationSection';
 // import ContentSection from './ContentSection';
 // import HeaderSection from './HeaderSection';
@@ -15,8 +15,7 @@ import NavSection from './Navigation/BloxNavigationSection';
 import ContentSection from './ContentSection';
 import HeaderSection from './HeaderSection';
 import FooterSection from './Footer';
-import StorageOverview from './../../pages/Storage/OverviewPage';
-import { RESOLUTIONS } from './../../services/config';
+
 // import { SITE_MAP, SITE_PAGES } from './../Common/CommonConstants';
 
 const PAGES = {

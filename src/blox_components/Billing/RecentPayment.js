@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import { BillingApi } from '../../services/billing';
-import { Utils } from '../../services/utils';
-import { RESOLUTIONS } from '../../services/config';
+import { BillingApi } from 'services/billing';
+import { Utils } from 'services/utils';
+import { RESOLUTIONS } from 'services/config';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 class RecentPayment extends Component {

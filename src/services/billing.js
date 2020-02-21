@@ -2,45 +2,45 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import CountDown1 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown1';
-import CountDown2 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown2';
-import CountDown3 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown3';
-import CountDown4 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown4';
-import CountDown5 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown5';
-import CountDown6 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown6';
-import CountDown7 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown7';
-import CountDown8 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown8';
-import CountDown9 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown9';
-import CountDown10 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown10';
-import CountDown11 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown11';
-import CountDown12 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown12';
-import CountDown13 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown13';
-import CountDown14 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown14';
-import CountDown15 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown15';
-import CountDown16 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown16';
-import CountDown17 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown17';
-import CountDown18 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown18';
-import CountDown19 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown19';
-import CountDown20 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown20';
-import CountDown21 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown21';
-import CountDown22 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown22';
-import CountDown23 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown23';
-import CountDown24 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown24';
-import CountDown25 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown25';
-import CountDown26 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown26';
-import CountDown27 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown27';
-import CountDown28 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown28';
-import CountDown29 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown29';
-import CountDown30 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown30';
-import CountDown31 from '../blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown31';
-import { Utils } from '../services/utils';
-import { Sorting } from '../services/sorting';
+import CountDown1 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown1';
+import CountDown2 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown2';
+import CountDown3 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown3';
+import CountDown4 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown4';
+import CountDown5 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown5';
+import CountDown6 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown6';
+import CountDown7 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown7';
+import CountDown8 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown8';
+import CountDown9 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown9';
+import CountDown10 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown10';
+import CountDown11 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown11';
+import CountDown12 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown12';
+import CountDown13 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown13';
+import CountDown14 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown14';
+import CountDown15 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown15';
+import CountDown16 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown16';
+import CountDown17 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown17';
+import CountDown18 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown18';
+import CountDown19 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown19';
+import CountDown20 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown20';
+import CountDown21 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown21';
+import CountDown22 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown22';
+import CountDown23 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown23';
+import CountDown24 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown24';
+import CountDown25 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown25';
+import CountDown26 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown26';
+import CountDown27 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown27';
+import CountDown28 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown28';
+import CountDown29 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown29';
+import CountDown30 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown30';
+import CountDown31 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown31';
+import { Utils } from 'services/utils';
+import { Sorting } from 'services/sorting';
 import {
 	INVOICE_SUMMARY_HEADERS,
 	INVOICE_DETAIL_HEADERS,
 	INVOICE_ICONS,
 	INVOICE_STATUS,
-} from '../utils/BillingConstants';
+} from 'utils/BillingConstants';
 
 export const FILTERS = {
 	ALL: 'All Invoices',

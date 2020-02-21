@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { DIMENSIONS } from '../../services/layoutManager';
-import BloxPage from '../../sub_components/Layout/BloxPage';
-import ComponentWrapper from '../../sub_components/Layout/ComponentWrapper';
-import TicketCount from '../../blox_components/Common/TicketCountRow';
-import RecentPayment from '../../blox_components/Billing/RecentPayment';
-import RecentInvoices from '../../blox_components/Billing/RecentInvoices';
-import TotalAmountDue from '../../blox_components/Billing/TotalAmountDue/TotalAmountDue';
-import { TicketUtils } from '../../services/ticket';
-import { RESOLUTIONS } from '../../services/config';
-import { Utils } from '../../services/utils';
-import { Permissions } from '../../services/permissions';
-import { HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from '../../utils/TicketConstants';
+import { DIMENSIONS } from 'services/layoutManager';
+import BloxPage from 'sub_components/Layout/BloxPage';
+import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
+import TicketCount from 'blox_components/Common/TicketCountRow';
+import RecentPayment from 'blox_components/Billing/RecentPayment';
+import RecentInvoices from 'blox_components/Billing/RecentInvoices';
+import TotalAmountDue from 'blox_components/Billing/TotalAmountDue/TotalAmountDue';
+import { TicketUtils } from 'services/ticket';
+import { RESOLUTIONS } from 'services/config';
+import { Permissions } from 'services/permissions';
+import { HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {

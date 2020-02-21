@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 // import LocationIcon from '../Components/LocationIcon';
-import LocationIcon from '../sub_components/Storage/LocationIcon';
+import LocationIcon from 'sub_components/Storage/LocationIcon';
 
 export let NUM_OF_GRAPH_DATA_POINTS = 9;
 export const DEFAULT_TIME_FORMAT = 'YYYY-MM-DD HH:MM:SSSS-ZZ';
