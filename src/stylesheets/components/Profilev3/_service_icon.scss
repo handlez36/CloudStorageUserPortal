@@ -1,0 +1,52 @@
+.service-icon {
+	width: 112px;
+	height: 112px;
+	border-radius: 50%;
+	background-image: linear-gradient(127deg, #3192f4 15%, #416ba9 86%);
+	@include FlexboxCenter;
+	.service-content {
+		@include FlexboxColumn;
+		align-items: center;
+		cursor: pointer;
+		.icon,
+		.label,
+		.details {
+			text-align: center;
+			transition: all 0.3s ease;
+		}
+		.icon img {
+			width: GetSize(4);
+			height: GetSize(4);
+		}
+		.label {
+			margin-top: GetSize(1);
+			color: $White;
+		}
+		.details {
+			visibility: hidden;
+			height: 0px;
+		}
+		.details .location {
+			color: $White;
+		}
+		.details .location.disabled {
+			opacity: 0.6;
+		}
+		&:hover {
+			justify-content: flex-start;
+			.icon {
+				transform: translateY(-8px) scale(0.5);
+			}
+			.label {
+				margin-top: 0;
+				height: 0;
+				opacity: 0;
+			}
+			.details {
+				visibility: visible;
+				height: GetSize(7);
+				transform: translateY(-8px);
+			}
+		}
+	}
+}
