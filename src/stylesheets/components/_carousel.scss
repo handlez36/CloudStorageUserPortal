@@ -65,4 +65,8 @@
 	.nav-arrow-right:hover {
 		background-color: $Cool_Gray_Light_3;
 	}
+
+	&.portal-user-management {
+		border: 5px solid green;
+	}
 }

@@ -115,6 +115,76 @@ const users = [
 		job_title: 'Graphic Designer | UX Design',
 		last_update_date: '2020-01-15 16:15:52.486',
 	},
+	{
+		mobilePhonePartial: null,
+		emailPartial: null,
+		contactDetails: {
+			country: '',
+			website: '',
+			address: '6349 Pollards Pond Road, PO Box 608',
+			city: 'Appling',
+			fax_number: '',
+		},
+		userProfile: {
+			twoFactorProvider: 'gauthify',
+			dashboardCardOrder: '1',
+			grantorEmailAddress: '',
+			profileImage: '4',
+			timeZone: '1',
+		},
+		userGroups: null,
+		authTypes: null,
+		pending: false,
+		firstname: 'Melanie',
+		icon: 'icons/default/icon_user.png',
+		creation_date: '2018-09-19 19:12:24.870',
+		userName: 'melanie.bass',
+		title: '',
+		created_by_user_id: '-1',
+		enabled: 'true',
+		lastname: 'Bass',
+		last_connection: '2019-12-20 14:59:25.065',
+		password: '',
+		manager_id: '0',
+		id: '601',
+		job_title: 'Graphic Designer | UX Design',
+		last_update_date: '2020-01-15 16:15:52.486',
+	},
+	{
+		mobilePhonePartial: null,
+		emailPartial: null,
+		contactDetails: {
+			country: '',
+			website: '',
+			address: '6349 Pollards Pond Road, PO Box 608',
+			city: 'Appling',
+			fax_number: '',
+		},
+		userProfile: {
+			twoFactorProvider: 'gauthify',
+			dashboardCardOrder: '1',
+			grantorEmailAddress: '',
+			profileImage: '4',
+			timeZone: '1',
+		},
+		userGroups: null,
+		authTypes: null,
+		pending: false,
+		firstname: 'Melanie',
+		icon: 'icons/default/icon_user.png',
+		creation_date: '2018-09-19 19:12:24.870',
+		userName: 'melanie.bass',
+		title: '',
+		created_by_user_id: '-1',
+		enabled: 'true',
+		lastname: 'Bass',
+		last_connection: '2019-12-20 14:59:25.065',
+		password: '',
+		manager_id: '0',
+		id: '601',
+		job_title: 'Graphic Designer | UX Design',
+		last_update_date: '2020-01-15 16:15:52.486',
+	},
 ];
 export default class PortalUserOverview extends Component {
 	constructor(props) {
@@ -125,18 +195,24 @@ export default class PortalUserOverview extends Component {
 			users: [],
 			focusedUser: null,
 			activeUserCount: 0,
+			currentItem: 0,
+			disabled: false,
 		};
 	}
+	allowNextClick = () => {
+		this.setState({ disabled: false });
+	};
 
 	cycleItems = (direction = 'next') => {
 		this.setState({ disabled: true });
 		const reverseDirection = direction === 'next' ? 'prev' : 'next';
 		const { currentItem } = this.state;
-		const { data } = this.props;
+		//const { data } = this.props;
 		const nextItem = direction === 'next' ? parseInt(currentItem) - 1 : parseInt(currentItem) + 1;
+
 		if (
-			(currentItem === 3 && direction === 'next') ||
-			(currentItem === 4 && direction === 'prev')
+			(currentItem === 0 && direction === 'next') ||
+			(currentItem === users.length && direction === 'prev')
 		) {
 		} else {
 			this.setState({ currentItem: nextItem }, () =>
@@ -154,7 +230,7 @@ export default class PortalUserOverview extends Component {
 
 	componentDidMount() {
 		this.getCompanyProfile();
-		this.setState({ focusedUser: this.state.users[0] });
+		this.setState({ focusedUser: this.state.users[0], topItem: 0, currentItem: 0 });
 	}
 
 	getCompanyProfile = () => {
@@ -203,17 +279,22 @@ export default class PortalUserOverview extends Component {
 	};
 
 	render() {
+		const { currentItem, disabled } = this.state;
+		const amountToDisplay = 4;
 		return (
-			<div className='carousel-container'>
+			<div className='carousel-container portal-user-management'>
 				<Fragment>
 					<div className='nav-container-right'>
-						{/* {currentItem !== data.length - 4 && data.length > 4 && ( */}
-						<div className='nav-arrow-right' onClick={() => this.cycleItems('prev')}>
-							<div className='arrow-image'>
-								<img src={Arrow} />
+						{currentItem !== users.length - amountToDisplay && users.length > amountToDisplay && (
+							<div
+								className='nav-arrow-right'
+								onClick={disabled ? function() {} : () => this.cycleItems('prev')}
+							>
+								<div className='arrow-image'>
+									<img src={Arrow} />
+								</div>
 							</div>
-						</div>
-						{/* )} */}
+						)}
 					</div>
 				</Fragment>
 
@@ -237,13 +318,16 @@ export default class PortalUserOverview extends Component {
 
 				<Fragment>
 					<div className='nav-container-left'>
-						{/* {currentItem !== 0 && data.length > 4 && ( */}
-						<div className='nav-arrow-left' onClick={() => this.cycleItems('next')}>
-							<div className='arrow-image'>
-								<img src={Arrow} />
+						{currentItem !== 0 && users.length > amountToDisplay && (
+							<div
+								className='nav-arrow-left'
+								onClick={disabled ? function() {} : () => this.cycleItems('next')}
+							>
+								<div className='arrow-image'>
+									<img src={Arrow} />
+								</div>
 							</div>
-						</div>
-						{/* )} */}
+						)}
 					</div>
 				</Fragment>
 			</div>

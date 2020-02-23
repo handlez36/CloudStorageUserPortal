@@ -28,6 +28,7 @@ const PAGES = {
 	},
 	Profile: {
 		Overview: 'OverviewPage',
+		Avatar: 'AvatarPage',
 	},
 	Billing: {
 		Overview: 'OverviewPage',
