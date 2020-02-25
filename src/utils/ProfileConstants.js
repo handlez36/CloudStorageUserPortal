@@ -34,6 +34,11 @@ export const PROFILE_AVATAR_MESSAGE_TEXT = {
 		'Select one of the avatars below. You can always change it later if you undergo a lifesyle change, or just get bored.',
 };
 
+export const PROFILE_OVERVIEW_CARDS = {
+	MY_PROFILE: 'MY_PROFILE',
+	COMPANY_PROFILE: 'COMPANY_PROFILE',
+};
+
 export const LAYOUT_GRID = {
 	xs: [
 		{ i: 'my-services-label', x: 2, y: 2, w: 6, h: 1.5, static: true },

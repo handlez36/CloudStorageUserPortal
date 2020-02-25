@@ -15,16 +15,60 @@
 	.card-bottom-section {
 		flex: 1 0 auto;
 		width: 100%;
-		.summary-content {
-			height: 100%;
-			@include FlexboxColumn;
-			justify-content: flex-end;
+		@include FlexboxColumn;
+		.summary-row {
+			flex: 0 1 GetSize(5);
+			height: GetSize(5);
+			@include FlexboxRow;
+			justify-content: space-between;
+			padding-right: GetSize(2);
 			background-color: #fefefe;
 		}
-		.summary-content .name {
+		.summary-row .summary-content {
+			@include FlexboxColumn;
+			justify-content: flex-end;
+		}
+		.summary-row .summary-content .name {
 			line-height: 8px;
 			margin-left: GetSize(2);
 			margin-bottom: GetSize(2);
 		}
+		.summary-row img {
+			width: 24px;
+			height: 24px;
+			align-self: flex-end;
+			margin-bottom: GetSize(1);
+			cursor: pointer;
+		}
+		.expanded-section {
+			flex: 1 0 auto;
+			// box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+			background-color: $White;
+		}
+		.expanded-section .detail-content {
+			padding-left: GetSize(2);
+			padding-right: GetSize(2);
+		}
+		.expanded-section .detail-content .content-row {
+			height: 29.9px;
+			@include FlexboxRow;
+			justify-content: space-between;
+			padding-top: 8.3px;
+			padding-bottom: 8.3px;
+			border-bottom: 1px solid $Cool_Gray_Light_3;
+			.label {
+				width: 55px;
+			}
+			.value {
+				width: 89px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				text-align: right;
+			}
+		}
+	}
+	&.expanded {
+		box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
 	}
 }

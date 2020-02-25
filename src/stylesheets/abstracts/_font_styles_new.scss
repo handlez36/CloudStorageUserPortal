@@ -632,3 +632,37 @@
 		font-size: 32px;
 	}
 }
+
+@mixin Profile-Card-Label {
+	font-family: $proxima-nova-regular;
+	font-size: 11px;
+	line-height: 1;
+	// letter-spacing: -1.8px;
+	color: $Cool_Gray_Dark_3;
+	text-align: left;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 11px;
+		// letter-spacing: -2.3px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 13px;
+		// letter-spacing: -3px;
+	}
+}
+
+@mixin Profile-Card-Field {
+	font-family: $proxima-nova-regular;
+	font-size: 12px;
+	line-height: 1;
+	// letter-spacing: -1.8px;
+	color: $Cool_Gray_Dark_2;
+	text-align: left;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 13px;
+		// letter-spacing: -2.3px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 16px;
+		// letter-spacing: -3px;
+	}
+}

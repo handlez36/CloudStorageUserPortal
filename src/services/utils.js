@@ -664,6 +664,10 @@ export class Utils {
 		// console.log('Top Diamond Points: ', topDiamondPoints);
 		// console.log('Bottom Diamond Points: ', bottomDiamondPoints);
 
+		if (!topDiamondPoints || !bottomDiamondPoints) {
+			return null;
+		}
+
 		// Get line1 and line2 points based on sides being analyzed
 		const lineOneFromPoint = side === SIDES.LEFT ? topDiamondPoints.left : topDiamondPoints.right;
 		const lineOneToPoint = bottomDiamondPoints.bottom;

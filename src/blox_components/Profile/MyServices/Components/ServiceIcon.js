@@ -38,7 +38,12 @@ const ServiceIcon = ({ service, companyServices }) => {
 						const datacenterId = LOCATIONS[location];
 						const enabled = locationHasService(filteredCompanyServices, datacenterId);
 						return (
-							<div className={`location${enabled ? '' : ' disabled'} heading90`}>{location}</div>
+							<div
+								key={`service-icon-${location}`}
+								className={`location${enabled ? '' : ' disabled'} heading90`}
+							>
+								{location}
+							</div>
 						);
 					})}
 				</div>
