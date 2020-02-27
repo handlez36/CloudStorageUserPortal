@@ -3,7 +3,7 @@ import React from 'react';
 import { DIMENSIONS } from 'services/layoutManager';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
-import TicketCount from 'blox_components/Common/TicketCountRow';
+import TicketCount from 'sub_components/Common/TicketCountRow';
 import IssueRequest from 'blox_components/Support/IssueRequest/IssueRequest';
 import ServiceRequest from 'blox_components/Support/ServiceRequest';
 import { TICKET_TYPES, HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';

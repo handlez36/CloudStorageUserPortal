@@ -9,8 +9,6 @@ class RecentPayment extends Component {
 		dollarAmount: '0',
 		centAmount: '0',
 		date: null,
-		screenWidth: null,
-		paymentImage: null,
 		recentTransaction: false,
 	};
 

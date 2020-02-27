@@ -69,7 +69,7 @@ class PortalLayout extends Component {
 		const pageName = PAGES[mod][page];
 
 		const Component = require(`../../pages/${mod}/${pageName}`).default;
-		this.setState({ PageComponent: Component });
+		this.setState({ PageComponent: Component, currentModule: mod.toLowerCase() });
 	};
 
 	updateScreenBreakpoint = screenWidth => {
@@ -102,9 +102,8 @@ class PortalLayout extends Component {
 	}
 
 	render() {
-		const { breakpoint, PageComponent } = this.state;
-		const { module } = this.props;
-
+		const { breakpoint, PageComponent, currentModule } = this.state;
+		console.log('CURRENT MODULE', currentModule);
 		return (
 			<div className='portal-layout v3'>
 				<div className='portal-header'>
@@ -112,7 +111,7 @@ class PortalLayout extends Component {
 				</div>
 				<div className='portal-main'>
 					<div className='main-nav'>
-						<NavSection module={module} />
+						<NavSection module={currentModule} />
 					</div>
 					<div className='main-content'>
 						{PageComponent && <ContentSection content={PageComponent} breakpoint={breakpoint} />}

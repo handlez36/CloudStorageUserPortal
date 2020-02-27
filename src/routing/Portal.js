@@ -72,40 +72,22 @@ class Portal extends Component {
 					<Route
 						exact
 						path='/portal/billing'
-						render={props =>
-							hasBillingAccess ? (
-								<PortalLayout module={'billing'} {...props} />
-							) : (
-								<Home {...props} />
-							)
-						}
+						render={props => (hasBillingAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
 						exact
 						path='/portal/profile'
-						render={props =>
-							true ? <PortalLayout module={'profile'} {...props} /> : <Home {...props} />
-						}
+						render={props => (true ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
 						exact
 						path='/portal/support'
-						render={props =>
-							hasSupportAccess ? (
-								<PortalLayout module={'support'} {...props} />
-							) : (
-								<Home {...props} />
-							)
-						}
+						render={props => (hasSupportAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
 						path='/portal/storage/:share'
 						render={props => {
-							return hasStorageAccess ? (
-								<PortalLayout module={'storage'} {...props} />
-							) : (
-								<Home {...props} />
-							);
+							return hasStorageAccess ? <PortalLayout {...props} /> : <Home {...props} />;
 						}}
 					/>
 					{/* <Route exact path='/portal/sandbox' component={Sandbox} /> */}

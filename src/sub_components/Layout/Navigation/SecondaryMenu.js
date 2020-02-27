@@ -57,6 +57,7 @@ class SecondaryMenu extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		const { menu } = this.state;
+		const { module } = this.props;
 		if (menu !== null && menu !== prevState.menu) {
 			let clientHeight;
 			try {
@@ -65,6 +66,9 @@ class SecondaryMenu extends Component {
 
 			this.setNavHeight(clientHeight);
 			this.setColumnWidth();
+		}
+		if (module !== prevProps.module) {
+			this.getMenuNames(module);
 		}
 	}
 	setGradientPercentage = () => {
@@ -94,13 +98,6 @@ class SecondaryMenu extends Component {
 		} else {
 			height = 182;
 		}
-		// if (screenSize >= 2560) {
-		// 	height = 270;
-		// } else if (screenSize >= 1024) {
-		// 	height = 217;
-		// } else {
-		// 	height = 182;
-		// }
 		const newHeight = height + menuItemsHeight;
 
 		this.setState({ navHeight: newHeight });
@@ -110,7 +107,6 @@ class SecondaryMenu extends Component {
 		const { navHeight, screenSize } = this.state;
 
 		let columnWidth;
-		// console.log('SCREENSIZE NIAMHO', screenSize);
 		if (screenSize >= RESOLUTIONS.HIGH) {
 			columnWidth = 104.5;
 		} else if (screenSize > RESOLUTIONS.MED) {
@@ -118,26 +114,18 @@ class SecondaryMenu extends Component {
 		} else {
 			columnWidth = 56;
 		}
-		// if (screenSize >= 2560) {
-		// 	columnWidth = 104.5;
-		// } else if (screenSize > 1024) {
-		// 	columnWidth = 72;
-		// } else {
-		// 	columnWidth = 56;
-		// }
+
 		this.setState({ columnWidth });
 	};
 
 	onMouseOver = () => {
 		const { showPrimaryMenu } = this.state;
-		// console.log('mouseOver');
 		if (!showPrimaryMenu) {
 			this.setState({ showPrimaryMenu: true });
 		}
 	};
 	onMouseLeave = () => {
 		const { showPrimaryMenu } = this.state;
-		// console.log('mouseLeave');
 		if (showPrimaryMenu) {
 			this.setState({ showPrimaryMenu: false });
 		}

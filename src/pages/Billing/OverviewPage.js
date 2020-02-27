@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { DIMENSIONS } from 'services/layoutManager';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
-import TicketCount from 'blox_components/Common/TicketCountRow';
+import TicketCount from 'sub_components/Common/TicketCountRow';
 import RecentPayment from 'blox_components/Billing/RecentPayment';
 import RecentInvoices from 'blox_components/Billing/RecentInvoices';
 import TotalAmountDue from 'blox_components/Billing/TotalAmountDue/TotalAmountDue';
