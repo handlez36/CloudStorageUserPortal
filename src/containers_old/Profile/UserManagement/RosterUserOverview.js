@@ -67,19 +67,11 @@ class RosterUserOverview extends Component {
 	render() {
 		return (
 			<div className='roster-user-overview'>
-				{/* <div className={'header'}>
-					<div className={'title-wrapper'}>
-						<div className={'title'}>ROSTER</div>
-						<div className={'sub-title'}>{this.state.activeRosterCount} Active</div>
+				<div className={'sub-title-wrapper'}>
+					<div className={'sub-title heading70'}>
+						{`( ${this.state.activeRosterCount} Active )`}
 					</div>
-
-					<BloxButton
-						title={'MANAGE ROSTER LIST'}
-						customClass={'manage-roster'}
-						onClick={this.goToRosterUsers}
-						enabled={true}
-					/>
-				</div> */}
+				</div>
 
 				<div className={'overview-user-wrapper'}>
 					<div className={'locations'}>

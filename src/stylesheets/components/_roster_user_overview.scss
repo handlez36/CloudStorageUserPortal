@@ -13,6 +13,12 @@
 	.row-1 {
 		display: flex;
 	}
+	.sub-title {
+		position: absolute;
+		top: 14px;
+		left: 47%;
+		color: $Cool_Gray_Dark_3;
+	}
 
 	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 		width: GetSize(68);
@@ -21,6 +27,10 @@
 		padding-top: GetSize(3);
 		padding-bottom: GetSize(3);
 		padding-left: GetSize(4);
+		.sub-title {
+			top: 12px;
+			left: 39%;
+		}
 	}
 
 	@media screen and (min-width: $high-res + 1) {
@@ -29,5 +39,9 @@
 		padding-top: GetSize(5);
 		padding-bottom: GetSize(5);
 		padding-left: GetSize(6);
+		.sub-title {
+			top: 10px;
+			left: 33%;
+		}
 	}
 }

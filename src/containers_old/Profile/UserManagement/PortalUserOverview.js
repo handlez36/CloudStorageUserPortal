@@ -124,6 +124,11 @@ export default class PortalUserOverview extends Component {
 				</Fragment>
 
 				<div className='portal-user-overview'>
+					<div className={'sub-title-wrapper'}>
+						<div className={'sub-title heading70'}>
+							{`( ${this.state.activeUserCount} Active )`}
+						</div>
+					</div>
 					<div className='overview-user-wrapper'>
 						{users &&
 							users.map((user, index) => {

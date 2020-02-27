@@ -10,7 +10,6 @@ const ComponentWrapper = ({
 	children,
 	showButton,
 	buttonTitle,
-	customSubHeader,
 }) => {
 	let wrapperClass = 'component-wrapper';
 	if (hideTitle) wrapperClass += ' component-wrapper--no-title';
@@ -21,7 +20,6 @@ const ComponentWrapper = ({
 		<div className={wrapperClass}>
 			<div className='component-wrapper_title heading60'>
 				<span className='title'>{!hideTitle && title}</span>
-				{customSubHeader && <span className='sub-header'>{customSubHeader}</span>}
 				<div className='component-wrapper_button'>
 					{showButton && (
 						<BloxButton

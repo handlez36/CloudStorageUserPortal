@@ -6,7 +6,12 @@
 	padding-top: GetSize(2);
 	padding-bottom: GetSize(2);
 	display: flex;
-
+	.sub-title {
+		position: absolute;
+		top: -26px;
+		left: 47%;
+		color: $Cool_Gray_Dark_3;
+	}
 	.users {
 		overflow: hidden;
 	}
@@ -41,6 +46,10 @@
 		.portal-user-overview-block {
 			margin-right: GetSize(2);
 		}
+		.sub-title {
+			top: -44px;
+			left: 39%;
+		}
 		.overview-user-wrapper {
 			width: GetSize(68);
 			height: GetSize(14);
@@ -69,6 +78,10 @@
 		padding-bottom: GetSize(5);
 		padding-left: GetSize(3);
 
+		.sub-title {
+			top: -54px;
+			left: 33%;
+		}
 		.portal-user-overview-block {
 			margin-right: GetSize(3);
 		}
