@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import React from 'react';
-import { Utils } from '../../../services/utils';
+import { Utils } from 'services/utils';
 
 export default class RosterUserOverviewBlock extends Component {
 	constructor(props) {

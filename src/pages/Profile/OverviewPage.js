@@ -5,9 +5,10 @@ import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import MyServices from 'blox_components/Profile/MyServices/MyServices';
 import MyProfile from 'blox_components/Profile/MyProfile';
-import UserManagement from 'containers_old/Profile/UserManagement/PortalUserOverview';
-import RosterManagement from 'containers_old/Profile/UserManagement/RosterUserOverview';
+import UserManagement from 'blox_components/Profile/PortalUserOverview/Components/PortalUserOverview';
+import RosterManagement from 'blox_components/Profile/RosterUserOverview/Components/RosterUserOverview';
 import { RESOLUTIONS } from 'services/config';
+import { consolidateStreamedStyles } from 'styled-components';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {

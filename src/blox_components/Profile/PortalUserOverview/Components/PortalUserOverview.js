@@ -1,16 +1,16 @@
 import { Component, Fragment } from 'react';
 import React from 'react';
 import { CarouselCycle } from 'containers_old/Storage/CarouselCycle';
-import BloxButton from 'sub_components/Common/BloxButton';
+import { UserApi } from 'services/user';
+import { CompanyProfileApi } from 'services/companyProfile';
 import PortalUserOverviewBlock from './PortalUserOverviewBlock';
 
-import PortalUserOverviewSelectedBlock from './PortalUserOverviewSelectedBlock';
-import { UserApi } from '../../../services/user';
-import { CompanyProfileApi } from '../../../services/companyProfile';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Arrow = `${CDN_URL}common/left-arrow-active.png`;
 
-export default class PortalUserOverview extends Component {
+const AMOUNT_OF_CARDS_TO_DISPLAY = 4;
+
+class PortalUserOverview extends Component {
 	constructor(props) {
 		super(props);
 		this.companyApi = new CompanyProfileApi();
@@ -104,26 +104,26 @@ export default class PortalUserOverview extends Component {
 
 	render() {
 		const { currentItem, disabled, users } = this.state;
-		const { data } = this.props;
-		const amountToDisplay = 4;
+
 		return (
-			<div className='carousel-container portal-user-management'>
+			<div className='carousel-container portal-user-overview'>
 				<Fragment>
 					<div className='nav-container-right'>
-						{currentItem !== users.length - amountToDisplay && users.length > amountToDisplay && (
-							<div
-								className='nav-arrow-right'
-								onClick={disabled ? function() {} : () => this.cycleItems('prev')}
-							>
-								<div className='arrow-image'>
-									<img src={Arrow} />
+						{currentItem !== users.length - AMOUNT_OF_CARDS_TO_DISPLAY &&
+							users.length > AMOUNT_OF_CARDS_TO_DISPLAY && (
+								<div
+									className='nav-arrow-right'
+									onClick={disabled ? function() {} : () => this.cycleItems('prev')}
+								>
+									<div className='arrow-image'>
+										<img src={Arrow} />
+									</div>
 								</div>
-							</div>
-						)}
+							)}
 					</div>
 				</Fragment>
 
-				<div className='portal-user-overview'>
+				<div className='portal-user-wrapper'>
 					<div className={'sub-title-wrapper'}>
 						<div className={'sub-title heading70'}>
 							{`( ${this.state.activeUserCount} Active )`}
@@ -148,7 +148,7 @@ export default class PortalUserOverview extends Component {
 
 				<Fragment>
 					<div className='nav-container-left'>
-						{currentItem !== 0 && users.length > amountToDisplay && (
+						{currentItem !== 0 && users.length > AMOUNT_OF_CARDS_TO_DISPLAY && (
 							<div
 								className='nav-arrow-left'
 								onClick={disabled ? function() {} : () => this.cycleItems('next')}
@@ -164,3 +164,5 @@ export default class PortalUserOverview extends Component {
 		);
 	}
 }
+
+export default PortalUserOverview;

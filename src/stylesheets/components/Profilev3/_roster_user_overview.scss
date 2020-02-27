@@ -1,0 +1,47 @@
+.roster-user-overview {
+	width: GetSize(46);
+	height: GetSize(14);
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+	background-color: $White;
+	padding-top: GetSize(2);
+	padding-bottom: GetSize(2);
+	padding-left: GetSize(3);
+
+	.row-wrapper {
+		display: block;
+	}
+	.row-1 {
+		display: flex;
+	}
+	.sub-title {
+		position: absolute;
+		top: 14px;
+		left: 47%;
+		color: $Cool_Gray_Dark_3;
+	}
+
+	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+		width: GetSize(68);
+		height: GetSize(20);
+
+		padding-top: GetSize(3);
+		padding-bottom: GetSize(3);
+		padding-left: GetSize(4);
+		.sub-title {
+			top: 12px;
+			left: 39%;
+		}
+	}
+
+	@media screen and (min-width: $high-res + 1) {
+		width: GetSize(114);
+		height: GetSize(34);
+		padding-top: GetSize(5);
+		padding-bottom: GetSize(5);
+		padding-left: GetSize(6);
+		.sub-title {
+			top: 10px;
+			left: 33%;
+		}
+	}
+}

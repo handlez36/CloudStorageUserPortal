@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Netmask } from 'netmask';
-import PortalUserOverview from '../../containers_old/Profile/UserManagement/PortalUserOverview';
+
 // import { Responsive, WidthProvider } from 'react-grid-layout';
 // import BloxGrid from './Layout/BloxGrid';
 // import CrossGrid from './Layout/CrossGrid';
@@ -168,7 +168,6 @@ export default class Sandbox extends Component {
 			<div id='sandbox'>
 				{/* <ColumnSide navHeight={500} width={100} percentage={75} side='left' /> */}
 
-				<PortalUserOverview />
 				{/* <div className='menu-gradient-testing'>
 					<div className='top-diamond' />
 					<div className='sides'>

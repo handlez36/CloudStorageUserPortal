@@ -1,0 +1,93 @@
+.roster-user-overview-block {
+	width: GetSize(8);
+	height: GetSize(10);
+	margin-right: GetSize(1);
+	text-align: center;
+
+	.name {
+		@include ProfileHeadingSmall;
+		position: relative;
+		background-color: $DCBLOX_Gray;
+		color: $White;
+		//line-height: 2vh;
+		text-transform: uppercase;
+	}
+	.name-tip {
+		position: absolute;
+		bottom: -15%;
+		right: 42%;
+		border-left: 0.25vw solid transparent;
+		border-right: 0.25vw solid transparent;
+		border-top: 0.25vh solid $DCBLOX_Gray;
+	}
+	.image img {
+		width: 100%;
+	}
+	.roster-count {
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		background-color: $Bright_Blue;
+		line-height: 18px;
+		text-align: center;
+		color: $White;
+		margin-top: -20px;
+		margin-left: 3px;
+		position: relative;
+	}
+	&:hover {
+		.block-wrapper {
+			box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+		}
+		.name {
+			background-color: $Bright_Blue;
+		}
+		.name-tip {
+			border-top: 0.5vh solid $Bright_Blue;
+		}
+	}
+
+	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+		width: GetSize(11);
+		height: GetSize(14);
+		margin-right: GetSize(2);
+		.name {
+			height: GetSize(4);
+			padding-top: GetSize(1);
+		}
+		.name-tip {
+			position: absolute;
+			bottom: -10%;
+			right: 20%;
+			border-left: 0.25vw solid transparent;
+			border-right: 0.25vw solid transparent;
+			border-top: 0.25vh solid $DCBLOX_Gray;
+		}
+	}
+
+	@media screen and (min-width: $high-res + 1) {
+		width: GetSize(20);
+		height: GetSize(25);
+		margin-right: GetSize(3);
+		.name {
+			height: GetSize(4);
+			padding-top: GetSize(1);
+		}
+		.name-tip {
+			position: absolute;
+			bottom: -10%;
+			right: 20%;
+		}
+		.roster-count {
+			width: GetSize(3);
+			height: GetSize(3);
+			line-height: 26px;
+			margin-top: -35px;
+			margin-left: GetSize(2);
+		}
+	}
+}
+
+.roster-user-overview-block.disabled {
+	opacity: 0.3;
+}

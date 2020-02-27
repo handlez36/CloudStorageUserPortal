@@ -8,9 +8,8 @@
 		flex: 0 1 auto;
 		height: GetHeight(5);
 		@include FlexboxRow;
-		justify-content: flex-start;
 		text-align: left;
-		padding-top: GetSize(2);
+		align-items: flex-end;
 		span {
 			margin-bottom: GetSize(2);
 		}

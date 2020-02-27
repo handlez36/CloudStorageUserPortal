@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { AvatarApi } from '../../../services/avatar';
+import { AvatarApi } from 'services/avatar';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const badge = `${CDN_URL}profile/icon-badge.svg`;
 

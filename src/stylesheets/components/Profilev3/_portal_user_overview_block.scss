@@ -1,0 +1,69 @@
+.portal-user-overview-block {
+	//width:7vh;
+	text-align: center;
+	.block-wrapper {
+		//max-width: 4.5vh;
+		width: GetSize(8);
+		height: GetSize(10);
+	}
+	.name {
+		position: relative;
+		@include ProfileHeadingSmall;
+		height: 2vh;
+		width: 100%;
+
+		background-color: $DCBLOX_Gray;
+		color: $White;
+		line-height: 2vh;
+		overflow: hidden;
+	}
+	.name-tip {
+		position: absolute;
+		bottom: -12%;
+		right: 42%;
+		border-left: 0.25vw solid transparent;
+		border-right: 0.25vw solid transparent;
+		border-top: 0.25vh solid $DCBLOX_Gray;
+	}
+	.image img {
+		width: 100%;
+		height: 100%;
+	}
+	.badge {
+		float: left;
+	}
+	&:hover {
+		img {
+			box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+		}
+		.name {
+			background-color: $Bright_Blue;
+		}
+		.name-tip {
+			border-top: 0.5vh solid $Bright_Blue;
+		}
+	}
+}
+
+.two-rows {
+	.block-wrapper {
+		width: calculateVw(33, 1440);
+		height: calculateVh(75, 1440);
+		cursor: pointer;
+	}
+}
+.two-rows .portal-user-overview-block .name {
+	display: none;
+}
+.two-rows .portal-user-overview-block .name-tip {
+	display: none;
+}
+.two-rows .portal-user-overview-block .badge {
+	display: none;
+}
+.two-rows .portal-user-overview-block {
+	padding-left: 1vh;
+}
+.portal-user-overview-block.disabled {
+	opacity: 0.3;
+}

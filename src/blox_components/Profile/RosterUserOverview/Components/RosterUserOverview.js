@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BloxButton from 'sub_components/Common/BloxButton';
 import { UserApi } from 'services/user';
 import { updatePage } from 'actions/siteTracking';
 
@@ -67,10 +66,8 @@ class RosterUserOverview extends Component {
 	render() {
 		return (
 			<div className='roster-user-overview'>
-				<div className={'sub-title-wrapper'}>
-					<div className={'sub-title heading70'}>
-						{`( ${this.state.activeRosterCount} Active )`}
-					</div>
+				<div className='sub-title-wrapper'>
+					<div className='sub-title heading70'>{`( ${this.state.activeRosterCount} Active )`}</div>
 				</div>
 
 				<div className={'overview-user-wrapper'}>
@@ -79,7 +76,7 @@ class RosterUserOverview extends Component {
 							<div className={'row-1'}>
 								{this.state.locations &&
 									this.state.locations.map((location, index) => {
-										return [<RosterUserOverviewBlock key={index} location={location} />];
+										return <RosterUserOverviewBlock key={index} location={location} />;
 									})}
 							</div>
 						</div>
