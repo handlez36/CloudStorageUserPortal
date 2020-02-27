@@ -1,0 +1,57 @@
+.logout-wrapper {
+	width: GetSize(24);
+	border: 1px solid blue;
+	display: flex;
+	flex-direction: row;
+	.avatar {
+		img {
+			width: GetSize(5);
+			height: GetSize(5);
+		}
+	}
+	.name {
+		width: GetSize(19);
+		height: GetSize(5);
+		padding-left: GetSize(1);
+		padding-right: GetSize(1);
+		color: $Cool_Gray_Dark_3;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		text-transform: uppercase;
+	}
+
+	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+		width: GetSize(33);
+
+		.avatar {
+			img {
+				border: 1px solid green;
+				width: GetSize(8);
+				height: GetSize(8);
+			}
+		}
+		.name {
+			border: 1px solid pink;
+			width: GetSize(25);
+			height: GetSize(8);
+		}
+	}
+
+	@media screen and (min-width: $high-res + 1) {
+		width: GetSize(43);
+
+		.avatar {
+			img {
+				border: 1px solid green;
+				width: GetSize(10);
+				height: GetSize(10);
+			}
+		}
+		.name {
+			border: 1px solid pink;
+			width: GetSize(23);
+			height: GetSize(10);
+		}
+	}
+}
