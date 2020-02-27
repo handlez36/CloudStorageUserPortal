@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import Button from 'sub_components/Common/BloxButton';
+
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const upIcon = `${CDN_URL}common/icons-arrow-circle@3x.png`;
 const downIcon = `${CDN_URL}common/buttons-arrow-circle-small@3x.png`;
@@ -33,7 +35,17 @@ const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback
 					{summary}
 					<img src={expanded ? upIcon : downIcon} alt='expand' />
 				</div>
-				{expanded && <div className='expanded-section'>{detail}</div>}
+				{expanded && (
+					<div className='expanded-section'>
+						{detail}
+						<Button
+							title='EDIT CONTACT INFO'
+							onClick={() => {}}
+							customClass='support-button gradient'
+							enabled
+						/>
+					</div>
+				)}
 			</div>
 		</div>
 	);

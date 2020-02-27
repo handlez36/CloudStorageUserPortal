@@ -1,4 +1,11 @@
 .company-profile {
-	width: GetSize(22);
+	width: 100%;
 	height: 100%;
+	button {
+		background-color: $Blue !important;
+		background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 37%, $Blue 10%) !important;
+		.title {
+			color: $White;
+		}
+	}
 }

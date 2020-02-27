@@ -18,19 +18,25 @@ const LAYOUT_CONFIG = {
 		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.MED]: {
-		companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
-		rosterUserManagement: { x: 5, y: 43, dim: DIMENSIONS.TWO_BY_SIX },
-		myProfile: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_THREE },
-		portalUserManagement: { x: 5, y: 24, dim: DIMENSIONS.TWO_BY_SIX },
-		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
+		companyProfile: { x: 1, y: 58, dim: DIMENSIONS.TWO_BY_THREE },
+		rosterUserManagement: { x: 5, y: 58, dim: DIMENSIONS.TWO_BY_SIX },
+		myProfile: { x: 1, y: 31, dim: DIMENSIONS.TWO_BY_THREE },
+		portalUserManagement: { x: 5, y: 31, dim: DIMENSIONS.TWO_BY_SIX },
+		myServices: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.HIGH]: {
-		companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
-		rosterUserManagement: { x: 5, y: 43, dim: DIMENSIONS.TWO_BY_SIX },
-		myProfile: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_THREE },
-		portalUserManagement: { x: 5, y: 24, dim: DIMENSIONS.TWO_BY_SIX },
-		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
+		companyProfile: { x: 1, y: 92, dim: DIMENSIONS.TWO_BY_THREE },
+		rosterUserManagement: { x: 5, y: 92, dim: DIMENSIONS.TWO_BY_SIX },
+		myProfile: { x: 1, y: 50, dim: DIMENSIONS.TWO_BY_THREE },
+		portalUserManagement: { x: 5, y: 50, dim: DIMENSIONS.TWO_BY_SIX },
+		myServices: { x: 1, y: 3, dim: DIMENSIONS.TWO_BY_SIX },
 	},
+};
+
+const CARD_EXPAND_Y_COORDS = {
+	[RESOLUTIONS.LOW]: { y: 62, initialY: 43, customHeight: null },
+	[RESOLUTIONS.MED]: { y: 81, initialY: 58, customHeight: 50 }, // 86
+	[RESOLUTIONS.HIGH]: { y: 117, initialY: 92, customHeight: 67 }, // 134
 };
 
 class OverviewPage extends Component {
@@ -42,20 +48,29 @@ class OverviewPage extends Component {
 		const { expandedCard } = this.state;
 		const config = LAYOUT_CONFIG[breakpoint];
 
-		// console.log('Expanded Card: ', expandedCard);
 		if (expandedCard && expandedCard === CARDS.MY_PROFILE) {
-			// console.log('Using new config');
 			const defaultConfig = { ...config };
-			defaultConfig.companyProfile = { x: 1, y: 62, dim: DIMENSIONS.TWO_BY_THREE };
-			defaultConfig.myProfile = { x: 1, y: 24, dim: DIMENSIONS.FOUR_BY_THREE };
+			defaultConfig.myProfile = {
+				...defaultConfig.myProfile,
+				dim: DIMENSIONS.FOUR_BY_THREE,
+				customHeight: CARD_EXPAND_Y_COORDS[breakpoint].customHeight,
+			};
+			defaultConfig.companyProfile = {
+				x: 1,
+				y: CARD_EXPAND_Y_COORDS[breakpoint].y,
+				dim: DIMENSIONS.TWO_BY_THREE,
+			};
 			return defaultConfig;
 		} else if (expandedCard && expandedCard === CARDS.COMPANY_PROFILE) {
-			// console.log('Using new company config');
 			const defaultConfig = { ...config };
-			defaultConfig.companyProfile = { x: 1, y: 43, dim: DIMENSIONS.FOUR_BY_THREE };
+			defaultConfig.companyProfile = {
+				x: 1,
+				y: CARD_EXPAND_Y_COORDS[breakpoint].initialY,
+				dim: DIMENSIONS.FOUR_BY_THREE,
+				customHeight: CARD_EXPAND_Y_COORDS[breakpoint].customHeight,
+			};
 			return defaultConfig;
 		} else {
-			// console.log('Using default config');
 			return config;
 		}
 	};
@@ -72,7 +87,7 @@ class OverviewPage extends Component {
 		const { expandedCard } = this.state;
 
 		const layout = this.getLayoutConfig(breakpoint);
-		// console.log('Layout: ', layout);
+		console.log('Layout: ', layout);
 		return (
 			<BloxPage
 				name='page profile-overview-page'
