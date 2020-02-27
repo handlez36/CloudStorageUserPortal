@@ -79,7 +79,7 @@ export class UserProfileApi {
 		return 'Hello';
 	};
 
-	static getFirstAndLastName = auth_status => {
+	getFirstAndLastName = auth_status => {
 		const { user } = auth_status;
 		let first = '';
 		let last = '';
