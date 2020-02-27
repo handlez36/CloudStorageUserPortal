@@ -33,25 +33,25 @@ class SecondaryMenu extends Component {
 
 		this.setNavHeight(clientHeight);
 		this.setColumnWidth();
-		// this.myObserver = new ResizeObserver(entries => {
-		// 	// const newClientHeight = document.getElementById('menu-secondary').clientHeight;
-		// 	const newClientHeight = document.getElementById('menu-secondary')
-		// 		? document.getElementById('menu-secondary').clientHeight
-		// 		: null;
-		// 	entries.forEach(() => {
-		// 		this.checkScreenSize();
-		// 		this.setColumnWidth();
-		// 		this.setNavHeight(newClientHeight);
-		// 		this.setGradientPercentage();
-		// 	});
-		// });
+		this.myObserver = new ResizeObserver(entries => {
+			// const newClientHeight = document.getElementById('menu-secondary').clientHeight;
+			const newClientHeight = document.getElementById('menu-secondary')
+				? document.getElementById('menu-secondary').clientHeight
+				: null;
+			entries.forEach(() => {
+				this.checkScreenSize();
+				this.setColumnWidth();
+				this.setNavHeight(newClientHeight);
+				this.setGradientPercentage();
+			});
+		});
 
-		// setTimeout(() => {
-		// 	const wrapperElement = document.querySelector('.main-content');
-		// 	if (wrapperElement) {
-		// 		this.myObserver.observe(wrapperElement);
-		// 	}
-		// }, 500);
+		setTimeout(() => {
+			const wrapperElement = document.querySelector('.main-content');
+			if (wrapperElement) {
+				this.myObserver.observe(wrapperElement);
+			}
+		}, 500);
 	}
 	setGradientPercentage = () => {
 		const { gradientLine, percentage, crossPoint } = Utils.calculateGradientPath(
