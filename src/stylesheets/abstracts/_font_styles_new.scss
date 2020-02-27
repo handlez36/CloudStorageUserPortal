@@ -402,15 +402,17 @@
 @mixin Numbers5 {
 	font-family: $proxima-nova-regular;
 	font-size: 12px;
-	line-height: 1px;
+	line-height: 12px;
 	letter-spacing: -0.6px;
-	color: $DCBLOX_Gray;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
-		font-size: 14px;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 12px;
+		line-height: 12px;
 		letter-spacing: -0.7px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 16px;
+		line-height: 14px;
 		letter-spacing: -0.8px;
 	}
 }
@@ -569,16 +571,34 @@
 	font-size: 14px;
 	letter-spacing: normal;
 	line-height: 1px;
-	color: $DCBLOX_Gray;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 16px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 18px;
 	}
 }
 
 /** Temporary styles */
+
+@mixin ProfileHeadingSmall {
+	font-family: $font-family-primary-subheads;
+	font-size: 12px;
+	letter-spacing: 0.6px;
+	line-height: 12px;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 16px;
+		letter-spacing: 0.8px;
+		line-height: 16px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		letter-spacing: 0.9px;
+		line-height: 18px;
+	}
+}
 @mixin Total-Amount-Due {
 	font-family: $proxima-nova-regular;
 	font-size: 24px;

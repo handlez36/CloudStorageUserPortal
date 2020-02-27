@@ -6,6 +6,7 @@ import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import MyServices from 'blox_components/Profile/MyServices/MyServices';
 import MyProfile from 'blox_components/Profile/MyProfile';
 import UserManagement from 'containers_old/Profile/UserManagement/PortalUserOverview';
+import RosterManagement from 'containers_old/Profile/UserManagement/RosterUserOverview';
 import { RESOLUTIONS } from 'services/config';
 
 const LAYOUT_CONFIG = {
@@ -17,11 +18,11 @@ const LAYOUT_CONFIG = {
 		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.MED]: {
-		// companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
-		// rosterUserManagement: { x: 5, y: 43, dim: DIMENSIONS.TWO_BY_SIX },
-		// myProfile: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_THREE },
+		companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
+		rosterUserManagement: { x: 5, y: 43, dim: DIMENSIONS.TWO_BY_SIX },
+		myProfile: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_THREE },
 		portalUserManagement: { x: 5, y: 24, dim: DIMENSIONS.TWO_BY_SIX },
-		//myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
+		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.HIGH]: {
 		companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
@@ -35,7 +36,7 @@ const LAYOUT_CONFIG = {
 class OverviewPage extends Component {
 	render() {
 		const { breakpoint, location } = this.props;
-
+		//const customSubHeader = <div>Hello</div>;
 		return (
 			<BloxPage
 				name='page profile-overview-page'
@@ -54,7 +55,13 @@ class OverviewPage extends Component {
 					</ComponentWrapper>
 				</div>
 				<div key='portalUserManagement' className='portalUserManagement'>
-					<ComponentWrapper title='PORTAL User Management' hideBorder>
+					<ComponentWrapper
+						title='PORTAL User Management'
+						buttonTitle='MANAGE PORTAL'
+						showButton
+						hideBorder
+						//customSubHeader={customSubHeader}
+					>
 						<UserManagement />
 					</ComponentWrapper>
 				</div>
@@ -62,7 +69,14 @@ class OverviewPage extends Component {
 					<ComponentWrapper title='COMPANY Profile' hideBorder />
 				</div>
 				<div key='rosterUserManagement' className='rosterUserManagement'>
-					<ComponentWrapper title='ROSTER User Management' hideBorder />
+					<ComponentWrapper
+						title='ROSTER User Management'
+						buttonTitle='MANAGE ROSTER'
+						showButton
+						hideBorder
+					>
+						<RosterManagement />
+					</ComponentWrapper>
 				</div>
 			</BloxPage>
 		);

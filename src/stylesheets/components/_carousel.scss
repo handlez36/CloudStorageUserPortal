@@ -67,6 +67,94 @@
 	}
 
 	&.portal-user-management {
-		border: 5px solid green;
+		width: GetSize(46);
+
+		.nav-container-left {
+			width: GetSize(3);
+			height: GetSize(14);
+			background-color: transparent;
+			.nav-arrow-left {
+				border-radius: 0px;
+				img {
+					width: 6px;
+					height: 14.4px;
+				}
+			}
+		}
+		.nav-container-right {
+			width: GetSize(3);
+			height: GetSize(13);
+			background-color: transparent;
+			.nav-arrow-right {
+				border-radius: 0px;
+				img {
+					width: 6px;
+					height: 14.4px;
+				}
+			}
+		}
+		.nav-arrow-left:hover,
+		.nav-arrow-right:hover {
+			background-color: transparent;
+		}
+		@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+			width: GetSize(68);
+			height: GetSize(20);
+			.nav-container-right {
+				width: GetSize(3);
+				height: GetSize(20);
+				background-color: transparent;
+				.nav-arrow-right {
+					border-radius: 0px;
+					img {
+						width: 6.7px;
+						height: GetSize(2);
+					}
+				}
+			}
+			.nav-container-left {
+				width: GetSize(3);
+				height: GetSize(20);
+				background-color: transparent;
+				.nav-arrow-left {
+					border-radius: 0px;
+					img {
+						width: 6.7px;
+						height: GetSize(2);
+					}
+				}
+			}
+		}
+
+		@media screen and (min-width: $high-res + 1) {
+			height: GetSize(24);
+			width: GetSize(20);
+			.nav-container-right {
+				width: GetSize(3);
+				height: GetSize(24);
+				background-color: transparent;
+				.nav-arrow-right {
+					border-radius: 0px;
+
+					img {
+						width: 10px;
+						height: GetSize(3);
+					}
+				}
+			}
+			.nav-container-left {
+				width: GetSize(3);
+				height: GetSize(24);
+				background-color: transparent;
+				.nav-arrow-left {
+					border-radius: 0px;
+
+					img {
+						width: 10px;
+						height: GetSize(3);
+					}
+				}
+			}
+		}
 	}
 }

@@ -30,7 +30,7 @@ export default class PortalUserOverviewBlock extends Component {
 			>
 				<div className={'block-wrapper'}>
 					<div className={'name'}>
-						{firstName}
+						{`${firstName}.`}
 						{this.props.user.lastname}
 						<span className={'name-tip'} />
 					</div>

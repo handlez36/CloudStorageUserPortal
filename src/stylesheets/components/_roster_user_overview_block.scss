@@ -1,19 +1,16 @@
 .roster-user-overview-block {
-	width: 6vh;
+	width: GetSize(8);
+	height: GetSize(10);
+	margin-right: GetSize(1);
 	text-align: center;
 
 	.name {
-		$map: (
-			576: 8,
-			1440: 10,
-			2560: 15,
-		);
+		@include ProfileHeadingSmall;
 		position: relative;
-		font-size: least-squares-fit($map);
-		font-family: $font-family-primary-subheads;
 		background-color: $DCBLOX_Gray;
 		color: $White;
-		line-height: 2vh;
+		//line-height: 2vh;
+		text-transform: uppercase;
 	}
 	.name-tip {
 		position: absolute;
@@ -27,20 +24,16 @@
 		width: 100%;
 	}
 	.roster-count {
-		margin-top: 0.25vh;
-		width: 1.5vh;
-		height: 1.5vh;
+		width: 16px;
+		height: 16px;
 		border-radius: 50%;
 		background-color: $Bright_Blue;
-		font-family: Bourgeois;
-		font-size: 1vh;
-		//font-weight: bold;
-		font-style: normal;
-		font-stretch: condensed;
-		line-height: 1.5vh;
-		letter-spacing: normal;
+		line-height: 18px;
 		text-align: center;
 		color: $White;
+		margin-top: -20px;
+		margin-left: 3px;
+		position: relative;
 	}
 	&:hover {
 		.block-wrapper {
@@ -53,19 +46,48 @@
 			border-top: 0.5vh solid $Bright_Blue;
 		}
 	}
+
+	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+		width: GetSize(11);
+		height: GetSize(14);
+		margin-right: GetSize(2);
+		.name {
+			height: GetSize(4);
+			padding-top: GetSize(1);
+		}
+		.name-tip {
+			position: absolute;
+			bottom: -10%;
+			right: 20%;
+			border-left: 0.25vw solid transparent;
+			border-right: 0.25vw solid transparent;
+			border-top: 0.25vh solid $DCBLOX_Gray;
+		}
+	}
+
+	@media screen and (min-width: $high-res + 1) {
+		width: GetSize(20);
+		height: GetSize(25);
+		margin-right: GetSize(3);
+		.name {
+			height: GetSize(4);
+			padding-top: GetSize(1);
+		}
+		.name-tip {
+			position: absolute;
+			bottom: -10%;
+			right: 20%;
+		}
+		.roster-count {
+			width: GetSize(3);
+			height: GetSize(3);
+			line-height: 26px;
+			margin-top: -35px;
+			margin-left: GetSize(2);
+		}
+	}
 }
-.two-rows .roster-user-overview-block .name {
-	display: none;
-}
-.two-rows .roster-user-overview-block .name-tip {
-	display: none;
-}
-.two-rows .roster-user-overview-block .badge {
-	display: none;
-}
-.two-rows .roster-user-overview-block {
-	padding-left: 1vh;
-}
+
 .roster-user-overview-block.disabled {
 	opacity: 0.3;
 }

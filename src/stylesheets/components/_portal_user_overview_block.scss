@@ -8,9 +8,10 @@
 	}
 	.name {
 		position: relative;
+		@include ProfileHeadingSmall;
 		height: 2vh;
 		width: 100%;
-		font-family: $font-family-primary-subheads;
+
 		background-color: $DCBLOX_Gray;
 		color: $White;
 		line-height: 2vh;

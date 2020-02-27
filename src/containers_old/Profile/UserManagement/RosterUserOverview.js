@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import RosterUserOverviewBlock from './RosterUserOverviewBlock';
-import BloxButton from '../../../components/Common/BloxButton';
-import { UserApi } from '../../../services/user';
-import { updatePage } from '../../../actions/siteTracking';
+import BloxButton from 'sub_components/Common/BloxButton';
+import { UserApi } from 'services/user';
+import { updatePage } from 'actions/siteTracking';
 
-import { CompanyProfileApi } from '../../../services/companyProfile';
+import { CompanyProfileApi } from 'services/companyProfile';
+import RosterUserOverviewBlock from './RosterUserOverviewBlock';
 
 class RosterUserOverview extends Component {
 	constructor(props) {
@@ -67,7 +67,7 @@ class RosterUserOverview extends Component {
 	render() {
 		return (
 			<div className='roster-user-overview'>
-				<div className={'header'}>
+				{/* <div className={'header'}>
 					<div className={'title-wrapper'}>
 						<div className={'title'}>ROSTER</div>
 						<div className={'sub-title'}>{this.state.activeRosterCount} Active</div>
@@ -79,7 +79,7 @@ class RosterUserOverview extends Component {
 						onClick={this.goToRosterUsers}
 						enabled={true}
 					/>
-				</div>
+				</div> */}
 
 				<div className={'overview-user-wrapper'}>
 					<div className={'locations'}>
@@ -104,7 +104,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ updatePage },
-)(RosterUserOverview);
+export default connect(mapStateToProps, { updatePage })(RosterUserOverview);

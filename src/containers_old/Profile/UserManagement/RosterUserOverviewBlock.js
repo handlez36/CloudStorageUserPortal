@@ -27,10 +27,10 @@ export default class RosterUserOverviewBlock extends Component {
 					<div className={'image'}>
 						<img src={this.state.image} />
 					</div>
+					{this.props.location.rosterUserCount !== undefined && (
+						<div className={'roster-count numbers5'}>{this.props.location.rosterUserCount}</div>
+					)}
 				</div>
-				{this.props.location.rosterUserCount !== undefined && (
-					<div className={'roster-count'}>{this.props.location.rosterUserCount}</div>
-				)}
 			</div>
 		);
 	}

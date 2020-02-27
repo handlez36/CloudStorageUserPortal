@@ -77,6 +77,10 @@
 	background-color: $Dark_Lime;
 	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Med_Lime 48%);
 }
+.support-button.blue-gradient {
+	background-color: $Blue;
+	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Bright_Blue 48%);
+}
 .support-button.bright-emerald-gradient {
 	background-color: $Bright_Emerald;
 	background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Bright_Emerald 48%);
