@@ -54,7 +54,7 @@ const defaultBody = toggleOpen => (
 				<Button
 					title='TRY AGAIN'
 					enabled={true}
-					customClass='support-button'
+					customClass='blox-button'
 					onClick={toggleOpen}
 				/>
 			</div>

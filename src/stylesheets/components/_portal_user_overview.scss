@@ -6,15 +6,11 @@
 	padding-top: GetSize(2);
 	padding-bottom: GetSize(2);
 	display: flex;
-	.sub-title {
-		position: absolute;
-		top: -26px;
-		left: 47%;
-		color: $Cool_Gray_Dark_3;
-	}
+
 	.users {
 		overflow: hidden;
 	}
+
 	.overview-user-wrapper {
 		display: flex;
 		width: GetSize(46);

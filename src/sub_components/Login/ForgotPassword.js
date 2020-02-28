@@ -42,7 +42,7 @@ const ForgotPasswordBody = (onChange, onFieldComplete, email, label, onClick) =>
 					title='RESET PASSWORD'
 					enabled={true}
 					onClick={onClick}
-					customClass='support-button gradient'
+					customClass='blox-button gradient'
 				/>
 			</div>
 		</div>

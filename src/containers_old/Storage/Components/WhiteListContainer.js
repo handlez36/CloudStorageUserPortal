@@ -185,7 +185,7 @@ class WhiteListContainer extends Component {
 						title={buttonTitle}
 						enabled={ips && ips.length > 0 && this.allIpsValid()}
 						onClick={() => onSelect('whitelist', { data: ips }, true)}
-						customClass='support-button whitelist-next-button'
+						customClass='blox-button whitelist-next-button'
 					/>
 				)}
 			</div>

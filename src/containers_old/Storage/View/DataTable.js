@@ -61,7 +61,7 @@ const DataTable = ({
 			<div key='manage-whitelist-section' className='manage-whitelist-section'>
 				<div className='manage-whitelist'>
 					<Button
-						customClass='support-button'
+						customClass='blox-button'
 						title='MANAGE WHITELIST'
 						enabled={true}
 						onClick={toggleWhiteListOpen}
@@ -87,7 +87,7 @@ const DataTable = ({
 			<div className='buttonSpace' />
 			<div key='manage-password-section' className='manage-password-section'>
 				<Button
-					customClass='support-button'
+					customClass='blox-button'
 					title={share.storage_type === 'file' ? 'GET A NEW PASSWORD' : 'GET A NEW SECRET KEY'}
 					enabled={true}
 					onClick={changeStoragePassword}

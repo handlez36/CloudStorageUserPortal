@@ -56,7 +56,7 @@
 				padding-top: 1vh;
 			}
 		}
-		.support-button {
+		.blox-button {
 			&.gradient {
 				width: calculateVw(100, 1440);
 				height: calculateVw(25, 1440);
@@ -205,7 +205,7 @@
 				flex: 1 0 auto;
 				align-items: flex-end;
 				padding-top: calculateVh(15px, $standard-screen-height-mid);
-				.support-button.gradient {
+				.blox-button.gradient {
 					width: calculateVw(121.5px, $standard-screen-width-mid);
 					height: calculateVh(34px, $standard-screen-height-mid);
 					font-size: calculateVw(12, 1440);
@@ -515,7 +515,7 @@
 				width: 40px;
 				height: 40px;
 			}
-			.view-more .support-button.gradient {
+			.view-more .blox-button.gradient {
 				width: 95px;
 				height: 24px;
 			}
@@ -585,7 +585,7 @@
 					width: 40px;
 					height: 40px;
 				}
-				.view-more .support-button.gradient {
+				.view-more .blox-button.gradient {
 					width: 112px;
 					height: 32px;
 				}
@@ -660,7 +660,7 @@
 					padding-top: 0;
 					padding-bottom: 40px;
 				}
-				.view-more .support-button.gradient {
+				.view-more .blox-button.gradient {
 					width: 120px;
 					height: 40px;
 				}

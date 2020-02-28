@@ -222,7 +222,7 @@ class PaymentMethod extends Component {
 				<Button
 					title='OK'
 					enabled={true}
-					customClass='support-button gradient'
+					customClass='blox-button gradient'
 					onClick={this.props.resetWizard}
 				/>
 			</div>
@@ -364,7 +364,7 @@ class PaymentMethod extends Component {
 					id='submit-button'
 					title='NEXT'
 					enabled={completedFields.length > 4 && !submitted}
-					customClass='support-button circle-large'
+					customClass='blox-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

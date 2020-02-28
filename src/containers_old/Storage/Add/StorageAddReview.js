@@ -11,7 +11,7 @@ let REQUEST_SUBMITTED = false;
 
 function disableSubmitButton() {
 	REQUEST_SUBMITTED = true;
-	const submitButton = document.querySelector('.support-button');
+	const submitButton = document.querySelector('.blox-button');
 	if (submitButton) {
 		submitButton.classList.add('disabled');
 	}
@@ -19,7 +19,7 @@ function disableSubmitButton() {
 
 function enableSubmitButton() {
 	REQUEST_SUBMITTED = false;
-	const submitButton = document.querySelector('.support-button');
+	const submitButton = document.querySelector('.blox-button');
 	if (submitButton) {
 		submitButton.classList.remove('disabled');
 	}
@@ -183,7 +183,7 @@ const StorageAddReview = ({ data, update, completeAdd, refreshStorageInfo }) => 
 				title='SUBMIT'
 				onClick={() => submitStorageRequest(data, completeAdd, refreshStorageInfo)}
 				enabled={checkValid(data)}
-				customClass={`support-button ${
+				customClass={`blox-button ${
 					REQUEST_SUBMITTED ? 'disabled' : ''
 				} bright-emerald-gradient`}
 			/>

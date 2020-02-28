@@ -309,7 +309,7 @@ class DeleteStorageGrid extends Component {
 										<BloxButton
 											title='BACK TO MY SHARES'
 											enabled={true}
-											customClass='support-button emerald-gradient'
+											customClass='blox-button emerald-gradient'
 											onClick={() => this.props.selectMenuItem('MANAGE STORAGE')}
 										/>
 									</div>
@@ -325,7 +325,7 @@ class DeleteStorageGrid extends Component {
 									<BloxButton
 										title='NOPE. CHANGED MY MIND.'
 										enabled={true}
-										customClass='support-button emerald-gradient'
+										customClass='blox-button emerald-gradient'
 										onClick={() => this.props.selectMenuItem('SHARE DETAILS')}
 									/>
 								</div>
@@ -340,7 +340,7 @@ class DeleteStorageGrid extends Component {
 											imageId={step === 'ONE' ? 'delete-button' : 'make-it-so'}
 											icon={DeleteIconHover}
 											enabled={valid}
-											customClass='support-button orange-gradient icon'
+											customClass='blox-button orange-gradient icon'
 											onClick={step === 'ONE' ? () => this.getStep('TWO') : this.handleSubmit}
 										/>
 									</div>

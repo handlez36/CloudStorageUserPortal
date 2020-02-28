@@ -157,7 +157,7 @@ const CallToAction = ({ invoices, summary }) => {
 			{Permissions.hasAccess(user, 'billing') && Permissions.hasAccess(user, 'online_payments') && (
 				<BloxButton
 					title='PAY NOW'
-					customClass='support-button green-gradient'
+					customClass='blox-button green-gradient'
 					onClick={() => {}}
 				/>
 			)}

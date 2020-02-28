@@ -174,7 +174,7 @@ class ModalWizard extends Component {
 						<Button
 							title={nextButtonLabel}
 							enabled={enableNav}
-							customClass='support-button next-button'
+							customClass='blox-button next-button'
 							onClick={() => this.nextStep('next')}
 						/>
 					)}

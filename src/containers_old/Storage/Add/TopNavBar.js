@@ -13,7 +13,7 @@ const TopNavBar = ({ gotoOverview, resetWizard }) => {
 					title='CANCEL'
 					onClick={resetWizard}
 					enabled
-					customClass='support-button gray-gradient'
+					customClass='blox-button gray-gradient'
 				/>
 			</div>
 		</div>

@@ -80,7 +80,7 @@ class MenuHeader extends Component {
 				<Button
 					title='INVITE NEW USER'
 					enabled={true}
-					customClass='support-button'
+					customClass='blox-button'
 					onClick={onInviteUser}
 				/>
 			);
@@ -89,7 +89,7 @@ class MenuHeader extends Component {
 				<Button
 					title='ADD TO ROSTER'
 					enabled={true}
-					customClass='support-button'
+					customClass='blox-button'
 					onClick={addToRoster}
 				/>
 			);

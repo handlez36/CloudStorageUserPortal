@@ -81,7 +81,7 @@ class RecentInvoices extends Component {
 					<Button
 						title='VIEW HISTORY'
 						enabled={true}
-						customClass='support-button gradient'
+						customClass='blox-button gradient'
 						onClick={this.goToInvoiceHistory}
 					/>
 				</span>

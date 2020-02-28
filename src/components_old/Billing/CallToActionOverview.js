@@ -280,7 +280,7 @@ export default class CallToActionOverview extends Component {
 								<BloxButton
 									title='PAY NOW'
 									enabled={true}
-									customClass='support-button green-gradient'
+									customClass='blox-button green-gradient'
 									onClick={this.props.goToPayments}
 								/>
 							</div>
@@ -290,7 +290,7 @@ export default class CallToActionOverview extends Component {
 								<BloxButton
 									title='PAY NOW'
 									enabled={true}
-									customClass='support-button green-gradient'
+									customClass='blox-button green-gradient'
 									onClick={this.props.goToPayments}
 								/>
 							</div>

@@ -191,20 +191,20 @@
 			@media screen and (min-width: 2000px) {
 				top: 47%;
 			}
-			.support-button {
+			.blox-button {
 				@include Status-Head;
 				.title {
 					opacity: 0.8;
 					letter-spacing: 0.1vw;
 				}
 			}
-			.support-button:hover {
+			.blox-button:hover {
 				.title {
 					opacity: 1;
 				}
 			}
 			&.selected {
-				.support-button:hover {
+				.blox-button:hover {
 					.title {
 						opacity: 1;
 					}

@@ -35,7 +35,7 @@ const FrontSide = ({ shares, onFlip, selectMenuItem, onScroll, scrollTo, scrollT
 							<Button
 								title='MANAGE SHARES'
 								enabled={true}
-								customClass='support-button gradient'
+								customClass='blox-button gradient'
 								onClick={() => {
 									selectMenuItem('MANAGE STORAGE');
 								}}

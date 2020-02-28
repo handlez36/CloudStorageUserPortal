@@ -106,7 +106,7 @@ class OnlinePayment extends Component {
 				<Button
 					title='TRY AGAIN'
 					enabled={true}
-					customClass='support-button gradient'
+					customClass='blox-button gradient'
 					onClick={this.toggleErrorModal}
 				/>
 			</div>
@@ -123,7 +123,7 @@ class OnlinePayment extends Component {
 				<Button
 					title='OKAY'
 					enabled={true}
-					customClass='support-button gradient'
+					customClass='blox-button gradient'
 					onClick={this.toggleErrorModal}
 				/>
 			</div>
@@ -143,7 +143,7 @@ class OnlinePayment extends Component {
 				<Button
 					title='OKAY'
 					enabled={true}
-					customClass='support-button gradient'
+					customClass='blox-button gradient'
 					onClick={() => {
 						refreshInvoices();
 						this.toggleErrorModal();

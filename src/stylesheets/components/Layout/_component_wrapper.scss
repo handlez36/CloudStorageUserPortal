@@ -11,10 +11,10 @@
 		text-align: left;
 		align-items: flex-end;
 		span {
-			margin-bottom: GetSize(2);
+			margin-bottom: GetSize(1);
 		}
 		.component-wrapper_button {
-			.support-button {
+			.blox-button {
 				height: GetHeight(3);
 				width: GetSize(11);
 				position: absolute;
@@ -35,8 +35,11 @@
 	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 		.component-wrapper_title {
 			height: GetHeight(7);
+			span {
+				margin-bottom: GetSize(2);
+			}
 			.component-wrapper_button {
-				.support-button {
+				.blox-button {
 					height: GetHeight(4);
 					width: GetSize(14);
 				}
@@ -47,8 +50,11 @@
 	@media screen and (min-width: $high-res + 1) {
 		.component-wrapper_title {
 			height: GetHeight(8);
+			span {
+				margin-bottom: GetSize(2);
+			}
 			.component-wrapper_button {
-				.support-button {
+				.blox-button {
 					height: GetHeight(5);
 					width: GetSize(15);
 				}

@@ -157,7 +157,7 @@ class ModalPage extends Component {
 					<BloxButton
 						title='SUBMIT'
 						enabled={valid}
-						customClass='support-button '
+						customClass='blox-button '
 						onClick={this.handleSubmit}
 					/>
 				</div>

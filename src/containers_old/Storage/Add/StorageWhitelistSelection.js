@@ -33,7 +33,7 @@ const StorageWhitelistSelection = ({ data, onSelect, update }) => {
 					Utils.checkListOfIps(formattedWhitelist.ips)
 				}
 				onClick={() => onSelect('whitelist', { data: formattedWhitelist }, true)}
-				customClass='support-button whitelist-next-button bright-emerald-gradient'
+				customClass='blox-button whitelist-next-button bright-emerald-gradient'
 			/>
 		</div>
 	);

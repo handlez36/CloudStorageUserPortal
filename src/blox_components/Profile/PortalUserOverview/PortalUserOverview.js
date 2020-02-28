@@ -3,7 +3,7 @@ import React from 'react';
 import { CarouselCycle } from 'containers_old/Storage/CarouselCycle';
 import { UserApi } from 'services/user';
 import { CompanyProfileApi } from 'services/companyProfile';
-import PortalUserOverviewBlock from './PortalUserOverviewBlock';
+import PortalUserOverviewBlock from './Components/PortalUserOverviewBlock';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Arrow = `${CDN_URL}common/left-arrow-active.png`;
@@ -135,7 +135,6 @@ class PortalUserOverview extends Component {
 								if (index < 6) {
 									return [
 										<PortalUserOverviewBlock
-											key={index}
 											user={user}
 											position={index}
 											click={() => this.setFocused(user)}

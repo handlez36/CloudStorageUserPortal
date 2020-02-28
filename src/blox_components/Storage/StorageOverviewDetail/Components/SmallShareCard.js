@@ -119,7 +119,7 @@ class SmallShareCard extends Component {
 							id={id}
 							title='QUICK VIEW'
 							enabled={hover}
-							customClass='support-button quick-view'
+							customClass='blox-button quick-view'
 							onClick={onClick}
 						/>
 					</Fragment>

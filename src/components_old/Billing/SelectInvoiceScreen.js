@@ -240,7 +240,7 @@ class SelectInvoiceScreen extends Component {
 				<Button
 					title='NEXT'
 					enabled={this.getTotal() > 0}
-					customClass='support-button circle-large'
+					customClass='blox-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

@@ -33,7 +33,7 @@ const ConfirmationBody = (onCancel, onConfirm) => (
 					NO
 				</div>
 				<div className='yes-option'>
-					<Button title='YES' enabled={true} customClass='support-button' onClick={onConfirm} />
+					<Button title='YES' enabled={true} customClass='blox-button' onClick={onConfirm} />
 				</div>
 			</div>
 		</div>

@@ -12,6 +12,11 @@
 			background: none;
 		}
 	}
+	.portal-user-header {
+		border: 1px solid blue;
+		width: 100%;
+		height: GetSize(5);
+	}
 	.storage-graphs {
 		min-height: 500px;
 	}

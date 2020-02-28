@@ -4,7 +4,7 @@ import { UserApi } from 'services/user';
 import { updatePage } from 'actions/siteTracking';
 
 import { CompanyProfileApi } from 'services/companyProfile';
-import RosterUserOverviewBlock from './RosterUserOverviewBlock';
+import RosterUserOverviewBlock from './Components/RosterUserOverviewBlock';
 
 class RosterUserOverview extends Component {
 	constructor(props) {

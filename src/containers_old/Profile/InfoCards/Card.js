@@ -291,7 +291,7 @@ class Card extends Component {
 										<BloxButton
 											title='EDIT CONTACT INFO'
 											enabled={true}
-											customClass='support-button gradient'
+											customClass='blox-button gradient'
 											onClick={this.goToContactInfo}
 										/>
 									</div>

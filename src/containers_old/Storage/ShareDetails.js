@@ -305,7 +305,7 @@ class ShareDetails extends Component {
 							icon={DeleteIcon}
 							title={'DELETE STORAGE'}
 							enabled={true}
-							customClass={`support-button`}
+							customClass={`blox-button`}
 							onClick={() => this.props.selectMenuItem('REMOVE STORAGE')}
 						/>
 					</div>

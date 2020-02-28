@@ -191,7 +191,7 @@ class StorageAdd extends Component {
 		for (let t = 0; t < type.length; t++) {
 			type[t].checked = false;
 		}
-		const btn = document.querySelector('.support-button').classList;
+		const btn = document.querySelector('.blox-button').classList;
 		btn.remove('enabled');
 		btn.add('disabled');
 		this.setState({
@@ -272,7 +272,7 @@ class StorageAdd extends Component {
 			filled,
 		} = this.state;
 		if (filled) {
-			const btn = document.querySelector('.support-button');
+			const btn = document.querySelector('.blox-button');
 			btn.classList.remove('disabled');
 			btn.classList.add('enabled');
 		}
@@ -361,7 +361,7 @@ class StorageAdd extends Component {
 					)}
 					<div className='field'>
 						<Button
-							customClass='support-button disabled'
+							customClass='blox-button disabled'
 							title='Add Storage'
 							enabled={this.state.enabled !== 'disabled'}
 							onClick={this.state.enabled !== 'disabled' ? this.onSubmit : undefined}

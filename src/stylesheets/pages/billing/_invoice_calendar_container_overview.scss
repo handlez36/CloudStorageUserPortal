@@ -26,12 +26,12 @@
 			2560: 18,
 		);
 		font-size: least-squares-fit($map);
-		.support-button {
+		.blox-button {
 			width: calculateVw(140, 2560);
 			height: calculateVh(65, 2560);
 		}
 		&.overview {
-			.support-button {
+			.blox-button {
 				width: calculateVw(160, 2560);
 			}
 			bottom: 10%;

@@ -52,7 +52,7 @@ class DetailView extends Component {
 								<Button
 									title='VIEW ALL RELEASES'
 									onClick={() => updateScreen(SCREENS.LIST, null)}
-									customClass='support-button'
+									customClass='blox-button'
 									enabled
 								/>
 							</div>

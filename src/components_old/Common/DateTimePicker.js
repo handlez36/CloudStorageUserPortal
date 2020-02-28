@@ -179,7 +179,7 @@ class DateTimePicker extends Component {
 							<BloxButton
 								title='SELECT DATE'
 								enabled={selectedDay}
-								customClass='support-button'
+								customClass='blox-button'
 								onClick={this.daySelected}
 							/>
 						</div>
@@ -204,7 +204,7 @@ class DateTimePicker extends Component {
 							<BloxButton
 								title='DONE'
 								enabled={!error}
-								customClass='support-button'
+								customClass='blox-button'
 								onClick={() => this.timeSelected(hours, minutes)}
 							/>
 						</div>

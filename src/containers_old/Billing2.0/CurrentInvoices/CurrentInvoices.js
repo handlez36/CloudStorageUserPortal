@@ -71,7 +71,7 @@ class CurrentInvoices extends Component {
 								<BloxButton
 									title='PAY NOW'
 									enabled={true}
-									customClass='support-button gradient'
+									customClass='blox-button gradient'
 									onClick={this.goToPayments}
 								/>
 							</div>

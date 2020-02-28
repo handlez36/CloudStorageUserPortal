@@ -18,7 +18,7 @@ function generateModalBody(status, storageType, storagePassword = null, toggleOp
 			<Button
 				title='OKAY'
 				enabled={true}
-				customClass='support-button gradient'
+				customClass='blox-button gradient'
 				onClick={toggleOpen}
 			/>
 		</Fragment>
