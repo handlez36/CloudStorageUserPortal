@@ -7,6 +7,11 @@ const config = {
 };
 
 export class UserApi {
+	static logoutUser() {
+		const url = `${BASE_URL}/authenticate/logout`;
+
+		return axios.get(url, config);
+	}
 	static getAllUsers(id) {
 		const url = `${BASE_URL}/organization/${id}/users/`;
 

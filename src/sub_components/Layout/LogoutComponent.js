@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { AvatarApi } from 'services/avatar';
 import { UserProfileApi } from 'services/userProfile';
+import { UserApi } from 'services/user';
+import BloxButton from 'sub_components/Common/BloxButton';
 class LogoutComponent extends Component {
 	constructor(props) {
 		super(props);
+
 		this.avatarApi = new AvatarApi();
 		this.userProfileApi = new UserProfileApi();
 		this.state = {
@@ -21,15 +24,48 @@ class LogoutComponent extends Component {
 			return username;
 		}
 	};
+	setExpandedClass = () => {
+		const header = document.querySelector('.logout-wrapper');
+		header.classList.add('expanded');
+	};
+
+	removeExpandedClass = () => {
+		const header = document.querySelector('.logout-wrapper.expanded');
+		header.classList.remove('expanded');
+	};
+	logoutUser = () => {
+		console.log('HELLO NIAMH');
+		UserApi.logoutUser()
+			.then(response => {
+				const validResponse = response.status === 200 && response.data && !response.data.error;
+				if (validResponse) {
+					console.log('offically logged out');
+				}
+			})
+			.catch(error => this.setState({ error }));
+	};
 
 	render() {
 		const { auth_status } = this.props;
 		return (
-			<div className='logout-wrapper'>
+			<div
+				className='logout-wrapper'
+				onMouseOver={this.setExpandedClass}
+				onMouseOut={this.removeExpandedClass}
+			>
 				<div className='avatar'>
 					<img src={this.avatarApi.getUserAvatar(auth_status)} />
 				</div>
 				<div className='name body10'>{this.getUserName(auth_status)}</div>
+				<div className='logout-dropdown'></div>
+				<div className='logout-button'>
+					<BloxButton
+						title='LOGOUT'
+						customClass='support-button'
+						enabled={true}
+						onClick={this.logoutUser}
+					/>
+				</div>
 			</div>
 		);
 	}

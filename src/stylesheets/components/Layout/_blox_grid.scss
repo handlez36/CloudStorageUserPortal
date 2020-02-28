@@ -22,6 +22,13 @@
 		height: 100%;
 		opacity: 0.5;
 	}
+	&.header-grid {
+		.content-grid {
+			overflow: visible;
+			z-index: 4500;
+		}
+	}
+
 	.vertical-grid .react-grid-item {
 		height: 100% !important;
 		// background-color: lightcoral;
