@@ -40,9 +40,9 @@ class OverviewPage extends Component {
 	state = {
 		amountDuePermission: false,
 		ticketCountPermission: false,
-		showTitleTicketCount: false,
-		showTitleRecentInvoices: false,
-		showTitleRecentPayment: false,
+		showTitleTicketCount: true,
+		showTitleRecentInvoices: true,
+		showTitleRecentPayment: true,
 	};
 	componentDidMount() {
 		this.checkOverviewPagePermissions();

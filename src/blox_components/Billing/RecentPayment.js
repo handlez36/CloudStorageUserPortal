@@ -22,7 +22,7 @@ class RecentPayment extends Component {
 
 			if (response.data.transactions && response.data.transactions.length !== 0) {
 				priceArray = Utils.formatCurrency(response.data.transactions[0].arDebit).split('.');
-				this.props.showTitle(true);
+
 				this.setState({
 					payments: response.data.transactions,
 					dollarAmount: priceArray[0],
@@ -31,6 +31,7 @@ class RecentPayment extends Component {
 					recentTransaction: true,
 				});
 			} else {
+				this.props.showTitle(false);
 				this.setState({ recentTransaction: false });
 			}
 		});

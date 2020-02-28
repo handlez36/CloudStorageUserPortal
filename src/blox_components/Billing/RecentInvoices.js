@@ -77,11 +77,11 @@ class RecentInvoices extends Component {
 		const { data: { invoices = [] } = {} } = response;
 
 		if (Utils.isValidResponse(response) && invoices) {
-			this.props.showTitle(true);
 			this.setState({ invoices }, () => {
 				this.getInvoicesToDisplay();
 			});
 		} else {
+			this.props.showTitle(false);
 			this.setState({ showRecentPayment: false, error: 'Error pulling recent invoices' });
 		}
 	};

@@ -31,8 +31,8 @@ class TicketCountRow extends Component {
 		const filteredTicketsByType = tickets.filter(
 			ticket => ticket.type.toLowerCase() === type.toLowerCase(),
 		);
-		if (filteredTicketsByType && showTitle) {
-			showTitle(true);
+		if (filteredTicketsByType === 0) {
+			showTitle(false);
 		}
 
 		const fullyFilteredTickets = filteredTicketsByType.filter(ticket => {
@@ -72,7 +72,7 @@ class TicketCountRow extends Component {
 							<div className='count numbers30' style={{}}>
 								{count}
 							</div>
-							<div className='status-label ' style={{ marginTop: -5 }}>
+							<div className='status-label buttons10' style={{ marginTop: -5 }}>
 								{text ? text : status}
 							</div>
 						</CircularProgressbarWithChildren>
