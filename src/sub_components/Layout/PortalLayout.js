@@ -27,6 +27,7 @@ const PAGES = {
 	},
 	Profile: {
 		Overview: 'OverviewPage',
+		Password_change: 'PasswordChangePage',
 	},
 	Billing: {
 		Overview: 'OverviewPage',
@@ -51,11 +52,13 @@ class PortalLayout extends Component {
 	parseUrlParams = () => {
 		const { location: { pathname = '' } = {} } = this.props;
 		// const urlRegex = /^\/(.*)\/?(.*)$/;
-		const urlRegex = /^\/portal\/?(\w*)\/?.*$/;
+		const urlRegex = /^\/portal\/?(\w*)\/?(\w*)\/?.*$/;
 		const matches = pathname.match(urlRegex);
 
 		if (matches) {
-			const [url, siteModule, sitePage] = matches;
+			const [, siteModule, sitePage] = matches;
+			console.log('Site Module: ', siteModule);
+			console.log('Site Module: ', sitePage);
 			this.loadPage(siteModule, sitePage);
 			return { siteModule, sitePage };
 		}
