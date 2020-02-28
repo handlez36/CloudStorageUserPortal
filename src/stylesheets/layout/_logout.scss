@@ -1,8 +1,9 @@
 .logout-wrapper {
 	width: GetSize(24);
-	border: 1px solid blue;
+	height: GetSize(5);
 	display: flex;
 	flex-direction: row;
+
 	.avatar {
 		img {
 			width: GetSize(5);
@@ -19,6 +20,23 @@
 		flex-direction: row;
 		align-items: center;
 		text-transform: uppercase;
+	}
+	.logout-button {
+		display: none;
+		position: absolute;
+		width: GetSize(10);
+		height: GetSize(3);
+		margin-left: GetSize(9);
+		margin-top: GetSize(7);
+	}
+
+	&.expanded {
+		width: GetSize(29);
+		height: GetSize(12);
+		background-color: $White;
+		.logout-button {
+			display: flex;
+		}
 	}
 
 	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
