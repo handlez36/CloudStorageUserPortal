@@ -38,36 +38,23 @@
 		margin-left: GetSize(9);
 		margin-top: GetSize(7);
 	}
-	.blue-animation {
-		background-position: left bottom;
-	}
-
-	// &.expanded {
-	// 	width: GetSize(29);
-	// 	height: GetSize(12);
-	// 	background-color: $White;
-	// 	.logout-button {
-	// 		display: flex;
-	// 	}
-	// }
-}
-
-.logout-wrapper:hover {
-	width: GetSize(29);
-	height: GetSize(12);
-	background-color: $White;
 	.logout-button {
-		display: flex;
+		display: none;
+		position: absolute;
+		width: GetSize(10);
+		height: GetSize(3);
+		margin-left: GetSize(9);
+		margin-top: GetSize(7);
 	}
-	.name {
+
+	&.expanded {
 		width: GetSize(29);
-		color: $DCBLOX_Gray;
-		font-weight: bold;
-		//color: $Cool_Gray_Dark_3;
-		//BOLD NAV HEADER 11
-		background-color: $Warm_Gray_Light_1;
+		height: GetSize(12);
+		background-color: $White;
+		.logout-button {
+			display: flex;
+		}
 	}
-}
 
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 	.logout-wrapper {
