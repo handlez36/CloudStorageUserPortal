@@ -8,13 +8,13 @@ import { RESOLUTIONS } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		changePassword: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 30 },
+		changePassword: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 50 },
 	},
 	[RESOLUTIONS.MED]: {
-		changePassword: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 30 },
+		changePassword: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 50 },
 	},
 	[RESOLUTIONS.HIGH]: {
-		changePassword: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 30 },
+		changePassword: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 50 },
 	},
 };
 

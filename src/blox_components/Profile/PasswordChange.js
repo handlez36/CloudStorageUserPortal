@@ -162,7 +162,8 @@ class PasswordChange extends Component {
 		const { status } = this.state;
 		console.log(this.state.status);
 		return (
-			<div className='password-page outer-wrapper'>
+			// <div className='password-page outer-wrapper'>
+			<div className='password-change'>
 				{status === 'CONFIRM_PASSWORD_SUCCESS' && (
 					<PasswordResetSuccess modal={true} status={status} />
 				)}

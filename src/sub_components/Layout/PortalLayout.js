@@ -59,14 +59,17 @@ class PortalLayout extends Component {
 			const [, siteModule, sitePage] = matches;
 			console.log('Site Module: ', siteModule);
 			console.log('Site Module: ', sitePage);
-			this.loadPage(siteModule, sitePage);
-			return { siteModule, sitePage };
+			const parsedSitePage = !sitePage || sitePage === undefined ? 'OVERVIEW' : sitePage;
+			// this.loadPage(siteModule, sitePage);
+			this.loadPage(siteModule, parsedSitePage);
+			return { siteModule, parsedSitePage };
 		}
 
 		return { siteModule: 'HOME', sitePage: 'OVERVIEW' };
 	};
 
 	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
+		console.log('Blox Page: ', bloxPage);
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
 		const pageName = PAGES[mod][page];
