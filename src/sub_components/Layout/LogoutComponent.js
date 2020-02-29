@@ -25,13 +25,13 @@ class LogoutComponent extends Component {
 		}
 	};
 	setExpandedClass = () => {
-		const header = document.querySelector('.logout-wrapper');
-		header.classList.add('expanded');
+		const header = document.querySelector('.name');
+		header.classList.add('blue-animation');
 	};
 
 	removeExpandedClass = () => {
-		const header = document.querySelector('.logout-wrapper.expanded');
-		header.classList.remove('expanded');
+		const header = document.querySelector('.name');
+		header.classList.remove('blue-animation');
 	};
 	logoutUser = () => {
 		console.log('HELLO NIAMH');
@@ -58,11 +58,11 @@ class LogoutComponent extends Component {
 				</div>
 				<div className='name body10'>{this.getUserName(auth_status)}</div>
 				<div className='logout-dropdown'></div>
-				<div className='logout-button'>
+				<div className='logout-button fade-in'>
 					<BloxButton
 						title='LOGOUT'
 						customClass='support-button'
-						enabled={true}
+						enabled={false}
 						onClick={this.logoutUser}
 					/>
 				</div>
