@@ -3,7 +3,7 @@
 	height: GetSize(5);
 	display: flex;
 	flex-direction: row;
-
+	transition: width 1s, height 1s;
 	.avatar {
 		img {
 			width: GetSize(5);
@@ -20,56 +20,128 @@
 		flex-direction: row;
 		align-items: center;
 		text-transform: uppercase;
+		background-color: $White;
+		background: linear-gradient(90deg, $Warm_Gray_Light_1 0%, $White 100%);
+		background-size: 250% 100%;
+		background-position: right bottom;
+		transition: all 1s ease-in-out;
 	}
 	.logout-button {
 		display: none;
 		position: absolute;
 		width: GetSize(10);
-		height: GetSize(3);
+		.support-button {
+			height: GetSize(3);
+		}
+
 		margin-left: GetSize(9);
 		margin-top: GetSize(7);
 	}
-
-	&.expanded {
-		width: GetSize(29);
-		height: GetSize(12);
-		background-color: $White;
-		.logout-button {
-			display: flex;
-		}
+	.blue-animation {
+		background-position: left bottom;
 	}
 
-	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	// &.expanded {
+	// 	width: GetSize(29);
+	// 	height: GetSize(12);
+	// 	background-color: $White;
+	// 	.logout-button {
+	// 		display: flex;
+	// 	}
+	// }
+}
+
+.logout-wrapper:hover {
+	width: GetSize(29);
+	height: GetSize(12);
+	background-color: $White;
+	.logout-button {
+		display: flex;
+	}
+	.name {
+		width: GetSize(29);
+		color: $DCBLOX_Gray;
+		font-weight: bold;
+		//color: $Cool_Gray_Dark_3;
+		//BOLD NAV HEADER 11
+		background-color: $Warm_Gray_Light_1;
+	}
+}
+
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.logout-wrapper {
 		width: GetSize(33);
 
 		.avatar {
 			img {
-				border: 1px solid green;
 				width: GetSize(8);
 				height: GetSize(8);
 			}
 		}
 		.name {
-			border: 1px solid pink;
 			width: GetSize(25);
 			height: GetSize(8);
 		}
+		.logout-button {
+			margin-left: GetSize(1);
+			margin-top: GetSize(10);
+		}
 	}
+	.logout-wrapper:hover {
+		width: GetSize(38);
+		height: GetSize(17);
+		background-color: $White;
+		.logout-button {
+			display: flex;
+		}
+	}
+}
 
-	@media screen and (min-width: $high-res + 1) {
+@media screen and (min-width: $high-res + 1) {
+	.logout-wrapper {
 		width: GetSize(43);
 
 		.avatar {
 			img {
-				border: 1px solid green;
 				width: GetSize(10);
 				height: GetSize(10);
 			}
 		}
 		.name {
-			border: 1px solid pink;
 			width: GetSize(23);
 			height: GetSize(10);
 		}
+		.logout-button {
+			border: 1px solid red;
+			width: GetSize(14);
+			.support-button {
+				height: GetSize(4);
+			}
+			margin-left: GetSize(13);
+			margin-top: GetSize(10);
+		}
 	}
+	.logout-wrapper:hover {
+		width: GetSize(50);
+		height: GetSize(24);
+		background-color: $White;
+		.logout-button {
+			display: flex;
+		}
+	}
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
 }
