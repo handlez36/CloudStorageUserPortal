@@ -11,7 +11,7 @@ const LAYOUT_CONFIG = {
 		changePassword: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 50 },
 	},
 	[RESOLUTIONS.MED]: {
-		changePassword: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 50 },
+		changePassword: { x: 3, y: 1, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 50 },
 	},
 	[RESOLUTIONS.HIGH]: {
 		changePassword: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 50 },
