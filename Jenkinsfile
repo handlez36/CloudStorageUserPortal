@@ -37,7 +37,7 @@ pipeline {
     stage('Build') {
       parallel {
         stage('NON-Production') {
-          when { not { expression { BRANCH_NAME ==~ /(production|master)/ } } }
+          when { branch 'master' }
           environment {
             BUILD_ENV_LIVE = readFile('environment')
           }
