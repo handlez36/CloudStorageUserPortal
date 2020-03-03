@@ -13,7 +13,7 @@ import { RESOLUTIONS } from 'services/config';
 /** v3 imports */
 import NavSection from './Navigation/BloxNavigationSection';
 import ContentSection from './ContentSection';
-import HeaderSection from './HeaderSection';
+import HeaderSection from './Header/HeaderSection';
 import FooterSection from './Footer';
 
 // import { SITE_MAP, SITE_PAGES } from './../Common/CommonConstants';
