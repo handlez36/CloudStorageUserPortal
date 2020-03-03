@@ -65,7 +65,7 @@ pipeline {
             BUILD_ENV_LIVE = readFile('environment')
           }
           steps {
-            dir(path: 'awwward/build/') {
+            dir(path: 'build/') {
               slackSend(color: '#0E4749', message: "We are going to try to release this to (<https://test.mydcblox.com|test.mydcblox.com>)")
               script {
                 sh "ssh scm@10.1.141.30 'rm -fr /var/www/html/dev1/*'"
@@ -80,7 +80,7 @@ pipeline {
   }
   environment {
     YARN = '/usr/bin/yarn'
-    BUILD_PATH = 'awwward/build/'
+    BUILD_PATH = 'build/'
     ISSUE = sh(returnStdout: true, script: "echo \"${BRANCH_NAME}\" | grep -oP \"[A-Z]{1,5}-[0-9]{1,5}\" | sed -n 1p").trim()
     BUILD_DEVELOPER = 'theNewGuy'
     DEV_QA_UAT = false
