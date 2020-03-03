@@ -54,8 +54,8 @@ class BloxMicroGrid extends Component {
 
 		this.observer = null;
 		this.state = {
-			colCount: 96,
-			rowCount: 96,
+			colCount: null,
+			rowCount: null,
 			grid: null,
 			horizGrid: null,
 		};
@@ -107,30 +107,28 @@ class BloxMicroGrid extends Component {
 
 		return (
 			<div className={`blox-micro-grid${gridClassName}`}>
-				<ResponsiveReactGridLayout
-					layouts={{
-						lg: contentGrid,
-						md: contentGrid,
-						sm: contentGrid,
-						xs: contentGrid,
-					}}
-					measureBeforeMount={false}
-					className='content-grid'
-					width={2560}
-					rowHeight={8}
-					isDraggable={false}
-					breakpoints={{ lg: 2560, md: 1440, sm: 1024, xs: 800 }}
-					cols={{ lg: colCount, md: colCount, sm: colCount, xs: colCount }}
-					margin={[0, 0]}
-					// containerPadding={containerPadding}
-					// onBreakpointChange={this.onBreakpointChange}
-					// margin={margin}
-					// onLayoutChange={this.onLayoutChange}
-					// onWidthChange={this.onWidthChange}
-				>
-					{children}
-				</ResponsiveReactGridLayout>
-				{showGrid && (
+				{colCount && (
+					<ResponsiveReactGridLayout
+						layouts={{
+							lg: contentGrid,
+							md: contentGrid,
+							sm: contentGrid,
+							xs: contentGrid,
+						}}
+						measureBeforeMount={false}
+						className='content-grid'
+						// width={2560}
+						width={1152}
+						rowHeight={8}
+						isDraggable={false}
+						breakpoints={{ lg: 2560, md: 1440, sm: 1024, xs: 800 }}
+						cols={{ lg: colCount, md: colCount, sm: colCount, xs: colCount }}
+						margin={[0, 0]}
+					>
+						{children}
+					</ResponsiveReactGridLayout>
+				)}
+				{showGrid && colCount && (
 					<Fragment>
 						<VerticalDebugGrid
 							layouts={{ lg: colGrid, md: colGrid, sm: colGrid, xs: colGrid }}

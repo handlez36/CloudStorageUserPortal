@@ -33,7 +33,7 @@ This file should not contain anything but @import and comments.
 @import 'components/dropdown';
 @import 'components/field';
 @import 'components/footer';
-@import 'components/icon_input';
+// @import 'components/icon_input';
 @import 'components/index';
 @import 'components/loader';
 @import 'components/login_input';
@@ -177,6 +177,7 @@ This file should not contain anything but @import and comments.
 @import 'components/Profilev3/service_icon';
 @import 'components/Profilev3/my_profile';
 @import 'components/Profilev3/company_profile';
+@import 'components/Profilev3/password_change';
 
 /**
 * Commonv3 components
@@ -185,6 +186,9 @@ This file should not contain anything but @import and comments.
 @import 'components/Commonv3/ticket_count_row';
 @import 'components/Commonv3/blox_card';
 @import 'components/Commonv3/blox_button';
+@import 'components/Commonv3/portal_message';
+@import 'components/Commonv3/icon_input';
+@import 'components/Commonv3/credential_input';
 
 /**
 * Common components

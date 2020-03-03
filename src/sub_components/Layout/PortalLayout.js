@@ -27,6 +27,7 @@ const PAGES = {
 	},
 	Profile: {
 		Overview: 'OverviewPage',
+		Password_change: 'PasswordChangePage',
 	},
 	Billing: {
 		Overview: 'OverviewPage',
@@ -51,19 +52,24 @@ class PortalLayout extends Component {
 	parseUrlParams = () => {
 		const { location: { pathname = '' } = {} } = this.props;
 		// const urlRegex = /^\/(.*)\/?(.*)$/;
-		const urlRegex = /^\/portal\/?(\w*)\/?.*$/;
+		const urlRegex = /^\/portal\/?(\w*)\/?(\w*)\/?.*$/;
 		const matches = pathname.match(urlRegex);
 
 		if (matches) {
-			const [url, siteModule, sitePage] = matches;
-			this.loadPage(siteModule, sitePage);
-			return { siteModule, sitePage };
+			const [, siteModule, sitePage] = matches;
+			console.log('Site Module: ', siteModule);
+			console.log('Site Module: ', sitePage);
+			const parsedSitePage = !sitePage || sitePage === undefined ? 'OVERVIEW' : sitePage;
+			// this.loadPage(siteModule, sitePage);
+			this.loadPage(siteModule, parsedSitePage);
+			return { siteModule, parsedSitePage };
 		}
 
 		return { siteModule: 'HOME', sitePage: 'OVERVIEW' };
 	};
 
 	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
+		console.log('Blox Page: ', bloxPage);
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
 		const pageName = PAGES[mod][page];

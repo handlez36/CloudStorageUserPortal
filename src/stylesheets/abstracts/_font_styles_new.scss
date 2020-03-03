@@ -714,3 +714,33 @@
 		// letter-spacing: -3px;
 	}
 }
+@mixin Portal-Mesage-Start {
+	font-family: $font-family-primary-heads;
+	font-size: 18px;
+	line-height: 1.43;
+	letter-spacing: normal;
+	color: $Dark_Blue;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 20px;
+		line-height: 1.38;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 28px;
+		line-height: 1.33;
+	}
+}
+@mixin Portal-Mesage-Content {
+	font-family: $font-family-primary-subheads;
+	font-size: 16px;
+	line-height: 1.43;
+	letter-spacing: normal;
+	color: $DCBLOX_Gray;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 1.38;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 26px;
+		line-height: 1.33;
+	}
+}
