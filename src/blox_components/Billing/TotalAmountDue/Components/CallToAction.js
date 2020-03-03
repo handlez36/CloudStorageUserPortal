@@ -3,7 +3,7 @@ import { shallowEqual, useSelector } from 'react-redux';
 import moment from 'moment';
 
 import BloxButton from 'sub_components/Common/BloxButton';
-import { Permissions } from 'services/permissions';
+
 import { BillingUtils, INVOICES_STATUS } from 'services/billing';
 import { Utils } from 'services/utils';
 
@@ -39,10 +39,8 @@ const generateSummaryBalanceCopy = ({ balance }) => {
 	if (dollars && cents) {
 		return (
 			<Fragment>
-				<span className='dollar-sign total-amount-dollars-and-cents'>$</span>
-				<span className='dollars total-amount-due-primary-text'>
-					{Utils.formatCurrency(dollars, true)}
-				</span>
+				<span className='dollar-sign '>$</span>
+				<span className='dollars numbers30'>{Utils.formatCurrency(dollars, true)}</span>
 				<span className='cents total-amount-dollars-and-cents'>{cents}</span>
 			</Fragment>
 		);
@@ -69,7 +67,7 @@ const generateDueTodayCopy = splitInvoices => {
 			<span className='total-amount-due-subtext-bold'> due today.</span>
 			{amountOverdue > 0 && (
 				<span className='amount-overdue due-today-more-detail'>
-					&nbsp;${Utils.formatCurrency(amountOverdue)} due on {latestOverdueDate}
+					{` ${Utils.formatCurrency(amountOverdue)} due on ${latestOverdueDate}.`}
 				</span>
 			)}
 		</span>
@@ -82,7 +80,7 @@ const generateOverdueCopy = splitInvoices => {
 	return (
 		<span className='overdue-amount'>
 			{`$${Utils.formatCurrency(amountOverdue)}`}
-			<span className='total-amount-due-subtext-bold'> past due</span>
+			<span className='total-amount-due-subtext-bold'> past due. </span>
 		</span>
 	);
 };
@@ -134,13 +132,14 @@ const getCallToActionCopy = (splitInvoices, status, summary) => {
 	return { summaryCopy, statusCopy, nextPaymentCopy };
 };
 
-const CallToAction = ({ invoices, summary }) => {
+const CallToAction = ({ invoices, summary, hasOnlinePaymentAccess }) => {
 	if (!invoices || !summary) {
 		return <div className='call-to-action'>Loading...</div>;
 	}
 
 	const user = getCurrentUser();
 	const { invoices: splitInvoices, status } = BillingUtils.getInvoiceStatus(invoices);
+	const customClass = hasOnlinePaymentAccess ? '' : 'no-button';
 	const { summaryCopy, statusCopy, nextPaymentCopy } = getCallToActionCopy(
 		splitInvoices,
 		status,
@@ -149,12 +148,15 @@ const CallToAction = ({ invoices, summary }) => {
 
 	return (
 		<div className='call-to-action'>
-			<div className='balance-summary'>{summaryCopy}</div>
-			<div className='balance-action total-amount-due-subtext'>{statusCopy}</div>
-			{nextPaymentCopy && (
-				<span className='next-invoice total-amount-due-subtext'>{nextPaymentCopy}</span>
-			)}
-			{Permissions.hasAccess(user, 'billing') && Permissions.hasAccess(user, 'online_payments') && (
+			<div className={`balance-summary ${customClass}`}>{summaryCopy}</div>
+			<div className='sub-text-section'>
+				<span className='balance-action total-amount-due-subtext'>{statusCopy}</span>
+				{nextPaymentCopy && (
+					<span className='next-invoice total-amount-due-subtext'>{nextPaymentCopy}</span>
+				)}
+			</div>
+
+			{hasOnlinePaymentAccess && (
 				<BloxButton
 					title='PAY NOW'
 					customClass='blox-button green-gradient'

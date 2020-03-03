@@ -1,9 +1,12 @@
 import React from 'react';
 import { string, bool, func, any } from 'prop-types';
 
-const BloxButton = ({ id, title, enabled, onClick, customClass, icon, imageId }) => {
+const BloxButton = ({ id, title, enabled, onClick, customClass, icon, imageId, bloxModule }) => {
 	const enable = enabled ? '' : ' disabled';
-	const buttonClass = customClass ? customClass : 'submit-button';
+	// const buttonClass = customClass ? customClass : 'submit-button';
+	const buttonClass = customClass
+		? `blox-button ${bloxModule} ${customClass}`
+		: `blox-button ${bloxModule} submit-button`;
 	const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 	const DownArrow = `${CDN_URL}support/Common_DownArrowTail.svg`;

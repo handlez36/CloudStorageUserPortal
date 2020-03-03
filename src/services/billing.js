@@ -2,45 +2,45 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import CountDown1 from '../components/Billing/CountDownSVGs/CountDown1';
-import CountDown2 from '../components/Billing/CountDownSVGs/CountDown2';
-import CountDown3 from '../components/Billing/CountDownSVGs/CountDown3';
-import CountDown4 from '../components/Billing/CountDownSVGs/CountDown4';
-import CountDown5 from '../components/Billing/CountDownSVGs/CountDown5';
-import CountDown6 from '../components/Billing/CountDownSVGs/CountDown6';
-import CountDown7 from '../components/Billing/CountDownSVGs/CountDown7';
-import CountDown8 from '../components/Billing/CountDownSVGs/CountDown8';
-import CountDown9 from '../components/Billing/CountDownSVGs/CountDown9';
-import CountDown10 from '../components/Billing/CountDownSVGs/CountDown10';
-import CountDown11 from '../components/Billing/CountDownSVGs/CountDown11';
-import CountDown12 from '../components/Billing/CountDownSVGs/CountDown12';
-import CountDown13 from '../components/Billing/CountDownSVGs/CountDown13';
-import CountDown14 from '../components/Billing/CountDownSVGs/CountDown14';
-import CountDown15 from '../components/Billing/CountDownSVGs/CountDown15';
-import CountDown16 from '../components/Billing/CountDownSVGs/CountDown16';
-import CountDown17 from '../components/Billing/CountDownSVGs/CountDown17';
-import CountDown18 from '../components/Billing/CountDownSVGs/CountDown18';
-import CountDown19 from '../components/Billing/CountDownSVGs/CountDown19';
-import CountDown20 from '../components/Billing/CountDownSVGs/CountDown20';
-import CountDown21 from '../components/Billing/CountDownSVGs/CountDown21';
-import CountDown22 from '../components/Billing/CountDownSVGs/CountDown22';
-import CountDown23 from '../components/Billing/CountDownSVGs/CountDown23';
-import CountDown24 from '../components/Billing/CountDownSVGs/CountDown24';
-import CountDown25 from '../components/Billing/CountDownSVGs/CountDown25';
-import CountDown26 from '../components/Billing/CountDownSVGs/CountDown26';
-import CountDown27 from '../components/Billing/CountDownSVGs/CountDown27';
-import CountDown28 from '../components/Billing/CountDownSVGs/CountDown28';
-import CountDown29 from '../components/Billing/CountDownSVGs/CountDown29';
-import CountDown30 from '../components/Billing/CountDownSVGs/CountDown30';
-import CountDown31 from '../components/Billing/CountDownSVGs/CountDown31';
-import { Utils } from '../services/utils';
-import { Sorting } from '../services/sorting';
+import CountDown1 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown1';
+import CountDown2 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown2';
+import CountDown3 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown3';
+import CountDown4 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown4';
+import CountDown5 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown5';
+import CountDown6 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown6';
+import CountDown7 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown7';
+import CountDown8 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown8';
+import CountDown9 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown9';
+import CountDown10 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown10';
+import CountDown11 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown11';
+import CountDown12 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown12';
+import CountDown13 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown13';
+import CountDown14 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown14';
+import CountDown15 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown15';
+import CountDown16 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown16';
+import CountDown17 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown17';
+import CountDown18 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown18';
+import CountDown19 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown19';
+import CountDown20 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown20';
+import CountDown21 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown21';
+import CountDown22 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown22';
+import CountDown23 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown23';
+import CountDown24 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown24';
+import CountDown25 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown25';
+import CountDown26 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown26';
+import CountDown27 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown27';
+import CountDown28 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown28';
+import CountDown29 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown29';
+import CountDown30 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown30';
+import CountDown31 from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/CountDown31';
+import { Utils } from 'services/utils';
+import { Sorting } from 'services/sorting';
 import {
 	INVOICE_SUMMARY_HEADERS,
 	INVOICE_DETAIL_HEADERS,
 	INVOICE_ICONS,
 	INVOICE_STATUS,
-} from '../containers/Billing2.0/BillingConstants';
+} from 'utils/BillingConstants';
 
 export const FILTERS = {
 	ALL: 'All Invoices',
@@ -48,6 +48,12 @@ export const FILTERS = {
 	LAST3: Sorting.getPrev3Months(new Date()),
 	PAID: 'Paid',
 	UNPAID: 'Unpaid',
+};
+export const INVOICES_STATUS = {
+	OVERDUE: 'OVERDUE',
+	DUE_TODAY: 'DUE_TODAY',
+	DUE_FUTURE: 'DUE_FUTURE',
+	NONE_DUE: 'NONE_DUE',
 };
 
 export const SORT_OPTIONS = {
@@ -256,6 +262,33 @@ export class BillingApi {
 }
 
 export class BillingUtils {
+	/**
+	 * Group invoices into buckets
+	 */
+	static splitInvoices = invoices => {
+		const today = moment().endOf('day');
+		const overdue = [];
+		const dueToday = [];
+		const dueFuture = [];
+		const notDue = [];
+
+		invoices.forEach(invoice => {
+			invoice.dueDate = moment(invoice.dueDate).endOf('day');
+			invoice.billcycle = moment(invoice.billcycle).endOf('day');
+
+			if (invoice.dueDate.isSame(today) && invoice.amountDue > 0) {
+				dueToday.push(invoice);
+			} else if (invoice.status === 'Due' && invoice.dueDate.isAfter(today)) {
+				dueFuture.push(invoice);
+			} else if (invoice.status === 'Overdue') {
+				overdue.push(invoice);
+			} else {
+				notDue.push(invoice);
+			}
+		});
+
+		return { overdue, dueToday, dueFuture, notDue, all: invoices };
+	};
 	static massageData = (data, headers) => {
 		return data.map(invoice => {
 			const formattedTransactions = invoice.transactions.map(txn => ({
@@ -301,6 +334,34 @@ export class BillingUtils {
 			return INVOICE_SUMMARY_HEADERS;
 		}
 	};
+	static getInvoiceStatus = invoices => {
+		const sampleInvoice = {
+			amountDue: 2442,
+			billcycle: '11.15.2019',
+			customerid: 346361,
+			dueDate: '12.14.2019',
+			filename: '346361-08152019-Invoice_1595.pdf',
+			invoiceAmount: 3160,
+			invoiceId: 517515,
+			invoiceNumber: 1599,
+			published: true,
+			status: 'Due',
+		};
+
+		let status = INVOICES_STATUS.NONE_DUE;
+		const splitInvoices = BillingUtils.splitInvoices(invoices);
+		// const splitInvoices = BillingUtils.splitInvoices(invoices.concat(sampleInvoice));
+
+		if (splitInvoices.dueToday.length > 0) {
+			status = INVOICES_STATUS.DUE_TODAY;
+		} else if (splitInvoices.overdue.length > 0) {
+			status = INVOICES_STATUS.OVERDUE;
+		} else if (splitInvoices.dueFuture.length > 0) {
+			status = INVOICES_STATUS.DUE_FUTURE;
+		}
+
+		return { invoices: splitInvoices, status };
+	};
 
 	static formatting(type, data) {
 		switch (type) {
@@ -334,11 +395,13 @@ export class BillingUtils {
 		}
 	}
 
-	static getLastThreeInvoices(invoices) {
-		const tempInvoices = [...invoices];
-		const sortedInvoices = BillingUtils.sort(tempInvoices);
+	static getInvoices(invoices, amount) {
+		if (invoices) {
+			const tempInvoices = [...invoices];
+			const sortedInvoices = BillingUtils.sort(tempInvoices);
 
-		return sortedInvoices.slice(0, 3);
+			return sortedInvoices.slice(0, amount);
+		}
 	}
 
 	static sort(invoices) {

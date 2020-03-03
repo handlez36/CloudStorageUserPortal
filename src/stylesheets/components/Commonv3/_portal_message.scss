@@ -1,0 +1,13 @@
+.portal-message {
+	height: auto;
+	.start {
+		color: $Dark_Blue;
+	}
+	.user-name {
+		@include Text-Style-Medium;
+	}
+
+	.content {
+		// @include Text-Style-14;
+	}
+}

@@ -1,14 +1,35 @@
-.call-to-action.v3 {
+.call-to-action {
 	@include FlexboxColumnCenter;
-	.balance-summary {
-		@include FlexboxRow;
+
+	.support-button {
+		width: 95.6px;
+		height: 32px;
+		padding: 0px;
+		.title {
+			@include Button-Style-1;
+			height: 100%;
+		}
 	}
+	.balance-summary {
+		color: $DCBLOX_Gray;
+		@include FlexboxRow;
+		padding: 0px;
+		padding-bottom: GetSize(1);
+		padding-top: GetSize(1);
+	}
+
 	.balance-summary .dollar-sign {
+		padding-top: 0px;
+		padding-right: 2px;
+		opacity: 0.8;
 	}
 	.balance-summary .dollars {
 	}
 	.balance-summary .cents {
+		padding-top: 0px;
+		padding-left: 2px;
 	}
+
 	.balance-action {
 		display: none;
 		.due-today-amount,
@@ -19,29 +40,71 @@
 	.next-invoice {
 		display: none;
 	}
-	@media screen and (min-width: 1025px) and (max-width: 1440) {
-		.balance-action {
-			display: block;
-			.due-today-amount {
-				display: block;
-			}
+
+	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+		.sub-text-section {
+			padding-bottom: GetSize(1);
 		}
-	}
-	@media screen and (min-width: 1441) and (max-width: 2560) {
+		.balance-summary {
+			padding-top: GetSize(1);
+		}
 		.balance-action {
-			display: block;
+			display: inline-block;
+			.overdue-amount {
+				display: inline-block;
+			}
 			.due-today-amount {
-				display: block;
+				display: inline-block;
 			}
 			.due-today-more-detail {
-				display: block;
+				display: inline-block;
+			}
+		}
+		.support-button {
+			width: 144px;
+			height: 40px;
+		}
+		#formButton {
+			margin-bottom: GetSize(1);
+		}
+	}
+	@media screen and (min-width: $high-res + 1) {
+		.balance-summary {
+			padding: 0px;
+			padding-bottom: GetSize(2);
+			padding-top: GetSize(2);
+		}
+		.balance-summary .dollar-sign {
+			padding-top: 0px;
+		}
+
+		.balance-summary .cents {
+			padding-top: 0px;
+		}
+		.sub-text-section {
+			padding-bottom: GetSize(3);
+		}
+		.support-button {
+			width: 168px;
+			height: 40px;
+		}
+		#formButton {
+			margin-bottom: GetSize(4);
+		}
+		.balance-action {
+			display: inline-block;
+			.overdue-amount {
+				display: inline-block;
+			}
+			.due-today-amount {
+				display: inline-block;
+			}
+			.due-today-more-detail {
+				display: inline-block;
 			}
 		}
 		.next-invoice {
-			display: block;
+			display: inline-block;
 		}
-	}
-
-	.text-alert {
 	}
 }

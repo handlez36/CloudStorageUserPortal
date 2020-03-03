@@ -1,36 +1,18 @@
-.total-amount-due-wrapper {
+.total-amount-due {
+	width: 100%;
+	height: 112px;
+	@include FlexboxRow;
 	background-color: $White;
-	box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
-	width: calculateVw(400px, $standard-screen-width-mid);
-	height: calculateVw(55px, $standard-screen-width-mid);
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-
-	.total-amount {
-		margin-left: 1.5vw;
-		margin-top: 1vh;
-		color: $DCBLOX_Gray;
-		font-family: $font-family-primary-subheads;
-		$map: (
-			576: 17,
-			1440: 22,
-			2560: 30,
-		);
-		font-size: least-squares-fit($map);
+	.calendar-day {
+		width: 32.5%;
 	}
-	.total-amount-due {
-		@include Text-Style-Accordian-Value;
-		$map: (
-			576: 12,
-			1440: 15,
-			2560: 20,
-		);
-		font-size: least-squares-fit($map);
-		margin-right: 1.5vw;
-		margin-top: 2vh;
-		border-bottom: solid 2px $Purple;
-		width: calculateVw(75.8px, $standard-screen-width-mid);
-		height: calculateVw(20px, $standard-screen-width-mid);
+	.call-to-action {
+		width: 67.5%;
+	}
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		height: 160px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		height: 172px;
 	}
 }

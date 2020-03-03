@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
-
+import { Utils, SIDES } from 'services/utils';
+import { RESOLUTIONS } from 'services/config';
 import PrimaryColumn from './PrimaryColumnSide';
 import MenuItems from './MenuItems';
-import { Utils, SIDES } from './../../../services/utils';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const MenuTriangle = `${CDN_URL}navigation/nav-primary-module-top.svg`;
@@ -70,11 +70,11 @@ class PrimaryMenu extends Component {
 		let margin;
 		let shadowMargin;
 		let height;
-		if (screenSize >= 2560) {
+		if (screenSize >= RESOLUTIONS.HIGH) {
 			height = 170;
 			margin = menuItemsHeight + 85;
 			shadowMargin = menuItemsHeight + 233;
-		} else if (screenSize >= 1024) {
+		} else if (screenSize >= RESOLUTIONS.MED) {
 			height = 145;
 			margin = menuItemsHeight + 57;
 			shadowMargin = menuItemsHeight + 207;
@@ -94,7 +94,7 @@ class PrimaryMenu extends Component {
 		this.setState({ navHeight: newHeight });
 	}
 	render() {
-		const { columnWidth, onMouseLeave } = this.props;
+		const { columnWidth, onMouseLeave, module } = this.props;
 		const { navHeight } = this.state;
 		const menu = [
 			{ name: 'Home' },
@@ -134,7 +134,7 @@ class PrimaryMenu extends Component {
 					</div>
 					<div className='primary-menu-items'>
 						<div className='primary-menu'>
-							<MenuItems section={'support'} navigation='primary' menu={menu} />
+							<MenuItems section={module} navigation='primary' menu={menu} />
 						</div>
 						<div className='bottom-section' id='bottom-section-primary'>
 							<img src={MenuTriangleBottom} />

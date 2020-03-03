@@ -107,8 +107,7 @@
 					padding-top: 0.5vh;
 				}
 				.count {
-					color: $DCBLOX_Gray;
-					font-family: $proxima-nova-regular;
+					@include Numbers30;
 					z-index: 3000;
 				}
 				.CircularProgressbar {

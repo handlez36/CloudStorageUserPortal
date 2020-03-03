@@ -257,7 +257,7 @@ export default class CredentialInputComponent extends Component {
 
 	render() {
 		return (
-			<div className='login_input_box'>
+			<div className='credential-input-component login_input_box'>
 				<div className='login_icons'>{this.createIndicatorElements()}</div>
 				<div className='login_input'>{this.createInputElements()}</div>
 			</div>

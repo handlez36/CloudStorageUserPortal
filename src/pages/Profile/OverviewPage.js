@@ -10,6 +10,8 @@ import RosterManagement from 'blox_components/Profile/RosterUserOverview/RosterU
 import { RESOLUTIONS } from 'services/config';
 import BloxButton from 'sub_components/Common/BloxButton';
 import { consolidateStreamedStyles } from 'styled-components';
+import CompanyProfile from 'blox_components/Profile/CompanyProfile';
+import { PROFILE_OVERVIEW_CARDS as CARDS } from 'utils/ProfileConstants';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -20,22 +22,70 @@ const LAYOUT_CONFIG = {
 		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.MED]: {
-		companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
-		rosterUserManagement: { x: 5, y: 43, dim: DIMENSIONS.TWO_BY_SIX },
-		myProfile: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_THREE },
-		portalUserManagement: { x: 5, y: 24, dim: DIMENSIONS.TWO_BY_SIX },
-		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
+		companyProfile: { x: 1, y: 58, dim: DIMENSIONS.TWO_BY_THREE },
+		rosterUserManagement: { x: 5, y: 58, dim: DIMENSIONS.TWO_BY_SIX },
+		myProfile: { x: 1, y: 31, dim: DIMENSIONS.TWO_BY_THREE },
+		portalUserManagement: { x: 5, y: 31, dim: DIMENSIONS.TWO_BY_SIX },
+		myServices: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.HIGH]: {
-		companyProfile: { x: 1, y: 43, dim: DIMENSIONS.TWO_BY_THREE },
-		rosterUserManagement: { x: 5, y: 43, dim: DIMENSIONS.TWO_BY_SIX },
-		myProfile: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_THREE },
-		portalUserManagement: { x: 5, y: 24, dim: DIMENSIONS.TWO_BY_SIX },
-		myServices: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
+		companyProfile: { x: 1, y: 92, dim: DIMENSIONS.TWO_BY_THREE },
+		rosterUserManagement: { x: 5, y: 92, dim: DIMENSIONS.TWO_BY_SIX },
+		myProfile: { x: 1, y: 50, dim: DIMENSIONS.TWO_BY_THREE },
+		portalUserManagement: { x: 5, y: 50, dim: DIMENSIONS.TWO_BY_SIX },
+		myServices: { x: 1, y: 3, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 };
 
+const CARD_EXPAND_Y_COORDS = {
+	[RESOLUTIONS.LOW]: { y: 62, initialY: 43, customHeight: null },
+	[RESOLUTIONS.MED]: { y: 81, initialY: 58, customHeight: 50 }, // 86
+	[RESOLUTIONS.HIGH]: { y: 117, initialY: 92, customHeight: 67 }, // 134
+};
+
 class OverviewPage extends Component {
+	state = {
+		expandedCard: null,
+	};
+
+	getLayoutConfig = breakpoint => {
+		const { expandedCard } = this.state;
+		const config = LAYOUT_CONFIG[breakpoint];
+
+		if (expandedCard && expandedCard === CARDS.MY_PROFILE) {
+			const defaultConfig = { ...config };
+			defaultConfig.myProfile = {
+				...defaultConfig.myProfile,
+				dim: DIMENSIONS.FOUR_BY_THREE,
+				customHeight: CARD_EXPAND_Y_COORDS[breakpoint].customHeight,
+			};
+			defaultConfig.companyProfile = {
+				x: 1,
+				y: CARD_EXPAND_Y_COORDS[breakpoint].y,
+				dim: DIMENSIONS.TWO_BY_THREE,
+			};
+			return defaultConfig;
+		} else if (expandedCard && expandedCard === CARDS.COMPANY_PROFILE) {
+			const defaultConfig = { ...config };
+			defaultConfig.companyProfile = {
+				x: 1,
+				y: CARD_EXPAND_Y_COORDS[breakpoint].initialY,
+				dim: DIMENSIONS.FOUR_BY_THREE,
+				customHeight: CARD_EXPAND_Y_COORDS[breakpoint].customHeight,
+			};
+			return defaultConfig;
+		} else {
+			return config;
+		}
+	};
+
+	expandCard = card => {
+		this.setState(state => {
+			state.expandedCard = state.expandedCard && state.expandedCard === card ? null : card;
+			return state;
+		});
+	};
+
 	render() {
 		const { breakpoint, location } = this.props;
 		const customTitlePortalOverview = (
@@ -64,10 +114,14 @@ class OverviewPage extends Component {
 				</div>
 			</div>
 		);
+		const { expandedCard } = this.state;
+
+		const layout = this.getLayoutConfig(breakpoint);
+		console.log('Layout: ', layout);
 		return (
 			<BloxPage
 				name='page profile-overview-page'
-				layout={LAYOUT_CONFIG[breakpoint]}
+				layout={this.getLayoutConfig(breakpoint)}
 				breakpoint={breakpoint}
 				location={location}
 			>
@@ -78,7 +132,7 @@ class OverviewPage extends Component {
 				</div>
 				<div key='myProfile' className='myProfile'>
 					<ComponentWrapper title='MY Profile' hideBorder>
-						<MyProfile />
+						<MyProfile expanded={expandedCard === CARDS.MY_PROFILE} expandCard={this.expandCard} />
 					</ComponentWrapper>
 				</div>
 				<div key='portalUserManagement' className='portalUserManagement'>
@@ -87,7 +141,12 @@ class OverviewPage extends Component {
 					</ComponentWrapper>
 				</div>
 				<div key='companyProfile' className='companyProfile'>
-					<ComponentWrapper title='COMPANY Profile' hideBorder />
+					<ComponentWrapper title='COMPANY Profile' hideBorder>
+						<CompanyProfile
+							expanded={expandedCard === CARDS.COMPANY_PROFILE}
+							expandCard={this.expandCard}
+						/>
+					</ComponentWrapper>
 				</div>
 				<div key='rosterUserManagement' className='rosterUserManagement'>
 					<ComponentWrapper title={customTitleRosterOverview} showButton hideBorder>

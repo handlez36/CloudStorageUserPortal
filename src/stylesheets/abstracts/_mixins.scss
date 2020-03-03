@@ -31,15 +31,21 @@
 	color: $DCBLOX_Gray;
 }
 @mixin Billing-Amount-Medium {
-	$map: (
-		576: 20,
-		1440: 25,
-		2560: 35,
-	);
-	font-size: least-squares-fit($map);
-	font-family: $proxima-nova-regular;
-	letter-spacing: -1.6px;
-	line-height: 1;
+	font-size: 26px;
+	font-family: $proxima-nova-light;
+	line-height: 26px;
+	letter-spacing: -1.3px;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 28px;
+		line-height: 28px;
+		letter-spacing: -1.4px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 46px;
+		line-height: 46px;
+		letter-spacing: -2.3px;
+	}
 }
 @mixin Text-Style-Small {
 	$map: (
@@ -1171,32 +1177,7 @@
 	text-align: center;
 	font-stretch: condensed;
 }
-@mixin Count {
-	color: $White;
-	font-family: $proxima-nova-light;
-	$map: (
-		576: 10,
-		1440: 45,
-		2560: 50,
-	);
-	font-size: least-squares-fit($map);
-	text-align: center;
-}
-@mixin Text-Style-Ticket-Indicator {
-	font-family: $font-family-primary-subheads;
-	$map: (
-		576: 10,
-		1440: 12,
-		2560: 22,
-	);
-	font-size: least-squares-fit($map);
-	font-style: normal;
-	font-stretch: condensed;
-	line-height: 16px;
-	letter-spacing: 0.8px;
-	text-align: center;
-	color: $White;
-}
+
 @mixin Text-Style-Small-Gray {
 	font-family: $proxima-nova-regular;
 

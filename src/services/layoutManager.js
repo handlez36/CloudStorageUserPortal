@@ -68,6 +68,7 @@ export const DIMENSIONS = {
 	FOUR_BY_SIX: '4x6',
 	FOUR_BY_EIGHT: '4x8',
 	FOUR_BY_TEN: '4x10',
+	FOUR_BY_TWELVE: '4x12',
 };
 
 export default class LayoutManager {
@@ -144,6 +145,8 @@ export default class LayoutManager {
 	};
 
 	_allowCustomHeight = (width, height, customHeight) => {
-		return width === '12' && height === '2' && customHeight;
+		// return width === '12' && height === '2' && customHeight;
+		// return width === '12' && (height === '2' || height === '4') && customHeight;
+		return !!customHeight;
 	};
 }

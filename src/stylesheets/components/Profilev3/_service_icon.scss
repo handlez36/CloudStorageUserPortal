@@ -50,3 +50,33 @@
 		}
 	}
 }
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.service-icon {
+		width: 160px;
+		height: 160px;
+		.service-content {
+			.icon img {
+				width: GetSize(5);
+				height: GetSize(5);
+			}
+			.label {
+				margin-top: GetSize(2);
+			}
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.service-icon {
+		width: 224px;
+		height: 224px;
+		.service-content {
+			.icon img {
+				width: GetSize(10);
+				height: GetSize(10);
+			}
+			.label {
+				margin-top: GetSize(3);
+			}
+		}
+	}
+}

@@ -45,7 +45,7 @@ const Avatar9Pass = `${CDN_URL}common/avatars/avatar-9-thumbsup.png`;
 const Avatar9Fail = `${CDN_URL}common/avatars/avatar-9-fail.png`;
 const Avatar9Rectangle = `${CDN_URL}common/avatars/avatar-9-rectangle.png`;
 
-const AdminAvatar = `${CDN_URL}common/avatars//user-admin-avatar.png`;
+const AdminAvatar = `${CDN_URL}common/avatars/user-admin-avatar.png`;
 
 const Avatar10 = `${CDN_URL}common/avatars/avatar-generic.png`;
 

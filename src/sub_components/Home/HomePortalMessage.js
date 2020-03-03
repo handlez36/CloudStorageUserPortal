@@ -86,7 +86,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ switchCompany, getCompanyInfo },
-)(HomePortalMessage);
+export default connect(mapStateToProps, { switchCompany, getCompanyInfo })(HomePortalMessage);

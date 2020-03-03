@@ -17,23 +17,29 @@ class TicketCountRow extends Component {
 
 	getTickets = async bloxModule => {
 		const { tickets, error } = await TicketApi.getAll();
+
 		this.setState({ tickets, error });
 	};
 
-	getCountAndPercentage = (type, status) => {
+	getCountAndPercentage = (type, status, showTitle) => {
 		const { tickets } = this.state;
-		if (tickets.length < 1) {
+
+		if (!tickets || tickets.length < 1) {
 			return { count: 0, percentage: 0 };
 		}
 
 		const filteredTicketsByType = tickets.filter(
 			ticket => ticket.type.toLowerCase() === type.toLowerCase(),
 		);
+		if (filteredTicketsByType === 0) {
+			showTitle(false);
+		}
+
 		const fullyFilteredTickets = filteredTicketsByType.filter(ticket => {
 			return status === HIGH_LEVEL_TICKET_STATUS.OPEN
 				? ticket.status !== DETAILED_TICKET_STATUS.SOLVED &&
 						ticket.status !== DETAILED_TICKET_STATUS.RESOLVED
-				: ticket.status === DETAILED_TICKET_STATUS.SOLVED &&
+				: ticket.status === DETAILED_TICKET_STATUS.SOLVED ||
 						ticket.status === DETAILED_TICKET_STATUS.RESOLVED;
 		});
 
@@ -48,11 +54,11 @@ class TicketCountRow extends Component {
 	}
 
 	render() {
-		const { goToTicketHistory, ticketType, status, customImage, strokeColor, text } = this.props;
-		const { count, percentage } = this.getCountAndPercentage(ticketType, status);
+		const { goToTicketHistory, ticketType, text, showTitle, status } = this.props;
+		const { count, percentage } = this.getCountAndPercentage(ticketType, status, showTitle);
 
 		return (
-			<div className='ticket-count-section'>
+			<div className={`ticket-count-section ${count === 0 ? 'hide' : ''}`}>
 				{true && (
 					<div
 						className='progress-circle v3'

@@ -1,14 +1,10 @@
 import React from 'react';
 import moment from 'moment';
 
-import Zero from 'Components/CountDownSVGs/Zero';
-import PastDue from 'Components/CountDownSVGs/PastDue';
-import DueToday from 'Components/CountDownSVGs/DueToday';
-import { BillingApi, BillingUtils, INVOICES_STATUS } from 'services/billing';
-// import Zero from './../../components/Billing/CountDownSVGs/Zero';
-// import PastDue from './../../components/Billing/CountDownSVGs/PastDue';
-// import DueToday from './../../components/Billing/CountDownSVGs/DueToday';
-// import { BillingApi, BillingUtils, INVOICES_STATUS } from './../../services/billing';
+import Zero from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/Zero';
+import PastDue from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/PastDue';
+import DueToday from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/DueToday';
+import { BillingApi, BillingUtils, INVOICES_STATUS } from '../../../../services/billing';
 
 const selectCalendarImage = (invoices, status) => {
 	const today = moment().startOf('day');
@@ -35,7 +31,7 @@ const selectCalendarImage = (invoices, status) => {
 
 const CalendarDay = ({ invoices }) => {
 	if (!invoices) {
-		return <div className='calendar-day'>Error pulling invoices</div>;
+		return <div className='calendar-day'></div>;
 	}
 
 	const { invoices: splitInvoices, status } = BillingUtils.getInvoiceStatus(invoices);

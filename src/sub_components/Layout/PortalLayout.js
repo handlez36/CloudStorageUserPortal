@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import capitalize from 'lodash/capitalize';
-
+import { RESOLUTIONS } from 'services/config';
 // import NavSection from '../Navigationv3/BloxNavigationSection';
 // import ContentSection from './ContentSection';
 // import HeaderSection from './HeaderSection';
@@ -15,8 +15,7 @@ import NavSection from './Navigation/BloxNavigationSection';
 import ContentSection from './ContentSection';
 import HeaderSection from './HeaderSection';
 import FooterSection from './Footer';
-import StorageOverview from './../../pages/Storage/OverviewPage';
-import { RESOLUTIONS } from './../../services/config';
+
 // import { SITE_MAP, SITE_PAGES } from './../Common/CommonConstants';
 
 const PAGES = {
@@ -28,7 +27,7 @@ const PAGES = {
 	},
 	Profile: {
 		Overview: 'OverviewPage',
-		Avatar: 'AvatarPage',
+		Password_change: 'PasswordChangePage',
 	},
 	Billing: {
 		Overview: 'OverviewPage',
@@ -53,25 +52,30 @@ class PortalLayout extends Component {
 	parseUrlParams = () => {
 		const { location: { pathname = '' } = {} } = this.props;
 		// const urlRegex = /^\/(.*)\/?(.*)$/;
-		const urlRegex = /^\/portal\/?(\w*)\/?.*$/;
+		const urlRegex = /^\/portal\/?(\w*)\/?(\w*)\/?.*$/;
 		const matches = pathname.match(urlRegex);
 
 		if (matches) {
-			const [url, siteModule, sitePage] = matches;
-			this.loadPage(siteModule, sitePage);
-			return { siteModule, sitePage };
+			const [, siteModule, sitePage] = matches;
+			console.log('Site Module: ', siteModule);
+			console.log('Site Module: ', sitePage);
+			const parsedSitePage = !sitePage || sitePage === undefined ? 'OVERVIEW' : sitePage;
+			// this.loadPage(siteModule, sitePage);
+			this.loadPage(siteModule, parsedSitePage);
+			return { siteModule, parsedSitePage };
 		}
 
 		return { siteModule: 'HOME', sitePage: 'OVERVIEW' };
 	};
 
 	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
+		console.log('Blox Page: ', bloxPage);
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
 		const pageName = PAGES[mod][page];
 
 		const Component = require(`../../pages/${mod}/${pageName}`).default;
-		this.setState({ PageComponent: Component });
+		this.setState({ PageComponent: Component, currentModule: mod.toLowerCase() });
 	};
 
 	updateScreenBreakpoint = screenWidth => {
@@ -104,8 +108,8 @@ class PortalLayout extends Component {
 	}
 
 	render() {
-		const { breakpoint, PageComponent } = this.state;
-
+		const { breakpoint, PageComponent, currentModule } = this.state;
+		console.log('CURRENT MODULE', currentModule);
 		return (
 			<div className='portal-layout v3'>
 				<div className='portal-header'>
@@ -113,7 +117,7 @@ class PortalLayout extends Component {
 				</div>
 				<div className='portal-main'>
 					<div className='main-nav'>
-						<NavSection />
+						<NavSection module={currentModule} />
 					</div>
 					<div className='main-content'>
 						{PageComponent && <ContentSection content={PageComponent} breakpoint={breakpoint} />}

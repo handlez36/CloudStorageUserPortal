@@ -4,7 +4,7 @@ import { Netmask } from 'netmask';
 
 // import { TICKET_LIST_CYCLE_DIRECTION } from '../containers/Support/TicketConstants';
 // import { TICKET_LIST_CYCLE_DIRECTION } from './../utils/TicketConstants';
-import { TICKET_LIST_CYCLE_DIRECTION } from 'utils/TicketConstants';
+import { TICKET_LIST_CYCLE_DIRECTION } from '../utils/TicketConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Atlanta = `${CDN_URL}profile/image-building-atlanta.svg`;
 const Huntsville = `${CDN_URL}profile/image-building-huntsville.svg`;
@@ -30,6 +30,38 @@ export const SIDES = {
 };
 
 export class Utils {
+	static getMenuItems = names => {
+		const menu = [];
+		for (let i = 0; i <= names.length - 1; i++) {
+			menu.push({ name: names[i].toUpperCase() });
+		}
+		return menu;
+	};
+	//Get menu number based on module
+	static getModuleNumber = module => {
+		let moduleNumber = null;
+		console.log(module);
+		switch (module) {
+			case 'billing':
+				moduleNumber = 4;
+				break;
+			case 'profile':
+				moduleNumber = 3;
+				break;
+			case 'support':
+				moduleNumber = 2;
+				break;
+			case 'storage':
+				moduleNumber = 1;
+				break;
+			default:
+				moduleNumber = '';
+
+				break;
+		}
+
+		return moduleNumber;
+	};
 	static getClientParams(ip, site) {
 		const clientJs = new ClientJS();
 
@@ -98,7 +130,7 @@ export class Utils {
 		let assets;
 		// console.log(module);
 		switch (module) {
-			case 'account':
+			case 'profile':
 				const topAssetAccount = size && size === 'md' ? NavTopAccountmd : NavTopAccount;
 				// console.log(topAssetAccount);
 				assets = {
@@ -529,10 +561,10 @@ export class Utils {
 		let msg = '';
 		const everyOctetIsNum = pieces.every(
 			(piece, index) =>
-				!dirty[index] || (dirty[index] && (parseInt(piece) >= 0 && parseInt(piece) < 256)),
+				!dirty[index] || (dirty[index] && parseInt(piece) >= 0 && parseInt(piece) < 256),
 		);
 		const firstOctetValid =
-			!dirty[0] || (dirty[0] && (pieces[0] && parseInt(pieces[0]) && parseInt(pieces[0]) > 0));
+			!dirty[0] || (dirty[0] && pieces[0] && parseInt(pieces[0]) && parseInt(pieces[0]) > 0);
 		const subnetValid = Utils.checkSubnetValidity(subnet);
 
 		if (!everyOctetIsNum) {
@@ -657,12 +689,15 @@ export class Utils {
 		if (!topEl || !bottomEl) {
 			return null;
 		}
-
 		// Get DOM elements and relative points of the element
 		const { points: topDiamondPoints } = Utils.getElementPoints(topEl);
 		const { points: bottomDiamondPoints } = Utils.getElementPoints(bottomEl);
 		// console.log('Top Diamond Points: ', topDiamondPoints);
 		// console.log('Bottom Diamond Points: ', bottomDiamondPoints);
+
+		if (!topDiamondPoints || !bottomDiamondPoints) {
+			return null;
+		}
 
 		// Get line1 and line2 points based on sides being analyzed
 		const lineOneFromPoint = side === SIDES.LEFT ? topDiamondPoints.left : topDiamondPoints.right;
