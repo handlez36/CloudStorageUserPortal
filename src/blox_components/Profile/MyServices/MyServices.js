@@ -24,7 +24,13 @@ const MyServices = props => {
 	return (
 		<div className='my-services'>
 			{AVAILABLE_SERVICES.map(service => {
-				return <ServiceIcon service={service} companyServices={companyServices || []} />;
+				return (
+					<ServiceIcon
+						key={`service-${service}`}
+						service={service}
+						companyServices={companyServices || []}
+					/>
+				);
 			})}
 		</div>
 	);

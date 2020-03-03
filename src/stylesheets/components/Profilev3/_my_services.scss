@@ -7,3 +7,18 @@
 		margin-left: GetSize(2);
 	}
 }
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.my-services {
+		.service-icon:not(:first-child) {
+			margin-left: GetSize(4);
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.my-services {
+		padding: GetSize(3) GetSize(3) GetSize(3) GetSize(3);
+		.service-icon:not(:first-child) {
+			margin-left: GetSize(12);
+		}
+	}
+}
