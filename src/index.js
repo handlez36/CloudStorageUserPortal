@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import registerServiceWorker from 'registerServiceWorker';
 
 /** v3 imports */
-import App from 'App';
+
 import reducers from 'reducers';
 import ProtectedRoute from 'routing/ProtectedRoute';
 import Portal from 'routing/Portal';
@@ -18,7 +18,8 @@ import Sandbox from 'pages/Sandbox/Sandbox';
 import Sandbox2 from 'pages/Sandbox/Sandbox2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './stylesheets/main.scss';
+import 'stylesheets/main.scss';
+import App from 'App';
 
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware, ReduxPromise)(createStore);
 const browserHistory = Router.browserHistory;

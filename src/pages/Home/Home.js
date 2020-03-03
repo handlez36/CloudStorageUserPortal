@@ -15,16 +15,16 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 // import HomePortalMessage from './HomePortalMessage';
 
 /** v3 imports */
-import Block from './../../sub_components/Home/Block';
-import { HOME_LAYOUT_GRID } from './../../utils/Home/HomePageConstants';
-import Profile from './../../assets/home-profile-module-2019.svg';
-import Billing from './../../assets/home-billing-module-2019.svg';
-import Support from './../../assets/home-support-module-2019.svg';
-import Storage from './../../assets/home-storage-module-2019.svg';
+import Block from 'sub_components/Home/Block';
+import { HOME_LAYOUT_GRID } from 'utils/Home/HomePageConstants';
+import Profile from 'assets/home-profile-module-2019.svg';
+import Billing from 'assets/home-billing-module-2019.svg';
+import Support from 'assets/home-support-module-2019.svg';
+import Storage from 'assets/home-storage-module-2019.svg';
 // import { UserApi } from '../../services/user';
-import { Permissions } from './../../services/permissions';
-import { updateModule, updatePage } from './../../actions/siteTracking';
-import HomePortalMessage from './../../sub_components/Home/HomePortalMessage';
+import { Permissions } from 'services/permissions';
+import { updateModule, updatePage } from 'actions/siteTracking';
+import HomePortalMessage from 'sub_components/Home/HomePortalMessage';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -140,13 +140,10 @@ class Home extends Component {
 		const { containerPadding, margin, rowHeight } = this.state;
 		const { memberships } = this.props.auth;
 
-		// const { access: hasBillingAccess } = Permissions.hasService(memberships, 'Billing');
+		const { access: hasBillingAccess } = Permissions.hasService(memberships, 'Billing');
 		const { access: hasStorageAccess } = Permissions.hasService(memberships, 'Storage');
-		// const { access: hasProfileAccess } = Permissions.hasService(memberships, 'Profile');
+		const { access: hasProfileAccess } = Permissions.hasService(memberships, 'Profile');
 		const { access: hasSupportAccess } = Permissions.hasService(memberships, 'Support');
-		const hasBillingAccess = false;
-		const hasProfileAccess = true;
-		// const hasSupportAccess = false;
 
 		return (
 			<div id='home-background' className='home-back-ground'>
@@ -371,10 +368,8 @@ class Home extends Component {
 function mapStateToProps(state) {
 	return {
 		auth: state.auth_status,
+		company_info: state.company_info,
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ updateModule, updatePage },
-)(Home);
+export default connect(mapStateToProps, { updateModule, updatePage })(Home);

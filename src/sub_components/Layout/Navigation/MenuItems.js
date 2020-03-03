@@ -38,6 +38,7 @@ class MenuItems extends Component {
 
 	render() {
 		const { section, navigation, menu } = this.props;
+
 		return (
 			<div className='menu-items ' id={`menu-${navigation}`}>
 				{menu &&

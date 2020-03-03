@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-
-import CalendarDay from 'sub_components/Billing/CalendarDay';
-import CallToAction from 'sub_components/Billing/CallToAction';
+import { connect } from 'react-redux';
+import CalendarDay from 'blox_components/Billing/TotalAmountDue/Components/CalendarDay';
+import CallToAction from 'blox_components/Billing/TotalAmountDue/Components/CallToAction';
 import { BillingApi } from 'services/billing';
+import { Permissions } from 'services/permissions';
 
 class TotalAmountDue extends Component {
 	state = {
@@ -35,22 +36,48 @@ class TotalAmountDue extends Component {
 			this.setState({ summaryErr: e.message });
 		}
 	};
+	getModulePages = async () => {
+		const response = await Permissions.getModulePermissions(4);
+
+		if (response && !response.data.error) {
+			this.setState({
+				pages: response.data.pages,
+			});
+		}
+	};
 
 	componentDidMount() {
 		this.getInvoices();
 		this.getSummary();
+		this.getModulePages();
 	}
 
 	render() {
-		const { invoices, summary, invoiceErr, summaryErr } = this.state;
+		const { invoices, summary, invoiceErr, summaryErr, pages } = this.state;
 
+		const hasOnlinePaymentAccess = Permissions.checkComponentAccess(
+			pages,
+			'Overview',
+			'bill-paynow-component',
+		);
 		return (
 			<div class='total-amount-due'>
 				<CalendarDay invoices={invoices} />
-				<CallToAction invoices={invoices} summary={summary} />
+				<CallToAction
+					invoices={invoices}
+					summary={summary}
+					hasOnlinePaymentAccess={hasOnlinePaymentAccess}
+				/>
 			</div>
 		);
 	}
 }
 
-export default TotalAmountDue;
+function mapStateToProps(state) {
+	return {
+		auth_status: state.auth_status,
+		company_info: state.company_info,
+	};
+}
+
+export default connect(mapStateToProps)(TotalAmountDue);

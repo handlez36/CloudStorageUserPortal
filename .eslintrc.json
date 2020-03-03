@@ -86,6 +86,7 @@
 		"no-console": [0],
 		"no-debugger": [0],
 		"no-bitwise": [0],
+		"no-confusing-arrow": [0],
 
 		"no-spaced-func": [0],
 		"no-mixed-operators": [0],

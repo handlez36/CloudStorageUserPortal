@@ -1,64 +1,4 @@
 .billing-overview-page {
-	z-index: 20;
-	width: calculateVw(940px, 1440);
-	height: 100%;
-	padding: 0;
-	margin: 0;
-	background-color: transparent;
-	.react-grid-layout:not(.vertical-grid) {
-		opacity: 1;
-		background: none;
-		&.six-column {
-			background: none;
-		}
-	}
-
-	.password-modal {
-		.error-modal {
-			.modal-content {
-				margin-left: 5vw;
-				margin-top: 7vh;
-			}
-		}
-	}
-	.storage-graphs {
-		min-height: 500px;
-	}
-	.file-graph {
-		margin-bottom: 1vh;
-		min-height: 220px;
-	}
-	.storage-graph-header {
-		position: relative;
-		width: calculateVw(430, 1440);
-		.graph-resolution-picker {
-			position: absolute;
-			right: 20%;
-			bottom: 0%;
-		}
-		.graph-title {
-			@include Support-Section-Header;
-		}
-		.graph-picker {
-			position: absolute;
-			right: 0%;
-			bottom: 0%;
-		}
-	}
-	.top-section {
-		width: calculateVw(940px, 1440);
-		height: 100%;
-		background-color: $Cool_Gray_Light_3;
-		position: absolute;
-	}
-	.bottom-section {
-		width: calculateVw(940px, 1440);
-		height: calculateVh(900px, 1440);
-		background-color: $Cool_Gray_Light_3;
-		position: absolute;
-		margin-top: calculateVh(350px, 1440);
-	}
-
 	.ticket-count-section {
 		.CircularProgressbar-path {
 			stroke: $Med_Lime;
@@ -67,42 +7,16 @@
 			stroke: $DCBLOX_Lime;
 		}
 		.CircularProgressbar-background {
-			fill: $Purple;
+			fill: rgba(131, 129, 5, 0.9);
 		}
-	}
-
-	.share-name-label {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		.lady-bug {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			img {
-				width: calculateVw(25, 1440);
-				height: calculateVh(35, 1440);
-			}
+		.count {
+			color: $White;
 		}
-		.title {
-			margin-left: 1vw;
-			align-self: center;
-			@include User-Management-Menu;
-			color: $DCBLOX_Gray;
+		.status-label {
+			padding-top: GetSize(2);
 		}
-	}
-	.ticket-type-selection {
-		min-width: auto;
-		min-height: auto;
-		max-width: none;
-		max-height: none;
-		height: 100%;
-	}
-	.large-card-wrapper {
-		min-width: auto;
-		min-height: auto;
-		max-width: none;
-		max-height: none;
-		width: 100%;
+		&.hide {
+			display: none;
+		}
 	}
 }

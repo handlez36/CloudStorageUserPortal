@@ -266,9 +266,4 @@ function mapDispatchToProps(dispatch) {
 	);
 }
 
-export default withRouter(
-	connect(
-		mapStateToProps,
-		mapDispatchToProps,
-	)(LoginInput),
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginInput));

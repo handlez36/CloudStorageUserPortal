@@ -6,8 +6,9 @@ import { Route, Switch } from 'react-router-dom'; //IndexRoute has been removed 
 import Home from 'pages/Home/Home';
 import LoginPage from 'pages/Login/LoginPage';
 import PortalLayout from 'sub_components/Layout/PortalLayout';
+
 // import Release from './Release/Release';
-import Footer from 'sub_components/Layout/Footer';
+
 import ModalPage from 'sub_components/Misc/ModalPage';
 import Error404 from 'pages/Misc/Error404';
 import { Permissions } from 'services/permissions';
@@ -67,12 +68,12 @@ class Portal extends Component {
 						exact
 						path='/portal/support'
 						render={props => (hasSupportAccess ? <Support {...props} /> : <Home {...props} />)}
-					/>
+					/>*/}
 					<Route
 						exact
 						path='/portal/billing'
-						render={props => (hasBillingAccess ? <Billing {...props} /> : <Home {...props} />)}
-					/> */}
+						render={props => (hasBillingAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
+					/>
 					<Route
 						exact
 						path='/portal/profile'
@@ -91,6 +92,7 @@ class Portal extends Component {
 					/>
 					{/* <Route exact path='/portal/sandbox' component={Sandbox} /> */}
 					<Route exact path='/portal/storagev3' component={PortalLayout} />
+
 					<Route
 						exact
 						path='/portal/'
@@ -121,7 +123,4 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(
-	mapStateToProps,
-	{ getCompanyInfo },
-)(Portal);
+export default connect(mapStateToProps, { getCompanyInfo })(Portal);

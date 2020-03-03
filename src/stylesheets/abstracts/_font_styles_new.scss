@@ -1,87 +1,104 @@
 // Newest Fonts Styles - from Niamh
 
-@mixin Primary {
-	font-size: 18px;
+@mixin Text-Style-Ticket-Indicator {
+	font-size: 16px;
 	font-family: $font-family-primary-subheads;
-	line-height: 18px;
+	line-height: 16px;
+	letter-spacing: 0.8px;
+	text-transform: uppercase;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 20px;
+		line-height: 20px;
+		letter-spacing: 1px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 30px;
+		line-height: 30px;
+		letter-spacing: 1.5px;
+	}
+}
+@mixin Primary {
+	font-size: 14px;
+	font-family: $font-family-primary-subheads;
+	line-height: 14px;
 	color: $Cool_Gray_Dark_2;
 	letter-spacing: 0.75px;
 	text-transform: uppercase;
-	@media screen and (max-width: 1024px) {
-		font-size: 14px;
-		line-height: 14px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
 	}
-	@media screen and (min-width: 2560px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		line-height: 24px;
 	}
 }
 @mixin Secondary {
-	font-size: 18px;
+	font-size: 14px;
 	font-family: $font-family-primary-subheads;
-	line-height: 18px;
+	line-height: 14px;
 	color: $Cool_Gray_Dark_2;
 	text-align: center;
-	@media screen and (max-width: 1024px) {
-		font-size: 14px;
-		line-height: 14px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
 	}
-	@media screen and (min-width: 2560px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		line-height: 24px;
 	}
 }
 @mixin Menu {
-	font-size: 18px;
+	font-size: 14px;
 	letter-spacing: 1px;
 	font-family: $font-family-primary-heads;
-	line-height: 18px;
+	line-height: 14px;
 	color: $Cool_Gray_Dark_2;
 	text-align: center;
-	@media screen and (max-width: 1024px) {
-		font-size: 14px;
-		line-height: 14px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
 	}
-	@media screen and (min-width: 2560px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 22px;
 		line-height: 22px;
 	}
 }
 @mixin Menu-Active {
-	font-size: 20px;
+	font-size: 16px;
 	letter-spacing: 1px;
 	font-family: $font-family-primary-heads;
-	line-height: 20px;
+	line-height: 16px;
 	color: $Cool_Gray_Dark_2;
 	text-align: center;
-	@media screen and (max-width: 1024px) {
-		font-size: 16px;
-		line-height: 16px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 20px;
+		line-height: 20px;
 	}
-	@media screen and (min-width: 2560px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		line-height: 24px;
 	}
 }
 
-@mixin Text-Flow-Active($active_color) {
-	font-family: $font-family-primary-heads;
-	background-clip: text;
-	text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
-	animation: flow 1s linear;
-	animation-direction: reverse;
-	background-image: linear-gradient(
-		to left,
-		$Cool_Gray_Dark_2 40%,
-		$Cool_Gray_Dark_2 40%,
-		$active_color 0%
-	);
-	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-		background-image: none;
-		color: $active_color;
-	}
-}
+// @mixin Text-Flow-Active($active_color) {
+// 	font-family: $font-family-primary-heads;
+// 	background-clip: text;
+// 	text-fill-color: transparent;
+// 	-webkit-text-fill-color: transparent;
+// 	animation: flow 1s linear;
+// 	animation-direction: reverse;
+// 	background-image: linear-gradient(
+// 		to left,
+// 		$Cool_Gray_Dark_2 40%,
+// 		$Cool_Gray_Dark_2 40%,
+// 		$active_color 0%
+// 	);
+// 	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+// 		background-image: none;
+// 		color: $active_color;
+// 	}
+// }
 
 @mixin Text-Flow-Animate {
 	font-family: $font-family-primary-subheads;
@@ -202,12 +219,12 @@
 	// 		@include Active-Nav-Menu($Dark_Blue);
 	// 	}
 	// }
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
 		height: 18px;
 		letter-spacing: 1.35px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		height: 24px;
 		letter-spacing: 1.8px;
@@ -239,11 +256,11 @@
 			@include Active-Nav-Menu($Dark_Blue);
 		}
 	}
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
 		height: 18px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 24px;
 		height: 24px;
 	}
@@ -276,7 +293,7 @@
 			@include Active-Nav-Menu($Dark_Blue);
 		}
 	}
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
 		height: 18px;
 		letter-spacing: 1.8px;
@@ -286,7 +303,7 @@
 			letter-spacing: 2px;
 		}
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 22px;
 		height: 22px;
 		letter-spacing: 2.2px;
@@ -305,11 +322,11 @@
 	line-height: 1px;
 	letter-spacing: 1px;
 	color: $DCBLOX_Gray;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 24px;
 		letter-spacing: 1.2px;
 	}
-	@media screen and (min-width: 1441px) {
+	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 34px;
 		letter-spacing: 1.7px;
 	}
@@ -404,7 +421,7 @@
 	font-size: 12px;
 	line-height: 1px;
 	letter-spacing: -0.6px;
-	color: $DCBLOX_Gray;
+
 	@media screen and (min-width: 1025px) and (max-width: 1440px) {
 		font-size: 14px;
 		letter-spacing: -0.7px;
@@ -437,7 +454,7 @@
 	font-size: 26px;
 	line-height: 1;
 	letter-spacing: -1.3px;
-	color: $DCBLOX_Gray;
+
 	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 28px;
@@ -451,18 +468,19 @@
 }
 
 @mixin Numbers30 {
-	font-family: $proxima-nova-light;
 	font-size: 36px;
-	line-height: 1;
+	font-family: $proxima-nova-light;
+	line-height: 36px;
 	letter-spacing: -1.8px;
-	color: $DCBLOX_Gray;
-	text-align: left;
+	text-transform: uppercase;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 46px;
+		line-height: 46px;
 		letter-spacing: -2.3px;
 	}
 	@media screen and (min-width: ($high-res + 1)) {
 		font-size: 60px;
+		line-height: 60px;
 		letter-spacing: -3px;
 	}
 }
@@ -491,7 +509,6 @@
 	font-size: 12px;
 	line-height: 1.5;
 	letter-spacing: normal;
-	color: $DCBLOX_Gray;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 14px;
 		line-height: 1.43;
@@ -580,55 +597,86 @@
 
 /** Temporary styles */
 @mixin Total-Amount-Due {
-	font-family: $proxima-nova-regular;
-	font-size: 24px;
-	letter-spacing: normal;
+	font-family: $proxima-nova-light;
+	font-size: 36px;
+	letter-spacing: -1.8px;
 	color: $DCBLOX_Gray;
 	text-align: center;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
-		font-size: 32px;
+	line-height: 36px;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 46px;
+		letter-spacing: -2.3px;
+		line-height: 46px;
 	}
-	@media screen and (min-width: 1441px) and (max-width: 2560px) {
-		font-size: 48px;
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 60px;
+		letter-spacing: -3px;
+		line-height: 60px;
 	}
 }
 
 @mixin Total-Amount-Due-Subtext {
-	font-family: $proxima-nova-bold;
+	font-family: $proxima-nova-regular;
 	font-size: 16px;
-	letter-spacing: normal;
-	color: $DCBLOX_Red;
+	line-height: 20px;
+	color: $DCBLOX_Gray;
 	text-align: center;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 16px;
+		line-height: 22px;
 	}
-	@media screen and (min-width: 1441px) and (max-width: 2560px) {
-		font-size: 16px;
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		line-height: 24px;
 	}
 }
 @mixin Total-Amount-Due-Subtext-Bold {
 	font-family: $proxima-nova-bold;
 	font-size: 16px;
-	letter-spacing: normal;
+	line-height: 22px;
 	color: $DCBLOX_Red;
 	text-align: center;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 16px;
 	}
-	@media screen and (min-width: 1441px) and (max-width: 2560px) {
-		font-size: 16px;
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		line-height: 24px;
 	}
 }
-@mixin Total-Amount-Due-Dollars-And-Cents {
+@mixin Numbers10 {
 	font-family: $proxima-nova-light;
-	font-size: 24px;
-	letter-spacing: normal;
-	color: $DCBLOX_Gray;
+	font-size: 14px;
+	letter-spacing: -0.7px;
 	text-align: center;
-	@media screen and (min-width: 1025px) and (max-width: 1440px) {
-		font-size: 28px;
+	opacity: 0.8;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 20px;
+		letter-spacing: -1px;
 	}
-	@media screen and (min-width: 1441px) and (max-width: 2560px) {
-		font-size: 32px;
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 28px;
+		letter-spacing: -1.4px;
+	}
+}
+
+@mixin Button-Style-1 {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	letter-spacing: 0.7px;
+	color: $White;
+	text-align: center;
+	line-height: 14px;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 16px;
+		line-height: 16px;
+		letter-spacing: 0.8px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 18px;
+		line-height: 18px;
+		letter-spacing: 0.9px;
 	}
 }
