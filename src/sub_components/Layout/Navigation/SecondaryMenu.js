@@ -25,6 +25,7 @@ class SecondaryMenu extends Component {
 			menu: null,
 		};
 	}
+
 	componentDidMount() {
 		const { module } = this.props;
 		let clientHeight;
