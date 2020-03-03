@@ -197,3 +197,9 @@
 .profile-card-field {
 	@include Profile-Card-Field;
 }
+.portal-message-start {
+	@include Portal-Mesage-Start;
+}
+.portal-message-content {
+	@include Portal-Mesage-Content;
+}
