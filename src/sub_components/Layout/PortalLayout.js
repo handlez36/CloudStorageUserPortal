@@ -13,7 +13,7 @@ import capitalize from 'lodash/capitalize';
 /** v3 imports */
 import NavSection from './Navigation/BloxNavigationSection';
 import ContentSection from './ContentSection';
-import HeaderSection from './HeaderSection';
+import HeaderSection from './Header/HeaderSection';
 import FooterSection from './Footer';
 import StorageOverview from './../../pages/Storage/OverviewPage';
 import { RESOLUTIONS } from './../../services/config';

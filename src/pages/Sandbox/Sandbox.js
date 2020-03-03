@@ -9,6 +9,7 @@ import { Netmask } from 'netmask';
 // import SampleGridContent from './SampleGridContent';
 // import TestComponent from './../components/Layout/TestContent';
 import PortalLayout from './../../sub_components/Layout/PortalLayout';
+import AccountsComponent from './../../sub_components/Layout/Header/AccountsComponent';
 // import { Utils, SIDES } from './../../services/utils';
 // import ColumnSide from './Navigationv3/ColumnSide';
 // const ResponsiveReactGridLayout = WidthProvider(Responsive);
