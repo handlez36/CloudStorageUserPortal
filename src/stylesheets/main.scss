@@ -44,7 +44,7 @@ This file should not contain anything but @import and comments.
 @import 'components/portal_modal';
 @import 'components/portal';
 @import 'components/print';
-@import 'components/profile_card';
+// @import 'components/profile_card';
 @import 'components/sandbox';
 @import 'components/side_menu';
 @import 'components/text_input';
@@ -178,6 +178,8 @@ This file should not contain anything but @import and comments.
 @import 'components/Profilev3/my_profile';
 @import 'components/Profilev3/company_profile';
 @import 'components/Profilev3/password_change';
+@import 'components/Profilev3/avatar_selection';
+@import 'components/Profilev3/profile_card';
 
 /**
 * Commonv3 components
@@ -241,7 +243,7 @@ This file should not contain anything but @import and comments.
 @import 'pages/billing//billing_overview';
 
 @import 'pages/profile';
-@import 'pages/profile/avatar_section';
+// @import 'pages/profile/avatar_section';
 @import 'pages/profile/company_info';
 @import 'pages/profile/customer_contact_section';
 @import 'pages/profile/password_section';

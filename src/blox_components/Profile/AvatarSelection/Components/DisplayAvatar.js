@@ -1,19 +1,18 @@
 import React from 'react';
 
 import map from 'lodash/map';
-import { AvatarApi } from '../../services/avatar';
+import { AvatarApi } from 'services/avatar';
 
-const DisplayAvatar = props => {
-	const avatarApi = new AvatarApi();
-	const avatars = avatarApi.getAll();
+const avatars = new AvatarApi().getAll();
 
+const DisplayAvatar = ({ onClick }) => {
 	return map(avatars, (avatar, index) => {
 		return (
 			<div
-				key={index}
+				key={avatar}
 				className='avatar-selector'
 				style={{ backgroundImage: avatar }}
-				onClick={props.onClick(index)}
+				onClick={onClick(index)}
 			>
 				<img src={avatar} alt='avatar' />
 			</div>

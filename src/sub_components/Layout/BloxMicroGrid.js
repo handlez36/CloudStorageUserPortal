@@ -121,7 +121,7 @@ class BloxMicroGrid extends Component {
 						width={1152}
 						rowHeight={8}
 						isDraggable={false}
-						breakpoints={{ lg: 2560, md: 1440, sm: 1024, xs: 800 }}
+						breakpoints={{ lg: 2240, md: 1344, sm: 928, xs: 800 }}
 						cols={{ lg: colCount, md: colCount, sm: colCount, xs: colCount }}
 						margin={[0, 0]}
 					>

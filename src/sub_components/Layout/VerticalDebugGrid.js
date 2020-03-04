@@ -69,9 +69,9 @@ VerticalDebugGrid.propTypes = {
 
 VerticalDebugGrid.defaultProps = {
 	breakpoints: shape({
-		lg: 2560,
-		md: 1440,
-		sm: 1024,
+		lg: 2240,
+		md: 1344,
+		sm: 928,
 		xs: 800,
 	}),
 };

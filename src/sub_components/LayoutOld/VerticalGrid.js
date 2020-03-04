@@ -80,7 +80,6 @@ class VerticalGrid extends Component {
 	}
 
 	onChange = () => {
-		console.log('New Height: ', Utils.scalePxUsingRatio());
 		const newHeight = Utils.scalePxUsingRatio();
 
 		if (window.innerHeight >= 1010 && window.innerHeight <= 1030) {
