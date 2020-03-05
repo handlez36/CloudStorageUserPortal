@@ -1,22 +1,38 @@
 import React from 'react';
-import BloxGrid from '../BloxMicroGrid';
+import { RESOLUTIONS } from 'services/config';
+import { DIMENSIONS } from 'services/layoutManager';
+import BloxPage from '../BloxPage';
 import LogoutComponent from './LogoutComponent';
 import AccountsComponent from './AccountsComponent';
 const HeaderSection = props => {
-	const grid = [
-		{ i: 'logout-component', x: 0, y: 0, w: 2, h: 8, static: true },
-		{ i: 'accounts-component', x: 139, y: 0, w: 2, h: 8, static: true },
-	];
+	const LAYOUT_CONFIG = {
+		[RESOLUTIONS.LOW]: {
+			logoutComponent: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+			accountsComponent: { x: 12, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+		},
+		[RESOLUTIONS.MED]: {
+			logoutComponent: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+			accountsComponent: { x: 12, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+		},
+		[RESOLUTIONS.HIGH]: {
+			logoutComponent: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+			accountsComponent: { x: 12, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+		},
+	};
 
 	return (
-		<BloxGrid name='header-grid' parentEl='.portal-header' contentGrid={grid}>
-			<div key='logout-component' className='logout-component'>
+		<BloxPage
+			name='header-grid'
+			layout={LAYOUT_CONFIG[props.breakpoint]}
+			breakpoint={props.breakpoint}
+		>
+			<div key='logoutComponent' className='logout-component'>
 				<LogoutComponent module={props.module} />
 			</div>
-			<div key='accounts-component' className='accounts-component'>
+			<div key='accountsComponent' className='accounts-component'>
 				<AccountsComponent breakpoint={props.breakpoint} />
 			</div>
-		</BloxGrid>
+		</BloxPage>
 	);
 };
 

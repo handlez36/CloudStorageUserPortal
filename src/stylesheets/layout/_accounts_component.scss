@@ -42,7 +42,6 @@
 		//img {
 		width: GetSize(5);
 		height: GetSize(5);
-
 		//	}
 	}
 	.move-background {
@@ -94,7 +93,6 @@
 			height: GetSize(7);
 			display: flex;
 			flex-direction: column;
-
 			transition: width 1s, height 1s;
 
 			.title {
@@ -165,7 +163,6 @@
 			//img {
 			width: GetSize(8);
 			height: GetSize(8);
-
 			//	}
 		}
 	}
@@ -180,7 +177,6 @@
 			margin-top: GetSize(8);
 			.multi-user {
 				height: GetSize(6);
-
 				display: flex;
 				flex-direction: row;
 				align-items: center;
@@ -271,7 +267,6 @@
 			//img {
 			width: GetSize(10);
 			height: GetSize(10);
-
 			//	}
 		}
 	}
