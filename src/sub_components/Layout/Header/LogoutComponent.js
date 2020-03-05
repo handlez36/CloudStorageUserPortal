@@ -34,7 +34,12 @@ class LogoutComponent extends Component {
 		header.classList.remove('blue-animation');
 	};
 	logoutUser = () => {
-		console.log('HELLO NIAMH');
+		const logoutButton = document.querySelector('.support-button.logout');
+		if (logoutButton) {
+			console.log('MODULE', this.props.module);
+			logoutButton.classList.add(this.props.module);
+			logoutButton.classList.add('trigger-animation-swipe');
+		}
 		UserApi.logoutUser()
 			.then(response => {
 				const validResponse = response.status === 200 && response.data && !response.data.error;
@@ -61,8 +66,8 @@ class LogoutComponent extends Component {
 				<div className='logout-button fade-in'>
 					<BloxButton
 						title='LOGOUT'
-						customClass='support-button'
-						enabled={false}
+						customClass='support-button logout'
+						enabled={true}
 						onClick={this.logoutUser}
 					/>
 				</div>

@@ -46,6 +46,58 @@
 	color: $Purple;
 }
 
+.support-button.logout {
+	background: linear-gradient(45deg, rgb(48, 127, 226) 9%, $Warm_Gray_Light_1 60%);
+	background-size: 250% 100%;
+	background-position: right bottom;
+	transition: all 3s ease-in-out;
+	&.profile {
+		background: linear-gradient(45deg, $Dark_Blue 9%, $Warm_Gray_Light_1 100%);
+		background-size: 250% 100%;
+	}
+	&.support {
+		background: linear-gradient(45deg, $DCBLOX_Purple 9%, $Warm_Gray_Light_1 100%);
+	}
+	&.storage {
+		background: linear-gradient(45deg, $Emerald 9%, $Warm_Gray_Light_1 100%);
+	}
+	&.billing {
+		background: linear-gradient(45deg, $Dark_Lime 9%, $Warm_Gray_Light_1 100%);
+		background-size: 250% 100%;
+	}
+	.title {
+		color: $Cool_Gray_Dark_3;
+	}
+
+	&.trigger-animation-swipe {
+		background-position: left bottom;
+
+		.title {
+			//color: $White !important;
+			@include Text-Flow-Active;
+			background-image: linear-gradient(
+				to left,
+				$Cool_Gray_Dark_2 40%,
+				$Cool_Gray_Dark_2 40%,
+				$White 0%
+			);
+
+			background-size: 200%;
+			-webkit-background-clip: text;
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				background-image: none;
+				color: $White;
+			}
+		}
+	}
+}
+.support-button.logout:hover {
+	background-color: $Warm_Gray_Light_1;
+	.title {
+		color: $Cool_Gray_Dark_2;
+	}
+}
+
 .support-button.white.edit {
 	&::before {
 		background: url('https://mydcblox.com/cdn/library/support/Common_PurpleEditPencil.svg')

@@ -1,5 +1,4 @@
 .accounts-component-wrapper {
-	border: 1px solid red;
 	width: GetSize(20);
 	height: GetSize(5);
 	transition: width 1s, height 1s;
@@ -8,15 +7,18 @@
 	flex-direction: row;
 	top: 0;
 	right: 0;
+	background: $White;
 
 	.company-name {
-		width: GetSize(20);
+		width: 100%;
 		height: GetSize(5);
-		padding-left: GetSize(2);
+		text-align: center;
+		padding-top: GetSize(1.3);
+		padding-right: GetSize(1);
 		color: $Cool_Gray_Dark_3;
 		display: flex;
-		flex-direction: row;
-		align-items: center;
+		flex-direction: column;
+		align-items: flex-end;
 		text-transform: uppercase;
 		background: linear-gradient(270deg, $Warm_Gray_Light_1 20%, $White 80%);
 		background-size: 250% 100%;
@@ -27,12 +29,20 @@
 		opacity: 0;
 		width: GetSize(0);
 		height: GetSize(0);
+		.multi-user {
+			transition: width 1s, height 1s;
+			height: GetSize(0);
+		}
+		.single-user {
+			transition: width 1s, height 1s;
+			height: GetSize(0);
+		}
 	}
 	.image {
 		//img {
 		width: GetSize(5);
 		height: GetSize(5);
-		border: 1px solid blue;
+
 		//	}
 	}
 	.move-background {
@@ -41,45 +51,50 @@
 }
 
 .accounts-component-wrapper:hover {
-	border: 1px solid red;
 	width: GetSize(29);
 	height: GetSize(12);
+
 	.company-name {
 		width: GetSize(29);
 		font-weight: bold;
+		border: 1px solid green;
 	}
 	.accounts-dropdown {
-		border: 1px solid blue;
 		width: 100%;
 		height: auto;
 		margin-top: GetSize(5);
 		opacity: 1;
-		transition: width 1s, height 1s ease-in;
 		top: 0;
 		right: 0;
 		position: absolute;
 		.multi-user {
 			height: GetSize(5);
-			border: 1px solid green;
+			background: $White;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			.company-link {
-				border: 1px solid green;
 				margin-left: GetSize(2);
 			}
 			.company-image {
 				width: GetSize(3);
 				height: GetSize(3);
 				border: 1px solid green;
+				position: absolute;
+				right: 0%;
+				margin-right: GetSize(2);
 			}
+		}
+		.multi-user:last-child {
+			height: GetSize(7);
+			padding-bottom: GetSize(3);
 		}
 		.single-user {
 			width: GetSize(29);
 			height: GetSize(7);
 			display: flex;
 			flex-direction: column;
-			border: 1px solid purple;
+
 			transition: width 1s, height 1s;
 
 			.title {
@@ -87,9 +102,10 @@
 				height: GetSize(2);
 				padding-left: GetSize(2);
 				font-size: 1vh;
-				border: 1px solid brown;
+
 				align-self: flex-start;
 				padding-top: GetSize(1);
+				color: $Cool_Gray_Dark_1;
 			}
 			.user-wrapper {
 				display: flex;
@@ -97,39 +113,63 @@
 				padding-left: GetSize(2);
 				flex-direction: row;
 				.user-name {
-					border: 1px solid yellow;
 					align-self: flex-start;
 				}
 				.avatar {
-					border: 1px solid green;
-					width: GetSize(3);
-					height: GetSize(3);
+					img {
+						width: GetSize(3);
+						height: GetSize(3);
+					}
 					align-self: flex-start;
+					position: absolute;
+					right: 0%;
+					margin-right: GetSize(2);
 				}
 			}
+		}
+		.single-user:after {
+			content: '';
+			display: block;
+			left: 0;
+			width: GetSize(25);
+			height: 0vh;
+			position: relative;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+			margin-top: GetSize(2);
+			margin-left: GetSize(2);
+		}
+		.multi-user:after {
+			content: '';
+			display: block;
+			left: 0;
+			width: GetSize(25);
+			height: 0vh;
+			position: absolute;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+			margin-top: GetSize(2);
+			margin-left: GetSize(2);
 		}
 	}
 }
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 	.accounts-component-wrapper {
-		border: 1px solid green;
 		width: GetSize(33);
 		height: GetSize(8);
 		.company-name {
 			width: GetSize(33);
 			height: GetSize(8);
 			font-weight: bold;
+			padding-top: GetSize(2.7);
 		}
 		.image {
 			//img {
 			width: GetSize(8);
 			height: GetSize(8);
-			border: 1px solid blue;
+
 			//	}
 		}
 	}
 	.accounts-component-wrapper:hover {
-		border: 1px solid red;
 		width: GetSize(38);
 		height: GetSize(17);
 		.company-name {
@@ -140,12 +180,11 @@
 			margin-top: GetSize(8);
 			.multi-user {
 				height: GetSize(6);
-				border: 1px solid green;
+
 				display: flex;
 				flex-direction: row;
 				align-items: center;
 				.company-link {
-					border: 1px solid green;
 					margin-left: GetSize(3);
 				}
 				.company-image {
@@ -153,6 +192,10 @@
 					height: GetSize(4);
 					border: 1px solid green;
 				}
+			}
+			.multi-user:last-child {
+				height: GetSize(10);
+				padding-bottom: GetSize(4);
 			}
 			.single-user {
 				width: GetSize(38);
@@ -163,26 +206,51 @@
 					height: GetSize(2);
 					padding-left: GetSize(3);
 					font-size: 1vh;
-					border: 1px solid brown;
+
 					align-self: flex-start;
-					padding-top: GetSize(1);
+					padding-top: GetSize(2);
 				}
 				.user-wrapper {
 					display: flex;
 					height: GetSize(7);
 					padding-left: GetSize(3);
+
 					flex-direction: row;
 					.user-name {
-						border: 1px solid yellow;
 						align-self: flex-start;
+						padding-top: GetSize(2);
 					}
 					.avatar {
-						border: 1px solid green;
-						width: GetSize(4);
-						height: GetSize(4);
+						padding-top: GetSize(0.5);
+						img {
+							width: GetSize(4);
+							height: GetSize(4);
+						}
 						align-self: flex-start;
 					}
 				}
+			}
+			.single-user:after {
+				content: '';
+				display: block;
+				left: 0;
+				width: GetSize(34);
+				height: 0vh;
+				position: relative;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+				margin-top: GetSize(0);
+				margin-left: GetSize(2);
+			}
+			.multi-user:after {
+				content: '';
+				display: block;
+				left: 0;
+				width: GetSize(34);
+				height: 0vh;
+				position: absolute;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+				margin-top: GetSize(3);
+				margin-left: GetSize(2);
 			}
 		}
 	}
@@ -190,7 +258,6 @@
 
 @media screen and (min-width: $high-res + 1) {
 	.accounts-component-wrapper {
-		border: 1px solid blue;
 		width: GetSize(40);
 		height: GetSize(10);
 
@@ -198,17 +265,17 @@
 			width: GetSize(40);
 			height: GetSize(10);
 			font-weight: bold;
+			padding-top: GetSize(3.5);
 		}
 		.image {
 			//img {
 			width: GetSize(10);
 			height: GetSize(10);
-			border: 1px solid blue;
+
 			//	}
 		}
 	}
 	.accounts-component-wrapper:hover {
-		border: 1px solid red;
 		width: GetSize(50);
 		height: GetSize(22);
 		.company-name {
@@ -217,14 +284,14 @@
 		}
 		.accounts-dropdown {
 			margin-top: GetSize(10);
+
 			.multi-user {
 				height: GetSize(7);
-				border: 1px solid green;
+
 				display: flex;
 				flex-direction: row;
 				align-items: center;
 				.company-link {
-					border: 1px solid green;
 					margin-left: GetSize(4);
 				}
 				.company-image {
@@ -232,6 +299,10 @@
 					height: GetSize(5);
 					border: 1px solid green;
 				}
+			}
+			.multi-user:last-child {
+				height: GetSize(12);
+				padding-bottom: GetSize(3);
 			}
 			.single-user {
 				width: GetSize(50);
@@ -242,9 +313,9 @@
 					height: GetSize(3);
 					padding-left: GetSize(4);
 					font-size: 1vh;
-					border: 1px solid brown;
+
 					align-self: flex-start;
-					padding-top: GetSize(1);
+					padding-top: GetSize(3);
 				}
 				.user-wrapper {
 					display: flex;
@@ -252,16 +323,39 @@
 					padding-left: GetSize(4);
 					flex-direction: row;
 					.user-name {
-						border: 1px solid yellow;
 						align-self: flex-start;
+						padding-top: GetSize(2);
 					}
 					.avatar {
-						border: 1px solid green;
-						width: GetSize(5);
-						height: GetSize(5);
+						img {
+							width: GetSize(5);
+							height: GetSize(5);
+						}
 						align-self: flex-start;
 					}
 				}
+			}
+			.single-user:after {
+				content: '';
+				display: block;
+				left: 0;
+				width: GetSize(44);
+				height: 0vh;
+				position: relative;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+				margin-top: GetSize(0);
+				margin-left: GetSize(4);
+			}
+			.multi-user:after {
+				content: '';
+				display: block;
+				left: 0;
+				width: GetSize(44);
+				height: 0vh;
+				position: absolute;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+				margin-top: GetSize(4);
+				margin-left: GetSize(4);
 			}
 		}
 	}
