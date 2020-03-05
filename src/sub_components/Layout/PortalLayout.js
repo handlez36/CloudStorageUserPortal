@@ -28,6 +28,7 @@ const PAGES = {
 	Profile: {
 		Overview: 'OverviewPage',
 		Password_change: 'PasswordChangePage',
+		Avatar_change: 'AvatarChangePage',
 	},
 	Billing: {
 		Overview: 'OverviewPage',
@@ -51,16 +52,12 @@ class PortalLayout extends Component {
 	 */
 	parseUrlParams = () => {
 		const { location: { pathname = '' } = {} } = this.props;
-		// const urlRegex = /^\/(.*)\/?(.*)$/;
 		const urlRegex = /^\/portal\/?(\w*)\/?(\w*)\/?.*$/;
 		const matches = pathname.match(urlRegex);
 
 		if (matches) {
 			const [, siteModule, sitePage] = matches;
-			console.log('Site Module: ', siteModule);
-			console.log('Site Module: ', sitePage);
 			const parsedSitePage = !sitePage || sitePage === undefined ? 'OVERVIEW' : sitePage;
-			// this.loadPage(siteModule, sitePage);
 			this.loadPage(siteModule, parsedSitePage);
 			return { siteModule, parsedSitePage };
 		}
@@ -69,7 +66,6 @@ class PortalLayout extends Component {
 	};
 
 	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
-		console.log('Blox Page: ', bloxPage);
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
 		const pageName = PAGES[mod][page];
@@ -109,7 +105,7 @@ class PortalLayout extends Component {
 
 	render() {
 		const { breakpoint, PageComponent, currentModule } = this.state;
-		console.log('CURRENT MODULE', currentModule);
+
 		return (
 			<div className='portal-layout v3'>
 				<div className='portal-header'>
