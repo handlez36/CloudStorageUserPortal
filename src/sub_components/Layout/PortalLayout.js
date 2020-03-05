@@ -52,12 +52,15 @@ class PortalLayout extends Component {
 	 */
 	parseUrlParams = () => {
 		const { location: { pathname = '' } = {} } = this.props;
-		const urlRegex = /^\/portal\/?(\w*)\/?[(\w*)|\d]\/?.*$/;
-		const matches = pathname.match(urlRegex);
+		// const urlRegex = /^\/portal\/?(\w*)\/?[(\w*)|\d]\/?.*$/;
+		// const matches = pathname.match(urlRegex);
+		const matches = pathname.split('/');
 
 		if (matches) {
-			const [, siteModule, sitePage] = matches;
-			const parsedSitePage = !sitePage || sitePage === undefined ? 'OVERVIEW' : sitePage;
+			// const [, siteModule, sitePage] = matches;
+			const [, , siteModule, sitePage] = matches;
+			const parsedSitePage =
+				!sitePage || sitePage === undefined || sitePage === '0' ? 'OVERVIEW' : sitePage;
 			this.loadPage(siteModule, parsedSitePage);
 			return { siteModule, parsedSitePage };
 		}
