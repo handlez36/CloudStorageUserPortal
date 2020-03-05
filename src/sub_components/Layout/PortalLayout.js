@@ -52,7 +52,7 @@ class PortalLayout extends Component {
 	 */
 	parseUrlParams = () => {
 		const { location: { pathname = '' } = {} } = this.props;
-		const urlRegex = /^\/portal\/?(\w*)\/?(\w*)\/?.*$/;
+		const urlRegex = /^\/portal\/?(\w*)\/?[(\w*)|\d]\/?.*$/;
 		const matches = pathname.match(urlRegex);
 
 		if (matches) {

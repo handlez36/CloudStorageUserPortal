@@ -14,7 +14,7 @@ import { HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		recentInvoices: { x: 1, y: 31, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 112 },
+		recentInvoices: { x: 1, y: 31, dim: DIMENSIONS.TWO_BY_SIX },
 		totalAmountDue: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
 		recentPayment: { x: 8, y: 31, dim: DIMENSIONS.TWO_BY_THREE },
 		openTickets: { x: 8, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
