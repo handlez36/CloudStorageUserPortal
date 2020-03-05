@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import RosterUserOverviewBlock from './RosterUserOverviewBlock';
-import BloxButton from '../../../components/Common/BloxButton';
-import { UserApi } from '../../../services/user';
-import { updatePage } from '../../../actions/siteTracking';
+import { UserApi } from 'services/user';
+import { updatePage } from 'actions/siteTracking';
 
-import { CompanyProfileApi } from '../../../services/companyProfile';
+import { CompanyProfileApi } from 'services/companyProfile';
+import RosterUserOverviewBlock from './Components/RosterUserOverviewBlock';
 
 class RosterUserOverview extends Component {
 	constructor(props) {
@@ -67,18 +66,8 @@ class RosterUserOverview extends Component {
 	render() {
 		return (
 			<div className='roster-user-overview'>
-				<div className={'header'}>
-					<div className={'title-wrapper'}>
-						<div className={'title'}>ROSTER</div>
-						<div className={'sub-title'}>{this.state.activeRosterCount} Active</div>
-					</div>
-
-					<BloxButton
-						title={'MANAGE ROSTER LIST'}
-						customClass={'manage-roster'}
-						onClick={this.goToRosterUsers}
-						enabled={true}
-					/>
+				<div className='sub-title-wrapper'>
+					<div className='sub-title heading70'>{`( ${this.state.activeRosterCount} Active )`}</div>
 				</div>
 
 				<div className={'overview-user-wrapper'}>
@@ -87,7 +76,7 @@ class RosterUserOverview extends Component {
 							<div className={'row-1'}>
 								{this.state.locations &&
 									this.state.locations.map((location, index) => {
-										return [<RosterUserOverviewBlock key={index} location={location} />];
+										return <RosterUserOverviewBlock key={index} location={location} />;
 									})}
 							</div>
 						</div>
@@ -104,7 +93,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ updatePage },
-)(RosterUserOverview);
+export default connect(mapStateToProps, { updatePage })(RosterUserOverview);

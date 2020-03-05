@@ -21,8 +21,8 @@ const BloxButton = ({ id, title, enabled, onClick, customClass, icon, imageId, b
 					<img id={imageId || 'formButtonImage'} src={icon} />
 				</div>
 			)}
-			<span className='title heading90'>{title}</span>
-			{customClass === 'support-button circle-large' && (
+			<span className='title'>{title}</span>
+			{customClass === 'blox-button circle-large' && (
 				<div className='down-arrow'>
 					<img src={DownArrow} />
 				</div>

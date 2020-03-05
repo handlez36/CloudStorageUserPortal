@@ -157,7 +157,7 @@ const BackSide = ({ share, onFlip, stats, changeToManageStorage, total, size }) 
 				<Button
 					title='VIEW MORE'
 					enabled={true}
-					customClass='support-button gradient'
+					customClass='blox-button gradient'
 					onClick={() => {
 						changeToManageStorage(share);
 					}}

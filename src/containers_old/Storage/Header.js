@@ -18,7 +18,7 @@ class Header extends Component {
 						<BloxButton
 							title={buttonText}
 							enabled={true}
-							customClass={`support-button ${customButtonClass}`}
+							customClass={`blox-button ${customButtonClass}`}
 							onClick={onClick}
 						/>
 					</div>

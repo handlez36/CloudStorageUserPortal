@@ -84,7 +84,7 @@
 			z-index: 4000;
 		}
 
-		.support-button {
+		.blox-button {
 			width: calculateVw(140, 1440);
 			font-size: 0.8em;
 			&.icon {
@@ -128,7 +128,7 @@
 	.header-button {
 		margin-left: 0.4vw;
 
-		.support-button {
+		.blox-button {
 			font-size: 1em;
 			width: calculateVw(90, 1440);
 			height: calculateVh(80, 1440);

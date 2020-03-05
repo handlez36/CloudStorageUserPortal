@@ -25,13 +25,13 @@ class RemoteHandsConfirmation extends Component {
 					<BloxButton
 						title='NEW REQUEST'
 						enabled={true}
-						customClass='support-button white'
+						customClass='blox-button white'
 						onClick={startNewRequest}
 					/>
 					<BloxButton
 						title='DONE'
 						enabled={true}
-						customClass='support-button'
+						customClass='blox-button'
 						onClick={onComplete}
 					/>
 				</div>

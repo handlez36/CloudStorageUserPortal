@@ -34,7 +34,7 @@ const PageHeader = ({
 						<Button
 							title='CANCEL REQUEST'
 							enabled={true}
-							customClass='support-button'
+							customClass='blox-button'
 							onClick={onClick}
 						/>
 					)}

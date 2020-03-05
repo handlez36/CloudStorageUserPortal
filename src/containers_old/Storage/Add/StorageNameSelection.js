@@ -22,7 +22,7 @@ const StorageNameSelection = ({ data: { name }, onSelect }) => {
 				title='NEXT'
 				enabled={name && name.length > 3}
 				onClick={() => onSelect('name', { data: name }, true)}
-				customClass='support-button bright-emerald-gradient'
+				customClass='blox-button bright-emerald-gradient'
 			/>
 		</div>
 	);

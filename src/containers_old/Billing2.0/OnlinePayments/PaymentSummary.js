@@ -145,7 +145,7 @@ class PaymentSummary extends Component {
 				<Button
 					title='PAY NOW'
 					enabled={!submitted}
-					customClass='support-button circle-large'
+					customClass='blox-button circle-large'
 					onClick={() => submitPayment(data)}
 				/>
 			</div>

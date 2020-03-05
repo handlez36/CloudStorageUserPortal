@@ -340,7 +340,7 @@ class Graph extends Component {
 						<Button
 							title='MANAGE SHARES'
 							enabled={true}
-							customClass='support-button gradient'
+							customClass='blox-button gradient'
 							onClick={this.viewStorage}
 						/>
 					</div>

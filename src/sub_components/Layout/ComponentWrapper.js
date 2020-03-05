@@ -12,6 +12,7 @@ const ComponentWrapper = ({ title, hideTitle, collapseTitle, hideBorder, childre
 			<div className='component-wrapper_title heading60'>
 				<span className='title'>{!hideTitle && title}</span>
 			</div>
+
 			<div className='component-wrapper_content'>{children}</div>
 		</div>
 	);

@@ -49,7 +49,7 @@ PortalModal.propTypes = {
 };
 
 PortalModal.defaultProps = {
-	buttonClass: 'support-button',
+	buttonClass: 'blox-button',
 };
 
 export default PortalModal;

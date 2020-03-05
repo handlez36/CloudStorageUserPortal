@@ -168,7 +168,6 @@ export default class Sandbox extends Component {
 			<div id='sandbox'>
 				{/* <ColumnSide navHeight={500} width={100} percentage={75} side='left' /> */}
 
-				<PortalLayout />
 				{/* <div className='menu-gradient-testing'>
 					<div className='top-diamond' />
 					<div className='sides'>

@@ -159,7 +159,7 @@ const CallToAction = ({ invoices, summary, hasOnlinePaymentAccess }) => {
 			{hasOnlinePaymentAccess && (
 				<BloxButton
 					title='PAY NOW'
-					customClass='support-button green-gradient'
+					customClass='blox-button green-gradient'
 					onClick={() => {}}
 				/>
 			)}

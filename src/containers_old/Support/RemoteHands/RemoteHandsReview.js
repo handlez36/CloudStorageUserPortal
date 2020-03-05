@@ -235,7 +235,7 @@ class RemoteHandsReview extends Component {
 				<Button
 					title='SUBMIT'
 					enabled={true}
-					customClass='support-button circle-large'
+					customClass='blox-button circle-large'
 					onClick={() => submitTicket(data)}
 				/>
 			</div>

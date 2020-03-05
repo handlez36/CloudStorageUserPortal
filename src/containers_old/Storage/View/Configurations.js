@@ -53,7 +53,7 @@ class Configurations extends Component {
 										imageId='reset-icon'
 										title={'RESET'}
 										enabled={true}
-										customClass={`support-button emerald-gradient`}
+										customClass={`blox-button emerald-gradient`}
 										onClick={changeStoragePassword}
 										icon={ResetIcon}
 									/>

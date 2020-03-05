@@ -20,11 +20,11 @@ export default class ButtonTester extends Component {
 	};
 
 	render() {
-		const normalButtonClass = 'support-button';
-		const largeCircleButtonClass = 'support-button circle-large';
-		const smallCircleButtonClass = 'support-button circle-small';
-		const whiteButtonClass = 'support-button white';
-		const whiteEditButtonClass = 'support-button white edit';
+		const normalButtonClass = 'blox-button';
+		const largeCircleButtonClass = 'blox-button circle-large';
+		const smallCircleButtonClass = 'blox-button circle-small';
+		const whiteButtonClass = 'blox-button white';
+		const whiteEditButtonClass = 'blox-button white edit';
 		const options = [
 			{ value: 'Atlanta', name: 'Atlanta', clickCallback: this.clickCallback },
 			{ value: 'Huntsville', name: 'Huntsville', clickCallback: this.clickCallback },

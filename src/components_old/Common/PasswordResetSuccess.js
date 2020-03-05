@@ -26,7 +26,7 @@ class PasswordResetSuccess extends React.Component {
 				<Button
 					title='OKAY'
 					enabled={true}
-					customClass='support-button gradient'
+					customClass='blox-button gradient'
 					onClick={toggle}
 				/>
 			</Fragment>

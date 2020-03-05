@@ -238,7 +238,7 @@ class GuestAccessDescription extends Component {
 				<Button
 					title='NEXT'
 					enabled={completedFields.length > 4}
-					customClass='support-button circle-large'
+					customClass='blox-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

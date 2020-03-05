@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { AvatarApi } from '../../../services/avatar';
+import { AvatarApi } from 'services/avatar';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const badge = `${CDN_URL}profile/icon-badge.svg`;
 
@@ -30,7 +30,7 @@ export default class PortalUserOverviewBlock extends Component {
 			>
 				<div className={'block-wrapper'}>
 					<div className={'name'}>
-						{firstName}
+						{`${firstName}.`}
 						{this.props.user.lastname}
 						<span className={'name-tip'} />
 					</div>

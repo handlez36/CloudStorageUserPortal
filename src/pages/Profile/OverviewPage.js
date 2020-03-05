@@ -5,8 +5,12 @@ import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import MyServices from 'blox_components/Profile/MyServices/MyServices';
 import MyProfile from 'blox_components/Profile/MyProfile';
-import CompanyProfile from 'blox_components/Profile/CompanyProfile';
+import UserManagement from 'blox_components/Profile/PortalUserOverview/PortalUserOverview';
+import RosterManagement from 'blox_components/Profile/RosterUserOverview/RosterUserOverview';
 import { RESOLUTIONS } from 'services/config';
+import BloxButton from 'sub_components/Common/BloxButton';
+import { consolidateStreamedStyles } from 'styled-components';
+import CompanyProfile from 'blox_components/Profile/CompanyProfile';
 import { PROFILE_OVERVIEW_CARDS as CARDS } from 'utils/ProfileConstants';
 
 const LAYOUT_CONFIG = {
@@ -84,6 +88,32 @@ class OverviewPage extends Component {
 
 	render() {
 		const { breakpoint, location } = this.props;
+		const customTitlePortalOverview = (
+			<div className='component-wrapper--no-border heading60'>
+				<div className='component-wrapper_title'>PORTAL User Management</div>
+				<div className='component-wrapper_button'>
+					<BloxButton
+						title='MANAGE PORTAL'
+						customClass={'blox-button blue-gradient'}
+						onClick={() => {}}
+						enabled={true}
+					/>
+				</div>
+			</div>
+		);
+		const customTitleRosterOverview = (
+			<div className='component-wrapper--no-border heading60'>
+				<div className='component-wrapper_title'>ROSTER User Management</div>
+				<div className='component-wrapper_button'>
+					<BloxButton
+						title='MANAGE ROSTER'
+						customClass={'blox-button blue-gradient'}
+						onClick={() => {}}
+						enabled={true}
+					/>
+				</div>
+			</div>
+		);
 		const { expandedCard } = this.state;
 
 		const layout = this.getLayoutConfig(breakpoint);
@@ -106,7 +136,9 @@ class OverviewPage extends Component {
 					</ComponentWrapper>
 				</div>
 				<div key='portalUserManagement' className='portalUserManagement'>
-					<ComponentWrapper title='PORTAL User Management' hideBorder />
+					<ComponentWrapper title={customTitlePortalOverview} showButton hideBorder>
+						<UserManagement />
+					</ComponentWrapper>
 				</div>
 				<div key='companyProfile' className='companyProfile'>
 					<ComponentWrapper title='COMPANY Profile' hideBorder>
@@ -117,7 +149,9 @@ class OverviewPage extends Component {
 					</ComponentWrapper>
 				</div>
 				<div key='rosterUserManagement' className='rosterUserManagement'>
-					<ComponentWrapper title='ROSTER User Management' hideBorder />
+					<ComponentWrapper title={customTitleRosterOverview} showButton hideBorder>
+						<RosterManagement />
+					</ComponentWrapper>
 				</div>
 			</BloxPage>
 		);

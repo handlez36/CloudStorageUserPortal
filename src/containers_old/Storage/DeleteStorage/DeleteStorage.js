@@ -72,7 +72,7 @@ class DeleteStorage extends Component {
 						<BloxButton
 							title='NOPE. CHANGED MY MIND.'
 							enabled={true}
-							customClass='support-button emerald-gradient'
+							customClass='blox-button emerald-gradient'
 							onClick={() => this.props.selectMenuItem('SHARE DETAILS')}
 						/>
 					</div>
@@ -82,7 +82,7 @@ class DeleteStorage extends Component {
 							imageId={'delete-button'}
 							icon={DeleteIconHover}
 							enabled={true}
-							customClass='support-button orange-gradient icon'
+							customClass='blox-button orange-gradient icon'
 							onClick={() => this.getStep('TWO')}
 						/>
 					</div>
@@ -128,7 +128,7 @@ class DeleteStorage extends Component {
 						<BloxButton
 							title='BACK TO MY SHARES'
 							enabled={true}
-							customClass='support-button emerald-gradient'
+							customClass='blox-button emerald-gradient'
 							onClick={() => this.props.selectMenuItem('MANAGE STORAGE')}
 						/>
 					</div>
@@ -206,7 +206,7 @@ class DeleteStorage extends Component {
 							<BloxButton
 								title='NOPE. CHANGED MY MIND.'
 								enabled={true}
-								customClass='support-button emerald-gradient'
+								customClass='blox-button emerald-gradient'
 								onClick={() => this.props.selectMenuItem('SHARE DETAILS')}
 							/>
 						</div>
@@ -216,7 +216,7 @@ class DeleteStorage extends Component {
 								imageId={'make-it-so'}
 								icon={DeleteIconHover}
 								enabled={valid}
-								customClass='support-button orange-gradient icon'
+								customClass='blox-button orange-gradient icon'
 								onClick={this.deleteStorage}
 							/>
 						</div>

@@ -50,6 +50,20 @@
 			border-right: none;
 		}
 	}
+	.invoice-history-button {
+		flex: 1;
+		align-self: center;
+		margin-top: -12vh;
+		.blox-button {
+			&.gradient {
+				width: calculateVw(125, 1440);
+				height: calculateVw(30, 1440);
+				font-size: calculateVw(14, 1440);
+				background-color: $Med_Lime;
+				background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 37%, $Med_Lime 10%);
+			}
+		}
+	}
 }
 
 .recent-invoices {

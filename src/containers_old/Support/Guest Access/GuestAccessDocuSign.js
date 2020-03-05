@@ -71,14 +71,14 @@ class GuestAccessDocuSign extends Component {
 					<BloxButton
 						title='I UNDERSTAND'
 						enabled={true}
-						customClass='support-button'
+						customClass='blox-button'
 						onClick={this.onClick}
 					/>
 				</div>
 				<Button
 					title='REVIEW'
 					enabled={this.state.agreed}
-					customClass='support-button circle-large'
+					customClass='blox-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

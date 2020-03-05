@@ -26,7 +26,7 @@ const REQUEST_DETAILS = {
 const ServiceRequest = ({ type, breakpoint }) => {
 	const { title, description, image, className } = REQUEST_DETAILS[type];
 	const SubmitButton = (
-		<Button title='REQUEST SERVICE' customClass='support-button' onClick={() => {}} enabled />
+		<Button title='REQUEST SERVICE' customClass='blox-button' onClick={() => {}} enabled />
 	);
 
 	return (

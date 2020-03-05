@@ -3,17 +3,27 @@
 	flex-direction: column;
 	height: 100%;
 	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
-
 	/** Component Title Styles */
 	.component-wrapper_title {
 		flex: 0 1 auto;
 		height: GetHeight(5);
-		@include FlexboxColumn;
-		justify-content: flex-end;
+		@include FlexboxRow;
 		text-align: left;
-		// border: 1px solid red;
+		align-items: flex-end;
 		span {
-			margin-bottom: GetSize(2);
+			margin-bottom: GetSize(1);
+		}
+		.component-wrapper_button {
+			.blox-button {
+				height: GetHeight(3);
+				width: GetSize(11);
+				position: absolute;
+				right: 0%;
+				top: 8px;
+				.title {
+					@include GlobalBubbles10;
+				}
+			}
 		}
 	}
 
@@ -25,12 +35,30 @@
 	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 		.component-wrapper_title {
 			height: GetHeight(7);
+			span {
+				margin-bottom: GetSize(2);
+			}
+			.component-wrapper_button {
+				.blox-button {
+					height: GetHeight(4);
+					width: GetSize(14);
+				}
+			}
 		}
 	}
 	// @media screen and (min-width: 1441px) {
 	@media screen and (min-width: $high-res + 1) {
 		.component-wrapper_title {
 			height: GetHeight(8);
+			span {
+				margin-bottom: GetSize(2);
+			}
+			.component-wrapper_button {
+				.blox-button {
+					height: GetHeight(5);
+					width: GetSize(15);
+				}
+			}
 		}
 		.component-wrapper_content > div {
 			width: 100%;

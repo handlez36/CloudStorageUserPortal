@@ -99,7 +99,7 @@
 		margin-top: calculateVh(10px, $standard-screen-height-mid);
 		background-color: $White;
 	}
-	.support-button.circle-large {
+	.blox-button.circle-large {
 		display: none;
 	}
 }
@@ -154,7 +154,7 @@
 			}
 		}
 	}
-	.support-button.circle-large {
+	.blox-button.circle-large {
 		display: block;
 		margin-top: calculateVh(11px, $standard-screen-height-mid);
 		width: calculateVw(51px, $standard-screen-width-mid);

@@ -68,7 +68,7 @@ class SelectionScreen extends Component {
 						button={
 							<Button
 								title='NEW REQUEST'
-								customClass='support-button'
+								customClass='blox-button'
 								onClick={() => this.startTicketWizard('REMOTE HANDS')}
 								enabled
 							/>
@@ -86,7 +86,7 @@ class SelectionScreen extends Component {
 						button={
 							<Button
 								title='NEW REQUEST'
-								customClass='support-button'
+								customClass='blox-button'
 								onClick={() => this.startTicketWizard('GUEST ACCESS')}
 								enabled
 							/>
