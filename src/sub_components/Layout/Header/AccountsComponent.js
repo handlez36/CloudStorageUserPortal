@@ -21,6 +21,7 @@ class AccountsComponent extends Component {
 			currentModule: null,
 			currentSelectedCompany: '',
 			companyName: '',
+			role: '',
 		};
 	}
 
@@ -64,7 +65,7 @@ class AccountsComponent extends Component {
 				return (
 					<div className='multi-user'>
 						<div
-							className={`company-link${isSelectedCompany ? ' selected header51' : ' header51'}`}
+							className={`company-link${isSelectedCompany ? ' selected header10 ' : ' header10'}`}
 							style={{ cursor: 'pointer' }}
 							onClick={() => this.companySwitch(company.organizationId)}
 						>
@@ -96,18 +97,20 @@ class AccountsComponent extends Component {
 
 		if (company_info && company_info.customer && company_info.customer.companyName) {
 			companyName = company_info.customer.companyName;
+			this.getUsersRole(company_info.fuseBillId);
 		}
 
 		this.setState({ companyName }, () => {
 			this.checkNameLength(companyName);
 		});
 	};
+
 	componentDidMount() {
 		this.getCompanyName();
 	}
 	getUserName = user => {
 		const username = this.userProfileApi.getFirstAndLastName(user);
-		//const username = 'ASDASDSDASDASDASDSADSADASDASDASDAS';
+
 		if (username.length >= 16) {
 			return username.slice(0, 16) + '...';
 		} else {
@@ -115,23 +118,40 @@ class AccountsComponent extends Component {
 		}
 	};
 
+	componentDidUpdate(prevProps) {
+		const { company_info } = this.props;
+
+		if (company_info !== prevProps.company_info) {
+			this.getCompanyName();
+		}
+	}
+	getUsersRole = id => {
+		const { memberships = {} } = this.props.auth_status;
+		const currentMembershipSelected = memberships.filter(
+			membership => Number(membership.organizationId) === Number(id),
+		);
+
+		this.setState({ role: currentMembershipSelected[0].role });
+	};
+
 	render() {
 		const { memberships = {} } = this.props.auth_status;
 		const { auth_status } = this.props;
-		const { companyName } = this.state;
+		const { companyName, role } = this.state;
+
 		return (
 			<div
 				className='accounts-component-wrapper'
 				onMouseOver={this.setExpandedClass}
 				onMouseOut={this.removeExpandedClass}
 			>
-				<div className='company-name body10'>{companyName}</div>
+				<div className='company-name header10'>{companyName}</div>
 				<div className='image'></div>
 				<div className='accounts-dropdown'>
 					<div className='single-user'>
-						<div className='title heading30'>{'ADMINISTRATOR'}</div>
+						<div className='title header30'>{role}</div>
 						<div className='user-wrapper'>
-							<div className='user-name header51'>{this.getUserName(auth_status)}</div>
+							<div className='user-name header10'>{this.getUserName(auth_status)}</div>
 							<div className='avatar'>
 								<img src={this.avatarApi.getUserAvatar(auth_status)} />
 							</div>

@@ -22,7 +22,7 @@
 		align-items: center;
 		text-transform: uppercase;
 		background-color: $White;
-		background: linear-gradient(90deg, $Warm_Gray_Light_1 0%, $White 100%);
+		background: linear-gradient(90deg, $Cool_Gray_Light_1 0%, $White 100%);
 		background-size: 250% 100%;
 		background-position: right bottom;
 		transition: all 1s ease-in-out;
@@ -84,14 +84,17 @@
 			height: GetSize(8);
 		}
 		.logout-button {
-			margin-left: GetSize(1);
-			margin-top: GetSize(10);
+			margin-left: GetSize(11);
+			margin-top: GetSize(11);
 		}
 	}
 	.logout-wrapper:hover {
 		width: GetSize(38);
 		height: GetSize(17);
 		background-color: $White;
+		.name {
+			width: GetSize(30);
+		}
 		.logout-button {
 			display: flex;
 		}
