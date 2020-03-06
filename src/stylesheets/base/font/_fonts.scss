@@ -185,6 +185,37 @@
 	@include Body40;
 }
 
+//Headers
+.header10 {
+	@include Header10;
+}
+
+.header10:hover {
+	@include Header11;
+}
+
+.header11 {
+	@include Header11;
+}
+.header20 {
+	@include Header20;
+}
+.header21 {
+	@include Header21;
+}
+.header30 {
+	@include Header30;
+}
+.header50 {
+	@include Header50;
+}
+.header50:hover {
+	@include Header51;
+}
+.header51 {
+	@include Header51;
+}
+
 /** MISC */
 .globalbubbles10 {
 	@include GlobalBubbles10;

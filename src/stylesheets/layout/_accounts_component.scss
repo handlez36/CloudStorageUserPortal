@@ -12,13 +12,16 @@
 	.company-name {
 		width: GetSize(20);
 		height: GetSize(5);
-		padding-left: GetSize(2);
+		text-align: center;
+		padding-top: GetSize(1.7);
+		padding-right: GetSize(1);
 		color: $Cool_Gray_Dark_3;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		text-transform: uppercase;
-		background: linear-gradient(270deg, $Warm_Gray_Light_1 20%, $White 80%);
+		background-color: $White;
+		background: linear-gradient(90deg, $White 30%, $Cool_Gray_Light_1 100%);
 		background-size: 250% 100%;
 		background-position: left bottom;
 		transition: all 1s ease-in-out;
@@ -29,11 +32,13 @@
 		height: GetSize(0);
 	}
 	.image {
-		//img {
 		width: GetSize(5);
 		height: GetSize(5);
-		border: 1px solid blue;
-		//	}
+
+		img {
+			width: GetSize(5);
+			height: GetSize(5);
+		}
 	}
 	.move-background {
 		background-position: right bottom;
@@ -67,6 +72,7 @@
 			.company-link {
 				border: 1px solid green;
 				margin-left: GetSize(2);
+				color: $Cool_Gray_Dark_3;
 			}
 			.company-image {
 				width: GetSize(3);
@@ -86,10 +92,9 @@
 				width: GetSize(9);
 				height: GetSize(2);
 				padding-left: GetSize(2);
-				font-size: 1vh;
-				border: 1px solid brown;
 				align-self: flex-start;
 				padding-top: GetSize(1);
+				color: $Cool_Gray_Med_1;
 			}
 			.user-wrapper {
 				display: flex;
@@ -97,8 +102,9 @@
 				padding-left: GetSize(2);
 				flex-direction: row;
 				.user-name {
-					border: 1px solid yellow;
+					margin-top: GetSize(1.8);
 					align-self: flex-start;
+					color: $Cool_Gray_Dark_3;
 				}
 				.avatar {
 					border: 1px solid green;
@@ -121,11 +127,10 @@
 			font-weight: bold;
 		}
 		.image {
-			//img {
-			width: GetSize(8);
-			height: GetSize(8);
-			border: 1px solid blue;
-			//	}
+			img {
+				width: GetSize(8);
+				height: GetSize(8);
+			}
 		}
 	}
 	.accounts-component-wrapper:hover {
@@ -162,8 +167,6 @@
 					width: GetSize(9);
 					height: GetSize(2);
 					padding-left: GetSize(3);
-					font-size: 1vh;
-					border: 1px solid brown;
 					align-self: flex-start;
 					padding-top: GetSize(1);
 				}
@@ -200,11 +203,10 @@
 			font-weight: bold;
 		}
 		.image {
-			//img {
-			width: GetSize(10);
-			height: GetSize(10);
-			border: 1px solid blue;
-			//	}
+			img {
+				width: GetSize(10);
+				height: GetSize(10);
+			}
 		}
 	}
 	.accounts-component-wrapper:hover {
@@ -241,8 +243,6 @@
 					width: GetSize(9);
 					height: GetSize(3);
 					padding-left: GetSize(4);
-					font-size: 1vh;
-					border: 1px solid brown;
 					align-self: flex-start;
 					padding-top: GetSize(1);
 				}
