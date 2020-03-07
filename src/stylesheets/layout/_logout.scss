@@ -56,6 +56,7 @@
 	width: GetSize(29);
 	height: GetSize(12);
 	background-color: $White;
+	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
 	.logout-button {
 		display: flex;
 	}
