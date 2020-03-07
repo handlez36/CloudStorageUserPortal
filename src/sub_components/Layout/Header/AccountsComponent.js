@@ -38,12 +38,22 @@ class AccountsComponent extends Component {
 	};
 	setExpandedClass = () => {
 		const header = document.querySelector('.company-name');
+		header.classList.add('hovered');
 		header.classList.add('move-background');
+		this.getCompanyName();
 	};
 
 	removeExpandedClass = () => {
 		const header = document.querySelector('.company-name');
+		header.classList.remove('hovered');
 		header.classList.remove('move-background');
+		this.getCompanyName();
+	};
+	setCurrentCompany = name => {
+		this.setState({ currentSelectedCompany: name });
+	};
+	companySwitch = id => {
+		this.props.getCompanyInfo(id);
 	};
 
 	renderMultiUserList = memberships => {
@@ -126,14 +136,7 @@ class AccountsComponent extends Component {
 		if (username.length >= 16) {
 			return username.slice(0, 16) + '...';
 		} else {
-			return (
-				<Fragment>
-					<div className={`company-link`} style={{ cursor: 'pointer' }}>
-						'Tropix'
-					</div>
-					<div className='company-image'></div>
-				</Fragment>
-			);
+			return username;
 		}
 	};
 
@@ -178,7 +181,7 @@ class AccountsComponent extends Component {
 							</div>
 						</div>
 					</div>
-					<div className='multi-user'>{this.renderMultiUserList(memberships)}</div>
+					{this.renderMultiUserList(memberships)}
 				</div>
 			</div>
 		);
@@ -191,4 +194,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, null)(AccountsComponent);
+export default connect(mapStateToProps, { switchCompany, getCompanyInfo })(AccountsComponent);

@@ -31,7 +31,7 @@
 		display: none;
 		position: absolute;
 		width: GetSize(10);
-		.support-button {
+		.blox-button {
 			height: GetSize(3);
 		}
 
@@ -115,17 +115,20 @@
 		}
 		.logout-button {
 			width: GetSize(14);
-			.support-button {
+			.blox-button {
 				height: GetSize(4);
 			}
-			margin-left: GetSize(13);
-			margin-top: GetSize(10);
+			margin-left: GetSize(17);
+			margin-top: GetSize(15);
 		}
 	}
 	.logout-wrapper:hover {
 		width: GetSize(50);
 		height: GetSize(24);
 		background-color: $White;
+		.name {
+			width: GetSize(50);
+		}
 		.logout-button {
 			display: flex;
 		}

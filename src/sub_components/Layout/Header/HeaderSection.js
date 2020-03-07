@@ -1,8 +1,10 @@
 import React from 'react';
-import BloxGrid from '../BloxMicroGrid';
+import { RESOLUTIONS } from 'services/config';
+import { DIMENSIONS } from 'services/layoutManager';
 import LogoutComponent from './LogoutComponent';
 import AccountsComponent from './AccountsComponent';
 import BreadCrumbComponent from './BreadCrumbComponent';
+import BloxPage from '../BloxPage';
 const HeaderSection = props => {
 	const LAYOUT_CONFIG = {
 		[RESOLUTIONS.LOW]: {
