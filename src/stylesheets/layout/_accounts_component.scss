@@ -51,6 +51,7 @@
 		position: absolute;
 
 		img {
+			padding: 5px;
 			width: GetSize(5);
 			height: GetSize(5);
 		}
@@ -94,6 +95,11 @@
 				position: absolute;
 				right: 0%;
 				margin-right: GetSize(2);
+				img {
+					width: GetSize(3);
+					height: GetSize(3);
+					padding: 4px;
+				}
 			}
 			&.trigger-animation-swipe {
 				background-position: left bottom;
@@ -212,7 +218,11 @@
 				.company-image {
 					width: GetSize(4);
 					height: GetSize(4);
-					border: 1px solid green;
+
+					img {
+						width: GetSize(4);
+						height: GetSize(4);
+					}
 				}
 			}
 			.single-user {
@@ -295,7 +305,10 @@
 				.company-image {
 					width: GetSize(5);
 					height: GetSize(5);
-					border: 1px solid green;
+					img {
+						width: GetSize(5);
+						height: GetSize(5);
+					}
 				}
 			}
 			.single-user {

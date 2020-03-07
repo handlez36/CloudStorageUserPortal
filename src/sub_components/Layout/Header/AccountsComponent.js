@@ -2,14 +2,23 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { AvatarApi } from 'services/avatar';
 import { UserProfileApi } from 'services/userProfile';
-import { UserApi } from 'services/user';
-import BloxButton from 'sub_components/Common/BloxButton';
+import { switchCompany } from 'actions/auth';
+import { getCompanyInfo } from 'actions/company';
+import { RESOLUTIONS } from 'services/config';
+import { CompanyProfileApi } from 'services/companyProfile';
+const MAX_COMPANY_NAME_WIDTH = {
+	[RESOLUTIONS.LOW]: 14,
+	[RESOLUTIONS.MED]: 20,
+	[RESOLUTIONS.HIGH]: 20,
+};
+
 class AccountsComponent extends Component {
 	constructor(props) {
 		super(props);
 
 		this.avatarApi = new AvatarApi();
 		this.userProfileApi = new UserProfileApi();
+		this.companyApi = new CompanyProfileApi();
 		this.state = {
 			currentModule: null,
 			currentSelectedCompany: '',
@@ -55,7 +64,9 @@ class AccountsComponent extends Component {
 						>
 							{company.organizationName}
 						</div>
-						<div className='company-image'></div>
+						<div className='company-image'>
+							<img src={this.companyApi.getCompanyAvatar('dropdown', 'energy')} />
+						</div>
 					</div>
 				);
 			});
@@ -154,7 +165,9 @@ class AccountsComponent extends Component {
 				onMouseOut={this.removeExpandedClass}
 			>
 				<div className='company-name header10'>{companyName}</div>
-				<div className='image'></div>
+				<div className='image'>
+					<img src={this.companyApi.getCompanyAvatar()} />
+				</div>
 				<div className='accounts-dropdown'>
 					<div className='single-user'>
 						<div className='title header30'>{role}</div>
