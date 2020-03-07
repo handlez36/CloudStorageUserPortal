@@ -38,6 +38,9 @@
 		.single-user {
 			transition: width 1s, height 1s;
 			height: GetSize(0);
+			.avatar {
+				display: none;
+			}
 		}
 	}
 	.image {
@@ -137,6 +140,7 @@
 					position: absolute;
 					right: 0%;
 					margin-right: GetSize(2);
+					display: flex;
 				}
 			}
 		}
@@ -241,6 +245,7 @@
 							height: GetSize(4);
 						}
 						align-self: flex-start;
+						display: flex;
 					}
 				}
 			}
@@ -347,6 +352,7 @@
 							height: GetSize(5);
 						}
 						align-self: flex-start;
+						display: flex;
 					}
 				}
 			}
