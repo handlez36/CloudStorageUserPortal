@@ -112,7 +112,11 @@ class PortalLayout extends Component {
 		return (
 			<div className='portal-layout v3'>
 				<div className='portal-header'>
-					<HeaderSection />
+					<HeaderSection
+						breakpoint={breakpoint}
+						module={currentModule}
+						history={this.props.history}
+					/>
 				</div>
 				<div className='portal-main'>
 					<div className='main-nav'>

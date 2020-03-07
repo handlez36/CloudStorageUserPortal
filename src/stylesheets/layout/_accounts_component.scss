@@ -21,7 +21,7 @@
 		align-items: center;
 		text-transform: uppercase;
 		background-color: $White;
-		background: linear-gradient(90deg, $White 30%, $Cool_Gray_Light_1 100%);
+		background: linear-gradient(90deg, $White 40%, $Warm_Gray_Light_1 100%);
 		background-size: 250% 100%;
 		background-position: left bottom;
 		transition: all 1s ease-in-out;
@@ -79,6 +79,14 @@
 				height: GetSize(3);
 				border: 1px solid green;
 			}
+			&.trigger-animation-swipe {
+				background-position: left bottom;
+
+				.company-link {
+					@include Text-Flow-Active;
+					width: 100%;
+				}
+			}
 		}
 		.single-user {
 			width: GetSize(29);
@@ -113,6 +121,29 @@
 					align-self: flex-start;
 				}
 			}
+		}
+
+		.single-user:after {
+			content: '';
+			display: block;
+			left: 0;
+			width: GetSize(25);
+			height: 0vh;
+			position: relative;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+			margin-top: GetSize(2);
+			margin-left: GetSize(2);
+		}
+		.multi-user:after {
+			content: '';
+			display: block;
+			left: 0;
+			width: GetSize(25);
+			height: 0vh;
+			position: absolute;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+			margin-top: GetSize(2);
+			margin-left: GetSize(2);
 		}
 	}
 }
@@ -152,6 +183,7 @@
 				.company-link {
 					border: 1px solid green;
 					margin-left: GetSize(3);
+					padding-top: 2px;
 				}
 				.company-image {
 					width: GetSize(4);
@@ -178,6 +210,7 @@
 					.user-name {
 						border: 1px solid yellow;
 						align-self: flex-start;
+						padding-top: GetSize(1.5);
 					}
 					.avatar {
 						border: 1px solid green;

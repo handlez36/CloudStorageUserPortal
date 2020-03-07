@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { AvatarApi } from 'services/avatar';
 import { UserProfileApi } from 'services/userProfile';
 import { UserApi } from 'services/user';
@@ -34,15 +35,23 @@ class LogoutComponent extends Component {
 		header.classList.remove('blue-animation');
 	};
 	logoutUser = () => {
-		console.log('HELLO NIAMH');
+		const logoutButton = document.querySelector('.support-button.logout');
+		if (logoutButton) {
+			logoutButton.classList.add(this.props.module);
+			logoutButton.classList.add('trigger-animation-swipe');
+		}
 		UserApi.logoutUser()
 			.then(response => {
 				const validResponse = response.status === 200 && response.data && !response.data.error;
 				if (validResponse) {
-					console.log('offically logged out');
+					this.props.history.push('/login');
 				}
 			})
 			.catch(error => this.setState({ error }));
+
+		setTimeout(() => {
+			this.props.history.push('/login');
+		}, 3000);
 	};
 
 	render() {
@@ -61,8 +70,8 @@ class LogoutComponent extends Component {
 				<div className='logout-button fade-in'>
 					<BloxButton
 						title='LOGOUT'
-						customClass='support-button'
-						enabled={false}
+						customClass='support-button logout'
+						enabled={true}
 						onClick={this.logoutUser}
 					/>
 				</div>

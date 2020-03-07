@@ -100,6 +100,7 @@
 	@include Secondary;
 
 	&.active {
+		font-family: $font-family-primary-heads;
 		@include Text-Flow-Active;
 	}
 	&.animate {
@@ -188,6 +189,9 @@
 //Headers
 .header10 {
 	@include Header10;
+	&.animate {
+		@include Text-Flow-Animate;
+	}
 }
 
 .header10:hover {

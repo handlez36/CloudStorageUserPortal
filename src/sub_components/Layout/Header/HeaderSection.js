@@ -23,17 +23,21 @@ const HeaderSection = props => {
 	};
 
 	return (
-		<BloxGrid name='header-grid' parentEl='.portal-header' contentGrid={grid}>
-			<div key='logout-component' className='logout-component'>
-				<LogoutComponent />
+		<BloxPage
+			name='header-grid'
+			layout={LAYOUT_CONFIG[props.breakpoint]}
+			breakpoint={props.breakpoint}
+		>
+			<div key='logoutComponent' className='logout-component'>
+				<LogoutComponent module={props.module} history={props.history} />
 			</div>
 			<div key='breadcrumbComponent'>
 				<BreadCrumbComponent />
 			</div>
 			<div key='accountsComponent' className='accounts-component'>
-				<AccountsComponent breakpoint={props.breakpoint} />
+				<AccountsComponent breakpoint={props.breakpoint} module={props.module} />
 			</div>
-		</BloxGrid>
+		</BloxPage>
 	);
 };
 

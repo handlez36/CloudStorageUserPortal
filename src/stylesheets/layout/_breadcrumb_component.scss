@@ -128,11 +128,11 @@
 			opacity: 1;
 			position: absolute;
 			left: 50%;
-			transform: translate(-50%, 86%);
+			transform: translate(-50%, 88%);
 			.breadcrumbs {
 				width: auto;
 				height: GetSize(2);
-				margin-top: GetSize(3);
+				margin-top: GetSize(3.7);
 				padding-right: GetSize(2);
 				display: flex;
 				flex-direction: row;
@@ -153,7 +153,7 @@
 					height: GetSize(2);
 					position: relative;
 					border-left: 1px solid $Cool_Gray_Med_1;
-					margin-top: GetSize(-2);
+					margin-top: GetSize(-2.2);
 					margin-left: GetSize(-1);
 				}
 			}
