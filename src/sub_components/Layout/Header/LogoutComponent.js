@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { AvatarApi } from 'services/avatar';
 import { UserProfileApi } from 'services/userProfile';
 import { UserApi } from 'services/user';
@@ -36,7 +37,6 @@ class LogoutComponent extends Component {
 	logoutUser = () => {
 		const logoutButton = document.querySelector('.support-button.logout');
 		if (logoutButton) {
-			console.log('MODULE', this.props.module);
 			logoutButton.classList.add(this.props.module);
 			logoutButton.classList.add('trigger-animation-swipe');
 		}
@@ -44,10 +44,14 @@ class LogoutComponent extends Component {
 			.then(response => {
 				const validResponse = response.status === 200 && response.data && !response.data.error;
 				if (validResponse) {
-					console.log('offically logged out');
+					this.props.history.push('/login');
 				}
 			})
 			.catch(error => this.setState({ error }));
+
+		setTimeout(() => {
+			this.props.history.push('/login');
+		}, 3000);
 	};
 
 	render() {

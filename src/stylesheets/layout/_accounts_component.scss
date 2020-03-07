@@ -21,7 +21,7 @@
 		align-items: flex-end;
 		text-transform: uppercase;
 		background-color: $White;
-		background: linear-gradient(90deg, $White 30%, $Cool_Gray_Light_1 100%);
+		background: linear-gradient(90deg, $White 40%, $Warm_Gray_Light_1 100%);
 		background-size: 250% 100%;
 		background-position: left bottom;
 		transition: all 1s ease-in-out;
@@ -88,6 +88,14 @@
 				right: 0%;
 				margin-right: GetSize(2);
 			}
+			&.trigger-animation-swipe {
+				background-position: left bottom;
+
+				.company-link {
+					@include Text-Flow-Active;
+					width: 100%;
+				}
+			}
 		}
 		.multi-user:last-child {
 			height: GetSize(7);
@@ -130,6 +138,7 @@
 				}
 			}
 		}
+
 		.single-user:after {
 			content: '';
 			display: block;
@@ -187,6 +196,7 @@
 				align-items: center;
 				.company-link {
 					margin-left: GetSize(3);
+					padding-top: 2px;
 				}
 				.company-image {
 					width: GetSize(4);
@@ -217,7 +227,7 @@
 					flex-direction: row;
 					.user-name {
 						align-self: flex-start;
-						padding-top: GetSize(2);
+						padding-top: GetSize(1.5);
 					}
 					.avatar {
 						padding-top: GetSize(0.5);

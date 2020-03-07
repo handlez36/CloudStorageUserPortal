@@ -752,7 +752,6 @@
 	font-size: 14px;
 	line-height: 14px;
 	letter-spacing: 1px;
-	text-transform: uppercase;
 	font-weight: light;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
@@ -770,7 +769,7 @@
 	font-size: 14px;
 	line-height: 14px;
 	letter-spacing: 0.5;
-	text-transform: uppercase;
+
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
 		line-height: 18px;

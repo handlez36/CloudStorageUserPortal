@@ -63,7 +63,7 @@
 }
 
 @mixin Text-Flow-Active {
-	font-family: $font-family-primary-heads;
+	//font-family: $font-family-primary-heads;
 	background-clip: text;
 	text-fill-color: transparent;
 	-webkit-text-fill-color: transparent;

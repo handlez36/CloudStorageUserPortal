@@ -56,18 +56,20 @@ class AccountsComponent extends Component {
 
 	renderMultiUserList = memberships => {
 		const shouldRenderList = memberships && memberships.length > 1;
-
+		const { module } = this.props;
 		if (shouldRenderList) {
 			return memberships.map(company => {
 				const { fuseBillId: currentCompanyId } = this.props.company_info;
 				const isSelectedCompany = company.organizationId === parseInt(currentCompanyId);
 
 				return (
-					<div className='multi-user'>
+					<div className='multi-user' id={company.organizationId}>
 						<div
-							className={`company-link${isSelectedCompany ? ' selected header10 ' : ' header10'}`}
+							className={`company-link ${module} ${
+								isSelectedCompany ? ' selected header10 ' : ' header10'
+							}`}
 							style={{ cursor: 'pointer' }}
-							onClick={() => this.companySwitch(company.organizationId)}
+							onClick={() => this.changeCompany(company.organizationId)}
 						>
 							{company.organizationName}
 						</div>
@@ -76,6 +78,23 @@ class AccountsComponent extends Component {
 				);
 			});
 		}
+	};
+
+	changeCompany = id => {
+		const { module } = this.props;
+		const selectedCompany = document.getElementById(id);
+		const previousSelectedCompany = document.querySelector('.trigger-animation-swipe');
+		if (previousSelectedCompany) {
+			previousSelectedCompany.classList.remove('trigger-animation-swipe');
+			previousSelectedCompany.classList.remove(module);
+		}
+		if (selectedCompany) {
+			selectedCompany.classList.add('trigger-animation-swipe');
+			selectedCompany.classList.add(module);
+		}
+		setTimeout(() => {
+			this.companySwitch(id);
+		}, 1000);
 	};
 
 	checkNameLength = companyName => {

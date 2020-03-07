@@ -31,13 +31,13 @@ const HeaderSection = props => {
 			breakpoint={props.breakpoint}
 		>
 			<div key='logoutComponent' className='logout-component'>
-				<LogoutComponent module={props.module} />
+				<LogoutComponent module={props.module} history={props.history} />
 			</div>
 			<div key='breadcrumbComponent'>
 				<BreadCrumbComponent />
 			</div>
 			<div key='accountsComponent' className='accounts-component'>
-				<AccountsComponent breakpoint={props.breakpoint} />
+				<AccountsComponent breakpoint={props.breakpoint} module={props.module} />
 			</div>
 		</BloxPage>
 	);
