@@ -1,5 +1,5 @@
 .accounts-component-wrapper {
-	width: GetSize(20);
+	width: GetSize(25);
 	height: GetSize(5);
 	transition: width 1s, height 1s;
 	position: absolute;
@@ -7,8 +7,7 @@
 	flex-direction: row;
 	top: 0;
 	right: 0;
-	background: $White;
-
+	background-color: $White;
 	.company-name {
 		width: GetSize(20);
 		height: GetSize(5);
@@ -21,10 +20,12 @@
 		align-items: flex-end;
 		text-transform: uppercase;
 		background-color: $White;
-		background: linear-gradient(90deg, $White 40%, $Warm_Gray_Light_1 100%);
+		background: linear-gradient(90deg, $White 40%, $Cool_Gray_Light_1 100%);
 		background-size: 250% 100%;
 		background-position: left bottom;
 		transition: all 1s ease-in-out;
+		position: absolute;
+		right: GetSize(5);
 	}
 	.accounts-dropdown {
 		opacity: 0;
@@ -42,6 +43,9 @@
 	.image {
 		width: GetSize(5);
 		height: GetSize(5);
+		background-color: $Cool_Gray_Light_1;
+		right: 0;
+		position: absolute;
 
 		img {
 			width: GetSize(5);
@@ -58,11 +62,10 @@
 	height: GetSize(12);
 
 	.company-name {
-		width: GetSize(29);
-		font-weight: bold;
-		border: 1px solid green;
+		width: GetSize(24);
 	}
 	.accounts-dropdown {
+		box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
 		width: 100%;
 		height: auto;
 		margin-top: GetSize(5);
@@ -83,7 +86,6 @@
 			.company-image {
 				width: GetSize(3);
 				height: GetSize(3);
-				border: 1px solid green;
 				position: absolute;
 				right: 0%;
 				margin-right: GetSize(2);
@@ -146,7 +148,7 @@
 			width: GetSize(25);
 			height: 0vh;
 			position: relative;
-			border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+			border-bottom: 2px solid rgba(0, 0, 0, 0.16);
 			margin-top: GetSize(2);
 			margin-left: GetSize(2);
 		}
@@ -157,7 +159,7 @@
 			width: GetSize(25);
 			height: 0vh;
 			position: absolute;
-			border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+			border-bottom: 1px solid $Cool_Gray_Light_3;
 			margin-top: GetSize(2);
 			margin-left: GetSize(2);
 		}
@@ -170,10 +172,13 @@
 		.company-name {
 			width: GetSize(33);
 			height: GetSize(8);
-			font-weight: bold;
 			padding-top: GetSize(2.7);
+			right: GetSize(8);
 		}
 		.image {
+			width: GetSize(8);
+			height: GetSize(8);
+
 			img {
 				width: GetSize(8);
 				height: GetSize(8);
@@ -184,7 +189,7 @@
 		width: GetSize(38);
 		height: GetSize(17);
 		.company-name {
-			width: GetSize(38);
+			width: GetSize(30);
 			font-weight: bold;
 		}
 		.accounts-dropdown {
@@ -275,8 +280,11 @@
 			height: GetSize(10);
 			font-weight: bold;
 			padding-top: GetSize(3.5);
+			right: GetSize(10);
 		}
 		.image {
+			width: GetSize(10);
+			height: GetSize(10);
 			img {
 				width: GetSize(10);
 				height: GetSize(10);
@@ -286,8 +294,9 @@
 	.accounts-component-wrapper:hover {
 		width: GetSize(50);
 		height: GetSize(22);
+
 		.company-name {
-			width: GetSize(42);
+			width: GetSize(40);
 			font-weight: bold;
 		}
 		.accounts-dropdown {

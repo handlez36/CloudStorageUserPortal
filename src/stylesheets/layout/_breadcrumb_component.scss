@@ -37,12 +37,13 @@
 		background-position: right bottom;
 	}
 	.breadcrumb-dropdown {
+		box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
 		width: GetSize(37);
 		height: GetSize(7);
 		opacity: 1;
 		position: absolute;
 		left: 50%;
-		transform: translate(-50%, 68%);
+		transform: translate(-50%, 69%);
 		background-color: $White;
 		display: flex;
 		flex-direction: column;
@@ -178,7 +179,7 @@
 			color: $Cool_Gray_Dark_3;
 			position: absolute;
 			text-transform: uppercase;
-			border: 1px solid blue;
+
 			transform: translate(-50%, 0%);
 			position: absolute;
 			left: 50%;
@@ -202,7 +203,6 @@
 		.breadcrumb-dropdown {
 			width: GetSize(60);
 			height: GetSize(12);
-			border: 1px solid green;
 			opacity: 1;
 			position: absolute;
 			left: 50%;
