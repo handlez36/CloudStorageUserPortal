@@ -467,7 +467,6 @@ class TicketHistory extends Component {
 			.then(response => {
 				const validResponse = response.tickets;
 				if (validResponse) {
-					console.log('valid response', response);
 					const splitTickets = this.splitTickets(response.tickets);
 					this.needDownArrow();
 					this.setState(
@@ -528,7 +527,7 @@ class TicketHistory extends Component {
 	render() {
 		const { pageState, selectedTicketId } = this.state;
 		const { containerPadding, margin, rowHeight } = this.state;
-		console.log('render page', pageState);
+
 		const layout = [
 			{ i: 'filter', x: 0.1, y: 1, w: 0, h: 2, static: true },
 			{ i: 'filter-two', x: 2.7, y: 1, w: 3, h: 2, static: true },
