@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { PHONEMASK } from 'utils/CommonConstants';
+import DataInputsLayout from 'components_old/Common/DataInputsLayout';
+import { AvatarApi } from 'services/avatar';
+import { USER_UPDATE_SUCCESS, USER_UPDATE_ERROR } from 'actions';
 
-import DataInputsLayout from './../../../components/Common/DataInputsLayout';
-import { AvatarApi } from '../../../services/avatar';
-import { USER_UPDATE_SUCCESS, USER_UPDATE_ERROR } from '../../../actions';
-import { PHONEMASK } from '../../../components/Common/CommonConstants';
 import { Utils } from '../../../services/utils';
 
 const WHICH_AVATAR = {

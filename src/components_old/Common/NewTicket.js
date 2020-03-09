@@ -1,7 +1,7 @@
 // import React from 'react';
 import React, { Component } from 'react';
-import { TICKET_ICONS, BLANK_ICONS } from '../../containers/Support/TicketConstants';
-import { TicketApi } from '../../services/ticket';
+import { TICKET_ICONS, BLANK_ICONS } from 'utils/TicketConstants';
+import { TicketApi } from 'services/ticket';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const alertIcon = `${CDN_URL}common/tickets/icons-alert-reverse@3x.png`;
 
@@ -20,7 +20,7 @@ class NewTicket extends Component {
 		}
 	}
 	checkStatus = prevStatus => {
-		const status = this.props.ticket.status;
+		let status = this.props.ticket.status;
 
 		if (
 			status === 'In Progress' ||
@@ -33,6 +33,7 @@ class NewTicket extends Component {
 		const newTicketStatus = this.refs.ticketStatus;
 		if (status !== prevStatus) {
 			try {
+				status = status.replace(' ', '');
 				newTicketStatus.classList.add(status.toLowerCase());
 				newTicketStatus.classList.remove(prevStatus);
 			} catch (e) {}

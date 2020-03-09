@@ -21,6 +21,7 @@ import FooterSection from './Footer';
 const PAGES = {
 	Support: {
 		Overview: 'OverviewPage',
+		Ticket_history: 'TicketHistoryPage',
 	},
 	Storage: {
 		Overview: 'OverviewPage',
@@ -61,6 +62,7 @@ class PortalLayout extends Component {
 			const [, , siteModule, sitePage] = matches;
 			const parsedSitePage =
 				!sitePage || sitePage === undefined || sitePage === '0' ? 'OVERVIEW' : sitePage;
+
 			this.loadPage(siteModule, parsedSitePage);
 			return { siteModule, parsedSitePage };
 		}
@@ -68,11 +70,16 @@ class PortalLayout extends Component {
 		return { siteModule: 'HOME', sitePage: 'OVERVIEW' };
 	};
 
+	componentDidUpdate(prevprops) {
+		if (prevprops.location != this.props.location) {
+			console.log('BIG CHANGE', this.props.location);
+		}
+	}
+
 	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
 		const pageName = PAGES[mod][page];
-
 		const Component = require(`../../pages/${mod}/${pageName}`).default;
 		this.setState({ PageComponent: Component, currentModule: mod.toLowerCase() });
 	};
@@ -119,7 +126,14 @@ class PortalLayout extends Component {
 						<NavSection module={currentModule} />
 					</div>
 					<div className='main-content'>
-						{PageComponent && <ContentSection content={PageComponent} breakpoint={breakpoint} />}
+						{PageComponent && (
+							<ContentSection
+								content={PageComponent}
+								breakpoint={breakpoint}
+								match={this.props.match}
+								history={this.props.history}
+							/>
+						)}
 					</div>
 				</div>
 				<div className='portal-footer'>

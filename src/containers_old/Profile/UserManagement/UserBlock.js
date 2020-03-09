@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ToggleSwitch from '../../../components/Common/ToggleSwitch';
-import { UserProfileApi } from '../../../services/userProfile';
-import { AvatarApi } from '../../../services/avatar';
-import { Utils } from '../../../services/utils';
+import ToggleSwitch from 'components_old/Common/ToggleSwitch';
+import { UserProfileApi } from 'services/userProfile';
+import { AvatarApi } from 'services/avatar';
+import { Utils } from 'services/utils';
 
 export default class UserBlock extends Component {
 	constructor(props) {

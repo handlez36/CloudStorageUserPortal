@@ -21,6 +21,7 @@ class Portal extends Component {
 	};
 
 	componentDidMount() {
+		console.log('PORTAL LAYOUT', this.props);
 		this.props.getCompanyInfo();
 		this.checkAuth(this.props.isAuthenticated);
 		const reveal = document.getElementById('reveal');
@@ -77,11 +78,16 @@ class Portal extends Component {
 					<Route
 						exact
 						path='/portal/profile/(password_change|avatar_change)?'
-						render={props => (true ? <PortalLayout {...props} /> : <Home {...props} />)}
+						render={props => (hasProfileAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
 						exact
-						path='/portal/support'
+						path='/portal/support/(ticket_history)?'
+						render={props => (hasSupportAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
+					/>
+					<Route
+						//exact
+						path='/portal/support/ticket_history/:ticketNumber'
 						render={props => (hasSupportAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
@@ -123,7 +129,4 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(
-	mapStateToProps,
-	{ getCompanyInfo },
-)(Portal);
+export default connect(mapStateToProps, { getCompanyInfo })(Portal);

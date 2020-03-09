@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
+import BloxGrid from 'components_old/Layout/BloxGrid';
+import { TicketApi } from 'services/ticket';
 import TicketConversation from './TicketConversation';
-import BloxGrid from '../../../components/Layout/BloxGrid';
 
 class TicketInformation extends Component {
 	constructor(props) {
@@ -14,8 +15,37 @@ class TicketInformation extends Component {
 			margin: [],
 			containerPadding: [],
 			layout: [],
+			ticket: null,
 		};
 	}
+	componentDidMount = () => {
+		const ticketId = this.props.ticketId;
+		this.retrieveTicketDetails(ticketId);
+	};
+	retrieveTicketDetails = async id => {
+		console.log('TICKET RESPONSE');
+		try {
+			const response = await TicketApi.getTicket(id);
+			console.log('TICKET RESPONSE', response);
+			if (
+				response.status === 200 &&
+				!response.data.error &&
+				response.data.ticketDetails.processid
+			) {
+				const { ticketDetails = {} } = response.data;
+				this.setState({ ticket: ticketDetails });
+			} else {
+				const { error = 'Error retrieving details' } = response.data;
+				if (error) {
+					this.setState({ error });
+				} else {
+					this.setState({ error: 'Error retrieving details' });
+				}
+			}
+		} catch (e) {
+			this.setState({ error: 'Network error' });
+		}
+	};
 	onBreakpointChange = breakpoint => {
 		switch (breakpoint) {
 			case 'xs':
@@ -44,7 +74,8 @@ class TicketInformation extends Component {
 	};
 
 	render() {
-		const { auth_status, ticket } = this.props;
+		const { auth_status } = this.props;
+		const { ticket } = this.state;
 		let display;
 
 		// this.state.closeTicket

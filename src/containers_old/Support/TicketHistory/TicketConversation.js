@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-import BloxCycleView from '../../../components/Common/BloxCycleView';
+import { TicketApi } from 'services/ticket';
+import { TICKET_ATTACHMENT_PHASE as PHASE } from 'utils/TicketConstants';
 import Header from './Conversations/ConversationHeader';
 import SubHeader from './Conversations/ConversationSubHeader';
 import Body from './Conversations/ConversationBody';
 import AttachmentModal from './Conversations/AttachmentModal';
-import { TicketApi } from '../../../services/ticket';
-import { TICKET_ATTACHMENT_PHASE as PHASE } from '../TicketConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const TicketBackground = `${CDN_URL}support/Support_TicketBackground_800x1200.jpg`;
 const DoneCloud = `${CDN_URL}support/Support_DoneCloud_Icon.svg`;
@@ -69,6 +68,7 @@ class TicketConversation extends Component {
 				);
 
 				if (isSuccess) {
+					console.log('TICKET niamh000', ticket);
 					setTimeout(() => {
 						this.retrieveTicket(ticket.caseid);
 					}, 5000);
@@ -178,16 +178,17 @@ class TicketConversation extends Component {
 		const { ticket } = this.props;
 
 		if (ticket) {
-			const id = parseInt(ticket) ? ticket : ticket.id;
+			console.log('TICKET niamh000', ticket);
+			const id = parseInt(ticket) ? ticket : ticket.processid;
 			this.retrieveTicket(id);
 			this.setupConvoInterval(id);
 		}
 	}
 
 	UNSAFE_componentWillUpdate(newProps) {
-		if (newProps.ticket.id !== this.props.ticket.id) {
-			this.retrieveTicket(newProps.ticket.id);
-			this.setupConvoInterval(newProps.ticket.id);
+		if (newProps.ticket.processid !== this.props.ticket.processid) {
+			this.retrieveTicket(newProps.ticket.processid);
+			this.setupConvoInterval(newProps.ticket.processid);
 		}
 	}
 
@@ -204,7 +205,7 @@ class TicketConversation extends Component {
 	render() {
 		const { auth_status, ticket } = this.props;
 		const { convos, comment, attachmentModalOpen, attachments, msg } = this.state;
-		const id = parseInt(ticket) ? ticket : ticket.id;
+		const id = parseInt(ticket) ? ticket : ticket.processid;
 		let comments;
 
 		if (convos) {

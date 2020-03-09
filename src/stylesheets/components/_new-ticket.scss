@@ -122,6 +122,46 @@
 		height: 2.6vh;
 		margin-left: 3.6vw;
 		width: 8.8vw;
+		&.hold {
+			span {
+				position: relative;
+				top: 0.4vh;
+				margin-left: -0.3vw;
+				color: $Warm_Gray_Med_3;
+			}
+		}
+		&.pendingreview {
+			span {
+				position: relative;
+				top: 0.4vh;
+				margin-left: -1.8vw;
+				color: $Warm_Gray_Med_3;
+			}
+		}
+		&.inprogress {
+			span {
+				position: relative;
+				top: 0.4vh;
+				margin-left: -1.5vw;
+				color: $Warm_Gray_Med_3;
+			}
+		}
+		&.onhold {
+			span {
+				position: relative;
+				top: 0.4vh;
+				margin-left: -0.5vw;
+				color: $Warm_Gray_Med_3;
+			}
+		}
+		&.pending {
+			span {
+				position: relative;
+				top: 0.4vh;
+				margin-left: -0.5vw;
+				color: $Warm_Gray_Med_3;
+			}
+		}
 		&.open {
 			span {
 				position: relative;

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 
-import Modal from 'sub_components/Common/PortalModal';
-import BrowseButton from 'sub_components/Common/BloxButton';
-import AttachButton from 'sub_components/Common/BloxButton';
-import { ExitButton } from 'components_old/Common/ExitButton';
-import { AttachmentApi } from 'services/attachment';
-import { TICKET_ATTACHMENT_PHASE as PHASE } from 'utils/TicketConstants';
+import Modal from '../../../../components/Common/PortalModal';
+import BrowseButton from '../../../../components/Common/BloxButton';
+import AttachButton from '../../../../components/Common/BloxButton';
+import { ExitButton } from '../../../../components/Common/ExitButton';
+import { AttachmentApi } from '../../../../services/attachment';
+import { TICKET_ATTACHMENT_PHASE as PHASE } from '../../TicketConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const PurpleProgressCircle = `${CDN_URL}support/Support_DownloadProgressIcons_Support_Circle-PurpleBase.svg`;
 const SingleAttachmentStatusImage = `${CDN_URL}support/Support_CheckCircle_Icon_Green.svg`;

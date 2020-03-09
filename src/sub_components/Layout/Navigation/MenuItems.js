@@ -10,6 +10,9 @@ class MenuItems extends Component {
 		};
 	}
 	onClick = itemClicked => {
+		const { section } = this.props;
+		itemClicked = itemClicked.replace(' ', '_');
+		window.location.pathname = `/portal/${section}/${itemClicked.toLowerCase()}`;
 		this.setActiveClass(itemClicked);
 	};
 

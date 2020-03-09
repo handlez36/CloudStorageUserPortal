@@ -1,9 +1,10 @@
 import React from 'react';
 import { object, array } from 'prop-types';
 
-import { AvatarApi } from 'services/avatar';
-import BloxCycleView from 'components_old/Common/BloxCycleView';
 import { Comment } from '../Comment';
+import { AvatarApi } from '../../../../services/avatar';
+import BloxCycleView from '../../../../components/Common/BloxCycleView';
+
 const ConversationBody = ({ auth_status, convos }) => {
 	const avatarApi = new AvatarApi();
 
