@@ -70,12 +70,6 @@ class PortalLayout extends Component {
 		return { siteModule: 'HOME', sitePage: 'OVERVIEW' };
 	};
 
-	componentDidUpdate(prevprops) {
-		if (prevprops.location != this.props.location) {
-			console.log('BIG CHANGE', this.props.location);
-		}
-	}
-
 	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
@@ -112,6 +106,11 @@ class PortalLayout extends Component {
 		const htmlEl = document.querySelector('html');
 		this.screenObserver.observe(htmlEl);
 	}
+	componentDidUpdate(prevProps) {
+		if (prevProps.location !== this.props.location) {
+			this.parseUrlParams();
+		}
+	}
 
 	render() {
 		const { breakpoint, PageComponent, currentModule } = this.state;
@@ -123,7 +122,7 @@ class PortalLayout extends Component {
 				</div>
 				<div className='portal-main'>
 					<div className='main-nav'>
-						<NavSection module={currentModule} />
+						<NavSection history={this.props.history} module={currentModule} />
 					</div>
 					<div className='main-content'>
 						{PageComponent && (

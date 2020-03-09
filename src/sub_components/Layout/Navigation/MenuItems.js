@@ -10,18 +10,24 @@ class MenuItems extends Component {
 		};
 	}
 	onClick = itemClicked => {
-		const { section } = this.props;
+		const { section, history } = this.props;
 		itemClicked = itemClicked.replace(' ', '_');
-		window.location.pathname = `/portal/${section}/${itemClicked.toLowerCase()}`;
+		if (itemClicked.toLowerCase() === 'overview') {
+			history.push(`/portal/${section}`);
+		} else {
+			history.push(`/portal/${section}/${itemClicked.toLowerCase()}`);
+		}
+
 		this.setActiveClass(itemClicked);
 	};
 
 	setActiveClass(type) {
 		const { section, navigation } = this.props;
+
 		const currentActiveElement = document.querySelector(
 			`.item.nav-${navigation}.${section}.active`,
 		);
-
+		type = type.replace('_', ' ');
 		const newActiveElement = this.refs[type];
 
 		if (currentActiveElement) {
@@ -35,8 +41,10 @@ class MenuItems extends Component {
 				}
 			}, 1000);
 		}
-		newActiveElement.classList.remove('animate');
-		newActiveElement.classList.add('active');
+		if (newActiveElement) {
+			newActiveElement.classList.remove('animate');
+			newActiveElement.classList.add('active');
+		}
 	}
 
 	render() {
