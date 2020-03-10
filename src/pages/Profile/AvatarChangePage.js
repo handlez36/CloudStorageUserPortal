@@ -4,7 +4,7 @@ import { DIMENSIONS } from 'services/layoutManager';
 import AvatarSelection from 'blox_components/Profile/AvatarSelection/AvatarSelection';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -19,7 +19,7 @@ const LAYOUT_CONFIG = {
 };
 
 const AvatarChangePage = ({ breakpoint, location }) => {
-	console.log('LAYOUT: ', LAYOUT_CONFIG[breakpoint]);
+	const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 	return (
 		<BloxPage
@@ -28,7 +28,7 @@ const AvatarChangePage = ({ breakpoint, location }) => {
 			breakpoint={breakpoint}
 			location={location}
 		>
-			<div key='avatarPassword' className='avatarPassword'>
+			<div key={`avatarPassword-${columnCount}`} className='avatarPassword'>
 				<ComponentWrapper collapseTitle hideBorder>
 					<AvatarSelection />
 				</ComponentWrapper>

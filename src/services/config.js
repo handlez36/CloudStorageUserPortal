@@ -19,8 +19,10 @@ export const RESOLUTIONS = {
 	LOW: 928,
 	MED: 1344,
 	HIGH: 2240,
+};
 
-	// LOW: 1024,
-	// MED: 1440,
-	// HIGH: 2560,
+export const BREAKPOINT_COLCOUNT_MAP = {
+	[RESOLUTIONS.LOW]: 96,
+	[RESOLUTIONS.MED]: 144,
+	[RESOLUTIONS.HIGH]: 240,
 };
