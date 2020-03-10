@@ -94,6 +94,11 @@ class PortalLayout extends Component {
 
 		this.setState({ breakpoint });
 	};
+	componentDidUpdate(prevProps) {
+		if (prevProps.location !== this.props.location) {
+			this.parseUrlParams();
+		}
+	}
 
 	componentDidMount() {
 		// Parse URL to determine module to load...
