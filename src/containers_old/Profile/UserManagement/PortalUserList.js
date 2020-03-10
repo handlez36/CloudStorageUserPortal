@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import CycleView from 'components_old/Common/BloxCycleView';
+import CycleView from 'sub_components/Common/BloxCycleView';
 import { UserApi } from 'services/user';
 import UserAddModal from './UserAddModal';
 import UserBlock from './UserBlock';

@@ -31,13 +31,12 @@ class PrimaryMenu extends Component {
 			let newClientHeight;
 			try {
 				newClientHeight = document.getElementById('menu-primary').clientHeight;
+				entries.forEach(() => {
+					this.checkScreenSize();
+					this.setNavHeight(newClientHeight);
+					this.setGradientPercentage();
+				});
 			} catch (e) {}
-
-			entries.forEach(() => {
-				this.checkScreenSize();
-				this.setNavHeight(newClientHeight);
-				this.setGradientPercentage();
-			});
 		});
 
 		setTimeout(() => {
@@ -93,21 +92,23 @@ class PrimaryMenu extends Component {
 
 		this.setState({ navHeight: newHeight });
 	}
+	getMenuItems = module => {
+		const menuItems = [
+			{ name: 'Home' },
+			{ name: 'billing' },
+			{ name: 'storage' },
+			{ name: 'support' },
+			{ name: 'profile' },
+		];
+		const filteredMenuItems = [];
+		menuItems.filter(item => item.name !== module && filteredMenuItems.push({ name: item.name }));
+		return filteredMenuItems;
+	};
+
 	render() {
 		const { columnWidth, onMouseLeave, module } = this.props;
 		const { navHeight } = this.state;
-		const menu = [
-			{ name: 'Home' },
-			{ name: 'Billing' },
-			{ name: 'Storage' },
-			// { name: 'Support' },
-			// { name: 'Hello' },
-			// { name: 'Next' },
-			// { name: 'Hey' },
-			// { name: 'Ticket History' },
-			// { name: 'Menu' },
-			// { name: 'Navigation' },
-		];
+		const menu = this.getMenuItems(module);
 		return (
 			<div className='nav-primary-menu' onMouseLeave={onMouseLeave}>
 				<div className='top-section'>
@@ -134,7 +135,12 @@ class PrimaryMenu extends Component {
 					</div>
 					<div className='primary-menu-items'>
 						<div className='primary-menu'>
-							<MenuItems section={module} navigation='primary' menu={menu} />
+							<MenuItems
+								section={module}
+								history={this.props.history}
+								navigation='primary'
+								menu={menu}
+							/>
 						</div>
 						<div className='bottom-section' id='bottom-section-primary'>
 							<img src={MenuTriangleBottom} />

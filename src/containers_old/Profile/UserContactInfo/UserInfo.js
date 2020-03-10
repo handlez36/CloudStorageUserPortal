@@ -4,7 +4,7 @@ import DataInputsLayout from 'components_old/Common/DataInputsLayout';
 import { AvatarApi } from 'services/avatar';
 import { USER_UPDATE_SUCCESS, USER_UPDATE_ERROR } from 'actions';
 
-import { Utils } from '../../../services/utils';
+import { Utils } from 'services/utils';
 
 const WHICH_AVATAR = {
 	NORMAL: 'NORMAL',

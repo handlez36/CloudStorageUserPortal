@@ -33,6 +33,9 @@ const PAGES = {
 	},
 	Billing: {
 		Overview: 'OverviewPage',
+		Current_invoices: 'CurrentInvoicesPage',
+		Invoice_history: 'InvoiceHistoryPage',
+		Make_a_payment: 'MakeAPaymentPage',
 	},
 };
 

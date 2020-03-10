@@ -1,4 +1,39 @@
-.billing-history,
+.invoice-history-page {
+	.content-grid {
+		overflow: visible !important;
+	}
+}
+.invoice-history-wrapper {
+	//width: calculateVw(505, 1440);
+	align-content: center;
+	display: flex;
+	flex-direction: row;
+
+	/** NEW */
+	height: calc(100vh - 5.56vh);
+	padding-bottom: 9vh;
+	.invoice-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.list-container {
+		margin-right: 3.7vw;
+	}
+	.accordian-list {
+		width: calculateVw(380, 1440);
+		overflow: hidden;
+		height: 100%;
+	}
+	.accordian-list .blox-cycle-view {
+		height: 100%;
+	}
+	.accordian-list .upper-filter,
+	.accordian-list .lower-filter {
+		margin-right: 3.7vw;
+		width: 25.45vw !important;
+	}
+}
 .current-invoices-page2 {
 	//width: calculateVw(505, 1440);
 	align-content: center;
@@ -10,7 +45,6 @@
 	padding-bottom: 9vh;
 
 	.list-container {
-		margin-left: 3.7vw;
 		margin-right: 3.7vw;
 	}
 	.accordian-list {
@@ -23,7 +57,6 @@
 	}
 	.accordian-list .upper-filter,
 	.accordian-list .lower-filter {
-		margin-left: 3.7vw;
 		margin-right: 3.7vw;
 		width: 25.45vw !important;
 	}
@@ -31,7 +64,6 @@
 
 // #billing-history-img {
 .billing-history-img {
-	margin-left: 3.8vw;
 	margin-right: 2vw;
 	width: calculateVw(365, 1440);
 	// height: auto;
@@ -56,7 +88,7 @@
 .billing-filter-wrapper-2 {
 	margin-top: 0.5vw;
 	width: 8vw;
-	margin-left: 1vw;
+	margin-left: 0.5vw;
 	height: 2.5vw;
 	border-radius: 2px;
 	border-bottom: 2px solid $DCBLOX_Lime;
@@ -122,7 +154,7 @@
 
 .billing-filter-wrapper {
 	@extend .billing-filter-wrapper-2;
-	margin-left: 8vw;
+	margin-left: 4.5vw;
 }
 
 .billing-history-title {
@@ -130,7 +162,6 @@
 	font-size: calculateFontSize(13px, 28px);
 	color: $DCBLOX_Gray;
 	margin-bottom: 0.3vw;
-	margin-left: 2vw;
 }
 
 .billing-history-span {
@@ -138,7 +169,7 @@
 	font-size: calculateFontSize(13px, 28px);
 	color: $DCBLOX_Gray;
 	margin-bottom: 0.3vw;
-	margin-left: 1.8vw;
+
 	letter-spacing: 0.1vw;
 }
 
@@ -174,7 +205,7 @@
 		}
 	}
 
-	.billing-history {
+	.invoice-history-wrapper {
 		.list-container {
 			margin-left: 6.2vh;
 			margin-right: 6.9vh;

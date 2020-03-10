@@ -72,7 +72,7 @@ class Portal extends Component {
 					/>*/}
 					<Route
 						exact
-						path='/portal/billing'
+						path='/portal/billing/(current_invoices|invoice_history|make_a_payment)?'
 						render={props => (hasBillingAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route

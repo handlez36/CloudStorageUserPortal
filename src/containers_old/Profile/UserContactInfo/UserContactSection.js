@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { SITE_PAGES } from 'utils/CommonConstants';
-
 import PortalMessage from 'sub_components/Common/PortalMessage';
 import { PROFILE_USER_MESSAGE_TEXT, MENU } from 'utils/ProfileConstants';
 import { UserProfileApi } from 'services/userProfile';

@@ -184,6 +184,7 @@ class SecondaryMenu extends Component {
 									columnWidth={columnWidth}
 									onMouseLeave={this.onMouseLeave}
 									module={module}
+									history={this.props.history}
 								/>
 							</div>
 							<div className='primary-menu-active-shadow' />

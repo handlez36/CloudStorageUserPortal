@@ -1,12 +1,13 @@
 // import React, { Component } from 'react';
 // import { connect } from 'react-redux';
-// import { SITE_PAGES } from 'utils/CommonConstants';
-// import MenuHeader from 'components_old/Common/MenuHeader';
-// import { UserApi } from 'services/user';
-// import { USER_MANAGEMENT_MENU, MENU } from 'utils/ProfileConstants';
-// import { updatePage } from 'actions/siteTracking';
+
 // import PortalUserList from './PortalUserList';
 // import RosterUserList from './RosterUserList';
+// import MenuHeader from '../../../components/Common/MenuHeader';
+// import { UserApi } from '../../../services/user';
+// import { USER_MANAGEMENT_MENU, MENU } from '../ProfileConstants';
+// import { updatePage } from '../../../actions/siteTracking';
+// import { SITE_PAGES } from '../../../components/Common/CommonConstants';
 
 // class UserManagementPage extends Component {
 // 	constructor(props) {
@@ -155,4 +156,7 @@
 // 	};
 // }
 
-// export default connect(mapStateToProps, { updatePage })(UserManagementPage);
+// export default connect(
+// 	mapStateToProps,
+// 	{ updatePage },
+// )(UserManagementPage);

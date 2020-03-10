@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faKey } from '@fortawesome/free-solid-svg-icons';
+
+import { enterNewPassword, confirmNewPassword, resetRegistrationState } from 'actions/registration';
+
 import CredentialInputComponent from 'sub_components/Common/CredentialInputComponent';
 import { SITE_PAGES } from 'utils/CommonConstants';
-import { enterNewPassword, confirmNewPassword, resetRegistrationState } from 'actions/registration';
 
 import IconInputComponent from 'sub_components/Common/IconInputComponent';
 import PortalMessage from 'sub_components/Common/PortalMessage';
@@ -14,7 +16,6 @@ import { UserProfileApi } from 'services/userProfile';
 import PasswordResetSuccess from 'components_old/Common/PasswordResetSuccess';
 import { MENU } from 'utils/ProfileConstants';
 import { updatePage } from 'actions/siteTracking';
-
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Icon = `${CDN_URL}profile/Profile_PasswordChange_Icon_190x190.png`;
 
