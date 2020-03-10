@@ -764,3 +764,118 @@
 		line-height: 1.33;
 	}
 }
+
+//HEADER FONTS
+
+@mixin Header10 {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	line-height: 14px;
+	letter-spacing: 1px;
+	font-weight: light;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
+		font-family: $font-family-primary-subheads;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 24px;
+		line-height: 24px;
+		font-family: $font-family-primary-subheads;
+	}
+}
+@mixin Header11 {
+	font-family: $font-family-primary-heads;
+	font-size: 14px;
+	line-height: 14px;
+	letter-spacing: 0.5;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+@mixin Header20 {
+	font-family: $font-family-primary-subheads;
+	font-size: 20px;
+	line-height: 20px;
+	letter-spacing: 0.5;
+	text-transform: uppercase;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 24px;
+		line-height: 24px;
+		font-family: $font-family-primary-heads;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 30px;
+		line-height: 30px;
+		font-family: $font-family-primary-heads;
+	}
+}
+@mixin Header21 {
+	font-family: $font-family-primary-heads;
+	font-size: 20px;
+	line-height: 20px;
+	letter-spacing: 0.5;
+	text-transform: uppercase;
+	font-weight: bold;
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 24px;
+		line-height: 24px;
+		font-family: $font-family-primary-heads;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 30px;
+		line-height: 30px;
+		font-family: $font-family-primary-heads;
+	}
+}
+@mixin Header30 {
+	font-family: $font-family-primary-subheads;
+	font-size: 12px;
+	line-height: 12px;
+	letter-spacing: 0;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 16px;
+		line-height: 16px;
+	}
+}
+@mixin Header50 {
+	font-family: $font-family-primary-subheads;
+	font-size: 14px;
+	line-height: 14px;
+	letter-spacing: 0;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+@mixin Header51 {
+	font-family: $font-family-primary-heads;
+	font-size: 14px;
+	line-height: 14px;
+	letter-spacing: 0;
+
+	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
+		font-size: 18px;
+		line-height: 18px;
+	}
+	@media screen and (min-width: ($high-res + 1)) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}

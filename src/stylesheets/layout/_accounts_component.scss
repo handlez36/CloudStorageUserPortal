@@ -1,0 +1,395 @@
+.accounts-component-wrapper {
+	width: GetSize(25);
+	height: GetSize(5);
+	transition: width 1s, height 1s;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	top: 0;
+	right: 0;
+	background-color: $White;
+	.company-name {
+		width: GetSize(20);
+		height: GetSize(5);
+		text-align: center;
+		padding-top: GetSize(1.7);
+		padding-right: GetSize(1);
+		color: $Cool_Gray_Dark_3;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		text-transform: uppercase;
+		background-color: $White;
+		background: linear-gradient(90deg, $White 40%, $Cool_Gray_Light_1 100%);
+		background-size: 250% 100%;
+		background-position: left bottom;
+		transition: all 1s ease-in-out;
+		position: absolute;
+		right: GetSize(5);
+	}
+	.accounts-dropdown {
+		opacity: 0;
+		width: GetSize(0);
+		height: GetSize(0);
+		.multi-user {
+			transition: width 1s, height 1s;
+			height: GetSize(0);
+		}
+		.single-user {
+			transition: width 1s, height 1s;
+			height: GetSize(0);
+			.avatar {
+				display: none;
+			}
+		}
+	}
+	.image {
+		width: GetSize(5);
+		height: GetSize(5);
+		background-color: $Cool_Gray_Light_1;
+		right: 0;
+		position: absolute;
+
+		img {
+			padding: 5px;
+			width: GetSize(5);
+			height: GetSize(5);
+		}
+	}
+	.move-background {
+		background-position: right bottom;
+	}
+}
+
+.accounts-component-wrapper:hover {
+	width: GetSize(29);
+	height: GetSize(12);
+
+	.company-name {
+		width: GetSize(24);
+	}
+	.accounts-dropdown {
+		box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+		width: 100%;
+		height: auto;
+		margin-top: GetSize(5);
+		opacity: 1;
+		top: 0;
+		right: 0;
+		position: absolute;
+		.multi-user {
+			height: GetSize(5);
+			background: $White;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			.company-link {
+				margin-left: GetSize(2);
+				color: $Cool_Gray_Dark_3;
+			}
+			.company-image {
+				width: GetSize(3);
+				height: GetSize(3);
+				position: absolute;
+				right: 0%;
+				margin-right: GetSize(2);
+				img {
+					width: GetSize(3);
+					height: GetSize(3);
+					padding: 4px;
+				}
+			}
+			&.trigger-animation-swipe {
+				background-position: left bottom;
+
+				.company-link {
+					@include Text-Flow-Active;
+					width: 100%;
+				}
+			}
+		}
+		.multi-user:last-child {
+			height: GetSize(7);
+			padding-bottom: GetSize(3);
+		}
+		.single-user {
+			width: GetSize(29);
+			height: GetSize(7);
+			display: flex;
+			flex-direction: column;
+			transition: width 1s, height 1s;
+
+			.title {
+				width: GetSize(9);
+				height: GetSize(2);
+				padding-left: GetSize(2);
+				align-self: flex-start;
+				padding-top: GetSize(1);
+				color: $Cool_Gray_Med_1;
+			}
+			.user-wrapper {
+				display: flex;
+				height: GetSize(3);
+				padding-left: GetSize(2);
+				flex-direction: row;
+				.user-name {
+					margin-top: GetSize(1.8);
+					align-self: flex-start;
+					color: $Cool_Gray_Dark_3;
+				}
+				.avatar {
+					img {
+						width: GetSize(3);
+						height: GetSize(3);
+					}
+					align-self: flex-start;
+					position: absolute;
+					right: 0%;
+					margin-right: GetSize(2);
+					display: flex;
+				}
+			}
+		}
+		.single-user:after {
+			content: '';
+			display: block;
+			left: 0;
+			width: GetSize(25);
+			height: 0vh;
+			position: relative;
+			border-bottom: 2px solid rgba(0, 0, 0, 0.16);
+			margin-top: GetSize(2);
+			margin-left: GetSize(2);
+		}
+		.multi-user:after {
+			content: '';
+			display: block;
+			left: 0;
+			width: GetSize(25);
+			height: 0vh;
+			position: absolute;
+			border-bottom: 1px solid $Cool_Gray_Light_3;
+			margin-top: GetSize(2);
+			margin-left: GetSize(2);
+		}
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.accounts-component-wrapper {
+		width: GetSize(33);
+		height: GetSize(8);
+		.company-name {
+			width: GetSize(33);
+			height: GetSize(8);
+			padding-top: GetSize(2.7);
+			right: GetSize(8);
+		}
+		.image {
+			width: GetSize(8);
+			height: GetSize(8);
+
+			img {
+				width: GetSize(8);
+				height: GetSize(8);
+			}
+		}
+	}
+	.accounts-component-wrapper:hover {
+		width: GetSize(38);
+		height: GetSize(17);
+		.company-name {
+			width: GetSize(30);
+			font-weight: bold;
+		}
+		.accounts-dropdown {
+			margin-top: GetSize(8);
+			.multi-user {
+				height: GetSize(6);
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				.company-link {
+					margin-left: GetSize(3);
+					padding-top: 2px;
+				}
+				.company-image {
+					width: GetSize(4);
+					height: GetSize(4);
+
+					img {
+						width: GetSize(4);
+						height: GetSize(4);
+					}
+				}
+			}
+			.multi-user:last-child {
+				height: GetSize(10);
+				padding-bottom: GetSize(4);
+			}
+			.single-user {
+				width: GetSize(38);
+				height: GetSize(9);
+
+				.title {
+					width: GetSize(9);
+					height: GetSize(2);
+					padding-left: GetSize(3);
+					align-self: flex-start;
+					padding-top: GetSize(2);
+				}
+				.user-wrapper {
+					display: flex;
+					height: GetSize(7);
+					padding-left: GetSize(3);
+
+					flex-direction: row;
+					.user-name {
+						align-self: flex-start;
+						padding-top: GetSize(1.5);
+					}
+					.avatar {
+						padding-top: GetSize(0.5);
+						img {
+							width: GetSize(4);
+							height: GetSize(4);
+						}
+						align-self: flex-start;
+						display: flex;
+					}
+				}
+			}
+			.single-user:after {
+				content: '';
+				display: block;
+				left: 0;
+				width: GetSize(34);
+				height: 0vh;
+				position: relative;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+				margin-top: GetSize(0);
+				margin-left: GetSize(2);
+			}
+			.multi-user:after {
+				content: '';
+				display: block;
+				left: 0;
+				width: GetSize(34);
+				height: 0vh;
+				position: absolute;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+				margin-top: GetSize(3);
+				margin-left: GetSize(2);
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $high-res + 1) {
+	.accounts-component-wrapper {
+		width: GetSize(40);
+		height: GetSize(10);
+
+		.company-name {
+			width: GetSize(40);
+			height: GetSize(10);
+			font-weight: bold;
+			padding-top: GetSize(3.5);
+			right: GetSize(10);
+		}
+		.image {
+			width: GetSize(10);
+			height: GetSize(10);
+			img {
+				width: GetSize(10);
+				height: GetSize(10);
+			}
+		}
+	}
+	.accounts-component-wrapper:hover {
+		width: GetSize(50);
+		height: GetSize(22);
+
+		.company-name {
+			width: GetSize(40);
+			font-weight: bold;
+		}
+		.accounts-dropdown {
+			margin-top: GetSize(10);
+
+			.multi-user {
+				height: GetSize(7);
+
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				.company-link {
+					margin-left: GetSize(4);
+				}
+				.company-image {
+					width: GetSize(5);
+					height: GetSize(5);
+					img {
+						width: GetSize(5);
+						height: GetSize(5);
+					}
+				}
+			}
+			.multi-user:last-child {
+				height: GetSize(12);
+				padding-bottom: GetSize(3);
+			}
+			.single-user {
+				width: GetSize(50);
+				height: GetSize(12);
+
+				.title {
+					width: GetSize(9);
+					height: GetSize(3);
+					padding-left: GetSize(4);
+					align-self: flex-start;
+					padding-top: GetSize(3);
+				}
+				.user-wrapper {
+					display: flex;
+					height: GetSize(7);
+					padding-left: GetSize(4);
+					flex-direction: row;
+					.user-name {
+						align-self: flex-start;
+						padding-top: GetSize(2);
+					}
+					.avatar {
+						img {
+							width: GetSize(5);
+							height: GetSize(5);
+						}
+						align-self: flex-start;
+						display: flex;
+					}
+				}
+			}
+			.single-user:after {
+				content: '';
+				display: block;
+				left: 0;
+				width: GetSize(44);
+				height: 0vh;
+				position: relative;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+				margin-top: GetSize(0);
+				margin-left: GetSize(4);
+			}
+			.multi-user:after {
+				content: '';
+				display: block;
+				left: 0;
+				width: GetSize(44);
+				height: 0vh;
+				position: absolute;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+				margin-top: GetSize(4);
+				margin-left: GetSize(4);
+			}
+		}
+	}
+}

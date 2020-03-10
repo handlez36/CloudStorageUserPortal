@@ -213,6 +213,9 @@ This file should not contain anything but @import and comments.
 @import 'layout/header';
 @import 'layout/navigation';
 @import 'layout/sidebar';
+@import 'layout/logout';
+@import 'layout/accounts_component';
+@import 'layout/breadcrumb_component';
 
 @import 'pages/404';
 @import 'pages/portal';
