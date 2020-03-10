@@ -15,7 +15,7 @@ class NavMenu extends Component {
 	render() {
 		return (
 			<div className='nav-menu'>
-				<SecondaryMenu module={this.props.module} />
+				<SecondaryMenu module={this.props.module} history={this.props.history} />
 			</div>
 		);
 	}

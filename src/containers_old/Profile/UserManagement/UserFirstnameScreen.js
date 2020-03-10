@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { string } from 'prop-types';
+import { INPUT_TYPES } from 'utils/CommonConstants';
 
-import TextInput from '../../../components/Forms/BloxTextInput';
-import { INPUT_TYPES } from '../../../components/Common/CommonConstants';
+import TextInput from 'components_old/Forms/BloxTextInput';
 
 class UserFirstnameScreen extends Component {
 	onChange = event => {

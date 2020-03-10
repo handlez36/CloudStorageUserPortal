@@ -21,6 +21,7 @@ import FooterSection from './Footer';
 const PAGES = {
 	Support: {
 		Overview: 'OverviewPage',
+		Ticket_history: 'TicketHistoryPage',
 	},
 	Storage: {
 		Overview: 'OverviewPage',
@@ -61,6 +62,7 @@ class PortalLayout extends Component {
 			const [, , siteModule, sitePage] = matches;
 			const parsedSitePage =
 				!sitePage || sitePage === undefined || sitePage === '0' ? 'OVERVIEW' : sitePage;
+
 			this.loadPage(siteModule, parsedSitePage);
 			return { siteModule, parsedSitePage };
 		}
@@ -72,7 +74,6 @@ class PortalLayout extends Component {
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
 		const pageName = PAGES[mod][page];
-
 		const Component = require(`../../pages/${mod}/${pageName}`).default;
 		this.setState({ PageComponent: Component, currentModule: mod.toLowerCase() });
 	};
@@ -105,6 +106,11 @@ class PortalLayout extends Component {
 		const htmlEl = document.querySelector('html');
 		this.screenObserver.observe(htmlEl);
 	}
+	componentDidUpdate(prevProps) {
+		if (prevProps.location !== this.props.location) {
+			this.parseUrlParams();
+		}
+	}
 
 	render() {
 		const { breakpoint, PageComponent, currentModule } = this.state;
@@ -120,10 +126,17 @@ class PortalLayout extends Component {
 				</div>
 				<div className='portal-main'>
 					<div className='main-nav'>
-						<NavSection module={currentModule} />
+						<NavSection history={this.props.history} module={currentModule} />
 					</div>
 					<div className='main-content'>
-						{PageComponent && <ContentSection content={PageComponent} breakpoint={breakpoint} />}
+						{PageComponent && (
+							<ContentSection
+								content={PageComponent}
+								breakpoint={breakpoint}
+								match={this.props.match}
+								history={this.props.history}
+							/>
+						)}
 					</div>
 				</div>
 				<div className='portal-footer'>

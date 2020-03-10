@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import Button from 'sub_components/Commom/BloxButton';
 import PortalModal from './PortalModal';
-import Button from './BloxButton';
 
 const PHASES = {
 	POPULATE: 'POPULATE',

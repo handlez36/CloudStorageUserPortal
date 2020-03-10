@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import { shape, obj, string } from 'prop-types';
 
-import NavArrows from '../../containers/Support/TicketHistory/NavArrows';
-import { animateConvoCycle } from '../../containers/Support/TicketHistory/Conversations/ConvoCycleAnimations';
+import NavArrows from 'containers_old/Support/TicketHistory/NavArrows';
+import { animateConvoCycle } from 'containers_old/Support/TicketHistory/Conversations/ConvoCycleAnimations';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const UpArrow = `${CDN_URL}support/TicketHistoryIndicator.svg`;
 const DownArrow = `${CDN_URL}support/TicketHistoryDOWN.svg`;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { string, object } from 'prop-types';
-import Button from './BloxButton';
+import Button from 'sub_components/Commmon/BloxButton';
 
 class MenuHeader extends Component {
 	constructor(props) {

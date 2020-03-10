@@ -1,15 +1,14 @@
 import React, { Component, Fragment } from 'react';
-
-import ModalWizard from '../../../components/Common/ModalWizard';
-import ModalHeader from '../../../containers/Profile/UserManagement/ModalHeader';
+import { VALIDATIONS } from 'utils/CommonConstants';
+import ErrorModal from 'components_old/Common/ErrorModal';
+import ModalWizard from 'components_old/Common/ModalWizard';
+import ModalHeader from 'containers_old/Profile/UserManagement/ModalHeader';
+import { UserProfileApi } from 'services/userProfile';
+import { Utils } from 'services/utils';
 import UserFirstnameScreen from './UserFirstnameScreen';
 import UserLastnameScreen from './UserLastnameScreen';
 import UserEmailScreen from './UserEmailScreen';
 import UserConfirmationScreen from './UserConfirmationScreen';
-import ErrorModal from '../../../components/Common/ErrorModal';
-import { VALIDATIONS } from '../../../components/Common/CommonConstants';
-import { UserProfileApi } from '../../../services/userProfile';
-import { Utils } from '../../../services/utils';
 
 class UserAddModal extends Component {
 	constructor(props) {

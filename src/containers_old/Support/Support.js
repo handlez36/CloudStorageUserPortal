@@ -145,10 +145,8 @@ class Support extends Component {
 			this.setState({ active: MENU.TICKET_HISTORY, selectedTicketStatus: 'Open', selectedTicket });
 		}
 	};
-
 	render() {
 		const { active, tickets, sideMenuClicked } = this.state;
-
 		return (
 			<PortalLayout
 				page='support'
@@ -156,6 +154,7 @@ class Support extends Component {
 				history={this.props.history}
 				activePage={this.menuItems[active]}
 				callback={this.selectMenuItem}
+				match={this.props.match}
 			>
 				<div className='main support'>
 					<div className='portal-header'>
@@ -199,7 +198,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ updateModule, updatePage },
-)(Support);
+export default connect(mapStateToProps, { updateModule, updatePage })(Support);

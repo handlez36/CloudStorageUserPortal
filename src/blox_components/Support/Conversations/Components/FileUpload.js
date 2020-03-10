@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 
-import Modal from 'sub_components/Common/PortalModal';
-import BrowseButton from 'sub_components/Common/BloxButton';
-import AttachButton from 'sub_components/Common/BloxButton';
-import { ExitButton } from 'components_old/Common/ExitButton';
-import { AttachmentApi } from 'services/attachment';
-import { TICKET_ATTACHMENT_PHASE as PHASE } from 'utils/TicketConstants';
-const CDN_URL = process.env.REACT_APP_CDN_URL;
-const PurpleProgressCircle = `${CDN_URL}support/Support_DownloadProgressIcons_Support_Circle-PurpleBase.svg`;
-const SingleAttachmentStatusImage = `${CDN_URL}support/Support_CheckCircle_Icon_Green.svg`;
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import { Progress } from 'react-sweet-progress';
+import SubmitButton from '../../../../components/Common/BloxButton';
+import { AttachmentApi } from '../../../../services/attachment';
+import { TICKET_ATTACHMENT_PHASE as PHASE } from '../../TicketConstants';
 
-class AttachmentModal extends Component {
+import BrowseButton from '../../../../components/Common/BrowseButton';
+
+import 'react-sweet-progress/lib/style.css';
+const CDN_URL = process.env.REACT_APP_CDN_URL;
+const IconDownloadPDF = `${CDN_URL}support/icon-download-pdf.svg`;
+const ExitIcon = `${CDN_URL}support/icons-close-small.svg`;
+
+class FileUpload extends Component {
 	constructor(props) {
 		super(props);
 
@@ -22,6 +26,7 @@ class AttachmentModal extends Component {
 			scannedAttachmentIds: [],
 			erroredAttachmentIds: [],
 			attachmentsComplete: false,
+			percentage: null,
 		};
 	}
 
@@ -31,6 +36,7 @@ class AttachmentModal extends Component {
 			scannedAttachmentIds: [],
 			erroredAttachmentIds: [],
 			attachmentsComplete: false,
+			percentage: null,
 		});
 	};
 
@@ -76,26 +82,25 @@ class AttachmentModal extends Component {
 			const { file, type } = attachment;
 			const intervals = {};
 			let retrieveResponse;
-
+			console.log('about to upload file #' + index);
 			const scanResponse = await AttachmentApi.scanFile(file, type);
 			const { data: { data_id } = {} } = scanResponse;
 
-			const el = document.querySelector(`.indicator-${index}`);
-			const statusElement = document.querySelector(`.status-${index}`);
-			const percentage = document.querySelector(`.percentage-${index}`);
+			this.setState({ percentage: scanResponse.percentCompleted });
 
 			if (scanResponse.status === 200 && data_id) {
-				el.setAttribute('style', 'stroke-dashoffset: 110;');
-				percentage.textContent = '50%';
+				percentage = 50;
 				intervals[index] = setInterval(async () => {
 					retrieveResponse = await AttachmentApi.getScannedFile(data_id);
 
 					if (retrieveResponse.status === 200) {
 						if (retrieveResponse.data.scan_results.progress_percentage === 100) {
-							if (retrieveResponse.data.scan_results.scan_all_result_i === 0) {
-								el.setAttribute('style', 'stroke-dashoffset: 0;');
-								statusElement.setAttribute('style', 'opacity: 1;');
-								percentage.textContent = '100%';
+							if (
+								retrieveResponse.data.scan_results.scan_all_result_a === 'No threat detected' &&
+								retrieveResponse.data.sanitized &&
+								retrieveResponse.data.sanitized.file_path
+							) {
+								percentage = 100;
 
 								clearInterval(intervals[index]);
 								intervals[index] = false;
@@ -178,7 +183,6 @@ class AttachmentModal extends Component {
 
 	toggleOpen = () => {
 		const { toggle } = this.props;
-
 		this.setState({ attachments: [], error: null }, toggle());
 	};
 
@@ -188,7 +192,7 @@ class AttachmentModal extends Component {
 				{({ getRootProps, getInputProps, open }) => (
 					<div {...getRootProps()}>
 						<input {...getInputProps()} />
-						<BrowseButton title='BROWSE' enabled={true} onClick={() => open()} />
+						<BrowseButton title='' enabled={true} onClick={() => open()} />
 					</div>
 				)}
 			</Dropzone>
@@ -200,57 +204,57 @@ class AttachmentModal extends Component {
 		const attachments = newAttachments.concat(existingAttachments);
 
 		return attachments.map((attachment, index) => {
-			let status = '';
-			let percentage = 0;
+			let status = 'default';
+			let percentage = '0';
 			if (attachment.success) {
-				status = 'scanned-successfully';
-				percentage = 100;
+				status = 'success';
+				percentage = '100';
 			} else if (attachment.error) {
-				status = 'scanned-with-errors';
-				percentage = 100;
+				status = 'error';
+				percentage = '100';
 			}
 
-			const GreenCircle = () => {
+			const ProgressBar = () => {
 				return (
-					<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80.99 80.99'>
-						<circle
-							className={`indicator indicator-${index}`}
-							cx='50%'
-							cy='50%'
-							r='35'
-							stroke='#BBD053'
-							fill='transparent'
-							stroke-width='10'
-						/>
-						<text
-							className={`percentage percentage-${index}`}
-							x='50%'
-							y='50%'
-							text-anchor='middle'
-							stroke='white'
-							stroke-width='2px'
-							dy='.3em'
-						>
-							{percentage}%
-						</text>
-					</svg>
+					<Progress
+						theme={{
+							error: {
+								trailColor: 'pink',
+								color: 'red',
+							},
+							default: {},
+							active: {
+								trailColor: 'lightblue',
+								color: 'blue',
+							},
+							success: {
+								trailColor: 'lime',
+								color: 'green',
+							},
+						}}
+					/>
 				);
 			};
 
 			return (
 				<div key={`${attachment.filename}-${index}`} className={`attachment-row ${status}`}>
-					<div className='progress-icon'>
-						<GreenCircle />
-						<img
-							className='progress-background'
-							src={PurpleProgressCircle}
-							alt='attachment-progress'
-						/>
-					</div>
-					<div className='file-name'>{attachment.filename}</div>
-					<div className={`status status-${index}`}>
-						<img src={SingleAttachmentStatusImage} alt='status' />
-						<div className='file-size'>{attachment.size}</div>
+					<div className='middle-container'>
+						<div className='middle-left-container'>
+							<img className='icon-download-pdf' src={IconDownloadPDF} alt='download' />
+						</div>
+						<div className='middle-middle-container'>
+							<div className='first-item'>
+								<div className='text-block'>{attachment.filename}</div>
+							</div>
+							<ProgressBar />
+							<div className='third-item'>
+								<div className='percentage'>{percentage}%</div>
+								<div className='download-speed' />
+							</div>
+						</div>
+						<div className='middle-right-container'>
+							<img className='icons-close-small' src={ExitIcon} alt='Exit' />
+						</div>
 					</div>
 				</div>
 			);
@@ -297,37 +301,31 @@ class AttachmentModal extends Component {
 	};
 
 	render() {
-		const { isOpen } = this.props;
-		const { attachments, scannedAttachmentIds, error } = this.state;
+		const { attachments, scannedAttachmentIds } = this.state;
 		const existingAttachments = scannedAttachmentIds.concat(attachments);
 
 		return (
-			<Modal
-				additionalClass='attachment-modal'
-				header='UPLOAD FILES'
-				footer=''
-				buttonText={'ATTACH'}
-				isOpen={isOpen}
-				toggleOpen={this.toggleOpen}
-				onSubmit={() => {}}
-				submitEnabled={true}
-			>
-				<div className='wrapper'>
-					<div className='exit-button-section'>
-						<ExitButton redirectTo={this.toggleOpen} />
+			<div className='upload-component'>
+				<div className='top-container'>
+					<div className='left-column'>
+						<div className='browse-container'>{this.renderBrowseButton()}</div>
+						<div className='submit-button-container'>
+							<SubmitButton
+								title='SUBMIT'
+								enabled={existingAttachments.length > 0}
+								onClick={this.onAttach}
+							/>
+						</div>
 					</div>
-					{error && <div className='error'>Error: {error}</div>}
-					<div className='attachment-options-section'>
-						{this.renderBrowseButton()}
-						<AttachButton title='ATTACH TO COMMENT' enabled={true} onClick={this.onAttach} />
-					</div>
-					<div className='attachment-display-section'>
-						{existingAttachments.length > 0 && this.renderAttachments()}
+					<div className='middle-column'>
+						<PerfectScrollbar>
+							{existingAttachments.length > 0 && this.renderAttachments()}
+						</PerfectScrollbar>
 					</div>
 				</div>
-			</Modal>
+			</div>
 		);
 	}
 }
 
-export default AttachmentModal;
+export default FileUpload;

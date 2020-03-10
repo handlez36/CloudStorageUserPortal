@@ -21,6 +21,12 @@
 			cursor: pointer;
 		}
 	}
+	#down-arrow {
+		z-index: 1000;
+	}
+	#up-arrow {
+		z-index: 1000;
+	}
 	.error {
 		@include Text-Style-Text-Input-Char-Count-Message;
 		$map: (
@@ -65,7 +71,11 @@
 				margin-left: 0;
 			}
 		}
-		.lower-filter,
+		.lower-filter {
+			width: 26.9vw !important;
+			background-color: ghostwhite;
+			margin-bottom: -5vh;
+		}
 		.upper-filter {
 			width: 26.9vw !important;
 			background-color: ghostwhite;
