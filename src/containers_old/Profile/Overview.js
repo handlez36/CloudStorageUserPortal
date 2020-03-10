@@ -2,15 +2,15 @@
 // import { connect } from 'react-redux';
 // import ResizeObserver from 'resize-observer-polyfill';
 // import { Responsive, WidthProvider } from 'react-grid-layout';
-// import { LAYOUT_GRID, LAYOUT_GRID_EXPANDED } from 'utils/ProfileConstants';
-// import InteractiveIcon from 'components_old/Profile/InteractiveIcon';
-// import { StorageApi } from 'services/storage';
-// import { Utils } from 'services/utils';
-// import { UserProfileApi } from 'services/userProfile';
-// import { updatePage } from 'actions/siteTracking';
-// import { AvatarApi } from 'services/avatar';
-// import Card from './InfoCards/Card';
+// import { LAYOUT_GRID, LAYOUT_GRID_EXPANDED } from './ProfileConstants';
+// import InteractiveIcon from '../../components/Profile/InteractiveIcon';
+// import { StorageApi } from '../../services/storage';
+// import { Utils } from '../../services/utils';
 // import PortalUserOverview from './UserManagement/PortalUserOverview';
+// import { UserProfileApi } from '../../services/userProfile';
+// import Card from './InfoCards/Card';
+// import { updatePage } from '../../actions/siteTracking';
+// import { AvatarApi } from './../../services/avatar';
 // const CDN_URL = process.env.REACT_APP_CDN_URL;
 // const companyImage = `${CDN_URL}profile/company-avatar.png`;
 
@@ -339,4 +339,7 @@
 // 	};
 // }
 
-// export default connect(mapStateToProps, { updatePage })(Overview);
+// export default connect(
+// 	mapStateToProps,
+// 	{ updatePage },
+// )(Overview);

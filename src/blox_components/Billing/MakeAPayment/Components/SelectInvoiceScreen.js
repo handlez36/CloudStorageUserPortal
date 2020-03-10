@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import InvoicePaymentItem from '../Billing/InvoicePaymentItem';
-import TotalAmountDue from '../Billing/TotalAmount';
-import InputField from '../Forms/BloxTextInput';
-import { ICON_TYPES, ICONS } from '../../containers/Billing2.0/BillingConstants';
-import { INPUT_TYPES, currencyMask } from '../Common/CommonConstants';
-import Button from '../../components/Common/BloxButton';
+import { ICON_TYPES, ICONS } from 'utils/BillingConstants';
+import { INPUT_TYPES, currencyMask } from 'utils/CommonConstants';
+import InputField from 'sub_components/Common/BloxTextInput';
+import Button from 'sub_components/Common/BloxButton';
+import InvoicePaymentItem from './InvoicePaymentItem';
+import TotalAmountDue from './TotalAmount';
 
 class SelectInvoiceScreen extends Component {
 	constructor(props) {
@@ -89,7 +89,10 @@ class SelectInvoiceScreen extends Component {
 		for (let i = 0; i <= value.length; i++) {
 			if (value[i]) {
 				if (value[i].invoiceId === fieldname) {
-					this.setState(state => (state.value[i].amount = fieldValue), () => this.updateProgress());
+					this.setState(
+						state => (state.value[i].amount = fieldValue),
+						() => this.updateProgress(),
+					);
 				}
 			}
 		}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { string, array } from 'prop-types';
 
-import Field from '../Common/AccordianField';
+import Field from 'components_old/Common/AccordianField';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const SelectedIcon = `${CDN_URL}billing/forms-checkbox-filled.svg`;
 const UnselectedIcon = `${CDN_URL}billing/forms-checkbox-empty.svg`;

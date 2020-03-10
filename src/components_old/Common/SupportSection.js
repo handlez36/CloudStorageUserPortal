@@ -4,7 +4,10 @@ class SupportSection extends Component {
 	render() {
 		const { content: Section, ...remaining } = this.props;
 		return (
-			<div className='supporting-content support'>{Section && <Section {...remaining} />}</div>
+			<div className='supporting-content support'>
+				{/* <div className='portal-header' /> */}
+				{Section && <Section {...remaining} />}
+			</div>
 		);
 	}
 }

@@ -6,6 +6,7 @@ const binoculars = `${CDN_URL}billing/Billing_Invoices_Table_VIEWInv_Icon_102x30
 const download = `${CDN_URL}billing/Billing_Invoices_Table_DOWNLOADInv_Icon_102x30.png`;
 
 function onClick(loadSupportColumn, data) {
+	console.log('NIamh LOAD SUPPORT COLUMN', data);
 	loadSupportColumn(DisplayBill, data);
 }
 

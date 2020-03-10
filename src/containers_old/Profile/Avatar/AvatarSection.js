@@ -1,15 +1,15 @@
 // import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
-// import PortalMessage from 'components_old/Common/PortalMessage';
-// import { AvatarApi } from 'services/avatar';
-// import { ProfileCard } from 'components_old/Common/ProfileCard';
-// import { UserProfileApi } from 'services/userProfile';
-// import DisplayAvatar from 'components_old/Common/DisplayAvatar';
-// import { updateUserAvatar } from 'actions/user';
-// import { updatePage } from 'actions/siteTracking';
-// import { SITE_PAGES } from 'utils/CommonConstants';
+// import PortalMessage from '../../../components/Common/PortalMessage';
 // import { PROFILE_AVATAR_MESSAGE_TEXT, MENU } from '../ProfileConstants';
+// import { AvatarApi } from './../../../services/avatar';
+// import { ProfileCard } from '../../../components/Common/ProfileCard';
+// import { UserProfileApi } from '../../../services/userProfile';
+// import DisplayAvatar from '../../../components/Common/DisplayAvatar';
+// import { updateUserAvatar } from './../../../actions/user';
+// import { updatePage } from '../../../actions/siteTracking';
+// import { SITE_PAGES } from '../../../components/Common/CommonConstants';
 
 // class AvatarPage extends Component {
 // 	constructor(props) {
@@ -87,4 +87,7 @@
 // 	};
 // }
 
-// export default connect(mapStateToProps, { updateUserAvatar, updatePage })(AvatarPage);
+// export default connect(
+// 	mapStateToProps,
+// 	{ updateUserAvatar, updatePage },
+// )(AvatarPage);

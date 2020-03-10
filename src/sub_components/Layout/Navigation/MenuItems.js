@@ -10,14 +10,23 @@ class MenuItems extends Component {
 		};
 	}
 	onClick = itemClicked => {
-		const { section, history } = this.props;
-		itemClicked = itemClicked.replace(' ', '_');
-		if (itemClicked.toLowerCase() === 'overview') {
-			history.push(`/portal/${section}`);
+		const { section, history, navigation } = this.props;
+		if (navigation === 'secondary') {
+			itemClicked = itemClicked.replace(' ', '_');
+			itemClicked = itemClicked.replace(' ', '_');
+			if (itemClicked.toLowerCase() === 'overview') {
+				history.push(`/portal/${section}`);
+			} else {
+				history.push(`/portal/${section}/${itemClicked.toLowerCase()}`);
+			}
 		} else {
-			history.push(`/portal/${section}/${itemClicked.toLowerCase()}`);
+			console.log('ITEMclicked', itemClicked);
+			if (itemClicked === 'Home') {
+				history.push(`/portal/`);
+			} else {
+				history.push(`/portal/${itemClicked.toLowerCase()}`);
+			}
 		}
-
 		this.setActiveClass(itemClicked);
 	};
 
@@ -27,6 +36,7 @@ class MenuItems extends Component {
 		const currentActiveElement = document.querySelector(
 			`.item.nav-${navigation}.${section}.active`,
 		);
+		type = type.replace('_', ' ');
 		type = type.replace('_', ' ');
 		const newActiveElement = this.refs[type];
 

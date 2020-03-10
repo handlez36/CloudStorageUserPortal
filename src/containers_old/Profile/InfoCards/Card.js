@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BloxButton from 'sub_components/Common/BloxButton';
 import { InfoTableNew } from './InfoTableNew';
-
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const profileArrow = `${CDN_URL}profile/profile-arrow.svg`;
