@@ -1,18 +1,18 @@
-import { MENU as BILLING_MENU } from './../../containers/Billing2.0/BillingConstants';
-import { MENU as SUPPORT_MENU } from './../../containers/Support/TicketConstants';
-import { MENU as PROFILE_MENU } from './../../containers/Profile/ProfileConstants';
-import { MENU as STORAGE_MENU } from './../../containers/Storage/StorageConstants';
+import { MENU as BILLING_MENU } from 'containers_old/Billing2.0/BillingConstants';
+import { MENU as SUPPORT_MENU } from 'containers_old/Support/TicketConstants';
+import { MENU as PROFILE_MENU } from 'containers_old/Profile/ProfileConstants';
+import { MENU as STORAGE_MENU } from 'containers_old/Storage/StorageConstants';
 
 /** New for v3 */
 // Home Page
-import Home from '../../containers/SamplePortalHome/Home';
+import Home from 'pages/Home/Home';
 
 // Profile Pages
-import ProfileOverview from '../../containers/Profile/Overview';
-import ProfileUserContactSection from '../../containers/Profile/UserContactInfo/UserContactSection';
-import ProfileUserManagementSection from '../../containers/Profile/UserManagement/UserManagement';
-import ProfilePasswordSection from '../../containers/Profile/Password/PasswordSection';
-import ProfileAvatarSection from '../../containers/Profile/Avatar/AvatarSection';
+import ProfileOverview from 'containers_old/Profile/Overview';
+import ProfileUserContactSection from 'containers_old/Profile/UserContactInfo/UserContactSection';
+import ProfileUserManagementSection from 'containers_old/Profile/UserManagement/UserManagement';
+import ProfilePasswordSection from 'containers_old/Profile/Password/PasswordSection';
+import ProfileAvatarSection from 'containers_old/Profile/Avatar/AvatarSection';
 
 export const INPUT_TYPES = {
 	INPUT: 'INPUT',

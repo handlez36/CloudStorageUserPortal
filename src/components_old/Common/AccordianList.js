@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 
-import CycleView from './BloxCycleView';
-import AccordianItem from './AccordianItem';
 import {
 	updateArrowVisibility,
 	animateConvoCycle,
-} from '../../containers/Support/TicketHistory/Conversations/ConvoCycleAnimations';
-import NavArrow from '../../containers/Support/TicketHistory/NavArrows';
+} from 'containers_old/Support/TicketHistory/Conversations/ConvoCycleAnimations';
+
+import CycleView from './BloxCycleView';
+import AccordianItem from './AccordianItem';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const billingHistoryDownArrow = `${CDN_URL}billing/Billing-Scroll-Indicator-DOWN-Default.png`;

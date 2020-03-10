@@ -184,12 +184,18 @@ class SecondaryMenu extends Component {
 									columnWidth={columnWidth}
 									onMouseLeave={this.onMouseLeave}
 									module={module}
+									history={this.props.history}
 								/>
 							</div>
 							<div className='primary-menu-active-shadow' />
 						</Fragment>
 					)}
-					<MenuItems section={module} navigation='secondary' menu={menu} />
+					<MenuItems
+						section={module}
+						navigation='secondary'
+						menu={menu}
+						history={this.props.history}
+					/>
 					<div className={showPrimaryMenu ? 'menu active' : 'menu'}>
 						<span className='text nav-menu'>MENU</span>
 						<span className='arrow'>

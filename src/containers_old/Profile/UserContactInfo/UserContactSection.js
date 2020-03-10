@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { SITE_PAGES } from 'components_old/Common/CommonConstants';
+
+import PortalMessage from 'sub_components/Common/PortalMessage';
+import { PROFILE_USER_MESSAGE_TEXT, MENU } from 'utils/ProfileConstants';
+import { UserProfileApi } from 'services/userProfile';
+import { updateUser, resetUserUpdateStatus } from 'actions/user';
+import { updatePage } from 'actions/siteTracking';
 import UserInfo from './UserInfo';
-import PortalMessage from '../../../components/Common/PortalMessage';
-import { PROFILE_USER_MESSAGE_TEXT, MENU } from '../ProfileConstants';
-import { UserProfileApi } from './../../../services/userProfile';
-import { updateUser, resetUserUpdateStatus } from '../../../actions/user';
-import { updatePage } from '../../../actions/siteTracking';
-import { SITE_PAGES } from '../../../components/Common/CommonConstants';
 
 class UserContactInfoNew extends Component {
 	constructor(props) {
@@ -105,7 +106,6 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ updateUser, resetUserUpdateStatus, updatePage },
-)(UserContactInfoNew);
+export default connect(mapStateToProps, { updateUser, resetUserUpdateStatus, updatePage })(
+	UserContactInfoNew,
+);

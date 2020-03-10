@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-import DataInputsLayout from './../../../components/Common/DataInputsLayout';
-import { AvatarApi } from '../../../services/avatar';
-import { USER_UPDATE_SUCCESS, USER_UPDATE_ERROR } from '../../../actions';
-import { PHONEMASK } from '../../../components/Common/CommonConstants';
-import { Utils } from '../../../services/utils';
+import { Utils } from 'services/utils';
+
+import { SITE_PAGES } from 'components_old/Common/CommonConstants';
+import DataInputsLayout from 'components_old/Common/DataInputsLayout';
+import { AvatarApi } from 'services/avatar';
+import { USER_UPDATE_SUCCESS, USER_UPDATE_ERROR } from 'actions';
 
 const WHICH_AVATAR = {
 	NORMAL: 'NORMAL',

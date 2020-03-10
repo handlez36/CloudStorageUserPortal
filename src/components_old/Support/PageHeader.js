@@ -1,8 +1,7 @@
 import React from 'react';
 import { string, any } from 'prop-types';
-
+import Button from 'sub_components/Common/BloxButton';
 import PageStatus from './PageStatus';
-import Button from '../../components/Common/BloxButton';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const DefaultIcon = `${CDN_URL}support/icon-remote-hands-small.svg`;
 

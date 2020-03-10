@@ -1,9 +1,9 @@
 import React from 'react';
 import map from 'lodash/map';
 
+import IconInputComponent from 'sub_components/Common/IconInputComponent';
 import AccordianField from './AccordianField';
 import AccordianItemDetails from './AccordianItemDetails';
-import IconInputComponent from '../Common/IconInputComponent';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const ExpandIcon = `${CDN_URL}common/Accordian_Expand_Icon.svg`;
 const CollapseIcon = `${CDN_URL}common/Accordian_Collapse_Icon.svg`;
@@ -51,6 +51,7 @@ const AccordianItem = ({
 					/>
 				</div>
 			)}
+
 			<AccordianItemDetails
 				theme={data.theme}
 				expanded={expanded}

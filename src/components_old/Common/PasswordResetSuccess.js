@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
-import Modal from '../../components/Common/ErrorModal';
-import Button from '../../components/Common/BloxButton';
+import Modal from 'sub_components/Common/ErrorModal';
+import Button from 'sub_components/Common/BloxButton';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const checkMark = `${CDN_URL}billing/check-mark-circle.svg`;
 class PasswordResetSuccess extends React.Component {
@@ -23,12 +23,7 @@ class PasswordResetSuccess extends React.Component {
 			<Fragment>
 				<div className='top-message'>Success!</div>
 				<div className='bottom-message'>Your password has been changed successfully.</div>
-				<Button
-					title='OKAY'
-					enabled={true}
-					customClass='blox-button gradient'
-					onClick={toggle}
-				/>
+				<Button title='OKAY' enabled={true} customClass='blox-button gradient' onClick={toggle} />
 			</Fragment>
 		) : (
 			<Fragment>

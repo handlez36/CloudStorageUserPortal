@@ -4,20 +4,18 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faKey } from '@fortawesome/free-solid-svg-icons';
 
-import {
-	enterNewPassword,
-	confirmNewPassword,
-	resetRegistrationState,
-} from '../../../actions/registration';
-import CredentialInputComponent from '../../../components/Common/CredentialInputComponent';
-import IconInputComponent from '../../../components/Common/IconInputComponent';
-import PortalMessage from '../../../components/Common/PortalMessage';
-import { PROFILE_PASSWORD_MESSAGE_TEXT } from '../ProfileConstants';
-import { UserProfileApi } from '../../../services/userProfile';
-import PasswordResetSuccess from '../../../components/Common/PasswordResetSuccess';
-import { MENU } from '../ProfileConstants';
-import { updatePage } from '../../../actions/siteTracking';
-import { SITE_PAGES } from '../../../components/Common/CommonConstants';
+import { enterNewPassword, confirmNewPassword, resetRegistrationState } from 'actions/registration';
+
+import CredentialInputComponent from 'sub_components/Common/CredentialInputComponent';
+import { SITE_PAGES } from 'components_old/Common/CommonConstants';
+
+import IconInputComponent from 'sub_components/Common/IconInputComponent';
+import PortalMessage from 'sub_components/Common/PortalMessage';
+import { PROFILE_PASSWORD_MESSAGE_TEXT } from 'utils/ProfileConstants';
+import { UserProfileApi } from 'services/userProfile';
+import PasswordResetSuccess from 'components_old/Common/PasswordResetSuccess';
+import { MENU } from 'utils/ProfileConstants';
+import { updatePage } from 'actions/siteTracking';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Icon = `${CDN_URL}profile/Profile_PasswordChange_Icon_190x190.png`;
 
@@ -206,7 +204,9 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ enterNewPassword, confirmNewPassword, resetRegistrationState, updatePage },
-)(PasswordNew);
+export default connect(mapStateToProps, {
+	enterNewPassword,
+	confirmNewPassword,
+	resetRegistrationState,
+	updatePage,
+})(PasswordNew);

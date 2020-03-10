@@ -71,7 +71,7 @@ class Portal extends Component {
 					/>*/}
 					<Route
 						exact
-						path='/portal/billing'
+						path='/portal/billing/(current_invoices|invoice_history|make_a_payment)?'
 						render={props => (hasBillingAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
@@ -123,7 +123,4 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(
-	mapStateToProps,
-	{ getCompanyInfo },
-)(Portal);
+export default connect(mapStateToProps, { getCompanyInfo })(Portal);

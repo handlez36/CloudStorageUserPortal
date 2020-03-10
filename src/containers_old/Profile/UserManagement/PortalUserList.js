@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import CycleView from '../../../components/Common/BloxCycleView';
+import CycleView from 'sub_components/Common/BloxCycleView';
+import { UserApi } from 'services/user';
 import UserAddModal from './UserAddModal';
 import UserBlock from './UserBlock';
-import { UserApi } from '../../../services/user';
 
 class PortalUserList extends Component {
 	state = {
@@ -84,9 +84,6 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	null,
-)(PortalUserList);
+export default connect(mapStateToProps, null)(PortalUserList);
 
 // export default PortalUserList;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PageHeader from '../../components/Support/PageHeader';
+import PageHeader from 'components_old/Support/PageHeader';
 
 const STAGES = {
 	POPULATE: 'POPULATE',
@@ -154,7 +154,7 @@ class BloxWizard extends Component {
 			headerAttributes,
 			headerAttributes: { icon, pageTitle, pageTitles } = {},
 		} = this.state;
-        if (!active || (!pageTitles && !pageTitle)) {
+		if (!active || (!pageTitles && !pageTitle)) {
 			return '';
 		}
 
@@ -162,8 +162,8 @@ class BloxWizard extends Component {
 			return pageTitle;
 		}
 
-		if(pageTitles !== undefined && pageTitles !== null) {
-            return pageTitles[stage] ? pageTitles[stage] : pageTitle;
+		if (pageTitles !== undefined && pageTitles !== null) {
+			return pageTitles[stage] ? pageTitles[stage] : pageTitle;
 		} else {
 			return pageTitle;
 		}

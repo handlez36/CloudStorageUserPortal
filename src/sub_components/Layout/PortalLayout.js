@@ -32,6 +32,9 @@ const PAGES = {
 	},
 	Billing: {
 		Overview: 'OverviewPage',
+		Current_invoices: 'CurrentInvoicesPage',
+		Invoice_history: 'InvoiceHistoryPage',
+		Make_a_payment: 'MakeAPaymentPage',
 	},
 };
 
@@ -90,6 +93,11 @@ class PortalLayout extends Component {
 
 		this.setState({ breakpoint });
 	};
+	componentDidUpdate(prevProps) {
+		if (prevProps.location !== this.props.location) {
+			this.parseUrlParams();
+		}
+	}
 
 	componentDidMount() {
 		// Parse URL to determine module to load...
@@ -116,7 +124,7 @@ class PortalLayout extends Component {
 				</div>
 				<div className='portal-main'>
 					<div className='main-nav'>
-						<NavSection module={currentModule} />
+						<NavSection module={currentModule} history={this.props.history} />
 					</div>
 					<div className='main-content'>
 						{PageComponent && <ContentSection content={PageComponent} breakpoint={breakpoint} />}

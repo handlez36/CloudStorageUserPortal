@@ -5,7 +5,7 @@ class SupportSection extends Component {
 		const { content: Section, ...remaining } = this.props;
 		return (
 			<div className='supporting-content support'>
-				<div className='portal-header' />
+				{/* <div className='portal-header' /> */}
 				{Section && <Section {...remaining} />}
 			</div>
 		);
