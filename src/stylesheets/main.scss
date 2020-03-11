@@ -184,6 +184,8 @@ This file should not contain anything but @import and comments.
 @import 'components/Profilev3/password_change';
 @import 'components/Profilev3/avatar_selection';
 @import 'components/Profilev3/profile_card';
+@import 'components/Profilev3/user_contact_section';
+@import 'components/Profilev3/user_info';
 
 /**
 * Commonv3 components
@@ -256,8 +258,8 @@ This file should not contain anything but @import and comments.
 @import 'pages/profile/customer_contact_section';
 @import 'pages/profile/password_section';
 @import 'pages/profile/primary_contact';
-@import 'pages/profile/user_contact_section';
-@import 'pages/profile/user_info';
+// @import 'pages/profile/user_contact_section';
+// @import 'pages/profile/user_info';
 @import 'pages/profile/portal';
 @import 'pages/profile/user_management';
 @import 'pages/profile/roster_block';

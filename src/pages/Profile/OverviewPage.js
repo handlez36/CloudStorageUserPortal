@@ -7,7 +7,7 @@ import MyServices from 'blox_components/Profile/MyServices/MyServices';
 import MyProfile from 'blox_components/Profile/MyProfile';
 import UserManagement from 'blox_components/Profile/PortalUserOverview/PortalUserOverview';
 import RosterManagement from 'blox_components/Profile/RosterUserOverview/RosterUserOverview';
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import BloxButton from 'sub_components/Common/BloxButton';
 import { consolidateStreamedStyles } from 'styled-components';
 import CompanyProfile from 'blox_components/Profile/CompanyProfile';
@@ -116,8 +116,7 @@ class OverviewPage extends Component {
 		);
 		const { expandedCard } = this.state;
 
-		const layout = this.getLayoutConfig(breakpoint);
-		console.log('Layout: ', layout);
+		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 		return (
 			<BloxPage
 				name='page profile-overview-page'
@@ -125,22 +124,22 @@ class OverviewPage extends Component {
 				breakpoint={breakpoint}
 				location={location}
 			>
-				<div key='myServices' className='myServices'>
+				<div key={`myServices-${columnCount}`} className='myServices'>
 					<ComponentWrapper title='MY Services' hideBorder>
 						<MyServices />
 					</ComponentWrapper>
 				</div>
-				<div key='myProfile' className='myProfile'>
+				<div key={`myProfile-${columnCount}`} className='myProfile'>
 					<ComponentWrapper title='MY Profile' hideBorder>
 						<MyProfile expanded={expandedCard === CARDS.MY_PROFILE} expandCard={this.expandCard} />
 					</ComponentWrapper>
 				</div>
-				<div key='portalUserManagement' className='portalUserManagement'>
+				<div key={`portalUserManagement-${columnCount}`} className='portalUserManagement'>
 					<ComponentWrapper title={customTitlePortalOverview} showButton hideBorder>
 						<UserManagement />
 					</ComponentWrapper>
 				</div>
-				<div key='companyProfile' className='companyProfile'>
+				<div key={`companyProfile-${columnCount}`} className='companyProfile'>
 					<ComponentWrapper title='COMPANY Profile' hideBorder>
 						<CompanyProfile
 							expanded={expandedCard === CARDS.COMPANY_PROFILE}
@@ -148,7 +147,7 @@ class OverviewPage extends Component {
 						/>
 					</ComponentWrapper>
 				</div>
-				<div key='rosterUserManagement' className='rosterUserManagement'>
+				<div key={`rosterUserManagement-${columnCount}`} className='rosterUserManagement'>
 					<ComponentWrapper title={customTitleRosterOverview} showButton hideBorder>
 						<RosterManagement />
 					</ComponentWrapper>

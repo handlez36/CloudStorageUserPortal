@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { shape, string, bool, any } from 'prop-types';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import ResizeObserver from 'resize-observer-polyfill';
+
 import VerticalDebugGrid from './VerticalDebugGrid';
 import HorizontalDebugGrid from './HorizontalDebugGrid';
 
@@ -97,6 +98,25 @@ class BloxMicroGrid extends Component {
 		}, 1000);
 	}
 
+	/**
+	 * Update layout item name ('i' parameter) by adding number of columns in grid
+	 *  - ResponsiveReactGridLayout does not seem to force layout updates with
+	 *    column count changes. This method appends the accurate column count
+	 *    value to the layout item name to force a layout update when the column
+	 *    count changes.
+	 */
+	updateLayoutWithColumns = contentGrid => {
+		const { colCount } = this.state;
+
+		contentGrid.forEach(layoutItem => {
+			const matches = layoutItem.i.split('-');
+			if (matches && matches[0]) {
+				const baseItemName = matches[0];
+				layoutItem.i = `${baseItemName}-${colCount}`;
+			}
+		});
+	};
+
 	render() {
 		const { name, children, contentGrid, location } = this.props;
 		const { grid: colGrid, horizGrid: hGrid, colCount, rowCount } = this.state;
@@ -104,6 +124,8 @@ class BloxMicroGrid extends Component {
 
 		const showGrid = this.enableDebug(location.search);
 		gridClassName = showGrid ? gridClassName + ' debug' : gridClassName;
+
+		this.updateLayoutWithColumns(contentGrid);
 
 		return (
 			<div className={`blox-micro-grid${gridClassName}`}>
@@ -115,13 +137,12 @@ class BloxMicroGrid extends Component {
 							sm: contentGrid,
 							xs: contentGrid,
 						}}
-						measureBeforeMount={false}
+						measureBeforeMount={true}
 						className='content-grid'
-						// width={2560}
 						width={1152}
 						rowHeight={8}
 						isDraggable={false}
-						breakpoints={{ lg: 2240, md: 1344, sm: 928, xs: 800 }}
+						breakpoints={{ lg: 1920, md: 1152, sm: 768, xs: 600 }}
 						cols={{ lg: colCount, md: colCount, sm: colCount, xs: colCount }}
 						margin={[0, 0]}
 					>

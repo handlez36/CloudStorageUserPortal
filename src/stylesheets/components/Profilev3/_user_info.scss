@@ -1,52 +1,43 @@
 /* Profile - User Info */
-.user-information-old {
+.user-information {
 	margin-bottom: 0.5vh;
-
 	.user-profile-card {
-		//background-color: #cfcecf;
+		background-color: #cfcecf;
 		border: 10px solid #cfcecf;
-		margin: 0 2.5vw;
-
+		margin: 0 33.6px;
 		.contact-card1 {
-			flex: 0 0 19vh;
+			flex: 0 0 GetSize(44);
+			width: GetSize(44);
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			background-color: $DCBLOX_White;
-
 			.profile-pic-wrapper {
-				flex: 0 2 8.71vw;
+				flex: 0 2 117px;
 				height: 100%;
-
 				.profile-pic {
-					height: 15.83vh;
+					height: 121.56px;
 				}
-
 				.profile-pic img {
-					width: 8.71vw;
-					height: 15.83vh;
+					width: 117px;
+					height: 121.56px;
 				}
-
 				.user-name {
 					@include Text-Style-User-Contact-Name;
 				}
 			}
-
 			.profile-info {
-				flex: 0 1 17.19vw;
+				flex: 0 1 231px;
 				height: 100%;
-				padding-top: 1.04vh;
-				padding-left: 0.625vw;
-
+				padding-top: GetSize(1);
+				padding-left: GetSize(1);
 				.title {
 					margin-top: 0px;
 					@include Text-Style-User-Contact-Section-Title;
 				}
-
 				.title + div {
 					margin-top: 0vh;
 				}
-
 				.field {
 					display: flex;
 					flex-direction: column;
@@ -54,29 +45,24 @@
 				}
 			}
 		}
-
 		.contact-card2 {
 			display: flex;
 			flex-direction: row;
-			margin-top: 1.04vh;
+			margin-top: GetSize(1);
 			align-self: center;
 			background-color: $DCBLOX_White;
-			padding-top: 1.04vh;
-			padding-bottom: 1.04vh;
-			padding-left: 0.66vw;
-
+			padding-top: GetSize(1);
+			padding-bottom: GetSize(1);
+			padding-left: 8.8px;
 			.left-side {
-				flex: 0 1 8.13vw;
-				padding-left: 0.3vw;
-
+				flex: 0 1 GetSize(14);
+				padding-left: 4px;
 				.title {
 					@include Text-Style-User-Contact-Section-Title;
 				}
-
 				.title + div {
-					margin-top: 1.4vh;
+					margin-top: 9.6px;
 				}
-
 				.field {
 					padding-right: 0.2vw;
 					display: flex;
@@ -84,23 +70,18 @@
 					justify-content: flex-start;
 				}
 			}
-
 			.right-side {
-				flex: 0 1 17.19vw;
-				padding-left: 0.625vw;
-
+				flex: 0 1 231px;
+				padding-left: 8.4px;
 				.title {
 					@include Text-Style-User-Contact-Section-Title;
 				}
-
 				.push-down {
-					margin-top: 1.32vh;
+					margin-top: 10.13px;
 				}
-
 				.title + div {
-					margin-top: 1.25vh;
+					margin-top: 9.6px;
 				}
-
 				.field {
 					display: flex;
 					flex-direction: column;
@@ -115,40 +96,35 @@
 			margin: 0%;
 			@include Text-Style-User-Contact-Field-Name;
 		}
-
 		input {
 			width: 100%;
 			border: 1px solid #dcdddd;
-			// height: 2.19vh;
-			@include Text-Style-User-Contact-Field-Value;
 			background: linear-gradient(45deg, #307fe2 10%, #dcdddd 60%);
 			background-size: 250% 100%;
 			background-position: right bottom;
 			transition: all 2s ease-in-out;
+			@include Text-Style-User-Contact-Field-Value;
 		}
-
 		.bubble {
 			position: absolute;
 		}
-
 		.speech-box {
-			width: 6vw;
-			height: 9vw;
+			width: GetSize(10);
+			height: GetSize(15);
 			border-radius: 15vh;
 			background: #307fe2;
-			padding: 0.6vw;
+			padding: GetSize(1);
 			opacity: 0.9;
 			text-align: center;
-			font-size: 0.6vw;
+			font-size: GetSize(1);
 			color: lightgrey;
 			position: absolute;
-			top: -23vh;
-			left: -3vw;
+			top: -176.6px;
+			left: -40.32px;
 			border: #307fe2 1px;
 			border-style: solid;
 			transform: rotate(10deg);
 		}
-
 		.sb1:before {
 			content: '';
 			width: 0vw;
@@ -158,40 +134,31 @@
 			border-right: 10px solid transparent;
 			border-bottom: 10px solid #307fe2;
 			border-top: 10px solid transparent;
-			left: 5.3vw;
-			top: 5vw;
+			left: 71.23px;
+			top: 67.2px;
 		}
-
 		.blue-animation {
 			background-position: left bottom;
 		}
-
 		.blue-border {
 			border: $DCBLOX_Red 0.5px;
 			border-style: solid;
 		}
-
 		strong {
 			color: $DCBLOX_Red;
 			margin-left: 0.2vw;
 			margin-right: 0.2vw;
 		}
-
 		.field {
-			padding-right: 0.7vw;
+			padding-right: 9.4px;
 			margin-top: 0;
 		}
-
 		.double-field {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-start;
-			padding-right: 0.7vw;
-
-			.field1 {
-				flex: 1 0 50%;
-			}
-
+			padding-right: 9.4px;
+			.field1,
 			.field2 {
 				flex: 1 0 50%;
 			}
