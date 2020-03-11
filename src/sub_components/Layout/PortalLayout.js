@@ -31,6 +31,7 @@ const PAGES = {
 		User_info: 'UserInfoPage',
 		Change_password: 'PasswordChangePage',
 		Avatar: 'AvatarChangePage',
+		User_info: 'UserInfoPage',
 	},
 	Billing: {
 		Overview: 'OverviewPage',
