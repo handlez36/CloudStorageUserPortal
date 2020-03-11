@@ -60,16 +60,6 @@ class Portal extends Component {
 		return (
 			<div className='portal'>
 				<Switch>
-					{/* <Route
-						exact
-						path='/portal/profile'
-						render={props => (hasProfileAccess ? <Profile {...props} /> : <Home {...props} />)}
-					/>
-					<Route
-						exact
-						path='/portal/support'
-						render={props => (hasSupportAccess ? <Support {...props} /> : <Home {...props} />)}
-					/>*/}
 					<Route
 						exact
 						path='/portal/billing/(current_invoices|invoice_history|make_a_payment)?'
