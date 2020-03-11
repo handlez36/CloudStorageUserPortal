@@ -7,7 +7,7 @@
 		background: linear-gradient(90deg, $White 40%, $Cool_Gray_Light_1 100%);
 		background-size: 250% 100%;
 		background-position: left bottom;
-		transition: all 1s ease-in-out;
+		transition: all 0.84s ease-in-out;
 		width: GetSize(20);
 		height: GetSize(5);
 		text-align: center;
@@ -17,15 +17,17 @@
 		transform: translate(-50%, 0%);
 		position: absolute;
 		left: 50%;
-		padding-top: GetSize(1.7);
+		padding-top: GetSize(1.5);
 		letter-spacing: 1px;
 	}
 	.breadcrumb-dropdown {
-		width: GetSize(0);
+		width: GetSize(37);
 		height: GetSize(0);
 		opacity: 0;
 		transition: width 1s, height 1s;
-		transform: translate(-50%, 68%);
+		.breadcrumbs {
+			opacity: 0;
+		}
 	}
 }
 .breadcrumb-component-wrapper:hover {
@@ -37,13 +39,14 @@
 		background-position: right bottom;
 	}
 	.breadcrumb-dropdown {
+		margin-top: GetSize(5);
 		box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
 		width: GetSize(37);
 		height: GetSize(7);
-		opacity: 1;
 		position: absolute;
 		left: 50%;
-		transform: translate(-50%, 69%);
+		opacity: 1;
+		transform: translate(-50%, 0%);
 		background-color: $White;
 		display: flex;
 		flex-direction: column;
@@ -56,6 +59,11 @@
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			opacity: 1;
+			animation-name: fadeInOpacity;
+			animation-iteration-count: 1;
+			animation-timing-function: ease-in;
+			animation-duration: 1s;
 			.crumb {
 				cursor: pointer;
 				height: GetSize(2);
@@ -96,7 +104,7 @@
 			background: linear-gradient(90deg, $White 40%, $Cool_Gray_Light_1 100%);
 			background-size: 250% 100%;
 			background-position: left bottom;
-			transition: all 1s ease-in-out;
+			transition: all 0.84s ease-in-out;
 			width: GetSize(38);
 			height: GetSize(8);
 			text-align: center;
@@ -106,10 +114,10 @@
 			transform: translate(-50%, 0%);
 			position: absolute;
 			left: 50%;
-			padding-top: GetSize(2.5);
+			padding-top: GetSize(2.8);
 		}
 		.breadcrumb-dropdown {
-			width: GetSize(0);
+			width: GetSize(44);
 			height: GetSize(0);
 			opacity: 0;
 			transition: width 1s, height 1s;
@@ -124,12 +132,13 @@
 			background-position: right bottom;
 		}
 		.breadcrumb-dropdown {
+			margin-top: GetSize(8);
 			width: GetSize(44);
 			height: GetSize(9);
 			opacity: 1;
 			position: absolute;
 			left: 50%;
-			transform: translate(-50%, 88%);
+			transform: translate(-50%, 0%);
 			.breadcrumbs {
 				width: auto;
 				height: GetSize(2);
@@ -172,7 +181,7 @@
 			background: linear-gradient(90deg, $White 30%, $Warm_Gray_Light_1 100%);
 			background-size: 250% 100%;
 			background-position: left bottom;
-			transition: all 1s ease-in-out;
+			transition: all 0.84s ease-in-out;
 			width: GetSize(40);
 			height: GetSize(10);
 			text-align: center;
@@ -186,7 +195,7 @@
 			padding-top: GetSize(3);
 		}
 		.breadcrumb-dropdown {
-			width: GetSize(0);
+			width: GetSize(60);
 			height: GetSize(0);
 			opacity: 0;
 			transition: width 1s, height 1s;
@@ -201,12 +210,13 @@
 			background-position: right bottom;
 		}
 		.breadcrumb-dropdown {
+			margin-top: GetSize(10);
 			width: GetSize(60);
 			height: GetSize(12);
 			opacity: 1;
 			position: absolute;
 			left: 50%;
-			transform: translate(-50%, 81%);
+			transform: translate(-50%, 0%);
 			.breadcrumbs {
 				width: auto;
 				height: GetSize(2);
@@ -237,5 +247,13 @@
 				}
 			}
 		}
+	}
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

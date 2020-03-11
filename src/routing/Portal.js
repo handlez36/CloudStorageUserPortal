@@ -77,7 +77,7 @@ class Portal extends Component {
 					/>
 					<Route
 						exact
-						path='/portal/profile/(user_info|password_change|avatar_change)?'
+						path='/portal/profile/(user_info|change_password|avatar)?'
 						render={props => (true ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
@@ -89,6 +89,12 @@ class Portal extends Component {
 						//exact
 						path='/portal/support/ticket_history/:ticketNumber'
 						render={props => (hasSupportAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
+					/>
+					<Route
+						path='/portal/storage/'
+						render={props => {
+							return hasStorageAccess ? <PortalLayout {...props} /> : <Home {...props} />;
+						}}
 					/>
 					<Route
 						path='/portal/storage/:share'
@@ -129,7 +135,4 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(
-	mapStateToProps,
-	{ getCompanyInfo },
-)(Portal);
+export default connect(mapStateToProps, { getCompanyInfo })(Portal);

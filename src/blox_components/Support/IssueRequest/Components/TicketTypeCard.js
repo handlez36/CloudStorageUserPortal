@@ -15,9 +15,9 @@ const TicketTypeCard = ({ type }) => {
 	console.log('Ticket Imgs: ', TICKET_IMGS.BILLING);
 	return (
 		<div className={`ticket-type-card ${type.toLowerCase()}`}>
-			<div className='ticket-type'>
+			<div className='ticket-type '>
 				<img alt={`Create ${type} ticket`} id={`create-${type}-card`} src={cardImg} />
-				<div className='label'>{type}</div>
+				<div className='label heading70'>{type}</div>
 			</div>
 		</div>
 	);
