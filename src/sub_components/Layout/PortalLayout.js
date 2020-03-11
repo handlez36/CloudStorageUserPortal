@@ -28,8 +28,8 @@ const PAGES = {
 	},
 	Profile: {
 		Overview: 'OverviewPage',
-		Password_change: 'PasswordChangePage',
-		Avatar_change: 'AvatarChangePage',
+		Change_password: 'PasswordChangePage',
+		Avatar: 'AvatarChangePage',
 	},
 	Billing: {
 		Overview: 'OverviewPage',
@@ -77,6 +77,7 @@ class PortalLayout extends Component {
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
 		const pageName = PAGES[mod][page];
+		console.log('HEY NIAMH', pageName);
 		const Component = require(`../../pages/${mod}/${pageName}`).default;
 		this.setState({ PageComponent: Component, currentModule: mod.toLowerCase() });
 	};

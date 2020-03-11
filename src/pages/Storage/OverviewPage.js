@@ -33,7 +33,7 @@ class OverviewPage extends Component {
 
 		return (
 			<BloxPage
-				name='sample-content-grid'
+				name='sample-content-grid storage'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
 				location={location}
@@ -41,7 +41,7 @@ class OverviewPage extends Component {
 				<div key='openTickets' className='openTickets'>
 					<ComponentWrapper title='TICKET Status' hideBorder>
 						<TicketCount
-							type={TicketUtils.TICKET_STATUS.OPEN}
+							status={TicketUtils.TICKET_STATUS.OPEN}
 							ticketType={TicketUtils.TICKET_TYPES.STORAGE}
 						/>
 					</ComponentWrapper>
@@ -49,7 +49,7 @@ class OverviewPage extends Component {
 				<div key='closedTickets' className='closedTickets'>
 					<ComponentWrapper hideTitle hideBorder>
 						<TicketCount
-							type={TicketUtils.TICKET_STATUS.CLOSED}
+							status={TicketUtils.TICKET_STATUS.CLOSED}
 							ticketType={TicketUtils.TICKET_TYPES.STORAGE}
 						/>
 					</ComponentWrapper>

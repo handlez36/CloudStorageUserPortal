@@ -11,6 +11,10 @@
 	.react-grid-item {
 		// border: 2px solid lightblue;
 	}
+	.count {
+		color: $White;
+		margin-bottom: GetSize(1);
+	}
 
 	.active-shares {
 		color: $DCBLOX_Gray;

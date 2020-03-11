@@ -9,16 +9,12 @@
 	cursor: pointer;
 	color: $White;
 	font-family: $font-family-primary-heads;
-	$map: (
-		576: 12,
-		1440: 14,
-		2560: 18,
-	);
-	font-size: least-squares-fit($map);
 	letter-spacing: 0.9px;
 	text-align: center;
 	position: relative;
+	vertical-align: middle;
 	.title {
+		@include Header10;
 	}
 
 	.icon {
