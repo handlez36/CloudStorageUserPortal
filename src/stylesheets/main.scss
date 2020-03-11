@@ -71,27 +71,27 @@ This file should not contain anything but @import and comments.
 @import 'components/error_modal';
 @import 'components/ticket_docu_sign';
 @import 'components/map';
-@import 'components/blox_cycle_view';
+// @import 'components/blox_cycle_view';
 @import 'components/ticket_number';
 @import 'components/mfa_options';
-@import 'components/menu_header';
+// @import 'components/menu_header';
 @import 'components/modal_wizard';
 @import 'components/modal_header';
 @import 'components/user_add_modal';
 @import 'components/user_name_screen';
-@import 'components/user_block';
-@import 'components/toggle_switch';
-@import 'components/portal_user_list';
+// @import 'components/user_block';
+// @import 'components/toggle_switch';
+// @import 'components/portal_user_list';
 @import 'components/roster_add_modal';
 @import 'components/invoice_payment_item';
 @import 'components/blox_wizard';
 @import 'components/total_amount';
 @import 'components/animated_icon';
 @import 'components/forgot_password';
-@import 'components/portal_user_overview_block';
+// @import 'components/portal_user_overview_block';
 @import 'components/roster_user_overview_block';
-@import 'components/portal_user_overview_selected_block';
-@import 'components/portal_user_overview';
+// @import 'components/portal_user_overview_selected_block';
+// @import 'components/portal_user_overview';
 @import 'components/roster_user_overview';
 @import 'components/info_card';
 @import 'components/interactive_icon';
@@ -186,6 +186,10 @@ This file should not contain anything but @import and comments.
 @import 'components/Profilev3/profile_card';
 @import 'components/Profilev3/user_contact_section';
 @import 'components/Profilev3/user_info';
+@import 'components/Profilev3/portal_user_management';
+@import 'components/Profilev3/portal_user_list';
+@import 'components/Profilev3/menu_header';
+@import 'components/Profilev3/user_block';
 
 /**
 * Commonv3 components
@@ -197,6 +201,8 @@ This file should not contain anything but @import and comments.
 @import 'components/Commonv3/portal_message';
 @import 'components/Commonv3/icon_input';
 @import 'components/Commonv3/credential_input';
+@import 'components/Commonv3/toggle_switch';
+@import 'components/Commonv3/blox_cycle_view';
 
 /**
 * Common components

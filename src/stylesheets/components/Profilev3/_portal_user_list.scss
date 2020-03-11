@@ -7,15 +7,16 @@
 .blox-cycle-view {
 	.portal-user-list {
 		flex: 1 0 auto;
-		padding-top: calculateVh(29.7px);
-		padding-left: calculateVw(34px, $standard-screen-width-mid);
-		padding-right: calculateVw(34px, $standard-screen-width-mid);
+		// height: 100%;
+		padding-top: GetSize(2);
+		padding-left: 20px;
+		padding-right: 20px;
 		overflow: hidden;
 		.user-block {
 			width: 100%;
 		}
 		.user-block:not(:first-child) {
-			margin-top: calculateVh(10px);
+			margin-top: GetSize(1);
 		}
 	}
 }

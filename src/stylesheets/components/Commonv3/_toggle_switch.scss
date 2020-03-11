@@ -1,0 +1,58 @@
+.toggle-slider {
+	cursor: pointer;
+	height: GetSize(2);
+	width: GetSize(3);
+	vertical-align: text-top;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+
+	.slot {
+		transition: transform 0.5s;
+	}
+	.slider {
+		transition: transform 0.5s;
+	}
+	g {
+		transition: transform 0.5s;
+	}
+
+	&.on {
+		.slider {
+			transform: translate(10.5px, 0);
+		}
+		g {
+			transform: translate(10px, 0);
+		}
+	}
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		width: 2.3vw;
+		g {
+			transition: transform 0.5s;
+		}
+
+		&.on {
+			g {
+				transform: translate(20px, 0);
+			}
+		}
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.toggle-slider {
+		cursor: pointer;
+		height: 100%;
+		width: GetSize(4);
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.toggle-slider {
+		cursor: pointer;
+		height: 100%;
+		width: GetSize(6);
+	}
+}

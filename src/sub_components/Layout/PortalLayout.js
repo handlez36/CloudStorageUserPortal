@@ -2,20 +2,12 @@ import React, { Component } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import capitalize from 'lodash/capitalize';
 import { RESOLUTIONS } from 'services/config';
-// import NavSection from '../Navigationv3/BloxNavigationSection';
-// import ContentSection from './ContentSection';
-// import HeaderSection from './HeaderSection';
-// import FooterSection from './../../components/Layoutv3/Footer';
-// import StorageOverview from './../../containers/Storagev3/OverviewPage2';
-// import { RESOLUTIONS } from './../../services/config';
-// import { SITE_MAP, SITE_PAGES } from './../Common/CommonConstants';
 
 /** v3 imports */
 import NavSection from './Navigation/BloxNavigationSection';
 import ContentSection from './ContentSection';
 import HeaderSection from './Header/HeaderSection';
 import FooterSection from './Footer';
-
 // import { SITE_MAP, SITE_PAGES } from './../Common/CommonConstants';
 
 const PAGES = {
@@ -57,12 +49,9 @@ class PortalLayout extends Component {
 	 */
 	parseUrlParams = () => {
 		const { location: { pathname = '' } = {} } = this.props;
-		// const urlRegex = /^\/portal\/?(\w*)\/?[(\w*)|\d]\/?.*$/;
-		// const matches = pathname.match(urlRegex);
 		const matches = pathname.split('/');
 
 		if (matches) {
-			// const [, siteModule, sitePage] = matches;
 			const [, , siteModule, sitePage] = matches;
 			const parsedSitePage =
 				!sitePage || sitePage === undefined || sitePage === '0' ? 'OVERVIEW' : sitePage;
@@ -98,6 +87,7 @@ class PortalLayout extends Component {
 	};
 
 	componentDidMount() {
+		console.log('PortalLayout Did Mount');
 		// Parse URL to determine module to load...
 		this.parseUrlParams();
 

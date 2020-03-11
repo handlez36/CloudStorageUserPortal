@@ -125,4 +125,7 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(mapStateToProps, { getCompanyInfo })(Portal);
+export default connect(
+	mapStateToProps,
+	{ getCompanyInfo },
+)(Portal);
