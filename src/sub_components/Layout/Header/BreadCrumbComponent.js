@@ -12,20 +12,42 @@ class BreadCrumbComponent extends Component {
 		this.userProfileApi = new UserProfileApi();
 		this.state = {
 			currentModule: null,
+			currentPage: null,
+			breadCrumbs: [],
 		};
+	}
+	setCurrentModuleAndPage = () => {
+		const { site } = this.props;
+		console.log('heyooo SITEEEE', site);
+		this.setState({
+			currentModule: site.module,
+			currentPage: site.page,
+			breadCrumbs: site.breadCrumbs,
+		});
+	};
+	componentDidMount() {
+		this.setCurrentModuleAndPage();
+	}
+	componentDidUpdate(prevProps) {
+		const { site } = this.props;
+		if (prevProps.site !== site) {
+			this.setCurrentModuleAndPage();
+		}
 	}
 
 	getBreadCrumbs = () => {
-		const breadcrumbs = [
-			{ name: 'Home', link: '/portal/module' },
-			{ name: 'Support Overview', link: '/portal/module' },
-			{ name: 'Ticket History', link: '/portal/module' },
-			{ name: 'Ticket #12345', link: '/portal/module' },
-		];
+		let lastFourBreadCrumbs = [];
+		const { breadCrumbs } = this.state;
+		lastFourBreadCrumbs = breadCrumbs.slice(breadCrumbs.length - 5, breadCrumbs.length - 1);
+		//console.log('NIAMHHHH', niamh);
 		return (
 			<div className='breadcrumbs '>
-				{breadcrumbs.map(breadcrumb => (
-					<div key={`${breadcrumb.name}`} className='crumb header50'>
+				{lastFourBreadCrumbs.map(breadcrumb => (
+					<div
+						key={`${breadcrumb.name}`}
+						className='crumb header50'
+						onClick={this.goTo(breadcrumb.name)}
+					>
 						{breadcrumb.name}
 					</div>
 				))}
@@ -34,10 +56,10 @@ class BreadCrumbComponent extends Component {
 	};
 
 	render() {
-		const { auth_status } = this.props;
+		const { currentPage } = this.state;
 		return (
 			<div className='breadcrumb-component-wrapper'>
-				<div className='title header21'>{'OVERVIEW'}</div>
+				<div className='title header21'>{currentPage}</div>
 				<div className='breadcrumb-dropdown'>{this.getBreadCrumbs()}</div>
 			</div>
 		);
@@ -45,6 +67,7 @@ class BreadCrumbComponent extends Component {
 }
 function mapStateToProps(state) {
 	return {
+		site: state.site_tracking,
 		auth_status: state.auth_status,
 	};
 }

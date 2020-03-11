@@ -9,8 +9,8 @@ import {
 } from 'utils/BillingConstants';
 import { BillingApi, BillingUtils, FILTERS } from 'services/billing';
 import AccordianList from 'components_old/Common/AccordianList';
-import { SITE_PAGES } from 'utils/CommonConstants';
-import { updatePage } from 'actions/siteTracking';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
+import { updatePage, updateModule, addPageToBreadCrumbs } from 'actions/siteTracking';
 import SupportSection from 'components_old/Common/SupportSection';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
@@ -36,9 +36,10 @@ class InvoiceHistory extends Component {
 	}
 
 	componentDidMount() {
-		const { updatePage } = this.props;
+		const { updatePage, updateModule, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.BILLING[MENU.HISTORY]);
-
+		addPageToBreadCrumbs(SITE_PAGES.BILLING[MENU.HISTORY]);
+		updateModule(SITE_MODULES.BILLING);
 		this.requestInvoices();
 	}
 	handleInvoiceRetrievalError = error => {
@@ -198,4 +199,6 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updatePage })(InvoiceHistory);
+export default connect(mapStateToProps, { updatePage, updateModule, addPageToBreadCrumbs })(
+	InvoiceHistory,
+);

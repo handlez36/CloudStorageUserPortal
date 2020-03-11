@@ -7,6 +7,9 @@ import TicketCount from 'sub_components/Common/TicketCountRow';
 import RecentPayment from 'blox_components/Billing/RecentPayment';
 import RecentInvoices from 'blox_components/Billing/RecentInvoices';
 import TotalAmountDue from 'blox_components/Billing/TotalAmountDue/TotalAmountDue';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
+import { MENU as BILLING_MENU } from 'utils/BillingConstants';
 import { TicketUtils } from 'services/ticket';
 import { RESOLUTIONS } from 'services/config';
 import { Permissions } from 'services/permissions';
@@ -45,6 +48,11 @@ class OverviewPage extends Component {
 		showTitleRecentPayment: true,
 	};
 	componentDidMount() {
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.BILLING[BILLING_MENU.OVERVIEW]);
+		addPageToBreadCrumbs(SITE_PAGES.BILLING[BILLING_MENU.OVERVIEW]);
+		updateModule(SITE_MODULES.BILLING);
+
 		this.checkOverviewPagePermissions();
 	}
 
@@ -153,7 +161,10 @@ function mapStateToProps(state) {
 	return {
 		auth_status: state.auth_status,
 		company_info: state.company_info,
+		site: state.site_tracking,
 	};
 }
 
-export default connect(mapStateToProps)(OverviewPage);
+export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(
+	OverviewPage,
+);
