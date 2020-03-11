@@ -25,7 +25,7 @@
 		background: linear-gradient(90deg, $Cool_Gray_Light_1 0%, $White 100%);
 		background-size: 250% 100%;
 		background-position: right bottom;
-		transition: all 1s ease-in-out;
+		transition: all 0.8s ease-in-out;
 	}
 	.logout-button {
 		display: none;
@@ -37,7 +37,6 @@
 			height: GetSize(3);
 			.title {
 				margin-left: GetSize(2);
-				horizontal-align: center;
 			}
 		}
 
@@ -90,6 +89,14 @@
 		.logout-button {
 			margin-left: GetSize(13);
 			margin-top: GetSize(11);
+			.blox-button {
+				display: flex;
+				align-content: center;
+				height: GetSize(3);
+				.title {
+					margin-left: GetSize(1);
+				}
+			}
 		}
 	}
 	.logout-wrapper:hover {

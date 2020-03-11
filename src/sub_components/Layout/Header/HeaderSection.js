@@ -1,5 +1,5 @@
 import React from 'react';
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import { DIMENSIONS } from 'services/layoutManager';
 import LogoutComponent from './LogoutComponent';
 import AccountsComponent from './AccountsComponent';
@@ -24,19 +24,20 @@ const HeaderSection = props => {
 		},
 	};
 
+	const columnCount = BREAKPOINT_COLCOUNT_MAP[props.breakpoint];
 	return (
 		<BloxPage
 			name='header-grid'
 			layout={LAYOUT_CONFIG[props.breakpoint]}
 			breakpoint={props.breakpoint}
 		>
-			<div key='logoutComponent' className='logout-component'>
+			<div key={`logoutComponent-${columnCount}`} className='logout-component'>
 				<LogoutComponent module={props.module} history={props.history} />
 			</div>
-			<div key='breadcrumbComponent'>
+			<div key={`breadcrumbComponent-${columnCount}`}>
 				<BreadCrumbComponent />
 			</div>
-			<div key='accountsComponent' className='accounts-component'>
+			<div key={`accountsComponent-${columnCount}`} className='accounts-component'>
 				<AccountsComponent breakpoint={props.breakpoint} module={props.module} />
 			</div>
 		</BloxPage>
