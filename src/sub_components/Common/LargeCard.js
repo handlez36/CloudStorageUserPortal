@@ -26,7 +26,7 @@ class LargeCard extends Component {
 				<div className={`image ${customClass ? customClass : ''}`}>
 					<img src={image} />
 				</div>
-				<div className={`label ${expanded ? 'expanded' : ''}`}>
+				<div className={`label heading70 ${expanded ? 'expanded' : ''}`}>
 					<span>{title}</span>
 					<img src={expanded ? upIcon : downIcon} alt='expand' />
 				</div>

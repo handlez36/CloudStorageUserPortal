@@ -7,7 +7,7 @@ import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import TicketCount from 'sub_components/Common/TicketCountRow';
 import StorageDetail from 'blox_components/Storage/StorageOverviewDetail/StorageOverviewDetail';
 import { TicketUtils } from 'services/ticket';
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -30,31 +30,31 @@ const LAYOUT_CONFIG = {
 class OverviewPage extends Component {
 	render() {
 		const { breakpoint, location } = this.props;
-
+		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 		return (
 			<BloxPage
-				name='sample-content-grid'
+				name='sample-content-grid storage'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
 				location={location}
 			>
-				<div key='openTickets' className='openTickets'>
+				<div key={`openTickets-${columnCount}`} className='openTickets'>
 					<ComponentWrapper title='TICKET Status' hideBorder>
 						<TicketCount
-							type={TicketUtils.TICKET_STATUS.OPEN}
+							status={TicketUtils.TICKET_STATUS.OPEN}
 							ticketType={TicketUtils.TICKET_TYPES.STORAGE}
 						/>
 					</ComponentWrapper>
 				</div>
-				<div key='closedTickets' className='closedTickets'>
+				<div key={`closedTickets-${columnCount}`} className='closedTickets'>
 					<ComponentWrapper hideTitle hideBorder>
 						<TicketCount
-							type={TicketUtils.TICKET_STATUS.CLOSED}
+							status={TicketUtils.TICKET_STATUS.CLOSED}
 							ticketType={TicketUtils.TICKET_TYPES.STORAGE}
 						/>
 					</ComponentWrapper>
 				</div>
-				<div key='storageDetails' className='storageDetails'>
+				<div key={`storageDetails-${columnCount}`} className='storageDetails'>
 					<ComponentWrapper collapseTitle hideBorder>
 						<StorageDetail breakpoint={breakpoint} />
 					</ComponentWrapper>

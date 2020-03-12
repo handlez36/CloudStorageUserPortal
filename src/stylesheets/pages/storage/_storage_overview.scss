@@ -1,3 +1,23 @@
+.sample-content-grid {
+	&.storage {
+		.count {
+			color: $White;
+			margin-bottom: GetSize(1);
+		}
+		.ticket-count-section {
+			.CircularProgressbar-path {
+				stroke: $DCBLOX_Lime;
+			}
+			.CircularProgressbar-trail {
+				stroke: $Bright_Emerald;
+			}
+			.CircularProgressbar-background {
+				fill: $Dark_Emerald;
+			}
+		}
+	}
+}
+
 .storage-overview-page {
 	z-index: 20;
 	width: calculateVw(940px, 1440);
@@ -12,6 +32,10 @@
 		&.six-column {
 			background: none;
 		}
+	}
+	.count {
+		color: $White;
+		margin-bottom: GetSize(1);
 	}
 
 	.password-modal {

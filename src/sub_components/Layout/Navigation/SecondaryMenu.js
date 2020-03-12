@@ -142,6 +142,10 @@ class SecondaryMenu extends Component {
 		}
 	};
 
+	getActiveArrow = module => {
+		return `${CDN_URL}navigation/nav-menu-triangle-active-${module}.svg`;
+	};
+
 	render() {
 		const { columnWidth, navHeight, percentage, showPrimaryMenu, menu } = this.state;
 		const { module } = this.props;
@@ -187,7 +191,7 @@ class SecondaryMenu extends Component {
 									history={this.props.history}
 								/>
 							</div>
-							<div className='primary-menu-active-shadow' />
+							<div className='primary-menu-active-shadow fade-in-fast' />
 						</Fragment>
 					)}
 					<MenuItems
@@ -199,7 +203,7 @@ class SecondaryMenu extends Component {
 					<div className={showPrimaryMenu ? 'menu active' : 'menu'}>
 						<span className='text nav-menu'>MENU</span>
 						<span className='arrow'>
-							<img src={showPrimaryMenu ? MenuArrowActive : MenuArrow} />
+							<img src={showPrimaryMenu ? this.getActiveArrow(module) : MenuArrow} />
 						</span>
 					</div>
 					<div className='layer-2'>

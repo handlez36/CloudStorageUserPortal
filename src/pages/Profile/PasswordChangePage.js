@@ -4,7 +4,7 @@ import { DIMENSIONS } from 'services/layoutManager';
 import PasswordChange from 'blox_components/Profile/PasswordChange';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -21,6 +21,7 @@ const LAYOUT_CONFIG = {
 class PasswordChangePage extends Component {
 	render() {
 		const { breakpoint, location } = this.props;
+		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 		return (
 			<BloxPage
@@ -29,7 +30,7 @@ class PasswordChangePage extends Component {
 				breakpoint={breakpoint}
 				location={location}
 			>
-				<div key='changePassword' className='changePassword'>
+				<div key={`changePassword-${columnCount}`} className='changePassword'>
 					<ComponentWrapper hideTitle hideBorder>
 						<PasswordChange />
 					</ComponentWrapper>

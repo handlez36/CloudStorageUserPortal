@@ -1,0 +1,22 @@
+.user-loading {
+	margin-top: calculateVh(20px);
+	margin-left: calculateVw(34px, $standard-screen-width-mid);
+	@include User-Management-Menu;
+}
+
+.blox-cycle-view {
+	.portal-user-list {
+		flex: 1 0 auto;
+		// height: 100%;
+		padding-top: GetSize(2);
+		padding-left: 20px;
+		padding-right: 20px;
+		overflow: hidden;
+		.user-block {
+			width: 100%;
+		}
+		.user-block:not(:first-child) {
+			margin-top: GetSize(1);
+		}
+	}
+}

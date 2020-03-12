@@ -2,10 +2,6 @@ import React from 'react';
 import { string } from 'prop-types';
 import each from 'lodash/each';
 
-// import BloxGrid from './../Layoutv3/BloxMicroGrid';
-// import LayoutManager from './../../services/layoutManager';
-
-/** v3 imports */
 import BloxGrid from './BloxMicroGrid';
 import LayoutManager from './../../services/layoutManager';
 

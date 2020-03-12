@@ -60,16 +60,6 @@ class Portal extends Component {
 		return (
 			<div className='portal'>
 				<Switch>
-					{/* <Route
-						exact
-						path='/portal/profile'
-						render={props => (hasProfileAccess ? <Profile {...props} /> : <Home {...props} />)}
-					/>
-					<Route
-						exact
-						path='/portal/support'
-						render={props => (hasSupportAccess ? <Support {...props} /> : <Home {...props} />)}
-					/>*/}
 					<Route
 						exact
 						path='/portal/billing/(current_invoices|invoice_history|make_a_payment)?'
@@ -77,8 +67,8 @@ class Portal extends Component {
 					/>
 					<Route
 						exact
-						path='/portal/profile/(password_change|avatar_change)?'
-						render={props => (hasProfileAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
+						path='/portal/profile/(user_mgmt|user_info|change_password|avatar)?'
+						render={props => (true ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
 						exact
@@ -89,6 +79,12 @@ class Portal extends Component {
 						//exact
 						path='/portal/support/ticket_history/:ticketNumber'
 						render={props => (hasSupportAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
+					/>
+					<Route
+						path='/portal/storage/'
+						render={props => {
+							return hasStorageAccess ? <PortalLayout {...props} /> : <Home {...props} />;
+						}}
 					/>
 					<Route
 						path='/portal/storage/:share'
@@ -129,4 +125,7 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(mapStateToProps, { getCompanyInfo })(Portal);
+export default connect(
+	mapStateToProps,
+	{ getCompanyInfo },
+)(Portal);

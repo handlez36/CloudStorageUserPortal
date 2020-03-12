@@ -11,32 +11,11 @@
 		padding-left: calculateVw(34px, $standard-screen-width-mid);
 		padding-right: calculateVw(34px, $standard-screen-width-mid);
 		overflow: hidden;
-		width: calculateVw(450, 1440);
-
+		.user-block {
+			width: 100%;
+		}
 		.user-block:not(:first-child) {
 			margin-top: calculateVh(10px);
 		}
 	}
-	// .upper-section {
-	// 	top: 0;
-	// 	.up-arrow {
-	// 		margin-top: 5.5vh;
-	// 	}
-	// 	.upper-filter {
-	// 		position: absolute;
-	// 		width: 28.9vw;
-	// 		height: 2.5vh;
-	// 		margin-left: calculateVw(30px, $standard-screen-width-mid);
-	// 		top: 0;
-	// 	}
-	// }
-	// .lower-section {
-	// 	top: 74vh;
-	// 	.lower-filter {
-	// 		position: absolute;
-	// 		width: 28.9vw;
-	// 		// margin-left: calculateVw(60px);
-	// 		margin-left: calculateVw(30px, $standard-screen-width-mid);
-	// 	}
-	// }
 }

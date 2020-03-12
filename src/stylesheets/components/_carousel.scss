@@ -84,8 +84,9 @@
 		.nav-container-right {
 			width: GetSize(3);
 			height: GetSize(13);
-			background-color: transparent;
+			background-color: $White;
 			.nav-arrow-right {
+				margin-left: GetSize(1);
 				border-radius: 0px;
 				img {
 					width: 6px;
@@ -101,10 +102,11 @@
 			width: GetSize(68);
 			height: GetSize(20);
 			.nav-container-right {
-				width: GetSize(3);
+				width: GetSize(4);
 				height: GetSize(20);
-				background-color: transparent;
+				background-color: $White;
 				.nav-arrow-right {
+					margin-left: GetSize(1);
 					border-radius: 0px;
 					img {
 						width: 6.7px;
@@ -118,6 +120,7 @@
 				background-color: transparent;
 				.nav-arrow-left {
 					border-radius: 0px;
+					margin-left: GetSize(1);
 					img {
 						width: 6.7px;
 						height: GetSize(2);
@@ -127,14 +130,16 @@
 		}
 
 		@media screen and (min-width: $high-res + 1) {
-			height: GetSize(24);
+			height: GetSize(34);
 			width: GetSize(20);
+
 			.nav-container-right {
-				width: GetSize(3);
-				height: GetSize(24);
-				background-color: transparent;
+				width: GetSize(7);
+				height: GetSize(34);
+				background-color: $White;
 				.nav-arrow-right {
 					border-radius: 0px;
+					margin-right: 0px;
 
 					img {
 						width: 10px;
@@ -143,12 +148,12 @@
 				}
 			}
 			.nav-container-left {
-				width: GetSize(3);
-				height: GetSize(24);
+				width: GetSize(7);
+				height: GetSize(34);
 				background-color: transparent;
 				.nav-arrow-left {
 					border-radius: 0px;
-
+					margin-left: GetSize(1);
 					img {
 						width: 10px;
 						height: GetSize(3);

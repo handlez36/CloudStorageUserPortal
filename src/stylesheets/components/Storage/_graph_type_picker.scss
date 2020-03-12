@@ -35,6 +35,10 @@
 
 /** portal v3 */
 .storage-overview-detail.v3 {
+	.count {
+		color: $White;
+		margin-bottom: GetSize(1);
+	}
 	.storage-graph-type-picker {
 		width: 100% !important;
 		height: 100% !important;

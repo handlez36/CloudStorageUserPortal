@@ -3,6 +3,7 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: flex-start;
+
 	.ticket-type-card:nth-child(2n) {
 		margin-left: GetSize(2);
 	}

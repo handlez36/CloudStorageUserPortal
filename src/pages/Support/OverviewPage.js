@@ -7,7 +7,7 @@ import TicketCount from 'sub_components/Common/TicketCountRow';
 import IssueRequest from 'blox_components/Support/IssueRequest/IssueRequest';
 import ServiceRequest from 'blox_components/Support/ServiceRequest';
 import { TICKET_TYPES, HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -34,6 +34,7 @@ const LAYOUT_CONFIG = {
 };
 
 const OverviewPage = ({ breakpoint, location }) => {
+	const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 	return (
 		<BloxPage
 			name='page support-overview-page'
@@ -41,27 +42,27 @@ const OverviewPage = ({ breakpoint, location }) => {
 			breakpoint={breakpoint}
 			location={location}
 		>
-			<div key='openTickets' className='openTickets'>
+			<div key={`openTickets-${columnCount}`} className='openTickets'>
 				<ComponentWrapper title='TICKET Status' hideBorder>
 					<TicketCount status={TICKET_STATUS.OPEN} ticketType={TICKET_TYPES.SUPPORT} />
 				</ComponentWrapper>
 			</div>
-			<div key='closedTickets' className='closedTickets'>
+			<div key={`closedTickets-${columnCount}`} className='closedTickets'>
 				<ComponentWrapper hideTitle hideBorder>
 					<TicketCount status={TICKET_STATUS.CLOSED} ticketType={TICKET_TYPES.SUPPORT} />
 				</ComponentWrapper>
 			</div>
-			<div key='issueRequest' className='issueRequest'>
+			<div key={`issueRequest-${columnCount}`} className='issueRequest'>
 				<ComponentWrapper title='ISSUE Request' hideBorder>
 					<IssueRequest breakpoint={breakpoint} />
 				</ComponentWrapper>
 			</div>
-			<div key='remoteHandsRequest' className='remoteHandsRequest'>
+			<div key={`remoteHandsRequest-${columnCount}`} className='remoteHandsRequest'>
 				<ComponentWrapper title='SERVICE Request' hideBorder>
 					<ServiceRequest type='REMOTE_HANDS' breakpoint={breakpoint} />
 				</ComponentWrapper>
 			</div>
-			<div key='guestAccessRequest' className='guestAccessRequest'>
+			<div key={`guestAccessRequest-${columnCount}`} className='guestAccessRequest'>
 				<ComponentWrapper hideTitle hideBorder>
 					<ServiceRequest type='GUEST_ACCESS' breakpoint={breakpoint} />
 				</ComponentWrapper>
