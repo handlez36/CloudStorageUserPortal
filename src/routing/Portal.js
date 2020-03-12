@@ -67,7 +67,7 @@ class Portal extends Component {
 					/>
 					<Route
 						exact
-						path='/portal/profile/(user_info|change_password|avatar)?'
+						path='/portal/profile/(user_mgmt|user_info|change_password|avatar)?'
 						render={props => (true ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route

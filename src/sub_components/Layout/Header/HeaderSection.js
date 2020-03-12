@@ -1,14 +1,11 @@
 import React from 'react';
-<<<<<<< HEAD
-=======
 
->>>>>>> Add User Management page for all screen resolutions
+import BloxPage from 'sub_components/Layout/BloxPage';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import { DIMENSIONS } from 'services/layoutManager';
 import LogoutComponent from './LogoutComponent';
 import AccountsComponent from './AccountsComponent';
 import BreadCrumbComponent from './BreadCrumbComponent';
-import BloxPage from '../BloxPage';
 
 const HeaderSection = props => {
 	const LAYOUT_CONFIG = {
