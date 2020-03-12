@@ -1,0 +1,56 @@
+.user-block {
+	width: 100%;
+	height: GetSize(6);
+	// height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-right: GetSize(1);
+	background-color: $White;
+	opacity: 1;
+	transition: opacity 0.5s ease;
+	.user-icon {
+		width: GetSize(6);
+		height: GetSize(6);
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.user-details {
+		flex: 1 0 auto;
+		padding-left: 4px;
+		.user-name {
+			color: rgba(91, 89, 91, 0.6);
+			@include Status_Head;
+		}
+		.user-email {
+			@include SubHead_Text;
+			color: $DCBLOX_Gray;
+		}
+	}
+	.toggle-switch {
+		flex: 0 1 auto;
+	}
+	&.disabled {
+		opacity: 0.4;
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.user-block {
+		height: GetSize(7);
+		.user-icon {
+			width: GetSize(7);
+			height: GetSize(7);
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.user-block {
+		height: GetSize(9);
+		.user-icon {
+			width: GetSize(9);
+			height: GetSize(9);
+		}
+	}
+}

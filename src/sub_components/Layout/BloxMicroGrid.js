@@ -4,6 +4,9 @@ import { shape, string, bool, any } from 'prop-types';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import ResizeObserver from 'resize-observer-polyfill';
 
+import PortalUserMgmt from 'blox_components/Profile/PortalUserMgmt/PortalUserMgmt';
+import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
+
 import VerticalDebugGrid from './VerticalDebugGrid';
 import HorizontalDebugGrid from './HorizontalDebugGrid';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { string } from 'prop-types';
 import { Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
 
-import ModalButton from './../Common/BloxButton';
+import ModalButton from 'sub_components/Common/BloxButton';
 
 const PortalModal = ({
 	additionalClass,

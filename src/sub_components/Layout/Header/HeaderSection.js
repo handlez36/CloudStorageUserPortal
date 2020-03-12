@@ -1,30 +1,33 @@
 import React from 'react';
+
+import BloxPage from 'sub_components/Layout/BloxPage';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import { DIMENSIONS } from 'services/layoutManager';
 import LogoutComponent from './LogoutComponent';
 import AccountsComponent from './AccountsComponent';
 import BreadCrumbComponent from './BreadCrumbComponent';
-import BloxPage from '../BloxPage';
+
 const HeaderSection = props => {
 	const LAYOUT_CONFIG = {
 		[RESOLUTIONS.LOW]: {
-			logoutComponent: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
-			breadcrumbComponent: { x: 6, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
-			accountsComponent: { x: 12, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+			logoutComponent: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TWO, customHeight: 5 },
+			breadcrumbComponent: { x: 6, y: 0, dim: DIMENSIONS.TWO_BY_TWO, customHeight: 5 },
+			accountsComponent: { x: 12, y: 0, dim: DIMENSIONS.TWO_BY_TWO, customHeight: 5 },
 		},
 		[RESOLUTIONS.MED]: {
-			logoutComponent: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
-			breadcrumbComponent: { x: 6, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
-			accountsComponent: { x: 12, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+			logoutComponent: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TWO, customHeight: 8 },
+			breadcrumbComponent: { x: 6, y: 0, dim: DIMENSIONS.TWO_BY_TWO, customHeight: 8 },
+			accountsComponent: { x: 12, y: 0, dim: DIMENSIONS.TWO_BY_TWO, customHeight: 8 },
 		},
 		[RESOLUTIONS.HIGH]: {
-			logoutComponent: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
-			breadcrumbComponent: { x: 6, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
-			accountsComponent: { x: 12, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+			logoutComponent: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TWO, customHeight: 10 },
+			breadcrumbComponent: { x: 6, y: 0, dim: DIMENSIONS.TWO_BY_TWO, customHeight: 10 },
+			accountsComponent: { x: 12, y: 0, dim: DIMENSIONS.TWO_BY_TWO, customHeight: 10 },
 		},
 	};
 
-	const columnCount = BREAKPOINT_COLCOUNT_MAP[props.breakpoint];
+	const { breakpoint } = props;
+	const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 	return (
 		<BloxPage
 			name='header-grid'
