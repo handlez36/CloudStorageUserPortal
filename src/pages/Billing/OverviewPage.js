@@ -8,7 +8,7 @@ import RecentPayment from 'blox_components/Billing/RecentPayment';
 import RecentInvoices from 'blox_components/Billing/RecentInvoices';
 import TotalAmountDue from 'blox_components/Billing/TotalAmountDue/TotalAmountDue';
 import { TicketUtils } from 'services/ticket';
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import { Permissions } from 'services/permissions';
 import { HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';
 
@@ -87,6 +87,7 @@ class OverviewPage extends Component {
 
 	render() {
 		const { breakpoint, location } = this.props;
+		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 		const {
 			amountDuePermission,
 			ticketCountPermission,
@@ -102,7 +103,7 @@ class OverviewPage extends Component {
 				breakpoint={breakpoint}
 				location={location}
 			>
-				<div key='openTickets' className='openTickets'>
+				<div key={`openTickets-${columnCount}`} className='openTickets'>
 					{ticketCountPermission && (
 						<ComponentWrapper title={showTitleTicketCount ? 'TICKET Status' : ''} hideBorder>
 							<TicketCount
@@ -114,7 +115,7 @@ class OverviewPage extends Component {
 					)}
 				</div>
 
-				<div key='closedTickets' className='closedTickets'>
+				<div key={`closedTickets-${columnCount}`} className='closedTickets'>
 					{ticketCountPermission && (
 						<ComponentWrapper hideTitle hideBorder>
 							<TicketCount
@@ -126,18 +127,18 @@ class OverviewPage extends Component {
 					)}
 				</div>
 
-				<div key='recentInvoices' className='recentInvoices'>
+				<div key={`recentInvoices-${columnCount}`} className='recentInvoices'>
 					<ComponentWrapper title={showTitleRecentInvoices ? 'RECENT Invoices' : ''} hideBorder>
 						<RecentInvoices breakpoint={breakpoint} showTitle={this.showTitleRecentInvoices} />
 					</ComponentWrapper>
 				</div>
-				<div key='recentPayment' className='recentPayment'>
+				<div key={`recentPayment-${columnCount}`} className='recentPayment'>
 					<ComponentWrapper title={showTitleRecentPayment ? 'RECENT Payment' : ''} hideBorder>
 						<RecentPayment breakpoint={breakpoint} showTitle={this.showTitleRecentPayment} />
 					</ComponentWrapper>
 				</div>
 
-				<div key='totalAmountDue' className='totalAmountDue'>
+				<div key={`totalAmountDue-${columnCount}`} className='totalAmountDue'>
 					{amountDuePermission && (
 						<ComponentWrapper title='TOTAL Amount Due' hideBorder>
 							<TotalAmountDue />

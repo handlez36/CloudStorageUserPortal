@@ -110,7 +110,7 @@ class PrimaryMenu extends Component {
 		const { navHeight } = this.state;
 		const menu = this.getMenuItems(module);
 		return (
-			<div className='nav-primary-menu' onMouseLeave={onMouseLeave}>
+			<div className='nav-primary-menu fade-in-fast' onMouseLeave={onMouseLeave}>
 				<div className='top-section'>
 					<img src={MenuTriangle} />
 				</div>

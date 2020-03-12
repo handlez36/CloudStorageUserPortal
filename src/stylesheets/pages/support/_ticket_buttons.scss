@@ -9,16 +9,12 @@
 	cursor: pointer;
 	color: $White;
 	font-family: $font-family-primary-heads;
-	$map: (
-		576: 12,
-		1440: 14,
-		2560: 18,
-	);
-	font-size: least-squares-fit($map);
 	letter-spacing: 0.9px;
 	text-align: center;
 	position: relative;
+	vertical-align: middle;
 	.title {
+		@include Header10;
 	}
 
 	.icon {
@@ -136,9 +132,11 @@
 	}
 	&.support {
 		background: linear-gradient(45deg, $DCBLOX_Purple 9%, $Warm_Gray_Light_1 100%);
+		background-size: 250% 100%;
 	}
 	&.storage {
 		background: linear-gradient(45deg, $Emerald 9%, $Warm_Gray_Light_1 100%);
+		background-size: 250% 100%;
 	}
 	&.billing {
 		background: linear-gradient(45deg, $Dark_Lime 9%, $Warm_Gray_Light_1 100%);

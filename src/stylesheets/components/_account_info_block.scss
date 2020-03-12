@@ -1,90 +1,82 @@
- .amount-due-style{
-    font-family: 'ProximaNova';
-    font-size: 5vh;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.23;
-    letter-spacing: normal;
-    text-align: center;
-    color: $DCBLOX_Black;
-    padding-top: 1.5vh;
-    padding-bottom:0vh;
- }
+.amount-due-style {
+	font-family: 'ProximaNova';
+	font-size: 5vh;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.23;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Black;
+	padding-top: 1.5vh;
+	padding-bottom: 0vh;
+}
 
- .next-payment-due-style{
-    font-family: 'ProximaNova';
-    font-size: 2vh;
-    font-weight: 600;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.21;
-    letter-spacing: normal;
-    text-align: center;
-    color: $DCBLOX_Black;
-    padding-bottom:0.5vh;
-  }
+.next-payment-due-style {
+	font-family: 'ProximaNova';
+	font-size: 2vh;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.21;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Black;
+	padding-bottom: 0.5vh;
+}
 
-  .additional-text-style{
-       
-    font-family: 'ProximaNova';
-    font-size: 1.3vh;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.25;
-    letter-spacing: normal;
-    text-align: center;
-    color: $DCBLOX_Black;
-    padding-top: 1vh;
-    padding-bottom:1vh;
-  }
- 
- 
- //Small block by default
- #account-info-block{
-    width:23.9vw;
-    height:19.5vh;
-    @include Text-Style-30;
-    background-color: $White;
-    
-    .amount-due{
-        @extend.amount-due-style;
-    }
+.additional-text-style {
+	font-family: 'ProximaNova';
+	font-size: 1.3vh;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.25;
+	letter-spacing: normal;
+	text-align: center;
+	color: $DCBLOX_Black;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+}
 
-    .next-payment-due{
-        @extend .next-payment-due-style;
-    }
-    strong{
-       color: $DCBLOX_Black;
-    }
-    .additional-text{
-       @extend .additional-text-style;
-    }
+//Small block by default
+#account-info-block {
+	width: 23.9vw;
+	height: 19.5vh;
+	@include Text-Style-30;
+	background-color: $White;
+
+	.amount-due {
+		@extend.amount-due-style;
+	}
+
+	.next-payment-due {
+		@extend .next-payment-due-style;
+	}
+	strong {
+		color: $DCBLOX_Black;
+	}
+	.additional-text {
+		@extend .additional-text-style;
+	}
 }
 //large block
-#account-info-block-lg{
-        width:32vw;
-        height:19vh;
-        @include Text-Style-30;
-        background-color: $White;
-        margin-bottom:1vh;
+#account-info-block-lg {
+	width: 32vw;
+	height: 19vh;
+	@include Text-Style-30;
+	background-color: $White;
+	margin-bottom: 1vh;
 
-        .amount-due{
-            @extend.amount-due-style;
-        }
-        .next-payment-due{
-            @extend .next-payment-due-style;
-        }
-      strong{
-          color: $DCBLOX_Black;
-        }
-      .additional-text{
-        @extend .additional-text-style;
-        }
-    }
-
-
-    
-
-
+	.amount-due {
+		@extend.amount-due-style;
+	}
+	.next-payment-due {
+		@extend .next-payment-due-style;
+	}
+	strong {
+		color: $DCBLOX_Black;
+	}
+	.additional-text {
+		@extend .additional-text-style;
+	}
+}

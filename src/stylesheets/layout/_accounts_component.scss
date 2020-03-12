@@ -23,7 +23,7 @@
 		background: linear-gradient(90deg, $White 40%, $Cool_Gray_Light_1 100%);
 		background-size: 250% 100%;
 		background-position: left bottom;
-		transition: all 1s ease-in-out;
+		transition: all 0.79s ease-in-out;
 		position: absolute;
 		right: GetSize(5);
 	}
@@ -179,7 +179,7 @@
 		width: GetSize(33);
 		height: GetSize(8);
 		.company-name {
-			width: GetSize(33);
+			width: GetSize(27);
 			height: GetSize(8);
 			padding-top: GetSize(2.7);
 			right: GetSize(8);
@@ -199,7 +199,6 @@
 		height: GetSize(17);
 		.company-name {
 			width: GetSize(30);
-			font-weight: bold;
 		}
 		.accounts-dropdown {
 			margin-top: GetSize(8);
@@ -292,7 +291,6 @@
 		.company-name {
 			width: GetSize(40);
 			height: GetSize(10);
-			font-weight: bold;
 			padding-top: GetSize(3.5);
 			right: GetSize(10);
 		}
@@ -311,7 +309,6 @@
 
 		.company-name {
 			width: GetSize(40);
-			font-weight: bold;
 		}
 		.accounts-dropdown {
 			margin-top: GetSize(10);

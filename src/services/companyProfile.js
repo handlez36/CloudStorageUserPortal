@@ -3,8 +3,9 @@ import axios from 'axios';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const companyAvatarDNALarge = `${CDN_URL}common/company-avatar-dna-lg.svg`;
-const companyAvatarMAPLarge = `${CDN_URL}common/company-avatar-map-lg.svg`;
+const companyAvatarMapLarge = `${CDN_URL}common/company-avatar-map-lg.svg`;
 const companyAvatarEnergyLarge = `${CDN_URL}common/company-avatar-energy-lg.svg`;
+const companyAvatarLabLarge = `${CDN_URL}common/company-avatar-lab-lg.svg`;
 
 const companyAvatarDNADropDownActiveLarge = `${CDN_URL}common/company-avatar-dna-dropdown-active-lg.svg`;
 const companyAvatarLabDropDownActiveLarge = `${CDN_URL}common/company-avatar-lab-dropdown-active-lg.svg`;
@@ -33,8 +34,8 @@ export class CompanyProfileApi {
 
 	getCompanyAvatar = (position, type) => {
 		if (type === 'energy') {
-			return companyAvatarLabDropDownLarge;
+			return companyAvatarEnergyDropDownLarge;
 		}
-		return companyAvatarDNALarge;
+		return companyAvatarEnergyLarge;
 	};
 }

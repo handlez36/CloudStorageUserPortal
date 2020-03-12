@@ -21,6 +21,7 @@
 		padding: GetSize(1) GetSize(2) GetSize(1) GetSize(2);
 		@include FlexboxRow;
 		justify-content: space-between;
+		color: $DCBLOX_Gray;
 		span {
 			height: 18px;
 			align-self: center;
