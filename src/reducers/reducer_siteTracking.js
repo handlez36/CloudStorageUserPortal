@@ -18,7 +18,7 @@ export default function(state = initialState, action) {
 			page = page.replace(' ', '_');
 			page = page.replace(' ', '_');
 			let url = '';
-			if (page === 'overview') {
+			if (page === `_${module}_overview` || page === `${module}_overview`) {
 				url = `/portal/${module}`;
 			} else {
 				url = `/portal/${module}/${page}`;

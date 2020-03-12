@@ -13,8 +13,9 @@ import {
 import Filter from 'components_old/Common/DropDownFilter';
 import NewTicket from 'components_old/Common/NewTicket';
 import { MENU } from 'utils/TicketConstants';
-import { updatePage } from 'actions/siteTracking';
-import { SITE_PAGES } from 'utils/CommonConstants';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { MENU as SUPPORT_MENU } from 'utils/TicketConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import NavArrows from 'sub_components/Support/NavArrows';
 import SupportSection from 'components_old/Common/SupportSection';
 
@@ -111,11 +112,12 @@ class TicketHistory extends Component {
 					this.needDownArrow(entry);
 				});
 			});
-
-			const ticketHistory = document.querySelector('.ticket-history-page');
-			const ticketWrapper = document.querySelector('.open-section');
-			this.myObserver.observe(ticketHistory);
-			this.myObserver.observe(ticketWrapper);
+			try {
+				const ticketHistory = document.querySelector('.ticket-history-page');
+				const ticketWrapper = document.querySelector('.open-section');
+				this.myObserver.observe(ticketHistory);
+				this.myObserver.observe(ticketWrapper);
+			} catch (e) {}
 
 			this.setState({ topItem: 0, currentItem: 0 });
 		}
@@ -125,8 +127,11 @@ class TicketHistory extends Component {
 	};
 
 	componentDidMount() {
-		const { updatePage } = this.props;
-		updatePage(SITE_PAGES.SUPPORT[MENU.TICKET_HISTORY]);
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY]);
+		addPageToBreadCrumbs(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY], SITE_MODULES.SUPPORT);
+		updateModule(SITE_MODULES.SUPPORT);
+
 		this.updatePage();
 
 		updateArrowVisibility(
@@ -612,4 +617,6 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updatePage })(TicketHistory);
+export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(
+	TicketHistory,
+);

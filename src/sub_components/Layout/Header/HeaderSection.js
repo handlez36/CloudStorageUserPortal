@@ -37,7 +37,7 @@ const HeaderSection = props => {
 			<div key={`logoutComponent-${columnCount}`} className='logout-component'>
 				<LogoutComponent module={props.module} history={props.history} />
 			</div>
-			<div key='breadcrumbComponent'>
+			<div key={`breadcrumbComponent-${columnCount}`}>
 				<BreadCrumbComponent history={props.history} breakpoint={props.breakpoint} />
 			</div>
 			<div key={`accountsComponent-${columnCount}`} className='accounts-component'>

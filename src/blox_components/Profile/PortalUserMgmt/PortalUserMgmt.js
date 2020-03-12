@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import RosterUserList from './RosterUserList';
 import { UserApi } from 'services/user';
-import { USER_MANAGEMENT_MENU, MENU } from 'utils/ProfileConstants';
-import { updatePage } from 'actions/siteTracking';
+import { USER_MANAGEMENT_MENU } from 'utils/ProfileConstants';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { MENU as PROFILE_MENU } from 'utils/ProfileConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import MenuHeader from './Components/MenuHeader';
 import PortalUserList from './Components/PortalUserList';
-// import { SITE_PAGES } from '../../../components/Common/CommonConstants';
 
 class PortalUserMgmt extends Component {
 	constructor(props) {
@@ -104,8 +104,10 @@ class PortalUserMgmt extends Component {
 	}
 
 	componentDidMount() {
-		const { updatePage } = this.props;
-		// updatePage(SITE_PAGES.PROFILE[MENU.USER_MANAGEMENT]);
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.PROFILE[PROFILE_MENU.USER_MANAGEMENT]);
+		addPageToBreadCrumbs(SITE_PAGES.PROFILE[PROFILE_MENU.USER_MANAGEMENT], SITE_MODULES.PROFILE);
+		updateModule(SITE_MODULES.PROFILE);
 		if (this.props.isRosterActive) {
 			this.setState({ active: USER_MANAGEMENT_MENU.ROSTER });
 			document.getElementById(1).classList.remove('active');
@@ -157,7 +159,6 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ updatePage },
-)(PortalUserMgmt);
+export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(
+	PortalUserMgmt,
+);

@@ -67,7 +67,7 @@ class Portal extends Component {
 					/>
 					<Route
 						exact
-						path='/portal/profile/(user_mgmt|user_info|change_password|avatar)?'
+						path='/portal/profile/(user_management|contact_info|change_password|avatar)?'
 						render={props => (true ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
@@ -125,7 +125,4 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(
-	mapStateToProps,
-	{ getCompanyInfo },
-)(Portal);
+export default connect(mapStateToProps, { getCompanyInfo })(Portal);
