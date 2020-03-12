@@ -295,6 +295,7 @@ class Home extends Component {
 							<Block
 								type='clickable'
 								url='/portal/storage/0'
+								// url='/portal/storage'
 								src={Storage}
 								hasAccess={hasStorageAccess}
 							/>
@@ -379,4 +380,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(Home);
+export default connect(
+	mapStateToProps,
+	{ updateModule, updatePage, addPageToBreadCrumbs },
+)(Home);
