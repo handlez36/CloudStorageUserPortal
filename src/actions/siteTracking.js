@@ -16,10 +16,11 @@ export const updatePage = page => {
 	};
 };
 
-export const addPageToBreadCrumbs = (page, module) => {
+export const addPageToBreadCrumbs = (page, module, url) => {
 	return {
 		type: ADD_BREADCRUMB,
 		page,
 		module,
+		url,
 	};
 };

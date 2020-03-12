@@ -68,7 +68,6 @@ class PortalLayout extends Component {
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
 		const pageName = PAGES[mod][page];
-		console.log('HEY NIAMH', pageName);
 		const Component = require(`../../pages/${mod}/${pageName}`).default;
 		this.setState({ PageComponent: Component, currentModule: mod.toLowerCase() });
 	};

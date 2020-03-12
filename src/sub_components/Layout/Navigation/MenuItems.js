@@ -20,7 +20,6 @@ class MenuItems extends Component {
 				history.push(`/portal/${section}/${itemClicked.toLowerCase()}`);
 			}
 		} else {
-			console.log('ITEMclicked', itemClicked);
 			if (itemClicked === 'Home') {
 				history.push(`/portal/`);
 			} else {

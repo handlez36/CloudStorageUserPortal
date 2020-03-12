@@ -192,20 +192,17 @@ class TicketHistory extends Component {
 	};
 
 	onSelectTicket = ticket => {
-		const { clickHandler, history } = this.props;
-
-		// Load ticket details in the 3rd column
+		const { history, addPageToBreadCrumbs, updatePage } = this.props;
+		const url = `/portal/support/ticket_history/${ticket.id}`;
+		history.push(url);
+		updatePage(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY_DETAIL]);
+		addPageToBreadCrumbs(`TICKET #${ticket.id}`, SITE_MODULES.SUPPORT, url);
 
 		history.push(`/portal/support/ticket_history/${ticket.id}`);
-		//window.location.pathname = `/portal/support/ticket_history/${ticket.id}`;
 		this.setState({
 			pageState: PAGE_STATE.DETAIL,
-			//selectedTicketId: ticket.id,
 			ticketType: ticket.type,
 		});
-
-		// Load ticket conversation in 4th column
-		//clickHandler(ticket);
 	};
 
 	getFilterTickets = () => {

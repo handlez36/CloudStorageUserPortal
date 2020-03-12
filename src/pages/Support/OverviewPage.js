@@ -45,8 +45,9 @@ class OverviewPage extends Component {
 	}
 
 	render() {
-		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 		const { breakpoint, location } = this.props;
+		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
+
 		return (
 			<BloxPage
 				name='page support-overview-page'

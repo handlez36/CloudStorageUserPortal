@@ -6,10 +6,6 @@ class PrimaryColumnSide extends Component {
 		let translate = 529 - navHeight;
 		translate = translate + 1055.685;
 		translate = `translate(-9.442 -${translate})`;
-		//console.log('TRANSLATE', key);
-		// console.log(translate);
-		// console.log('SIDEEEEE', side);
-		console.log('');
 		return (
 			<svg
 				xmlns='http://www.w3.org/2000/svg'

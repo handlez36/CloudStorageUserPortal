@@ -47,7 +47,6 @@ class BreadCrumbComponent extends Component {
 		history.push(url);
 	};
 	getName = name => {
-		console.log('Name', name);
 		const { breakpoint } = this.props;
 		const { breadCrumbs } = this.state;
 
@@ -69,8 +68,6 @@ class BreadCrumbComponent extends Component {
 	};
 
 	getBreadCrumbs = breadCrumbs => {
-		console.log('breadCrumbs', breadCrumbs);
-		console.log('breadCrumbs', breadCrumbs.length);
 		if (breadCrumbs.length >= 1 && breadCrumbs.length <= 4) {
 			return (
 				<div className='breadcrumbs '>
@@ -90,8 +87,6 @@ class BreadCrumbComponent extends Component {
 
 	render() {
 		const { currentPage, breadCrumbs } = this.state;
-		//const breadCrumbsToDisplay = this.filterBreadCrumbs(breadCrumbs);
-		console.log('bread', breadCrumbs);
 		return (
 			<div className='breadcrumb-component-wrapper'>
 				<div className='title header21'>{currentPage}</div>
