@@ -38,7 +38,7 @@ class InvoiceHistory extends Component {
 	componentDidMount() {
 		const { updatePage, updateModule, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.BILLING[MENU.HISTORY]);
-		addPageToBreadCrumbs(SITE_PAGES.BILLING[MENU.HISTORY]);
+		addPageToBreadCrumbs(SITE_PAGES.BILLING[MENU.HISTORY], SITE_MODULES.BILLING);
 		updateModule(SITE_MODULES.BILLING);
 		this.requestInvoices();
 	}

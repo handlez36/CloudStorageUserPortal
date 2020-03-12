@@ -282,7 +282,7 @@ class MakeAPayment extends Component {
 	componentDidMount() {
 		const { updatePage, updateModule, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.BILLING[MENU.PAYMENT]);
-		addPageToBreadCrumbs(SITE_PAGES.BILLING[MENU.PAYMENT]);
+		addPageToBreadCrumbs(SITE_PAGES.BILLING[MENU.PAYMENT], SITE_MODULES.BILLING);
 		updateModule(SITE_MODULES.BILLING);
 		this.getPublicIP();
 		this.requestOverdueInvoices();

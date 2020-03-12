@@ -8,13 +8,13 @@ import BillingHistory from 'blox_components/Billing/InvoiceHistory/InvoiceHistor
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		invoiceHistory: { x: 0, y: 1, dim: DIMENSIONS.TWO_BY_TEN, customHeight: 100 },
+		invoiceHistory: { x: 2, y: 1, dim: DIMENSIONS.TWO_BY_TEN, customHeight: 100 },
 	},
 	[RESOLUTIONS.MED]: {
-		invoiceHistory: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 112 },
+		invoiceHistory: { x: 2, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 112 },
 	},
 	[RESOLUTIONS.HIGH]: {
-		invoiceHistory: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 160 },
+		invoiceHistory: { x: 2, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 160 },
 	},
 };
 

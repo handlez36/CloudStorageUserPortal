@@ -43,7 +43,7 @@ class CurrentInvoices extends Component {
 	componentDidMount() {
 		const { updatePage, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.BILLING[MENU.INVOICES]);
-		addPageToBreadCrumbs(SITE_PAGES.BILLING[MENU.INVOICES]);
+		addPageToBreadCrumbs(SITE_PAGES.BILLING[MENU.INVOICES], SITE_MODULES.BILLING);
 		updateModule(SITE_MODULES.BILLING);
 		this.resizeComponent();
 		this.requestInvoices();

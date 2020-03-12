@@ -50,7 +50,7 @@ class OverviewPage extends Component {
 	componentDidMount() {
 		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.BILLING[BILLING_MENU.OVERVIEW]);
-		addPageToBreadCrumbs(SITE_PAGES.BILLING[BILLING_MENU.OVERVIEW]);
+		addPageToBreadCrumbs(SITE_PAGES.BILLING[BILLING_MENU.OVERVIEW], SITE_MODULES.BILLING);
 		updateModule(SITE_MODULES.BILLING);
 
 		this.checkOverviewPagePermissions();

@@ -13,8 +13,17 @@ export default function(state = initialState, action) {
 		case PAGE_SELECT:
 			return { ...state, page: action.page };
 		case ADD_BREADCRUMB:
-			console.log('STATE', state.module);
-			const breadCrumb = { name: action.page };
+			const module = action.module.toLowerCase();
+			let page = action.page.toLowerCase();
+			page = page.replace(' ', '_');
+			page = page.replace(' ', '_');
+			let url = '';
+			if (page === 'overview') {
+				url = `/portal/${module}`;
+			} else {
+				url = `/portal/${module}/${page}`;
+			}
+			const breadCrumb = { name: action.page, url };
 			return { ...state, breadCrumbs: [...state.breadCrumbs, breadCrumb] };
 
 		default:
