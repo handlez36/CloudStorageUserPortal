@@ -20,6 +20,7 @@ const PAGES = {
 	},
 	Profile: {
 		Overview: 'OverviewPage',
+		User_mgmt: 'UserMgmtPage',
 		Change_password: 'PasswordChangePage',
 		Avatar: 'AvatarChangePage',
 		User_info: 'UserInfoPage',
