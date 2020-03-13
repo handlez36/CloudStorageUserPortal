@@ -38,25 +38,25 @@ class HomePortalMessage extends Component {
 		this.props.getCompanyInfo(id);
 	};
 
-	renderCompanyList = memberships => {
-		const shouldRenderList = memberships && memberships.length > 1;
+	// renderCompanyList = memberships => {
+	// 	const shouldRenderList = memberships && memberships.length > 1;
 
-		if (shouldRenderList) {
-			return memberships.map(company => {
-				const { fuseBillId: currentCompanyId } = this.props.company_info;
-				const isSelectedCompany = company.organizationId === parseInt(currentCompanyId);
-				return (
-					<div
-						className={`company-link${isSelectedCompany ? ' selected' : ''}`}
-						style={{ cursor: 'pointer' }}
-						onClick={() => this.companySwitch(company.organizationId)}
-					>
-						{company.organizationName}
-					</div>
-				);
-			});
-		}
-	};
+	// 	if (shouldRenderList) {
+	// 		return memberships.map(company => {
+	// 			const { fuseBillId: currentCompanyId } = this.props.company_info;
+	// 			const isSelectedCompany = company.organizationId === parseInt(currentCompanyId);
+	// 			return (
+	// 				<div
+	// 					className={`company-link${isSelectedCompany ? ' selected' : ''}`}
+	// 					style={{ cursor: 'pointer' }}
+	// 					onClick={() => this.companySwitch(company.organizationId)}
+	// 				>
+	// 					{company.organizationName}
+	// 				</div>
+	// 			);
+	// 		});
+	// 	}
+	// };
 
 	render() {
 		const { memberships = {} } = this.props.auth_status;
@@ -70,7 +70,7 @@ class HomePortalMessage extends Component {
 				<div className='home-name'>{this.getUserName()}. </div>
 				<div className='home-subtext'>What would you like to do today?</div>
 				<br />
-				{this.renderCompanyList(memberships)}
+				{/* {this.renderCompanyList(memberships)} */}
 				{/* <span className=" home-welcome text-style-5">
           Explanation text for first timeusers? Hover instructional text over the BLOX Modules?
           </span> */}

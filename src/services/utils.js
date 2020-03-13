@@ -33,7 +33,7 @@ export class Utils {
 	static getMenuItems = names => {
 		const menu = [];
 		for (let i = 0; i <= names.length - 1; i++) {
-			menu.push({ name: names[i].toUpperCase() });
+			menu.push({ name: names[i] });
 		}
 		return menu;
 	};
