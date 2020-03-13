@@ -67,12 +67,19 @@ class TicketHistory extends Component {
 	}
 	componentDidUpdate(prevProps) {
 		const { pageState } = this.state;
-		const { selectedTicket } = this.state;
+		const pathname = window.location.pathname;
+		const matches = pathname.split('/');
+		const { updatePage, addPageToBreadCrumbs } = this.props;
+		if (matches) {
+			const [, , siteModule, sitePage, ticketNumber] = matches;
 
-		if (selectedTicket && pageState === PAGE_STATE.LIST) {
-			this.setState({ pageState: PAGE_STATE.DETAIL });
-		} else if (!selectedTicket && pageState === PAGE_STATE.DETAIL) {
-			this.setState({ pageState: PAGE_STATE.LIST });
+			if (ticketNumber && pageState === PAGE_STATE.LIST) {
+				this.setState({ pageState: PAGE_STATE.DETAIL });
+			} else if (!ticketNumber && pageState === PAGE_STATE.DETAIL) {
+				updatePage(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY]);
+				addPageToBreadCrumbs(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY], SITE_MODULES.SUPPORT);
+				this.setState({ pageState: PAGE_STATE.LIST });
+			}
 		}
 
 		if (prevProps.match != this.props.match) {
@@ -611,6 +618,7 @@ class TicketHistory extends Component {
 function mapStateToProps(state) {
 	return {
 		auth_status: state.auth_status,
+		site: state.site_tracking,
 	};
 }
 

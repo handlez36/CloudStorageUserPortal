@@ -56,6 +56,7 @@ class TicketHistoryDetailLogistics extends Component {
 			addPageToBreadCrumbs(`TICKET #${ticketDetails.processid}`, SITE_MODULES.SUPPORT, url);
 		}
 	}
+
 	render() {
 		const { ticketDetails } = this.props;
 		return (
