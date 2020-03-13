@@ -85,6 +85,7 @@
 		.name {
 			width: GetSize(25);
 			height: GetSize(8);
+			transition: all 0.5s ease-in-out;
 		}
 		.logout-button {
 			margin-left: GetSize(13);

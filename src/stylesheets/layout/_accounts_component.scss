@@ -23,7 +23,7 @@
 		background: linear-gradient(90deg, $White 40%, $Cool_Gray_Light_1 100%);
 		background-size: 250% 100%;
 		background-position: left bottom;
-		transition: all 0.79s ease-in-out;
+		transition: all 0.79s ease-out;
 		position: absolute;
 		right: GetSize(5);
 	}
