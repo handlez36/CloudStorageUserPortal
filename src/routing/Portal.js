@@ -21,7 +21,6 @@ class Portal extends Component {
 	};
 
 	componentDidMount() {
-		console.log('PORTAL LAYOUT', this.props);
 		this.props.getCompanyInfo();
 		this.checkAuth(this.props.isAuthenticated);
 		const reveal = document.getElementById('reveal');
@@ -67,7 +66,7 @@ class Portal extends Component {
 					/>
 					<Route
 						exact
-						path='/portal/profile/(user_mgmt|user_info|change_password|avatar)?'
+						path='/portal/profile/(user_management|contact_info|change_password|avatar)?'
 						render={props => (true ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
@@ -81,13 +80,19 @@ class Portal extends Component {
 						render={props => (hasSupportAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
-						path='/portal/storage/'
+						path='/portal/storage_overview/'
 						render={props => {
 							return hasStorageAccess ? <PortalLayout {...props} /> : <Home {...props} />;
 						}}
 					/>
 					<Route
 						path='/portal/storage/:share'
+						render={props => {
+							return hasStorageAccess ? <PortalLayout {...props} /> : <Home {...props} />;
+						}}
+					/>
+					<Route
+						path='/portal/storage/'
 						render={props => {
 							return hasStorageAccess ? <PortalLayout {...props} /> : <Home {...props} />;
 						}}
@@ -125,7 +130,4 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(
-	mapStateToProps,
-	{ getCompanyInfo },
-)(Portal);
+export default connect(mapStateToProps, { getCompanyInfo })(Portal);

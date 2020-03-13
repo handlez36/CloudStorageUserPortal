@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import AccordianList from 'components_old/Common/AccordianList';
 import { BillingApi, BillingUtils } from 'services/billing';
 import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
-import { updateModule, updatePage } from 'actions/siteTracking';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
 import { MENU, INVOICE_SUMMARY_HEADERS } from 'utils/BillingConstants';
 
 import BloxButton from 'sub_components/Common/BloxButton';
@@ -42,9 +42,10 @@ class CurrentInvoices extends Component {
 	};
 
 	componentDidMount() {
-		const { updatePage } = this.props;
-		updateModule(SITE_MODULES.BILLING);
+		const { updatePage, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.BILLING[MENU.INVOICES]);
+		addPageToBreadCrumbs(SITE_PAGES.BILLING[MENU.INVOICES], SITE_MODULES.BILLING);
+		updateModule(SITE_MODULES.BILLING);
 		this.resizeComponent();
 		this.requestInvoices();
 	}
@@ -165,4 +166,6 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(mapStateToProps, { updatePage, updateModule })(CurrentInvoices);
+export default connect(mapStateToProps, { updatePage, updateModule, addPageToBreadCrumbs })(
+	CurrentInvoices,
+);

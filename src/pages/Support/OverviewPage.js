@@ -1,11 +1,14 @@
-import React from 'react';
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { DIMENSIONS } from 'services/layoutManager';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import TicketCount from 'sub_components/Common/TicketCountRow';
 import IssueRequest from 'blox_components/Support/IssueRequest/IssueRequest';
 import ServiceRequest from 'blox_components/Support/ServiceRequest';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { MENU as SUPPORT_MENU } from 'utils/TicketConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import { TICKET_TYPES, HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
@@ -33,42 +36,53 @@ const LAYOUT_CONFIG = {
 	},
 };
 
-const OverviewPage = ({ breakpoint, location }) => {
-	const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
-	return (
-		<BloxPage
-			name='page support-overview-page'
-			layout={LAYOUT_CONFIG[breakpoint]}
-			breakpoint={breakpoint}
-			location={location}
-		>
-			<div key={`openTickets-${columnCount}`} className='openTickets'>
-				<ComponentWrapper title='TICKET Status' hideBorder>
-					<TicketCount status={TICKET_STATUS.OPEN} ticketType={TICKET_TYPES.SUPPORT} />
-				</ComponentWrapper>
-			</div>
-			<div key={`closedTickets-${columnCount}`} className='closedTickets'>
-				<ComponentWrapper hideTitle hideBorder>
-					<TicketCount status={TICKET_STATUS.CLOSED} ticketType={TICKET_TYPES.SUPPORT} />
-				</ComponentWrapper>
-			</div>
-			<div key={`issueRequest-${columnCount}`} className='issueRequest'>
-				<ComponentWrapper title='ISSUE Request' hideBorder>
-					<IssueRequest breakpoint={breakpoint} />
-				</ComponentWrapper>
-			</div>
-			<div key={`remoteHandsRequest-${columnCount}`} className='remoteHandsRequest'>
-				<ComponentWrapper title='SERVICE Request' hideBorder>
-					<ServiceRequest type='REMOTE_HANDS' breakpoint={breakpoint} />
-				</ComponentWrapper>
-			</div>
-			<div key={`guestAccessRequest-${columnCount}`} className='guestAccessRequest'>
-				<ComponentWrapper hideTitle hideBorder>
-					<ServiceRequest type='GUEST_ACCESS' breakpoint={breakpoint} />
-				</ComponentWrapper>
-			</div>
-		</BloxPage>
-	);
-};
+class OverviewPage extends Component {
+	componentDidMount() {
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.SUPPORT[SUPPORT_MENU.OVERVIEW]);
+		addPageToBreadCrumbs(SITE_PAGES.SUPPORT[SUPPORT_MENU.OVERVIEW], SITE_MODULES.SUPPORT);
+		updateModule(SITE_MODULES.SUPPORT);
+	}
 
-export default OverviewPage;
+	render() {
+		const { breakpoint, location } = this.props;
+		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
+
+		return (
+			<BloxPage
+				name='page support-overview-page'
+				layout={LAYOUT_CONFIG[breakpoint]}
+				breakpoint={breakpoint}
+				location={location}
+			>
+				<div key={`openTickets-${columnCount}`} className='openTickets'>
+					<ComponentWrapper title='TICKET Status' hideBorder>
+						<TicketCount status={TICKET_STATUS.OPEN} ticketType={TICKET_TYPES.SUPPORT} />
+					</ComponentWrapper>
+				</div>
+				<div key={`closedTickets-${columnCount}`} className='closedTickets'>
+					<ComponentWrapper hideTitle hideBorder>
+						<TicketCount status={TICKET_STATUS.CLOSED} ticketType={TICKET_TYPES.SUPPORT} />
+					</ComponentWrapper>
+				</div>
+				<div key={`issueRequest-${columnCount}`} className='issueRequest'>
+					<ComponentWrapper title='ISSUE Request' hideBorder>
+						<IssueRequest breakpoint={breakpoint} />
+					</ComponentWrapper>
+				</div>
+				<div key={`remoteHandsRequest-${columnCount}`} className='remoteHandsRequest'>
+					<ComponentWrapper title='SERVICE Request' hideBorder>
+						<ServiceRequest type='REMOTE_HANDS' breakpoint={breakpoint} />
+					</ComponentWrapper>
+				</div>
+				<div key={`guestAccessRequest-${columnCount}`} className='guestAccessRequest'>
+					<ComponentWrapper hideTitle hideBorder>
+						<ServiceRequest type='GUEST_ACCESS' breakpoint={breakpoint} />
+					</ComponentWrapper>
+				</div>
+			</BloxPage>
+		);
+	}
+}
+
+export default connect(null, { updateModule, updatePage, addPageToBreadCrumbs })(OverviewPage);

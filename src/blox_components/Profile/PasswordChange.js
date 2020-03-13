@@ -12,10 +12,11 @@ import IconInputComponent from 'sub_components/Common/IconInputComponent';
 import PortalMessage from 'sub_components/Common/PortalMessage';
 import PasswordResetSuccess from 'sub_components/Login/PasswordResetSuccess';
 import { UserProfileApi } from 'services/userProfile';
-import { updatePage } from 'actions/siteTracking';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
 import { enterNewPassword, confirmNewPassword, resetRegistrationState } from 'actions/registration';
 import { MENU, PROFILE_PASSWORD_MESSAGE_TEXT } from 'utils/ProfileConstants';
-import { SITE_PAGES } from 'utils/Misc/CommonConstants';
+import { MENU as PROFILE_MENU } from 'utils/ProfileConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Icon = `${CDN_URL}profile/Profile_PasswordChange_Icon_190x190.png`;
@@ -120,11 +121,10 @@ class PasswordChange extends Component {
 	};
 
 	componentDidMount() {
-		const { updatePage } = this.props;
-		updatePage(SITE_PAGES.PROFILE[MENU.PASSWORD_CHANGE]);
-
-		/** Testing regex */
-		// this.regexTester();
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.PROFILE[PROFILE_MENU.PASSWORD_CHANGE]);
+		addPageToBreadCrumbs(SITE_PAGES.PROFILE[PROFILE_MENU.PASSWORD_CHANGE], SITE_MODULES.PROFILE);
+		updateModule(SITE_MODULES.PROFILE);
 	}
 
 	checkRegistrationCompletion = () => {
@@ -206,7 +206,11 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ enterNewPassword, confirmNewPassword, resetRegistrationState, updatePage },
-)(PasswordChange);
+export default connect(mapStateToProps, {
+	enterNewPassword,
+	confirmNewPassword,
+	resetRegistrationState,
+	updatePage,
+	updateModule,
+	addPageToBreadCrumbs,
+})(PasswordChange);

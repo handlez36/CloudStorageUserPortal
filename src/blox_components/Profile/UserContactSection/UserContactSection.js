@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import PortalMessage from 'sub_components/Common/PortalMessage';
 import { UserProfileApi } from 'services/userProfile';
 import { updateUser, resetUserUpdateStatus } from 'actions/user';
-import { updatePage } from 'actions/siteTracking';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { MENU as PROFILE_MENU } from 'utils/ProfileConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import { PROFILE_USER_MESSAGE_TEXT, MENU } from 'utils/ProfileConstants';
-import { SITE_PAGES } from 'utils/Misc/CommonConstants';
 import UserInfo from './Components/UserInfo';
 
 class UserContactInfoNew extends Component {
@@ -27,6 +28,12 @@ class UserContactInfoNew extends Component {
 		}
 
 		return 'Hello';
+	}
+	componentDidMount() {
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.PROFILE[PROFILE_MENU.USER_PROFILE]);
+		addPageToBreadCrumbs(SITE_PAGES.PROFILE[PROFILE_MENU.USER_PROFILE], SITE_MODULES.PROFILE);
+		updateModule(SITE_MODULES.PROFILE);
 	}
 
 	renderMessage() {
@@ -75,11 +82,6 @@ class UserContactInfoNew extends Component {
 		this.props.resetUserUpdateStatus();
 	};
 
-	componentDidMount() {
-		const { updatePage } = this.props;
-		updatePage(SITE_PAGES.PROFILE[MENU.USER_PROFILE]);
-	}
-
 	render() {
 		return (
 			<div className='user-page user-contact-section outer-wrapper'>
@@ -105,7 +107,10 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ updateUser, resetUserUpdateStatus, updatePage },
-)(UserContactInfoNew);
+export default connect(mapStateToProps, {
+	updateUser,
+	resetUserUpdateStatus,
+	updatePage,
+	updateModule,
+	addPageToBreadCrumbs,
+})(UserContactInfoNew);

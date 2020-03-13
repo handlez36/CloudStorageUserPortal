@@ -7,8 +7,8 @@ import Button from 'sub_components/Common/BloxButton';
 import { Utils } from 'services/utils';
 import { BillingApi, BillingUtils } from 'services/billing';
 import { INVOICE_SUMMARY_HEADERS, MENU } from 'utils/BillingConstants';
-import { SITE_PAGES } from 'utils/CommonConstants';
-import { updatePage } from 'actions/siteTracking';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
+import { updatePage, updateModule, addPageToBreadCrumbs } from 'actions/siteTracking';
 import PaymentMethodScreen from './Components/PaymentMethod';
 import PaymentSummary from './Components/PaymentSummary';
 import SelectInvoiceScreen from './Components/SelectInvoiceScreen';
@@ -280,9 +280,10 @@ class MakeAPayment extends Component {
 	}
 
 	componentDidMount() {
-		const { updatePage } = this.props;
+		const { updatePage, updateModule, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.BILLING[MENU.PAYMENT]);
-
+		addPageToBreadCrumbs(SITE_PAGES.BILLING[MENU.PAYMENT], SITE_MODULES.BILLING);
+		updateModule(SITE_MODULES.BILLING);
 		this.getPublicIP();
 		this.requestOverdueInvoices();
 	}
@@ -336,4 +337,6 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updatePage })(MakeAPayment);
+export default connect(mapStateToProps, { updatePage, updateModule, addPageToBreadCrumbs })(
+	MakeAPayment,
+);

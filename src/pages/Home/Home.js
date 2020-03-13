@@ -23,7 +23,8 @@ import Support from 'assets/home-support-module-2019.svg';
 import Storage from 'assets/home-storage-module-2019.svg';
 // import { UserApi } from '../../services/user';
 import { Permissions } from 'services/permissions';
-import { updateModule, updatePage } from 'actions/siteTracking';
+import { SITE_PAGES } from 'utils/CommonConstants';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
 import HomePortalMessage from 'sub_components/Home/HomePortalMessage';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
@@ -120,6 +121,10 @@ class Home extends Component {
 	};
 
 	componentDidMount() {
+		const { addPageToBreadCrumbs } = this.props;
+
+		addPageToBreadCrumbs(SITE_PAGES.HOME);
+
 		this.onBreakpointChange();
 		this.myObserver = new ResizeObserver(entries => {
 			entries.forEach(() => {
@@ -132,8 +137,10 @@ class Home extends Component {
 	}
 
 	componentWillUnmount() {
-		this.myObserver.disconnect();
-		clearTimeout(this.timeout);
+		try {
+			this.myObserver.disconnect();
+			clearTimeout(this.timeout);
+		} catch (e) {}
 	}
 
 	render() {
@@ -372,4 +379,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updateModule, updatePage })(Home);
+export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(Home);

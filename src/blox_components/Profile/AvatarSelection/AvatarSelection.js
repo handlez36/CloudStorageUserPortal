@@ -5,6 +5,9 @@ import { PROFILE_AVATAR_MESSAGE_TEXT } from 'utils/ProfileConstants';
 import { AvatarApi } from 'services/avatar';
 import { UserProfileApi } from 'services/userProfile';
 import { updateUserAvatar } from 'actions/user';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { MENU as PROFILE_MENU } from 'utils/ProfileConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import PortalMessage from 'sub_components/Common/PortalMessage';
 import ProfileCard from './Components/ProfileCard';
 import DisplayAvatar from './Components/DisplayAvatar';
@@ -20,6 +23,12 @@ class AvatarSelection extends Component {
 		console.log('Id: ', id);
 		updateUserAvatar(id);
 	};
+	componentDidMount() {
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.PROFILE[PROFILE_MENU.AVATAR]);
+		addPageToBreadCrumbs(SITE_PAGES.PROFILE[PROFILE_MENU.AVATAR], SITE_MODULES.PROFILE);
+		updateModule(SITE_MODULES.PROFILE);
+	}
 
 	render() {
 		const { auth_status } = this.props;
@@ -52,7 +61,9 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ updateUserAvatar },
-)(AvatarSelection);
+export default connect(mapStateToProps, {
+	updateUserAvatar,
+	updatePage,
+	updateModule,
+	addPageToBreadCrumbs,
+})(AvatarSelection);

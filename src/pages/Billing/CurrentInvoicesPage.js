@@ -9,13 +9,13 @@ import { RESOLUTIONS } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		currentInvoices: { x: 0, y: 1, dim: DIMENSIONS.TWO_BY_TEN, customHeight: 100 },
+		currentInvoices: { x: 2, y: 1, dim: DIMENSIONS.TWO_BY_TEN },
 	},
 	[RESOLUTIONS.MED]: {
-		currentInvoices: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 112 },
+		currentInvoices: { x: 2, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT },
 	},
 	[RESOLUTIONS.HIGH]: {
-		currentInvoices: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 160 },
+		currentInvoices: { x: 2, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 };
 

@@ -26,7 +26,9 @@
 		background-color: $White;
 		.content-grid {
 			overflow: visible;
-			z-index: 4500;
+		}
+		.content-grid:hover {
+			z-index: 4000;
 		}
 	}
 
@@ -44,7 +46,6 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		z-index: 4000;
 		overflow: hidden;
 	}
 	&.debug {

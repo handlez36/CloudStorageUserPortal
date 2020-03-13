@@ -13,8 +13,9 @@ import {
 import Filter from 'components_old/Common/DropDownFilter';
 import NewTicket from 'components_old/Common/NewTicket';
 import { MENU } from 'utils/TicketConstants';
-import { updatePage } from 'actions/siteTracking';
-import { SITE_PAGES } from 'utils/CommonConstants';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { MENU as SUPPORT_MENU } from 'utils/TicketConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import NavArrows from 'sub_components/Support/NavArrows';
 import SupportSection from 'components_old/Common/SupportSection';
 
@@ -66,12 +67,19 @@ class TicketHistory extends Component {
 	}
 	componentDidUpdate(prevProps) {
 		const { pageState } = this.state;
-		const { selectedTicket } = this.state;
+		const pathname = window.location.pathname;
+		const matches = pathname.split('/');
+		const { updatePage, addPageToBreadCrumbs } = this.props;
+		if (matches) {
+			const [, , siteModule, sitePage, ticketNumber] = matches;
 
-		if (selectedTicket && pageState === PAGE_STATE.LIST) {
-			this.setState({ pageState: PAGE_STATE.DETAIL });
-		} else if (!selectedTicket && pageState === PAGE_STATE.DETAIL) {
-			this.setState({ pageState: PAGE_STATE.LIST });
+			if (ticketNumber && pageState === PAGE_STATE.LIST) {
+				this.setState({ pageState: PAGE_STATE.DETAIL });
+			} else if (!ticketNumber && pageState === PAGE_STATE.DETAIL) {
+				updatePage(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY]);
+				addPageToBreadCrumbs(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY], SITE_MODULES.SUPPORT);
+				this.setState({ pageState: PAGE_STATE.LIST });
+			}
 		}
 
 		if (prevProps.match != this.props.match) {
@@ -111,11 +119,12 @@ class TicketHistory extends Component {
 					this.needDownArrow(entry);
 				});
 			});
-
-			const ticketHistory = document.querySelector('.ticket-history-page');
-			const ticketWrapper = document.querySelector('.open-section');
-			this.myObserver.observe(ticketHistory);
-			this.myObserver.observe(ticketWrapper);
+			try {
+				const ticketHistory = document.querySelector('.ticket-history-page');
+				const ticketWrapper = document.querySelector('.open-section');
+				this.myObserver.observe(ticketHistory);
+				this.myObserver.observe(ticketWrapper);
+			} catch (e) {}
 
 			this.setState({ topItem: 0, currentItem: 0 });
 		}
@@ -125,8 +134,11 @@ class TicketHistory extends Component {
 	};
 
 	componentDidMount() {
-		const { updatePage } = this.props;
-		updatePage(SITE_PAGES.SUPPORT[MENU.TICKET_HISTORY]);
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY]);
+		addPageToBreadCrumbs(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY], SITE_MODULES.SUPPORT);
+		updateModule(SITE_MODULES.SUPPORT);
+
 		this.updatePage();
 
 		updateArrowVisibility(
@@ -187,20 +199,17 @@ class TicketHistory extends Component {
 	};
 
 	onSelectTicket = ticket => {
-		const { clickHandler, history } = this.props;
-
-		// Load ticket details in the 3rd column
+		const { history, addPageToBreadCrumbs, updatePage } = this.props;
+		const url = `/portal/support/ticket_history/${ticket.id}`;
+		history.push(url);
+		updatePage(SITE_PAGES.SUPPORT[SUPPORT_MENU.TICKET_HISTORY_DETAIL]);
+		addPageToBreadCrumbs(`TICKET #${ticket.id}`, SITE_MODULES.SUPPORT, url);
 
 		history.push(`/portal/support/ticket_history/${ticket.id}`);
-		//window.location.pathname = `/portal/support/ticket_history/${ticket.id}`;
 		this.setState({
 			pageState: PAGE_STATE.DETAIL,
-			//selectedTicketId: ticket.id,
 			ticketType: ticket.type,
 		});
-
-		// Load ticket conversation in 4th column
-		//clickHandler(ticket);
 	};
 
 	getFilterTickets = () => {
@@ -609,7 +618,10 @@ class TicketHistory extends Component {
 function mapStateToProps(state) {
 	return {
 		auth_status: state.auth_status,
+		site: state.site_tracking,
 	};
 }
 
-export default connect(mapStateToProps, { updatePage })(TicketHistory);
+export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(
+	TicketHistory,
+);

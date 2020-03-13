@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import each from 'lodash/each';
 
 import { DIMENSIONS } from 'services/layoutManager';
@@ -8,6 +9,9 @@ import TicketCount from 'sub_components/Common/TicketCountRow';
 import StorageDetail from 'blox_components/Storage/StorageOverviewDetail/StorageOverviewDetail';
 import { TicketUtils } from 'services/ticket';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { MENU as STORAGE_MENU } from 'utils/StorageConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -28,6 +32,13 @@ const LAYOUT_CONFIG = {
 };
 
 class OverviewPage extends Component {
+	componentDidMount() {
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.STORAGE[STORAGE_MENU.OVERVIEW]);
+		addPageToBreadCrumbs(SITE_PAGES.STORAGE[STORAGE_MENU.OVERVIEW], SITE_MODULES.STORAGE);
+		updateModule(SITE_MODULES.STORAGE);
+	}
+
 	render() {
 		const { breakpoint, location } = this.props;
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
@@ -64,4 +75,4 @@ class OverviewPage extends Component {
 	}
 }
 
-export default OverviewPage;
+export default connect(null, { updateModule, updatePage, addPageToBreadCrumbs })(OverviewPage);

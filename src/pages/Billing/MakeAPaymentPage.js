@@ -8,13 +8,13 @@ import { RESOLUTIONS } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		makeAPayment: { x: 0, y: 1, dim: DIMENSIONS.TWO_BY_TEN, customHeight: 100 },
+		makeAPayment: { x: 2, y: 1, dim: DIMENSIONS.TWO_BY_TEN, customHeight: 100 },
 	},
 	[RESOLUTIONS.MED]: {
-		makeAPayment: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 112 },
+		makeAPayment: { x: 2, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 112 },
 	},
 	[RESOLUTIONS.HIGH]: {
-		makeAPayment: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 160 },
+		makeAPayment: { x: 2, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 160 },
 	},
 };
 
