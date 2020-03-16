@@ -294,8 +294,8 @@ class Home extends Component {
 						<div key='block-fifth-2' className='block'>
 							<Block
 								type='clickable'
-								url='/portal/storage/0'
-								// url='/portal/storage'
+								// url='/portal/storage/0'
+								url='/portal/storage'
 								src={Storage}
 								hasAccess={hasStorageAccess}
 							/>

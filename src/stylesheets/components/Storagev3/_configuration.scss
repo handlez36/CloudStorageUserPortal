@@ -1,0 +1,122 @@
+.configuration {
+	padding-left: GetSize(2);
+	padding-right: GetSize(2);
+	background-color: $White;
+	width: GetSize(44);
+	height: 267px;
+	box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+	.title {
+		min-height: 20px;
+		@include Support-Section-Header;
+	}
+	.share-config {
+		position: relative;
+		height: 100%;
+		.expandable-component-body {
+			padding-top: 0.5vh;
+			.expandable-row {
+				.left-side {
+					border-right: none;
+					.content {
+						word-wrap: break-word;
+					}
+					.label {
+						padding-top: 1vh;
+						@include Text-Style-Expandable-Section-Label;
+						$map: (
+							576: 14,
+							1440: 16,
+							2560: 18,
+						);
+						font-size: least-squares-fit($map);
+					}
+					.content {
+						padding-top: 1vh;
+						$map: (
+							576: 10,
+							1440: 11,
+							2560: 14,
+						);
+						font-size: least-squares-fit($map);
+					}
+				}
+				.right-side {
+					padding-left: GetSize(1);
+					.label {
+						padding-top: 1vh;
+						@include Text-Style-Expandable-Section-Label;
+						$map: (
+							576: 14,
+							1440: 16,
+							2560: 18,
+						);
+						font-size: least-squares-fit($map);
+					}
+					.content {
+						padding-top: 1vh;
+						$map: (
+							576: 8,
+							1440: 9,
+							2560: 10,
+						);
+						font-size: least-squares-fit($map);
+					}
+				}
+			}
+		}
+		.whitelist {
+			width: calculateVw(130px, 1440);
+			height: calculateVh(50px, 1440);
+			min-height: 30px;
+			min-width: 80px;
+			cursor: pointer;
+			position: relative;
+			box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+			background-color: $Dark_Emerald;
+			margin-left: 1vw;
+			margin-top: 0.8vh;
+
+			img {
+				width: calculateVw(53px, 1440);
+				height: calculateVh(20px, 1440);
+				position: absolute;
+				left: 5%;
+				top: 30%;
+			}
+			.manage {
+				position: absolute;
+				top: 20%;
+				left: 55%;
+				color: $White;
+				@include Status-Head;
+				opacity: 0.5;
+				$map: (
+					576: 12,
+					1440: 14,
+					2560: 16,
+				);
+				font-size: least-squares-fit($map);
+				letter-spacing: 0.8px;
+			}
+			&.selected {
+				.manage {
+					opacity: 1;
+				}
+			}
+		}
+		.whitelist:hover {
+			.manage {
+				opacity: 1;
+			}
+		}
+		.api-key {
+			@include Text-Style-Expandable-Section-Label;
+			cursor: pointer;
+			width: GetSize(15);
+			position: absolute;
+			top: 36%;
+			left: 52%;
+			word-break: break-all;
+		}
+	}
+}

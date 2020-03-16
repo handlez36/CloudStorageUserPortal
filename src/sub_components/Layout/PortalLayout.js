@@ -22,6 +22,7 @@ const PAGES = {
 	},
 	Storage: {
 		Overview: 'OverviewPage',
+		Manage: 'ManageStoragePage',
 	},
 	Profile: {
 		Overview: 'OverviewPage',

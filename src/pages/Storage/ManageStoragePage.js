@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ShareDetailView from 'blox_components/Storage/ShareDetailView';
+import ShareDetailView from 'blox_components/Storage/ShareDetailView/ShareDetailView';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import { DIMENSIONS } from 'services/layoutManager';
@@ -11,7 +11,7 @@ const LAYOUT_CONFIG = {
 		shareDetailView: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 52 },
 	},
 	[RESOLUTIONS.MED]: {
-		shareDetailView: { x: 1, y: 31, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 74 },
+		shareDetailView: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 74 }, // 74
 	},
 	[RESOLUTIONS.HIGH]: {
 		shareDetailView: { x: 1, y: 50, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 104 },
@@ -19,8 +19,19 @@ const LAYOUT_CONFIG = {
 };
 
 class ManageStoragePage extends Component {
+	state = {
+		selected: 221,
+	};
+
+	onStorageSelect = selected => {
+		if (selected) {
+			this.setState({ selected });
+		}
+	};
+
 	render() {
 		const { breakpoint, location } = this.props;
+		const { selected } = this.state;
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 		return (
@@ -32,7 +43,7 @@ class ManageStoragePage extends Component {
 			>
 				<div key={`shareDetailView-${columnCount}`} className='shareDetailView'>
 					<ComponentWrapper collapseTitle hideBorder>
-						<ShareDetailView />
+						<ShareDetailView storageId={selected} breakpoint={breakpoint} />
 					</ComponentWrapper>
 				</div>
 				{/* <div key='closedTickets' className='closedTickets'>

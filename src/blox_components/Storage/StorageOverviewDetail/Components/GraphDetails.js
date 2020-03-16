@@ -59,6 +59,8 @@ const GraphDetails = ({ id, percentage, label, text, isOverQuota, packageType, h
 };
 
 const getCommitmentAmount = packageData => {
+	if (!packageData) return { commitmentAmount: null, unit: null };
+
 	const unit = StorageUtils.determineDataUnitShare(packageData, null, 'commitmentAmount');
 	return { commitmentAmount: packageData[`commitmentAmount${unit}`], unit };
 };

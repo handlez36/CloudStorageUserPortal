@@ -97,7 +97,7 @@ This file should not contain anything but @import and comments.
 @import 'components/interactive_icon';
 @import 'components/_horizontal_grid';
 @import 'components/graph';
-@import 'components/copy_link';
+// @import 'components/copy_link';
 @import 'components/carousel';
 @import 'components/date_time_picker';
 @import 'components/time_picker';
@@ -162,6 +162,9 @@ This file should not contain anything but @import and comments.
 @import 'components/Storage/usage_bar';
 @import 'components/Storagev3/graph_details';
 @import 'components/Storagev3/location_bar';
+@import 'components/Storagev3/share_detail_view';
+@import 'components/Storagev3/configuration';
+@import 'components/Storagev3/copy_link';
 
 /**
 * Supportv3 components
@@ -285,7 +288,7 @@ This file should not contain anything but @import and comments.
 @import 'pages/storage/whitelist_modal';
 @import 'pages/storage//add_storage_container';
 @import 'pages/storage/delete_storage';
-@import 'pages/storage/configuration';
+// @import 'pages/storage/configuration';
 @import 'pages/storage/storage_overview';
 
 @import 'pages/support';

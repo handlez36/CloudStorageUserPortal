@@ -1,0 +1,65 @@
+.share-detail-view {
+	padding-top: GetSize(1);
+	.share-options-bar {
+		width: 100%;
+		height: GetSize(6);
+		border: 1px solid blue;
+	}
+	.share-content {
+		@include FlexboxRow;
+		justify-content: space-between;
+		padding-top: GetSize(2);
+		padding-right: GetSize(5);
+		padding-left: GetSize(13);
+		// padding-left: GetSize(23);
+		.left-pane {
+			@include FlexboxColumn;
+			justify-content: space-between;
+			.share-name-label {
+				width: GetSize(44);
+				@include FlexboxRow;
+			}
+			.share-name-label .title {
+				margin-top: 6px;
+				margin-left: GetSize(1);
+				@include User-Management-Menu;
+				line-height: 18px;
+				color: $DCBLOX_Gray;
+			}
+			.share-name-label .access {
+				position: relative;
+				img {
+					width: 42px;
+					height: 21px;
+					margin-left: GetSize(22);
+				}
+			}
+			.share-config {
+				margin-top: GetSize(1);
+				.configuration {
+					height: 267px;
+				}
+			}
+			.network-config {
+				margin-top: GetSize(3);
+				.configuration {
+					height: 188px;
+				}
+			}
+		}
+		.right-pane {
+			.header {
+				height: GetSize(3);
+			}
+			.header .title {
+				margin-top: 6px;
+				@include User-Management-Menu;
+				line-height: 18px;
+				color: $DCBLOX_Gray;
+			}
+			.storage-usage-graph {
+				margin-top: GetSize(1);
+			}
+		}
+	}
+}
