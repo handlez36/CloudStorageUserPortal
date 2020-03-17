@@ -19,7 +19,11 @@
 				width: GetSize(44);
 				@include FlexboxRow;
 			}
+			.share-name-label .icon {
+				flex: 0 1 auto;
+			}
 			.share-name-label .title {
+				flex: 0 1 auto;
 				margin-top: 6px;
 				margin-left: GetSize(1);
 				@include User-Management-Menu;
@@ -28,10 +32,11 @@
 			}
 			.share-name-label .access {
 				position: relative;
+				flex: 1 0 auto;
+				text-align: right;
 				img {
 					width: 42px;
 					height: 21px;
-					margin-left: GetSize(22);
 				}
 			}
 			.share-config {
@@ -44,6 +49,11 @@
 				margin-top: GetSize(3);
 				.configuration {
 					height: 188px;
+				}
+				.configuration .whitelist {
+					width: GetSize(21);
+					height: GetSize(4);
+					margin-left: 0;
 				}
 			}
 		}

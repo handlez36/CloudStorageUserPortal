@@ -24,9 +24,11 @@ class Configurations extends Component {
 		}
 	};
 	onClick = () => {
+		console.log('Clicking...');
 		document.getElementById('manage-whitelist').src = WhiteListIconSelected;
 		const whitelistButton = document.querySelector('.whitelist');
 		whitelistButton.classList.add('selected');
+		console.log('Toggle Whitelist func: ', this.props.toggleWhitelist);
 		this.props.toggleWhitelist();
 	};
 	toggleSecretKey = () => {

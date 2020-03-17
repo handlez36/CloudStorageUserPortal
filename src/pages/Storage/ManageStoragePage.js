@@ -20,7 +20,9 @@ const LAYOUT_CONFIG = {
 
 class ManageStoragePage extends Component {
 	state = {
-		selected: 221,
+		selected: 5,
+		// selected: 8,
+		// selected: 8,
 	};
 
 	onStorageSelect = selected => {

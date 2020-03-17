@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 
+import PasswordModal from 'sub_components/Common/PasswordModal';
+import WhiteListModal from 'sub_components/Storage/WhiteListModal';
 import { StorageApi } from 'services/storage';
 import { STORAGE_AVATAR_URL_PREFIX } from 'utils/Misc/CommonConstants';
 import * as StorageUtils from 'utils/StorageUtils';
 import Configuration from './Components/Configurations';
 import StorageUsageGraph from './../StorageOverviewDetail/Components/StorageUsageGraph';
-import ResolutionPicker from './../StorageOverviewDetail/Components/ResolutionPicker';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const LadyBugIcon = `${CDN_URL}storage/Storage-ladybug-white-thinline.svg`;
@@ -19,6 +20,7 @@ class ShareDetailView extends Component {
 		stats: [],
 		statsError: null,
 		resolution: 'DAY',
+		whiteListModalOpen: false,
 	};
 
 	getUniqueShareIcon = icon => {
@@ -32,7 +34,6 @@ class ShareDetailView extends Component {
 		const { storageDetails, error: storageError } = await StorageApi.get(id);
 
 		// Get trend data
-		// const { stats, error: statsError } = await StorageApi.sampleNetworkRequest();
 		const stats = StorageUtils.sampleNetworkRequest;
 		this.setState({
 			storageDetails,
@@ -40,7 +41,6 @@ class ShareDetailView extends Component {
 			statsError: null,
 			storageError,
 		});
-		// this.setState({ storageDetails, stats, statsError, storageError });
 	};
 
 	generateShareDetails = storage => {
@@ -84,22 +84,22 @@ class ShareDetailView extends Component {
 	};
 
 	parsePackageData = (stats, type) => {
-		console.log('Stats: ', stats);
-		console.log('Type: ', type);
 		if (!stats || !stats.packages || (stats.packages.length && stats.packages.length < 1)) return;
 
-		console.log(' --- filtering...');
 		const matchingPackages = stats.packages.filter(pkg => pkg.storageType === type);
 		return matchingPackages && matchingPackages[0] ? matchingPackages[0] : null;
 	};
 
 	getCommitmentSizes = packageData => {
-		console.log('Package Data: ', packageData);
 		if (!packageData) return { commitmentAmount: null, unit: null };
 
-		// console.log('Package Data: ', packageData);
 		const unit = StorageUtils.determineDataUnitShare(packageData, null, 'commitmentAmount');
 		return { commitmentAmount: packageData[`commitmentAmount${unit}`], unit };
+	};
+
+	toggleWhiteListOpen = () => {
+		console.log('Opening whitelist modal');
+		this.setState(state => ({ ...state, whiteListModalOpen: !state.whiteListModalOpen }));
 	};
 
 	componentDidMount() {
@@ -110,21 +110,34 @@ class ShareDetailView extends Component {
 	render() {
 		const { breakpoint } = this.props;
 		const { storage, storage: { icon, name = '', type } = {} } = this.state.storageDetails || {};
-		const { stats, resolution } = this.state;
+		const { stats, resolution, whiteListModalOpen } = this.state;
 		const uniqueIcon = this.getUniqueShareIcon(icon);
 		const packageData = this.parsePackageData(stats, type);
 		const { commitmentAmount, unit } = this.getCommitmentSizes(packageData);
 
-		console.log('Commitment Amount: ', commitmentAmount);
-		console.log('Unit: ', unit);
 		return (
 			<div className='share-detail-view'>
+				{/* <PasswordModal
+					key='pwd-modal'
+					status={passwordUpdateStatus}
+					share={storage}
+					storagePassword={storagePassword}
+					toggleOpen={this.togglePasswordModal}
+				/> */}
+				{storage && (
+					<WhiteListModal
+						toggleOpen={this.toggleWhiteListOpen}
+						whiteList={storage.whitelist}
+						storageId={storage.ml_id}
+						isOpen={whiteListModalOpen}
+					/>
+				)}
 				<div className='share-options-bar' />
 				{storage && (
 					<div className='share-content'>
 						<div className='left-pane'>
 							<div className='share-name-label'>
-								<div className='lady-bug'>
+								<div className='icon'>
 									<img src={uniqueIcon ? uniqueIcon : LadyBugIcon} className='image' />
 								</div>
 								<div className='title'>{name}</div>
@@ -134,8 +147,7 @@ class ShareDetailView extends Component {
 							</div>
 							<div key='share-config' className='share-config'>
 								<Configuration
-									// toggleWhitelist={this.toggleWhiteListOpen}
-									toggleWhitelist={() => {}}
+									toggleWhitelist={this.toggleWhiteListOpen}
 									type='SHARE'
 									share={storage}
 									fields={this.generateShareDetails(storage)}
@@ -145,8 +157,7 @@ class ShareDetailView extends Component {
 							</div>
 							<div key='network-config' className='network-config'>
 								<Configuration
-									// toggleWhitelist={this.toggleWhiteListOpen}
-									toggleWhitelist={() => {}}
+									toggleWhitelist={this.toggleWhiteListOpen}
 									type='NETWORK'
 									share={storage}
 									fields={this.geenrateNetworkDetails(storage)}
@@ -165,8 +176,6 @@ class ShareDetailView extends Component {
 										stats={stats}
 										type={storage.type === 'file' ? 'file' : 'object'}
 										packageType={packageData}
-										// packageTypeFile={packageTypeFile}
-										// packageTypeObject={packageTypeObject}
 										share={storage}
 										graphType='singleShare'
 										dataPoints={6}
