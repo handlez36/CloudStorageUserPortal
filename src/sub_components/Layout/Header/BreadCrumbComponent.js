@@ -2,15 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { AvatarApi } from 'services/avatar';
 import { UserProfileApi } from 'services/userProfile';
-import { UserApi } from 'services/user';
-import BloxButton from 'sub_components/Common/BloxButton';
 import { RESOLUTIONS } from 'services/config';
 
-const MAX_NAME_LENGTH = {
-	[RESOLUTIONS.LOW]: 10,
-	[RESOLUTIONS.MED]: 9,
-	[RESOLUTIONS.HIGH]: 8,
+const FONTSIZE_TITLE_DEFAULT = {
+	[RESOLUTIONS.LOW]: 14,
+	[RESOLUTIONS.MED]: 18,
+	[RESOLUTIONS.HIGH]: 24,
 };
+const FONTSIZE_TITLE_GROW = {
+	[RESOLUTIONS.LOW]: 20,
+	[RESOLUTIONS.MED]: 24,
+	[RESOLUTIONS.HIGH]: 30,
+};
+const PIXELS_TO_MOVE_UP = {
+	[RESOLUTIONS.LOW]: 60,
+	[RESOLUTIONS.MED]: 80,
+	[RESOLUTIONS.HIGH]: 104,
+};
+
 class BreadCrumbComponent extends Component {
 	constructor(props) {
 		super(props);
@@ -41,56 +50,164 @@ class BreadCrumbComponent extends Component {
 			this.setCurrentModuleAndPage();
 		}
 	}
-	goTo = url => {
+	goTo = (url, id) => {
 		const { history } = this.props;
+		this.breadCrumbClicked(id);
 
-		history.push(url);
-	};
-	getName = name => {
-		const { breakpoint } = this.props;
-		const { breadCrumbs } = this.state;
+		setTimeout(() => {
+			history.push(url);
+		}, 3600);
+		setTimeout(() => {
+			const title = document.querySelector('.title.header21');
 
-		if (name.length > MAX_NAME_LENGTH[breakpoint] && breadCrumbs.length >= 4) {
-			return name.slice(0, MAX_NAME_LENGTH[breakpoint]) + '..';
-		} else {
-			return name;
-		}
+			if (title) {
+				title.classList.remove('hide');
+			}
+		}, 5000);
 	};
+
 	filterBreadCrumbs = breadCrumbs => {
 		let currentBreadCrumbs = [];
 
-		if (breadCrumbs.length >= 5) {
-			currentBreadCrumbs = breadCrumbs.slice(breadCrumbs.length - 5, breadCrumbs.length - 1);
-		} else {
-			currentBreadCrumbs = breadCrumbs.slice(0, breadCrumbs.length - 1);
-		}
+		currentBreadCrumbs = breadCrumbs.slice(0, breadCrumbs.length - 1);
+		//insert home at beginning of breadcrumbs.
+		currentBreadCrumbs.unshift({ name: 'HOME', url: '/portal/' });
+
 		return currentBreadCrumbs;
 	};
 
+	breadCrumbClicked = id => {
+		const crumb = document.getElementById(id);
+		const allCrumbs = document.getElementsByClassName('crumb');
+		const breadcrumbs = document.querySelector('.breadcrumbs');
+		const title = document.querySelector('.title.header21');
+		const box = document.querySelector('.box');
+		const { breadCrumbs } = this.state;
+
+		if (allCrumbs && breadCrumbs.length > 1) {
+			for (let i = 0; i <= allCrumbs.length - 1; i++) {
+				allCrumbs[i].classList.add('hide-all');
+			}
+		}
+		if (breadcrumbs) {
+			breadcrumbs.classList.add('expand');
+		}
+
+		if (crumb) {
+			crumb.classList.add('clicked');
+			crumb.style.fontSize = FONTSIZE_TITLE_GROW[this.props.breakpoint] + 'px';
+
+			setTimeout(() => {
+				const pixelsToTranslate = PIXELS_TO_MOVE_UP[this.props.breakpoint] + 'px';
+				if (box) {
+					box.style.transform = `translate(-50%,-${pixelsToTranslate})`;
+				}
+
+				if (title) {
+					title.classList.add('hide');
+				}
+			}, 2000);
+			setTimeout(() => {
+				if (box) {
+					box.style.transform = 'translate(-50%,0)';
+				}
+				if (crumb) {
+					crumb.classList.remove('clicked');
+					crumb.style.fontSize = FONTSIZE_TITLE_DEFAULT[this.props.breakpoint] + 'px';
+				}
+
+				const allCrumbs = document.getElementsByClassName('crumb');
+
+				if (allCrumbs && breadCrumbs.length > 1) {
+					for (let i = 0; i <= allCrumbs.length - 1; i++) {
+						allCrumbs[i].classList.remove('hide-all');
+					}
+				}
+				if (breadcrumbs) {
+					breadcrumbs.classList.remove('expand');
+				}
+			}, 3500);
+		}
+	};
+
 	getBreadCrumbs = breadCrumbs => {
-		if (breadCrumbs.length >= 1 && breadCrumbs.length <= 4) {
+		if (breadCrumbs.length >= 1) {
 			return (
 				<div className='breadcrumbs '>
 					{breadCrumbs.map((breadcrumb, i) => (
 						<div
 							key={`${breadcrumb.name}-${i}`}
 							className='crumb header50'
-							onClick={() => this.goTo(breadcrumb.url)}
+							onClick={() => this.goTo(breadcrumb.url, `${breadcrumb.name}-${i}`)}
+							id={`${breadcrumb.name}-${i}`}
 						>
-							{this.getName(breadcrumb.name)}
+							{breadcrumb.name}
 						</div>
 					))}
 				</div>
 			);
 		}
 	};
+	updateBreadCrumbComponentWidth = () => {
+		const { breadCrumbs } = this.state;
+		const reactGridBreadCrumbComponent = document.querySelector(
+			'.react-grid-item.breadcrumb-component',
+		);
+		console.log('hello niamh here');
+		if (reactGridBreadCrumbComponent && breadCrumbs.length >= 6) {
+			console.log('bread crumb component', reactGridBreadCrumbComponent);
+			//update width
+
+			//	reactGridBreadCrumbComponent.style.width = '500px';
+			//	reactGridBreadCrumbComponent.style.transform = 'translate(410px,0)';
+		}
+	};
+	onMouseOver = () => {
+		const { breadCrumbs } = this.state;
+		const dropdownbox = document.querySelector('.box');
+		const breadCrumbWrapper = document.querySelector('.breadcrumb-component-wrapper');
+
+		if (breadCrumbWrapper) {
+			breadCrumbWrapper.classList.add('hover');
+			if (breadCrumbs.length === 4) {
+				breadCrumbWrapper.classList.add('four');
+			} else if (breadCrumbs.length === 5) {
+				breadCrumbWrapper.classList.add('five');
+			}
+		}
+		if (dropdownbox) {
+			dropdownbox.classList.add('expand');
+		}
+		this.updateBreadCrumbComponentWidth();
+	};
+	onMouseOut = () => {
+		const dropdownbox = document.querySelector('.box');
+		const breadCrumbWrapper = document.querySelector('.breadcrumb-component-wrapper');
+
+		if (breadCrumbWrapper) {
+			breadCrumbWrapper.classList.remove('hover');
+			breadCrumbWrapper.classList.remove('five');
+			breadCrumbWrapper.classList.remove('four');
+		}
+		if (dropdownbox) {
+			dropdownbox.classList.remove('expand');
+		}
+	};
 
 	render() {
 		const { currentPage, breadCrumbs } = this.state;
 		return (
-			<div className='breadcrumb-component-wrapper'>
+			<div
+				className='breadcrumb-component-wrapper'
+				onMouseOver={this.onMouseOver}
+				onMouseOut={this.onMouseOut}
+			>
+				<div className='box'>
+					<div className='title sub'></div>
+					<div className='breadcrumb-dropdown'>{this.getBreadCrumbs(breadCrumbs)}</div>
+				</div>
 				<div className='title header21'>{currentPage}</div>
-				<div className='breadcrumb-dropdown'>{this.getBreadCrumbs(breadCrumbs)}</div>
+				{/* <div className='breadcrumb-dropdown'>{this.getBreadCrumbs(breadCrumbs)}</div> */}
 			</div>
 		);
 	}

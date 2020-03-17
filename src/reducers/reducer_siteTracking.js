@@ -6,6 +6,31 @@ const initialState = {
 	breadCrumbs: [],
 };
 
+const checkForDuplicateBreadCrumb = (state, page) => {
+	const currentBreadCrumbs = [...state.breadCrumbs];
+	const filteredBreadCrumbs = [];
+	currentBreadCrumbs.filter(crumb => crumb.name !== page && filteredBreadCrumbs.push(crumb));
+	return filteredBreadCrumbs;
+};
+const setUrl = (module, action) => {
+	let page = action.page.toLowerCase();
+	page = page.replace(' ', '_');
+	page = page.replace(' ', '_');
+	let url = action.url;
+
+	if (!url) {
+		if (page === `_${module}_overview` || page === `${module}_overview`) {
+			url = `/portal/${module}`;
+		} else if (page === 'home') {
+			url = `/portal/`;
+		} else {
+			url = `/portal/${module}/${page}`;
+		}
+	}
+	console.log('URL', url);
+	return url;
+};
+
 export default function(state = initialState, action) {
 	switch (action.type) {
 		case MODULE_SELECT:
@@ -14,21 +39,16 @@ export default function(state = initialState, action) {
 			return { ...state, page: action.page };
 		case ADD_BREADCRUMB:
 			const module = action.module ? action.module.toLowerCase() : '';
-			let page = action.page.toLowerCase();
-			page = page.replace(' ', '_');
-			page = page.replace(' ', '_');
-			let url = action.url;
-			if (!url) {
-				if (page === `_${module}_overview` || page === `${module}_overview`) {
-					url = `/portal/${module}`;
-				} else if (page === 'home') {
-					url = `/portal/`;
-				} else {
-					url = `/portal/${module}/${page}`;
-				}
-			}
+			const breadCrumbs = checkForDuplicateBreadCrumb(state, action.page);
+			const url = setUrl(module, action);
+
 			const breadCrumb = { name: action.page, url };
-			return { ...state, breadCrumbs: [...state.breadCrumbs, breadCrumb] };
+			//if module has changed refresh breadcrumbs
+			if (module !== state.module.toLowerCase()) {
+				return { ...state, breadCrumbs: [breadCrumb] };
+			} else {
+				return { ...state, breadCrumbs: [...breadCrumbs, breadCrumb] };
+			}
 
 		default:
 			return state;

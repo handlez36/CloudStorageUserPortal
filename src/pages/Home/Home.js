@@ -123,7 +123,7 @@ class Home extends Component {
 	componentDidMount() {
 		const { addPageToBreadCrumbs } = this.props;
 
-		addPageToBreadCrumbs(SITE_PAGES.HOME);
+		//addPageToBreadCrumbs(SITE_PAGES.HOME);
 
 		this.onBreakpointChange();
 		this.myObserver = new ResizeObserver(entries => {

@@ -1,13 +1,154 @@
 .breadcrumb-component-wrapper {
-	width: GetSize(20);
-	height: GetSize(5);
-	background-color: $White;
+	width: GetSize(1);
+	height: GetSize(1);
+	background-color: transparent;
+	background-position: left bottom;
+	transition: width 2s, height 2s ease-in-out;
+	overflow: visible;
+	transform: translate(-50%, 0%);
+	position: absolute;
+	left: 50%;
+	.expand {
+		width: 100% !important;
+		height: 100px !important;
+		transform-origin: top;
+	}
+
+	&.hover {
+		min-width: GetSize(40);
+		width: 100%;
+		height: 100%;
+		&.four {
+			min-width: GetSize(50);
+		}
+		&.five {
+			min-width: GetSize(62);
+		}
+
+		.title {
+			width: 100%;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0%);
+		}
+	}
+
+	.box {
+		width: 10px;
+		height: 10px;
+		background-color: $White;
+		transform: translate(-50%, 0%);
+		position: absolute;
+		left: 50%;
+
+		overflow: visible;
+		transition: all 2s ease-in-out;
+		.title {
+			width: 0px;
+			height: 10px;
+			opacity: 0;
+			transition: width 2s, height 2s;
+		}
+		.breadcrumb-dropdown {
+			width: 0px;
+			height: 0px;
+			opacity: 0;
+
+			.breadcrumbs {
+				opacity: 0;
+			}
+		}
+
+		&.expand {
+			background-color: $White;
+			.title {
+				background-color: $Cool_Gray_Light_1;
+				width: 100%;
+				height: GetSize(5);
+				opacity: 1;
+			}
+
+			.breadcrumb-dropdown {
+				box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+				overflow: visible;
+				background-color: transparent;
+				transition-delay: 2s;
+				margin-top: GetSize(5);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				height: GetSize(7);
+				width: 100%;
+				opacity: 1;
+				transition: transform 2s, opacity 2s ease-in-out;
+				.breadcrumbs {
+					width: 100%;
+					height: GetSize(2) !important;
+					margin-top: GetSize(3);
+					padding-right: GetSize(2);
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					animation-name: fadeInOpacity;
+					animation-iteration-count: 1;
+					animation-timing-function: ease-in;
+					animation-duration: 2.5s;
+					opacity: 1;
+					transition: all 2s ease-in-out;
+
+					.crumb {
+						cursor: pointer;
+						height: GetSize(2);
+						color: $Cool_Gray_Dark_3;
+						border-radius: 0px;
+						margin-left: GetSize(1.5);
+						transition: all 2s ease-in-out;
+						width: 100%;
+						text-align: center;
+						&.hide-all {
+							opacity: 0;
+							width: 0px !important;
+							padding: 0px;
+						}
+						&.clicked {
+							width: 100%;
+							@include Header21;
+							background-color: $White;
+							text-align: center;
+							margin-top: 5px;
+							position: inline-block;
+							flex-grow: 1;
+							opacity: 1;
+						}
+					}
+					.crumb.clicked:after {
+						display: none;
+					}
+
+					.crumb:after {
+						content: '';
+						display: block;
+						left: 0;
+						width: GetSize(2);
+						height: GetSize(2);
+						position: relative;
+						border-left: 1px solid $Cool_Gray_Med_1;
+						margin-top: GetSize(-2);
+						margin-left: GetSize(-1);
+					}
+
+					.crumb:first-child:after {
+						border-left: none;
+					}
+					.crumb:last-child {
+						@include Header51;
+					}
+				}
+			}
+		}
+	}
 
 	.title {
-		background: linear-gradient(90deg, $White 40%, $Cool_Gray_Light_1 100%);
-		background-size: 250% 100%;
-		background-position: left bottom;
-		transition: all 0.84s ease-in-out;
 		width: GetSize(20);
 		height: GetSize(5);
 		text-align: center;
@@ -19,236 +160,289 @@
 		left: 50%;
 		padding-top: GetSize(1.5);
 		letter-spacing: 1px;
-	}
-	.breadcrumb-dropdown {
-		width: GetSize(37);
-		height: GetSize(0);
-		opacity: 0;
-		transition: width 1s, height 1s;
-		.breadcrumbs {
+		&.hide {
 			opacity: 0;
 		}
 	}
 }
-.breadcrumb-component-wrapper:hover {
-	.title {
-		width: GetSize(37);
-		position: absolute;
-		left: 50%;
-		transform: translate(-50%, 0%);
-		background-position: right bottom;
-	}
-	.breadcrumb-dropdown {
-		margin-top: GetSize(5);
-		box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
-		width: GetSize(37);
-		height: GetSize(7);
-		position: absolute;
-		left: 50%;
-		opacity: 1;
-		transform: translate(-50%, 0%);
-		background-color: $White;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		.breadcrumbs {
-			width: auto;
-			height: GetSize(2);
-			margin-top: GetSize(3);
-			padding-right: GetSize(2);
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			opacity: 1;
-			animation-name: fadeInOpacity;
-			animation-iteration-count: 1;
-			animation-timing-function: ease-in;
-			animation-duration: 1s;
-			.crumb {
-				cursor: pointer;
-				height: GetSize(2);
-				color: $Cool_Gray_Dark_3;
-				border-radius: 0px;
-				margin-left: GetSize(1.5);
-				word-break: none;
-			}
-			.crumb:after {
-				content: '';
-				display: block;
-				left: 0;
-				width: GetSize(2);
-				height: GetSize(2);
-				position: relative;
-				border-left: 1px solid $Cool_Gray_Med_1;
-				margin-top: GetSize(-2);
-				margin-left: GetSize(-1);
-			}
 
-			.crumb:first-child:after {
-				border-left: none;
-			}
-			.crumb:last-child {
-				@include Header51;
-			}
-		}
-	}
-}
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 	.breadcrumb-component-wrapper {
-		width: GetSize(38);
-		height: GetSize(8);
-		background-color: $White;
+		.expand {
+			height: GetSize(17) !important;
+		}
+		&.hover {
+			min-width: GetSize(45);
+			width: 100%;
+			//height: 100%;
+			&.four {
+				min-width: GetSize(62);
+			}
+			&.five {
+				min-width: GetSize(75);
+			}
 
-		cursor: pointer;
-		.title {
-			background: linear-gradient(90deg, $White 40%, $Cool_Gray_Light_1 100%);
-			background-size: 250% 100%;
-			background-position: left bottom;
-			transition: all 0.84s ease-in-out;
-			width: GetSize(38);
-			height: GetSize(8);
-			text-align: center;
-			color: $Cool_Gray_Dark_3;
-			position: absolute;
-			text-transform: uppercase;
+			.title {
+				width: 100%;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, 0%);
+			}
+		}
+
+		.box {
+			width: 10px;
+			height: 10px;
+			background-color: $White;
 			transform: translate(-50%, 0%);
 			position: absolute;
 			left: 50%;
-			padding-top: GetSize(2.8);
-		}
-		.breadcrumb-dropdown {
-			width: GetSize(44);
-			height: GetSize(0);
-			opacity: 0;
-			transition: width 1s, height 1s;
-		}
-	}
-	.breadcrumb-component-wrapper:hover {
-		.title {
-			width: GetSize(44);
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%, 0%);
-			background-position: right bottom;
-		}
-		.breadcrumb-dropdown {
-			margin-top: GetSize(8);
-			width: GetSize(44);
-			height: GetSize(9);
-			opacity: 1;
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%, 0%);
-			.breadcrumbs {
-				width: auto;
-				height: GetSize(2);
-				margin-top: GetSize(3.7);
-				padding-right: GetSize(2);
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				.crumb {
-					cursor: pointer;
-					height: GetSize(2);
-					color: $Cool_Gray_Dark_3;
-					border-radius: 0px;
-					margin-left: GetSize(2);
-					word-break: none;
-				}
-				.crumb:after {
-					content: '';
-					display: block;
-					left: 0;
-					width: GetSize(2);
-					height: GetSize(2);
-					position: relative;
-					border-left: 1px solid $Cool_Gray_Med_1;
-					margin-top: GetSize(-2.2);
-					margin-left: GetSize(-1);
+
+			overflow: visible;
+			transition: all 2s ease-in-out;
+			.title {
+				width: 0px;
+				height: 10px;
+				opacity: 0;
+				transition: width 2s, height 2s;
+			}
+			.breadcrumb-dropdown {
+				width: 0px;
+				height: 0px;
+				opacity: 0;
+
+				.breadcrumbs {
+					opacity: 0;
 				}
 			}
+
+			&.expand {
+				background-color: $White;
+
+				.title {
+					background-color: $Cool_Gray_Light_1;
+					width: 100%;
+					height: GetSize(8);
+					opacity: 1;
+				}
+
+				.breadcrumb-dropdown {
+					transition-delay: 1s;
+					margin-top: GetSize(8);
+					height: GetSize(9);
+
+					.breadcrumbs {
+						width: 100%;
+						height: GetSize(2) !important;
+						margin-top: 27px;
+						padding-right: GetSize(2);
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						animation-name: fadeInOpacity;
+						animation-iteration-count: 1;
+						animation-timing-function: ease-in;
+						animation-duration: 2.5s;
+						opacity: 1;
+						transition: all 2s ease-in-out;
+
+						.crumb {
+							cursor: pointer;
+							height: GetSize(2);
+							color: $Cool_Gray_Dark_3;
+							border-radius: 0px;
+							margin-left: GetSize(1.5);
+							transition: all 2s ease-in-out;
+							width: 100%;
+							text-align: center;
+							&.hide-all {
+								opacity: 0;
+								width: 0px !important;
+								padding: 0px;
+							}
+							&.clicked {
+								width: 100%;
+								@include Header21;
+								background-color: $White;
+								text-align: center;
+								margin-top: 0px;
+								flex-grow: 1;
+								opacity: 1;
+							}
+						}
+						.crumb.clicked:after {
+							display: none;
+						}
+
+						.crumb:after {
+							content: '';
+							display: block;
+							left: 0;
+							width: GetSize(2);
+							height: GetSize(2);
+							position: relative;
+							border-left: 1px solid $Cool_Gray_Med_1;
+							margin-top: -18px;
+							margin-left: GetSize(-1);
+						}
+
+						.crumb:first-child:after {
+							border-left: none;
+						}
+						.crumb:last-child {
+							@include Header51;
+						}
+					}
+				}
+			}
+		}
+
+		.title {
+			width: GetSize(24);
+			height: GetSize(8);
+			padding-top: GetSize(2.5);
 		}
 	}
 }
 @media screen and (min-width: $high-res + 1) {
 	.breadcrumb-component-wrapper {
-		width: GetSize(40);
-		height: GetSize(10);
-		background-color: $White;
+		.expand {
+			height: GetSize(22) !important;
+		}
+		&.hover {
+			min-width: GetSize(60);
+			width: 100%;
+			//height: 100%;
+			&.four {
+				min-width: GetSize(80);
+			}
+			&.five {
+				min-width: GetSize(100);
+			}
 
-		cursor: pointer;
-		.title {
-			background: linear-gradient(90deg, $White 30%, $Warm_Gray_Light_1 100%);
-			background-size: 250% 100%;
-			background-position: left bottom;
-			transition: all 0.84s ease-in-out;
-			width: GetSize(40);
-			height: GetSize(10);
-			text-align: center;
-			color: $Cool_Gray_Dark_3;
-			position: absolute;
-			text-transform: uppercase;
+			.title {
+				width: 100%;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, 0%);
+			}
+		}
 
+		.box {
+			width: 10px;
+			height: 10px;
+			background-color: $White;
 			transform: translate(-50%, 0%);
 			position: absolute;
 			left: 50%;
-			padding-top: GetSize(3);
-		}
-		.breadcrumb-dropdown {
-			width: GetSize(60);
-			height: GetSize(0);
-			opacity: 0;
-			transition: width 1s, height 1s;
-		}
-	}
-	.breadcrumb-component-wrapper:hover {
-		.title {
-			width: GetSize(60);
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%, 0%);
-			background-position: right bottom;
-		}
-		.breadcrumb-dropdown {
-			margin-top: GetSize(10);
-			width: GetSize(60);
-			height: GetSize(12);
-			opacity: 1;
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%, 0%);
-			.breadcrumbs {
-				width: auto;
-				height: GetSize(2);
-				margin-top: GetSize(5);
-				padding-right: GetSize(2);
-				display: flex;
-				flex-direction: row;
-				align-items: center;
 
-				.crumb {
-					cursor: pointer;
-					height: GetSize(2);
-					color: $Cool_Gray_Dark_3;
-					border-radius: 0px;
-					margin-left: GetSize(2);
-					word-break: none;
+			overflow: visible;
+			transition: all 2s ease-in-out;
+			.title {
+				width: 0px;
+				height: 10px;
+				opacity: 0;
+				transition: width 2s, height 2s;
+			}
+			.breadcrumb-dropdown {
+				width: 0px;
+				height: 0px;
+				opacity: 0;
+
+				.breadcrumbs {
+					opacity: 0;
 				}
-				.crumb:after {
-					content: '';
-					display: block;
-					left: 0;
-					width: GetSize(2);
-					height: GetSize(3);
-					position: relative;
-					border-left: 1px solid $Cool_Gray_Med_1;
-					margin-top: GetSize(-3);
-					margin-left: GetSize(-1);
+			}
+
+			&.expand {
+				background-color: $White;
+
+				.title {
+					background-color: $Cool_Gray_Light_1;
+					width: 100%;
+					height: GetSize(10);
+					opacity: 1;
+				}
+
+				.breadcrumb-dropdown {
+					transition-delay: 1s;
+					margin-top: GetSize(10);
+					height: GetSize(12);
+
+					.breadcrumbs {
+						width: 100%;
+						height: GetSize(2) !important;
+						margin-top: 38px;
+						padding-right: GetSize(2);
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						animation-name: fadeInOpacity;
+						animation-iteration-count: 1;
+						animation-timing-function: ease-in;
+						animation-duration: 2.5s;
+						opacity: 1;
+						transition: all 2s ease-in-out;
+
+						.crumb {
+							cursor: pointer;
+							height: GetSize(2);
+							color: $Cool_Gray_Dark_3;
+							border-radius: 0px;
+							margin-left: GetSize(1.5);
+							transition: all 2s ease-in-out;
+							width: 100%;
+							text-align: center;
+							&.hide-all {
+								opacity: 0;
+								width: 0px !important;
+								padding: 0px;
+							}
+							&.clicked {
+								width: 100%;
+								@include Header21;
+								background-color: $White;
+								text-align: center;
+								margin-top: 0px;
+								flex-grow: 1;
+								opacity: 1;
+							}
+						}
+						.crumb.clicked:after {
+							display: none;
+						}
+
+						.crumb:after {
+							content: '';
+							display: block;
+							left: 0;
+							width: GetSize(2);
+							height: GetSize(2);
+							position: relative;
+							border-left: 1px solid $Cool_Gray_Med_1;
+							margin-top: -20px;
+							margin-left: GetSize(-1);
+						}
+
+						.crumb:first-child:after {
+							border-left: none;
+						}
+						.crumb:last-child {
+							@include Header51;
+						}
+					}
 				}
 			}
 		}
+
+		.title {
+			width: GetSize(24);
+			height: GetSize(8);
+			padding-top: GetSize(3.2);
+		}
 	}
 }
+
 @keyframes fadeInOpacity {
 	0% {
 		opacity: 0;

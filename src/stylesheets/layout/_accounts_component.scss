@@ -1,7 +1,7 @@
 .accounts-component-wrapper {
 	width: GetSize(25);
 	height: GetSize(5);
-	transition: width 1s, height 1s;
+	transition: width 2s, height 2s;
 	position: absolute;
 	display: flex;
 	flex-direction: row;
@@ -20,10 +20,10 @@
 		align-items: flex-end;
 		text-transform: uppercase;
 		background-color: $White;
-		background: linear-gradient(90deg, $White 40%, $Cool_Gray_Light_1 100%);
+		background: linear-gradient(90deg, $White 50%, $Cool_Gray_Light_1 50%);
 		background-size: 250% 100%;
 		background-position: left bottom;
-		transition: all 0.79s ease-out;
+		transition: all 2s ease-out;
 		position: absolute;
 		right: GetSize(5);
 	}
@@ -32,11 +32,11 @@
 		width: GetSize(0);
 		height: GetSize(0);
 		.multi-user {
-			transition: width 1s, height 1s;
+			transition: width 2s, height 2s;
 			height: GetSize(0);
 		}
 		.single-user {
-			transition: width 1s, height 1s;
+			transition: width 2s, height 2s;
 			height: GetSize(0);
 			.avatar {
 				display: none;
@@ -117,7 +117,7 @@
 			height: GetSize(7);
 			display: flex;
 			flex-direction: column;
-			transition: width 1s, height 1s;
+			transition: width 2s, height 2s;
 
 			.title {
 				width: GetSize(9);
