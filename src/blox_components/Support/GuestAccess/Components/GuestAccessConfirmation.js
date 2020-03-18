@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import TicketNumber from '../../../components/Common/TicketNumber';
-import BloxButton from '../../../components/Common/BloxButton';
-import { CONFIRMATION } from '../TicketConstants';
+import TicketNumber from 'components_old/Common/TicketNumber';
+import BloxButton from 'sub_components/Common/BloxButton';
+import { CONFIRMATION } from 'utils/TicketConstants';
 
 class GuestAccessConfirmation extends Component {
 	render() {

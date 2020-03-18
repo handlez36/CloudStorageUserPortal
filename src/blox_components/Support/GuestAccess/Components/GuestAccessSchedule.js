@@ -2,11 +2,11 @@ import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import DateTime from 'react-datetime';
 
-import TextInput from '../../../components/Forms/BloxTextInput';
-import BloxDurationSlider from '../../../components/Forms/BloxDurationSlider';
-import Button from '../../../components/Common/BloxButton';
-import { INPUT_TYPES } from '../../../components/Common/CommonConstants';
-import DateTimeClock from '../../../components/Common/DateTimePicker';
+import TextInput from 'sub_components/Common/BloxTextInput';
+import BloxDurationSlider from 'components_old/Forms/BloxDurationSlider';
+import Button from 'sub_components/Common/BloxButton';
+import { INPUT_TYPES } from 'utils/CommonConstants';
+import DateTimeClock from 'components_old/Common/DateTimePicker';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const CheckmarkIcon = `${CDN_URL}common/icons-forms-check.svg`;
 const CalendarIcon = `${CDN_URL}support/icons-calendar-form.svg`;

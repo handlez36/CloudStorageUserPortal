@@ -15,6 +15,7 @@ const PAGES = {
 		Overview: 'OverviewPage',
 		Ticket_history: 'TicketHistoryPage',
 		Remote_hands: 'RemoteHandsPage',
+		Guest_access: 'GuestAccessPage',
 	},
 	Storage: {
 		Overview: 'OverviewPage',

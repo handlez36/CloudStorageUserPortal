@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import Map from '../../../components/Common/Map';
-import TextInput from '../../../components/Forms/BloxTextInput';
-import Button from '../../../components/Common/BloxButton';
-import { INPUT_TYPES } from '../../../components/Common/CommonConstants';
-import { WIZARD_TITLE_PREFIXES } from '../TicketConstants';
-import { getTitlePlaceholder, getGuestAccessTickets } from '../Utils/SupportUtils';
+import Map from 'components_old/Common/Map';
+import TextInput from 'sub_components/Common/BloxTextInput';
+import Button from 'sub_components/Common/BloxButton';
+import { INPUT_TYPES } from 'utils/CommonConstants';
+import { WIZARD_TITLE_PREFIXES } from 'utils/TicketConstants';
+import { getTitlePlaceholder, getGuestAccessTickets } from 'utils/SupportUtils';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Checkmark = `${CDN_URL}common/icons-forms-check.svg`;
 

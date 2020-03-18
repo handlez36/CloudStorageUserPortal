@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import ExpandableSection from '../../../components/Common/ExpandableSection';
-import ExpandableContent from '../../../components/Support/ExpandableContentComponent';
-import Button from '../../../components/Common/BloxButton';
-import ErrorModal from '../../../components/Common/ErrorModal';
-import { TicketApi } from '../../../services/ticket';
-import { WIZARD_TITLE_PREFIXES } from '../TicketConstants';
+import ExpandableSection from 'components_old/Common/ExpandableSection';
+import ExpandableContent from 'components_old/Support/ExpandableContentComponent';
+import Button from 'sub_components/Common/BloxButton';
+import ErrorModal from 'sub_components/Common/ErrorModal';
+import { TicketApi } from 'services/ticket';
+import { WIZARD_TITLE_PREFIXES } from 'utils/TicketConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const TopIcon = `${CDN_URL}support/image-what.svg`;
 
@@ -207,7 +207,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	null,
-)(GuestAccessReview);
+export default connect(mapStateToProps, null)(GuestAccessReview);

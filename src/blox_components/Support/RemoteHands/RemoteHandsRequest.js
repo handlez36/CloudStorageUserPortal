@@ -6,7 +6,7 @@ import Wizard from 'components_old/Forms/BloxWizard';
 import ErrorModal from 'sub_components/Common/ErrorModal';
 import { MENU } from 'utils/TicketConstants';
 import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
-import { SITE_PAGES } from 'utils/CommonConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import { TicketApi } from 'services/ticket';
 import { Utils } from 'services/utils';
 import { formatSupportTicket } from 'utils/SupportUtils';

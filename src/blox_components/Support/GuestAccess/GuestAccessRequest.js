@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import Wizard from '../../../components/Forms/BloxWizard';
-import TicketDescription from './GuestAccessDescription';
-import TicketDocuSign from './GuestAccessDocuSign';
-import TicketSchedule from './GuestAccessSchedule';
-import TicketContacts from './GuestAccessContacts';
-import TicketReview from './GuestAccessReview';
-import TicketConfirmation from './GuestAccessConfirmation';
-import ErrorModal from '../../../components/Common/ErrorModal';
-import { MENU } from '../TicketConstants';
-import { updatePage } from '../../../actions/siteTracking';
-import { SITE_PAGES } from '../../../components/Common/CommonConstants';
-import { TicketApi } from '../../../services/ticket';
-import { formatSupportTicket } from '../Utils/SupportUtils';
-import { Utils } from '../../../services/utils';
+import Wizard from 'components_old/Forms/BloxWizard';
+import ErrorModal from 'sub_components/Common/ErrorModal';
+import { MENU } from 'utils/TicketConstants';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
+import { TicketApi } from 'services/ticket';
+import { formatSupportTicket } from 'utils/SupportUtils';
+import { Utils } from 'services/utils';
+import TicketDescription from './Components/GuestAccessDescription';
+import TicketDocuSign from './Components/GuestAccessDocuSign';
+import TicketSchedule from './Components/GuestAccessSchedule';
+import TicketContacts from './Components/GuestAccessContacts';
+import TicketReview from './Components/GuestAccessReview';
+import TicketConfirmation from './Components/GuestAccessConfirmation';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const GuestAccess = `${CDN_URL}common/tickets/icon-guest-access.svg`;
@@ -178,8 +178,10 @@ class GuestAccessRequest extends Component {
 	};
 
 	componentDidMount() {
-		const { updatePage } = this.props;
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.SUPPORT[MENU.GUESTACCESS]);
+		addPageToBreadCrumbs(SITE_PAGES.SUPPORT[MENU.GUESTACCESS], SITE_MODULES.SUPPORT);
+		updateModule(SITE_MODULES.SUPPORT);
 	}
 
 	render() {
@@ -252,7 +254,6 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	{ updatePage },
-)(GuestAccessRequest);
+export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(
+	GuestAccessRequest,
+);

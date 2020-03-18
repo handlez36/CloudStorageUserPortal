@@ -8,13 +8,13 @@ import RemoteHands from '../../blox_components/Support/RemoteHands/RemoteHandsRe
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		ticketHistory: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TEN, customHeight: 50 },
+		remoteHands: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TEN, customHeight: 50 },
 	},
 	[RESOLUTIONS.MED]: {
-		ticketHistory: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 50 },
+		remoteHands: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 50 },
 	},
 	[RESOLUTIONS.HIGH]: {
-		ticketHistory: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 50 },
+		remoteHands: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 50 },
 	},
 };
 
@@ -29,7 +29,7 @@ class RemoteHandsPage extends Component {
 				breakpoint={breakpoint}
 				location={location}
 			>
-				<div key='ticketHistory' className='ticketHistory'>
+				<div key='remoteHands' className='remoteHands'>
 					<ComponentWrapper hideTitle hideBorder>
 						<RemoteHands match={match} history={history} />
 					</ComponentWrapper>

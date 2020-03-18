@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BloxButton from '../../../components/Common/BloxButton';
-import Button from '../../../components/Common/BloxButton';
+import BloxButton from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/BloxButton';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const DocuSignIcon = `${CDN_URL}support/icons-docusign-file.svg`;
 

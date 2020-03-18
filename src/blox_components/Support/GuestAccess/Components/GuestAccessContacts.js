@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import TextInput from '../../../components/Forms/BloxTextInput';
-import RadioButton from '../../../components/Common/Radio';
-import Button from '../../../components/Common/BloxButton';
-import { INPUT_TYPES, PHONEMASK } from '../../../components/Common/CommonConstants';
+import TextInput from 'sub_components/Common/BloxTextInput';
+import RadioButton from 'components_old/Common/Radio';
+import Button from 'sub_components/Common/BloxButton';
+import { INPUT_TYPES, PHONEMASK } from 'utils/CommonConstants';
 
 const FIELDS = {
 	REQUESTORNAME: 1,
