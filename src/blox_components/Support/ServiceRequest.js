@@ -23,10 +23,17 @@ const REQUEST_DETAILS = {
 	},
 };
 
-const ServiceRequest = ({ type, breakpoint }) => {
+const ServiceRequest = ({ type, breakpoint, goTo }) => {
 	const { title, description, image, className } = REQUEST_DETAILS[type];
 	const SubmitButton = (
-		<Button title='REQUEST SERVICE' customClass='blox-button' onClick={() => {}} enabled />
+		<Button
+			title='REQUEST SERVICE'
+			customClass='blox-button'
+			onClick={() => {
+				goTo(type.toLowerCase());
+			}}
+			enabled
+		/>
 	);
 
 	return (

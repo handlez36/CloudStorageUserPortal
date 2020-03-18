@@ -43,6 +43,10 @@ class OverviewPage extends Component {
 		addPageToBreadCrumbs(SITE_PAGES.SUPPORT[SUPPORT_MENU.OVERVIEW], SITE_MODULES.SUPPORT);
 		updateModule(SITE_MODULES.SUPPORT);
 	}
+	goTo = page => {
+		const { history } = this.props;
+		history.push(`/portal/support/${page}`);
+	};
 
 	render() {
 		const { breakpoint, location } = this.props;
@@ -70,14 +74,15 @@ class OverviewPage extends Component {
 						<IssueRequest breakpoint={breakpoint} />
 					</ComponentWrapper>
 				</div>
+
 				<div key={`remoteHandsRequest-${columnCount}`} className='remoteHandsRequest'>
 					<ComponentWrapper title='SERVICE Request' hideBorder>
-						<ServiceRequest type='REMOTE_HANDS' breakpoint={breakpoint} />
+						<ServiceRequest type='REMOTE_HANDS' breakpoint={breakpoint} goTo={this.goTo} />
 					</ComponentWrapper>
 				</div>
 				<div key={`guestAccessRequest-${columnCount}`} className='guestAccessRequest'>
 					<ComponentWrapper hideTitle hideBorder>
-						<ServiceRequest type='GUEST_ACCESS' breakpoint={breakpoint} />
+						<ServiceRequest type='GUEST_ACCESS' breakpoint={breakpoint} goTo={this.goTo} />
 					</ComponentWrapper>
 				</div>
 			</BloxPage>

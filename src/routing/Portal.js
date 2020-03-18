@@ -71,7 +71,7 @@ class Portal extends Component {
 					/>
 					<Route
 						exact
-						path='/portal/support/(ticket_history)?'
+						path='/portal/support/(ticket_history|remote_hands|guest_access)?'
 						render={props => (hasSupportAccess ? <PortalLayout {...props} /> : <Home {...props} />)}
 					/>
 					<Route
