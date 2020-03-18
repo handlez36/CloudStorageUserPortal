@@ -36,6 +36,8 @@
 			display: flex;
 			align-content: center;
 			height: GetSize(3);
+
+			width: GetSize(10);
 			.title {
 				margin-left: GetSize(2);
 			}
