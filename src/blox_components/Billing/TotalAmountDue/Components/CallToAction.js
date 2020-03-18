@@ -36,11 +36,13 @@ const generateSummaryBalanceCopy = ({ balance }) => {
 	const regex = /(\d*)\.?(\d*)/;
 	const matches = balance.match(regex);
 	const [, dollars, cents] = matches;
+	let amount = Utils.formatCurrency(dollars, true);
+	amount = amount.split('.');
 	if (dollars && cents) {
 		return (
 			<Fragment>
 				<span className='dollar-sign '>$</span>
-				<span className='dollars numbers30'>{Utils.formatCurrency(dollars, true)}</span>
+				<span className='dollars numbers30'>{amount[0]}</span>
 				<span className='cents total-amount-dollars-and-cents'>{cents}</span>
 			</Fragment>
 		);
@@ -157,11 +159,7 @@ const CallToAction = ({ invoices, summary, hasOnlinePaymentAccess }) => {
 			</div>
 
 			{hasOnlinePaymentAccess && (
-				<BloxButton
-					title='PAY NOW'
-					customClass='blox-button green-gradient'
-					onClick={() => {}}
-				/>
+				<BloxButton title='PAY NOW' customClass='blox-button green-gradient' onClick={() => {}} />
 			)}
 		</div>
 	);
