@@ -15,6 +15,7 @@ const IconPublic = `${CDN_URL}storage/icon-public.svg`;
 
 class ShareDetailView extends Component {
 	state = {
+		storageId: null,
 		storageDetails: {},
 		storageError: null,
 		stats: [],
@@ -36,6 +37,7 @@ class ShareDetailView extends Component {
 		// Get trend data
 		const stats = StorageUtils.sampleNetworkRequest;
 		this.setState({
+			storageId: id,
 			storageDetails,
 			stats,
 			statsError: null,
@@ -102,6 +104,15 @@ class ShareDetailView extends Component {
 		this.setState(state => ({ ...state, whiteListModalOpen: !state.whiteListModalOpen }));
 	};
 
+	componentDidUpdate() {
+		const { storageId: existingId } = this.state;
+		const { storageId: incomingId } = this.props;
+
+		if (existingId !== incomingId) {
+			this.getShareDetails(incomingId);
+		}
+	}
+
 	componentDidMount() {
 		const { storageId } = this.props;
 		this.getShareDetails(storageId);
@@ -115,7 +126,7 @@ class ShareDetailView extends Component {
 		const packageData = this.parsePackageData(stats, type);
 		const { commitmentAmount, unit } = this.getCommitmentSizes(packageData);
 
-		return (
+		return storage ? (
 			<div className='share-detail-view'>
 				{/* <PasswordModal
 					key='pwd-modal'
@@ -124,70 +135,79 @@ class ShareDetailView extends Component {
 					storagePassword={storagePassword}
 					toggleOpen={this.togglePasswordModal}
 				/> */}
-				{storage && (
-					<WhiteListModal
-						toggleOpen={this.toggleWhiteListOpen}
-						whiteList={storage.whitelist}
-						storageId={storage.ml_id}
-						isOpen={whiteListModalOpen}
-					/>
-				)}
+
+				<WhiteListModal
+					toggleOpen={this.toggleWhiteListOpen}
+					whiteList={storage.whitelist}
+					storageId={storage.ml_id}
+					isOpen={whiteListModalOpen}
+				/>
+
 				<div className='share-options-bar' />
-				{storage && (
-					<div className='share-content'>
-						<div className='left-pane'>
-							<div className='share-name-label'>
-								<div className='icon'>
-									<img src={uniqueIcon ? uniqueIcon : LadyBugIcon} className='image' />
-								</div>
-								<div className='title'>{name}</div>
-								<div className='access'>
-									<img src={storage.privateAccess ? IconPrivate : IconPublic} />
-								</div>
+
+				<div className='share-content'>
+					<div className='left-pane'>
+						<div className='share-name-label'>
+							<div className='icon'>
+								<img src={uniqueIcon ? uniqueIcon : LadyBugIcon} className='image' />
 							</div>
-							<div key='share-config' className='share-config'>
-								<Configuration
-									toggleWhitelist={this.toggleWhiteListOpen}
-									type='SHARE'
-									share={storage}
-									fields={this.generateShareDetails(storage)}
-									// changeStoragePassword={this.changeStoragePassword}
-									changeStoragePassword={() => {}}
-								/>
-							</div>
-							<div key='network-config' className='network-config'>
-								<Configuration
-									toggleWhitelist={this.toggleWhiteListOpen}
-									type='NETWORK'
-									share={storage}
-									fields={this.geenrateNetworkDetails(storage)}
-								/>
+							<div className='title'>{name}</div>
+							<div className='access'>
+								<img src={storage.privateAccess ? IconPrivate : IconPublic} />
 							</div>
 						</div>
-						<div className='right-pane'>
-							<span key='trending-label' className='trending-label'>
-								<div className='single-share-graph'>
-									<div className='header'>
-										<div className='title grid-item'>TRENDING</div>
-									</div>
-									<StorageUsageGraph
-										id={storage.type}
-										resolution={resolution}
-										stats={stats}
-										type={storage.type === 'file' ? 'file' : 'object'}
-										packageType={packageData}
-										share={storage}
-										graphType='singleShare'
-										dataPoints={6}
-										fileCommitment={storage.type === 'file' ? commitmentAmount : null}
-										objectCommitment={storage.type === 'object' ? commitmentAmount : null}
-										breakpoint={breakpoint}
-									/>
-								</div>
-							</span>
+						<div key='share-config' className='share-config'>
+							<Configuration
+								toggleWhitelist={this.toggleWhiteListOpen}
+								type='SHARE'
+								share={storage}
+								fields={this.generateShareDetails(storage)}
+								// changeStoragePassword={this.changeStoragePassword}
+								changeStoragePassword={() => {}}
+							/>
+						</div>
+						<div key='network-config' className='network-config'>
+							<Configuration
+								toggleWhitelist={this.toggleWhiteListOpen}
+								type='NETWORK'
+								share={storage}
+								fields={this.geenrateNetworkDetails(storage)}
+							/>
 						</div>
 					</div>
-				)}
+					<div className='right-pane'>
+						<span key='trending-label' className='trending-label'>
+							<div className='single-share-graph'>
+								<div className='header'>
+									<div className='title grid-item'>TRENDING</div>
+								</div>
+								<StorageUsageGraph
+									id={storage.type}
+									resolution={resolution}
+									stats={stats}
+									type={storage.type === 'file' ? 'file' : 'object'}
+									packageType={packageData}
+									share={storage}
+									graphType='singleShare'
+									dataPoints={6}
+									fileCommitment={storage.type === 'file' ? commitmentAmount : null}
+									objectCommitment={storage.type === 'object' ? commitmentAmount : null}
+									breakpoint={breakpoint}
+								/>
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+		) : (
+			<div className='share-detail-view video'>
+				<video autoPlay loop>
+					<source
+						src='https://www.mydcblox.com/cdn/library/video/chalkboard.mp4'
+						type='video/mp4'
+					/>
+					Your browser does not support the video tag.
+				</video>
 			</div>
 		);
 	}

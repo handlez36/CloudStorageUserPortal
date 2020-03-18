@@ -50,8 +50,8 @@ class Configurations extends Component {
 									{showApiKey ? share.api_key : 'View Secret Key'}
 								</div>
 							)}
-							<div className='reset-button'>
-								{share.type === 'file' && (
+							{share.type === 'file' && (
+								<div className='reset-button'>
 									<BloxButton
 										imageId='reset-icon'
 										title={'RESET'}
@@ -60,8 +60,8 @@ class Configurations extends Component {
 										onClick={changeStoragePassword}
 										icon={ResetIcon}
 									/>
-								)}
-							</div>
+								</div>
+							)}
 							<div className='copy-link'>
 								<CopyLink link={share.share_path ? share.share_path : ''} />
 							</div>{' '}

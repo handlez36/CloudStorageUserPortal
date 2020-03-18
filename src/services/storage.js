@@ -8,12 +8,25 @@ const config = {
 };
 
 export class StorageApi {
-	static getAll(filterParams = null) {
+	static async getAll(filterParams = null) {
 		const url = `${BASE_URL}/storage/`;
 		const params = filterParams || { getObjectStorage: true, getFileStorage: true };
 
-		return axios.post(url, params, config);
+		const response = await axios.post(url, params, config);
+		if (Utils.isValidResponse(response)) {
+			const { storages } = response.data;
+			return { storages, errors: null };
+		}
+
+		const { error } = response.data;
+		return { storages: null, error };
 	}
+	// static getAll(filterParams = null) {
+	// 	const url = `${BASE_URL}/storage/`;
+	// 	const params = filterParams || { getObjectStorage: true, getFileStorage: true };
+
+	// 	return axios.post(url, params, config);
+	// }
 
 	static getStorage() {
 		const url = `${BASE_URL}/storage/`;

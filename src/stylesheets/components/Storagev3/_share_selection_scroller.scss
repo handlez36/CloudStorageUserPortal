@@ -1,0 +1,46 @@
+.share-selection-scroller {
+	width: GetSize(95);
+	height: GetSize(20);
+	margin-top: GetSize(4);
+	padding-right: GetSize(10);
+	padding-left: GetSize(10);
+	.shares-label {
+		.title {
+			@include Support-Section-Header;
+		}
+		.active-shares {
+			@include Small-Text-Profile;
+			color: $DCBLOX_Gray;
+		}
+	}
+	.share-options-section {
+		// height: GetSize(21);
+		height: GetSize(17);
+		@include FlexboxRow;
+		justify-content: space-between;
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.share-selection-scroller {
+		padding-top: GetSize(4);
+		padding-right: GetSize(13);
+		padding-left: GetSize(13);
+		.shares-label {
+			.title {
+				@include Support-Section-Header;
+			}
+			.active-shares {
+				@include Small-Text-Profile;
+				color: $DCBLOX_Gray;
+			}
+		}
+		.share-options-section {
+			// height: GetSize(21);
+			height: 100%;
+			@include FlexboxRow;
+			justify-content: space-between;
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+}

@@ -64,6 +64,32 @@
 				}
 			}
 		}
+		.reset-button {
+			position: absolute;
+			top: 36%;
+			left: 52%;
+			// top: 54%;
+			// left: 56%;
+			.blox-button {
+				@include Status-Head;
+				.title {
+					opacity: 0.8;
+					letter-spacing: 0.1vw;
+				}
+			}
+			.blox-button:hover {
+				.title {
+					opacity: 1;
+				}
+			}
+			&.selected {
+				.blox-button:hover {
+					.title {
+						opacity: 1;
+					}
+				}
+			}
+		}
 		.whitelist {
 			width: calculateVw(130px, 1440);
 			height: calculateVh(50px, 1440);
