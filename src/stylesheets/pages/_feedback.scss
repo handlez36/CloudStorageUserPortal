@@ -205,8 +205,43 @@
 	z-index: 4600;
 	position: absolute;
 	right: 0%;
+	bottom: 40px;
+	width: 8vw;
+	height: 5.5vw;
+	cursor: pointer;
+	
+}
+#feedback-image-home {
+	z-index: 4600;
+	position: absolute;
+	right: 0%;
 	bottom: 0%;
 	width: 8vw;
 	height: 5.5vw;
 	cursor: pointer;
+}
+
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	#feedback-image {
+		z-index: 4600;
+		position: absolute;
+		right: 0%;
+		bottom: 64px;
+		width: 8vw;
+		height: 5.5vw;
+		cursor: pointer;
+		
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	#feedback-image {
+		z-index: 4600;
+		position: absolute;
+		right: 0%;
+		bottom: 80px;
+		width: 8vw;
+		height: 5.5vw;
+		cursor: pointer;
+		
+	}
 }

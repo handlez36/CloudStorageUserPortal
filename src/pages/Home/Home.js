@@ -121,8 +121,8 @@ class Home extends Component {
 	};
 
 	componentDidMount() {
-		const { addPageToBreadCrumbs } = this.props;
-
+		const { addPageToBreadCrumbs, updateModule } = this.props;
+		updateModule(SITE_PAGES.HOME);
 		//addPageToBreadCrumbs(SITE_PAGES.HOME);
 
 		this.onBreakpointChange();

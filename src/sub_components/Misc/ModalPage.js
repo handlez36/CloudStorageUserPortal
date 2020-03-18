@@ -38,6 +38,7 @@ class ModalPage extends Component {
 			image: '',
 			message: '',
 			label: false,
+			module: null,
 		};
 	}
 
@@ -185,7 +186,8 @@ class ModalPage extends Component {
 		}, 5000);
 	};
 	componentDidMount() {
-		this.setState({ screen: this.ScreenOne() });
+		const { site } = this.props;
+		this.setState({ screen: this.ScreenOne(), module: site.module });
 	}
 
 	FormatDescription = desc => {
@@ -246,13 +248,21 @@ class ModalPage extends Component {
 		});
 		setTimeout(this.setState({ clicked: false }), 7000);
 	};
+	componentDidUpdate(prevProps) {
+		const { site } = this.props;
+		if (prevProps.site.module !== site.module) {
+			this.setState({ module: site.module });
+		}
+	}
 
 	render() {
-		const { modal, image, message, screen, selected } = this.state;
+		const { modal, image, message, screen, selected , module} = this.state;
 		let selectionScreen;
 		if (selected) {
 			selectionScreen = this.HappyFeedBack(image, message);
 		}
+		
+		
 		return (
 			<Fragment>
 				<div className='feedback-modal-wrapper'>
@@ -263,7 +273,7 @@ class ModalPage extends Component {
 						useHeader={false}
 					/>
 				</div>
-				<img id='feedback-image' src={FeedbackImage} onClick={this.toggle} />
+				<img id={module === 'LOGIN'||module === 'HOME' ?'feedback-image-home' :'feedback-image'} src={FeedbackImage} onClick={this.toggle} />
 			</Fragment>
 		);
 	}
@@ -277,7 +287,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	null,
-)(ModalPage);
+export default connect(mapStateToProps, null)(ModalPage);
