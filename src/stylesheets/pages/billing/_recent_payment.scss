@@ -38,7 +38,7 @@
 		.cents,
 		.dollar {
 			align-self: flex-start;
-			margin-top: GetSize(1);
+			margin-top: 2px;
 		}
 		.cents {
 			padding-left: 2px;
@@ -63,7 +63,7 @@
 			height: GetSize(2);
 			.cents,
 			.dollar {
-				margin-top: 10px;
+				margin-top: 3px;
 			}
 		}
 		.invoice-number {

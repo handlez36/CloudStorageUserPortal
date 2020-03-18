@@ -28,9 +28,10 @@
 		transition: all 2s ease-in-out;
 	}
 	.logout-button {
-		display: none;
+		opacity: 0;
 		position: absolute;
 		width: GetSize(10);
+		transition: opacity 3s ease-in-out;
 		.blox-button {
 			display: flex;
 			align-content: center;
@@ -63,7 +64,7 @@
 	background-color: $White;
 	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
 	.logout-button {
-		display: flex;
+		opacity: 1;
 	}
 	.name {
 		width: GetSize(29);
