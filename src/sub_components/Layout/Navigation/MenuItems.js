@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ItemImage } from 'semantic-ui-react';
 
 class MenuItems extends Component {
 	constructor(props) {
@@ -7,6 +8,7 @@ class MenuItems extends Component {
 		this.state = {
 			currentModule: null,
 			currentPage: null,
+			sitePage: null,
 		};
 	}
 	onClick = itemClicked => {
@@ -29,6 +31,53 @@ class MenuItems extends Component {
 		this.setActiveClass(itemClicked);
 	};
 
+	checkLocation = () => {
+		//	console.log(window.location.href);
+		const { section } = this.props;
+		const pathname = window.location.pathname;
+		const matches = pathname.split('/');
+
+		if (matches) {
+			const [, , siteModule, sitePage] = matches;
+
+			if (sitePage) {
+				return sitePage;
+			} else {
+				return 'OVERVIEW';
+			}
+		}
+	};
+	componentDidMount() {
+		const pathname = window.location.pathname;
+		const matches = pathname.split('/');
+
+		if (matches) {
+			const [, , siteModule, sitePage] = matches;
+
+			if (sitePage) {
+				this.setState({ sitePage });
+			} else {
+				this.setState({ siteModule });
+			}
+		}
+	}
+	componentDidUpdate() {
+		const { pathname } = this.state;
+		const currentPathname = window.location.pathname;
+		const matches = currentPathname.split('/');
+
+		if (matches) {
+			const [, , siteModule, sitePage] = matches;
+
+			if (pathname !== sitePage) {
+				const currentActivePage = this.checkLocation();
+
+				this.setActiveClass(currentActivePage);
+				this.setState({ pathname: sitePage });
+			}
+		}
+	}
+
 	setActiveClass(type) {
 		const { section, navigation } = this.props;
 
@@ -37,7 +86,7 @@ class MenuItems extends Component {
 		);
 		type = type.replace('_', ' ');
 		type = type.replace('_', ' ');
-		const newActiveElement = this.refs[type];
+		const newActiveElement = this.refs[type.toLowerCase()];
 
 		if (currentActiveElement) {
 			currentActiveElement.classList.remove('active');
@@ -50,6 +99,7 @@ class MenuItems extends Component {
 				}
 			}, 1000);
 		}
+		console.log('new active element', newActiveElement);
 		if (newActiveElement) {
 			newActiveElement.classList.remove('animate');
 			newActiveElement.classList.add('active');
@@ -65,8 +115,12 @@ class MenuItems extends Component {
 					menu.map(item => (
 						<div
 							onClick={() => this.onClick(item.name)}
-							ref={item.name}
-							className={`item nav-${navigation} ${section}`}
+							ref={item.name.toLowerCase()}
+							className={
+								item.name === 'Overview'
+									? `item nav-${navigation} ${section} active`
+									: `item nav-${navigation} ${section}`
+							}
 						>
 							{item.name}
 						</div>

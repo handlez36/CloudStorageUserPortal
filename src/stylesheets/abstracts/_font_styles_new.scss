@@ -39,6 +39,7 @@
 	line-height: 14px;
 	color: $Cool_Gray_Dark_2;
 	text-align: center;
+	text-transform: capitalize;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
 		line-height: 18px;
