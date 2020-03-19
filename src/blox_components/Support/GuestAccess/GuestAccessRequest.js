@@ -42,7 +42,7 @@ class GuestAccessRequest extends Component {
 	}
 
 	initializeWizard = () => {
-		const { goToTicketHistory, onComplete, tickets } = this.props;
+		const { goToTicketHistory, onComplete, tickets, history } = this.props;
 
 		return {
 			active: null,
@@ -89,6 +89,7 @@ class GuestAccessRequest extends Component {
 						startNewRequest: this.resetWizard,
 						goToTicketHistory,
 						onComplete,
+						history,
 					},
 				},
 			},
@@ -154,9 +155,6 @@ class GuestAccessRequest extends Component {
 			const response = await TicketApi.createTicket(ticket);
 
 			if (response.status === 200 && !response.data.error) {
-				// Trigger ticket refresh...
-				onComplete();
-
 				const { caseId = '0' } = response.data;
 				const stepsCopy = { ...steps };
 				stepsCopy['COMPLETE'].params.ticketNumber = caseId;

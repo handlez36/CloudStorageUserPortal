@@ -5,8 +5,18 @@ import BloxButton from 'sub_components/Common/BloxButton';
 import { CONFIRMATION } from 'utils/TicketConstants';
 
 class GuestAccessConfirmation extends Component {
+	goToTicket = ticketNumber => {
+		const { history } = this.props;
+
+		history.push(`/portal/support/ticket_history/${ticketNumber}`);
+	};
+	goToOverview = () => {
+		const { history } = this.props;
+
+		history.push(`/portal/support/`);
+	};
 	render() {
-		const { ticketNumber, startNewRequest, onComplete, goToTicketHistory } = this.props;
+		const { ticketNumber, startNewRequest } = this.props;
 
 		return (
 			<div className='remote-hands-confirmation-wrapper'>
@@ -15,7 +25,7 @@ class GuestAccessConfirmation extends Component {
 				<div
 					className='ticket-confirmation'
 					onClick={() => {
-						goToTicketHistory(null, ticketNumber);
+						this.goToTicket(ticketNumber);
 					}}
 				>
 					<TicketNumber number={ticketNumber} />
@@ -27,7 +37,12 @@ class GuestAccessConfirmation extends Component {
 						customClass='blox-button white'
 						onClick={startNewRequest}
 					/>
-					<BloxButton title='DONE' enabled={true} customClass='blox-button' onClick={onComplete} />
+					<BloxButton
+						title='DONE'
+						enabled={true}
+						customClass='blox-button'
+						onClick={this.goToOverview}
+					/>
 				</div>
 			</div>
 		);

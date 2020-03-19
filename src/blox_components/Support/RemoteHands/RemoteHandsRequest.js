@@ -35,7 +35,7 @@ class RemoteHandsRequest extends Component {
 	}
 
 	initializeWizard = () => {
-		const { goToTicketHistory, onComplete, tickets } = this.props;
+		const { goToTicketHistory, onComplete, tickets, history } = this.props;
 
 		return {
 			active: null,
@@ -77,6 +77,7 @@ class RemoteHandsRequest extends Component {
 						startNewRequest: this.resetWizard,
 						goToTicketHistory,
 						onComplete,
+						history,
 					},
 				},
 			},
@@ -171,13 +172,10 @@ class RemoteHandsRequest extends Component {
 			company_info,
 			browser_info,
 		);
-		console.log('TICKET', ticket);
+
 		try {
 			const response = await TicketApi.createTicket(ticket);
 			if (response.status === 200 && !response.data.error) {
-				// Trigger ticket refresh...
-				onComplete();
-
 				const { caseId = '0' } = response.data;
 				const stepsCopy = { ...steps };
 				stepsCopy['COMPLETE'].params.ticketNumber = caseId;
