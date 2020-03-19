@@ -10,6 +10,7 @@ const BloxButton = ({ id, title, enabled, onClick, customClass, icon, imageId, b
 	const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 	const DownArrow = `${CDN_URL}support/Common_DownArrowTail.svg`;
+
 	return (
 		<button
 			id={id || 'formButton'}

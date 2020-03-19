@@ -71,7 +71,7 @@ class OverviewPage extends Component {
 				</div>
 				<div key={`issueRequest-${columnCount}`} className='issueRequest'>
 					<ComponentWrapper title='ISSUE Request' hideBorder>
-						<IssueRequest breakpoint={breakpoint} />
+						<IssueRequest breakpoint={breakpoint} history={this.props.history} />
 					</ComponentWrapper>
 				</div>
 

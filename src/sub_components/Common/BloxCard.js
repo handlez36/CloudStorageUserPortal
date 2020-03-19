@@ -41,7 +41,7 @@ const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback
 						<Button
 							title='EDIT CONTACT INFO'
 							onClick={() => {}}
-							customClass='support-button gradient'
+							customClass='blox-button gradient'
 							enabled
 						/>
 					</div>

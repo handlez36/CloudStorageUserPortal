@@ -203,7 +203,7 @@ class RemoteHandsDescription extends Component {
 				<Button
 					title='NEXT'
 					enabled={this.shouldEnableButton()}
-					customClass='support-button circle-large'
+					customClass='blox-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

@@ -260,7 +260,7 @@ class RemoteHandsContacts extends Component {
 				<Button
 					title='REVIEW'
 					enabled={completedFields.length === Object.keys(FIELDS).length - 1}
-					customClass='support-button circle-large'
+					customClass='blox-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

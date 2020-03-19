@@ -2,6 +2,8 @@
 .support-page {
 	overflow-x: hidden;
 	overflow-y: auto;
+	width: 800px;
+	height: 600px;
 
 	.outer-wrapper {
 		width: calculateVw(467px, 1440);
