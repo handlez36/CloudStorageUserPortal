@@ -26,6 +26,10 @@ const nameValidations = [
 ];
 
 class PaymentMethod extends Component {
+	constructor(props) {
+		super(props);
+		this.userProfileApi = new UserProfileApi();
+	}
 	state = {
 		name: '',
 		nonce: null,
@@ -75,7 +79,7 @@ class PaymentMethod extends Component {
 			companyInfo: { customer: { companyName } = {} } = {},
 			authStatus,
 		} = this.props;
-		const userName = UserProfileApi.getFirstAndLastName(authStatus);
+		const userName = this.userProfileApi.getFirstAndLastName(authStatus);
 		const email = UserProfileApi.getEmail(authStatus);
 		const phone = UserProfileApi.getPhone(authStatus);
 		const addressParts = UserProfileApi.getBillingAddressParts(authStatus);
