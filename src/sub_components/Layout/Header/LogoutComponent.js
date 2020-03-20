@@ -66,14 +66,20 @@ class LogoutComponent extends Component {
 					<img src={this.avatarApi.getUserAvatar(auth_status)} />
 				</div>
 				<div className='name header10'>{this.getUserName(auth_status)}</div>
-				<div className='logout-dropdown'></div>
-				<div className='logout-button fade-in'>
-					<BloxButton
-						title='LOGOUT'
-						customClass='blox-button logout'
-						enabled={true}
-						onClick={this.logoutUser}
-					/>
+				{/* <div className='logout-dropdown'></div> */}
+				<div className='hover-wrapper'>
+					<div className='avatar'>
+						<img src={this.avatarApi.getUserAvatar(auth_status)} />
+					</div>
+					<div className='name header10'>{this.getUserName(auth_status)}</div>
+					<div className='logout-button '>
+						<BloxButton
+							title='LOGOUT'
+							customClass='blox-button logout'
+							enabled={true}
+							onClick={this.logoutUser}
+						/>
+					</div>
 				</div>
 			</div>
 		);

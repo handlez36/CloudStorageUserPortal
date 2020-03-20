@@ -3,7 +3,7 @@
 	height: GetSize(1);
 	background-color: transparent;
 	background-position: left bottom;
-	transition: width 2s, height 2s ease-in-out;
+	transition: width 2s, height 2s ease-in;
 	overflow: visible;
 	transform: translate(-50%, 0%);
 	position: absolute;
@@ -42,7 +42,7 @@
 		left: 50%;
 
 		overflow: visible;
-		transition: all 2s ease-in-out;
+		transition: all 2s ease-in;
 		.title {
 			width: 0px;
 			height: 10px;
@@ -80,7 +80,7 @@
 				height: GetSize(7);
 				width: 100%;
 				opacity: 1;
-				transition: transform 2s, opacity 2s ease-in-out;
+				transition: transform 2s, opacity 2s ease-in;
 				.breadcrumbs {
 					width: 100%;
 					height: GetSize(2) !important;
@@ -337,7 +337,7 @@
 			left: 50%;
 
 			overflow: visible;
-			transition: all 2s ease-in-out;
+			transition: all 2s ease-in;
 			.title {
 				width: 0px;
 				height: 10px;
