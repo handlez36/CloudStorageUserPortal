@@ -540,12 +540,12 @@ class TicketHistory extends Component {
 		const layout = [
 			{ i: 'filter', x: 0.1, y: 1, w: 0, h: 2, static: true },
 			{ i: 'filter-two', x: 2.7, y: 1, w: 3, h: 2, static: true },
-			{ i: 'tickets', x: 0, y: 4, w: 6, h: 45, static: true },
+			{ i: 'tickets', x: 0, y: 3, w: 6, h: 45, static: true },
 		];
 		const layoutSmall = [
 			{ i: 'filter', x: 0.1, y: 1, w: 0, h: 2, static: true },
-			{ i: 'filter-two', x: 2, y: 0, w: 3.2, h: 2, static: true },
-			{ i: 'tickets', x: 0, y: 4, w: 6, h: 46, static: true },
+			{ i: 'filter-two', x: 2.7, y: 1, w: 3, h: 2, static: true },
+			{ i: 'tickets', x: 0, y: 3, w: 6, h: 46, static: true },
 		];
 
 		return (

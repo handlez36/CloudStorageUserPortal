@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { DIMENSIONS } from 'services/layoutManager';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import TicketHistory from '../../blox_components/Support/TicketHistory/TicketHistory';
 
 const LAYOUT_CONFIG = {
@@ -11,16 +11,17 @@ const LAYOUT_CONFIG = {
 		ticketHistory: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TEN, customHeight: 50 },
 	},
 	[RESOLUTIONS.MED]: {
-		ticketHistory: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 50 },
+		ticketHistory: { x: 2.5, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT, customHeight: 50 },
 	},
 	[RESOLUTIONS.HIGH]: {
-		ticketHistory: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 50 },
+		ticketHistory: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 50 },
 	},
 };
 
 class TicketHistoryPage extends Component {
 	render() {
 		const { breakpoint, location, match, history } = this.props;
+		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 		return (
 			<BloxPage
@@ -29,7 +30,7 @@ class TicketHistoryPage extends Component {
 				breakpoint={breakpoint}
 				location={location}
 			>
-				<div key='ticketHistory' className='ticketHistory'>
+				<div key={`ticketHistory-${columnCount}`} className='ticketHistory'>
 					<ComponentWrapper hideTitle hideBorder>
 						<TicketHistory match={match} history={history} />
 					</ComponentWrapper>
