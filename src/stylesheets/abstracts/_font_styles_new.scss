@@ -441,12 +441,12 @@
 	letter-spacing: -0.7px;
 	color: $DCBLOX_Gray;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
-		font-family: $proxima-nova-light;
+		font-family: $proxima-nova-regular;
 		font-size: 20px;
 		letter-spacing: -1px;
 	}
 	@media screen and (min-width: ($high-res + 1)) {
-		font-family: $proxima-nova-light;
+		font-family: $proxima-nova-regular;
 		font-size: 28px;
 		letter-spacing: -1.4px;
 	}
@@ -472,7 +472,7 @@
 
 @mixin Numbers30 {
 	font-size: 36px;
-	font-family: $proxima-nova-light;
+	font-family: $proxima-nova-regular;
 	line-height: 36px;
 	letter-spacing: -1.8px;
 	text-transform: uppercase;
