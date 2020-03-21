@@ -190,8 +190,14 @@
 		.accounts-dropdown {
 			box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
 		}
-		&.multi-list {
+		&.multi-list-2 {
 			height: GetSize(24);
+		}
+		&.multi-list-3 {
+			height: GetSize(29);
+		}
+		&.multi-list-4 {
+			height: GetSize(34);
 		}
 	}
 }
@@ -389,8 +395,14 @@
 			.accounts-dropdown {
 				box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
 			}
-			&.multi-list {
+			&.multi-list-2 {
 				height: GetSize(34);
+			}
+			&.multi-list-3 {
+				height: GetSize(40);
+			}
+			&.multi-list-4 {
+				height: GetSize(46);
 			}
 		}
 	}
@@ -588,8 +600,14 @@
 			.accounts-dropdown {
 				box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
 			}
-			&.multi-list {
+			&.multi-list-2 {
 				height: GetSize(44);
+			}
+			&.multi-list-3 {
+				height: GetSize(51);
+			}
+			&.multi-list-3 {
+				height: GetSize(58);
 			}
 		}
 	}

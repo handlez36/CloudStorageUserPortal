@@ -178,7 +178,7 @@ class AccountsComponent extends Component {
 				<div
 					className={
 						shouldRenderList
-							? 'accounts-component-wrapper multi-list'
+							? `accounts-component-wrapper multi-list-${memberships.length}`
 							: 'accounts-component-wrapper '
 					}
 					onMouseOver={this.setHover}
