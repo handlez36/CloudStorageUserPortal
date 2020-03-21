@@ -71,7 +71,7 @@ class LogoutComponent extends Component {
 					<div className='avatar'>
 						<img src={this.avatarApi.getUserAvatar(auth_status)} />
 					</div>
-					<div className='name header10'>{this.getUserName(auth_status)}</div>
+					<div className='name header11'>{this.getUserName(auth_status)}</div>
 					<div className='logout-button '>
 						<BloxButton
 							title='LOGOUT'

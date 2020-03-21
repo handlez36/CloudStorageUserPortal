@@ -40,9 +40,8 @@
 		transform: translate(-50%, 0%);
 		position: absolute;
 		left: 50%;
-
 		overflow: visible;
-		transition: all 2s ease-in;
+		transition: width 2s, height ease-in;
 		.title {
 			width: 0px;
 			height: 10px;
@@ -94,7 +93,7 @@
 					animation-timing-function: ease-in;
 					animation-duration: 2.5s;
 					opacity: 1;
-					transition: all 2s ease-in-out;
+					transition: all 2s ease-in;
 
 					.crumb {
 						cursor: pointer;
@@ -102,7 +101,7 @@
 						color: $Cool_Gray_Dark_3;
 						border-radius: 0px;
 						margin-left: GetSize(1.5);
-						transition: all 2s ease-in-out;
+						transition: all 2s ease-in;
 						width: 100%;
 						text-align: center;
 						&.hide-all {
@@ -199,7 +198,7 @@
 			left: 50%;
 
 			overflow: visible;
-			transition: all 2s ease-in-out;
+			transition: all 2s ease-in;
 			.title {
 				width: 0px;
 				height: 10px;
@@ -244,7 +243,7 @@
 						animation-timing-function: ease-in;
 						animation-duration: 2.5s;
 						opacity: 1;
-						transition: all 2s ease-in-out;
+						transition: all 2s ease-in;
 
 						.crumb {
 							cursor: pointer;
@@ -252,7 +251,7 @@
 							color: $Cool_Gray_Dark_3;
 							border-radius: 0px;
 							margin-left: GetSize(1.5);
-							transition: all 2s ease-in-out;
+							transition: all 2s ease-in;
 							width: 100%;
 							text-align: center;
 							&.hide-all {
@@ -382,7 +381,7 @@
 						animation-timing-function: ease-in;
 						animation-duration: 2.5s;
 						opacity: 1;
-						transition: all 2s ease-in-out;
+						transition: all 2s ease-in;
 
 						.crumb {
 							cursor: pointer;
@@ -390,7 +389,7 @@
 							color: $Cool_Gray_Dark_3;
 							border-radius: 0px;
 							margin-left: GetSize(1.5);
-							transition: all 2s ease-in-out;
+							transition: all 2s ease-in;
 							width: 100%;
 							text-align: center;
 							&.hide-all {
