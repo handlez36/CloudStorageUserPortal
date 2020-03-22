@@ -169,11 +169,7 @@ class BreadCrumbComponent extends Component {
 
 		if (breadCrumbWrapper) {
 			breadCrumbWrapper.classList.add('hover');
-			if (breadCrumbs.length === 4) {
-				breadCrumbWrapper.classList.add('four');
-			} else if (breadCrumbs.length === 5) {
-				breadCrumbWrapper.classList.add('five');
-			}
+			breadCrumbWrapper.classList.add(`length-${breadCrumbs.length}`);
 		}
 		if (dropdownbox) {
 			dropdownbox.classList.add('expand');

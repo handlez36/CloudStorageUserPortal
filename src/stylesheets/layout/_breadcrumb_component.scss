@@ -3,7 +3,7 @@
 	height: GetSize(1);
 	background-color: transparent;
 	background-position: left bottom;
-	transition: width 2s, height 2s ease-in;
+	transition: width 2s, height 1s ease-in;
 	overflow: visible;
 	transform: translate(-50%, 0%);
 	position: absolute;
@@ -18,11 +18,20 @@
 		min-width: GetSize(40);
 		width: 100%;
 		height: 100%;
-		&.four {
+		&.length-4 {
 			min-width: GetSize(50);
 		}
-		&.five {
+		&.length-5 {
 			min-width: GetSize(62);
+		}
+		&.length-6 {
+			min-width: GetSize(74);
+		}
+		&.length-7 {
+			min-width: GetSize(86);
+		}
+		&.length-8 {
+			min-width: GetSize(98);
 		}
 
 		.title {
@@ -41,7 +50,7 @@
 		position: absolute;
 		left: 50%;
 		overflow: visible;
-		transition: width 2s, height ease-in;
+		transition: width 2s, height 1s ease-in;
 		.title {
 			width: 0px;
 			height: 10px;
@@ -174,11 +183,20 @@
 			min-width: GetSize(45);
 			width: 100%;
 			//height: 100%;
-			&.four {
+			&.length-4 {
 				min-width: GetSize(62);
 			}
-			&.five {
+			&.length-5 {
 				min-width: GetSize(75);
+			}
+			&.length-6 {
+				min-width: GetSize(88);
+			}
+			&.length-7 {
+				min-width: GetSize(101);
+			}
+			&.length-8 {
+				min-width: GetSize(114);
 			}
 
 			.title {
@@ -198,7 +216,7 @@
 			left: 50%;
 
 			overflow: visible;
-			transition: all 2s ease-in;
+			transition: width 2s, height 2s ease-in;
 			.title {
 				width: 0px;
 				height: 10px;
@@ -312,11 +330,20 @@
 			min-width: GetSize(60);
 			width: 100%;
 			//height: 100%;
-			&.four {
+			&.length-4 {
 				min-width: GetSize(80);
 			}
-			&.five {
+			&.length-5 {
 				min-width: GetSize(100);
+			}
+			&.length-6 {
+				min-width: GetSize(120);
+			}
+			&.length-7 {
+				min-width: GetSize(140);
+			}
+			&.length-8 {
+				min-width: GetSize(160);
 			}
 
 			.title {
