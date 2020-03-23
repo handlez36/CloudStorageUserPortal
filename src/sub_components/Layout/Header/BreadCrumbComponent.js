@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { AvatarApi } from 'services/avatar';
 import { UserProfileApi } from 'services/userProfile';
@@ -56,14 +56,14 @@ class BreadCrumbComponent extends Component {
 
 		setTimeout(() => {
 			history.push(url);
-		}, 3600);
+		}, 1000);
 		setTimeout(() => {
 			const title = document.querySelector('.title.header21');
 
 			if (title) {
 				title.classList.remove('hide');
 			}
-		}, 5000);
+		}, 1000);
 	};
 
 	filterBreadCrumbs = breadCrumbs => {
@@ -81,7 +81,8 @@ class BreadCrumbComponent extends Component {
 		const allCrumbs = document.getElementsByClassName('crumb');
 		const breadcrumbs = document.querySelector('.breadcrumbs');
 		const title = document.querySelector('.title.header21');
-		const box = document.querySelector('.box');
+		const box = document.querySelector('.breadcrumb-component-wrapper');
+		const breadCrumbContainer = document.querySelector('.breadcrumb-container');
 		const { breadCrumbs } = this.state;
 
 		if (allCrumbs && breadCrumbs.length > 1) {
@@ -92,28 +93,34 @@ class BreadCrumbComponent extends Component {
 		if (breadcrumbs) {
 			breadcrumbs.classList.add('expand');
 		}
-
+		const pixelsToTranslate = PIXELS_TO_MOVE_UP[this.props.breakpoint] + 'px';
 		if (crumb) {
 			crumb.classList.add('clicked');
 			crumb.style.fontSize = FONTSIZE_TITLE_GROW[this.props.breakpoint] + 'px';
-
 			setTimeout(() => {
-				const pixelsToTranslate = PIXELS_TO_MOVE_UP[this.props.breakpoint] + 'px';
-				if (box) {
-					box.style.transform = `translate(-50%,-${pixelsToTranslate})`;
-				}
-
+				crumb.style.transform = `translate(0%,-${pixelsToTranslate})`;
+			}, 1000);
+			setTimeout(() => {
 				if (title) {
 					title.classList.add('hide');
+					box.classList.add('minimize');
 				}
-			}, 2000);
+				if (breadCrumbContainer) {
+					breadCrumbContainer.classList.add('minimize');
+				}
+			}, 1800);
+
 			setTimeout(() => {
 				if (box) {
-					box.style.transform = 'translate(-50%,0)';
+					box.classList.remove('minimize');
+				}
+				if (breadCrumbContainer) {
+					breadCrumbContainer.classList.remove('minimize');
 				}
 				if (crumb) {
 					crumb.classList.remove('clicked');
 					crumb.style.fontSize = FONTSIZE_TITLE_DEFAULT[this.props.breakpoint] + 'px';
+					crumb.style.transform = `translate(0%,0)`;
 				}
 
 				const allCrumbs = document.getElementsByClassName('crumb');
@@ -122,9 +129,6 @@ class BreadCrumbComponent extends Component {
 					for (let i = 0; i <= allCrumbs.length - 1; i++) {
 						allCrumbs[i].classList.remove('hide-all');
 					}
-				}
-				if (breadcrumbs) {
-					breadcrumbs.classList.remove('expand');
 				}
 			}, 3500);
 		}
@@ -148,45 +152,40 @@ class BreadCrumbComponent extends Component {
 			);
 		}
 	};
-	updateBreadCrumbComponentWidth = () => {
-		const { breadCrumbs } = this.state;
-		const reactGridBreadCrumbComponent = document.querySelector(
-			'.react-grid-item.breadcrumb-component',
-		);
-		console.log('hello niamh here');
-		if (reactGridBreadCrumbComponent && breadCrumbs.length >= 6) {
-			console.log('bread crumb component', reactGridBreadCrumbComponent);
-			//update width
 
-			//	reactGridBreadCrumbComponent.style.width = '500px';
-			//	reactGridBreadCrumbComponent.style.transform = 'translate(410px,0)';
-		}
-	};
 	onMouseOver = () => {
 		const { breadCrumbs } = this.state;
 		const dropdownbox = document.querySelector('.box');
 		const breadCrumbWrapper = document.querySelector('.breadcrumb-component-wrapper');
-
+		const breadCrumbContainer = document.querySelector('.breadcrumb-container');
 		if (breadCrumbWrapper) {
 			breadCrumbWrapper.classList.add('hover');
 			breadCrumbWrapper.classList.add(`length-${breadCrumbs.length}`);
 		}
-		if (dropdownbox) {
-			dropdownbox.classList.add('expand');
+		if (breadCrumbContainer) {
+			breadCrumbContainer.classList.add('hover');
 		}
-		this.updateBreadCrumbComponentWidth();
+		if (dropdownbox) {
+			dropdownbox.classList.add('hover');
+			dropdownbox.classList.add(`length-${breadCrumbs.length}`);
+		}
 	};
 	onMouseOut = () => {
+		const breadCrumbContainer = document.querySelector('.breadcrumb-container');
+		const { breadCrumbs } = this.state;
 		const dropdownbox = document.querySelector('.box');
 		const breadCrumbWrapper = document.querySelector('.breadcrumb-component-wrapper');
 
 		if (breadCrumbWrapper) {
 			breadCrumbWrapper.classList.remove('hover');
-			breadCrumbWrapper.classList.remove('five');
-			breadCrumbWrapper.classList.remove('four');
+			breadCrumbWrapper.classList.remove(`length-${breadCrumbs.length}`);
+		}
+		if (breadCrumbContainer) {
+			breadCrumbContainer.classList.remove('hover');
 		}
 		if (dropdownbox) {
-			dropdownbox.classList.remove('expand');
+			// dropdownbox.classList.remove('hover');
+			// dropdownbox.classList.remove(`length-${breadCrumbs.length}`);
 		}
 	};
 
@@ -194,16 +193,19 @@ class BreadCrumbComponent extends Component {
 		const { currentPage, breadCrumbs } = this.state;
 		return (
 			<div
-				className='breadcrumb-component-wrapper'
+				className='breadcrumb-container'
 				onMouseOver={this.onMouseOver}
 				onMouseOut={this.onMouseOut}
 			>
-				<div className='box'>
-					<div className='title sub'></div>
-					<div className='breadcrumb-dropdown'>{this.getBreadCrumbs(breadCrumbs)}</div>
+				<div className='current-title header21'>{currentPage}</div>
+				<div className='breadcrumb-component-wrapper'>
+					<div className='box'>
+						<div className='title sub'></div>
+						<div className='breadcrumb-dropdown'>{this.getBreadCrumbs(breadCrumbs)}</div>
+					</div>
+					<div className='title header21'>{currentPage}</div>
+					{/* <div className='breadcrumb-dropdown'>{this.getBreadCrumbs(breadCrumbs)}</div> */}
 				</div>
-				<div className='title header21'>{currentPage}</div>
-				{/* <div className='breadcrumb-dropdown'>{this.getBreadCrumbs(breadCrumbs)}</div> */}
 			</div>
 		);
 	}
