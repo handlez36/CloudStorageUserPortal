@@ -5,22 +5,22 @@ import { DIMENSIONS } from 'services/layoutManager';
 import CurrentInvoices from 'blox_components/Billing/CurrentInvoices/CurrentInvoices';
 import BloxPage from 'sub_components/Layout/BloxPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
-import { RESOLUTIONS } from 'services/config';
+import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		currentInvoices: { x: 2, y: 1, dim: DIMENSIONS.TWO_BY_TEN },
+		currentInvoices: { x: 0, y: 0, dim: DIMENSIONS.TWO_BY_TEN },
 	},
 	[RESOLUTIONS.MED]: {
-		currentInvoices: { x: 2, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT },
+		currentInvoices: { x: 2.5, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT },
 	},
 	[RESOLUTIONS.HIGH]: {
-		currentInvoices: { x: 2, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
+		currentInvoices: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 };
 
 const CurrentInvoicesPage = ({ breakpoint, location }) => {
-	console.log('LAYOUT: ', LAYOUT_CONFIG[breakpoint]);
+	const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 	return (
 		<BloxPage
@@ -29,7 +29,7 @@ const CurrentInvoicesPage = ({ breakpoint, location }) => {
 			breakpoint={breakpoint}
 			location={location}
 		>
-			<div key='currentInvoices' className='currentInvoices'>
+			<div key={`currentInvoices-${columnCount}`} className='currentInvoices'>
 				<ComponentWrapper collapseTitle hideBorder>
 					<CurrentInvoices />
 				</ComponentWrapper>
