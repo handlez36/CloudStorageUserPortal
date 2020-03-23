@@ -56,14 +56,14 @@ class BreadCrumbComponent extends Component {
 
 		setTimeout(() => {
 			history.push(url);
-		}, 1500);
+		}, 2000);
 		setTimeout(() => {
 			const title = document.querySelector('.title.header21');
 
 			if (title) {
 				title.classList.remove('hide');
 			}
-		}, 1500);
+		}, 2000);
 	};
 
 	filterBreadCrumbs = breadCrumbs => {
@@ -71,7 +71,7 @@ class BreadCrumbComponent extends Component {
 
 		//	currentBreadCrumbs = breadCrumbs.slice(0, breadCrumbs.length );
 		//insert home at beginning of breadcrumbs.
-		currentBreadCrumbs.unshift({ name: 'HOME', url: '/portal/' });
+		currentBreadCrumbs.unshift({ name: 'home', url: '/portal/' });
 
 		return currentBreadCrumbs;
 	};
@@ -133,7 +133,7 @@ class BreadCrumbComponent extends Component {
 						allCrumbs[i].classList.remove('hide-all');
 					}
 				}
-			}, 4000);
+			}, 4500);
 		}
 	};
 

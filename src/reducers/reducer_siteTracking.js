@@ -39,10 +39,10 @@ export default function(state = initialState, action) {
 			return { ...state, page: action.page };
 		case ADD_BREADCRUMB:
 			const module = action.module ? action.module.toLowerCase() : '';
-			const breadCrumbs = checkForDuplicateBreadCrumb(state, action.page);
+			const breadCrumbs = checkForDuplicateBreadCrumb(state, action.page.toLowerCase());
 			const url = setUrl(module, action);
 
-			const breadCrumb = { name: action.page, url };
+			const breadCrumb = { name: action.page.toLowerCase(), url };
 			//if module has changed refresh breadcrumbs
 			if (module !== state.module.toLowerCase()) {
 				return { ...state, breadCrumbs: [breadCrumb] };

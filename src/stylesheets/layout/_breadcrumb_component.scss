@@ -83,7 +83,7 @@
 				height: GetSize(7);
 				width: 100%;
 				opacity: 1;
-
+				box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
 				.breadcrumbs {
 					width: 100%;
 					white-space: nowrap;
@@ -106,6 +106,8 @@
 						text-align: center;
 						transition: all 2s ease-in;
 						background-color: transparent !important;
+						text-transform: capitalize;
+
 						&.hide-all {
 							opacity: 0;
 							width: 0px !important;
@@ -283,7 +285,7 @@
 					display: flex;
 					flex-direction: column;
 					align-items: center;
-					height: GetSize(7);
+					height: GetSize(12);
 					width: 100%;
 					opacity: 1;
 
@@ -536,7 +538,7 @@
 							height: GetSize(2);
 							position: relative;
 							border-left: 1px solid $Cool_Gray_Med_1;
-							margin-top: GetSize(-2);
+							margin-top: GetSize(-2.5);
 							margin-left: GetSize(-1);
 						}
 
