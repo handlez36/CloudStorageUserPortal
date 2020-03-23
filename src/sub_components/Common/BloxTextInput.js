@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { shape, string, array, number, func, any, oneOfType } from 'prop-types';
 import MaskedInput from 'react-text-mask';
-
+import { PHONEMASK } from 'utils/CommonConstants';
+import { Utils } from 'services/utils';
+import { INPUT_TYPES } from 'utils/CommonConstants';
 import ScrollView from './BloxScrollViewNew';
-import { PHONEMASK } from './../../utils/Misc/CommonConstants';
-import { Utils } from './../../services/utils';
-import { INPUT_TYPES } from './../../utils/Misc/CommonConstants';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Checkmark = `${CDN_URL}common/icons-forms-check.svg`;

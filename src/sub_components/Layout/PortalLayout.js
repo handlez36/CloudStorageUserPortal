@@ -14,6 +14,11 @@ const PAGES = {
 	Support: {
 		Overview: 'OverviewPage',
 		Ticket_history: 'TicketHistoryPage',
+		Remote_hands: 'RemoteHandsPage',
+		Guest_access: 'GuestAccessPage',
+		Support_ticket: 'SupportTicketPage',
+		Billing_ticket: 'SupportTicketPage',
+		Outage_ticket: 'SupportTicketPage',
 	},
 	Storage: {
 		Overview: 'OverviewPage',

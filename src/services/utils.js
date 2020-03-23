@@ -401,6 +401,15 @@ export class Utils {
 
 		return (px / screenWidthMax) * currentScreenWidth;
 	}
+	static getRequester(auth_status) {
+		const firstName = auth_status.user.firstname;
+		const lastName = auth_status.user.lastname;
+		if (firstName && lastName) {
+			return firstName + ' ' + lastName;
+		} else {
+			return '';
+		}
+	}
 
 	static scalePxUsingRatio() {
 		return window.innerHeight / 57;

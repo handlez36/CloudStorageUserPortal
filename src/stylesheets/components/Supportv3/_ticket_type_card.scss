@@ -3,6 +3,7 @@
 	height: 112px;
 	background-color: $White;
 	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+	cursor: pointer;
 	@include FlexboxCenter;
 	.ticket-type {
 		align-items: center;

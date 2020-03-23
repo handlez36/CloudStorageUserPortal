@@ -8,7 +8,7 @@ const IssueRequest = props => {
 	return (
 		<div className='issue-request'>
 			{TICKET_TYPES.map(type => (
-				<TicketTypeCard type={type} />
+				<TicketTypeCard type={type} history={props.history} />
 			))}
 		</div>
 	);

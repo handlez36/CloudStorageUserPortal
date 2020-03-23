@@ -179,6 +179,13 @@
 	height: 5.66vh;
 	width: 5.66vh;
 	border-radius: 50%;
+	.down-arrow {
+		margin-top: -10px;
+		img {
+			height: 1.6vh;
+			width: 2vw;
+		}
+	}
 	span {
 		$map: (
 			576: 8,

@@ -67,9 +67,9 @@ class BreadCrumbComponent extends Component {
 	};
 
 	filterBreadCrumbs = breadCrumbs => {
-		let currentBreadCrumbs = [];
+		const currentBreadCrumbs = [...breadCrumbs];
 
-		currentBreadCrumbs = breadCrumbs.slice(0, breadCrumbs.length - 1);
+		//	currentBreadCrumbs = breadCrumbs.slice(0, breadCrumbs.length );
 		//insert home at beginning of breadcrumbs.
 		currentBreadCrumbs.unshift({ name: 'HOME', url: '/portal/' });
 
