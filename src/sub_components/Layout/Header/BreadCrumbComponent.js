@@ -56,14 +56,14 @@ class BreadCrumbComponent extends Component {
 
 		setTimeout(() => {
 			history.push(url);
-		}, 1000);
+		}, 1500);
 		setTimeout(() => {
 			const title = document.querySelector('.title.header21');
 
 			if (title) {
 				title.classList.remove('hide');
 			}
-		}, 1000);
+		}, 1500);
 	};
 
 	filterBreadCrumbs = breadCrumbs => {
@@ -99,7 +99,7 @@ class BreadCrumbComponent extends Component {
 			crumb.style.fontSize = FONTSIZE_TITLE_GROW[this.props.breakpoint] + 'px';
 			setTimeout(() => {
 				crumb.style.transform = `translate(0%,-${pixelsToTranslate})`;
-			}, 1000);
+			}, 800);
 			setTimeout(() => {
 				if (title) {
 					title.classList.add('hide');
@@ -108,7 +108,7 @@ class BreadCrumbComponent extends Component {
 				if (breadCrumbContainer) {
 					breadCrumbContainer.classList.add('minimize');
 				}
-			}, 1800);
+			}, 2000);
 
 			setTimeout(() => {
 				if (box) {
@@ -116,6 +116,9 @@ class BreadCrumbComponent extends Component {
 				}
 				if (breadCrumbContainer) {
 					breadCrumbContainer.classList.remove('minimize');
+				}
+				if (title) {
+					title.classList.remove('hide');
 				}
 				if (crumb) {
 					crumb.classList.remove('clicked');

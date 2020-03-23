@@ -55,6 +55,10 @@
 			left: 50%;
 			padding-top: GetSize(1.5);
 			letter-spacing: 1px;
+			z-index: 600;
+			&.hide {
+				z-index: 400;
+			}
 		}
 
 		.box {
@@ -66,7 +70,7 @@
 			left: 50%;
 			overflow: visible;
 			transition: width 2s ease-out;
-
+			z-index: 500;
 			.breadcrumb-dropdown {
 				pointer-events: auto;
 				overflow: visible;
@@ -100,9 +104,10 @@
 						margin-left: GetSize(1.5);
 						width: 100%;
 						text-align: center;
-						transition: transform 2s ease-in;
+						transition: all 2s ease-in;
+						background-color: transparent !important;
 						&.hide-all {
-							//opacity: 0;
+							opacity: 0;
 							width: 0px !important;
 							padding: 0px;
 						}
@@ -115,6 +120,7 @@
 							position: inline-block;
 							flex-grow: 1;
 							opacity: 1;
+							z-index: 4000;
 						}
 					}
 					.crumb.clicked:after {
@@ -250,8 +256,12 @@
 				transform: translate(-50%, 0%);
 				position: absolute;
 				left: 50%;
-				padding-top: GetSize(2.5);
+				padding-top: GetSize(2.8);
 				letter-spacing: 1px;
+				z-index: 600;
+				&.hide {
+					z-index: 400;
+				}
 			}
 
 			.box {
@@ -263,7 +273,7 @@
 				left: 50%;
 				overflow: visible;
 				transition: width 2s ease-out;
-
+				z-index: 500;
 				.breadcrumb-dropdown {
 					pointer-events: auto;
 					overflow: visible;
@@ -298,8 +308,9 @@
 							width: 100%;
 							text-align: center;
 							transition: all 2s ease-in;
+
 							&.hide-all {
-								//opacity: 0;
+								opacity: 0;
 								width: 0px !important;
 								padding: 0px;
 							}
@@ -312,6 +323,8 @@
 								position: inline-block;
 								flex-grow: 1;
 								opacity: 1;
+
+								z-index: 6000;
 							}
 						}
 						.crumb.clicked:after {
@@ -387,7 +400,7 @@
 		transform: translate(-50%, 0%);
 		position: absolute;
 		left: 50%;
-		padding-top: GetSize(2.5);
+		padding-top: GetSize(2.8);
 		letter-spacing: 1px;
 	}
 }
@@ -496,7 +509,7 @@
 							text-align: center;
 							transition: all 2s ease-in;
 							&.hide-all {
-								//opacity: 0;
+								opacity: 0;
 								width: 0px !important;
 								padding: 0px;
 							}
