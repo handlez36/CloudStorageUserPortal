@@ -15,9 +15,9 @@ const FONTSIZE_TITLE_GROW = {
 	[RESOLUTIONS.HIGH]: 30,
 };
 const PIXELS_TO_MOVE_UP = {
-	[RESOLUTIONS.LOW]: 60,
-	[RESOLUTIONS.MED]: 80,
-	[RESOLUTIONS.HIGH]: 104,
+	[RESOLUTIONS.LOW]: 50,
+	[RESOLUTIONS.MED]: 70,
+	[RESOLUTIONS.HIGH]: 94,
 };
 
 class BreadCrumbComponent extends Component {
@@ -108,7 +108,7 @@ class BreadCrumbComponent extends Component {
 				if (breadCrumbContainer) {
 					breadCrumbContainer.classList.add('minimize');
 				}
-			}, 2000);
+			}, 2100);
 
 			setTimeout(() => {
 				if (box) {
@@ -133,7 +133,7 @@ class BreadCrumbComponent extends Component {
 						allCrumbs[i].classList.remove('hide-all');
 					}
 				}
-			}, 3000);
+			}, 4000);
 		}
 	};
 
