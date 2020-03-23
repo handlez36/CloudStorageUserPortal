@@ -97,8 +97,8 @@ This file should not contain anything but @import and comments.
 @import 'components/interactive_icon';
 @import 'components/_horizontal_grid';
 @import 'components/graph';
-@import 'components/copy_link';
-@import 'components/carousel';
+// @import 'components/copy_link';
+// @import 'components/carousel';
 @import 'components/date_time_picker';
 @import 'components/time_picker';
 // @import 'components/ticket_count_row';
@@ -106,8 +106,8 @@ This file should not contain anything but @import and comments.
 /**
 * Storage components
 */
-@import 'components/Storage/share_card_container';
-@import 'components/Storage/small_share_card';
+// @import 'components/Storage/share_card_container';
+// @import 'components/Storage/small_share_card';
 @import 'components/Storage/location_icon';
 @import 'components/Storage/storage_usage_graph';
 @import 'components/Storage/resolution_picker';
@@ -162,6 +162,14 @@ This file should not contain anything but @import and comments.
 @import 'components/Storage/usage_bar';
 @import 'components/Storagev3/graph_details';
 @import 'components/Storagev3/location_bar';
+@import 'components/Storagev3/share_detail_view';
+@import 'components/Storagev3/configuration';
+@import 'components/Storagev3/copy_link';
+@import 'components/Storagev3/share_selection_scroller';
+@import 'components/Storagev3/add_storage';
+@import 'components/Storagev3/small_share_card';
+@import 'components/Storagev3/share_card_container';
+@import 'components/Storagev3/carousel';
 
 /**
 * Supportv3 components
@@ -283,9 +291,9 @@ This file should not contain anything but @import and comments.
 @import 'pages/storage/storage_view';
 @import 'pages/storage/whitelist_form';
 @import 'pages/storage/whitelist_modal';
-@import 'pages/storage//add_storage_container';
+// @import 'pages/storage//add_storage_container';
 @import 'pages/storage/delete_storage';
-@import 'pages/storage/configuration';
+// @import 'pages/storage/configuration';
 @import 'pages/storage/storage_overview';
 
 @import 'pages/support';

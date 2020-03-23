@@ -86,7 +86,7 @@ class Portal extends Component {
 						}}
 					/>
 					<Route
-						path='/portal/storage/:share'
+						path='/portal/storage/(manage)?/:share?'
 						render={props => {
 							return hasStorageAccess ? <PortalLayout {...props} /> : <Home {...props} />;
 						}}

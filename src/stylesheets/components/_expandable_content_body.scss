@@ -2,7 +2,7 @@
 	.expandable-row {
 		display: flex;
 		flex-direction: row;
-		min-height: calculateVh(40px);
+		// min-height: calculateVh(40px);
 
 		.left-side {
 			flex: 1 0 50%;

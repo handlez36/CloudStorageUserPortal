@@ -1,0 +1,296 @@
+.share-detail-view {
+	padding-top: GetSize(1);
+	.header-container {
+		width: 100%;
+		height: GetSize(6);
+		@include FlexboxRow;
+		.header-share-detail {
+			flex: 5;
+			background-color: $White;
+			@include FlexboxRow;
+			.back-arrow {
+				width: GetSize(2);
+				align-self: center;
+				margin-left: GetSize(1);
+				cursor: pointer;
+			}
+		}
+		.delete-button {
+			flex: 1;
+			.blox-button {
+				height: 100%;
+				width: 100%;
+				background-color: $Cool_Gray_Light_2;
+				color: $DCBLOX_Gray;
+				@include FlexboxCenter;
+				.icon {
+					position: relative;
+					left: unset;
+					top: unset;
+					width: GetSize(3);
+					height: GetSize(3);
+				}
+				.icon img {
+					width: 100%;
+					height: 100%;
+				}
+				.title {
+					@include Create-Ticket-Label;
+				}
+			}
+			.blox-button:hover {
+				color: $White;
+				background-color: $Med_Rust;
+				background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Med_Rust 48%);
+			}
+		}
+	}
+	.share-content {
+		@include FlexboxRow;
+		justify-content: space-between;
+		padding-top: GetSize(1);
+		padding-right: GetSize(5);
+		padding-left: GetSize(5);
+		.left-pane {
+			width: GetSize(35);
+			@include FlexboxColumn;
+			justify-content: space-between;
+			.share-name-label {
+				width: 100%;
+				@include FlexboxRow;
+			}
+			.share-name-label .icon {
+				flex: 0 1 auto;
+			}
+			.share-name-label .title {
+				flex: 0 1 auto;
+				margin-top: 6px;
+				margin-left: GetSize(1);
+				@include User-Management-Menu;
+				line-height: 18px;
+				color: $DCBLOX_Gray;
+			}
+			.share-name-label .access {
+				position: relative;
+				flex: 1 0 auto;
+				text-align: right;
+				img {
+					width: 42px;
+					height: 21px;
+				}
+			}
+			.share-config-section {
+				height: 190px;
+				.expandable-row:last-child {
+					height: 15px;
+					margin-bottom: GetSize(1);
+				}
+			}
+			.network-config-section {
+				margin-top: GetSize(1);
+				.configuration {
+					height: 138px;
+				}
+				.configuration .whitelist {
+					width: GetSize(21);
+					height: GetSize(4);
+					padding-left: GetSize(1);
+					margin-left: 0;
+				}
+			}
+		}
+		.right-pane {
+			width: GetSize(46);
+			.header {
+				height: GetSize(2);
+			}
+			.header .title {
+				margin-top: 6px;
+				@include User-Management-Menu;
+				line-height: 18px;
+				color: $DCBLOX_Gray;
+			}
+			.single-share-graph {
+				width: 100%;
+			}
+			.single-share-graph .storage-usage-graph {
+				margin-top: 2px;
+			}
+			.single-share-graph .storage-usage-graph svg {
+				width: 256px !important;
+			}
+		}
+	}
+	&.video {
+		width: 100%;
+		height: 100%;
+		@include FlexboxCenter;
+		video {
+			width: GetSize(75);
+		}
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.share-detail-view {
+		.header-container {
+			height: GetSize(7);
+		}
+		.share-content {
+			padding-top: GetSize(2);
+			padding-right: GetSize(13);
+			padding-left: GetSize(13);
+			.left-pane {
+				width: GetSize(45);
+				.share-name-label .title {
+					margin-top: 6px;
+					margin-left: GetSize(1);
+					line-height: 18px;
+				}
+				.share-name-label .access {
+					img {
+						width: 42px;
+						height: 21px;
+					}
+				}
+				.share-config-section {
+					margin-top: GetSize(1);
+					height: 267px;
+					.configuration {
+						height: 267px;
+					}
+					.copy-link {
+						margin-top: GetSize(3);
+					}
+				}
+				.network-config-section {
+					margin-top: GetSize(3);
+					.configuration {
+						height: 188px;
+					}
+					.configuration .title.grid-item {
+						margin-top: GetSize(1);
+					}
+					.configuration .whitelist {
+						width: GetSize(21);
+						height: GetSize(4);
+						margin-left: 0;
+					}
+				}
+			}
+			.right-pane {
+				width: GetSize(56);
+				.header {
+					height: GetSize(3);
+				}
+				.header .title {
+					margin-top: 6px;
+					line-height: 18px;
+				}
+				.single-share-graph .storage-usage-graph {
+					margin-top: GetSize(1);
+				}
+				.single-share-graph .storage-usage-graph svg {
+					width: 349px !important;
+				}
+			}
+		}
+		&.video video {
+			width: GetSize(114);
+			height: GetSize(75);
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.share-detail-view {
+		padding-top: GetSize(1);
+		.header-container {
+			height: GetSize(10);
+			.header-share-detail {
+				flex: 8;
+			}
+			.header-share-detail .back-arrow {
+				width: GetSize(3);
+				height: GetSize(3);
+			}
+			.header-share-detail .back-arrow img {
+				width: 100%;
+				height: 100%;
+			}
+			.delete-button {
+				flex: 1;
+			}
+			.delete-button .blox-button .icon {
+				width: GetSize(5);
+				height: GetSize(5);
+			}
+		}
+		.share-content {
+			padding-top: GetSize(3);
+			padding-right: GetSize(40);
+			padding-left: GetSize(40);
+			.left-pane {
+				width: GetSize(60);
+				.share-name-label {
+					height: GetSize(4);
+				}
+				.share-name-label .title {
+					margin-top: 6px;
+					margin-left: GetSize(1);
+					line-height: 18px;
+				}
+				.share-name-label .access {
+					flex: 1 0 auto;
+					img {
+						width: 42px;
+						height: 21px;
+					}
+				}
+				.share-config-section {
+					height: 291px;
+					.expandable-row:last-child {
+						height: GetSize(5);
+						margin-bottom: GetSize(1);
+					}
+				}
+				.network-config-section {
+					margin-top: GetSize(3);
+					.share-config .title {
+						margin-top: GetSize(1);
+					}
+					.configuration {
+						height: 244px;
+					}
+					.configuration .whitelist {
+						width: GetSize(23);
+						height: GetSize(6);
+						margin-left: 0;
+					}
+				}
+			}
+			.right-pane {
+				width: GetSize(85);
+				.header {
+					height: GetSize(3);
+				}
+				.header .title {
+					margin-top: 6px;
+					line-height: 18px;
+				}
+				.single-share-graph .storage-usage-graph {
+					margin-top: GetSize(1);
+				}
+				.single-share-graph .storage-usage-graph svg {
+					width: 464px !important;
+				}
+			}
+		}
+		&.video {
+			width: 100%;
+			height: 100%;
+			video {
+				width: GetSize(150);
+				height: GetSize(100);
+			}
+		}
+	}
+}

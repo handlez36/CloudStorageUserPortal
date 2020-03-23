@@ -340,7 +340,7 @@ class ShareDetails extends Component {
 						<div className='title'>{share.name}</div>
 					</span>
 
-					<div key='share-config' className='share-config'>
+					<div key='share-config' className='share-config-section'>
 						<Configuration
 							toggleWhitelist={this.toggleWhiteListOpen}
 							type='SHARE'

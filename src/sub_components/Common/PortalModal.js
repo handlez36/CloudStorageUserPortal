@@ -12,6 +12,7 @@ const PortalModal = ({
 	isOpen,
 	submitEnabled,
 	onSubmit,
+	toggleOpen,
 	children,
 	useButton,
 	buttonClass,
@@ -22,7 +23,8 @@ const PortalModal = ({
 			isOpen={isOpen}
 			side
 			position='bottom-right'
-			toggle={() => {}}
+			// toggle={() => {}}
+			toggle={toggleOpen}
 		>
 			{/* <ModalHeader className="modal-header" titleClass="w-100 font-weight-bold" toggle={toggleOpen}> */}
 			{/* <ModalHeader className='' toggle={false}> */}

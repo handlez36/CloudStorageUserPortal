@@ -1,0 +1,269 @@
+.configuration {
+	padding-left: GetSize(2);
+	padding-right: GetSize(2);
+	background-color: $White;
+	width: 100%;
+	height: 100%;
+	box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+	@include FlexboxColumn;
+	.title {
+		min-height: 20px;
+		flex: 0 1 20px;
+		height: 20px;
+		@include Support-Section-Header;
+	}
+	.share-config {
+		position: relative;
+		flex: 1 0 auto;
+		margin-top: GetSize(1);
+		.expandable-component-body {
+			padding-top: 4px;
+			.expandable-row {
+				height: GetSize(5);
+				.left-side {
+					border-right: none;
+					.content {
+						word-wrap: break-word;
+					}
+					.label {
+						@include Text-Style-Expandable-Section-Label;
+						$map: (
+							576: 14,
+							1440: 16,
+							2560: 18,
+						);
+						font-size: least-squares-fit($map);
+					}
+					.content {
+						$map: (
+							576: 10,
+							1440: 11,
+							2560: 14,
+						);
+						font-size: least-squares-fit($map);
+					}
+				}
+				.right-side {
+					padding-left: GetSize(1);
+					.label {
+						@include Text-Style-Expandable-Section-Label;
+						$map: (
+							576: 14,
+							1440: 16,
+							2560: 18,
+						);
+						font-size: least-squares-fit($map);
+					}
+					.content {
+						$map: (
+							576: 8,
+							1440: 9,
+							2560: 10,
+						);
+						font-size: least-squares-fit($map);
+					}
+				}
+			}
+		}
+		.reset-button {
+			position: absolute;
+			top: 36%;
+			left: 52%;
+			.blox-button {
+				@include Status-Head;
+				.title {
+					opacity: 0.8;
+					letter-spacing: 0.1vw;
+				}
+			}
+			.blox-button:hover {
+				.title {
+					opacity: 1;
+				}
+			}
+			&.selected {
+				.blox-button:hover {
+					.title {
+						opacity: 1;
+					}
+				}
+			}
+		}
+		.whitelist {
+			cursor: pointer;
+			position: relative;
+			padding-right: GetSize(3);
+			box-shadow: 1.9px 2.3px 14.3px 0.8px rgba(0, 0, 0, 0.25);
+			background-color: $Dark_Emerald;
+			@include FlexboxRow;
+			justify-content: space-between;
+			align-items: center;
+			img {
+				flex: 0 1 20px;
+			}
+			.manage {
+				flex: 1 0 auto;
+				color: $White;
+				@include Status-Head;
+				text-align: right;
+				opacity: 0.5;
+				$map: (
+					576: 12,
+					1440: 14,
+					2560: 16,
+				);
+				font-size: least-squares-fit($map);
+				letter-spacing: 0.8px;
+			}
+			&.selected {
+				.manage {
+					opacity: 1;
+				}
+			}
+		}
+		.whitelist:hover {
+			.manage {
+				opacity: 1;
+			}
+		}
+		.api-key {
+			@include Text-Style-Expandable-Section-Label;
+			cursor: pointer;
+			width: GetSize(15);
+			position: absolute;
+			top: 36%;
+			left: 52%;
+			word-break: break-all;
+		}
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.configuration {
+		padding-left: GetSize(2);
+		padding-right: GetSize(2);
+		background-color: $White;
+		.title {
+			min-height: 20px;
+		}
+		.share-config {
+			.expandable-component-body {
+				padding-top: 4px;
+				.expandable-row {
+					height: GetSize(7);
+					.left-side {
+						.label {
+							padding-top: 1vh;
+						}
+						.content {
+							padding-top: 1vh;
+						}
+					}
+					.right-side {
+						padding-left: GetSize(1);
+						.label {
+							padding-top: 1vh;
+						}
+						.content {
+							padding-top: 1vh;
+						}
+					}
+				}
+			}
+			.reset-button {
+				top: 36%;
+				left: 52%;
+				.blox-button {
+					.title {
+						letter-spacing: 0.1vw;
+					}
+				}
+			}
+			.whitelist {
+				width: calculateVw(130px, 1440);
+				height: calculateVh(50px, 1440);
+				min-height: 30px;
+				min-width: 80px;
+				margin-left: 1vw;
+				margin-top: 0.8vh;
+				img {
+					width: calculateVw(53px, 1440);
+					height: calculateVh(20px, 1440);
+					left: 5%;
+					top: 30%;
+				}
+				.manage {
+					top: 20%;
+					left: 55%;
+				}
+			}
+			.api-key {
+				width: GetSize(15);
+				top: 36%;
+				left: 52%;
+			}
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.configuration {
+		padding-left: GetSize(2);
+		padding-right: GetSize(2);
+		.title {
+			min-height: 30px;
+			flex: 0 1 30px;
+			height: 30px;
+		}
+		.share-config {
+			.expandable-component-body {
+				padding-top: GetSize(1);
+				.expandable-row {
+					height: GetSize(9);
+					.left-side {
+						.label {
+							padding-top: GetSize(2);
+						}
+						.content {
+							padding-top: GetSize(2);
+						}
+					}
+					.right-side {
+						padding-left: GetSize(1);
+						.label {
+							padding-top: 1vh;
+						}
+						.content {
+							padding-top: 1vh;
+						}
+					}
+				}
+			}
+			.reset-button {
+				top: 36%;
+				left: 52%;
+			}
+			.whitelist {
+				width: calculateVw(130px, 1440);
+				height: calculateVh(50px, 1440);
+				min-height: 30px;
+				min-width: 80px;
+				margin-left: 1vw;
+				margin-top: 0.8vh;
+				img {
+					width: calculateVw(53px, 1440);
+					height: calculateVh(20px, 1440);
+					left: 5%;
+					top: 30%;
+				}
+				.manage {
+					top: 20%;
+					left: 55%;
+				}
+			}
+			.api-key {
+				width: GetSize(15);
+				top: 36%;
+				left: 52%;
+			}
+		}
+	}
+}

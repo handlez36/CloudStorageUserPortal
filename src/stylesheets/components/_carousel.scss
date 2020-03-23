@@ -1,19 +1,17 @@
-.carousel-container {
+.carousel-container.new {
 	position: relative;
-
-	width: calculateVw(540, 1440);
+	width: GetSize(55);
+	height: GetSize(17);
+	@include FlexboxRow;
 	.nav-container-right {
+		flex: 0 1 GetSize(3);
 		z-index: 2000;
-		right: 0%;
-		top: 0%;
-		position: absolute;
-		height: calculateVh(170, $standard-screen-height-mid);
-		width: calculateVw(30, 1440);
-		display: flex;
-		flex-direction: row;
-		align-items: center;
+		height: 100%;
+		width: GetSize(3);
+		min-width: GetSize(3);
+		border: 1px solid $Cool_Gray_Light_2;
+		@include FlexboxCenter;
 		background-color: $Cool_Gray_Light_2;
-
 		.nav-arrow-right {
 			width: calculateVw(20, 1440);
 			height: calculateVw(20, 1440);
@@ -32,15 +30,14 @@
 		}
 	}
 	.nav-container-left {
-		height: calculateVh(170, $standard-screen-height-mid);
-		position: absolute;
-		width: calculateVw(30, 1440);
-		left: 0%;
-		top: 0%;
-		display: flex;
-		flex-direction: row;
+		flex: 0 1 GetSize(3);
+		height: 100%;
+		width: GetSize(3);
+		min-width: GetSize(3);
+		@include FlexboxRow;
 		align-items: center;
 		background-color: $Cool_Gray_Light_2;
+		border: 1px solid $Cool_Gray_Light_2;
 		.nav-arrow-left {
 			width: calculateVw(20, 1440);
 			height: calculateVw(20, 1440);
@@ -53,7 +50,6 @@
 				position: absolute;
 				right: 20%;
 				bottom: 0%;
-
 				img {
 					width: calculateVw(10, 1440);
 					height: calculateVh(15, 1440);
@@ -64,6 +60,24 @@
 	.nav-arrow-left:hover,
 	.nav-arrow-right:hover {
 		background-color: $Cool_Gray_Light_3;
+	}
+	.list-container {
+		flex: 1 0 GetSize(50);
+		width: GetSize(50);
+		height: 100%;
+		overflow: hidden;
+		background-color: $Cool_Gray_Light_2;
+		.large-share-card-container {
+			width: auto;
+			height: 100%;
+			overflow: hidden;
+			background-color: $Cool_Gray_Light_2;
+			@include FlexboxRow;
+			align-items: center;
+		}
+		.large-share-card-container .small-share-card {
+			margin-left: GetSize(2);
+		}
 	}
 
 	&.portal-user-overview {

@@ -119,6 +119,8 @@ class StorageUsageGraph extends Component {
 	}
 
 	processStorageData = (response, resolution) => {
+		console.log('Response: ', response);
+		console.log('Resolution: ', resolution);
 		const { type, dataPoints } = this.props;
 		const dataSubset = type === 'file' ? 'fileTrends' : 'objectTrends';
 
@@ -266,6 +268,7 @@ class StorageUsageGraph extends Component {
 				: '';
 		};
 
+		console.log('Locations: ', locations);
 		return locations.slice(0, 5).map(location => (
 			<Victory.VictoryLine
 				key={`${location}-graph`}

@@ -1,17 +1,32 @@
 import axios from 'axios';
 
+import { Utils } from 'services/utils';
+
 const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 const config = {
 	withCredentials: true,
 };
 
 export class StorageApi {
-	static getAll(filterParams = null) {
+	static async getAll(filterParams = null) {
 		const url = `${BASE_URL}/storage/`;
 		const params = filterParams || { getObjectStorage: true, getFileStorage: true };
 
-		return axios.post(url, params, config);
+		const response = await axios.post(url, params, config);
+		if (Utils.isValidResponse(response)) {
+			const { storages } = response.data;
+			return { storages, errors: null };
+		}
+
+		const { error } = response.data;
+		return { storages: null, error };
 	}
+	// static getAll(filterParams = null) {
+	// 	const url = `${BASE_URL}/storage/`;
+	// 	const params = filterParams || { getObjectStorage: true, getFileStorage: true };
+
+	// 	return axios.post(url, params, config);
+	// }
 
 	static getStorage() {
 		const url = `${BASE_URL}/storage/`;
@@ -19,11 +34,23 @@ export class StorageApi {
 		return axios.get(url, config);
 	}
 
-	static get(id) {
+	static async get(id) {
 		const url = `${BASE_URL}/storage/${id}`;
+		const response = await axios.get(url, config);
+		if (Utils.isValidResponse(response)) {
+			const { storage, storageWhiteList, locations } = response.data;
+			return { storageDetails: { storage, storageWhiteList, locations }, errors: null };
+		}
 
-		return axios.get(url, config);
+		const { error } = response.data;
+		return { storages: null, error };
 	}
+
+	// static get(id) {
+	// 	const url = `${BASE_URL}/storage/${id}`;
+
+	// 	return axios.get(url, config);
+	// }
 
 	static updateStoragePassword(username, storageId) {
 		const url = `${BASE_URL}/storage/password`;
@@ -40,11 +67,22 @@ export class StorageApi {
 		});
 	}
 
-	static getStorageStats() {
+	static async getStorageStats() {
 		const url = `${BASE_URL}/storage/stats`;
+		const response = await axios.get(url, config);
+		if (Utils.isValidResponse(response)) {
+			const { stats } = response.data;
+			return { stats, errors: null };
+		}
 
-		return axios.get(url, config);
+		const { error } = response.data;
+		return { stats: null, error };
 	}
+	// static getStorageStats() {
+	// 	const url = `${BASE_URL}/storage/stats`;
+
+	// 	return axios.get(url, config);
+	// }
 
 	static getStorageTrends(params = null) {
 		const url = `${BASE_URL}/storage/trends`;
