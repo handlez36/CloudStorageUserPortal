@@ -1,10 +1,17 @@
 .share-selection-scroller {
-	width: GetSize(95);
+	width: GetSize(84);
 	height: GetSize(20);
+	margin: 0 auto;
 	margin-top: GetSize(4);
-	padding-right: GetSize(10);
-	padding-left: GetSize(10);
+	// padding-right: GetSize(10);
+	// padding-left: GetSize(10);
+	@include FlexboxColumn;
+	align-items: center;
+	justify-content: center;
 	.shares-label {
+		flex: 0 1 GetSize(4);
+		width: GetSize(70);
+		width: 100%;
 		.title {
 			@include Support-Section-Header;
 		}
@@ -14,6 +21,8 @@
 		}
 	}
 	.share-options-section {
+		flex: 1 0 auto;
+		width: 100%;
 		// height: GetSize(21);
 		height: GetSize(17);
 		@include FlexboxRow;
@@ -22,10 +31,11 @@
 }
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 	.share-selection-scroller {
-		padding-top: GetSize(4);
-		padding-right: GetSize(13);
-		padding-left: GetSize(13);
+		width: 100%;
+		height: GetSize(24);
+		margin-top: GetSize(5);
 		.shares-label {
+			width: GetSize(113);
 			.title {
 				@include Support-Section-Header;
 			}
@@ -35,12 +45,32 @@
 			}
 		}
 		.share-options-section {
-			// height: GetSize(21);
-			height: 100%;
+			width: GetSize(113);
+			// height: GetSize(24);
 			@include FlexboxRow;
 			justify-content: space-between;
 		}
 	}
 }
 @media screen and (min-width: $high-res + 1) {
+	.share-selection-scroller {
+		width: 100%;
+		height: GetSize(38) !important;
+		margin-top: GetSize(5);
+		.shares-label {
+			width: GetSize(150);
+			.title {
+				@include Support-Section-Header;
+			}
+			.active-shares {
+				@include Small-Text-Profile;
+				color: $DCBLOX_Gray;
+			}
+		}
+		.share-options-section {
+			width: GetSize(150);
+			@include FlexboxRow;
+			justify-content: space-between;
+		}
+	}
 }

@@ -98,7 +98,7 @@ This file should not contain anything but @import and comments.
 @import 'components/_horizontal_grid';
 @import 'components/graph';
 // @import 'components/copy_link';
-@import 'components/carousel';
+// @import 'components/carousel';
 @import 'components/date_time_picker';
 @import 'components/time_picker';
 // @import 'components/ticket_count_row';
@@ -169,6 +169,7 @@ This file should not contain anything but @import and comments.
 @import 'components/Storagev3/add_storage';
 @import 'components/Storagev3/small_share_card';
 @import 'components/Storagev3/share_card_container';
+@import 'components/Storagev3/carousel';
 
 /**
 * Supportv3 components

@@ -17,15 +17,14 @@ const LAYOUT_CONFIG = {
 		shareSelection: { x: 1, y: 76, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 34 },
 	},
 	[RESOLUTIONS.HIGH]: {
-		shareDetailView: { x: 1, y: 50, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 104 },
+		shareDetailView: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 106 },
+		shareSelection: { x: 1, y: 108, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 52 },
 	},
 };
 
 class ManageStoragePage extends Component {
 	state = {
 		selected: null,
-		// selected: 8,
-		// selected: 8,
 	};
 
 	onStorageSelect = selected => {

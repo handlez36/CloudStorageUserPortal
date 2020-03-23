@@ -144,8 +144,9 @@
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 	.small-share-card {
 		position: relative;
-		width: GetSize(6);
-		height: GetSize(4);
+		width: GetSize(12);
+		min-width: GetSize(14);
+		height: GetSize(13);
 		// width: calculateVw(108px, $standard-screen-width-mid);
 		// height: calculateVh(108px, $standard-screen-height-mid);
 		box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
@@ -284,10 +285,9 @@
 @media screen and (min-width: $high-res + 1) {
 	.small-share-card {
 		position: relative;
-		width: GetSize(6);
-		height: GetSize(4);
-		// width: calculateVw(108px, $standard-screen-width-mid);
-		// height: calculateVh(108px, $standard-screen-height-mid);
+		width: GetSize(22);
+		min-width: GetSize(22);
+		height: GetSize(20);
 		box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
 		.provisioning {
 			position: absolute;

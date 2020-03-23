@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react';
 
 import PasswordModal from 'sub_components/Common/PasswordModal';
+import BloxButton from 'sub_components/Common/BloxButton';
 import WhiteListModal from 'sub_components/Storage/WhiteListModal';
 import { StorageApi } from 'services/storage';
 import { STORAGE_AVATAR_URL_PREFIX } from 'utils/Misc/CommonConstants';
 import * as StorageUtils from 'utils/StorageUtils';
+import { PASSWORD_UPDATE_STATUS } from 'utils/StorageConstants';
 import Configuration from './Components/Configurations';
 import StorageUsageGraph from './../StorageOverviewDetail/Components/StorageUsageGraph';
 
@@ -12,6 +14,9 @@ const CDN_URL = process.env.REACT_APP_CDN_URL;
 const LadyBugIcon = `${CDN_URL}storage/Storage-ladybug-white-thinline.svg`;
 const IconPrivate = `${CDN_URL}storage/icon-private.svg`;
 const IconPublic = `${CDN_URL}storage/icon-public.svg`;
+const DeleteIconHover = `${CDN_URL}storage/icon-delete-storage-select.svg`;
+const DeleteIcon = `${CDN_URL}storage/icon-delete-storage-default.svg`;
+const Arrow = `${CDN_URL}storage/left-arrow.svg`;
 
 class ShareDetailView extends Component {
 	state = {
@@ -20,8 +25,43 @@ class ShareDetailView extends Component {
 		storageError: null,
 		stats: [],
 		statsError: null,
+		storagePassword: null,
+		passwordUpdateStatus: PASSWORD_UPDATE_STATUS.NOT_STARTED,
 		resolution: 'DAY',
 		whiteListModalOpen: false,
+	};
+
+	togglePasswordModal = () => {
+		const resetButton = document.querySelector('.reset-button');
+		document.getElementById('reset-icon').src = ResetIcon;
+		resetButton.classList.remove('selected');
+		this.setState({
+			passwordUpdateStatus: PASSWORD_UPDATE_STATUS.NOT_STARTED,
+			storagePassword: null,
+		});
+	};
+
+	changeStoragePassword = () => {
+		const { storage: { username, ml_id } = {} } = this.state.storageDetails;
+		const resetButton = document.querySelector('.reset-button');
+		document.getElementById('reset-icon').src = ResetIconSelected;
+		resetButton.classList.add('selected');
+
+		if (username && ml_id) {
+			StorageApi.updateStoragePassword(username, ml_id)
+				.then(response => {
+					if (response.status === 200 && !response.data.error) {
+						const { password: storagePassword } = response.data;
+						this.setState({
+							storagePassword,
+							passwordUpdateStatus: PASSWORD_UPDATE_STATUS.SUCCESS,
+						});
+					} else {
+						this.setState({ passwordUpdateStatus: PASSWORD_UPDATE_STATUS.ERROR });
+					}
+				})
+				.catch(() => this.setState({ passwordUpdateStatus: PASSWORD_UPDATE_STATUS.ERROR }));
+		}
 	};
 
 	getUniqueShareIcon = icon => {
@@ -104,6 +144,13 @@ class ShareDetailView extends Component {
 		this.setState(state => ({ ...state, whiteListModalOpen: !state.whiteListModalOpen }));
 	};
 
+	onMouseOver = () => {
+		document.getElementById('delete-button').src = DeleteIconHover;
+	};
+	onMouseOut = () => {
+		document.getElementById('delete-button').src = DeleteIcon;
+	};
+
 	componentDidUpdate() {
 		const { storageId: existingId } = this.state;
 		const { storageId: incomingId } = this.props;
@@ -121,30 +168,52 @@ class ShareDetailView extends Component {
 	render() {
 		const { breakpoint } = this.props;
 		const { storage, storage: { icon, name = '', type } = {} } = this.state.storageDetails || {};
-		const { stats, resolution, whiteListModalOpen } = this.state;
+		const {
+			stats,
+			resolution,
+			storagePassword,
+			passwordUpdateStatus,
+			whiteListModalOpen,
+		} = this.state;
 		const uniqueIcon = this.getUniqueShareIcon(icon);
 		const packageData = this.parsePackageData(stats, type);
 		const { commitmentAmount, unit } = this.getCommitmentSizes(packageData);
 
 		return storage ? (
 			<div className='share-detail-view'>
-				{/* <PasswordModal
-					key='pwd-modal'
+				<PasswordModal
 					status={passwordUpdateStatus}
 					share={storage}
 					storagePassword={storagePassword}
 					toggleOpen={this.togglePasswordModal}
-				/> */}
-
+				/>
 				<WhiteListModal
 					toggleOpen={this.toggleWhiteListOpen}
 					whiteList={storage.whitelist}
 					storageId={storage.ml_id}
 					isOpen={whiteListModalOpen}
 				/>
-
-				<div className='share-options-bar' />
-
+				<div className='share-options-bar header-container'>
+					<div className='header-share-detail'>
+						<div className='back-arrow' onClick={() => {}}>
+							<img src={Arrow} />
+						</div>
+					</div>
+					<div
+						className='delete-button'
+						onMouseOver={this.onMouseOver}
+						onMouseOut={this.onMouseOut}
+					>
+						<BloxButton
+							imageId={'delete-button'}
+							icon={DeleteIcon}
+							title={'DELETE STORAGE'}
+							enabled={true}
+							customClass={`blox-button`}
+							onClick={() => {}}
+						/>
+					</div>
+				</div>
 				<div className='share-content'>
 					<div className='left-pane'>
 						<div className='share-name-label'>
@@ -156,17 +225,16 @@ class ShareDetailView extends Component {
 								<img src={storage.privateAccess ? IconPrivate : IconPublic} />
 							</div>
 						</div>
-						<div key='share-config' className='share-config'>
+						<div key='share-config' className='share-config-section'>
 							<Configuration
 								toggleWhitelist={this.toggleWhiteListOpen}
 								type='SHARE'
 								share={storage}
 								fields={this.generateShareDetails(storage)}
-								// changeStoragePassword={this.changeStoragePassword}
-								changeStoragePassword={() => {}}
+								changeStoragePassword={this.changeStoragePassword}
 							/>
 						</div>
-						<div key='network-config' className='network-config'>
+						<div key='network-config' className='network-config-section'>
 							<Configuration
 								toggleWhitelist={this.toggleWhiteListOpen}
 								type='NETWORK'
@@ -176,26 +244,25 @@ class ShareDetailView extends Component {
 						</div>
 					</div>
 					<div className='right-pane'>
-						<span key='trending-label' className='trending-label'>
-							<div className='single-share-graph'>
-								<div className='header'>
-									<div className='title grid-item'>TRENDING</div>
-								</div>
-								<StorageUsageGraph
-									id={storage.type}
-									resolution={resolution}
-									stats={stats}
-									type={storage.type === 'file' ? 'file' : 'object'}
-									packageType={packageData}
-									share={storage}
-									graphType='singleShare'
-									dataPoints={6}
-									fileCommitment={storage.type === 'file' ? commitmentAmount : null}
-									objectCommitment={storage.type === 'object' ? commitmentAmount : null}
-									breakpoint={breakpoint}
-								/>
+						<span key='trending-label' className='trending-label' />
+						<div className='single-share-graph'>
+							<div className='header'>
+								<div className='title grid-item'>TRENDING</div>
 							</div>
-						</span>
+							<StorageUsageGraph
+								id={storage.type}
+								resolution={resolution}
+								stats={stats}
+								type={storage.type === 'file' ? 'file' : 'object'}
+								packageType={packageData}
+								share={storage}
+								graphType='singleShare'
+								dataPoints={6}
+								fileCommitment={storage.type === 'file' ? commitmentAmount : null}
+								objectCommitment={storage.type === 'object' ? commitmentAmount : null}
+								breakpoint={breakpoint}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
