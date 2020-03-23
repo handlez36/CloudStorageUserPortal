@@ -3,7 +3,7 @@
 	height: GetSize(1);
 	background-color: transparent;
 	background-position: left bottom;
-	transition: width 2s, height 2s ease-in-out;
+	transition: width 2s, height 1s ease-in;
 	overflow: visible;
 	transform: translate(-50%, 0%);
 	position: absolute;
@@ -18,11 +18,20 @@
 		min-width: GetSize(40);
 		width: 100%;
 		height: 100%;
-		&.four {
+		&.length-4 {
 			min-width: GetSize(50);
 		}
-		&.five {
+		&.length-5 {
 			min-width: GetSize(62);
+		}
+		&.length-6 {
+			min-width: GetSize(74);
+		}
+		&.length-7 {
+			min-width: GetSize(86);
+		}
+		&.length-8 {
+			min-width: GetSize(98);
 		}
 
 		.title {
@@ -40,9 +49,8 @@
 		transform: translate(-50%, 0%);
 		position: absolute;
 		left: 50%;
-
 		overflow: visible;
-		transition: all 2s ease-in-out;
+		transition: width 2s, height 1s ease-in;
 		.title {
 			width: 0px;
 			height: 10px;
@@ -69,7 +77,6 @@
 			}
 
 			.breadcrumb-dropdown {
-				box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
 				overflow: visible;
 				background-color: transparent;
 				transition-delay: 2s;
@@ -80,7 +87,7 @@
 				height: GetSize(7);
 				width: 100%;
 				opacity: 1;
-				transition: transform 2s, opacity 2s ease-in-out;
+				transition: transform 2s, opacity 2s ease-in;
 				.breadcrumbs {
 					width: 100%;
 					height: GetSize(2) !important;
@@ -94,7 +101,7 @@
 					animation-timing-function: ease-in;
 					animation-duration: 2.5s;
 					opacity: 1;
-					transition: all 2s ease-in-out;
+					transition: all 2s ease-in;
 
 					.crumb {
 						cursor: pointer;
@@ -102,7 +109,7 @@
 						color: $Cool_Gray_Dark_3;
 						border-radius: 0px;
 						margin-left: GetSize(1.5);
-						transition: all 2s ease-in-out;
+						transition: all 2s ease-in;
 						width: 100%;
 						text-align: center;
 						&.hide-all {
@@ -175,11 +182,20 @@
 			min-width: GetSize(45);
 			width: 100%;
 			//height: 100%;
-			&.four {
+			&.length-4 {
 				min-width: GetSize(62);
 			}
-			&.five {
+			&.length-5 {
 				min-width: GetSize(75);
+			}
+			&.length-6 {
+				min-width: GetSize(88);
+			}
+			&.length-7 {
+				min-width: GetSize(101);
+			}
+			&.length-8 {
+				min-width: GetSize(114);
 			}
 
 			.title {
@@ -199,7 +215,7 @@
 			left: 50%;
 
 			overflow: visible;
-			transition: all 2s ease-in-out;
+			transition: width 2s, height 2s ease-in;
 			.title {
 				width: 0px;
 				height: 10px;
@@ -244,7 +260,7 @@
 						animation-timing-function: ease-in;
 						animation-duration: 2.5s;
 						opacity: 1;
-						transition: all 2s ease-in-out;
+						transition: all 2s ease-in;
 
 						.crumb {
 							cursor: pointer;
@@ -252,7 +268,7 @@
 							color: $Cool_Gray_Dark_3;
 							border-radius: 0px;
 							margin-left: GetSize(1.5);
-							transition: all 2s ease-in-out;
+							transition: all 2s ease-in;
 							width: 100%;
 							text-align: center;
 							&.hide-all {
@@ -313,11 +329,20 @@
 			min-width: GetSize(60);
 			width: 100%;
 			//height: 100%;
-			&.four {
+			&.length-4 {
 				min-width: GetSize(80);
 			}
-			&.five {
+			&.length-5 {
 				min-width: GetSize(100);
+			}
+			&.length-6 {
+				min-width: GetSize(120);
+			}
+			&.length-7 {
+				min-width: GetSize(140);
+			}
+			&.length-8 {
+				min-width: GetSize(160);
 			}
 
 			.title {
@@ -337,7 +362,7 @@
 			left: 50%;
 
 			overflow: visible;
-			transition: all 2s ease-in-out;
+			transition: all 2s ease-in;
 			.title {
 				width: 0px;
 				height: 10px;
@@ -382,7 +407,7 @@
 						animation-timing-function: ease-in;
 						animation-duration: 2.5s;
 						opacity: 1;
-						transition: all 2s ease-in-out;
+						transition: all 2s ease-in;
 
 						.crumb {
 							cursor: pointer;
@@ -390,7 +415,7 @@
 							color: $Cool_Gray_Dark_3;
 							border-radius: 0px;
 							margin-left: GetSize(1.5);
-							transition: all 2s ease-in-out;
+							transition: all 2s ease-in;
 							width: 100%;
 							text-align: center;
 							&.hide-all {

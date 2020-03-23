@@ -1,6 +1,7 @@
 .modal-backdrop {
-	z-index: 3999 !important;
+	z-index: 4999 !important;
+	pointer-events: none;
 }
 .modal {
-	z-index: 4000 !important;
+	z-index: 5000 !important;
 }

@@ -1,83 +1,79 @@
-.accounts-component-wrapper {
-	width: GetSize(25);
+.company-name {
+	width: GetSize(20);
 	height: GetSize(5);
-	transition: width 2s, height 2s;
+	text-align: center;
+	padding-top: GetSize(1.7);
+	padding-right: GetSize(1);
+	color: $Cool_Gray_Dark_3;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	text-transform: uppercase;
+	background-color: $White;
+	position: absolute;
+	right: GetSize(5);
+	opacity: 1;
+	transition: opacity 1s ease-in;
+	&.hover {
+		opacity: 0;
+	}
+}
+
+.accounts-component-wrapper {
+	width: GetSize(5);
+	height: GetSize(5);
 	position: absolute;
 	display: flex;
 	flex-direction: row;
 	top: 0;
 	right: 0;
 	background-color: $White;
-	.company-name {
-		width: GetSize(20);
-		height: GetSize(5);
-		text-align: center;
-		padding-top: GetSize(1.7);
-		padding-right: GetSize(1);
-		color: $Cool_Gray_Dark_3;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		text-transform: uppercase;
-		background-color: $White;
-		background: linear-gradient(90deg, $White 50%, $Cool_Gray_Light_1 50%);
-		background-size: 250% 100%;
-		background-position: left bottom;
-		transition: all 2s ease-out;
-		position: absolute;
-		right: GetSize(5);
-	}
+	transition: width 2s, height 2s ease-in;
+	overflow: hidden;
+
 	.accounts-dropdown {
-		opacity: 0;
-		width: GetSize(0);
-		height: GetSize(0);
-		.multi-user {
-			transition: width 2s, height 2s;
-			height: GetSize(0);
-		}
-		.single-user {
-			transition: width 2s, height 2s;
-			height: GetSize(0);
-			.avatar {
-				display: none;
+		width: GetSize(29);
+		height: GetSize(17);
+		opacity: 1;
+		position: absolute;
+		right: 0;
+
+		.top-container {
+			width: GetSize(29);
+			display: flex;
+			flex-direction: row;
+			margin-bottom: GetSize(5);
+
+			.company-name-overlay {
+				width: GetSize(29);
+				height: GetSize(5);
+				text-align: center;
+				padding-top: GetSize(1.7);
+				padding-right: GetSize(7);
+				color: $Cool_Gray_Dark_3;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				text-transform: uppercase;
+				background-color: $Cool_Gray_Light_1;
+				position: absolute;
+				left: 0;
+			}
+			.image-overlay {
+				width: GetSize(5);
+				height: GetSize(5);
+				background-color: $Cool_Gray_Light_1;
+				position: absolute;
+				right: 0;
+				img {
+					padding: 5px;
+					width: GetSize(5);
+					height: GetSize(5);
+				}
 			}
 		}
-	}
-	.image {
-		width: GetSize(5);
-		height: GetSize(5);
-		background-color: $Cool_Gray_Light_1;
-		right: 0;
-		position: absolute;
-
-		img {
-			padding: 5px;
-			width: GetSize(5);
-			height: GetSize(5);
-		}
-	}
-	.move-background {
-		background-position: right bottom;
-	}
-}
-
-.accounts-component-wrapper:hover {
-	width: GetSize(29);
-	height: GetSize(12);
-
-	.company-name {
-		width: GetSize(24);
-	}
-	.accounts-dropdown {
-		box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
-		width: 100%;
-		height: auto;
-		margin-top: GetSize(5);
-		opacity: 1;
-		top: 0;
-		right: 0;
-		position: absolute;
 		.multi-user {
+			width: GetSize(29);
 			height: GetSize(5);
 			background: $White;
 			display: flex;
@@ -112,12 +108,24 @@
 			height: GetSize(7);
 			padding-bottom: GetSize(3);
 		}
+
+		.multi-user:after {
+			content: '';
+			display: block;
+			left: 0;
+			width: GetSize(25);
+			height: 0vh;
+			position: absolute;
+			border-bottom: 1px solid $Cool_Gray_Light_3;
+			margin-top: GetSize(2);
+			margin-left: GetSize(2);
+		}
 		.single-user {
-			width: GetSize(29);
+			width: GetSize(29) !important;
 			height: GetSize(7);
 			display: flex;
 			flex-direction: column;
-			transition: width 2s, height 2s;
+			background-color: $White;
 
 			.title {
 				width: GetSize(9);
@@ -161,63 +169,142 @@
 			margin-top: GetSize(2);
 			margin-left: GetSize(2);
 		}
-		.multi-user:after {
-			content: '';
-			display: block;
-			left: 0;
-			width: GetSize(25);
-			height: 0vh;
-			position: absolute;
-			border-bottom: 1px solid $Cool_Gray_Light_3;
-			margin-top: GetSize(2);
-			margin-left: GetSize(2);
+	}
+	.image {
+		width: GetSize(5);
+		height: GetSize(5);
+		background-color: $Cool_Gray_Light_1;
+		right: 0;
+		position: absolute;
+
+		img {
+			padding: 5px;
+			width: GetSize(5);
+			height: GetSize(5);
+		}
+	}
+	&.hover {
+		width: GetSize(29);
+		height: GetSize(12);
+
+		.accounts-dropdown {
+			box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+		}
+		&.multi-list-2 {
+			height: GetSize(24);
+		}
+		&.multi-list-3 {
+			height: GetSize(29);
+		}
+		&.multi-list-4 {
+			height: GetSize(34);
 		}
 	}
 }
-@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
-	.accounts-component-wrapper {
-		width: GetSize(33);
-		height: GetSize(8);
-		.company-name {
-			width: GetSize(27);
-			height: GetSize(8);
-			padding-top: GetSize(2.7);
-			right: GetSize(8);
-		}
-		.image {
-			width: GetSize(8);
-			height: GetSize(8);
 
-			img {
-				width: GetSize(8);
-				height: GetSize(8);
-			}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.company-name {
+		width: GetSize(30);
+		height: GetSize(8);
+		text-align: center;
+		padding-top: GetSize(3);
+		padding-right: GetSize(1);
+		color: $Cool_Gray_Dark_3;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		text-transform: uppercase;
+		background-color: $White;
+		position: absolute;
+		right: GetSize(8);
+		opacity: 1;
+		transition: opacity 1s ease-in;
+		&.hover {
+			opacity: 0;
 		}
 	}
-	.accounts-component-wrapper:hover {
-		width: GetSize(38);
-		height: GetSize(17);
-		.company-name {
-			width: GetSize(30);
-		}
+
+	.accounts-component-wrapper {
+		width: GetSize(8);
+		height: GetSize(8);
+		position: absolute;
+		display: flex;
+		flex-direction: row;
+		top: 0;
+		right: 0;
+		background-color: $White;
+		transition: width 2s, height 2s ease-in;
+		overflow: hidden;
+
 		.accounts-dropdown {
-			margin-top: GetSize(8);
+			width: GetSize(38);
+			height: GetSize(17);
+			opacity: 1;
+			position: absolute;
+			right: 0;
+
+			.top-container {
+				width: GetSize(38);
+				display: flex;
+				flex-direction: row;
+				margin-bottom: GetSize(8);
+
+				.company-name-overlay {
+					width: GetSize(38);
+					height: GetSize(8);
+					text-align: center;
+					padding-top: GetSize(3);
+					padding-right: GetSize(9);
+					color: $Cool_Gray_Dark_3;
+					display: flex;
+					flex-direction: column;
+					align-items: flex-end;
+					text-transform: uppercase;
+					background-color: $Cool_Gray_Light_1;
+					position: absolute;
+					left: 0;
+				}
+				.image-overlay {
+					width: GetSize(8);
+					height: GetSize(8);
+					background-color: $Cool_Gray_Light_1;
+					position: absolute;
+					right: 0;
+					img {
+						width: GetSize(8);
+						height: GetSize(8);
+					}
+				}
+			}
 			.multi-user {
+				width: GetSize(38);
 				height: GetSize(6);
+				background: $White;
 				display: flex;
 				flex-direction: row;
 				align-items: center;
 				.company-link {
 					margin-left: GetSize(3);
 					padding-top: 2px;
+					color: $Cool_Gray_Dark_3;
 				}
 				.company-image {
 					width: GetSize(4);
 					height: GetSize(4);
-
+					position: absolute;
+					right: 0%;
+					margin-right: GetSize(2);
 					img {
 						width: GetSize(4);
 						height: GetSize(4);
+					}
+				}
+				&.trigger-animation-swipe {
+					background-position: left bottom;
+
+					.company-link {
+						@include Text-Flow-Active;
+						width: 100%;
 					}
 				}
 			}
@@ -225,49 +312,7 @@
 				height: GetSize(10);
 				padding-bottom: GetSize(4);
 			}
-			.single-user {
-				width: GetSize(38);
-				height: GetSize(9);
 
-				.title {
-					width: GetSize(9);
-					height: GetSize(2);
-					padding-left: GetSize(3);
-					align-self: flex-start;
-					padding-top: GetSize(2);
-				}
-				.user-wrapper {
-					display: flex;
-					height: GetSize(7);
-					padding-left: GetSize(3);
-
-					flex-direction: row;
-					.user-name {
-						align-self: flex-start;
-						padding-top: GetSize(1.5);
-					}
-					.avatar {
-						padding-top: GetSize(0.5);
-						img {
-							width: GetSize(4);
-							height: GetSize(4);
-						}
-						align-self: flex-start;
-						display: flex;
-					}
-				}
-			}
-			.single-user:after {
-				content: '';
-				display: block;
-				left: 0;
-				width: GetSize(34);
-				height: 0vh;
-				position: relative;
-				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
-				margin-top: GetSize(0);
-				margin-left: GetSize(2);
-			}
 			.multi-user:after {
 				content: '';
 				display: block;
@@ -279,88 +324,41 @@
 				margin-top: GetSize(3);
 				margin-left: GetSize(2);
 			}
-		}
-	}
-}
-
-@media screen and (min-width: $high-res + 1) {
-	.accounts-component-wrapper {
-		width: GetSize(40);
-		height: GetSize(10);
-
-		.company-name {
-			width: GetSize(40);
-			height: GetSize(10);
-			padding-top: GetSize(3.5);
-			right: GetSize(10);
-		}
-		.image {
-			width: GetSize(10);
-			height: GetSize(10);
-			img {
-				width: GetSize(10);
-				height: GetSize(10);
-			}
-		}
-	}
-	.accounts-component-wrapper:hover {
-		width: GetSize(50);
-		height: GetSize(22);
-
-		.company-name {
-			width: GetSize(40);
-		}
-		.accounts-dropdown {
-			margin-top: GetSize(10);
-
-			.multi-user {
-				height: GetSize(7);
-
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				.company-link {
-					margin-left: GetSize(4);
-				}
-				.company-image {
-					width: GetSize(5);
-					height: GetSize(5);
-					img {
-						width: GetSize(5);
-						height: GetSize(5);
-					}
-				}
-			}
-			.multi-user:last-child {
-				height: GetSize(12);
-				padding-bottom: GetSize(3);
-			}
 			.single-user {
-				width: GetSize(50);
-				height: GetSize(12);
+				width: GetSize(38);
+				height: GetSize(9);
+				display: flex;
+				flex-direction: column;
+				background-color: $White;
 
 				.title {
 					width: GetSize(9);
-					height: GetSize(3);
-					padding-left: GetSize(4);
+					height: GetSize(2);
+					padding-left: GetSize(3);
 					align-self: flex-start;
-					padding-top: GetSize(3);
+					padding-top: GetSize(1);
+					color: $Cool_Gray_Med_1;
 				}
 				.user-wrapper {
 					display: flex;
 					height: GetSize(7);
-					padding-left: GetSize(4);
+					padding-left: GetSize(3);
 					flex-direction: row;
 					.user-name {
+						padding-top: GetSize(1.5);
 						align-self: flex-start;
-						padding-top: GetSize(2);
+						color: $Cool_Gray_Dark_3;
 					}
 					.avatar {
+						padding-top: GetSize(0.5);
 						img {
-							width: GetSize(5);
-							height: GetSize(5);
+							width: GetSize(4);
+							height: GetSize(4);
 						}
 						align-self: flex-start;
+						position: absolute;
+						right: 0%;
+						margin-right: GetSize(2);
 						display: flex;
 					}
 				}
@@ -369,13 +367,158 @@
 				content: '';
 				display: block;
 				left: 0;
-				width: GetSize(44);
+				width: GetSize(34);
 				height: 0vh;
 				position: relative;
-				border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 				margin-top: GetSize(0);
-				margin-left: GetSize(4);
+				margin-left: GetSize(2);
 			}
+		}
+		.image {
+			width: GetSize(8);
+			height: GetSize(8);
+			background-color: $Cool_Gray_Light_1;
+			right: 0;
+			position: absolute;
+
+			img {
+				padding: 5px;
+				width: GetSize(8);
+				height: GetSize(8);
+			}
+		}
+		&.hover {
+			width: GetSize(38);
+			height: GetSize(18);
+
+			.accounts-dropdown {
+				box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+			}
+			&.multi-list-2 {
+				height: GetSize(34);
+			}
+			&.multi-list-3 {
+				height: GetSize(40);
+			}
+			&.multi-list-4 {
+				height: GetSize(46);
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $high-res + 1) {
+	.company-name {
+		width: GetSize(40);
+		height: GetSize(10);
+		text-align: center;
+		padding-top: GetSize(3.7);
+		padding-right: GetSize(1);
+		color: $Cool_Gray_Dark_3;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		text-transform: uppercase;
+		background-color: $White;
+		position: absolute;
+		right: GetSize(10);
+		opacity: 1;
+		transition: opacity 1s ease-in;
+		&.hover {
+			opacity: 0;
+		}
+	}
+
+	.accounts-component-wrapper {
+		width: GetSize(10);
+		height: GetSize(10);
+		position: absolute;
+		display: flex;
+		flex-direction: row;
+		top: 0;
+		right: 0;
+		background-color: $White;
+		transition: width 2s, height 2s ease-in;
+		overflow: hidden;
+
+		.accounts-dropdown {
+			width: GetSize(50);
+			height: GetSize(22);
+			opacity: 1;
+			position: absolute;
+			right: 0;
+
+			.top-container {
+				width: GetSize(50);
+				display: flex;
+				flex-direction: row;
+				margin-bottom: GetSize(10);
+
+				.company-name-overlay {
+					width: GetSize(50);
+					height: GetSize(10);
+					text-align: center;
+					padding-top: GetSize(3.7);
+					padding-right: GetSize(12);
+					color: $Cool_Gray_Dark_3;
+					display: flex;
+					flex-direction: column;
+					align-items: flex-end;
+					text-transform: uppercase;
+					background-color: $Cool_Gray_Light_1;
+					position: absolute;
+					left: 0;
+				}
+				.image-overlay {
+					width: GetSize(10);
+					height: GetSize(10);
+					background-color: $Cool_Gray_Light_1;
+					position: absolute;
+					right: 0;
+					img {
+						width: GetSize(10);
+						height: GetSize(10);
+					}
+				}
+			}
+			.multi-user {
+				width: GetSize(50);
+				height: GetSize(7);
+				background: $White;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				.company-link {
+					margin-left: GetSize(4);
+
+					color: $Cool_Gray_Dark_3;
+				}
+				.company-image {
+					width: GetSize(5);
+					height: GetSize(5);
+					// position: absolute;
+					// right: 0%;
+					// margin-right: GetSize(2);
+					img {
+						width: GetSize(5);
+						height: GetSize(5);
+					}
+				}
+				&.trigger-animation-swipe {
+					background-position: left bottom;
+
+					.company-link {
+						@include Text-Flow-Active;
+						width: 100%;
+					}
+				}
+			}
+			.multi-user:last-child {
+				height: GetSize(12);
+				padding-bottom: GetSize(3);
+			}
+
 			.multi-user:after {
 				content: '';
 				display: block;
@@ -386,6 +529,85 @@
 				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 				margin-top: GetSize(4);
 				margin-left: GetSize(4);
+			}
+			.single-user {
+				width: GetSize(50);
+				height: GetSize(12);
+				display: flex;
+				flex-direction: column;
+				background-color: $White;
+
+				.title {
+					width: GetSize(9);
+					height: GetSize(3);
+					padding-left: GetSize(4);
+					align-self: flex-start;
+					padding-top: GetSize(3);
+					color: $Cool_Gray_Med_1;
+				}
+				.user-wrapper {
+					display: flex;
+					height: GetSize(7);
+					padding-left: GetSize(4);
+					flex-direction: row;
+					.user-name {
+						padding-top: GetSize(2);
+						align-self: flex-start;
+						color: $Cool_Gray_Dark_3;
+					}
+					.avatar {
+						img {
+							width: GetSize(5);
+							height: GetSize(5);
+						}
+						// align-self: flex-start;
+						// position: absolute;
+						// right: 0%;
+						// margin-right: GetSize(2);
+						// display: flex;
+					}
+				}
+			}
+			.single-user:after {
+				content: '';
+				display: block;
+				left: 0;
+				width: GetSize(44);
+				height: 0vh;
+				position: relative;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+				margin-top: GetSize(0);
+				margin-left: GetSize(4);
+			}
+		}
+		.image {
+			width: GetSize(10);
+			height: GetSize(10);
+			background-color: $Cool_Gray_Light_1;
+			right: 0;
+			position: absolute;
+
+			img {
+				padding: 5px;
+				width: GetSize(10);
+				height: GetSize(10);
+			}
+		}
+		&.hover {
+			width: GetSize(50);
+			height: GetSize(22);
+
+			.accounts-dropdown {
+				box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+			}
+			&.multi-list-2 {
+				height: GetSize(44);
+			}
+			&.multi-list-3 {
+				height: GetSize(51);
+			}
+			&.multi-list-4 {
+				height: GetSize(58);
 			}
 		}
 	}

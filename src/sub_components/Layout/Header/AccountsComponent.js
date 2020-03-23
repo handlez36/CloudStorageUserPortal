@@ -7,7 +7,7 @@ import { getCompanyInfo } from 'actions/company';
 import { RESOLUTIONS } from 'services/config';
 import { CompanyProfileApi } from 'services/companyProfile';
 const MAX_COMPANY_NAME_WIDTH = {
-	[RESOLUTIONS.LOW]: 14,
+	[RESOLUTIONS.LOW]: 15,
 	[RESOLUTIONS.MED]: 20,
 	[RESOLUTIONS.HIGH]: 20,
 };
@@ -36,19 +36,7 @@ class AccountsComponent extends Component {
 			return username;
 		}
 	};
-	setExpandedClass = () => {
-		const header = document.querySelector('.company-name');
-		header.classList.add('hovered');
-		header.classList.add('move-background');
-		this.getCompanyName();
-	};
 
-	removeExpandedClass = () => {
-		const header = document.querySelector('.company-name');
-		header.classList.remove('hovered');
-		header.classList.remove('move-background');
-		this.getCompanyName();
-	};
 	setCurrentCompany = name => {
 		this.setState({ currentSelectedCompany: name });
 	};
@@ -103,12 +91,19 @@ class AccountsComponent extends Component {
 	checkNameLength = companyName => {
 		const { breakpoint } = this.props;
 		const currentName = document.querySelector('.company-name');
+		const wrapper = document.querySelector('.accounts-component-wrapper');
+
 		if (
 			currentName &&
 			currentName.innerHTML.length >= MAX_COMPANY_NAME_WIDTH[breakpoint] &&
-			!currentName.classList.contains('hovered')
+			!wrapper.classList.contains('hover')
 		) {
 			companyName = companyName.substring(0, MAX_COMPANY_NAME_WIDTH[breakpoint]) + '...';
+		}
+		if (wrapper.classList.contains('hover')) {
+			currentName.classList.add('hover');
+		} else {
+			currentName.classList.remove('hover');
 		}
 
 		this.setState({ companyName });
@@ -155,35 +150,60 @@ class AccountsComponent extends Component {
 
 		this.setState({ role: currentMembershipSelected[0].role });
 	};
+	setHover = () => {
+		const wrapper = document.querySelector('.accounts-component-wrapper');
+		if (wrapper) {
+			wrapper.classList.add('hover');
+		}
+		this.getCompanyName();
+	};
+	removeHover = () => {
+		const wrapper = document.querySelector('.accounts-component-wrapper');
+		if (wrapper) {
+			wrapper.classList.remove('hover');
+		}
+		this.getCompanyName();
+	};
 
 	render() {
 		const { memberships = {} } = this.props.auth_status;
 		const { auth_status } = this.props;
 		const { companyName, role } = this.state;
-
+		const shouldRenderList = memberships && memberships.length > 1;
 		return (
-			<div
-				className='accounts-component-wrapper'
-				onMouseOver={this.setExpandedClass}
-				onMouseOut={this.removeExpandedClass}
-			>
-				<div className='company-name header10'>{companyName}</div>
-				<div className='image'>
-					<img src={this.companyApi.getCompanyAvatar()} />
+			<Fragment>
+				<div onMouseOver={this.setHover} className='company-name header10'>
+					{companyName}
 				</div>
-				<div className='accounts-dropdown'>
-					<div className='single-user'>
-						<div className='title header30'>{role}</div>
-						<div className='user-wrapper'>
-							<div className='user-name header10'>{this.getUserName(auth_status)}</div>
-							<div className='avatar'>
-								<img src={this.avatarApi.getUserAvatar(auth_status)} />
+				<div
+					className={
+						shouldRenderList
+							? `accounts-component-wrapper multi-list-${memberships.length}`
+							: 'accounts-component-wrapper '
+					}
+					onMouseOver={this.setHover}
+					onMouseOut={this.removeHover}
+				>
+					<div className='accounts-dropdown' onMouseOver={this.setHover}>
+						<div className='top-container'>
+							<div className='company-name-overlay header11'>{companyName}</div>
+							<div className='image-overlay '>
+								<img src={this.companyApi.getCompanyAvatar()} />
 							</div>
 						</div>
+						<div className='single-user'>
+							<div className='title header30'>{role}</div>
+							<div className='user-wrapper'>
+								<div className='user-name header10'>{this.getUserName(auth_status)}</div>
+								<div className='avatar'>
+									<img src={this.avatarApi.getUserAvatar(auth_status)} />
+								</div>
+							</div>
+						</div>
+						{this.renderMultiUserList(memberships)}
 					</div>
-					{this.renderMultiUserList(memberships)}
 				</div>
-			</div>
+			</Fragment>
 		);
 	}
 }

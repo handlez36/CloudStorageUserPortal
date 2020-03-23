@@ -256,13 +256,12 @@ class ModalPage extends Component {
 	}
 
 	render() {
-		const { modal, image, message, screen, selected , module} = this.state;
+		const { modal, image, message, screen, selected, module } = this.state;
 		let selectionScreen;
 		if (selected) {
 			selectionScreen = this.HappyFeedBack(image, message);
 		}
-		
-		
+
 		return (
 			<Fragment>
 				<div className='feedback-modal-wrapper'>
@@ -273,7 +272,12 @@ class ModalPage extends Component {
 						useHeader={false}
 					/>
 				</div>
-				<img id={module === 'LOGIN'||module === 'HOME' ?'feedback-image-home' :'feedback-image'} src={FeedbackImage} onClick={this.toggle} />
+				<img
+					id={module === 'LOGIN' || module === 'HOME' ? 'feedback-image-home' : 'feedback-image'}
+					src={FeedbackImage}
+					onClick={this.toggle}
+				/>
+				<div className='modal-backdrop fade ' id='modal-backdrop' />
 			</Fragment>
 		);
 	}

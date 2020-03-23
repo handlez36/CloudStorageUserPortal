@@ -3,7 +3,6 @@
 	height: GetSize(5);
 	display: flex;
 	flex-direction: row;
-	transition: width 2s, height 2s ease-in-out;
 
 	.avatar {
 		img {
@@ -21,17 +20,32 @@
 		flex-direction: row;
 		align-items: center;
 		text-transform: uppercase;
+	}
+	.hover-wrapper {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: GetSize(5);
+		height: GetSize(5);
+		transition: width 2s, height 1.6s ease-in;
+		display: flex;
+		flex-direction: row;
 		background-color: $White;
-		background: linear-gradient(90deg, $Cool_Gray_Light_1 50%, $White 50%);
-		background-size: 250% 100%;
-		background-position: right bottom;
-		transition: all 2s ease-in-out;
+		overflow: hidden;
+
+		.name {
+			width: GetSize(29);
+			white-space: nowrap;
+			color: $DCBLOX_Gray;
+			background-color: $Warm_Gray_Light_1;
+			padding-left: GetSize(1);
+		}
 	}
 	.logout-button {
-		opacity: 0;
+		opacity: 1;
 		position: absolute;
 		width: GetSize(10);
-		transition: opacity 3s ease-in-out;
+		transition: opacity 3s ease-in;
 		.blox-button {
 			display: flex;
 			align-content: center;
@@ -49,29 +63,12 @@
 	.blue-animation {
 		background-position: left bottom;
 	}
-
-	// &.expanded {
-	// 	width: GetSize(29);
-	// 	height: GetSize(12);
-	// 	background-color: $White;
-	// 	.logout-button {
-	// 		display: flex;
-	// 	}
-	// }
 }
 
 .logout-wrapper:hover {
-	width: GetSize(29);
-	height: GetSize(12);
-	background-color: $White;
-	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
-	.logout-button {
-		opacity: 1;
-	}
-	.name {
+	.hover-wrapper {
 		width: GetSize(29);
-		color: $DCBLOX_Gray;
-		background-color: $Warm_Gray_Light_1;
+		height: GetSize(12);
 	}
 }
 
@@ -86,9 +83,16 @@
 			}
 		}
 		.name {
-			width: GetSize(25);
+			width: GetSize(38);
 			height: GetSize(8);
 			transition: all 2s ease-in-out;
+		}
+		.hover-wrapper {
+			width: GetSize(8);
+			height: GetSize(8);
+			.name {
+				width: GetSize(38);
+			}
 		}
 		.logout-button {
 			margin-left: GetSize(13);
@@ -103,15 +107,11 @@
 			}
 		}
 	}
+
 	.logout-wrapper:hover {
-		width: GetSize(38);
-		height: GetSize(17);
-		background-color: $White;
-		.name {
-			width: GetSize(30);
-		}
-		.logout-button {
-			display: flex;
+		.hover-wrapper {
+			width: GetSize(38);
+			height: GetSize(17);
 		}
 	}
 }
@@ -127,27 +127,30 @@
 			}
 		}
 		.name {
-			width: GetSize(23);
+			width: GetSize(25);
 			height: GetSize(10);
 		}
 		.logout-button {
 			width: GetSize(14);
 			.blox-button {
 				height: GetSize(4);
+				width: GetSize(14);
 			}
 			margin-left: GetSize(17);
 			margin-top: GetSize(15);
 		}
+		.hover-wrapper {
+			width: GetSize(10);
+			height: GetSize(10);
+			.name {
+				width: GetSize(50);
+			}
+		}
 	}
 	.logout-wrapper:hover {
-		width: GetSize(50);
-		height: GetSize(24);
-		background-color: $White;
-		.name {
+		.hover-wrapper {
 			width: GetSize(50);
-		}
-		.logout-button {
-			display: flex;
+			height: GetSize(24);
 		}
 	}
 }
