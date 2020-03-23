@@ -130,7 +130,7 @@ class BreadCrumbComponent extends Component {
 						allCrumbs[i].classList.remove('hide-all');
 					}
 				}
-			}, 3500);
+			}, 3000);
 		}
 	};
 
