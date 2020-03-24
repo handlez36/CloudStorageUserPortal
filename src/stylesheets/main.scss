@@ -170,6 +170,7 @@ This file should not contain anything but @import and comments.
 @import 'components/Storagev3/small_share_card';
 @import 'components/Storagev3/share_card_container';
 @import 'components/Storagev3/carousel';
+@import 'components/Storagev3/delete_storage';
 
 /**
 * Supportv3 components
@@ -292,7 +293,7 @@ This file should not contain anything but @import and comments.
 @import 'pages/storage/whitelist_form';
 @import 'pages/storage/whitelist_modal';
 // @import 'pages/storage//add_storage_container';
-@import 'pages/storage/delete_storage';
+// @import 'pages/storage/delete_storage';
 // @import 'pages/storage/configuration';
 @import 'pages/storage/storage_overview';
 

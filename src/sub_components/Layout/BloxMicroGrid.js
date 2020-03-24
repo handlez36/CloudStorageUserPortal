@@ -72,10 +72,6 @@ class BloxMicroGrid extends Component {
 	};
 
 	updateState = (colCount, rowCount, grid, horizGrid) => {
-		console.log('col count', colCount);
-		console.log('row count', rowCount);
-		console.log('grid', grid);
-		console.log('horizontal', horizGrid);
 		this.setState({ colCount, rowCount, grid, horizGrid });
 	};
 

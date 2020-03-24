@@ -23,6 +23,7 @@ const PAGES = {
 	Storage: {
 		Overview: 'OverviewPage',
 		Manage: 'ManageStoragePage',
+		Delete: 'DeleteStoragePage',
 	},
 	Profile: {
 		Overview: 'OverviewPage',
@@ -71,7 +72,6 @@ class PortalLayout extends Component {
 	};
 
 	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
-		console.log('loading new page', bloxPage);
 		const mod = capitalize(bloxModule);
 		const page = capitalize(bloxPage);
 		const pageName = PAGES[mod][page];
