@@ -86,7 +86,7 @@ class Portal extends Component {
 						}}
 					/>
 					<Route
-						path='/portal/storage/(manage)?/:share?'
+						path='/portal/storage/(manage|delete)?/:share?'
 						render={props => {
 							return hasStorageAccess ? <PortalLayout {...props} /> : <Home {...props} />;
 						}}
@@ -130,4 +130,7 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(mapStateToProps, { getCompanyInfo })(Portal);
+export default connect(
+	mapStateToProps,
+	{ getCompanyInfo },
+)(Portal);

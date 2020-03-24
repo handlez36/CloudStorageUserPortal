@@ -58,9 +58,6 @@ class ManageStoragePage extends Component {
 						/>
 					</ComponentWrapper>
 				</div>
-				{/* <div key='closedTickets' className='closedTickets'>
-					<ComponentWrapper hideTitle hideBorder />
-				</div> */}
 			</BloxPage>
 		);
 	}

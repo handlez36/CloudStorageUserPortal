@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import PasswordModal from 'sub_components/Common/PasswordModal';
 import BloxButton from 'sub_components/Common/BloxButton';
@@ -166,7 +167,7 @@ class ShareDetailView extends Component {
 	}
 
 	render() {
-		const { breakpoint } = this.props;
+		const { breakpoint, history } = this.props;
 		const { storage, storage: { icon, name = '', type } = {} } = this.state.storageDetails || {};
 		const {
 			stats,
@@ -210,7 +211,8 @@ class ShareDetailView extends Component {
 							title={'DELETE STORAGE'}
 							enabled={true}
 							customClass={`blox-button`}
-							onClick={() => {}}
+							// onClick={() => {}}
+							onClick={() => history.push(`/portal/storage/delete/${storage.ml_id}`, { storage })}
 						/>
 					</div>
 				</div>
@@ -280,4 +282,4 @@ class ShareDetailView extends Component {
 	}
 }
 
-export default ShareDetailView;
+export default withRouter(ShareDetailView);

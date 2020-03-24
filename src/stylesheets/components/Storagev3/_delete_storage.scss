@@ -1,0 +1,140 @@
+.delete-storage {
+	.delete-storage-wrapper {
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		padding-top: GetSize(8);
+		padding-left: GetSize(22);
+		padding-right: GetSize(22);
+		background-color: transparent;
+		@include FlexboxColumn;
+		align-items: center;
+		.large-text {
+			width: 100%;
+			margin-top: GetSize(3);
+			@include FlexboxCenter;
+			.large-message {
+				width: 280px;
+				@include Roster-Modal;
+				text-align: center;
+				color: $DCBLOX_Gray;
+				&.TWO {
+					width: 580px;
+				}
+			}
+		}
+		.small-text {
+			width: 100%;
+			margin-top: GetSize(2);
+			@include FlexboxCenter;
+			.small-message {
+				@include Head-Light;
+				font-size: 1em;
+				line-height: 20px;
+				width: 540px;
+				text-align: center;
+				.bold {
+					color: $Med_Rust;
+					font-family: $proxima-nova-bold;
+				}
+			}
+		}
+		.image-box {
+			width: 280px;
+			height: 243px;
+			background-color: $Dark_Emerald;
+			position: relative;
+			@include FlexboxColumn;
+			justify-content: center;
+			align-items: center;
+			img {
+				width: 157px;
+				height: 136px;
+			}
+			&.success {
+				justify-content: space-between;
+				.shredder-text {
+					margin-top: 39px;
+					@include User-Management-Menu;
+					color: $White;
+				}
+				img {
+					align-self: flex-end;
+					width: 224px;
+					height: 156px;
+				}
+			}
+		}
+		.delete-input {
+			margin-top: GetSize(3);
+			.blox-text-input.active input {
+				border-bottom: 2px solid $Emerald;
+			}
+		}
+		.options-section {
+			width: 320px;
+			height: 34px;
+			margin-top: GetSize(3);
+			@include FlexboxRow;
+			justify-content: space-between;
+			.blox-button {
+				width: 150px;
+				@include FlexboxCenter;
+			}
+			.blox-button .title {
+				margin-left: GetSize(1);
+				@include Headings90;
+				color: $White;
+			}
+			.blox-button .icon {
+				position: relative;
+				left: unset;
+				top: unset;
+				width: 16px;
+				height: 16px;
+				img {
+					vertical-align: baseline;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			&.success {
+				justify-content: center;
+			}
+		}
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.delete-storage {
+		.blox-button .icon {
+			width: 23px;
+			height: 22px;
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.delete-storage {
+		.delete-storage-wrapper {
+			.large-text {
+				.large-message {
+					width: 500px;
+					&.TWO {
+						width: 580px;
+					}
+				}
+			}
+			.delete-input {
+				margin-top: GetSize(3);
+				.blox-text-input.active input {
+					border-bottom: 2px solid $Emerald;
+				}
+			}
+			.options-section {
+				width: 400px;
+				.blox-button {
+					width: 180px;
+				}
+			}
+		}
+	}
+}
