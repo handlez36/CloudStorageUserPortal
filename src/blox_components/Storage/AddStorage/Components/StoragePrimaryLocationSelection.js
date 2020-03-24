@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LocationIcon from '../Components/LocationIcon';
+import LocationIcon from 'sub_components/Storage/LocationIcon';
 
 const StoragePrimaryLocationSelection = ({ data, onSelect }) => {
 	const selected = data.primary;
@@ -9,6 +9,9 @@ const StoragePrimaryLocationSelection = ({ data, onSelect }) => {
 		<div className='primary-location-selection'>
 			<div onClick={() => onSelect('primary', { data: 'Atlanta' }, true)}>
 				<LocationIcon location='Atlanta' selected={selected === 'Atlanta'} formStyle={true} />
+			</div>
+			<div onClick={() => onSelect('primary', { data: 'Birmingham' }, true)}>
+				<LocationIcon location='Birmingham' selected={selected === 'Birmingham'} formStyle={true} />
 			</div>
 			<div onClick={() => onSelect('primary', { data: 'Huntsville' }, true)}>
 				<LocationIcon location='Huntsville' selected={selected === 'Huntsville'} formStyle={true} />

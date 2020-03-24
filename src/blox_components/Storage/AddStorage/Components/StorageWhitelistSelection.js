@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Button from '../../../components/Common/BloxButton';
+import Button from 'sub_components/Common/BloxButton';
+import { Utils } from 'services/utils';
 import WhiteListContainer from '../Components/WhiteListContainer';
-import { Utils } from '../../../services/utils';
 
 const attachSubnetToIps = ips => {
 	return ips

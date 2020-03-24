@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from '../../../components/Common/BloxButton';
+import Button from 'sub_components/Common/BloxButton';
 
 const TopNavBar = ({ gotoOverview, resetWizard }) => {
 	return (

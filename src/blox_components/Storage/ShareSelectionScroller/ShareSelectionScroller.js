@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import AddStorage from 'blox_components/Storage/AddStorage';
+import AddStorage from 'blox_components/Storage/AddStorage/Components/AddStorage';
 import Carousel from 'sub_components/Storage/Carousel';
 import { StorageApi } from 'services/storage';
 
@@ -57,7 +57,7 @@ class ShareSelectionScroller extends Component {
 				</div>
 				<div className='share-options-section'>
 					<Carousel data={shares} getSelectedShareDetails={onStorageSelect} />
-					<AddStorage />
+					<AddStorage history={this.props.history} />
 				</div>
 			</div>
 		) : (

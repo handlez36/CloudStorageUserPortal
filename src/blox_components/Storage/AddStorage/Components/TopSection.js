@@ -1,8 +1,8 @@
 import React from 'react';
 import { string, func, any } from 'prop-types';
 
-import { STORAGE_AVATAR_URL_PREFIX } from '../../../components/Common/CommonConstants';
-import { Utils } from '../../../services/utils';
+import { STORAGE_AVATAR_URL_PREFIX } from 'utils/CommonConstants';
+import { Utils } from 'services/utils';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const StorageFileIcon = `${CDN_URL}storage/Storage-file-icon-transparent.svg`;

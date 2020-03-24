@@ -239,6 +239,7 @@
 		.accounts-dropdown {
 			width: GetSize(38);
 			height: GetSize(17);
+
 			opacity: 1;
 			position: absolute;
 			right: 0;
@@ -326,7 +327,7 @@
 			}
 			.single-user {
 				width: GetSize(38);
-				height: GetSize(9);
+				height: GetSize(10);
 				display: flex;
 				flex-direction: column;
 				background-color: $White;

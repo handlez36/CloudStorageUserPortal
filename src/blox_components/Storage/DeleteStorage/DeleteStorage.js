@@ -9,7 +9,9 @@ import ErrorModal from 'sub_components/Common/ErrorModal';
 import { TicketApi } from 'services/ticket';
 import { Utils } from 'services/utils';
 import { sampleStorage } from 'utils/StorageUtils';
-import { updatePage, updateModule } from 'actions/siteTracking';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { MENU as STORAGE_MENU } from 'utils/StorageConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const ShredderOne = `${CDN_URL}storage/shredder-one.png`;
@@ -176,6 +178,10 @@ class DeleteStorage extends Component {
 
 	componentDidMount() {
 		this.getStep('ONE');
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+		updatePage(SITE_PAGES.STORAGE[STORAGE_MENU.REMOVE_STORAGE]);
+		addPageToBreadCrumbs(SITE_PAGES.STORAGE[STORAGE_MENU.REMOVE_STORAGE], SITE_MODULES.STORAGE);
+		updateModule(SITE_MODULES.STORAGE);
 	}
 
 	render() {
@@ -271,8 +277,5 @@ function mapStateToProps(state) {
 }
 
 export default withRouter(
-	connect(
-		mapStateToProps,
-		{ updatePage, updateModule },
-	)(DeleteStorage),
+	connect(mapStateToProps, { updatePage, updateModule, addPageToBreadCrumbs })(DeleteStorage),
 );

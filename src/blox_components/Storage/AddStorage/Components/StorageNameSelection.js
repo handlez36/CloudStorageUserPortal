@@ -1,8 +1,8 @@
 import React from 'react';
 
-import InputField from '../../../components/Forms/BloxTextInput';
-import Button from '../../../components/Common/BloxButton';
-import { INPUT_TYPES, storageNameMask } from '../../../components/Common/CommonConstants';
+import InputField from 'sub_components/Common/BloxTextInput';
+import Button from 'sub_components/Common/BloxButton';
+import { INPUT_TYPES, storageNameMask } from 'utils/CommonConstants';
 
 const StorageNameSelection = ({ data: { name }, onSelect }) => {
 	return (
