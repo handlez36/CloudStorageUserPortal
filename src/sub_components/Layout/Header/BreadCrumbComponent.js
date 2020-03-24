@@ -50,20 +50,24 @@ class BreadCrumbComponent extends Component {
 			this.setCurrentModuleAndPage();
 		}
 	}
-	goTo = (url, id) => {
+	goTo = (url, id, name) => {
 		const { history } = this.props;
 		this.breadCrumbClicked(id);
-
-		setTimeout(() => {
-			history.push(url);
-		}, 2000);
-		setTimeout(() => {
-			const title = document.querySelector('.title.header21');
-
-			if (title) {
-				title.classList.remove('hide');
-			}
-		}, 2000);
+		console.log('NAME', name);
+		if (
+			name === 'profile overview' ||
+			name === 'billing overview' ||
+			name === 'support overview' ||
+			name === 'outage overview'
+		) {
+			setTimeout(() => {
+				history.push(url);
+			}, 3000);
+		} else {
+			setTimeout(() => {
+				history.push(url);
+			}, 2000);
+		}
 	};
 
 	filterBreadCrumbs = breadCrumbs => {
@@ -145,7 +149,7 @@ class BreadCrumbComponent extends Component {
 						<div
 							key={`${breadcrumb.name}-${i}`}
 							className='crumb header50'
-							onClick={() => this.goTo(breadcrumb.url, `${breadcrumb.name}-${i}`)}
+							onClick={() => this.goTo(breadcrumb.url, `${breadcrumb.name}-${i}`, breadcrumb.name)}
 							id={`${breadcrumb.name}-${i}`}
 						>
 							{breadcrumb.name}
