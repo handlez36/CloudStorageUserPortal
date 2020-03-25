@@ -161,13 +161,15 @@ export default class TicketSummary extends Component {
 	}
 
 	renderTicketDetails(ticket) {
+		const { type } = this.props;
 		let imageType;
 		let ticketType;
+
 		if (ticket.name === 'Storage Add Request') {
 			ticketType = 'STORAGE';
 			imageType = this.getImage('STORAGE');
 		} else {
-			imageType = this.getImage(ticket.type);
+			imageType = this.getImage(type);
 		}
 		return (
 			<div className='ticket-summary-details'>
@@ -219,9 +221,9 @@ export default class TicketSummary extends Component {
 
 		return (
 			<div className='outer-wrapper ticket-summary'>
-				<div className='exit-button-section' onClick={this.closeTicketDetails}>
+				{/* <div className='exit-button-section' onClick={this.closeTicketDetails}>
 					<ExitButton redirectTo={backToOverview} />
-				</div>
+				</div> */}
 				<div className='header'>{this.renderTicketNumberRow(ticket)}</div>
 				<div className='body'>{this.renderTicketDetails(ticket)}</div>
 			</div>

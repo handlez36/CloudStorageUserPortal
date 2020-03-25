@@ -58,7 +58,7 @@ class BreadCrumbComponent extends Component {
 			name === 'profile overview' ||
 			name === 'billing overview' ||
 			name === 'support overview' ||
-			name === 'outage overview'
+			name === 'storage overview'
 		) {
 			setTimeout(() => {
 				history.push(url);

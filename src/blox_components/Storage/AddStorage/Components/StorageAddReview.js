@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Radio from '../../../components/Common/Radio';
-import Button from '../../../components/Common/BloxButton';
-import WhiteListContainer from '../Components/WhiteListContainer';
-import { StorageApi } from '../../../services/storage';
-import { Utils } from '../../../services/utils';
-import * as StorageUtils from '../Utils/StorageUtils';
+import Radio from 'components_old/Common/Radio';
+import Button from 'sub_components/Common/BloxButton';
+import { StorageApi } from 'services/storage';
+import { Utils } from 'services/utils';
+import * as StorageUtils from 'utils/StorageUtils';
+import WhiteListContainer from './WhiteListContainer';
 
 let REQUEST_SUBMITTED = false;
 
@@ -31,8 +31,9 @@ async function submitStorageRequest(data, completeAdd, refreshStorageInfo) {
 		const params = StorageUtils.formatStorageAddParams(data);
 		try {
 			const response = await StorageApi.addStorage(params);
+			console.log('RESPONSE', response);
+			console.log('valid', Utils.isValidResponse(response));
 			if (Utils.isValidResponse(response)) {
-				refreshStorageInfo();
 				completeAdd(true, false);
 			} else if (response.data.hasNamingError) {
 				console.log('Storage has naming error');
@@ -77,7 +78,10 @@ function checkValid(data) {
 
 const StorageAddReview = ({ data, update, completeAdd, refreshStorageInfo }) => {
 	const { type, public: isPublic, primary, redundant, secondary, whitelist } = data;
-	const typeOptions = [{ value: 'file', name: 'File' }, { value: 'object', name: 'Object' }];
+	const typeOptions = [
+		{ value: 'file', name: 'File' },
+		{ value: 'object', name: 'Object' },
+	];
 	const accessibilityOptions = [
 		{ value: 'Private', name: 'Private' },
 		{ value: 'Public', name: 'Public' },
@@ -88,7 +92,10 @@ const StorageAddReview = ({ data, update, completeAdd, refreshStorageInfo }) => 
 		{ value: 'Chattanooga', name: 'Chattanooga' },
 		{ value: 'Huntsville', name: 'Huntsville' },
 	];
-	const redundancyOptions = [{ value: 'Yes', name: 'Yes' }, { value: 'No', name: 'No' }];
+	const redundancyOptions = [
+		{ value: 'Yes', name: 'Yes' },
+		{ value: 'No', name: 'No' },
+	];
 	const secondaryLocationOptions = primaryLocationOptions.filter(
 		option => primary && option.name !== primary,
 	);
@@ -183,9 +190,7 @@ const StorageAddReview = ({ data, update, completeAdd, refreshStorageInfo }) => 
 				title='SUBMIT'
 				onClick={() => submitStorageRequest(data, completeAdd, refreshStorageInfo)}
 				enabled={checkValid(data)}
-				customClass={`blox-button ${
-					REQUEST_SUBMITTED ? 'disabled' : ''
-				} bright-emerald-gradient`}
+				customClass={`blox-button ${REQUEST_SUBMITTED ? 'disabled' : ''} bright-emerald-gradient`}
 			/>
 		</div>
 	);

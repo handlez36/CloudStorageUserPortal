@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import LocationIcon from '../Components/LocationIcon';
-import { STORAGE_AVATAR_URL_PREFIX } from '../../../components/Common/CommonConstants';
-import { Utils } from '../../../services/utils';
+import LocationIcon from 'sub_components/Storage/LocationIcon';
+import { STORAGE_AVATAR_URL_PREFIX } from 'utils/CommonConstants';
+import { Utils } from 'services/utils';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 const GenericLocation = `${CDN_URL}common/generic-city.svg`;

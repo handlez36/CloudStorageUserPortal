@@ -22,8 +22,9 @@ const PAGES = {
 	},
 	Storage: {
 		Overview: 'OverviewPage',
-		Manage: 'ManageStoragePage',
+		Manage_storage: 'ManageStoragePage',
 		Delete: 'DeleteStoragePage',
+		Add_storage: 'AddStoragePage',
 	},
 	Profile: {
 		Overview: 'OverviewPage',

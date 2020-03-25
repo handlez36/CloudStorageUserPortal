@@ -13,10 +13,14 @@ class MenuItems extends Component {
 	}
 	onClick = itemClicked => {
 		const { section, history, navigation } = this.props;
+
 		if (navigation === 'secondary') {
 			itemClicked = itemClicked.replace(' ', '_');
 			itemClicked = itemClicked.replace(' ', '_');
-			if (itemClicked.toLowerCase() === 'overview') {
+			if (
+				itemClicked.toLowerCase() === 'overview' ||
+				itemClicked.toLowerCase() === 'storage_overview'
+			) {
 				history.push(`/portal/${section}`);
 			} else {
 				history.push(`/portal/${section}/${itemClicked.toLowerCase()}`);

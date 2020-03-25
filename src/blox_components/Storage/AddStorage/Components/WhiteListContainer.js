@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import ScrollView from '../../../components/Common/BloxScrollViewNew';
+import ScrollView from 'components_old/Common/BloxScrollViewNew';
+import Button from 'sub_components/Common/BloxButton';
+import * as StorageUtils from 'utils/StorageUtils';
+import { Utils } from 'services/utils';
 import WhiteListRow from './WhiteListRowNew';
-import Button from '../../../components/Common/BloxButton';
-import * as StorageUtils from '../Utils/StorageUtils';
-import { Utils } from '../../../services/utils';
 
 class WhiteListContainer extends Component {
 	constructor(props) {

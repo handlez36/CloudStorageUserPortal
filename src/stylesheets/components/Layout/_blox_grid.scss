@@ -31,6 +31,11 @@
 			z-index: 4000;
 		}
 	}
+	&.nav-grid {
+		.content-grid {
+			overflow: hidden;
+		}
+	}
 
 	.vertical-grid .react-grid-item {
 		height: 100% !important;
@@ -46,7 +51,7 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		overflow: hidden;
+		overflow: visible;
 		z-index: 1200;
 	}
 	&.debug {

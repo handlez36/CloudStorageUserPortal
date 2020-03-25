@@ -150,10 +150,10 @@ class TicketHistory extends Component {
 	}
 
 	displayTicketHistory = () => {
-		const { clickHandler } = this.props;
+		const { history } = this.props;
 
 		// Set 'selected ticket' to null
-		clickHandler(null);
+		history.push('/portal/support');
 		//this.setState({ pageState: PAGE_STATE.LIST });
 		this.getTickets();
 	};

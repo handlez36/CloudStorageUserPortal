@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import BloxGrid from '../../../components/Layout/BloxGrid';
+import BloxGrid from 'components_old/Layout/BloxGrid';
 import TopSection from './TopSection';
 import TopRightSection from './TopRightSection';
 

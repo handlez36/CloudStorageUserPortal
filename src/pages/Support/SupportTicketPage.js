@@ -31,7 +31,7 @@ class SupportTicketPage extends Component {
 			>
 				<div key={`supportTicket-${columnCount}`} className='supportTicket'>
 					<ComponentWrapper hideTitle hideBorder>
-						<TicketCreate match={match} history={history} type={'BILLING'} />
+						<TicketCreate match={match} history={history} />
 					</ComponentWrapper>
 				</div>
 			</BloxPage>

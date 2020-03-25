@@ -69,9 +69,9 @@ export default class TicketSeverity extends Component {
 	render() {
 		return (
 			<div className='ticket-severity'>
-				<div className='exit-button-section'>
+				{/* <div className='exit-button-section'>
 					<ExitButton redirectTo={this.resetTicketCreation} />
-				</div>
+				</div> */}
 				<PortalMessage
 					start={TICKET_PRIORITY_MESSAGE_TEXT.START}
 					content={TICKET_PRIORITY_MESSAGE_TEXT.CONTENT}

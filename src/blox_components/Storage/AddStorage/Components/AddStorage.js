@@ -10,7 +10,8 @@ class AddStorage extends Component {
 	};
 
 	goToAddStorage = () => {
-		this.props.selectMenuItem('ADD STORAGE');
+		const { history } = this.props;
+		history.push('/portal/storage/add_storage');
 	};
 
 	onMouseOver = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import LocationIcon from '../Components/LocationIcon';
+import LocationIcon from 'sub_components/Storage/LocationIcon';
 
-const LOCATIONS = ['Atlanta', 'Huntsville', 'Chattanooga'];
+const LOCATIONS = ['Atlanta', 'Birmingham', 'Huntsville', 'Chattanooga'];
 
 const StorageSecondaryLocationSelection = ({ data, onSelect }) => {
 	const selected = data.secondary;

@@ -108,6 +108,7 @@ class TicketDescription extends Component {
 	 */
 	handleSubmitResponse(response, ticket, dateSubmitted) {
 		const modal = this.refs.modal;
+		const { history } = this.props;
 		let valid = false;
 
 		// Show modal based on response
@@ -117,6 +118,7 @@ class TicketDescription extends Component {
 
 			modal.classList.remove('fail');
 			modal.classList.add('success');
+			console.log('CALLING');
 		} else {
 			this.setState({ modalText: 'ERROR', modalImage: FailImage });
 
@@ -135,6 +137,9 @@ class TicketDescription extends Component {
 				this.setTicketAttribute(ticket, caseId, dateSubmitted);
 			}
 		}, 4000);
+		setTimeout(() => {
+			history.push('/portal/support');
+		}, 10000);
 	}
 
 	/**
@@ -254,9 +259,9 @@ class TicketDescription extends Component {
 
 		return (
 			<div className='ticket-description'>
-				<div className='exit-button-section'>
+				{/* <div className='exit-button-section'>
 					<ExitButton redirectTo={this.resetTicketCreation} />
-				</div>
+				</div> */}
 				{this.renderModal()}
 				<PortalMessage start={MESSAGE_TEXT[type].START} content={MESSAGE_TEXT[type].CONTENT} />
 				<TicketDetail ticket={this.props.ticket} />

@@ -7,6 +7,12 @@
 	height: 100%;
 	background-color: $White;
 	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+	.location-image {
+		img {
+			width: calculateVw(39.5px, $standard-screen-width-mid);
+			height: calculateVh(39.5px, $standard-screen-height-mid);
+		}
+	}
 	.name-avatar-section {
 		display: flex;
 		flex-direction: row;

@@ -7,9 +7,9 @@ import { getCompanyInfo } from 'actions/company';
 import { RESOLUTIONS } from 'services/config';
 import { CompanyProfileApi } from 'services/companyProfile';
 const MAX_COMPANY_NAME_WIDTH = {
-	[RESOLUTIONS.LOW]: 15,
-	[RESOLUTIONS.MED]: 20,
-	[RESOLUTIONS.HIGH]: 20,
+	[RESOLUTIONS.LOW]: 22,
+	[RESOLUTIONS.MED]: 25,
+	[RESOLUTIONS.HIGH]: 30,
 };
 
 class AccountsComponent extends Component {
@@ -177,9 +177,7 @@ class AccountsComponent extends Component {
 				</div>
 				<div
 					className={
-						shouldRenderList
-							? `accounts-component-wrapper multi-list-${memberships.length}`
-							: 'accounts-component-wrapper '
+						shouldRenderList ? `accounts-component-wrapper ` : 'accounts-component-wrapper'
 					}
 					onMouseOver={this.setHover}
 					onMouseOut={this.removeHover}
@@ -200,7 +198,7 @@ class AccountsComponent extends Component {
 								</div>
 							</div>
 						</div>
-						{this.renderMultiUserList(memberships)}
+						{/* {this.renderMultiUserList(memberships)} */}
 					</div>
 				</div>
 			</Fragment>

@@ -1,27 +1,30 @@
 import React, { Component, Fragment } from 'react';
-
-import BloxGrid from '../../../components/Layout/BloxGrid';
-import Button from '../../../components/Common/BloxButton';
-import TopNavBar from './TopNavBar';
-import TopSection from './TopSection';
-import TopRightSection from './TopRightSection';
-import AvatarGrid from '../Components/AvatarGrid';
-import Modal from '../../../components/Common/PortalModal';
-import ErrorModal from '../../../components/Common/ErrorModal';
-import { ADD_STORAGE_LAYOUT_GRID } from '../Utils/StorageUtils';
-import { MENU } from '../StorageConstants';
+import { connect } from 'react-redux';
+import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
+import { MENU as STORAGE_MENU } from 'utils/StorageConstants';
+import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
+import Modal from 'sub_components/Common/PortalModal';
+import ErrorModal from 'sub_components/Common/ErrorModal';
+import { ADD_STORAGE_LAYOUT_GRID } from 'utils/StorageUtils';
+import { MENU } from 'utils/StorageConstants';
+import BloxGrid from 'components_old/Layout/BloxGrid';
+import Button from 'sub_components/Common/BloxButton';
+import TopNavBar from './Components/TopNavBar';
+import TopSection from './Components/TopSection';
+import TopRightSection from './Components/TopRightSection';
+import AvatarGrid from './Components/AvatarGrid';
 
 /** WIZARD SCREENS */
-import StorageTypeSelection from './StorageTypeSelection';
-import StoragePrimaryLocationSelection from './StoragePrimaryLocationSelection';
-import StorageAddReview from './StorageAddReview';
-import StorageRedundancySelection from './StorageRedundancySelection';
-import StorageSecondaryLocationSelection from './StorageSecondaryLocationSelection';
-import StorageAccessibilitySelection from './StorageAccessibilitySelection';
-import StorageNameSelection from './StorageNameSelection';
-import StorageAvatarSelection from './StorageAvatarSelection';
-import StorageWhitelistSelection from './StorageWhitelistSelection';
-import StorageAddConfirmation from './StorageAddConfirmation';
+
+import StoragePrimaryLocationSelection from './Components/StoragePrimaryLocationSelection';
+import StorageAddReview from './Components/StorageAddReview';
+import StorageRedundancySelection from './Components/StorageRedundancySelection';
+import StorageSecondaryLocationSelection from './Components/StorageSecondaryLocationSelection';
+import StorageAccessibilitySelection from './Components/StorageAccessibilitySelection';
+import StorageNameSelection from './Components/StorageNameSelection';
+import StorageAvatarSelection from './Components/StorageAvatarSelection';
+import StorageWhitelistSelection from './Components/StorageWhitelistSelection';
+import StorageAddConfirmation from './Components/StorageAddConfirmation';
 
 const NavArrow = ({ className, enabled, onClick }) => (
 	<svg
@@ -102,12 +105,7 @@ const NamingErrorBody = (toggleOpen, storageName) => (
 		</div>
 		<div className='buttons-row'>
 			<div className='try-again-option'>
-				<Button
-					title='TRY AGAIN'
-					enabled={true}
-					customClass='blox-button'
-					onClick={toggleOpen}
-				/>
+				<Button title='TRY AGAIN' enabled={true} customClass='blox-button' onClick={toggleOpen} />
 			</div>
 		</div>
 	</Fragment>
@@ -134,6 +132,13 @@ class StorageAddWizard extends Component {
 			storageName: null,
 		};
 	}
+	componentDidMount() {
+		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
+
+		updatePage(SITE_PAGES.STORAGE[STORAGE_MENU.ADD_STORAGE]);
+		addPageToBreadCrumbs(SITE_PAGES.STORAGE[STORAGE_MENU.ADD_STORAGE], SITE_MODULES.STORAGE);
+		updateModule(SITE_MODULES.STORAGE);
+	}
 
 	resetWizard = () => {
 		this.setState({
@@ -150,19 +155,17 @@ class StorageAddWizard extends Component {
 	};
 
 	gotoOverview = () => {
-		const { selectMenuItem } = this.props;
-		if (selectMenuItem) {
-			selectMenuItem(MENU.OVERVIEW);
-		}
+		const { history } = this.props;
+		history.push('/portal/storage');
 	};
 
 	completeAdd = (isSuccess, hasNamingError, storageName) => {
-		const { selectMenuItem } = this.props;
+		const { selectMenuItem, history } = this.props;
 		if (isSuccess) {
 			this.setState({ phase: PHASES.CONFIRMATION });
 
 			setTimeout(() => {
-				selectMenuItem('MANAGE STORAGE');
+				history.push('/portal/storage');
 			}, 3000);
 		} else if (hasNamingError) {
 			this.setState({ createError: true, hasNamingError: true, storageName });
@@ -538,4 +541,4 @@ class StorageAddWizard extends Component {
 	}
 }
 
-export default StorageAddWizard;
+export default connect(null, { updateModule, updatePage, addPageToBreadCrumbs })(StorageAddWizard);
