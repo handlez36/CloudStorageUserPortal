@@ -12,10 +12,11 @@ import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
 import { MENU as STORAGE_MENU } from 'utils/StorageConstants';
 import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
+import { Utils } from 'services/utils';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		storageDetails: { x: 1, y: 24, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 52 },
+		storageDetails: { x: 1, y: 25, dim: DIMENSIONS.TWO_BY_TWELVE, customHeight: 52 },
 		openTickets: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_TWO },
 		closedTickets: { x: 3, y: 2, dim: DIMENSIONS.TWO_BY_TWO },
 	},
@@ -37,11 +38,16 @@ class OverviewPage extends Component {
 		updatePage(SITE_PAGES.STORAGE[STORAGE_MENU.OVERVIEW]);
 		addPageToBreadCrumbs(SITE_PAGES.STORAGE[STORAGE_MENU.OVERVIEW], SITE_MODULES.STORAGE);
 		updateModule(SITE_MODULES.STORAGE);
+		Utils.showHorizontalBar();
+	}
+	componentWillUnmount() {
+		Utils.removeHorizontalBar();
 	}
 
 	render() {
-		const { breakpoint, location } = this.props;
+		const { breakpoint, location, history } = this.props;
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
+
 		return (
 			<BloxPage
 				name='sample-content-grid storage'
@@ -67,7 +73,7 @@ class OverviewPage extends Component {
 				</div>
 				<div key={`storageDetails-${columnCount}`} className='storageDetails'>
 					<ComponentWrapper collapseTitle hideBorder>
-						<StorageDetail breakpoint={breakpoint} />
+						<StorageDetail breakpoint={breakpoint} history={history} />
 					</ComponentWrapper>
 				</div>
 			</BloxPage>

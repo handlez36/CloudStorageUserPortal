@@ -76,6 +76,19 @@
 			padding-right: ShrinkPadding(1024px, 48px);
 			// border: 1px solid red;
 		}
+		.horizontal-bar {
+			background-color: $Cool_Gray_Light_2;
+			width: 100%;
+			height: GetSize(1);
+			margin-left: GetSize(20);
+			top: GetSize(28);
+			position: absolute;
+			z-index: 4500;
+			display: none;
+			&.show {
+				display: inline;
+			}
+		}
 	}
 	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
@@ -94,6 +107,11 @@
 				padding-right: ShrinkPadding(1440px, 48px);
 				// border: 1px solid blue;
 			}
+			.horizontal-bar {
+				height: GetSize(2);
+				margin-left: GetSize(24);
+				top: GetSize(37);
+			}
 		}
 	}
 	// @media screen and (min-width: 1441px) {
@@ -111,6 +129,11 @@
 			.main-content {
 				padding-left: ShrinkPadding(2560px, 160px);
 				padding-right: ShrinkPadding(2560px, 160px);
+			}
+			.horizontal-bar {
+				height: GetSize(2);
+				margin-left: GetSize(40);
+				top: GetSize(58);
 			}
 		}
 	}

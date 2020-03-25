@@ -19,7 +19,15 @@ function renderShares(onClickFunc, shares = [1, 1, 1, 1, 1]) {
 	));
 }
 
-const FrontSide = ({ shares, onFlip, selectMenuItem, onScroll, scrollTo, scrollTop }) => {
+const FrontSide = ({
+	shares,
+	onFlip,
+	selectMenuItem,
+	onScroll,
+	scrollTo,
+	scrollTop,
+	goToManageStorage,
+}) => {
 	return (
 		<Fragment>
 			{shares && (
@@ -36,9 +44,7 @@ const FrontSide = ({ shares, onFlip, selectMenuItem, onScroll, scrollTo, scrollT
 								title='MANAGE SHARES'
 								enabled={true}
 								customClass='blox-button gradient'
-								onClick={() => {
-									selectMenuItem('MANAGE STORAGE');
-								}}
+								onClick={goToManageStorage}
 							/>
 						</div>
 					</div>

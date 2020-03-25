@@ -131,6 +131,7 @@ class PortalLayout extends Component {
 					<div className='main-nav'>
 						<NavSection history={this.props.history} module={currentModule} />
 					</div>
+					<div className='horizontal-bar' />
 					<div className='main-content'>
 						{PageComponent && (
 							<ContentSection

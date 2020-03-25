@@ -11,6 +11,7 @@ import { MENU as SUPPORT_MENU } from 'utils/TicketConstants';
 import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import { TICKET_TYPES, HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
+import { Utils } from 'services/utils';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -37,11 +38,16 @@ const LAYOUT_CONFIG = {
 };
 
 class OverviewPage extends Component {
+	componentWillUnmount() {
+		Utils.removeHorizontalBar();
+	}
+
 	componentDidMount() {
 		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.SUPPORT[SUPPORT_MENU.OVERVIEW]);
 		addPageToBreadCrumbs(SITE_PAGES.SUPPORT[SUPPORT_MENU.OVERVIEW], SITE_MODULES.SUPPORT);
 		updateModule(SITE_MODULES.SUPPORT);
+		Utils.showHorizontalBar();
 	}
 	goTo = page => {
 		const { history } = this.props;

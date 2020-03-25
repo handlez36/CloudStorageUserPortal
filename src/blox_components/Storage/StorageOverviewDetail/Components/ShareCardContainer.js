@@ -59,6 +59,10 @@ class ShareCardContainer extends Component {
 			}, 200);
 		}
 	}
+	goToManageStorage = () => {
+		const { history } = this.props;
+		history.push('/portal/storage/manage_storage');
+	};
 
 	render() {
 		const { side, selectedShare, scrollTop } = this.state;
@@ -83,6 +87,7 @@ class ShareCardContainer extends Component {
 						selectMenuItem={selectMenuItem}
 						scrollTop={scrollTop}
 						onScroll={this.onScroll}
+						goToManageStorage={this.goToManageStorage}
 					/>
 				)}
 				{side === SIDES.BACK && selectedShare && (

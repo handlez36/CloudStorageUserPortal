@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { DIMENSIONS } from 'services/layoutManager';
 import BloxPage from 'sub_components/Layout/BloxPage';
@@ -14,14 +14,15 @@ import { TicketUtils } from 'services/ticket';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import { Permissions } from 'services/permissions';
 import { HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';
+import { Utils } from 'services/utils';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		recentInvoices: { x: 1, y: 31, dim: DIMENSIONS.TWO_BY_SIX },
-		totalAmountDue: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
-		recentPayment: { x: 8, y: 31, dim: DIMENSIONS.TWO_BY_THREE },
-		openTickets: { x: 8, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
-		closedTickets: { x: 10, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+		recentInvoices: { x: 1, y: 25, dim: DIMENSIONS.TWO_BY_SIX },
+		totalAmountDue: { x: 1, y: 2, dim: DIMENSIONS.TWO_BY_SIX },
+		recentPayment: { x: 8, y: 25, dim: DIMENSIONS.TWO_BY_THREE },
+		openTickets: { x: 8, y: 2, dim: DIMENSIONS.TWO_BY_TWO },
+		closedTickets: { x: 10, y: 2, dim: DIMENSIONS.TWO_BY_TWO },
 	},
 	[RESOLUTIONS.MED]: {
 		recentInvoices: { x: 1, y: 31, dim: DIMENSIONS.TWO_BY_SIX },
@@ -32,10 +33,10 @@ const LAYOUT_CONFIG = {
 	},
 	[RESOLUTIONS.HIGH]: {
 		recentInvoices: { x: 1, y: 51, dim: DIMENSIONS.TWO_BY_SIX },
-		totalAmountDue: { x: 1, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
+		totalAmountDue: { x: 1, y: 3, dim: DIMENSIONS.TWO_BY_SIX },
 		recentPayment: { x: 8, y: 51, dim: DIMENSIONS.TWO_BY_THREE },
-		openTickets: { x: 8, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
-		closedTickets: { x: 10, y: 0, dim: DIMENSIONS.TWO_BY_TWO },
+		openTickets: { x: 8, y: 3, dim: DIMENSIONS.TWO_BY_TWO },
+		closedTickets: { x: 10, y: 3, dim: DIMENSIONS.TWO_BY_TWO },
 	},
 };
 
@@ -47,6 +48,11 @@ class OverviewPage extends Component {
 		showTitleRecentInvoices: true,
 		showTitleRecentPayment: true,
 	};
+
+	componentWillUnmount() {
+		Utils.removeHorizontalBar();
+	}
+
 	componentDidMount() {
 		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.BILLING[BILLING_MENU.OVERVIEW]);
@@ -54,6 +60,7 @@ class OverviewPage extends Component {
 		updateModule(SITE_MODULES.BILLING);
 
 		this.checkOverviewPagePermissions();
+		Utils.showHorizontalBar();
 	}
 
 	checkOverviewPagePermissions = () => {

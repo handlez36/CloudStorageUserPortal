@@ -40,9 +40,15 @@
 			}
 			.count {
 				text-align: left;
+				color: $DCBLOX_Gray;
 			}
 			.manage {
 				text-align: right;
+				.blox-button {
+					.title {
+						font-size: calculateVw(12px, 1440);
+					}
+				}
 			}
 			&.loading {
 				background-color: $White;
