@@ -160,13 +160,13 @@ class StorageAddWizard extends Component {
 	};
 
 	completeAdd = (isSuccess, hasNamingError, storageName) => {
-		const { selectMenuItem } = this.props;
+		const { selectMenuItem, history } = this.props;
 		if (isSuccess) {
 			this.setState({ phase: PHASES.CONFIRMATION });
 
-			// setTimeout(() => {
-			// 	selectMenuItem('MANAGE STORAGE');
-			// }, 3000);
+			setTimeout(() => {
+				history.push('/portal/storage');
+			}, 3000);
 		} else if (hasNamingError) {
 			this.setState({ createError: true, hasNamingError: true, storageName });
 		} else {

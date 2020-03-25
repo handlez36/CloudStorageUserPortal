@@ -91,7 +91,7 @@ class TicketCreate extends Component {
 	 */
 	getTicketParams() {
 		const { type, ticketSeverity } = this.state;
-
+		console.log('type', type);
 		const ticket = {
 			type: type || TYPES.SUPPORT,
 			priority: ticketSeverity || SEVERITIES.LOW,
@@ -125,7 +125,7 @@ class TicketCreate extends Component {
 	 */
 	showTicketSteps() {
 		const { currentStep, type, ticketFinalized } = this.state;
-		const { auth_status, onCompletion, backToOverview } = this.props;
+		const { auth_status, onCompletion, backToOverview, history } = this.props;
 		console.log('TYPE', type);
 		return (
 			<div className='outer-wrapper ticket-creation'>
@@ -151,6 +151,7 @@ class TicketCreate extends Component {
 						ticket={this.getTicketParams()}
 						setTicketAttribute={this.setTicketAttribute}
 						authStatus={auth_status}
+						history={history}
 					/>
 				)}
 				{currentStep === STEPS.TICKET_SUBMITTED && (
@@ -160,6 +161,7 @@ class TicketCreate extends Component {
 						onCompletion={onCompletion}
 						ticket={TicketApi.constructTicket(ticketFinalized, auth_status)}
 						backToOverview={backToOverview}
+						type={type}
 					/>
 				)}
 			</div>

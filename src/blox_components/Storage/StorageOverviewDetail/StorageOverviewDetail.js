@@ -112,6 +112,8 @@ class StorageOverviewDetail extends Component {
 	};
 
 	checkShares = (shares, type) => {
+		console.log('shares', shares);
+		console.log('ttype', type);
 		if (!shares) {
 			return false;
 		}
@@ -126,11 +128,11 @@ class StorageOverviewDetail extends Component {
 	grabStorageInfo = () => {
 		StorageApi.getAll()
 			.then(response => {
-				const validResponse = response.status === 200 && response.data;
+				const validResponse = !response.error && response.storages;
 				if (validResponse) {
-					const storages = StorageUtils.sortShares(response.data.storages);
-					const fileShare = this.checkShares(response.data.storages, 'file');
-					const objectShare = this.checkShares(response.data.storages, 'object');
+					const storages = StorageUtils.sortShares(response.storages);
+					const fileShare = this.checkShares(response.storages, 'file');
+					const objectShare = this.checkShares(response.storages, 'object');
 					this.setState({ storages, fileShare, objectShare }, () => this.getShare());
 				} else {
 					this.setState({ error: 'Error pulling storage details' });
@@ -144,6 +146,7 @@ class StorageOverviewDetail extends Component {
 		console.log('Data: ', response.data);
 		const filePackage = this.getPackage(response.data, 'file');
 		const objectPackage = this.getPackage(response.data, 'object');
+
 		if (filePackage) {
 			this.setState({
 				fileCommitment: this.getCommitmentSize(this.getPackage(response.data, 'file')),
@@ -217,7 +220,7 @@ class StorageOverviewDetail extends Component {
 
 		const packageType = this.packageType(data, fileShare, objectShare);
 		const sharesCountLabel = shares ? `(${shares.length} active)` : '';
-
+		console.log('file share', fileShare);
 		return (
 			<div className='storage-overview-detail v3'>
 				<div key='storage-graphs' className='storage-graphs'>
