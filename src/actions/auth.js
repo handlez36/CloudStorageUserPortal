@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { UserApi } from 'services/user';
+
 /**
  * Action creator type constants for user login
  */
@@ -15,6 +17,9 @@ export const LOGIN_REQUEST_PHASE_TWO = 'LOGIN_REQUEST_PHASE_TWO';
 export const LOGIN_SUCCESS_PHASE_TWO = 'LOGIN_SUCCESS_PHASE_TWO';
 export const LOGIN_ERROR_PHASE_TWO = 'LOGIN_ERROR_PHASE_TWO';
 export const LOGIN_ERROR_PHASE_TWO_LOCK = 'LOGIN_ERROR_PHASE_TWO_LOCK';
+export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
+export const LOGOUT_REQUEST_SUCCESS = 'LOGOUT_REQUEST_SUCCESS';
+export const LOGOUT_REQUEST_ERROR = 'LOGOUT_REQUEST_ERROR';
 export const JWT_VALIDATE_ERROR = 'JWT_VALIDATE_ERROR';
 export const JWT_VALIDATE_SUCCESS = 'JWT_VALIDATE_SUCCESS';
 export const SWITCH_COMPANY = 'SWITCH_COMPANY';
@@ -410,4 +415,18 @@ export const switchCompany = id => (dispatch, getState) => {
 			currentMembership: currentMembership[0],
 		});
 	}
+};
+
+export const logoutUser = () => {
+	return dispatch => {
+		setTimeout(() => {
+			return UserApi.logoutUser()
+				.then(response => {
+					const { status, data, data: { error = null } = {} } = response;
+					const validResponse = status === 200 && data === '' && !error;
+					dispatch({ type: LOGOUT_REQUEST_SUCCESS });
+				})
+				.catch(err => console.log('Error logging out: ', err));
+		}, 2000);
+	};
 };

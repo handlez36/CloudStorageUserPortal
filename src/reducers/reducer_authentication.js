@@ -13,6 +13,9 @@ import {
 	LOGIN_ERROR_PHASE_ONE_LOCK,
 	LOGIN_ERROR_PHASE_TWO_LOCK,
 	LOGIN_RESET_WITH_USER,
+	LOGOUT_REQUEST,
+	LOGOUT_REQUEST_SUCCESS,
+	LOGOUT_REQUEST_ERROR,
 	USER_UPDATE_REQUEST,
 	USER_UPDATE_ERROR,
 	USER_UPDATE_SUCCESS,
@@ -110,6 +113,8 @@ export default function(state = initialState, action) {
 		case SWITCH_COMPANY:
 			saveCurrentMembership(action.currentMembership);
 			return { ...state, ...action };
+		case LOGOUT_REQUEST_SUCCESS:
+			return { ...initialState };
 		default:
 			return state;
 	}
