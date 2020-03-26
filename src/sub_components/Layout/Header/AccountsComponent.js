@@ -152,15 +152,19 @@ class AccountsComponent extends Component {
 	};
 	setHover = () => {
 		const wrapper = document.querySelector('.accounts-component-wrapper');
+		const { memberships = {} } = this.props.auth_status;
 		if (wrapper) {
 			wrapper.classList.add('hover');
+			wrapper.classList.add(`multi-list-${memberships.length}`);
 		}
 		this.getCompanyName();
 	};
 	removeHover = () => {
+		const { memberships = {} } = this.props.auth_status;
 		const wrapper = document.querySelector('.accounts-component-wrapper');
 		if (wrapper) {
 			wrapper.classList.remove('hover');
+			wrapper.classList.add(`multi-list-${memberships.length}`);
 		}
 		this.getCompanyName();
 	};
@@ -198,7 +202,7 @@ class AccountsComponent extends Component {
 								</div>
 							</div>
 						</div>
-						{/* {this.renderMultiUserList(memberships)} */}
+						{this.renderMultiUserList(memberships)}
 					</div>
 				</div>
 			</Fragment>
