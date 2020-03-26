@@ -35,7 +35,6 @@
 		.accounts-dropdown {
 			width: GetSize(29);
 			height: GetSize(17);
-
 			opacity: 1;
 			position: absolute;
 			right: 0;
@@ -123,8 +122,6 @@
 				margin-left: GetSize(2);
 			}
 			.single-user {
-				// width: GetSize(38);
-				// height: GetSize(10);
 				width: GetSize(29) !important;
 				height: GetSize(7);
 				display: flex;

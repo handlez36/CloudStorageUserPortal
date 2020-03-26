@@ -121,14 +121,16 @@ class BloxMicroGrid extends Component {
 	};
 
 	render() {
-		const { name, children, contentGrid, location } = this.props;
+		const { name, children, contentGrid, location, skipColUpdate } = this.props;
 		const { grid: colGrid, horizGrid: hGrid, colCount, rowCount } = this.state;
 		let gridClassName = name ? ` ${name}` : '';
 
 		const showGrid = this.enableDebug(location.search);
 		gridClassName = showGrid ? gridClassName + ' debug' : gridClassName;
 
-		this.updateLayoutWithColumns(contentGrid);
+		if (!skipColUpdate) {
+			this.updateLayoutWithColumns(contentGrid);
+		}
 
 		return (
 			<div className={`blox-micro-grid${gridClassName}`}>
@@ -187,10 +189,12 @@ BloxMicroGrid.propTypes = {
 	parent: string.isRequired,
 	name: string,
 	showGrid: bool,
+	skipColUpdate: bool,
 };
 
 BloxMicroGrid.defaultProps = {
 	showGrid: false,
+	skipColUpdate: false,
 };
 
 // export default BloxMicroGrid;

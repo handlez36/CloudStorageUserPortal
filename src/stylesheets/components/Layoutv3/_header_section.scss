@@ -1,0 +1,12 @@
+.header-section {
+	height: 100%;
+	background-color: $White;
+	@include FlexboxRow;
+	justify-content: space-between;
+	.logout-component {
+	}
+	.breadcrumb-component {
+	}
+	.accounts-component {
+	}
+}

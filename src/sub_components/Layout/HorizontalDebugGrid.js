@@ -34,11 +34,6 @@ const HorizontalDebugGrid = ({ layouts, breakpoints, show, rowCount }) => {
 			}}
 			cols={{ lg: rowCount.lg, md: rowCount.md, sm: rowCount.sm, xs: rowCount.xs }}
 			margin={[0, 0]}
-			// containerPadding={containerPadding}
-			// onBreakpointChange={this.onBreakpointChange}
-			// margin={margin}
-			// onLayoutChange={this.onLayoutChange}
-			// onWidthChange={this.onWidthChange}
 		>
 			{drawRows(rowCount.lg)}
 		</ResponsiveReactGridLayout>

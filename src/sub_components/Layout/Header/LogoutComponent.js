@@ -53,7 +53,7 @@ class LogoutComponent extends Component {
 		const { auth_status } = this.props;
 		return (
 			<div
-				className='logout-wrapper'
+				className='logout-component'
 				onMouseOver={this.setExpandedClass}
 				onMouseOut={this.removeExpandedClass}
 			>
