@@ -8,7 +8,7 @@ import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		makeAPayment: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_TEN },
+		makeAPayment: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_TEN, customHeight: 80 },
 	},
 	[RESOLUTIONS.MED]: {
 		makeAPayment: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_EIGHT },

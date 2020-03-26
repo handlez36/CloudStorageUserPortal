@@ -207,6 +207,14 @@
 	.user-actions-row {
 		display: none !important;
 	}
+	.main-content,
+	.make-a-payment {
+		position: absolute !important;
+		top: 0px !important;
+		left: 0px !important;
+		padding-left: 0px !important;
+		padding: 0px !important;
+	}
 }
 @media print {
 	.portal-main .extra-content {
@@ -263,8 +271,7 @@
 		@supports (-ms-ime-align: auto) {
 			width: 275%;
 		}
-		margin-left: calculateVw(-450, 1440);
-
+		margin-left: calculateVw(-15, 1440);
 		width: 250%;
 		.content {
 			font-size: 24px;
@@ -304,6 +311,7 @@
 			}
 			.expandable-content {
 				.invoices {
+					margin-left: 2vw;
 					.invoice-row {
 						.accordian-field {
 							width: 60%;
