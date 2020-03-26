@@ -54,10 +54,11 @@ class TicketConversation extends Component {
 
 		TicketApi.updateTicket(ticket)
 			.then(response => {
-				const isSuccess = response.status === 200 && !response.data.error;
+				const isSuccess = response.status === 200 && !response.data.error && !response.error;
 				const msg = isSuccess
 					? 'Comment added successfully!'
 					: 'Sorry, there was an error adding the comment';
+
 				this.setState(
 					{
 						msg,
@@ -79,7 +80,7 @@ class TicketConversation extends Component {
 				this.setState({ comment: '', phase: PHASE.TICKET_SUBMITTED });
 			})
 			.catch(() => {
-				this.displayAttachmentDoneModal(false);
+				//this.displayAttachmentDoneModal(false);
 			});
 	};
 
