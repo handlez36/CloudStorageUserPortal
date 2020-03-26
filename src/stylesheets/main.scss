@@ -142,6 +142,9 @@ This file should not contain anything but @import and comments.
 @import 'components/Layoutv3/portal_layout';
 @import 'components/Layoutv3/header_section';
 @import 'components/Layoutv3/content_section';
+@import 'components/Layoutv3/logout_component';
+@import 'components/Layoutv3/accounts_component';
+@import 'components/Layoutv3/breadcrumb_component';
 
 /**
 * Navigationv3 components
@@ -230,9 +233,9 @@ This file should not contain anything but @import and comments.
 @import 'layout/header';
 @import 'layout/navigation';
 @import 'layout/sidebar';
-@import 'layout/logout';
-@import 'layout/accounts_component';
-@import 'layout/breadcrumb_component';
+// @import 'layout/logout';
+// @import 'layout/accounts_component';
+// @import 'layout/breadcrumb_component';
 
 @import 'pages/404';
 @import 'pages/portal';

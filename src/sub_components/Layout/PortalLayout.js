@@ -6,7 +6,8 @@ import { RESOLUTIONS } from 'services/config';
 /** v3 imports */
 import NavSection from './Navigation/BloxNavigationSection';
 import ContentSection from './ContentSection';
-import HeaderSection from './Header/HeaderSection';
+// import HeaderSection from './Header/HeaderSection';
+import HeaderSection from './Header/HeaderSectionNoGrid';
 import FooterSection from './Footer';
 // import { SITE_MAP, SITE_PAGES } from './../Common/CommonConstants';
 
@@ -49,7 +50,8 @@ class PortalLayout extends Component {
 		this.state = {
 			currentModule: null,
 			currentPage: null,
-			breakpoint: 1440,
+			// breakpoint: 1440,
+			breakpoint: RESOLUTIONS.MED,
 		};
 	}
 
@@ -95,7 +97,6 @@ class PortalLayout extends Component {
 	};
 
 	componentDidMount() {
-		console.log('PortalLayout Did Mount');
 		// Parse URL to determine module to load...
 		this.parseUrlParams();
 
