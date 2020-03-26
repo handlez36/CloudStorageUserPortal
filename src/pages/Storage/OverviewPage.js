@@ -12,6 +12,7 @@ import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
 import { MENU as STORAGE_MENU } from 'utils/StorageConstants';
 import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
+import { HIGH_LEVEL_TICKET_STATUS as TICKET_STATUS } from 'utils/TicketConstants';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -52,7 +53,7 @@ class OverviewPage extends Component {
 				<div key={`openTickets-${columnCount}`} className='openTickets'>
 					<ComponentWrapper title='TICKET Status' hideBorder>
 						<TicketCount
-							status={TicketUtils.TICKET_STATUS.OPEN}
+							status={TICKET_STATUS.OPEN}
 							ticketType={TicketUtils.TICKET_TYPES.STORAGE}
 						/>
 					</ComponentWrapper>
@@ -60,7 +61,7 @@ class OverviewPage extends Component {
 				<div key={`closedTickets-${columnCount}`} className='closedTickets'>
 					<ComponentWrapper hideTitle hideBorder>
 						<TicketCount
-							status={TicketUtils.TICKET_STATUS.CLOSED}
+							status={TICKET_STATUS.CLOSED}
 							ticketType={TicketUtils.TICKET_TYPES.STORAGE}
 						/>
 					</ComponentWrapper>
