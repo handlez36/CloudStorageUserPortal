@@ -37,6 +37,19 @@ export class Utils {
 		}
 		return menu;
 	};
+
+	static showHorizontalBar = () => {
+		const bar = document.querySelector('.horizontal-bar');
+		if (bar) {
+			bar.classList.add('show');
+		}
+	};
+	static removeHorizontalBar = () => {
+		const bar = document.querySelector('.horizontal-bar');
+		if (bar) {
+			bar.classList.remove('show');
+		}
+	};
 	//Get menu number based on module
 	static getModuleNumber = module => {
 		let moduleNumber = null;

@@ -15,6 +15,7 @@ import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import { consolidateStreamedStyles } from 'styled-components';
 import CompanyProfile from 'blox_components/Profile/CompanyProfile';
 import { PROFILE_OVERVIEW_CARDS as CARDS } from 'utils/ProfileConstants';
+import { Utils } from 'services/utils';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -50,11 +51,16 @@ class OverviewPage extends Component {
 	state = {
 		expandedCard: null,
 	};
+	componentWillUnmount() {
+		Utils.removeHorizontalBar();
+	}
+
 	componentDidMount() {
 		const { updateModule, updatePage, addPageToBreadCrumbs } = this.props;
 		updatePage(SITE_PAGES.PROFILE[PROFILE_MENU.OVERVIEW]);
 		addPageToBreadCrumbs(SITE_PAGES.PROFILE[PROFILE_MENU.OVERVIEW], SITE_MODULES.PROFILE);
 		updateModule(SITE_MODULES.PROFILE);
+		Utils.showHorizontalBar();
 	}
 
 	getLayoutConfig = breakpoint => {

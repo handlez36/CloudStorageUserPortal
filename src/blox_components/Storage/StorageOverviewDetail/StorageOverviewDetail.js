@@ -204,7 +204,7 @@ class StorageOverviewDetail extends Component {
 	}
 
 	render() {
-		const { breakpoint } = this.props;
+		const { breakpoint, history } = this.props;
 		const {
 			objectShare,
 			fileShare,
@@ -220,7 +220,7 @@ class StorageOverviewDetail extends Component {
 
 		const packageType = this.packageType(data, fileShare, objectShare);
 		const sharesCountLabel = shares ? `(${shares.length} active)` : '';
-		console.log('file share', fileShare);
+
 		return (
 			<div className='storage-overview-detail v3'>
 				<div key='storage-graphs' className='storage-graphs'>
@@ -346,6 +346,7 @@ class StorageOverviewDetail extends Component {
 								selectMenuItem={this.props.selectMenuItem}
 								viewShare={this.getShareDetails}
 								changeToManageStorage={() => {}}
+								history={history}
 							/>
 						</div>
 					)}
