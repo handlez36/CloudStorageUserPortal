@@ -9,14 +9,12 @@
 	.blox-button {
 		margin-right: 4vw;
 		margin-top: 0.5vh;
-		$map: (
-			576: 12,
-			1440: 14,
-			2560: 18,
-		);
-		font-size: least-squares-fit($map);
+
 		letter-spacing: 0.8px;
 		font-family: $font-family-primary-subheads;
+		.title {
+			font-size: calculateVw(15, 1440);
+		}
 	}
 
 	.wrapper {

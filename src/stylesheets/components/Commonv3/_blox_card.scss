@@ -28,6 +28,7 @@
 		.summary-row .summary-content {
 			@include FlexboxColumn;
 			justify-content: flex-end;
+			color: $DCBLOX_Gray;
 		}
 		.summary-row .summary-content .name {
 			line-height: 8px;
