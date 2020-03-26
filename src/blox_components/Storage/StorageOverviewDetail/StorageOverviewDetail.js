@@ -112,8 +112,6 @@ class StorageOverviewDetail extends Component {
 	};
 
 	checkShares = (shares, type) => {
-		console.log('shares', shares);
-		console.log('ttype', type);
 		if (!shares) {
 			return false;
 		}
