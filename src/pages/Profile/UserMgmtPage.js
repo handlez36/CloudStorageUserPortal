@@ -9,13 +9,13 @@ import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
-		userManagement: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 85 },
+		userManagement: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.MED]: {
-		userManagement: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 112 },
+		userManagement: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 	[RESOLUTIONS.HIGH]: {
-		userManagement: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_SIX, customHeight: 160 },
+		userManagement: { x: 4, y: 0, dim: DIMENSIONS.TWO_BY_SIX },
 	},
 };
 

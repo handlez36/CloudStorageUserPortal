@@ -37,9 +37,13 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
-
+			.blox-button {
+				.title {
+					font-size: calculateVw(15px, 1440);
+				}
+			}
 			.submit-button {
-				width: calculateVw(100, 1440);
+				width: calculateVw(140, 1440);
 				height: calculateVh(50, 1440);
 				margin-bottom: 1vh;
 				color: $White;
