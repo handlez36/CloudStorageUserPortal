@@ -1,5 +1,22 @@
 .portal-user-mgmt {
 	.modal-content {
-		border: 1px solid red;
+		position: absolute;
+		left: -300px;
+	}
+}
+@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+	.portal-user-mgmt {
+		.modal-content {
+			position: absolute;
+			left: -300px;
+		}
+	}
+}
+@media screen and (min-width: $high-res + 1) {
+	.portal-user-mgmt {
+		.modal-content {
+			position: absolute;
+			left: -600px;
+		}
 	}
 }
