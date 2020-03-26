@@ -58,7 +58,7 @@ class TotalAmountDue extends Component {
 		const hasOnlinePaymentAccess = Permissions.checkComponentAccess(
 			pages,
 			'Overview',
-			'bill-paynow-component',
+			'paynow-component',
 		);
 		return (
 			<div class='total-amount-due'>

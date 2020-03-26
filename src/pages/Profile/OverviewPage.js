@@ -94,6 +94,10 @@ class OverviewPage extends Component {
 			return state;
 		});
 	};
+	goToPortalManagement = () => {
+		const { history } = this.props;
+		history.push('/portal/profile/user_management');
+	};
 
 	render() {
 		const { breakpoint, location } = this.props;
@@ -104,7 +108,7 @@ class OverviewPage extends Component {
 					<BloxButton
 						title='MANAGE PORTAL'
 						customClass={'blox-button blue-gradient'}
-						onClick={() => {}}
+						onClick={this.goToPortalManagement}
 						enabled={true}
 					/>
 				</div>
