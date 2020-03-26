@@ -16,7 +16,8 @@ export const getCompanyIdHeader = id => {
 };
 
 export const RESOLUTIONS = {
-	LOW: 928,
+	MIN: 928,
+	LOW: 930,
 	MED: 1344,
 	HIGH: 2240,
 };

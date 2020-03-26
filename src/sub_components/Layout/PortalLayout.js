@@ -93,6 +93,8 @@ class PortalLayout extends Component {
 			breakpoint = RESOLUTIONS.MED;
 		} else if (screenWidth > RESOLUTIONS.HIGH) {
 			breakpoint = RESOLUTIONS.HIGH;
+		} else {
+			breakpoint = RESOLUTIONS.MIN;
 		}
 
 		this.setState({ breakpoint, screenWidth, screenHeight });
@@ -124,7 +126,7 @@ class PortalLayout extends Component {
 
 		return (
 			<div className='portal-layout v3'>
-				{screenWidth <= 930 && (
+				{breakpoint === RESOLUTIONS.MIN && (
 					<LowResMessage screenWidth={screenWidth} screenHeight={screenHeight} />
 				)}
 				<div className='portal-header'>
