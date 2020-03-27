@@ -109,7 +109,12 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
-
+		.blox-button {
+			.title {
+				font-size: calculateVw(15, 1440);
+			}
+			margin-bottom: calculateVw(15, 1440);
+		}
 		button {
 			width: calculateVw(100, 1440);
 			height: calcualteVh(50, 1440);

@@ -23,14 +23,18 @@ class TicketCountRow extends Component {
 
 	getCountAndPercentage = (type, status, showTitle) => {
 		const { tickets } = this.state;
+		let filteredTicketsByType = null;
 
 		if (!tickets || tickets.length < 1) {
 			return { count: 0, percentage: 0 };
 		}
-
-		const filteredTicketsByType = tickets.filter(
-			ticket => ticket.type.toLowerCase() === type.toLowerCase(),
-		);
+		if (type === 'Support') {
+			filteredTicketsByType = tickets;
+		} else {
+			filteredTicketsByType = tickets.filter(
+				ticket => ticket.type.toLowerCase() === type.toLowerCase(),
+			);
+		}
 		if (filteredTicketsByType === 0) {
 			showTitle(false);
 		}

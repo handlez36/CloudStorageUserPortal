@@ -84,6 +84,7 @@
 				padding-left: 0;
 			}
 			& .amountduetoday {
+				white-space: nowrap;
 				order: 3;
 				width: calculateVw(60px, $standard-screen-width-mid);
 				margin-left: calculateVw(10px, $standard-screen-width-mid);
@@ -128,6 +129,7 @@
 			flex: 0 1 calculateVw(70px, $standard-screen-width-mid);
 		}
 		.accordian-field.amountduetoday {
+			white-space: nowrap;
 			padding-left: 0;
 			width: calculateVw(68px, $standard-screen-width-mid);
 			margin-left: calculateVw(15px, $standard-screen-width-mid);
@@ -166,10 +168,11 @@
 	/**
   * Disable all columns except third/main column
   */
-	html,
-	body {
-		height: 99%;
-	}
+	// html,
+	// body {
+	// 	height: 99%;
+	// }
+
 	.portal-left {
 		display: none !important;
 		flex: 0 1 0 !important;
@@ -189,20 +192,12 @@
 			display: none;
 		}
 	}
-	.page-header {
+	.portal-header {
 		display: none;
 	}
 
-	/**
-  * Restyle third/main column
-  */
-	.client-portal .portal-body .portal-main > .main {
-		max-width: 100% !important;
-		// flex: 0 1 calculateVw(1280px, $standard-screen-width-mid) !important;
-		flex: 0 1 50% !important;
-		// flex-basis: calculateVw(1280px, $standard-screen-width-mid) !important;
-		// width: calculateVw(1280px, $standard-screen-width-mid) !important;
-		width: 50% !important;
+	.page-header {
+		display: none;
 	}
 
 	.expandable-content {
@@ -212,8 +207,15 @@
 	.user-actions-row {
 		display: none !important;
 	}
+	.main-content,
+	.make-a-payment {
+		position: absolute !important;
+		top: 0px !important;
+		left: 0px !important;
+		padding-left: 0px !important;
+		padding: 0px !important;
+	}
 }
-
 @media print {
 	.portal-main .extra-content {
 		display: none;
@@ -226,13 +228,15 @@
 	.payment-summary-page #formButton {
 		display: none;
 	}
-	.total-amount-due-wrapper {
-		.total-amount {
-			font-size: 40px;
-		}
-		.total-amount-due {
-			font-size: 30px;
-			border-bottom: none;
+	.total-payment-section {
+		.total-amount-due-wrapper {
+			.total-amount {
+				font-size: 40px;
+			}
+			.total-amount-due {
+				font-size: 30px;
+				border-bottom: none;
+			}
 		}
 	}
 	.page-status {
@@ -267,8 +271,8 @@
 		@supports (-ms-ime-align: auto) {
 			width: 275%;
 		}
+		margin-left: calculateVw(-15, 1440);
 		width: 250%;
-		margin-left: calculateVw(50, 1440);
 		.content {
 			font-size: 24px;
 			margin-left: 15px;
@@ -307,6 +311,7 @@
 			}
 			.expandable-content {
 				.invoices {
+					margin-left: 2vw;
 					.invoice-row {
 						.accordian-field {
 							width: 60%;
@@ -320,6 +325,7 @@
 							&.amountduetoday,
 							&.datedue,
 							&.amountpaid {
+								white-space: nowrap;
 								padding: 2vw;
 								margin-left: calculateVw(5, 1440);
 								margin-right: calculateVw(25, 1440);
