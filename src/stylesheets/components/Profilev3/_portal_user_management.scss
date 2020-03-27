@@ -1,2 +1,15 @@
 .portal-user-mgmt {
+	.portal-modal.user-add-modal {
+		height: 100%;
+		max-width: unset;
+		margin-top: unset;
+		margin-left: unset;
+		transition: unset;
+		@include FlexboxCenter;
+		.modal-content {
+			position: relative;
+			left: unset;
+			margin-top: GetSize(1);
+		}
+	}
 }

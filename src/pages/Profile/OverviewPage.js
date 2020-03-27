@@ -167,9 +167,9 @@ class OverviewPage extends Component {
 					</ComponentWrapper>
 				</div>
 				<div key={`rosterUserManagement-${columnCount}`} className='rosterUserManagement'>
-					<ComponentWrapper title={customTitleRosterOverview} showButton hideBorder>
+					{/* <ComponentWrapper title={customTitleRosterOverview} showButton hideBorder>
 						<RosterManagement />
-					</ComponentWrapper>
+					</ComponentWrapper> */}
 				</div>
 			</BloxPage>
 		);
