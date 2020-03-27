@@ -88,7 +88,8 @@ class BloxMicroGrid extends Component {
 
 				setTimeout(() => {
 					const rowEls = document.querySelectorAll(`.${name} .horizontal-column`);
-					rowEls.forEach(el => (el.style.width = `${parentWidth}px`));
+					const rowElsArr = Array.from(rowEls);
+					rowElsArr.forEach(el => (el.style.width = `${parentWidth}px`));
 				}, 250);
 			});
 		});
