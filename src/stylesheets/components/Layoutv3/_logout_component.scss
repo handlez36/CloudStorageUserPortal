@@ -46,6 +46,7 @@
 		position: absolute;
 		width: GetSize(10);
 		transition: opacity 3s ease-in;
+
 		.blox-button {
 			display: flex;
 			align-content: center;
@@ -183,4 +184,31 @@
 	animation-iteration-count: 0.5;
 	animation-timing-function: ease-out;
 	animation-duration: 0.5s;
+}
+// @media all and (max-width: 1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media all and (max-width: $medium-res) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.logout-component {
+		.logout-button {
+			margin-left: 0px !important;
+			left: 30%;
+		}
+	}
+}
+@media all and (max-width: $high-res) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.logout-component {
+		.logout-button {
+			margin-left: 0px !important;
+			left: 9%;
+		}
+	}
+}
+// @media all and (min-width: 2560px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media all and (min-width: $high-res + 1) and (-ms-high-contrast: none),
+	(-ms-high-contrast: active) {
+	.logout-component {
+		.logout-button {
+			margin-left: 0px !important;
+			left: 15%;
+		}
+	}
 }

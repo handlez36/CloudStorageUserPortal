@@ -89,6 +89,9 @@
 			&.show {
 				display: inline;
 			}
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				margin-left: 0px !important;
+			}
 		}
 	}
 	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -112,6 +115,9 @@
 				height: GetSize(2);
 				margin-left: GetSize(24);
 				top: GetSize(37);
+				@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+					margin-left: 0px !important;
+				}
 			}
 		}
 	}
@@ -135,6 +141,9 @@
 				height: GetSize(2);
 				margin-left: GetSize(40);
 				top: GetSize(58);
+				@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+					margin-left: 0px !important;
+				}
 			}
 		}
 	}
@@ -155,6 +164,30 @@
 				width: auto;
 				margin-top: 1.7vh;
 			}
+		}
+	}
+}
+// @media all and (max-width: 1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media all and (max-width: $medium-res) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.portal-main {
+		.horizontal-bar {
+			margin-left: 0px !important;
+		}
+	}
+}
+@media all and (max-width: $high-res) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.portal-main {
+		.horizontal-bar {
+			margin-left: 0px !important;
+		}
+	}
+}
+// @media all and (min-width: 2560px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media all and (min-width: $high-res + 1) and (-ms-high-contrast: none),
+	(-ms-high-contrast: active) {
+	.portal-main {
+		.horizontal-bar {
+			margin-left: 0px !important;
 		}
 	}
 }

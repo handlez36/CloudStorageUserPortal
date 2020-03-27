@@ -6,10 +6,11 @@ import { Netmask } from 'netmask';
 // import CrossGrid from './Layout/CrossGrid';
 // import SandboxGrid from './SandboxGrid';
 // import MicroGrid from './Layoutv3/BloxMicroGrid';
-// import SampleGridContent from './SampleGridContent';
+
 // import TestComponent from './../components/Layout/TestContent';
 import PortalLayout from './../../sub_components/Layout/PortalLayout';
 import AccountsComponent from './../../sub_components/Layout/Header/AccountsComponent';
+import NavMenu from '../../sub_components/Layout/Navigation/NavMenu';
 // import { Utils, SIDES } from './../../services/utils';
 // import ColumnSide from './Navigationv3/ColumnSide';
 // const ResponsiveReactGridLayout = WidthProvider(Responsive);
@@ -168,7 +169,7 @@ export default class Sandbox extends Component {
 		return (
 			<div id='sandbox'>
 				{/* <ColumnSide navHeight={500} width={100} percentage={75} side='left' /> */}
-
+				<NavMenu />
 				{/* <div className='menu-gradient-testing'>
 					<div className='top-diamond' />
 					<div className='sides'>
