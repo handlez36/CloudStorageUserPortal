@@ -6,6 +6,7 @@ import { RESOLUTIONS } from 'services/config';
 /** v3 imports */
 import NavSection from './Navigation/BloxNavigationSection';
 import ContentSection from './ContentSection';
+import LowResMessage from './LowResolutionPopUp';
 // import HeaderSection from './Header/HeaderSection';
 import HeaderSection from './Header/HeaderSectionNoGrid';
 import FooterSection from './Footer';
@@ -52,6 +53,7 @@ class PortalLayout extends Component {
 			currentPage: null,
 			// breakpoint: 1440,
 			breakpoint: RESOLUTIONS.MED,
+			screenWidth: null,
 		};
 	}
 
@@ -82,7 +84,7 @@ class PortalLayout extends Component {
 		this.setState({ PageComponent: Component, currentModule: mod.toLowerCase() });
 	};
 
-	updateScreenBreakpoint = screenWidth => {
+	updateScreenBreakpoint = (screenWidth, screenHeight) => {
 		let breakpoint = RESOLUTIONS.MED;
 
 		if (screenWidth > RESOLUTIONS.LOW && screenWidth <= RESOLUTIONS.MED) {
@@ -91,9 +93,11 @@ class PortalLayout extends Component {
 			breakpoint = RESOLUTIONS.MED;
 		} else if (screenWidth > RESOLUTIONS.HIGH) {
 			breakpoint = RESOLUTIONS.HIGH;
+		} else {
+			breakpoint = RESOLUTIONS.MIN;
 		}
 
-		this.setState({ breakpoint });
+		this.setState({ breakpoint, screenWidth, screenHeight });
 	};
 
 	componentDidMount() {
@@ -103,7 +107,8 @@ class PortalLayout extends Component {
 		this.screenObserver = new ResizeObserver(entries => {
 			entries.forEach(entry => {
 				const screenWidth = entry.contentRect.width;
-				this.updateScreenBreakpoint(screenWidth);
+				const screenHeight = entry.contentRect.height;
+				this.updateScreenBreakpoint(screenWidth, screenHeight);
 			});
 		});
 
@@ -117,10 +122,13 @@ class PortalLayout extends Component {
 	}
 
 	render() {
-		const { breakpoint, PageComponent, currentModule } = this.state;
+		const { breakpoint, PageComponent, currentModule, screenWidth, screenHeight } = this.state;
 
 		return (
 			<div className='portal-layout v3'>
+				{breakpoint === RESOLUTIONS.MIN && (
+					<LowResMessage screenWidth={screenWidth} screenHeight={screenHeight} />
+				)}
 				<div className='portal-header'>
 					<HeaderSection
 						breakpoint={breakpoint}
