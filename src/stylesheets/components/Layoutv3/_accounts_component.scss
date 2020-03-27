@@ -21,6 +21,7 @@
 		}
 	}
 	.accounts-component-wrapper {
+		z-index: 4000;
 		width: GetSize(5);
 		height: GetSize(5);
 		position: absolute;
@@ -228,6 +229,7 @@
 		}
 
 		.accounts-component-wrapper {
+			z-index: 4000;
 			width: GetSize(8);
 			height: GetSize(8);
 			position: absolute;
@@ -436,6 +438,7 @@
 			}
 		}
 		.accounts-component-wrapper {
+			z-index: 4000;
 			width: GetSize(10);
 			height: GetSize(10);
 			position: absolute;
@@ -613,6 +616,55 @@
 				}
 				&.multi-list-4 {
 					height: GetSize(58);
+				}
+			}
+		}
+	}
+}
+
+// @media all and (max-width: 1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media all and (max-width: $medium-res) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.accounts-component {
+		.accounts-component-wrapper {
+			z-index: 4000;
+
+			.accounts-dropdown {
+				.multi-user {
+					.company-image {
+						margin-top: -12px;
+					}
+				}
+			}
+		}
+	}
+}
+@media all and (max-width: $high-res) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.accounts-component {
+		.accounts-component-wrapper {
+			z-index: 4000;
+
+			.accounts-dropdown {
+				.multi-user {
+					.company-image {
+						margin-top: -16px;
+					}
+				}
+			}
+		}
+	}
+}
+// @media all and (min-width: 2560px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media all and (min-width: $high-res + 1) and (-ms-high-contrast: none),
+	(-ms-high-contrast: active) {
+	.accounts-component {
+		.accounts-component-wrapper {
+			z-index: 4000;
+
+			.accounts-dropdown {
+				.multi-user {
+					.company-image {
+						margin-top: -20px;
+					}
 				}
 			}
 		}

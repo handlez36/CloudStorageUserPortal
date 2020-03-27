@@ -103,7 +103,7 @@ class MenuItems extends Component {
 				}
 			}, 1000);
 		}
-		console.log('new active element', newActiveElement);
+
 		if (newActiveElement) {
 			newActiveElement.classList.remove('animate');
 			newActiveElement.classList.add('active');

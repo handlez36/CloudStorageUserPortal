@@ -6,6 +6,7 @@
 	.card-top-section {
 		flex: 0 1 GetSize(9);
 		height: GetSize(9);
+		max-height: GetSize(9);
 		width: 100%;
 		img {
 			width: 100%;
@@ -89,6 +90,7 @@
 	.blox-card {
 		.card-top-section {
 			height: GetSize(14);
+			max-height: GetSize(14);
 		}
 		.card-bottom-section {
 			.summary-row {
@@ -131,6 +133,7 @@
 	.blox-card {
 		.card-top-section {
 			height: GetSize(24);
+			max-height: GetSize(24);
 		}
 		.card-bottom-section {
 			.summary-row {
