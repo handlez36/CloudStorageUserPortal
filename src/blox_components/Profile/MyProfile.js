@@ -67,7 +67,7 @@ class MyProfile extends Component {
 	}
 
 	render() {
-		const { expanded, expandCard, auth_status: { user } = {} } = this.props;
+		const { expanded, expandCard, auth_status: { user } = {}, history } = this.props;
 		const { profileId } = this.state;
 		const image = profileId ? new AvatarApi().getRectangleAvatars(profileId) : '';
 
@@ -80,6 +80,7 @@ class MyProfile extends Component {
 					detail={this.getDetailContent(user)}
 					isExpanded={expanded}
 					expandCardCallback={expandCard}
+					history={history}
 				/>
 			</div>
 		);
@@ -92,7 +93,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	null,
-)(MyProfile);
+export default connect(mapStateToProps, null)(MyProfile);

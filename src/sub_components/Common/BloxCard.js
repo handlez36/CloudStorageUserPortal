@@ -11,7 +11,7 @@ const onSetExpanded = (type, expanded, setExpanded, expandCardCallback) => {
 	expandCardCallback(type);
 };
 
-const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback }) => {
+const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback, history }) => {
 	const [expanded, setExpanded] = useState(isExpanded);
 
 	useEffect(() => {
@@ -19,9 +19,7 @@ const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback
 			setExpanded(isExpanded);
 		}
 	}, [isExpanded]);
-	// console.log('Type: ', type);
-	// console.log('Is Expanded: ', isExpanded);
-	// console.log('Expaned (should be same): ', expanded);
+
 	return (
 		<div className={`blox-card${isExpanded ? ' expanded' : ''}`}>
 			<div className='card-top-section'>
@@ -40,7 +38,9 @@ const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback
 						{detail}
 						<Button
 							title='EDIT CONTACT INFO'
-							onClick={() => {}}
+							onClick={() => {
+								history.push('/portal/profile/contact_info');
+							}}
 							customClass='blox-button gradient'
 							enabled
 						/>

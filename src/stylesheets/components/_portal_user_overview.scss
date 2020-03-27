@@ -1,106 +1,110 @@
-.portal-user-wrapper {
-	width: 368px;
-	height: GetSize(14);
-	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
-	background-color: $White;
-	padding-top: GetSize(2);
-	padding-bottom: GetSize(2);
-	display: flex;
+// .portal-user-wrapper {
+// 	width: 368px;
+// 	height: GetSize(14);
+// 	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+// 	background-color: $White;
+// 	padding-top: GetSize(2);
+// 	padding-bottom: GetSize(2);
+// 	display: flex;
 
-	.users {
-		overflow: hidden;
-	}
+// 	.users {
+// 		overflow: hidden;
+// 	}
 
-	.overview-user-wrapper {
-		display: flex;
-		width: GetSize(46);
-		overflow: hidden;
+// 	.overview-user-wrapper {
+// 		display: flex;
+// 		width: GetSize(46);
+// 		overflow: hidden;
 
-		height: GetSize(10);
-		margin-left: GetSize(3);
-		.portal-user-overview-block:nth-child(5) {
-			opacity: 0.3;
-		}
-	}
+// 		height: GetSize(10);
+// 		margin-left: GetSize(3);
+// 		.portal-user-overview-block:nth-child(5) {
+// 			opacity: 0.3;
+// 		}
+// 	}
 
-	.portal-user-overview-block {
-		margin-right: GetSize(1);
-		.image {
-			img {
-				width: GetSize(8);
-				height: GetSize(8);
-			}
-		}
-	}
+// 	.portal-user-overview-block {
+// 		margin-right: GetSize(1);
+// 		.image {
+// 			img {
+// 				width: GetSize(8);
+// 				height: GetSize(8);
+// 			}
+// 		}
+// 		.sub-title {
+// 			top: -44px;
+// 			left: 39%;
+// 		}
+// 	}
 
-	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
-		width: GetSize(68);
-		height: GetSize(20);
-		padding-top: GetSize(3);
-		padding-bottom: GetSize(3);
-		padding-left: GetSize(1);
-		.portal-user-overview-block {
-			margin-right: GetSize(2);
-		}
-		.sub-title {
-			top: -44px;
-			left: 39%;
-		}
-		.overview-user-wrapper {
-			width: GetSize(68);
-			height: GetSize(14);
-			.block-wrapper {
-				height: GetSize(14);
-				width: GetSize(11);
-				.name {
-					padding-top: GetSize(1);
-					height: GetSize(4);
-					width: GetSize(11);
-				}
-				.image {
-					img {
-						width: GetSize(11);
-						height: GetSize(11);
-					}
-				}
-			}
-		}
-	}
+// 	@media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
+// 		width: GetSize(68);
+// 		height: GetSize(20);
+// 		padding-top: GetSize(3);
+// 		padding-bottom: GetSize(3);
+// 		padding-left: GetSize(1);
+// 		.portal-user-overview-block {
+// 			margin-right: GetSize(2);
+// 		}
+// 		.sub-title {
+// 			top: -44px;
+// 			left: 39%;
+// 		}
+// 		.overview-user-wrapper {
+// 			width: GetSize(68);
+// 			height: GetSize(14);
+// 			.block-wrapper {
+// 				height: GetSize(14);
+// 				width: GetSize(11);
+// 				.name {
+// 					padding-top: GetSize(1);
+// 					height: GetSize(4);
+// 					width: GetSize(11);
+// 				}
+// 				.image {
+// 					img {
+// 						width: GetSize(11);
+// 						height: GetSize(11);
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
 
-	@media screen and (min-width: $high-res + 1) {
-		width: GetSize(114);
-		height: GetSize(34);
-		padding-top: GetSize(5);
-		padding-bottom: GetSize(5);
-		padding-left: GetSize(3);
+// 	@media screen and (min-width: $high-res + 1) {
+// 		width: GetSize(114);
+// 		height: GetSize(34);
+// 		padding-top: GetSize(5);
+// 		padding-bottom: GetSize(5);
+// 		padding-left: GetSize(3);
 
-		.sub-title {
-			top: -54px;
-			left: 33%;
-		}
-		.portal-user-overview-block {
-			margin-right: GetSize(3);
-		}
-		.overview-user-wrapper {
-			margin-left: GetSize(4);
-			width: 100%;
-			height: GetSize(24);
-			.block-wrapper {
-				height: GetSize(24);
-				width: GetSize(20);
+// 		.sub-title {
+// 			top: -54px;
+// 			left: 33%;
+// 		}
+// 		.portal-user-overview-block {
+// 			margin-right: GetSize(3);
+// 		}
+// 		.overview-user-wrapper {
+// 			margin-left: GetSize(4);
+// 			width: 100%;
+// 			height: GetSize(24);
+// 			.block-wrapper {
+// 				height: GetSize(24);
+// 				width: GetSize(20);
 
-				.name {
-					padding-top: GetSize(1);
-					height: GetSize(4);
-					width: GetSize(20);
-				}
-				.image {
-					img {
-						width: GetSize(20);
-						height: GetSize(20);
-					}
-				}
-			}
-		}
-	}
-}
+// 				.name {
+// 					padding-top: GetSize(1);
+// 					height: GetSize(4);
+// 					width: GetSize(20);
+// 				}
+// 				.image {
+// 					img {
+// 						width: GetSize(20);
+// 						height: GetSize(20);
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }

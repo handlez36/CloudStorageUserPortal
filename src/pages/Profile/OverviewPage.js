@@ -106,7 +106,7 @@ class OverviewPage extends Component {
 	};
 
 	render() {
-		const { breakpoint, location } = this.props;
+		const { breakpoint, location, history } = this.props;
 		const customTitlePortalOverview = (
 			<div className='component-wrapper--no-border heading60'>
 				<div className='component-wrapper_title'>PORTAL User Management</div>
@@ -150,7 +150,11 @@ class OverviewPage extends Component {
 				</div>
 				<div key={`myProfile-${columnCount}`} className='myProfile'>
 					<ComponentWrapper title='MY Profile' hideBorder>
-						<MyProfile expanded={expandedCard === CARDS.MY_PROFILE} expandCard={this.expandCard} />
+						<MyProfile
+							history={history}
+							expanded={expandedCard === CARDS.MY_PROFILE}
+							expandCard={this.expandCard}
+						/>
 					</ComponentWrapper>
 				</div>
 				<div key={`portalUserManagement-${columnCount}`} className='portalUserManagement'>
@@ -163,6 +167,7 @@ class OverviewPage extends Component {
 						<CompanyProfile
 							expanded={expandedCard === CARDS.COMPANY_PROFILE}
 							expandCard={this.expandCard}
+							history={history}
 						/>
 					</ComponentWrapper>
 				</div>
