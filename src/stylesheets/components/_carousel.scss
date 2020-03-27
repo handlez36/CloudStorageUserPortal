@@ -1,4 +1,4 @@
-.carousel-container.new {
+.carousel-container {
 	position: relative;
 	width: GetSize(55);
 	height: GetSize(17);
@@ -87,6 +87,9 @@
 			width: GetSize(3);
 			height: GetSize(14);
 			background-color: transparent;
+			position: absolute;
+			left: 0;
+			border: none;
 			.nav-arrow-left {
 				border-radius: 0px;
 				img {
@@ -99,6 +102,9 @@
 			width: GetSize(3);
 			height: GetSize(13);
 			background-color: $White;
+			position: absolute;
+			right: 0;
+			border: none;
 			.nav-arrow-right {
 				margin-left: GetSize(1);
 				border-radius: 0px;

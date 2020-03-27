@@ -67,7 +67,7 @@ class CompanyProfile extends Component {
 	};
 
 	render() {
-		const { expanded, expandCard, company_info } = this.props;
+		const { expanded, expandCard, company_info, history } = this.props;
 
 		return (
 			<div className='company-profile'>
@@ -78,6 +78,7 @@ class CompanyProfile extends Component {
 					detail={this.getDetailContent(company_info)}
 					isExpanded={expanded}
 					expandCardCallback={expandCard}
+					history={history}
 				/>
 			</div>
 		);
@@ -91,7 +92,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(
-	mapStateToProps,
-	null,
-)(CompanyProfile);
+export default connect(mapStateToProps, null)(CompanyProfile);
