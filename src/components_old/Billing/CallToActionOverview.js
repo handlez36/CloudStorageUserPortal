@@ -4,7 +4,7 @@ import { Decimal } from 'decimal.js';
 import { BillingApi } from '../../services/billing';
 import { Utils } from '../../services/utils';
 
-import BloxButton from '../Common/BloxButton';
+import COMPANYButton from '../Common/COMPANYButton';
 
 export default class CallToActionOverview extends Component {
 	constructor(props) {
@@ -263,7 +263,7 @@ export default class CallToActionOverview extends Component {
 									Make a payment via check or money order to:
 									<br />
 								</span>
-								DC Blox 6 W Druid Hills Dr NE Atlanta, GA 30329
+								COMPANY 6 W Druid Hills Dr NE Atlanta, GA 30329
 							</div>
 						)}
 						<div className='invoice-calendar-amount-due'>
@@ -277,20 +277,20 @@ export default class CallToActionOverview extends Component {
 						{balanceCopy}
 						{eligibleForOnlinePayment && screenSize >= 2560 && page !== 'overview' && (
 							<div className={page === 'overview' ? 'pay-now-button overview' : 'pay-now-button'}>
-								<BloxButton
+								<COMPANYButton
 									title='PAY NOW'
 									enabled={true}
-									customClass='blox-button green-gradient'
+									customClass='COMPANY-button green-gradient'
 									onClick={this.props.goToPayments}
 								/>
 							</div>
 						)}
 						{eligibleForOnlinePayment && page === 'overview' && (
 							<div className={page === 'overview' ? 'pay-now-button overview' : 'pay-now-button'}>
-								<BloxButton
+								<COMPANYButton
 									title='PAY NOW'
 									enabled={true}
-									customClass='blox-button green-gradient'
+									customClass='COMPANY-button green-gradient'
 									onClick={this.props.goToPayments}
 								/>
 							</div>

@@ -25,7 +25,7 @@
 			width: 2.7vw;
 			height: 2.7vh;
 			cursor: pointer;
-			color: $DCBLOX_Black;
+			color: $COMPANY_Black;
 			margin-top: 0.6vh;
 			margin-right: -0.5vw;
 			margin-left: 0.5vw;
@@ -54,7 +54,7 @@
 			}
 			.user-email {
 				@include SubHead_Text;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 			}
 		}
 		.toggle-switch {
@@ -91,7 +91,7 @@
 			right: 12vw;
 			top: 2.5vh;
 			background-color: $White;
-			color: $DCBLOX_Gray;
+			color: $COMPANY_Gray;
 			@include SubHead_Text;
 		}
 		.locations {
@@ -101,7 +101,7 @@
 			li {
 				list-style-type: none;
 				margin-bottom: 0.2vh;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 				@include SubHead_Text;
 			}
 		}

@@ -1,51 +1,51 @@
 /* Invoice Type Selector */
 .invoice-selection {
-  background-color: $DCBLOX_Purple;
-  padding: 1.94vh 7.6vw;
+	background-color: $COMPANY_Purple;
+	padding: 1.94vh 7.6vw;
 
-  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-    padding: 1.94vh 8.2vw !important;
-  }
+	@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+		padding: 1.94vh 8.2vw !important;
+	}
 
-  @supports (-ms-ime-align: auto) {
-    padding: 1.94vh 8.2vw !important;
-  }
+	@supports (-ms-ime-align: auto) {
+		padding: 1.94vh 8.2vw !important;
+	}
 
-  .selection-container {
-    flex: 0 1 19.18vw;
-    min-height: 17.22vh;
-    background-color: #1a0e23;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 1.25vh;
-  }
+	.selection-container {
+		flex: 0 1 19.18vw;
+		min-height: 17.22vh;
+		background-color: #1a0e23;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding-top: 1.25vh;
+	}
 
-  .selection {
-    width: auto;
-    height: auto;
+	.selection {
+		width: auto;
+		height: auto;
 
-    img {
-      width: 7.42vw;
-      height: 7.42vw;
-      cursor: pointer;
-    }
+		img {
+			width: 7.42vw;
+			height: 7.42vw;
+			cursor: pointer;
+		}
 
-    @media screen and (min-aspect-ratio: 16/9) {
-      img {
-        width: 13.19vh;
-        height: 13.19vh;
-      }
-    }
+		@media screen and (min-aspect-ratio: 16/9) {
+			img {
+				width: 13.19vh;
+				height: 13.19vh;
+			}
+		}
 
-    .title {
-      height: 0.90vh;
-      vertical-align: text-top;
-      @include Text-Style-75;
-    }
-  }
+		.title {
+			height: 0.9vh;
+			vertical-align: text-top;
+			@include Text-Style-75;
+		}
+	}
 
-  .selection.paid {
-    margin-left: 1.25vw;
-  }
+	.selection.paid {
+		margin-left: 1.25vw;
+	}
 }

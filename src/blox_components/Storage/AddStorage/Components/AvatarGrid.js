@@ -17,7 +17,7 @@ const AvatarGrid = ({ selected, onSelect, onUpdate, phase }) => {
 							className={`cell cell-${col}${row} ${selected === `${col}${row}` ? 'selected' : ''}`}
 							onClick={callback}
 						>
-							<img src={`https://www.mydcblox.com/cdn/library/storage/${col}${row}.svg`} />
+							<img src={`https://hidden/cdn/library/storage/${col}${row}.svg`} />
 						</div>
 					);
 				});

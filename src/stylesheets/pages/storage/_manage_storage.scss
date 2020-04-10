@@ -9,7 +9,7 @@
 		margin-top: 1.5vh;
 		align-self: center;
 		@include User-Management-Menu;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 	}
 }
 .header-container {
@@ -46,17 +46,17 @@
 	// 		margin-left: 1vw;
 	// 		align-self: center;
 	// 		@include User-Management-Menu;
-	// 		color: $DCBLOX_Gray;
+	// 		color: $COMPANY_Gray;
 	// 	}
 	// }
 
 	// .delete-button {
 	// 	flex: 1;
-	// 	.blox-button {
+	// 	.COMPANY-button {
 	// 		height: calculateVh(80, 1440);
 	// 		width: calculateVw(147, 1440);
 	// 		background-color: $Cool_Gray_Light_2;
-	// 		color: $DCBLOX_Gray;
+	// 		color: $COMPANY_Gray;
 	// 		.title {
 	// 			margin-left: 2.5vw;
 	// 			@include Create-Ticket-Label;
@@ -68,7 +68,7 @@
 	// 			margin-top: 0.2vw;
 	// 		}
 	// 	}
-	// 	.blox-button:hover {
+	// 	.COMPANY-button:hover {
 	// 		color: $White;
 	// 		background-color: $Med_Rust;
 	// 		background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Med_Rust 48%);

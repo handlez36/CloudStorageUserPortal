@@ -5,7 +5,7 @@
 	.name {
 		margin-top: 0.25vh;
 		@include Status-Head;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		// &.form-dropdown-selection {
 		// 	$size_map: (
 		// 		576: 11,
@@ -32,7 +32,7 @@
 			margin-top: 0.25vh;
 			@include Status-Head;
 			margin-bottom: calculateVh(15, 1440);
-			color: $DCBLOX_Gray;
+			color: $COMPANY_Gray;
 			&.form-dropdown-selection {
 				$size_map: (
 					576: 11,

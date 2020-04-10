@@ -7,7 +7,7 @@ const BillingAddress = () => {
 			<br />
 			<span className='address-bold'>check or money order to:</span>
 			<br />
-			<span className='address'>DC Blox</span>
+			<span className='address'>COMPANY</span>
 			<br />
 			<span className='address'>6 W Druid Hills Dr NE</span>
 			<br />

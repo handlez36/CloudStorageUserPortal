@@ -10,7 +10,7 @@
 .portal-side-menu.billing {
 	.menu-item-name {
 		@include Text-Style-9;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 	}
 	.menu-item-name.active {
 		@include Text-Style-9;
@@ -22,8 +22,8 @@
 	position: absolute;
 	margin-top: 12.3vh;
 	z-index: 10;
-	border: 1px solid $DCBLOX_Purple;
-	background-color: $DCBLOX_Purple;
+	border: 1px solid $COMPANY_Purple;
+	background-color: $COMPANY_Purple;
 	border-radius: 5px;
 	margin-left: 10%;
 	width: 12.58vw;
@@ -40,6 +40,6 @@
 		visibility: visible;
 		opacity: 0.9;
 		transform: translateY(3.47vh);
-		background-image: url('https://mydcblox.com/cdn/library/support/Support_SubmitTicket_FAILURE_320x286.png');
+		background-image: url('hidden');
 	}
 }

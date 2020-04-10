@@ -21,27 +21,27 @@
 	tbody {
 		.invoice-number {
 			width: 3.13vw;
-			background-color: $DCBLOX_White;
+			background-color: $COMPANY_White;
 			@include Text-Style-td-over-gray;
 		}
 		.date-due {
 			width: 3.09vw;
-			background-color: $DCBLOX_White;
+			background-color: $COMPANY_White;
 			@include Text-Style-td-over-gray;
 		}
 		.date-sent {
 			width: 3.05vw;
-			background-color: $DCBLOX_White;
+			background-color: $COMPANY_White;
 			@include Text-Style-td-over-white;
 		}
 		.amt-due {
 			width: 3.91vw;
-			background-color: $DCBLOX_White;
+			background-color: $COMPANY_White;
 			@include Text-Style-td-over-white;
 		}
 		.amt-past-due {
 			width: 3.63vw;
-			background-color: $DCBLOX_White;
+			background-color: $COMPANY_White;
 			@include Text-Style-td-over-gray;
 		}
 		.pdf-button.view {
@@ -60,7 +60,7 @@
 			pointer-events: none;
 		}
 		.pdf-button.download {
-			background-color: $DCBLOX_Lime;
+			background-color: $COMPANY_Lime;
 			width: 4.69vw;
 
 			img {

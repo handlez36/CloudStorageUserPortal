@@ -5,7 +5,7 @@ import moment from 'moment';
 import ExpandableSection from '../../../components/Common/ExpandableSection';
 import ExpandableContent from '../../../components/Support/ExpandableContentComponent';
 import AttachmentSection from '../../../components/Common/AttachmentSection.js';
-import Button from '../../../components/Common/BloxButton';
+import Button from '../../../components/Common/COMPANYButton';
 import ErrorModal from '../../../components/Common/ErrorModal';
 import { TicketApi } from '../../../services/ticket';
 import { UserProfileApi } from '../../../services/userProfile';
@@ -235,7 +235,7 @@ class RemoteHandsReview extends Component {
 				<Button
 					title='SUBMIT'
 					enabled={true}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={() => submitTicket(data)}
 				/>
 			</div>

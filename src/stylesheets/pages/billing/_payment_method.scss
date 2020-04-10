@@ -46,7 +46,7 @@
 		border-bottom: 1px solid $Purple;
 		@include Text-Style-Text-Input-Content;
 	}
-	.blox-text-input {
+	.COMPANY-text-input {
 		width: 100%;
 		.active-field {
 			width: calculateVw(220.9, $standard_screen_width_mid);

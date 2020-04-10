@@ -2,10 +2,10 @@ import React, { Component, Fragment } from 'react';
 import { Netmask } from 'netmask';
 
 // import { Responsive, WidthProvider } from 'react-grid-layout';
-// import BloxGrid from './Layout/BloxGrid';
+// import COMPANYGrid from './Layout/COMPANYGrid';
 // import CrossGrid from './Layout/CrossGrid';
 // import SandboxGrid from './SandboxGrid';
-// import MicroGrid from './Layoutv3/BloxMicroGrid';
+// import MicroGrid from './Layoutv3/COMPANYMicroGrid';
 
 // import TestComponent from './../components/Layout/TestContent';
 import PortalLayout from './../../sub_components/Layout/PortalLayout';

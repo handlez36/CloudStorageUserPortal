@@ -24,7 +24,7 @@
 			padding-top: calculateVh(2px, $standard-screen-height-mid);
 			margin-left: calculateVw(34px, $standard-screen-width-mid);
 			min-height: calculateVh(17px, $standard-screen-height-mid);
-			color: $DCBLOX_Red;
+			color: $COMPANY_Red;
 			padding-bottom: 0.2vh;
 		}
 		.ScrollbarsCustom-TrackY {
@@ -72,7 +72,7 @@
 
 .default-filter {
 	.description {
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		// margin-left:-9vw;
 		font-size: 14px;
 		$map: (
@@ -87,7 +87,7 @@
 .whitelist-section li {
 	list-style: none;
 	padding: 0.3vw;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	// height: 3.1vh;
 	height: 2.5vh;
 	width: 9.5vw;

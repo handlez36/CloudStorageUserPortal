@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import 'clientjs';
 
 // import FeedBackModal from '../../components/Common/ErrorModal';    DELETED
-// import InputField from '../../components/Forms/BloxTextInput';   DELETED
-// import BloxButton from '../../components/Common/BloxButton';   DELETED
+// import InputField from '../../components/Forms/COMPANYTextInput';   DELETED
+// import COMPANYButton from '../../components/Common/COMPANYButton';   DELETED
 
 import { TicketApi } from './../../services/ticket';
 import { Utils } from './../../services/utils';
 import FeedBackModal from './../Common/ErrorModal';
-import InputField from './../Common/BloxTextInput';
-import BloxButton from './../Common/BloxButton';
+import InputField from './../Common/COMPANYTextInput';
+import COMPANYButton from './../Common/COMPANYButton';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const LargeHappyImage = `${CDN_URL}common/feedback/image-happy-selected.svg`;
@@ -155,10 +155,10 @@ class ModalPage extends Component {
 				{/* </div> */}
 
 				<div className='feedback-submit-button'>
-					<BloxButton
+					<COMPANYButton
 						title='SUBMIT'
 						enabled={valid}
-						customClass='blox-button '
+						customClass='COMPANY-button '
 						onClick={this.handleSubmit}
 					/>
 				</div>
@@ -291,4 +291,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, null)(ModalPage);
+export default connect(
+	mapStateToProps,
+	null,
+)(ModalPage);

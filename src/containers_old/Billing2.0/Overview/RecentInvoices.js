@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { BillingUtils } from '../../../services/billing';
 import { Sorting } from '../../../services/sorting';
-import Button from '../../../components/Common/BloxButton';
+import Button from '../../../components/Common/COMPANYButton';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const dueIcon = `${CDN_URL}billing/due-icon.svg`;
@@ -81,7 +81,7 @@ class RecentInvoices extends Component {
 					<Button
 						title='VIEW HISTORY'
 						enabled={true}
-						customClass='blox-button gradient'
+						customClass='COMPANY-button gradient'
 						onClick={this.goToInvoiceHistory}
 					/>
 				</span>

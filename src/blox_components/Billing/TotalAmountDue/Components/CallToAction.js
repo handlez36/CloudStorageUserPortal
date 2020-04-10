@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import moment from 'moment';
 
-import BloxButton from 'sub_components/Common/BloxButton';
+import COMPANYButton from 'sub_components/Common/COMPANYButton';
 
 import { BillingUtils, INVOICES_STATUS } from 'services/billing';
 import { Utils } from 'services/utils';
@@ -159,7 +159,11 @@ const CallToAction = ({ invoices, summary, hasOnlinePaymentAccess }) => {
 			</div>
 
 			{hasOnlinePaymentAccess && (
-				<BloxButton title='PAY NOW' customClass='blox-button green-gradient' onClick={() => {}} />
+				<COMPANYButton
+					title='PAY NOW'
+					customClass='COMPANY-button green-gradient'
+					onClick={() => {}}
+				/>
 			)}
 		</div>
 	);

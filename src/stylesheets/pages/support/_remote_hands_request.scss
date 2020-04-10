@@ -22,7 +22,7 @@
 		width: 2vw;
 		height: 3vh;
 		font-size: 1.3vw;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		text-align: center;
 		cursor: pointer;
 		z-index: 200;
@@ -38,11 +38,11 @@
 		} /* IE11 */
 	}
 
-	.blox-wizard-populate {
+	.COMPANY-wizard-populate {
 		background: $White;
 		height: 94vh;
 	}
-	.blox-wizard-review {
+	.COMPANY-wizard-review {
 		background: $Warm_Gray_Light_3;
 		height: 94vh;
 	}

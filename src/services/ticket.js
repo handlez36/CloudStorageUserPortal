@@ -21,7 +21,7 @@ const config = {
 	},
 };
 
-const EMAIL_SERVICE_URL = 'https://test.mydcblox.com/support-emailer/';
+const EMAIL_SERVICE_URL = 'hidden';
 
 export class TicketApi {
 	static remoteHandsEmailRequest = params => {

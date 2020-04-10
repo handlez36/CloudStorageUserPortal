@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import BloxButton from 'sub_components/Common/BloxButton';
-import InputField from 'sub_components/Common/BloxTextInput';
+import COMPANYButton from 'sub_components/Common/COMPANYButton';
+import InputField from 'sub_components/Common/COMPANYTextInput';
 import { TYPES, SEVERITIES } from 'utils/TicketConstants';
 import ErrorModal from 'sub_components/Common/ErrorModal';
 import { TicketApi } from 'services/ticket';
@@ -237,27 +237,27 @@ class DeleteStorage extends Component {
 					<div className={`options-section ${step === 'SUCCESS' ? 'success' : ''}`}>
 						{step !== 'SUCCESS' && (
 							<Fragment>
-								<BloxButton
+								<COMPANYButton
 									title='NOPE. CHANGED MY MIND.'
 									enabled={true}
-									customClass='blox-button back-button emerald-gradient'
+									customClass='COMPANY-button back-button emerald-gradient'
 									onClick={step === 'ONE' ? this.goToManageStorage : () => this.getStep('ONE')}
 								/>
-								<BloxButton
+								<COMPANYButton
 									title={step === 'ONE' ? 'YEP. DELETE IT NOW!' : 'MAKE IT SO!'}
 									imageId={step === 'ONE' ? 'delete-button' : 'make-it-so'}
 									icon={DeleteIconHover}
 									enabled={valid}
-									customClass='blox-button proceed-button orange-gradient icon'
+									customClass='COMPANY-button proceed-button orange-gradient icon'
 									onClick={step === 'ONE' ? () => this.getStep('TWO') : this.handleSubmit}
 								/>
 							</Fragment>
 						)}
 						{step === 'SUCCESS' && (
-							<BloxButton
+							<COMPANYButton
 								title='BACK TO MY SHARES'
 								enabled={true}
-								customClass='blox-button cancel-button emerald-gradient'
+								customClass='COMPANY-button cancel-button emerald-gradient'
 								onClick={this.goToManageStorage}
 							/>
 						)}
@@ -277,5 +277,8 @@ function mapStateToProps(state) {
 }
 
 export default withRouter(
-	connect(mapStateToProps, { updatePage, updateModule, addPageToBreadCrumbs })(DeleteStorage),
+	connect(
+		mapStateToProps,
+		{ updatePage, updateModule, addPageToBreadCrumbs },
+	)(DeleteStorage),
 );

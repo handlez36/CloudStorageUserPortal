@@ -7,7 +7,7 @@
 	.form-control {
 		padding-left: 2.3vw;
 		padding-bottom: 1.1vh;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		font-family: $proxima-nova-light;
 		border-bottom: solid 1px $Purple;
 		border-radius: 0px;
@@ -46,7 +46,7 @@
 }
 
 .rdtPicker {
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	font-family: $proxima-nova-light;
 	$map: (
 		576: 10,
@@ -154,14 +154,14 @@
 }
 .rdtPicker th.rdtNext {
 	span {
-		content: url('https://mydcblox.com/cdn/library/common/calendar-arrow-circle.png');
+		content: url('https://hidden/cdn/library/common/calendar-arrow-circle.png');
 		width: 1.7vw;
 		margin-left: 1vw;
 	}
 }
 .rdtPicker th.rdtPrev {
 	span {
-		content: url('https://mydcblox.com/cdn/library/common/calendar-arrow-circle-left.png');
+		content: url('https://hidden/cdn/library/common/calendar-arrow-circle-left.png');
 		width: 1.7vw;
 	}
 }

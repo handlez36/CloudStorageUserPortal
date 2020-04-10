@@ -3,9 +3,9 @@ import moment from 'moment';
 import DateTime from 'react-datetime';
 
 import DropDownFilter from 'components_old/Common/DropDownFilter';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import DateTimeClock from 'components_old/Common/DateTimePicker';
-import TextInput from 'sub_components/Common/BloxTextInput';
+import TextInput from 'sub_components/Common/COMPANYTextInput';
 import { INPUT_TYPES } from 'utils/CommonConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const CheckmarkIcon = `${CDN_URL}common/icons-forms-check.svg`;
@@ -196,7 +196,7 @@ class RemoteHandsSchedule extends Component {
 				<Button
 					title='NEXT'
 					enabled={completedFields.length === Object.keys(FIELDS).length - 1}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

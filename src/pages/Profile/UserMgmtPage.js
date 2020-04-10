@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { DIMENSIONS } from 'services/layoutManager';
-// import AvatarSelection from 'blox_components/Profile/AvatarSelection/AvatarSelection';
-import PortalUserMgmt from 'blox_components/Profile/PortalUserMgmt/PortalUserMgmt';
-import BloxPage from 'sub_components/Layout/BloxPage';
+// import AvatarSelection from 'COMPANY_components/Profile/AvatarSelection/AvatarSelection';
+import PortalUserMgmt from 'COMPANY_components/Profile/PortalUserMgmt/PortalUserMgmt';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
@@ -31,7 +31,7 @@ class UserMgmtPage extends React.Component {
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 		return (
-			<BloxPage
+			<COMPANYPage
 				name='page profile-user-management-page'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
@@ -42,7 +42,7 @@ class UserMgmtPage extends React.Component {
 						<PortalUserMgmt key='portal-user-mgmt' />
 					</ComponentWrapper>
 				</div>
-			</BloxPage>
+			</COMPANYPage>
 		);
 	}
 }
@@ -50,7 +50,7 @@ class UserMgmtPage extends React.Component {
 // 	const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 // 	return (
-// 		<BloxPage
+// 		<COMPANYPage
 // 			name='page profile-user-management-page'
 // 			layout={LAYOUT_CONFIG[breakpoint]}
 // 			breakpoint={breakpoint}
@@ -61,7 +61,7 @@ class UserMgmtPage extends React.Component {
 // 					<PortalUserMgmt />
 // 				</ComponentWrapper>
 // 			</div>
-// 		</BloxPage>
+// 		</COMPANYPage>
 // 	);
 // };
 

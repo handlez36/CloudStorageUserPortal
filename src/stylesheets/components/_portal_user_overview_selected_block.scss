@@ -1,37 +1,35 @@
 .portal-user-overview-selected-block {
-  width:7.5vh;
-  text-align: center;
-  .name {
-    position:relative;
-    height: 2vh;
-    font-family: $font-family-primary-subheads;
-    background-color: $DCBLOX_Gray;
-    color: $White;
-    line-height: 2vh;
-    overflow:hidden;
-  }
-  .name-tip {
-    position: absolute;
-    bottom:-12%;
-    right: 42%;
-    border-left: 0.25vw solid transparent;
-    border-right: 0.25vw solid transparent;
-    border-top: 0.25vh solid $DCBLOX_Gray;
-  }
-  .image img {
-    width:100%;
-
-  }
-  .badge {
-    float:left;
-  }
-  &:hover {
-    .name {
-      background-color: $Bright_Blue;
-    }
-    .name-tip {
-      border-top: 0.5vh solid $Bright_Blue;
-    }
-  }
+	width: 7.5vh;
+	text-align: center;
+	.name {
+		position: relative;
+		height: 2vh;
+		font-family: $font-family-primary-subheads;
+		background-color: $COMPANY_Gray;
+		color: $White;
+		line-height: 2vh;
+		overflow: hidden;
+	}
+	.name-tip {
+		position: absolute;
+		bottom: -12%;
+		right: 42%;
+		border-left: 0.25vw solid transparent;
+		border-right: 0.25vw solid transparent;
+		border-top: 0.25vh solid $COMPANY_Gray;
+	}
+	.image img {
+		width: 100%;
+	}
+	.badge {
+		float: left;
+	}
+	&:hover {
+		.name {
+			background-color: $Bright_Blue;
+		}
+		.name-tip {
+			border-top: 0.5vh solid $Bright_Blue;
+		}
+	}
 }
-

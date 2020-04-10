@@ -1,12 +1,21 @@
 import React from 'react';
 import { string, bool, func, any } from 'prop-types';
 
-const BloxButton = ({ id, title, enabled, onClick, customClass, icon, imageId, bloxModule }) => {
+const COMPANYButton = ({
+	id,
+	title,
+	enabled,
+	onClick,
+	customClass,
+	icon,
+	imageId,
+	COMPANYModule,
+}) => {
 	const enable = enabled ? '' : ' disabled';
 	// const buttonClass = customClass ? customClass : 'submit-button';
 	const buttonClass = customClass
-		? `blox-button ${bloxModule} ${customClass}`
-		: `blox-button ${bloxModule} submit-button`;
+		? `COMPANY-button ${COMPANYModule} ${customClass}`
+		: `COMPANY-button ${COMPANYModule} submit-button`;
 	const CDN_URL = process.env.REACT_APP_CDN_URL;
 
 	const DownArrow = `${CDN_URL}support/Common_DownArrowTail.svg`;
@@ -23,7 +32,7 @@ const BloxButton = ({ id, title, enabled, onClick, customClass, icon, imageId, b
 				</div>
 			)}
 			<span className='title'>{title}</span>
-			{customClass === 'blox-button circle-large' && (
+			{customClass === 'COMPANY-button circle-large' && (
 				<div className='down-arrow'>
 					<img src={DownArrow} />
 				</div>
@@ -32,15 +41,15 @@ const BloxButton = ({ id, title, enabled, onClick, customClass, icon, imageId, b
 	);
 };
 
-BloxButton.propTypes = {
+COMPANYButton.propTypes = {
 	title: any,
 	enabled: bool,
 	onClick: func,
 	customProps: string,
 };
 
-BloxButton.defaultProps = {
+COMPANYButton.defaultProps = {
 	title: 'SUBMIT',
 };
 
-export default BloxButton;
+export default COMPANYButton;

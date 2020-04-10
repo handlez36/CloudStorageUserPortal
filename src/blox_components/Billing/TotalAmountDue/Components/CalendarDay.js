@@ -1,9 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 
-import Zero from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/Zero';
-import PastDue from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/PastDue';
-import DueToday from 'blox_components/Billing/TotalAmountDue/Components/CountDownSVGs/DueToday';
+import Zero from 'COMPANY_components/Billing/TotalAmountDue/Components/CountDownSVGs/Zero';
+import PastDue from 'COMPANY_components/Billing/TotalAmountDue/Components/CountDownSVGs/PastDue';
+import DueToday from 'COMPANY_components/Billing/TotalAmountDue/Components/CountDownSVGs/DueToday';
 import { BillingApi, BillingUtils, INVOICES_STATUS } from '../../../../services/billing';
 
 const selectCalendarImage = (invoices, status) => {
@@ -31,7 +31,7 @@ const selectCalendarImage = (invoices, status) => {
 
 const CalendarDay = ({ invoices }) => {
 	if (!invoices) {
-		return <div className='calendar-day'></div>;
+		return <div className='calendar-day' />;
 	}
 
 	const { invoices: splitInvoices, status } = BillingUtils.getInvoiceStatus(invoices);

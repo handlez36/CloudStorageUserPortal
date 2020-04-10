@@ -4,12 +4,12 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	.months {
 		flex: 1;
 		align-self: center;
 
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 	}
 	.invoices {
 		flex: 4;
@@ -24,7 +24,7 @@
 
 			.invoice-amount {
 				&.overdue {
-					color: $DCBLOX_Red;
+					color: $COMPANY_Red;
 				}
 				display: flex;
 				flex-direction: row;
@@ -59,7 +59,7 @@
 		flex: 1;
 		align-self: center;
 		margin-top: -12vh;
-		.blox-button {
+		.COMPANY-button {
 			&.gradient {
 				width: calculateVw(125, 1440);
 				height: calculateVw(30, 1440);

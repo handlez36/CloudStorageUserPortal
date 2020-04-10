@@ -23,7 +23,7 @@
 		position: relative;
 		height: 75%;
 		max-height: calculateVw(162, 1440);
-		background-color: $DCBLOX_Aqua;
+		background-color: $COMPANY_Aqua;
 		//overflow: hidden;
 		&.guest-access {
 			background-color: $Purple;
@@ -52,7 +52,7 @@
 		padding: 0.5vw;
 		text-align: left;
 		@include Drop-Down-Options;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		max-width: 9.5vw;
 		margin-left: 0.4vw;
 		background-color: $White;
@@ -61,7 +61,7 @@
 		padding-bottom: 1vw;
 		margin-left: 3vw;
 
-		.blox-button {
+		.COMPANY-button {
 			$map: (
 				576: 10,
 				1440: 16,
@@ -80,7 +80,7 @@
 		padding-top: 0.6vh;
 		background-color: $White;
 		border-bottom: none;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		display: flex;
 		flex-direction: row;
 

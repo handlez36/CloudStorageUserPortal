@@ -42,7 +42,7 @@
 			background-color: $Bright_Emerald;
 		}
 		&.red {
-			background-color: $DCBLOX_Red;
+			background-color: $COMPANY_Red;
 		}
 		&.gray {
 			background-color: #cfd2d3;
@@ -63,7 +63,7 @@
 			padding-left: calculateVw(20px, $standard-screen-width-mid);
 			letter-spacing: 2px;
 		}
-		.blox-text-input {
+		.COMPANY-text-input {
 			width: calculateVw(22, $standard-screen-width-mid) !important;
 			input {
 				// border-bottom-color: $Bright_Emerald;
@@ -92,7 +92,7 @@
 			}
 
 			input.invalid {
-				border-bottom-color: $DCBLOX_Red !important;
+				border-bottom-color: $COMPANY_Red !important;
 			}
 			input:hover {
 				opacity: 1;
@@ -100,13 +100,13 @@
 				cursor: pointer;
 			}
 		}
-		.blox-text-input:nth-child(1) {
+		.COMPANY-text-input:nth-child(1) {
 			margin-left: calculateVw(16px, $standard-screen-width-mid);
 		}
-		.blox-text-input:nth-child(n + 2) {
+		.COMPANY-text-input:nth-child(n + 2) {
 			margin-left: calculateVw(7px, $standard-screen-width-mid);
 		}
-		.blox-text-input .validation-row {
+		.COMPANY-text-input .validation-row {
 			display: none !important;
 		}
 		.slash {
@@ -115,7 +115,7 @@
 			margin-top: calculateVh(14px, $standard-screen-height-mid);
 			color: $Bright_Emerald;
 		}
-		.blox-text-input:last-child {
+		.COMPANY-text-input:last-child {
 			margin-left: calculateVw(2px, $standard-screen-width-mid);
 		}
 		.default-filter-wrapper {

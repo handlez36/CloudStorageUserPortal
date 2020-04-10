@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from 'sub_components/Commom/BloxButton';
+import Button from 'sub_components/Commom/COMPANYButton';
 import PortalModal from './PortalModal';
 
 const PHASES = {
@@ -157,7 +157,7 @@ class ModalWizard extends Component {
 				header={<HeaderComponent closeModal={this.toggleModal} />}
 				isOpen={show}
 				toggleOpen={this.toggleModal}
-				additionalClass={`blox-modal-wizard ${additionalClass}`}
+				additionalClass={`COMPANY-modal-wizard ${additionalClass}`}
 				useButton={true}
 			>
 				{this.displayActiveStep(active, steps)}
@@ -174,7 +174,7 @@ class ModalWizard extends Component {
 						<Button
 							title={nextButtonLabel}
 							enabled={enableNav}
-							customClass='blox-button next-button'
+							customClass='COMPANY-button next-button'
 							onClick={() => this.nextStep('next')}
 						/>
 					)}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import InputField from '../../../components/Forms/BloxTextInput';
+import InputField from '../../../components/Forms/COMPANYTextInput';
 import DropDownFilter from '../../../components/Common/DropDownFilter';
 import { INPUT_TYPES, numberMask } from '../../../components/Common/CommonConstants';
 import * as StorageUtils from '../Utils/StorageUtils';

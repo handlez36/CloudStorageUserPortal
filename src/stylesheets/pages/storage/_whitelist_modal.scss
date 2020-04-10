@@ -73,19 +73,19 @@
 		.whitelist-section {
 			height: 100%;
 		}
-		.blox-text-input {
+		.COMPANY-text-input {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 		}
-		.blox-text-input .active-field {
+		.COMPANY-text-input .active-field {
 			flex: 1 0 auto;
 			transform: translateY(0);
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 		}
-		.blox-text-input .label-row {
+		.COMPANY-text-input .label-row {
 			display: none;
 		}
 	}
@@ -94,7 +94,7 @@
 		margin-left: 0;
 	}
 	.modal-header {
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		@include Semi-Bold-Heading;
 		border-bottom: none;
 		padding: calculateVw(15, 1440);
@@ -148,8 +148,8 @@
 		}
 
 		input.error {
-			border: 1px solid $DCBLOX_Red;
-			box-shadow: 1px 1px 10px 1px $DCBLOX_Red;
+			border: 1px solid $COMPANY_Red;
+			box-shadow: 1px 1px 10px 1px $COMPANY_Red;
 		}
 
 		.format {
@@ -161,13 +161,13 @@
 				padding: 0 !important;
 				font-size: 0.8em !important;
 				border-radius: 0 !important;
-				background-color: $DCBLOX_Red !important;
+				background-color: $COMPANY_Red !important;
 				cursor: pointer;
 			}
 		}
 
 		.format.deletion {
-			color: $DCBLOX_Red;
+			color: $COMPANY_Red;
 		}
 
 		button {
@@ -184,7 +184,7 @@
 		}
 
 		.delete {
-			color: $DCBLOX_Red;
+			color: $COMPANY_Red;
 			text-decoration: line-through;
 		}
 	}
@@ -192,7 +192,7 @@
 	.error-message {
 		@include Text-Style-Whitelist-Format;
 		margin-bottom: 1em;
-		color: $DCBLOX_Red;
+		color: $COMPANY_Red;
 	}
 
 	.modal-content {
@@ -210,7 +210,7 @@
 body > .dd-list-ul li {
 	list-style: none;
 	padding: 0.3vw;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	// height: 3.1vh;
 	height: 2.5vh;
 	width: 9.5vw;

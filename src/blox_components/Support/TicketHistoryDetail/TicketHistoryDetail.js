@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import { TicketApi } from 'services/ticket';
 import Header from 'components_old/Support/PageHeader';
 import CancelModal from 'sub_components/Common/ErrorModal';
@@ -31,7 +31,7 @@ const ConfirmationBody = (onCancel, onConfirm) => (
 					NO
 				</div>
 				<div className='yes-option'>
-					<Button title='YES' enabled={true} customClass='blox-button' onClick={onConfirm} />
+					<Button title='YES' enabled={true} customClass='COMPANY-button' onClick={onConfirm} />
 				</div>
 			</div>
 		</div>

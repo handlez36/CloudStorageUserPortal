@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { DIMENSIONS } from 'services/layoutManager';
-import MakeAPayment from 'blox_components/Billing/MakeAPayment/MakeAPayment';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import MakeAPayment from 'COMPANY_components/Billing/MakeAPayment/MakeAPayment';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
@@ -21,7 +21,7 @@ const LAYOUT_CONFIG = {
 const MakeAPaymentPage = ({ breakpoint, location }) => {
 	const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 	return (
-		<BloxPage
+		<COMPANYPage
 			name='page make-a-payment'
 			layout={LAYOUT_CONFIG[breakpoint]}
 			breakpoint={breakpoint}
@@ -32,7 +32,7 @@ const MakeAPaymentPage = ({ breakpoint, location }) => {
 					<MakeAPayment />
 				</ComponentWrapper>
 			</div>
-		</BloxPage>
+		</COMPANYPage>
 	);
 };
 

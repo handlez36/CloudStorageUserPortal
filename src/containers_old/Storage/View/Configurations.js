@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ExpandableContent from '../../../components/Support/ExpandableContentBody';
-import BloxButton from '../../../components/Common/BloxButton';
+import COMPANYButton from '../../../components/Common/COMPANYButton';
 import CopyLink from '../CopyLink';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
@@ -49,11 +49,11 @@ class Configurations extends Component {
 							)}
 							<div className='reset-button'>
 								{share.type === 'file' && (
-									<BloxButton
+									<COMPANYButton
 										imageId='reset-icon'
 										title={'RESET'}
 										enabled={true}
-										customClass={`blox-button emerald-gradient`}
+										customClass={`COMPANY-button emerald-gradient`}
 										onClick={changeStoragePassword}
 										icon={ResetIcon}
 									/>

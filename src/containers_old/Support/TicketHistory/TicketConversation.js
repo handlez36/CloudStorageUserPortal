@@ -229,7 +229,7 @@ class TicketConversation extends Component {
 					saveAttachments={this.saveAttachments}
 					phase={this.state.phase}
 				/>
-				{/* <BloxCycleView itemClass='.comment' itemWrapperClass='.conversation-body'> */}
+				{/* <COMPANYCycleView itemClass='.comment' itemWrapperClass='.conversation-body'> */}
 				<div className='ticket-conversation outer-wrapper'>
 					<div className='conversation'>
 						<Header id={id} />
@@ -246,7 +246,7 @@ class TicketConversation extends Component {
 						{convos && comments && <Body auth_status={auth_status} convos={convos} />}
 					</div>
 				</div>
-				{/* </BloxCycleView> */}
+				{/* </COMPANYCycleView> */}
 			</div>
 		);
 	}

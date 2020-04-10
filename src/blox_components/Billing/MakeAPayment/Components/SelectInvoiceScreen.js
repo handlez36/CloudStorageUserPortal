@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { ICON_TYPES, ICONS } from 'utils/BillingConstants';
 import { INPUT_TYPES, currencyMask } from 'utils/CommonConstants';
-import InputField from 'sub_components/Common/BloxTextInput';
-import Button from 'sub_components/Common/BloxButton';
+import InputField from 'sub_components/Common/COMPANYTextInput';
+import Button from 'sub_components/Common/COMPANYButton';
 import InvoicePaymentItem from './InvoicePaymentItem';
 import TotalAmountDue from './TotalAmount';
 
@@ -89,10 +89,7 @@ class SelectInvoiceScreen extends Component {
 		for (let i = 0; i <= value.length; i++) {
 			if (value[i]) {
 				if (value[i].invoiceId === fieldname) {
-					this.setState(
-						state => (state.value[i].amount = fieldValue),
-						() => this.updateProgress(),
-					);
+					this.setState(state => (state.value[i].amount = fieldValue), () => this.updateProgress());
 				}
 			}
 		}
@@ -243,7 +240,7 @@ class SelectInvoiceScreen extends Component {
 				<Button
 					title='NEXT'
 					enabled={this.getTotal() > 0}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

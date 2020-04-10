@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import TextInput from '../../../components/Forms/BloxTextInput';
+import TextInput from '../../../components/Forms/COMPANYTextInput';
 import RadioButton from '../../../components/Common/Radio';
-import Button from '../../../components/Common/BloxButton';
+import Button from '../../../components/Common/COMPANYButton';
 import { UserProfileApi } from '../../../services/userProfile';
 import { INPUT_TYPES, PHONEMASK } from '../../../components/Common/CommonConstants';
 import { Utils } from '../../../services/utils';
@@ -261,7 +261,7 @@ class RemoteHandsContacts extends Component {
 				<Button
 					title='REVIEW'
 					enabled={completedFields.length === Object.keys(FIELDS).length - 1}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

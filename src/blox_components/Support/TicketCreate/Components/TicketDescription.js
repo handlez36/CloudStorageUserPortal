@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { STEPS, TYPES, MESSAGE_TEXT, TICKET_CREATE_ICONS } from 'utils/TicketConstants';
 import IconInputComponent from 'sub_components/Common/IconInputComponent';
 import PortalMessage from 'sub_components/Common/PortalMessage';
-import SubmitButton from 'sub_components/Common/BloxButton';
+import SubmitButton from 'sub_components/Common/COMPANYButton';
 import { ExitButton } from 'components_old/Common/ExitButton';
 import { TicketApi } from 'services/ticket';
 import { updatePage } from 'actions/siteTracking';
@@ -212,7 +212,6 @@ class TicketDescription extends Component {
 			jira_ticket: '',
 			location: '',
 			impact_to_customer: '',
-			impact_to_dcblox: '',
 			resolution_notes: '',
 			general_support_question_type: '',
 			general_support_question: '',
@@ -293,4 +292,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updatePage })(TicketDescription);
+export default connect(
+	mapStateToProps,
+	{ updatePage },
+)(TicketDescription);

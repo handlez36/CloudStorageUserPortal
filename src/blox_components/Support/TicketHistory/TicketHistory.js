@@ -22,8 +22,8 @@ import SupportSection from 'components_old/Common/SupportSection';
 import {
 	animateConvoCycle,
 	updateArrowVisibility,
-} from 'blox_components/Support/Conversations/Components/ConvoCycleAnimations';
-import TicketHistoryDetail from 'blox_components/Support/TicketHistoryDetail/TicketHistoryDetail';
+} from 'COMPANY_components/Support/Conversations/Components/ConvoCycleAnimations';
+import TicketHistoryDetail from 'COMPANY_components/Support/TicketHistoryDetail/TicketHistoryDetail';
 import TicketInformation from 'containers_old/Support/TicketHistory/TicketInformation';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const TicketHistoryArrowUp = `${CDN_URL}support/TicketHistoryIndicator.svg`;
@@ -622,6 +622,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(
-	TicketHistory,
-);
+export default connect(
+	mapStateToProps,
+	{ updateModule, updatePage, addPageToBreadCrumbs },
+)(TicketHistory);

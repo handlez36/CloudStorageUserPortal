@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Wizard from 'components_old/Forms/BloxWizard';
+import Wizard from 'components_old/Forms/COMPANYWizard';
 import Modal from 'sub_components/Common/ErrorModal';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import { Utils } from 'services/utils';
 import { BillingApi, BillingUtils } from 'services/billing';
 import { INVOICE_SUMMARY_HEADERS, MENU } from 'utils/BillingConstants';
@@ -106,7 +106,7 @@ class MakeAPayment extends Component {
 				<Button
 					title='TRY AGAIN'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={this.toggleErrorModal}
 				/>
 			</div>
@@ -123,7 +123,7 @@ class MakeAPayment extends Component {
 				<Button
 					title='OKAY'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={this.toggleErrorModal}
 				/>
 			</div>
@@ -142,7 +142,7 @@ class MakeAPayment extends Component {
 				<Button
 					title='OKAY'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={() => {
 						this.requestOverdueInvoices();
 						this.toggleErrorModal();
@@ -337,6 +337,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updatePage, updateModule, addPageToBreadCrumbs })(
-	MakeAPayment,
-);
+export default connect(
+	mapStateToProps,
+	{ updatePage, updateModule, addPageToBreadCrumbs },
+)(MakeAPayment);

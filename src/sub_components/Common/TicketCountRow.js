@@ -15,7 +15,7 @@ class TicketCountRow extends Component {
 		error: null,
 	};
 
-	getTickets = async bloxModule => {
+	getTickets = async COMPANYModule => {
 		const { tickets, error } = await TicketApi.getAll();
 
 		this.setState({ tickets, error });

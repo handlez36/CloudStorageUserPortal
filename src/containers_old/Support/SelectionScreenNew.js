@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import BloxGrid from '../../components/Layout/BloxGrid';
+import COMPANYGrid from '../../components/Layout/COMPANYGrid';
 import TicketCountRow from '../Support/TicketCountRow';
 import TicketType from '../Support/TicketCreate/NewTicketType';
 import LargeCard from '../../components/Common/LargeCard';
-import Button from '../../components/Common/BloxButton';
+import Button from '../../components/Common/COMPANYButton';
 import { SUPPORT_OVERVIEW_GRID } from '../Support/TicketConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const remoteHands = `${CDN_URL}common/remote-hands-icon-test.svg`;
@@ -31,7 +31,7 @@ class SelectionScreen extends Component {
 		const { ticketCounts, goToTicketHistory } = this.props;
 
 		return (
-			<BloxGrid
+			<COMPANYGrid
 				namespace='support-overview'
 				layouts={SUPPORT_OVERVIEW_GRID}
 				breakpoints={{ lg: 1450, md: 1000, sm: 640, xs: 400 }}
@@ -68,7 +68,7 @@ class SelectionScreen extends Component {
 						button={
 							<Button
 								title='NEW REQUEST'
-								customClass='blox-button'
+								customClass='COMPANY-button'
 								onClick={() => this.startTicketWizard('REMOTE HANDS')}
 								enabled
 							/>
@@ -86,7 +86,7 @@ class SelectionScreen extends Component {
 						button={
 							<Button
 								title='NEW REQUEST'
-								customClass='blox-button'
+								customClass='COMPANY-button'
 								onClick={() => this.startTicketWizard('GUEST ACCESS')}
 								enabled
 							/>
@@ -115,7 +115,7 @@ class SelectionScreen extends Component {
 				<div key='support' className='grid-item overflow'>
 					<TicketType setTicketAttribute={this.setTicketAttribute} type='SUPPORT' />
 				</div>
-			</BloxGrid>
+			</COMPANYGrid>
 		);
 	}
 }

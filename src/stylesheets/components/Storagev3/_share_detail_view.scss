@@ -17,11 +17,11 @@
 		}
 		.delete-button {
 			flex: 1;
-			.blox-button {
+			.COMPANY-button {
 				height: 100%;
 				width: 100%;
 				background-color: $Cool_Gray_Light_2;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 				@include FlexboxCenter;
 				.icon {
 					position: relative;
@@ -38,7 +38,7 @@
 					@include Create-Ticket-Label;
 				}
 			}
-			.blox-button:hover {
+			.COMPANY-button:hover {
 				color: $White;
 				background-color: $Med_Rust;
 				background-image: linear-gradient(40deg, rgba(0, 0, 0, 0.2) 45%, $Med_Rust 48%);
@@ -68,7 +68,7 @@
 				margin-left: GetSize(1);
 				@include User-Management-Menu;
 				line-height: 18px;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 			}
 			.share-name-label .access {
 				position: relative;
@@ -108,7 +108,7 @@
 				margin-top: 6px;
 				@include User-Management-Menu;
 				line-height: 18px;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 			}
 			.single-share-graph {
 				width: 100%;
@@ -219,7 +219,7 @@
 			.delete-button {
 				flex: 1;
 			}
-			.delete-button .blox-button .icon {
+			.delete-button .COMPANY-button .icon {
 				width: GetSize(5);
 				height: GetSize(5);
 			}

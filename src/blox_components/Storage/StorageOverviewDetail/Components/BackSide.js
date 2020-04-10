@@ -2,7 +2,7 @@ import React from 'react';
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { Decimal } from 'decimal.js';
 
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import LocationIcon from 'sub_components/Storage/LocationIcon';
 import * as StorageUtils from 'utils/StorageUtils';
 import { STORAGE_AVATAR_URL_PREFIX } from 'utils/Misc/CommonConstants';
@@ -157,7 +157,7 @@ const BackSide = ({ share, onFlip, stats, changeToManageStorage, total, size }) 
 				<Button
 					title='VIEW MORE'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={() => {
 						changeToManageStorage(share);
 					}}

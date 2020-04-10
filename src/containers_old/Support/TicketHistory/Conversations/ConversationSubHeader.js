@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
 import { AvatarApi } from 'services/avatar';
-import SubmitButton from 'sub_components/Common/BloxButton';
+import SubmitButton from 'sub_components/Common/COMPANYButton';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const AddCommentButton = `${CDN_URL}support/Support_AddComment_ConversationButton_Static.svg`;
 const GrayPaperclipImage = `${CDN_URL}support/Support_Gray_PaperClip.svg`;

@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import ExpandableSection from 'components_old/Common/ExpandableSection';
 import ExpandableContent from 'components_old/Support/ExpandableContentComponent';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import ErrorModal from 'sub_components/Common/ErrorModal';
 import { TicketApi } from 'services/ticket';
 import { WIZARD_TITLE_PREFIXES } from 'utils/TicketConstants';
@@ -233,7 +233,7 @@ class RemoteHandsReview extends Component {
 				<Button
 					title='SUBMIT'
 					enabled={true}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={() => submitTicket(data)}
 				/>
 			</div>
@@ -247,4 +247,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, null)(RemoteHandsReview);
+export default connect(
+	mapStateToProps,
+	null,
+)(RemoteHandsReview);

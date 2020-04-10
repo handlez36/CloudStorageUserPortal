@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import TextInput from 'sub_components/Common/BloxTextInput';
+import TextInput from 'sub_components/Common/COMPANYTextInput';
 import Map from 'components_old/Common/Map';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import { INPUT_TYPES } from 'utils/CommonConstants';
 import { WIZARD_TITLE_PREFIXES } from 'utils/TicketConstants';
 import { getTitlePlaceholder, getRemoteHandsTickets } from 'utils/SupportUtils';
@@ -203,7 +203,7 @@ class RemoteHandsDescription extends Component {
 				<Button
 					title='NEXT'
 					enabled={this.shouldEnableButton()}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

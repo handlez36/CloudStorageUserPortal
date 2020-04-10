@@ -47,7 +47,6 @@ export function formatSupportTicket(
 		jira_ticket: '',
 		location: '',
 		impact_to_customer: '',
-		impact_to_dcblox: '',
 		resolution_notes: '',
 		general_support_question_type: '',
 		general_support_question: '',

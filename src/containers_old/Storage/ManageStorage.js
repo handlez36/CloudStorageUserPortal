@@ -180,10 +180,7 @@ class ManageStorage extends Component {
 					<span key='video' className='video'>
 						<div className='video'>
 							<video autoPlay loop>
-								<source
-									src='https://www.mydcblox.com/cdn/library/video/chalkboard.mp4'
-									type='video/mp4'
-								/>
+								<source src='hidden' type='video/mp4' />
 								Your browser does not support the video tag.
 							</video>
 						</div>

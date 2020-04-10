@@ -58,16 +58,16 @@
 		& .amounttopay {
 			width: calculateVw(87.6px, $standard-screen-width-mid);
 			margin-left: calculateVw(27.4px, $standard-screen-width-mid);
-			.value .blox-text-input {
+			.value .COMPANY-text-input {
 				width: 100%;
 				margin-top: -0.3vh;
 			}
-			.value .blox-text-input .active-field {
+			.value .COMPANY-text-input .active-field {
 				transform: none;
 				height: 100%;
 			}
-			.value .blox-text-input .label-row,
-			.value .blox-text-input .validation-row {
+			.value .COMPANY-text-input .label-row,
+			.value .COMPANY-text-input .validation-row {
 				display: none;
 			}
 		}

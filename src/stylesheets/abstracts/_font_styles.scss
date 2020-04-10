@@ -107,14 +107,14 @@
 			to left,
 			$Cool_Gray_Dark_2 40%,
 			$Cool_Gray_Dark_2 40%,
-			$DCBLOX_Purple 0%
+			$COMPANY_Purple 0%
 		);
 
 		background-size: 127% 50%;
 		-webkit-background-clip: text;
 		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 			background-image: none;
-			color: $DCBLOX_Purple;
+			color: $COMPANY_Purple;
 		}
 	}
 	&.profile {
@@ -183,8 +183,8 @@
 	&.support {
 		background-image: linear-gradient(
 			to left,
-			$DCBLOX_Purple 40%,
-			$DCBLOX_Purple 35%,
+			$COMPANY_Purple 40%,
+			$COMPANY_Purple 35%,
 			$Cool_Gray_Dark_2 30%,
 			$Cool_Gray_Dark_2 0%
 		);
@@ -209,7 +209,7 @@
 	line-height: 1;
 	letter-spacing: 0.3px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Expandable-Section-Label {
@@ -223,7 +223,7 @@
 	line-height: 1;
 	letter-spacing: 0.3px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Expandable-Section-Tagline {
@@ -251,7 +251,7 @@
 	line-height: 1.18;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Expandable-Section-Content-New {
@@ -265,7 +265,7 @@
 	line-height: 1.18;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Expandable-Section-Content-Bold {
@@ -279,7 +279,7 @@
 	line-height: 1.18;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Expandable-Section-Title {
@@ -293,7 +293,7 @@
 	line-height: 1;
 	letter-spacing: 1.1px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Expandable-Section-Edit {
@@ -325,7 +325,7 @@
 	line-height: 1;
 	letter-spacing: 0.3px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Text-Input-LabelSubText {
@@ -353,7 +353,7 @@
 	line-height: 1;
 	letter-spacing: 0.3px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Text-Input-Validation {
@@ -367,7 +367,7 @@
 	line-height: 1;
 	letter-spacing: 0.3px;
 	text-align: left;
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 }
 
 @mixin Text-Style-Text-Input-Char-Count-Message {
@@ -423,7 +423,7 @@
 	line-height: 1.2;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Header-Page-Title {
@@ -467,7 +467,7 @@
 	line-height: 1.38;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Ticket-Request-Pref-Label {
@@ -481,7 +481,7 @@
 	line-height: 1.38;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Error-Modal-Header {
@@ -495,7 +495,7 @@
 	line-height: 1;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_White;
+	color: $COMPANY_White;
 }
 
 @mixin Text-Style-Error-Modal-Body-Bold {
@@ -509,7 +509,7 @@
 	line-height: 1.23;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Error-Modal-Body-Normal {
@@ -523,7 +523,7 @@
 	line-height: 1.23;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Error-Modal-Body-Email {
@@ -551,7 +551,7 @@
 	line-height: 1.2;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Ticket-Detail-Logistics-Label {
@@ -565,7 +565,7 @@
 	line-height: 1;
 	letter-spacing: 0.5px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Ticket-Detail-Logistics-Name {
@@ -579,7 +579,7 @@
 	line-height: 1;
 	letter-spacing: 0.7px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Ticket-Detail-Logistics-Datetime {
@@ -593,7 +593,7 @@
 	line-height: 1.18;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Ticket-Detail-Logistics-Status {
@@ -621,7 +621,7 @@
 	line-height: 0.87;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Purple;
+	color: $COMPANY_Purple;
 }
 
 @mixin Text-Style-Confirmation-Title {
@@ -635,7 +635,7 @@
 	letter-spacing: 1.1px;
 	line-height: 22px;
 	text-align: center;
-	//color: $DCBLOX_Gray;
+	//color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Confirmation-Message {
@@ -648,7 +648,7 @@
 	font-size: least-squares-fit($map);
 	line-height: 16px;
 	text-align: center;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Modal-Wizard-TItle {
@@ -662,7 +662,7 @@
 	line-height: 1;
 	letter-spacing: 1.7px;
 	text-align: center;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Modal-Wizard-Subtitle {
@@ -677,7 +677,7 @@
 	line-height: 1.08;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Online-Payment-Instructions {
@@ -691,7 +691,7 @@
 	line-height: 1.1;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Online-Payment-Print-Options {
@@ -705,11 +705,11 @@
 	line-height: 1.14;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 /**
-* Common DC Blox font styles
+* Common COMPANY font styles
 */
 /** HEADINGS */
 @mixin Text-Style-Ticket-Modal {
@@ -723,7 +723,7 @@
 	line-height: 1;
 	letter-spacing: 1.7px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -743,7 +743,7 @@
 	@include Screen-Low-Styles(25px, 0.2em, 1);
 	font-family: $font-family-primary-subheads;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Section-Head {
@@ -762,7 +762,7 @@
 	line-height: least-squares-fit($line_height_map);
 	letter-spacing: 0px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -778,7 +778,7 @@
 	letter-spacing: normal;
 	font-size: least-squares-fit($size_map);
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -804,7 +804,7 @@
 	line-height: least-squares-fit($line_height_map);
 	letter-spacing: least-squares-fit($letter_spacing_map);
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 	@media screen AND (max-width: 1440px) {
 		letter-spacing: 0px;
@@ -828,7 +828,7 @@
 	line-height: least-squares-fit($line_height_map);
 	letter-spacing: 0px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -844,7 +844,7 @@
 	line-height: 1.08;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -859,7 +859,7 @@
 	line-height: 1.2;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -875,7 +875,7 @@
 	line-height: 1.08;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -892,7 +892,7 @@
 	letter-spacing: 0.8px;
 	text-transform: capitalize;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -914,7 +914,7 @@
 	letter-spacing: 0px;
 	text-transform: capitalize;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -935,7 +935,7 @@
 	letter-spacing: 0px;
 	text-transform: capitalize;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }
 
@@ -962,6 +962,6 @@
 	line-height: 1;
 	letter-spacing: -1.2px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 }

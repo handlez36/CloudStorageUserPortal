@@ -17,7 +17,7 @@
 		}
 		.active-shares {
 			@include Small-Text-Profile;
-			color: $DCBLOX_Gray;
+			color: $COMPANY_Gray;
 		}
 	}
 	.share-options-section {
@@ -41,7 +41,7 @@
 			}
 			.active-shares {
 				@include Small-Text-Profile;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 			}
 		}
 		.share-options-section {
@@ -64,7 +64,7 @@
 			}
 			.active-shares {
 				@include Small-Text-Profile;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 			}
 		}
 		.share-options-section {

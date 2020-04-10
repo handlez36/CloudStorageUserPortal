@@ -21,7 +21,7 @@ const GraphDetails = ({ id, percentage, label, text, isOverQuota, packageType, h
 		trailColor = SITE_COLORS.Bright_Emerald;
 		backgroundColor = SITE_COLORS.Bright_Emerald;
 	} else {
-		trailColor = isOverQuota ? SITE_COLORS.DCBLOX_Lime : SITE_COLORS.Cool_Gray_Med_2;
+		trailColor = isOverQuota ? SITE_COLORS.COMPANY_Lime : SITE_COLORS.Cool_Gray_Med_2;
 		backgroundColor = SITE_COLORS.Dark_Emerald;
 	}
 
@@ -44,7 +44,7 @@ const GraphDetails = ({ id, percentage, label, text, isOverQuota, packageType, h
 								backgroundColor,
 								// trailColor: SITE_COLORS.Bright_Emerald,
 								// backgroundColor: SITE_COLORS.Bright_Emerald,
-								// trailColor: isOverQuota ? SITE_COLORS.DCBLOX_Lime : SITE_COLORS.Cool_Gray_Med_2,
+								// trailColor: isOverQuota ? SITE_COLORS.COMPANY_Lime : SITE_COLORS.Cool_Gray_Med_2,
 								// backgroundColor: SITE_COLORS.Dark_Emerald,
 								pathTransitionDuration: 0.5,
 							})}

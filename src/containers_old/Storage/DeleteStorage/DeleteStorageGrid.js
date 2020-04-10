@@ -5,8 +5,8 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 import { LAYOUT_GRID_STORAGE } from '../StorageConstants';
 import HorizontalGrid from '../../../components/Layout/HorizontalGrid';
 import VerticalGrid from '../../../components/Layout/VerticalGrid';
-import BloxButton from '../../../components/Common/BloxButton';
-import InputField from '../../../components/Forms/BloxTextInput';
+import COMPANYButton from '../../../components/Common/COMPANYButton';
+import InputField from '../../../components/Forms/COMPANYTextInput';
 import { TYPES, SEVERITIES } from '../../Support/TicketConstants';
 import ErrorModal from '../../../components/Common/ErrorModal';
 import { TicketApi } from '../../../services/ticket';
@@ -306,10 +306,10 @@ class DeleteStorageGrid extends Component {
 							{step === 'SUCCESS' && (
 								<div className='buttons'>
 									<div className='cancel-button'>
-										<BloxButton
+										<COMPANYButton
 											title='BACK TO MY SHARES'
 											enabled={true}
-											customClass='blox-button emerald-gradient'
+											customClass='COMPANY-button emerald-gradient'
 											onClick={() => this.props.selectMenuItem('MANAGE STORAGE')}
 										/>
 									</div>
@@ -322,10 +322,10 @@ class DeleteStorageGrid extends Component {
 						<span key='back-button' className='back-button flex-end'>
 							{step !== 'SUCCESS' && (
 								<div className='buttons'>
-									<BloxButton
+									<COMPANYButton
 										title='NOPE. CHANGED MY MIND.'
 										enabled={true}
-										customClass='blox-button emerald-gradient'
+										customClass='COMPANY-button emerald-gradient'
 										onClick={() => this.props.selectMenuItem('SHARE DETAILS')}
 									/>
 								</div>
@@ -335,12 +335,12 @@ class DeleteStorageGrid extends Component {
 							{step !== 'SUCCESS' && (
 								<div className='buttons'>
 									<div className='proceed-button'>
-										<BloxButton
+										<COMPANYButton
 											title={step === 'ONE' ? 'YEP. DELETE IT NOW!' : 'MAKE IT SO!'}
 											imageId={step === 'ONE' ? 'delete-button' : 'make-it-so'}
 											icon={DeleteIconHover}
 											enabled={valid}
-											customClass='blox-button orange-gradient icon'
+											customClass='COMPANY-button orange-gradient icon'
 											onClick={step === 'ONE' ? () => this.getStep('TWO') : this.handleSubmit}
 										/>
 									</div>

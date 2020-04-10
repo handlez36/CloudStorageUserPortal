@@ -9,7 +9,7 @@ import { Utils } from '../../services/utils';
 const NO_OP = () => {};
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
-class BloxGrid extends Component {
+class COMPANYGrid extends Component {
 	constructor(props) {
 		super(props);
 
@@ -150,7 +150,7 @@ class BloxGrid extends Component {
 		} = this.props;
 
 		return (
-			<div className='blox-grid'>
+			<div className='COMPANY-grid'>
 				<CrossGrid showGrid={showCrossGrid} breakpoints={breakpoints} />
 				<ResponsiveReactGridLayout
 					layouts={layouts}
@@ -176,7 +176,7 @@ class BloxGrid extends Component {
 	}
 }
 
-BloxGrid.propTypes = {
+COMPANYGrid.propTypes = {
 	layouts: shape({
 		lg: obj,
 		md: obj,
@@ -197,7 +197,7 @@ BloxGrid.propTypes = {
 	showCrossGrid: bool,
 };
 
-BloxGrid.defaultProps = {
+COMPANYGrid.defaultProps = {
 	colCount: 12,
 	breakpoints: {
 		lg: 1450,
@@ -210,4 +210,4 @@ BloxGrid.defaultProps = {
 	showCrossGrid: false,
 };
 
-export default BloxGrid;
+export default COMPANYGrid;

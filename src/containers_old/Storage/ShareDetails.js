@@ -4,7 +4,7 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 import { LAYOUT_GRID_SHARE_DETAILS } from './StorageConstants';
 import HorizontalGrid from '../../components/Layout/HorizontalGrid';
 import VerticalGrid from '../../components/Layout/VerticalGrid';
-import BloxButton from '../../components/Common/BloxButton';
+import COMPANYButton from '../../components/Common/COMPANYButton';
 import { StorageApi } from '../../services/storage';
 import Shares from './Shares';
 import { PASSWORD_UPDATE_STATUS } from './StorageConstants';
@@ -300,12 +300,12 @@ class ShareDetails extends Component {
 						onMouseOver={this.onMouseOver}
 						onMouseOut={this.onMouseOut}
 					>
-						<BloxButton
+						<COMPANYButton
 							imageId={'delete-button'}
 							icon={DeleteIcon}
 							title={'DELETE STORAGE'}
 							enabled={true}
-							customClass={`blox-button`}
+							customClass={`COMPANY-button`}
 							onClick={() => this.props.selectMenuItem('REMOVE STORAGE')}
 						/>
 					</div>

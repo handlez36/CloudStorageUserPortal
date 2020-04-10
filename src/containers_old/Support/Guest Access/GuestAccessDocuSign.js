@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BloxButton from '../../../components/Common/BloxButton';
-import Button from '../../../components/Common/BloxButton';
+import COMPANYButton from '../../../components/Common/COMPANYButton';
+import Button from '../../../components/Common/COMPANYButton';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const DocuSignIcon = `${CDN_URL}support/icons-docusign-file.svg`;
 
@@ -68,17 +68,17 @@ class GuestAccessDocuSign extends Component {
 					arrival.
 				</div>
 				<div className='sign-button'>
-					<BloxButton
+					<COMPANYButton
 						title='I UNDERSTAND'
 						enabled={true}
-						customClass='blox-button'
+						customClass='COMPANY-button'
 						onClick={this.onClick}
 					/>
 				</div>
 				<Button
 					title='REVIEW'
 					enabled={this.state.agreed}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

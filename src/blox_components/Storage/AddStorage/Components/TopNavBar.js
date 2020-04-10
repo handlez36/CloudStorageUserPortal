@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 
 const TopNavBar = ({ gotoOverview, resetWizard }) => {
 	return (
@@ -13,7 +13,7 @@ const TopNavBar = ({ gotoOverview, resetWizard }) => {
 					title='CANCEL'
 					onClick={resetWizard}
 					enabled
-					customClass='blox-button gray-gradient'
+					customClass='COMPANY-button gray-gradient'
 				/>
 			</div>
 		</div>

@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 
 /** v3 imports */
 import ForgotPasswordModal from 'sub_components/Common/ErrorModal';
-import Button from 'sub_components/Common/BloxButton';
-import TextInput from 'sub_components/Common/BloxTextInput';
+import Button from 'sub_components/Common/COMPANYButton';
+import TextInput from 'sub_components/Common/COMPANYTextInput';
 import { INPUT_TYPES } from 'utils/Misc/CommonConstants';
 import { UserApi } from 'services/user';
 
@@ -42,7 +42,7 @@ const ForgotPasswordBody = (onChange, onFieldComplete, email, label, onClick) =>
 					title='RESET PASSWORD'
 					enabled={true}
 					onClick={onClick}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 				/>
 			</div>
 		</div>

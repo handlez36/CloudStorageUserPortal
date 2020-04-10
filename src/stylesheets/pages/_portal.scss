@@ -21,12 +21,12 @@
 	cursor: pointer;
 }
 
-.blox-clickable {
+.COMPANY-clickable {
 	pointer-events: auto;
 	transition: transform 0.5s ease-in-out;
 }
 
-.blox-clickable:hover {
+.COMPANY-clickable:hover {
 	transform: translateY(-30px);
 }
 
@@ -202,7 +202,7 @@
 		font-stretch: condensed;
 		letter-spacing: 0.3vw;
 		line-height: 3.5vh;
-		color: $DCBLOX_Purple;
+		color: $COMPANY_Purple;
 		font-synthesis: none;
 	}
 	.home-name {
@@ -212,7 +212,7 @@
 		font-stretch: condensed;
 		letter-spacing: 0.09em; //3.8px;
 		text-align: left;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		font-synthesis: none;
 	}
 	.home-subtext {
@@ -223,7 +223,7 @@
 		line-height: 2.2vh;
 		letter-spacing: 0.12em; //2.3px;
 		text-align: left;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		width: 11vw;
 		margin-top: 1vh;
 		font-synthesis: none;
@@ -231,10 +231,10 @@
 	// .company-link {
 	// 	font-family: $font-family-primary-subheads;
 	// 	font-size: calculateFontSize(10px, 25px); //22px;
-	// 	color: $DCBLOX_Gray;
+	// 	color: $COMPANY_Gray;
 	// 	&.selected {
 	// 		font-family: $font-family-primary-heads;
-	// 		color: $DCBLOX_Purple;
+	// 		color: $COMPANY_Purple;
 	// 	}
 	// }
 }

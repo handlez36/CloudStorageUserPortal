@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, any } from 'prop-types';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import PageStatus from './PageStatus';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const DefaultIcon = `${CDN_URL}support/icon-remote-hands-small.svg`;
@@ -33,7 +33,7 @@ const PageHeader = ({
 						<Button
 							title='CANCEL REQUEST'
 							enabled={true}
-							customClass='blox-button'
+							customClass='COMPANY-button'
 							onClick={onClick}
 						/>
 					)}

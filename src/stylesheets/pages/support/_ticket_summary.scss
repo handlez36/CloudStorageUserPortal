@@ -35,8 +35,8 @@
 	}
 
 	.body {
-		border-top: 1px solid $DCBLOX_Gray;
-		border-bottom: 1px solid $DCBLOX_Gray;
+		border-top: 1px solid $COMPANY_Gray;
+		border-bottom: 1px solid $COMPANY_Gray;
 		margin-top: 0.42vh;
 
 		.ticket-summary-details {
@@ -64,7 +64,7 @@
 						}
 						.ticket-overview-type {
 							@include Text-Style-45;
-							color: $DCBLOX_Gray;
+							color: $COMPANY_Gray;
 						}
 						.priority {
 							@include Text-Style-45;
@@ -81,7 +81,7 @@
 								letter-spacing: 0.07vw;
 								background: #fffefe;
 								padding: 0.5vw;
-								border: 0.01vw dotted $DCBLOX_Gray;
+								border: 0.01vw dotted $COMPANY_Gray;
 								-ms-overflow-style: none;
 								-ms-overflow-y: scroll;
 							}

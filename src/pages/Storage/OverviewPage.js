@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import each from 'lodash/each';
 
 import { DIMENSIONS } from 'services/layoutManager';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import TicketCount from 'sub_components/Common/TicketCountRow';
-import StorageDetail from 'blox_components/Storage/StorageOverviewDetail/StorageOverviewDetail';
+import StorageDetail from 'COMPANY_components/Storage/StorageOverviewDetail/StorageOverviewDetail';
 import { TicketUtils } from 'services/ticket';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
@@ -50,7 +50,7 @@ class OverviewPage extends Component {
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 		return (
-			<BloxPage
+			<COMPANYPage
 				name='sample-content-grid storage'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
@@ -77,9 +77,12 @@ class OverviewPage extends Component {
 						<StorageDetail breakpoint={breakpoint} history={history} />
 					</ComponentWrapper>
 				</div>
-			</BloxPage>
+			</COMPANYPage>
 		);
 	}
 }
 
-export default connect(null, { updateModule, updatePage, addPageToBreadCrumbs })(OverviewPage);
+export default connect(
+	null,
+	{ updateModule, updatePage, addPageToBreadCrumbs },
+)(OverviewPage);

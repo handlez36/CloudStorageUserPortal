@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import { Utils } from 'services/utils';
 import WhiteListContainer from '../Components/WhiteListContainer';
 
@@ -33,7 +33,7 @@ const StorageWhitelistSelection = ({ data, onSelect, update }) => {
 					Utils.checkListOfIps(formattedWhitelist.ips)
 				}
 				onClick={() => onSelect('whitelist', { data: formattedWhitelist }, true)}
-				customClass='blox-button whitelist-next-button bright-emerald-gradient'
+				customClass='COMPANY-button whitelist-next-button bright-emerald-gradient'
 			/>
 		</div>
 	);

@@ -31,7 +31,7 @@
 			}
 
 			.CircularProgressbar-background {
-				fill: $DCBLOX_Purple;
+				fill: $COMPANY_Purple;
 			}
 		}
 		.progress-indicator {
@@ -51,7 +51,7 @@
 		}
 
 		.progress-indicator.active {
-			background-color: $DCBLOX_Black;
+			background-color: $COMPANY_Black;
 		}
 	}
 }

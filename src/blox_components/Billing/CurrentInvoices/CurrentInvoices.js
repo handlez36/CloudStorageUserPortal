@@ -7,7 +7,7 @@ import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
 import { MENU, INVOICE_SUMMARY_HEADERS } from 'utils/BillingConstants';
 
-import BloxButton from 'sub_components/Common/BloxButton';
+import COMPANYButton from 'sub_components/Common/COMPANYButton';
 import SupportSection from 'components_old/Common/SupportSection';
 import InvoiceAmountDueOverview from '../TotalAmountDue/TotalAmountDue';
 
@@ -125,10 +125,10 @@ class CurrentInvoices extends Component {
 							)}
 							{eligibleForOnlinePayment && screenSize < 2559 && (
 								<div className='pay-now-button'>
-									<BloxButton
+									<COMPANYButton
 										title='PAY NOW'
 										enabled={true}
-										customClass='blox-button gradient'
+										customClass='COMPANY-button gradient'
 										onClick={this.goToPayments}
 									/>
 								</div>
@@ -166,6 +166,7 @@ function mapStateToProps(state) {
 		auth_status: state.auth_status,
 	};
 }
-export default connect(mapStateToProps, { updatePage, updateModule, addPageToBreadCrumbs })(
-	CurrentInvoices,
-);
+export default connect(
+	mapStateToProps,
+	{ updatePage, updateModule, addPageToBreadCrumbs },
+)(CurrentInvoices);

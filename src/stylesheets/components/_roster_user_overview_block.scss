@@ -7,7 +7,7 @@
 	.name {
 		@include ProfileHeadingSmall;
 		position: relative;
-		background-color: $DCBLOX_Gray;
+		background-color: $COMPANY_Gray;
 		color: $White;
 		//line-height: 2vh;
 		text-transform: uppercase;
@@ -18,7 +18,7 @@
 		right: 42%;
 		border-left: 0.25vw solid transparent;
 		border-right: 0.25vw solid transparent;
-		border-top: 0.25vh solid $DCBLOX_Gray;
+		border-top: 0.25vh solid $COMPANY_Gray;
 	}
 	.image img {
 		width: 100%;
@@ -61,7 +61,7 @@
 			right: 20%;
 			border-left: 0.25vw solid transparent;
 			border-right: 0.25vw solid transparent;
-			border-top: 0.25vh solid $DCBLOX_Gray;
+			border-top: 0.25vh solid $COMPANY_Gray;
 		}
 	}
 

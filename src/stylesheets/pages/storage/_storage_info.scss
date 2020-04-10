@@ -62,7 +62,7 @@
 		right: 30%;
 		background-color: $White;
 		padding: 1.5vh 1.5vw;
-		filter: drop-shadow(0 0 0.75rem $DCBLOX_Red);
+		filter: drop-shadow(0 0 0.75rem $COMPANY_Red);
 		border-radius: 5px;
 	}
 }
@@ -70,7 +70,7 @@
 .storage-delete-btn {
 	button {
 		background-color: $Bright_Emerald;
-		color: $DCBLOX_White;
+		color: $COMPANY_White;
 		border: none;
 		font-family: 'ProximaNovaAltRegular';
 		font-family: 'BourgeoisMediumCondensed';

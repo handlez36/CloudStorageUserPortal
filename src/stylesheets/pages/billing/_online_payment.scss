@@ -30,13 +30,13 @@
 		margin-top: 1vh;
 		margin-bottom: 0.5vh;
 		@include Section-Head;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		margin-left: 2.5vw;
 	}
 	.page-status {
 		.wrapper {
 			.progress-indicator {
-				background-color: $DCBLOX_Black;
+				background-color: $COMPANY_Black;
 				justify-content: center;
 				align-items: center;
 				flex: 0 1 calculateVw(34px, 1440);
@@ -52,7 +52,7 @@
 			}
 
 			.progress-indicator.active {
-				background-color: $DCBLOX_Black;
+				background-color: $COMPANY_Black;
 			}
 			svg {
 				width: calculateVw(42px, 1440);
@@ -68,7 +68,7 @@
 		}
 	}
 	.soft-error {
-		.blox-button {
+		.COMPANY-button {
 			margin-top: 0.5vh;
 		}
 	}

@@ -50,7 +50,7 @@
 			opacity: 1;
 		}
 		text {
-			fill: $DCBLOX_Gray;
+			fill: $COMPANY_Gray;
 			@include Body-Copy-2560;
 		}
 	}
@@ -61,14 +61,14 @@
 	.timepicker-info-digits {
 		@include ProximaNovaBoldLarge;
 		border-bottom: 2px solid $Purple;
-		color: $DCBLOX_Black;
+		color: $COMPANY_Black;
 		&.active {
 			color: $Purple;
 		}
 	}
 }
 
-.dcblox-date-time-picker-wrapper {
+.date-time-picker-wrapper {
 	&.time {
 		display: flex;
 		flex-direction: column;

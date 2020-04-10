@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import { PASSWORD_UPDATE_STATUS } from 'utils/StorageConstants';
 import Modal from './ErrorModal';
-import Button from './BloxButton';
+import Button from './COMPANYButton';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const checkMark = `${CDN_URL}billing/check-mark-circle.svg`;
@@ -16,7 +16,12 @@ function generateModalBody(status, storageType, storagePassword = null, toggleOp
 			)}
 
 			<div className='bottom-message'>Your password has been changed successfully.</div>
-			<Button title='OKAY' enabled={true} customClass='blox-button gradient' onClick={toggleOpen} />
+			<Button
+				title='OKAY'
+				enabled={true}
+				customClass='COMPANY-button gradient'
+				onClick={toggleOpen}
+			/>
 		</Fragment>
 	) : (
 		<Fragment>

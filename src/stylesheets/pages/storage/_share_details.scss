@@ -3,7 +3,7 @@
 	padding-top: 3vh;
 	padding-left: 10px;
 	padding-right: 10px;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: 1440px) and (max-width: 2560px) {
 		padding-left: 30px;
 		padding-right: 30px;
@@ -28,7 +28,7 @@
 			color: green;
 		}
 		.no-check {
-			color: $DCBLOX_Red;
+			color: $COMPANY_Red;
 		}
 	}
 
@@ -74,7 +74,7 @@
 					align-items: center;
 					cursor: pointer;
 					background-color: $Bright_Emerald;
-					color: $DCBLOX_White;
+					color: $COMPANY_White;
 					font-family: 'BourgeoisMediumCondensed';
 					border-radius: 0.5vh;
 					font-size: 1rem;

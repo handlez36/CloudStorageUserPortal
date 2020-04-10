@@ -4,7 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	padding-top: 1vh;
-	background-color: $DCBLOX_Purple;
+	background-color: $COMPANY_Purple;
 
 	.new-comment-section {
 		display: flex;
@@ -42,13 +42,13 @@
 				height: calculateVh(90, 1440);
 				border-style: none;
 				padding-left: 1.76vw;
-				box-shadow: 1.9px 2.3px 9.5px 0.5px rgba($DCBLOX_Black, 0.16);
+				box-shadow: 1.9px 2.3px 9.5px 0.5px rgba($COMPANY_Black, 0.16);
 				background-color: $White;
 				line-height: 0;
 				padding-top: 0.97vh;
 				resize: none;
 				overflow: hidden;
-				caret-color: $DCBLOX_Red;
+				caret-color: $COMPANY_Red;
 				@include Text-Style-69;
 				color: #543c68;
 			}
@@ -109,7 +109,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
-		.blox-button {
+		.COMPANY-button {
 			.title {
 				font-size: calculateVw(15, 1440);
 			}

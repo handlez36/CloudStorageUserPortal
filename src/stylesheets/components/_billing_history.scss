@@ -25,7 +25,7 @@
 		overflow: hidden;
 		height: 100%;
 	}
-	.accordian-list .blox-cycle-view {
+	.accordian-list .COMPANY-cycle-view {
 		height: 100%;
 	}
 	.accordian-list .upper-filter,
@@ -52,7 +52,7 @@
 		overflow: hidden;
 		height: 100%;
 	}
-	.accordian-list .blox-cycle-view {
+	.accordian-list .COMPANY-cycle-view {
 		height: 100%;
 	}
 	.accordian-list .upper-filter,
@@ -82,7 +82,7 @@
 	left: 1.7vw;
 	position: absolute;
 	width: 8vw;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 .billing-filter-wrapper-2 {
@@ -91,7 +91,7 @@
 	margin-left: 0.5vw;
 	height: 2.5vw;
 	border-radius: 2px;
-	border-bottom: 2px solid $DCBLOX_Lime;
+	border-bottom: 2px solid $COMPANY_Lime;
 	display: inline-block;
 
 	.billing-history-filter {
@@ -108,7 +108,7 @@
 		list-style: none;
 		padding: 0.3vw;
 		padding-left: 1vw;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		height: 3.1vh;
 		width: 8vw;
 		@include Drop-Down-Options;
@@ -140,7 +140,7 @@
 	.billing-history-filter:after {
 		content: '>';
 		font: 1.5vh 'Consolas', monospace;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		-webkit-transform: rotate(90deg);
 		-moz-transform: rotate(90deg);
 		-ms-transform: rotate(90deg);
@@ -160,14 +160,14 @@
 .billing-history-title {
 	font-family: $font-family-primary-subheads;
 	font-size: calculateFontSize(13px, 28px);
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	margin-bottom: 0.3vw;
 }
 
 .billing-history-span {
 	font-family: $font-family-primary-subheads;
 	font-size: calculateFontSize(13px, 28px);
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	margin-bottom: 0.3vw;
 
 	letter-spacing: 0.1vw;
@@ -193,7 +193,7 @@
 		.billing-history-filter:after {
 			content: '>';
 			font: 1.5vh 'Consolas', monospace;
-			color: $DCBLOX_Gray;
+			color: $COMPANY_Gray;
 			-webkit-transform: rotate(90deg);
 			-moz-transform: rotate(90deg);
 			-ms-transform: rotate(90deg);

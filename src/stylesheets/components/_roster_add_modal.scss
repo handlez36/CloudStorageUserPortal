@@ -68,7 +68,7 @@
 			font-size: 1.1vw;
 		}
 	}
-	.blox-button {
+	.COMPANY-button {
 		&.next-button {
 			width: 100px;
 			height: 34px;
@@ -162,7 +162,7 @@
 			width: 14vw;
 			margin-left: 4vw;
 		}
-		.blox-text-input {
+		.COMPANY-text-input {
 			width: 100%;
 			margin-top: calculateVh(40px);
 			margin-left: calculateVw(90px);
@@ -178,7 +178,7 @@
 				}
 			}
 		}
-		.blox-text-input.active .active-field {
+		.COMPANY-text-input.active .active-field {
 			input {
 				color: $White;
 			}

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import PasswordModal from 'sub_components/Common/PasswordModal';
-import BloxButton from 'sub_components/Common/BloxButton';
+import COMPANYButton from 'sub_components/Common/COMPANYButton';
 import WhiteListModal from 'sub_components/Storage/WhiteListModal';
 import { StorageApi } from 'services/storage';
 import { STORAGE_AVATAR_URL_PREFIX } from 'utils/Misc/CommonConstants';
@@ -205,12 +205,12 @@ class ShareDetailView extends Component {
 						onMouseOver={this.onMouseOver}
 						onMouseOut={this.onMouseOut}
 					>
-						<BloxButton
+						<COMPANYButton
 							imageId={'delete-button'}
 							icon={DeleteIcon}
 							title={'DELETE STORAGE'}
 							enabled={true}
-							customClass={`blox-button`}
+							customClass={`COMPANY-button`}
 							// onClick={() => {}}
 							onClick={() => history.push(`/portal/storage/delete/${storage.ml_id}`, { storage })}
 						/>
@@ -271,10 +271,7 @@ class ShareDetailView extends Component {
 		) : (
 			<div className='share-detail-view video'>
 				<video autoPlay loop>
-					<source
-						src='https://www.mydcblox.com/cdn/library/video/chalkboard.mp4'
-						type='video/mp4'
-					/>
+					<source src='https://hidden/cdn/library/video/chalkboard.mp4' type='video/mp4' />
 					Your browser does not support the video tag.
 				</video>
 			</div>

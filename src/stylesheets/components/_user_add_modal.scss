@@ -49,11 +49,11 @@
 			@include Text-Style-Modal-Wizard-TItle;
 			text-align: left;
 		}
-		.blox-text-input {
+		.COMPANY-text-input {
 			width: 100%;
 			margin-top: calculateVh(20px, $standard-screen-height-mid);
 		}
-		.blox-text-input.active .active-field {
+		.COMPANY-text-input.active .active-field {
 			transform: translateY(-2px);
 		}
 		.validation-row {

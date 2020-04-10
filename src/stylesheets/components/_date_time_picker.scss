@@ -1,4 +1,4 @@
-.dcblox-date-time-picker-wrapper {
+.wrapper {
 	width: calculateVw(400.5, 1440);
 	height: calculateVh(490, 1440);
 	background-color: $White;
@@ -44,7 +44,7 @@
 	}
 	.error {
 		position: absolute;
-		color: $DCBLOX_Red;
+		color: $COMPANY_Red;
 		@include Body-Copy-2560;
 		bottom: 16%;
 		left: 20%;
@@ -67,7 +67,7 @@
 	}
 	.display-date {
 		@include Body-Copy-Proxima-Medium;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		position: absolute;
 		left: 38%;
 		padding: 0.5vw;
@@ -107,7 +107,7 @@
 					2560: 13,
 				);
 				font-size: least-squares-fit($map);
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 				font-family: $proxima-nova-semibold;
 				border-radius: 0;
 				cursor: pointer;
@@ -134,15 +134,15 @@
 				top: -2%;
 			}
 			.DayPicker-Day--today {
-				border: 2px solid $DCBLOX_Gray;
-				color: $DCBLOX_Gray;
+				border: 2px solid $COMPANY_Gray;
+				color: $COMPANY_Gray;
 			}
 			.DayPicker-NavButton--next {
-				background-image: url('https://mydcblox.com/cdn/library/common/icons-arrow-circle.svg');
+				background-image: url('https://hidden/cdn/library/common/icons-arrow-circle.svg');
 			}
 			.DayPicker-NavButton--prev {
 				transform: rotate(180deg);
-				background-image: url('https://mydcblox.com/cdn/library/common/icons-arrow-circle.svg');
+				background-image: url('https://hidden/cdn/library/common/icons-arrow-circle.svg');
 			}
 		}
 	}

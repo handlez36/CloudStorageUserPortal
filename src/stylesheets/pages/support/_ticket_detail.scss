@@ -9,7 +9,7 @@
 	line-height: 1.5;
 	letter-spacing: 2px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 
 	.ticket-type-text {
 		flex: 0 0 7vw;
@@ -28,13 +28,13 @@
 			text-transform: uppercase;
 		}
 		span.BILLING {
-			color: $DCBLOX_Purple;
+			color: $COMPANY_Purple;
 		}
 		span.OUTAGE {
-			color: $DCBLOX_Purple;
+			color: $COMPANY_Purple;
 		}
 		span.SUPPORT {
-			color: $DCBLOX_Purple;
+			color: $COMPANY_Purple;
 		}
 	}
 
@@ -63,7 +63,7 @@
 			color: $high-severity;
 		}
 		span.URGENT {
-			color: $DCBLOX_Purple;
+			color: $COMPANY_Purple;
 		}
 	}
 }

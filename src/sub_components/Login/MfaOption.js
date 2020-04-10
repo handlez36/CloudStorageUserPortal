@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
 import Radio from './../Common/Radio';
-import RequestMFAButton from './../Common/BloxButton';
+import RequestMFAButton from './../Common/COMPANYButton';
 
 export default class MFAOption extends Component {
 	constructor(props) {

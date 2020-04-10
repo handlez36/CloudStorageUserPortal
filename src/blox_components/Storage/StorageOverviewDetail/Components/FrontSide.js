@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 
-import ScrollView from 'sub_components/Common/BloxScrollViewNew';
-import Button from 'sub_components/Common/BloxButton';
+import ScrollView from 'sub_components/Common/COMPANYScrollViewNew';
+import Button from 'sub_components/Common/COMPANYButton';
 import SmallCard from './SmallShareCard';
-// import ScrollView from '../../../components/Common/BloxScrollViewNew';
+// import ScrollView from '../../../components/Common/COMPANYScrollViewNew';
 // import SmallCard from './SmallShareCard';
-// import Button from '../../../components/Common/BloxButton';
+// import Button from '../../../components/Common/COMPANYButton';
 
 function renderShares(onClickFunc, shares = [1, 1, 1, 1, 1]) {
 	return shares.map((share, index) => (
@@ -43,7 +43,7 @@ const FrontSide = ({
 							<Button
 								title='MANAGE SHARES'
 								enabled={true}
-								customClass='blox-button gradient'
+								customClass='COMPANY-button gradient'
 								onClick={goToManageStorage}
 							/>
 						</div>

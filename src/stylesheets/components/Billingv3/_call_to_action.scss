@@ -11,7 +11,7 @@
 		}
 	}
 	.balance-summary {
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		@include FlexboxRow;
 		padding: 0px;
 		padding-bottom: GetSize(1);

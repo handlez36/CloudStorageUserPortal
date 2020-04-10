@@ -5,7 +5,7 @@ import AnimatedIcon from './AnimatedIcon';
 /**
  * Component to display custom messages in a consistent format
  * Several areas in the Customer Portal contain areas with customized
- * messages coming from the DC Blox middleware services
+ * messages coming from the COMPANY middleware services
  */
 export default class MessageText extends Component {
 	/**

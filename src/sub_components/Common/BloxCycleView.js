@@ -8,7 +8,7 @@ const CDN_URL = process.env.REACT_APP_CDN_URL;
 const UpArrow = `${CDN_URL}support/TicketHistoryIndicator.svg`;
 const DownArrow = `${CDN_URL}support/TicketHistoryDOWN.svg`;
 
-class BloxCycleView extends Component {
+class COMPANYCycleView extends Component {
 	constructor(props) {
 		super(props);
 
@@ -96,7 +96,7 @@ class BloxCycleView extends Component {
 		this.myObserver = new ResizeObserver(entries => {
 			entries.forEach(entry => {
 				this.updateArrowVisibility();
-				this.sizeBloxCycleView();
+				this.sizeCOMPANYCycleView();
 			});
 		});
 
@@ -110,14 +110,14 @@ class BloxCycleView extends Component {
 		}, 500);
 	}
 
-	sizeBloxCycleView = () => {
+	sizeCOMPANYCycleView = () => {
 		// setTimeout(() => {
-		const bloxCycleViewEl = document.querySelector('.blox-cycle-view');
+		const COMPANYCycleViewEl = document.querySelector('.COMPANY-cycle-view');
 		const footer = document.querySelector('.footerContainer');
-		if (bloxCycleViewEl && footer) {
+		if (COMPANYCycleViewEl && footer) {
 			const height =
-				footer.getBoundingClientRect().top - bloxCycleViewEl.getBoundingClientRect().top;
-			bloxCycleViewEl.setAttribute('style', `height: ${height}px`);
+				footer.getBoundingClientRect().top - COMPANYCycleViewEl.getBoundingClientRect().top;
+			COMPANYCycleViewEl.setAttribute('style', `height: ${height}px`);
 		}
 		// }, 1000);
 	};
@@ -127,7 +127,7 @@ class BloxCycleView extends Component {
 		const { showBottomArrow, showTopArrow } = this.state;
 
 		return (
-			<div className='blox-cycle-view'>
+			<div className='COMPANY-cycle-view'>
 				{showTopArrow && (
 					<div className='upper-section'>
 						<div className='upper-filter' />{' '}
@@ -160,7 +160,7 @@ class BloxCycleView extends Component {
 	}
 }
 
-BloxCycleView.propTypes = {
+COMPANYCycleView.propTypes = {
 	itemClass: string,
 	itemWrapperClass: string,
 	arrows: shape({
@@ -169,11 +169,11 @@ BloxCycleView.propTypes = {
 	}),
 };
 
-BloxCycleView.defaultProps = {
+COMPANYCycleView.defaultProps = {
 	arrows: {
 		up: UpArrow,
 		down: DownArrow,
 	},
 };
 
-export default BloxCycleView;
+export default COMPANYCycleView;

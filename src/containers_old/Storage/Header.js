@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BloxButton from '../../components/Common/BloxButton';
+import COMPANYButton from '../../components/Common/COMPANYButton';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Arrow = `${CDN_URL}storage/left-arrow.svg`;
 class Header extends Component {
@@ -15,10 +15,10 @@ class Header extends Component {
 
 				{button && (
 					<div className='header-button'>
-						<BloxButton
+						<COMPANYButton
 							title={buttonText}
 							enabled={true}
-							customClass={`blox-button ${customButtonClass}`}
+							customClass={`COMPANY-button ${customButtonClass}`}
 							onClick={onClick}
 						/>
 					</div>

@@ -11,7 +11,7 @@ export class ReleaseApi {
 		return axios.get(url, config);
 	}
 	getAllNew() {
-		const url = 'https://www.mydcblox.com/cdn/release/';
+		const url = 'hidden';
 		return axios.get(url, {
 			withCredentials: false,
 		});

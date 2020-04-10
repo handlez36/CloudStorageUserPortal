@@ -4,7 +4,7 @@ import { shape, string, bool, any } from 'prop-types';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import PortalUserMgmt from 'blox_components/Profile/PortalUserMgmt/PortalUserMgmt';
+import PortalUserMgmt from 'COMPANY_components/Profile/PortalUserMgmt/PortalUserMgmt';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 
 import VerticalDebugGrid from './VerticalDebugGrid';
@@ -52,7 +52,7 @@ const generateRows = (count, rowCount) => {
 };
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
-class BloxMicroGrid extends Component {
+class COMPANYMicroGrid extends Component {
 	constructor(props) {
 		super(props);
 
@@ -134,7 +134,7 @@ class BloxMicroGrid extends Component {
 		}
 
 		return (
-			<div className={`blox-micro-grid${gridClassName}`}>
+			<div className={`COMPANY-micro-grid${gridClassName}`}>
 				{colCount && (
 					<ResponsiveReactGridLayout
 						layouts={{
@@ -180,7 +180,7 @@ class BloxMicroGrid extends Component {
  * name - Grid identifier; appended to grid classname
  * showGrid - Turn debug grid lines on or off
  */
-BloxMicroGrid.propTypes = {
+COMPANYMicroGrid.propTypes = {
 	contentGrid: shape({
 		lg: any,
 		md: any,
@@ -193,10 +193,10 @@ BloxMicroGrid.propTypes = {
 	skipColUpdate: bool,
 };
 
-BloxMicroGrid.defaultProps = {
+COMPANYMicroGrid.defaultProps = {
 	showGrid: false,
 	skipColUpdate: false,
 };
 
-// export default BloxMicroGrid;
-export default withRouter(BloxMicroGrid);
+// export default COMPANYMicroGrid;
+export default withRouter(COMPANYMicroGrid);

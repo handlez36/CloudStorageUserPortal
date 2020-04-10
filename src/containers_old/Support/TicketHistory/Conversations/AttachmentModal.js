@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 
 import Modal from 'sub_components/Common/PortalModal';
-import BrowseButton from 'sub_components/Common/BloxButton';
-import AttachButton from 'sub_components/Common/BloxButton';
+import BrowseButton from 'sub_components/Common/COMPANYButton';
+import AttachButton from 'sub_components/Common/COMPANYButton';
 import { ExitButton } from 'components_old/Common/ExitButton';
 import { AttachmentApi } from 'services/attachment';
 import { TICKET_ATTACHMENT_PHASE as PHASE } from 'utils/TicketConstants';

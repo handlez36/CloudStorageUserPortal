@@ -179,7 +179,7 @@ export class WhiteList extends Component {
 				toggleOpen={this.toggleModal}
 				onSubmit={this.onSubmit}
 				submitEnabled={this.shouldEnableSubmit()}
-				buttonClass='blox-button emerald-gradient whitelist-submit-button'
+				buttonClass='COMPANY-button emerald-gradient whitelist-submit-button'
 				buttonText='UPDATE'
 				useButton
 			>

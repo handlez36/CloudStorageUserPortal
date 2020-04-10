@@ -10,8 +10,6 @@ import { EulaComponent } from './../Misc/EulaComponent';
 import ReleaseNotesModal from './../Misc/Release/ReleaseNotesModal';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
-// import dcblox_logo from `${CDN_URL}common/Common_DCBlox_logo.svg`;
-// import dcblox_logo from '../../assets/common/Common_DCBlox_logo.svg';
 
 class Footer extends Component {
 	constructor(props) {
@@ -39,45 +37,29 @@ class Footer extends Component {
 					without changing your settings, you are consenting to the use of cookies on our site.
 				</CookieConsent>
 				<div className='footer-logo'>
-					<a href='https://www.dcblox.com' target='_blank' rel='noreferrer noopener'>
-						<img src={`${CDN_URL}common/Common_DCBlox_logo.svg`} height='63%' alt='DC Blox' />
+					<a href='hidden' target='_blank' rel='noreferrer noopener'>
+						<img src={`hidden_logo.svg`} height='63%' />
 					</a>
 				</div>
 				<div className='wrapper-footer'>
 					<ul className='footer-links'>
 						<li>
-							<a
-								href='https://www.dcblox.com/terms-of-use'
-								target='_blank'
-								rel='noreferrer noopener'
-							>
+							<a href='hidden' target='_blank' rel='noreferrer noopener'>
 								Terms of Use
 							</a>
 						</li>
 						<li>
-							<a
-								href='https://www.dcblox.com/acceptable-use'
-								target='_blank'
-								rel='noreferrer noopener'
-							>
+							<a href='hidden' target='_blank' rel='noreferrer noopener'>
 								Acceptable Use
 							</a>
 						</li>
 						<li>
-							<a
-								href='https://www.dcblox.com/shared-responsibility'
-								target='_blank'
-								rel='noreferrer noopener'
-							>
+							<a href='hidden' target='_blank' rel='noreferrer noopener'>
 								Shared Responsibility
 							</a>
 						</li>
 						<li>
-							<a
-								href='https://www.dcblox.com/privacy-policy'
-								target='_blank'
-								rel='noreferrer noopener'
-							>
+							<a href='hidden' target='_blank' rel='noreferrer noopener'>
 								Privacy Policy
 							</a>
 						</li>
@@ -107,7 +89,7 @@ class Footer extends Component {
 						<FontAwesomeIcon icon={faPhoneSquare} />
 					</div>
 					<div className='phone-number'>
-						<a href='https://www.dcblox.com/support/' target='_blank' rel='noreferrer noopener'>
+						<a href='hidden' target='_blank' rel='noreferrer noopener'>
 							877.590.1684
 						</a>
 					</div>

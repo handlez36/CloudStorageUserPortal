@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const upIcon = `${CDN_URL}common/icons-arrow-circle@3x.png`;
@@ -11,7 +11,7 @@ const onSetExpanded = (type, expanded, setExpanded, expandCardCallback) => {
 	expandCardCallback(type);
 };
 
-const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback, history }) => {
+const COMPANYCard = ({ type, image, summary, detail, isExpanded, expandCardCallback, history }) => {
 	const [expanded, setExpanded] = useState(isExpanded);
 
 	useEffect(() => {
@@ -21,7 +21,7 @@ const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback
 	}, [isExpanded]);
 
 	return (
-		<div className={`blox-card${isExpanded ? ' expanded' : ''}`}>
+		<div className={`COMPANY-card${isExpanded ? ' expanded' : ''}`}>
 			<div className='card-top-section'>
 				<img src={image} />
 			</div>
@@ -41,7 +41,7 @@ const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback
 							onClick={() => {
 								history.push('/portal/profile/contact_info');
 							}}
-							customClass='blox-button gradient'
+							customClass='COMPANY-button gradient'
 							enabled
 						/>
 					</div>
@@ -51,4 +51,4 @@ const BloxCard = ({ type, image, summary, detail, isExpanded, expandCardCallback
 	);
 };
 
-export default BloxCard;
+export default COMPANYCard;

@@ -4,7 +4,7 @@ import { string } from 'prop-types';
 import ExpandableContent from '../../../components/Support/ExpandableContentComponent';
 import InvoiceDetails from './InvoiceDetails';
 import TotalAmountDue from '../../../components/Billing/TotalAmount';
-import Button from '../../../components/Common/BloxButton';
+import Button from '../../../components/Common/COMPANYButton';
 import { CARD_TYPE_ICON } from '../BillingConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const PrintIconInactive = `${CDN_URL}billing/icon-print-Active.svg`;
@@ -145,7 +145,7 @@ class PaymentSummary extends Component {
 				<Button
 					title='PAY NOW'
 					enabled={!submitted}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={() => submitPayment(data)}
 				/>
 			</div>

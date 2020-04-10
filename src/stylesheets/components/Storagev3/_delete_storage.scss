@@ -17,7 +17,7 @@
 				width: 280px;
 				@include Roster-Modal;
 				text-align: center;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 				&.TWO {
 					width: 580px;
 				}
@@ -67,7 +67,7 @@
 		}
 		.delete-input {
 			margin-top: GetSize(3);
-			.blox-text-input.active input {
+			.COMPANY-text-input.active input {
 				border-bottom: 2px solid $Emerald;
 			}
 		}
@@ -77,16 +77,16 @@
 			margin-top: GetSize(3);
 			@include FlexboxRow;
 			justify-content: space-between;
-			.blox-button {
+			.COMPANY-button {
 				width: 150px;
 				@include FlexboxCenter;
 			}
-			.blox-button .title {
+			.COMPANY-button .title {
 				margin-left: GetSize(1);
 				@include Headings90;
 				color: $White;
 			}
-			.blox-button .icon {
+			.COMPANY-button .icon {
 				position: relative;
 				left: unset;
 				top: unset;
@@ -106,7 +106,7 @@
 }
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
 	.delete-storage {
-		.blox-button .icon {
+		.COMPANY-button .icon {
 			width: 23px;
 			height: 22px;
 		}
@@ -125,13 +125,13 @@
 			}
 			.delete-input {
 				margin-top: GetSize(3);
-				.blox-text-input.active input {
+				.COMPANY-text-input.active input {
 					border-bottom: 2px solid $Emerald;
 				}
 			}
 			.options-section {
 				width: 400px;
-				.blox-button {
+				.COMPANY-button {
 					width: 180px;
 				}
 			}

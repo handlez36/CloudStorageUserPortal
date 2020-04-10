@@ -8,7 +8,7 @@ export class Eula extends Component {
 					<div className='eula-timestamp'>Last updated: August 29, 2018</div>
 					<p>
 						Please read this End-User License Agreement ("Agreement") carefully before clicking the
-						"I Agree" button, downloading or using MyDCBLOX.com ("Application").
+						"I Agree" button, downloading or using MyCOMPANY.com ("Application").
 					</p>
 					<p>
 						By clicking the "I Agree" button, downloading or using the Application, you are agreeing
@@ -16,20 +16,20 @@ export class Eula extends Component {
 					</p>
 					<p>
 						This Agreement is a legal agreement between you (either an individual or a single
-						entity) and DC BLOX, Inc. and it governs your use of the Application made available to
-						you by DC BLOX, Inc..
+						entity) and COMPANY, Inc. and it governs your use of the Application made available to
+						you by COMPANY, Inc..
 					</p>
 					<p>
 						If you do not agree to the terms of this Agreement, do not click on the "I Agree" button
 						and do not download or use the Application.
 					</p>
 					<p>
-						The Application is licensed, not sold, to you by DC BLOX, Inc. for use strictly in
+						The Application is licensed, not sold, to you by COMPANY, Inc. for use strictly in
 						accordance with the terms of this Agreement.
 					</p>
 					<h3>License</h3>
 					<p>
-						DC BLOX, Inc. grants you a revocable, non-exclusive, non-transferable, limited license
+						COMPANY, Inc. grants you a revocable, non-exclusive, non-transferable, limited license
 						to use the Application strictly in accordance with the terms of this Agreement.
 					</p>
 					<h3>Restrictions</h3>
@@ -47,7 +47,7 @@ export class Eula extends Component {
 							</li>
 							<li>
 								remove, alter or obscure any proprietary notice (including any notice of copyright
-								or trademark) of DC BLOX, Inc. or its affiliates, partners, suppliers or the
+								or trademark) of COMPANY, Inc. or its affiliates, partners, suppliers or the
 								licensors of the Application.
 							</li>
 						</ul>
@@ -56,34 +56,34 @@ export class Eula extends Component {
 					<p>
 						The Application, including without limitation all copyrights, patents, trademarks, trade
 						secrets and other intellectual property rights are, and shall remain, the sole and
-						exclusive property of DC BLOX, Inc..
+						exclusive property of COMPANY, Inc..
 					</p>
 					<h3>Your Suggestions</h3>
 					<p>
 						Any feedback, comments, ideas, improvements or suggestions (collectively, "Suggestions")
-						provided by you to DC BLOX, Inc. with respect to the Application shall remain the sole
-						and exclusive property of DC BLOX, Inc..
+						provided by you to COMPANY, Inc. with respect to the Application shall remain the sole
+						and exclusive property of COMPANY, Inc..
 					</p>
 					<p>
-						DC BLOX, Inc. shall be free to use, copy, modify, publish, or redistribute the
+						COMPANY, Inc. shall be free to use, copy, modify, publish, or redistribute the
 						Suggestions for any purpose and in any way without any credit or any compensation to
 						you.
 					</p>
 					<h3>Modifications to Application</h3>
 					<p>
-						DC BLOX, Inc. reserves the right to modify, suspend or discontinue, temporarily or
+						COMPANY, Inc. reserves the right to modify, suspend or discontinue, temporarily or
 						permanently, the Application or any service to which it connects, with or without notice
 						and without liability to you.
 					</p>
 					<h3>Updates to Application</h3>
 					<p>
-						DC BLOX, Inc. may from time to time provide enhancements or improvements to the
+						COMPANY, Inc. may from time to time provide enhancements or improvements to the
 						features/functionality of the Application, which may include patches, bug fixes,
 						updates, upgrades and other modifications ("Updates").
 					</p>
 					<p>
 						Updates may modify or delete certain features and/or functionalities of the Application.
-						You agree that DC BLOX, Inc. has no obligation to (i) provide any Updates, or (ii)
+						You agree that COMPANY, Inc. has no obligation to (i) provide any Updates, or (ii)
 						continue to provide or enable any particular features and/or functionalities of the
 						Application to you.
 					</p>
@@ -98,9 +98,9 @@ export class Eula extends Component {
 						third-party websites or services ("Third-Party Services").
 					</p>
 					<p>
-						You acknowledge and agree that DC BLOX, Inc. shall not be responsible for any
+						You acknowledge and agree that COMPANY, Inc. shall not be responsible for any
 						Third-Party Services, including their accuracy, completeness, timeliness, validity,
-						copyright compliance, legality, decency, quality or any other aspect thereof. DC BLOX,
+						copyright compliance, legality, decency, quality or any other aspect thereof. COMPANY,
 						Inc. does not assume and shall not have any liability or responsibility to you or any
 						other person or entity for any Third-Party Services.
 					</p>
@@ -110,13 +110,13 @@ export class Eula extends Component {
 						terms and conditions.
 					</p>
 					<h3>Term and Termination</h3>
-					<p>This Agreement shall remain in effect until terminated by you or DC BLOX, Inc..</p>
+					<p>This Agreement shall remain in effect until terminated by you or COMPANY, Inc..</p>
 					<p>
-						DC BLOX, Inc. may, in its sole discretion, at any time and for any or no reason, suspend
+						COMPANY, Inc. may, in its sole discretion, at any time and for any or no reason, suspend
 						or terminate this Agreement with or without prior notice.
 					</p>
 					<p>
-						This Agreement will terminate immediately, without prior notice from DC BLOX, Inc., in
+						This Agreement will terminate immediately, without prior notice from COMPANY, Inc., in
 						the event that you fail to comply with any provision of this Agreement. You may also
 						terminate this Agreement by deleting the Application and all copies thereof from your
 						mobile device or from your computer.
@@ -127,7 +127,7 @@ export class Eula extends Component {
 					</p>
 
 					<p>
-						Termination of this Agreement will not limit any of DC BLOX, Inc.'s rights or remedies
+						Termination of this Agreement will not limit any of COMPANY, Inc.'s rights or remedies
 						at law or in equity in case of breach by you (during the term of this Agreement) of any
 						of your obligations under the present Agreement.
 					</p>
@@ -135,7 +135,7 @@ export class Eula extends Component {
 					<h3>Indemnification</h3>
 
 					<p>
-						You agree to indemnify and hold DC BLOX, Inc. and its parents, subsidiaries, affiliates,
+						You agree to indemnify and hold COMPANY, Inc. and its parents, subsidiaries, affiliates,
 						officers, employees, agents, partners and licensors (if any) harmless from any claim or
 						demand, including reasonable attorneys' fees, due to or arising out of your: (a) use of
 						the Application; (b) violation of this Agreement or any law or regulation; or (c)
@@ -146,12 +146,12 @@ export class Eula extends Component {
 					<p>
 						The Application is provided to you "AS IS" and "AS AVAILABLE" and with all faults and
 						defects without warranty of any kind. To the maximum extent permitted under applicable
-						law, DC BLOX, Inc., on its own behalf and on behalf of its affiliates and its and their
+						law, COMPANY, Inc., on its own behalf and on behalf of its affiliates and its and their
 						respective licensors and service providers, expressly disclaims all warranties, whether
 						express, implied, statutory or otherwise, with respect to the Application, including all
 						implied warranties of merchantability, fitness for a particular purpose, title and
 						non-infringement, and warranties that may arise out of course of dealing, course of
-						performance, usage or trade practice. Without limitation to the foregoing, DC BLOX, Inc.
+						performance, usage or trade practice. Without limitation to the foregoing, COMPANY, Inc.
 						provides no warranty or undertaking, and makes no representation of any kind that the
 						Application will meet your requirements, achieve any intended results, be compatible or
 						work with any other software, applications, systems or services, operate without
@@ -159,13 +159,13 @@ export class Eula extends Component {
 						errors or defects can or will be corrected.
 					</p>
 					<p>
-						Without limiting the foregoing, neither DC BLOX, Inc. nor any DC BLOX, Inc.'s provider
+						Without limiting the foregoing, neither COMPANY, Inc. nor any COMPANY, Inc.'s provider
 						makes any representation or warranty of any kind, express or implied: (i) as to the
 						operation or availability of the Application, or the information, content, and materials
 						or products included thereon; (ii) that the Application will be uninterrupted or
 						error-free; (iii) as to the accuracy, reliability, or currency of any information or
 						content provided through the Application; or (iv) that the Application, its servers, the
-						content, or e-mails sent from or on behalf of DC BLOX, Inc. are free of viruses,
+						content, or e-mails sent from or on behalf of COMPANY, Inc. are free of viruses,
 						scripts, trojan horses, worms, malware, timebombs or other harmful components.
 					</p>
 					<p>
@@ -175,19 +175,19 @@ export class Eula extends Component {
 					</p>
 					<h3>Limitation of Liability</h3>
 					<p>
-						Notwithstanding any damages that you might incur, the entire liability of DC BLOX, Inc.
+						Notwithstanding any damages that you might incur, the entire liability of COMPANY, Inc.
 						and any of its suppliers under any provision of this Agreement and your exclusive remedy
 						for all of the foregoing shall be limited to the amount actually paid by you for the
 						Application.
 					</p>
 					<p>
-						To the maximum extent permitted by applicable law, in no event shall DC BLOX, Inc. or
+						To the maximum extent permitted by applicable law, in no event shall COMPANY, Inc. or
 						its suppliers be liable for any special, incidental, indirect, or consequential damages
 						whatsoever (including, but not limited to, damages for loss of profits, for loss of data
 						or other information, for business interruption, for personal injury, for loss of
 						privacy arising out of or in any way related to the use of or inability to use the
 						Application, third-party software and/or third-party hardware used with the Application,
-						or otherwise in connection with any provision of this Agreement), even if DC BLOX, Inc.
+						or otherwise in connection with any provision of this Agreement), even if COMPANY, Inc.
 						or any supplier has been advised of the possibility of such damages and even if the
 						remedy fails of its essential purpose.
 					</p>
@@ -243,7 +243,7 @@ export class Eula extends Component {
 					<h3>Amendments to this Agreement</h3>
 
 					<p>
-						DC BLOX, Inc. reserves the right, at its sole discretion, to modify or replace this
+						COMPANY, Inc. reserves the right, at its sole discretion, to modify or replace this
 						Agreement at any time. If a revision is material we will provide at least 30 days'
 						notice prior to any new terms taking effect. What constitutes a material change will be
 						determined at our sole discretion.
@@ -275,14 +275,14 @@ export class Eula extends Component {
 					<h3>Entire Agreement</h3>
 
 					<p>
-						The Agreement constitutes the entire agreement between you and DC BLOX, Inc. regarding
+						The Agreement constitutes the entire agreement between you and COMPANY, Inc. regarding
 						your use of the Application and supersedes all prior and contemporaneous written or oral
-						agreements between you and DC BLOX, Inc..
+						agreements between you and COMPANY, Inc..
 					</p>
 
 					<p>
 						You may be subject to additional terms and conditions that apply when you use or
-						purchase other DC BLOX, Inc.'s services, which DC BLOX, Inc. will provide to you at the
+						purchase other COMPANY, Inc.'s services, which COMPANY, Inc. will provide to you at the
 						time of such use or purchase.
 					</p>
 				</div>

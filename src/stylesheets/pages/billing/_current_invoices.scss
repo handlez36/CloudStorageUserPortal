@@ -40,7 +40,7 @@
 				overflow-y: hidden;
 			}
 
-			.accordian-list .blox-cycle-view {
+			.accordian-list .COMPANY-cycle-view {
 				height: 100%;
 			}
 		}
@@ -56,7 +56,7 @@
 					position: relative;
 				}
 				.next-payment-date {
-					color: $DCBLOX_Red;
+					color: $COMPANY_Red;
 					font-family: $proxima-nova-bold;
 				}
 				.invoice-calendar-amount-due {
@@ -77,7 +77,7 @@
 					text-align: left;
 					line-height: 1.48vh;
 					padding: 0vh 1vw 0 0;
-					color: $DCBLOX_Gray;
+					color: $COMPANY_Gray;
 
 					.address-bold {
 						font-family: $proxima-nova-bold;
@@ -88,11 +88,11 @@
 				}
 			}
 			.invoice-calendar-footnote {
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 				margin-top: -0.2vh;
 
 				.footnote-remember {
-					color: $DCBLOX_Gray;
+					color: $COMPANY_Gray;
 					font-family: $proxima-nova-bold;
 					font-size: 0.8vw;
 				}

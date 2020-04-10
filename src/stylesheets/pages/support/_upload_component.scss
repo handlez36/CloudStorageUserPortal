@@ -40,7 +40,7 @@
 			line-height: 1.27;
 			letter-spacing: normal;
 			text-align: left;
-			color: $DCBLOX_Gray;
+			color: $COMPANY_Gray;
 
 			.middle-container {
 				display: flex;
@@ -86,7 +86,7 @@
 						line-height: 1.27;
 						letter-spacing: normal;
 						text-align: left;
-						color: $DCBLOX_Gray;
+						color: $COMPANY_Gray;
 					}
 
 					.second-item {
@@ -112,7 +112,7 @@
 							line-height: 1.18;
 							letter-spacing: normal;
 							text-align: left;
-							color: $DCBLOX_Gray;
+							color: $COMPANY_Gray;
 						}
 
 						.download-speed {
@@ -182,10 +182,10 @@
 			padding-right: auto;
 			padding-left: auto;
 			background-color: transparent;
-			background-image: url('https://mydcblox.com/cdn/library/support/button-upload-file-off.svg');
+			background-image: url('https://hidden/cdn/library/support/button-upload-file-off.svg');
 			background-size: auto;
 			&:hover {
-				background-image: url('https://mydcblox.com/cdn/library/support/button-upload-file-hover.svg');
+				background-image: url('https://hidden/cdn/library/support/button-upload-file-hover.svg');
 				background-size: auto;
 			}
 		}

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 import PortalModal from './PortalModal';
-import Button from './BloxButton';
+import Button from './COMPANYButton';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const AlertIcon = `${CDN_URL}common/icons-alert-reverse.svg`;
@@ -54,7 +54,7 @@ const defaultBody = toggleOpen => (
 				<Button
 					title='TRY AGAIN'
 					enabled={true}
-					customClass='blox-button'
+					customClass='COMPANY-button'
 					onClick={toggleOpen}
 				/>
 			</div>

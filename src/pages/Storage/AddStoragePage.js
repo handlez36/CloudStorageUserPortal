@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import AddStorageWizard from 'blox_components/Storage/AddStorage/StorageAddWizard';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import AddStorageWizard from 'COMPANY_components/Storage/AddStorage/StorageAddWizard';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import { DIMENSIONS } from 'services/layoutManager';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
@@ -24,7 +24,7 @@ class DeleteStoragePage extends Component {
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 		return (
-			<BloxPage
+			<COMPANYPage
 				name='page storage-add-page'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
@@ -35,7 +35,7 @@ class DeleteStoragePage extends Component {
 						<AddStorageWizard breakpoint={breakpoint} history={this.props.history} />
 					</ComponentWrapper>
 				</div>
-			</BloxPage>
+			</COMPANYPage>
 		);
 	}
 }

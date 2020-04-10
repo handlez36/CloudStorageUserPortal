@@ -9,7 +9,7 @@ import { TicketApi } from '../../services/ticket';
 import StorageAddModal from './View/StorageAddModal';
 import { updatePage } from '../../actions/siteTracking';
 import { SITE_PAGES } from '../../components/Common/CommonConstants';
-import Button from '../../components/Common/BloxButton';
+import Button from '../../components/Common/COMPANYButton';
 
 class StorageAdd extends Component {
 	constructor(props) {
@@ -191,7 +191,7 @@ class StorageAdd extends Component {
 		for (let t = 0; t < type.length; t++) {
 			type[t].checked = false;
 		}
-		const btn = document.querySelector('.blox-button').classList;
+		const btn = document.querySelector('.COMPANY-button').classList;
 		btn.remove('enabled');
 		btn.add('disabled');
 		this.setState({
@@ -272,7 +272,7 @@ class StorageAdd extends Component {
 			filled,
 		} = this.state;
 		if (filled) {
-			const btn = document.querySelector('.blox-button');
+			const btn = document.querySelector('.COMPANY-button');
 			btn.classList.remove('disabled');
 			btn.classList.add('enabled');
 		}
@@ -361,7 +361,7 @@ class StorageAdd extends Component {
 					)}
 					<div className='field'>
 						<Button
-							customClass='blox-button disabled'
+							customClass='COMPANY-button disabled'
 							title='Add Storage'
 							enabled={this.state.enabled !== 'disabled'}
 							onClick={this.state.enabled !== 'disabled' ? this.onSubmit : undefined}

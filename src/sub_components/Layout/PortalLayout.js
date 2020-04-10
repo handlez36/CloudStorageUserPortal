@@ -4,7 +4,7 @@ import capitalize from 'lodash/capitalize';
 import { RESOLUTIONS } from 'services/config';
 
 /** v3 imports */
-import NavSection from './Navigation/BloxNavigationSection';
+import NavSection from './Navigation/COMPANYNavigationSection';
 import ContentSection from './ContentSection';
 import LowResMessage from './LowResolutionPopUp';
 // import HeaderSection from './Header/HeaderSection';
@@ -76,9 +76,9 @@ class PortalLayout extends Component {
 		return { siteModule: 'HOME', sitePage: 'OVERVIEW' };
 	};
 
-	loadPage = (bloxModule, bloxPage = 'OVERVIEW') => {
-		const mod = capitalize(bloxModule);
-		const page = capitalize(bloxPage);
+	loadPage = (COMPANYModule, COMPANYPage = 'OVERVIEW') => {
+		const mod = capitalize(COMPANYModule);
+		const page = capitalize(COMPANYPage);
 		const pageName = PAGES[mod][page];
 		const Component = require(`../../pages/${mod}/${pageName}`).default;
 		this.setState({ PageComponent: Component, currentModule: mod.toLowerCase() });

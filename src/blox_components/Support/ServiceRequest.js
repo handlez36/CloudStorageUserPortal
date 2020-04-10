@@ -1,7 +1,7 @@
 import React from 'react';
 
 import LargeCard from 'sub_components/Common/LargeCard';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import RemoteHandsImg from 'assets/remote_hands_image.svg';
 import GuestAccessImg from 'assets/guest_access_image.svg';
 
@@ -28,7 +28,7 @@ const ServiceRequest = ({ type, breakpoint, goTo }) => {
 	const SubmitButton = (
 		<Button
 			title='REQUEST SERVICE'
-			customClass='blox-button'
+			customClass='COMPANY-button'
 			onClick={() => {
 				goTo(type.toLowerCase());
 			}}

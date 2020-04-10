@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import ScrollView from '../../../components/Common/BloxScrollViewNew';
+import ScrollView from '../../../components/Common/COMPANYScrollViewNew';
 import WhiteListRow from './WhiteListRowNew';
-import Button from '../../../components/Common/BloxButton';
+import Button from '../../../components/Common/COMPANYButton';
 import * as StorageUtils from '../Utils/StorageUtils';
 import { Utils } from '../../../services/utils';
 
@@ -185,7 +185,7 @@ class WhiteListContainer extends Component {
 						title={buttonTitle}
 						enabled={ips && ips.length > 0 && this.allIpsValid()}
 						onClick={() => onSelect('whitelist', { data: ips }, true)}
-						customClass='blox-button whitelist-next-button'
+						customClass='COMPANY-button whitelist-next-button'
 					/>
 				)}
 			</div>

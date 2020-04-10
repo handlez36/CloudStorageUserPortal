@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import Wizard from '../../../components/Forms/BloxWizard';
+import Wizard from '../../../components/Forms/COMPANYWizard';
 import TicketDescription from './GuestAccessDescription';
 import TicketDocuSign from './GuestAccessDocuSign';
 import TicketSchedule from './GuestAccessSchedule';

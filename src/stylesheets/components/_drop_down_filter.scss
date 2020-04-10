@@ -17,7 +17,7 @@
 		);
 		font-size: least-squares-fit($map);
 		width: 7.3vw;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		margin-top: 1.6vw;
 		margin-left: -1.6vw;
 		text-align: left;
@@ -31,7 +31,7 @@
 
 	.default-filter {
 		.description {
-			color: $DCBLOX_Gray;
+			color: $COMPANY_Gray;
 			// margin-left:-9vw;
 			font-size: 14px;
 			$map: (
@@ -46,7 +46,7 @@
 	.default-filter li {
 		list-style: none;
 		padding: 0.3vw;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		height: 3.1vh;
 		width: 9.5vw;
 		@include Drop-Down-Options;
@@ -85,7 +85,7 @@
 	.default-filter:after {
 		content: '>';
 		font: 1.5vh 'Consolas', monospace;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		-webkit-transform: rotate(90deg);
 		-moz-transform: rotate(90deg);
 		-ms-transform: rotate(90deg);

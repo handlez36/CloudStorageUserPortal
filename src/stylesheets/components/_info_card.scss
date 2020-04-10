@@ -76,7 +76,7 @@
 						flex: 4;
 						@include Section-Head;
 						margin-left: 0.5vw;
-						color: $DCBLOX_Gray;
+						color: $COMPANY_Gray;
 						font-size: 1.2vw;
 						.admin {
 							opacity: 0.8;
@@ -107,7 +107,7 @@
 					.card-button {
 						align-self: center;
 						margin-bottom: 1vh;
-						.blox-button {
+						.COMPANY-button {
 							&.gradient {
 								width: calculateVw(125, 1440);
 								font-size: calculateVw(16, 1440);
@@ -119,7 +119,7 @@
 					.field-name {
 						flex: 1;
 						@include Small-Text-Profile;
-						color: $DCBLOX_Gray;
+						color: $COMPANY_Gray;
 						opacity: 0.8;
 						padding-left: 0.5vw;
 						min-width: 3.5vw;
@@ -131,7 +131,7 @@
 						flex: 3;
 						width: 100%;
 						@include Small-Text-Profile;
-						color: $DCBLOX_Gray;
+						color: $COMPANY_Gray;
 						word-break: break-all;
 					}
 

@@ -1,4 +1,4 @@
-.blox-text-input {
+.COMPANY-text-input {
 	position: relative;
 	width: calculateVw(400px);
 
@@ -39,7 +39,7 @@
 	}
 }
 
-.blox-text-input.active {
+.COMPANY-text-input.active {
 	.label-row {
 		.checkmark {
 			display: block;
@@ -71,13 +71,13 @@
 
 	&.error {
 		input {
-			border-bottom: 1px solid $DCBLOX_Red;
+			border-bottom: 1px solid $COMPANY_Red;
 		}
 	}
 	// &.error {
 	// 	input,
 	// 	textarea {
-	// 		border-bottom: 1px solid $DCBLOX_Red;
+	// 		border-bottom: 1px solid $COMPANY_Red;
 	// 	}
 	// }
 	input {
@@ -169,21 +169,21 @@
 				margin-top: -0.6vh;
 				right: 0;
 				text-align: center;
-				background-image: url('https://mydcblox.com/cdn/library/common/images-countdown-timer-background.svg');
+				background-image: url('https://hidden.svg');
 				@include Text-Style-Text-Input-Char-Count;
 			}
 		}
 		.character-count.error {
-			color: $DCBLOX_Red;
+			color: $COMPANY_Red;
 			.counter,
 			.message {
-				color: $DCBLOX_Red;
+				color: $COMPANY_Red;
 			}
 		}
 	}
 }
 
-.blox-text-input.text-area-field {
+.COMPANY-text-input.text-area-field {
 	.label-row .checkmark {
 		top: 0;
 		right: -0.8vw;
@@ -193,7 +193,7 @@
 	}
 	&.error {
 		.validation-row {
-			border-top: 1px solid $DCBLOX_Red;
+			border-top: 1px solid $COMPANY_Red;
 		}
 	}
 }

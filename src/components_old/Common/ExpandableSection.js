@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import { string } from 'prop-types';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import ScrollView from './BloxScrollViewNew';
+import ScrollView from './COMPANYScrollViewNew';
 import { Utils } from '../../services/utils';
 
 class ExpandableSection extends Component {

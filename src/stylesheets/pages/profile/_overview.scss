@@ -17,12 +17,12 @@
 	}
 
 	.active-shares {
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		@include Small-Text-Profile;
 		margin-left: 0.8vw;
 	}
 	.under-construction-text {
-		color: $DCBLOX_Aqua;
+		color: $COMPANY_Aqua;
 		font-family: $font-family-primary-subheads;
 		position: absolute;
 		top: 33%;
@@ -195,20 +195,20 @@
 			@media screen and (min-width: 2000px) {
 				top: 47%;
 			}
-			.blox-button {
+			.COMPANY-button {
 				@include Status-Head;
 				.title {
 					opacity: 0.8;
 					letter-spacing: 0.1vw;
 				}
 			}
-			.blox-button:hover {
+			.COMPANY-button:hover {
 				.title {
 					opacity: 1;
 				}
 			}
 			&.selected {
-				.blox-button:hover {
+				.COMPANY-button:hover {
 					.title {
 						opacity: 1;
 					}
@@ -249,7 +249,7 @@
 		}
 		.text {
 			@include Create-Ticket-Label;
-			color: $DCBLOX_Gray;
+			color: $COMPANY_Gray;
 			position: absolute;
 			top: 65%;
 			left: 25%;
@@ -269,7 +269,7 @@
 	}
 }
 
-.support-overview-page > .blox-grid > .react-grid-layout {
+.support-overview-page > .COMPANY-grid > .react-grid-layout {
 	min-width: 450px;
 	background-color: $Cool_Gray_Light_3 !important;
 	height: 100% !important;

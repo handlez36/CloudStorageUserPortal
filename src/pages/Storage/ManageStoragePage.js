@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ShareDetailView from 'blox_components/Storage/ShareDetailView/ShareDetailView';
-import ShareSelectionScroller from 'blox_components/Storage/ShareSelectionScroller/ShareSelectionScroller';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import ShareDetailView from 'COMPANY_components/Storage/ShareDetailView/ShareDetailView';
+import ShareSelectionScroller from 'COMPANY_components/Storage/ShareSelectionScroller/ShareSelectionScroller';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import { DIMENSIONS } from 'services/layoutManager';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
@@ -49,7 +49,7 @@ class ManageStoragePage extends Component {
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 		return (
-			<BloxPage
+			<COMPANYPage
 				name='page storage-manage-storage-page'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
@@ -69,9 +69,12 @@ class ManageStoragePage extends Component {
 						/>
 					</ComponentWrapper>
 				</div>
-			</BloxPage>
+			</COMPANYPage>
 		);
 	}
 }
 
-export default connect(null, { updateModule, updatePage, addPageToBreadCrumbs })(ManageStoragePage);
+export default connect(
+	null,
+	{ updateModule, updatePage, addPageToBreadCrumbs },
+)(ManageStoragePage);

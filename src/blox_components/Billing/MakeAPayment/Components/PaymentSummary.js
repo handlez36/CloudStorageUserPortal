@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { string } from 'prop-types';
 
 import ExpandableContent from 'components_old/Support/ExpandableContentComponent';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import { CARD_TYPE_ICON } from 'utils/BillingConstants';
 import InvoiceDetails from './InvoiceDetails';
 import TotalAmountDue from './TotalAmount';
@@ -145,7 +145,7 @@ class PaymentSummary extends Component {
 				<Button
 					title='PAY NOW'
 					enabled={!submitted}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={() => submitPayment(data)}
 				/>
 			</div>

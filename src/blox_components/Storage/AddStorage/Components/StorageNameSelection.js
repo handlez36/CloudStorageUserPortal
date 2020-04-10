@@ -1,7 +1,7 @@
 import React from 'react';
 
-import InputField from 'sub_components/Common/BloxTextInput';
-import Button from 'sub_components/Common/BloxButton';
+import InputField from 'sub_components/Common/COMPANYTextInput';
+import Button from 'sub_components/Common/COMPANYButton';
 import { INPUT_TYPES, storageNameMask } from 'utils/CommonConstants';
 
 const StorageNameSelection = ({ data: { name }, onSelect }) => {
@@ -22,7 +22,7 @@ const StorageNameSelection = ({ data: { name }, onSelect }) => {
 				title='NEXT'
 				enabled={name && name.length > 3}
 				onClick={() => onSelect('name', { data: name }, true)}
-				customClass='blox-button bright-emerald-gradient'
+				customClass='COMPANY-button bright-emerald-gradient'
 			/>
 		</div>
 	);

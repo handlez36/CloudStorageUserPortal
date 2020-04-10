@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import BloxGrid from 'components_old/Layout/BloxGrid';
+import COMPANYGrid from 'components_old/Layout/COMPANYGrid';
 import { TicketApi } from 'services/ticket';
 import TicketConversation from './TicketConversation';
 
@@ -82,7 +82,7 @@ class TicketInformation extends Component {
 		!ticket
 			? (display = <div />)
 			: (display = (
-					<BloxGrid
+					<COMPANYGrid
 						namespace='ticket-information'
 						breakpoints={{ lg: 820, md: 700, sm: 440, xs: 200 }}
 						layoutClassname='layout six-column ticket-information-grid'
@@ -103,7 +103,7 @@ class TicketInformation extends Component {
 								/>
 							)}
 						</div>
-					</BloxGrid>
+					</COMPANYGrid>
 			  ));
 
 		return display;

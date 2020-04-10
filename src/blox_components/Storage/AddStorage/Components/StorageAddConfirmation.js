@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import BloxGrid from 'components_old/Layout/BloxGrid';
+import COMPANYGrid from 'components_old/Layout/COMPANYGrid';
 import TopSection from './TopSection';
 import TopRightSection from './TopRightSection';
 
@@ -17,7 +17,7 @@ const StorageAddConfirmation = ({ data }) => {
 
 	return (
 		<Fragment>
-			<BloxGrid
+			<COMPANYGrid
 				namespace='storage-add-confirmation'
 				layoutClassname={`layout storage-add-layout confirmation`}
 			>
@@ -48,7 +48,7 @@ const StorageAddConfirmation = ({ data }) => {
 				>
 					<TopRightSection screen='CONFIRMATION' phase='CONFIRMATION' params={data} />
 				</div>
-			</BloxGrid>
+			</COMPANYGrid>
 			<div className='image-shadow' />
 		</Fragment>
 	);

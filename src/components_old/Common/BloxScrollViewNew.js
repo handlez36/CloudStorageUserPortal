@@ -23,7 +23,7 @@ const applyIEWorkaround = () => {
 	}, 100);
 };
 
-const BloxScrollViewNew = ({ purple, scrollTop, onScrollStop, children, height }) => {
+const COMPANYScrollViewNew = ({ purple, scrollTop, onScrollStop, children, height }) => {
 	const scrollBarClass = purple ? ' purple' : '';
 
 	useEffect(applyIEWorkaround);
@@ -57,15 +57,15 @@ const BloxScrollViewNew = ({ purple, scrollTop, onScrollStop, children, height }
  * purple: Default is False and will result in a grey scroller.
  * True will result in a purple scroller.
  */
-BloxScrollViewNew.propTypes = {
+COMPANYScrollViewNew.propTypes = {
 	purple: boolean,
 	scrollTop: number,
 	onScrollStop: func,
 };
 
-BloxScrollViewNew.defaultProps = {
+COMPANYScrollViewNew.defaultProps = {
 	purple: false,
 	scrollTop: undefined,
 };
 
-export default BloxScrollViewNew;
+export default COMPANYScrollViewNew;

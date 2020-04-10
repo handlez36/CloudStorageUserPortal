@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { string } from 'prop-types';
 
-import TextInput from '../../../../components/Forms/BloxTextInput';
+import TextInput from '../../../../components/Forms/COMPANYTextInput';
 import { INPUT_TYPES } from '../../../../components/Common/CommonConstants';
 
 class RosterEmailScreen extends Component {

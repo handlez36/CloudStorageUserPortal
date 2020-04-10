@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { DIMENSIONS } from 'services/layoutManager';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
-import MyServices from 'blox_components/Profile/MyServices/MyServices';
-import MyProfile from 'blox_components/Profile/MyProfile';
-import UserManagement from 'blox_components/Profile/PortalUserOverview/PortalUserOverview';
-import RosterManagement from 'blox_components/Profile/RosterUserOverview/RosterUserOverview';
+import MyServices from 'COMPANY_components/Profile/MyServices/MyServices';
+import MyProfile from 'COMPANY_components/Profile/MyProfile';
+import UserManagement from 'COMPANY_components/Profile/PortalUserOverview/PortalUserOverview';
+import RosterManagement from 'COMPANY_components/Profile/RosterUserOverview/RosterUserOverview';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
-import BloxButton from 'sub_components/Common/BloxButton';
+import COMPANYButton from 'sub_components/Common/COMPANYButton';
 import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
 import { MENU as PROFILE_MENU } from 'utils/ProfileConstants';
 import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import { consolidateStreamedStyles } from 'styled-components';
-import CompanyProfile from 'blox_components/Profile/CompanyProfile';
+import CompanyProfile from 'COMPANY_components/Profile/CompanyProfile';
 import { PROFILE_OVERVIEW_CARDS as CARDS } from 'utils/ProfileConstants';
 import { Utils } from 'services/utils';
 
@@ -111,9 +111,9 @@ class OverviewPage extends Component {
 			<div className='component-wrapper--no-border heading60'>
 				<div className='component-wrapper_title'>PORTAL User Management</div>
 				<div className='component-wrapper_button'>
-					<BloxButton
+					<COMPANYButton
 						title='MANAGE PORTAL'
-						customClass={'blox-button blue-gradient'}
+						customClass={'COMPANY-button blue-gradient'}
 						onClick={this.goToPortalManagement}
 						enabled={true}
 					/>
@@ -124,9 +124,9 @@ class OverviewPage extends Component {
 			<div className='component-wrapper--no-border heading60'>
 				<div className='component-wrapper_title'>ROSTER User Management</div>
 				<div className='component-wrapper_button'>
-					<BloxButton
+					<COMPANYButton
 						title='MANAGE ROSTER'
-						customClass={'blox-button blue-gradient'}
+						customClass={'COMPANY-button blue-gradient'}
 						onClick={() => {}}
 						enabled={true}
 					/>
@@ -137,7 +137,7 @@ class OverviewPage extends Component {
 
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 		return (
-			<BloxPage
+			<COMPANYPage
 				name='page profile-overview-page'
 				layout={this.getLayoutConfig(breakpoint)}
 				breakpoint={breakpoint}
@@ -176,9 +176,12 @@ class OverviewPage extends Component {
 						<RosterManagement />
 					</ComponentWrapper> */}
 				</div>
-			</BloxPage>
+			</COMPANYPage>
 		);
 	}
 }
 
-export default connect(null, { updateModule, updatePage, addPageToBreadCrumbs })(OverviewPage);
+export default connect(
+	null,
+	{ updateModule, updatePage, addPageToBreadCrumbs },
+)(OverviewPage);

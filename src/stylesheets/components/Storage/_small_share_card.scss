@@ -18,7 +18,7 @@
 		transition: opacity 0.5s ease;
 		width: calculateVw(110px, $standard-screen-width-mid);
 		height: calculateVh(108px, $standard-screen-height-mid);
-		background-color: $DCBLOX_Black;
+		background-color: $COMPANY_Black;
 		opacity: 0;
 		z-index: 350;
 	}
@@ -87,11 +87,11 @@
 		justify-content: space-between;
 		&.pending {
 			.share-details {
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 				opacity: 0.3;
 				background-color: $White;
 				.new {
-					color: $DCBLOX_Gray;
+					color: $COMPANY_Gray;
 				}
 			}
 			.share-icon {

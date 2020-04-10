@@ -46,7 +46,7 @@
 		}
 	}
 	.escalated {
-		background-color: $DCBLOX_Red;
+		background-color: $COMPANY_Red;
 		position: relative;
 		height: 20vh;
 		img {
@@ -108,7 +108,7 @@
 		position: relative;
 		margin-left: 0.1vh;
 		@include Text-Style-Billing-Tickets-Number;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 	}
 
 	.new-ticket-status {
@@ -252,7 +252,7 @@
 				font-family: $proxima-nova-regular;
 				margin-left: 1vw;
 				line-height: 13px;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 			}
 		}
 
@@ -274,7 +274,7 @@
 				font-family: $proxima-nova-regular;
 				margin-left: 0.7vw;
 				line-height: 13px;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 			}
 			.ticket-open {
 				$map: (
@@ -292,7 +292,7 @@
 		.row-3 {
 			margin-top: -1vh;
 			.ticket-time {
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 				margin-left: 3.9vw;
 				$map: (
 					576: 3,

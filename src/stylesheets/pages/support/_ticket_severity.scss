@@ -1,104 +1,104 @@
 /* Ticket Severity */
 .ticket-severity {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+	display: flex;
+	flex-direction: column;
+	position: relative;
 
-  .message-text {
-    height: auto;
+	.message-text {
+		height: auto;
 
-    .user-name {
-      @include Text-Style-Medium;
-    }
-    .start {
-      @include Text-Style-36;
-    }
-    .content {
-      @include Text-Style-14;
-    }
-  }
+		.user-name {
+			@include Text-Style-Medium;
+		}
+		.start {
+			@include Text-Style-36;
+		}
+		.content {
+			@include Text-Style-14;
+		}
+	}
 
-  .ticket-info {
-    margin-top: 3.13vh;
-    padding-left: 3.24vw;
-  }
+	.ticket-info {
+		margin-top: 3.13vh;
+		padding-left: 3.24vw;
+	}
 
-  .icon-input-component {
-    padding-top: 0;
-    height: 13.5vh;
-    width: 25.94vw;
-    margin-top: 1.25vh;
-    align-self: center;
+	.icon-input-component {
+		padding-top: 0;
+		height: 13.5vh;
+		width: 25.94vw;
+		margin-top: 1.25vh;
+		align-self: center;
 
-    .icon-section {
-      width: 7.46vw;
-      height: 13.5vh;
-      position: relative;
-      box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.3);
+		.icon-section {
+			width: 7.46vw;
+			height: 13.5vh;
+			position: relative;
+			box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.3);
 
-        img {
-        position:relative;
-        width: 7.5vw;
-        height: 13.5vh;
-    }
-    }
+			img {
+				position: relative;
+				width: 7.5vw;
+				height: 13.5vh;
+			}
+		}
 
-    .details-section {
-      height: 13.5vh;
-    }
+		.details-section {
+			height: 13.5vh;
+		}
 
-    .severity-group {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-      padding-top: 4.83vh;
+		.severity-group {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			padding-top: 4.83vh;
 
-      div:nth-child(2) {
-        margin-left: 2vw;
-      }
+			div:nth-child(2) {
+				margin-left: 2vw;
+			}
 
-      div:nth-child(3) {
-        margin-left: 2vw;
-      }
+			div:nth-child(3) {
+				margin-left: 2vw;
+			}
 
-      .low-severity-wrapper,
-      .medium-severity-wrapper,
-      .high-severity-wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 2vw;
-        height: 2vw;
-        cursor: pointer;
-        border: none;
-        background-color: $DCBLOX_White;
+			.low-severity-wrapper,
+			.medium-severity-wrapper,
+			.high-severity-wrapper {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				width: 2vw;
+				height: 2vw;
+				cursor: pointer;
+				border: none;
+				background-color: $COMPANY_White;
 
-        div {
-          flex: 0 1 auto;
-          width: 0.59vw;
-          height: 0.59vw;
-          border-radius: 20px;
-          border: 1px solid $DCBLOX_Red;
-        }
+				div {
+					flex: 0 1 auto;
+					width: 0.59vw;
+					height: 0.59vw;
+					border-radius: 20px;
+					border: 1px solid $COMPANY_Red;
+				}
 
-        .low-severity {
-          background-color: $low-severity;
-          border: 1px solid $low-severity;
-        }
+				.low-severity {
+					background-color: $low-severity;
+					border: 1px solid $low-severity;
+				}
 
-        .medium-severity {
-          background-color: $medium-severity;
-          border: 1px solid $medium-severity;
-        }
+				.medium-severity {
+					background-color: $medium-severity;
+					border: 1px solid $medium-severity;
+				}
 
-        .high-severity {
-          background-color: $high-severity;
-          border: 1px solid $high-severity;
-        }
-      }
-    }
-  }
+				.high-severity {
+					background-color: $high-severity;
+					border: 1px solid $high-severity;
+				}
+			}
+		}
+	}
 }

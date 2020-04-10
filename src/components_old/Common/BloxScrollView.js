@@ -13,7 +13,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 
 const DEFAULT_MAX_HEIGHT = 140;
 
-class BloxScrollView extends Component {
+class COMPANYScrollView extends Component {
 	constructor(props) {
 		super(props);
 		this.timers = [];
@@ -214,7 +214,7 @@ class BloxScrollView extends Component {
 	}
 }
 
-BloxScrollView.propTypes = {
+COMPANYScrollView.propTypes = {
 	name: string,
 	wrapper: string,
 	content: string,
@@ -224,11 +224,11 @@ BloxScrollView.propTypes = {
 	onResize: func,
 };
 
-BloxScrollView.defaultProps = {
+COMPANYScrollView.defaultProps = {
 	name: `scroll-view-${Math.round(Math.random(1) * 100)}`,
 	setOverflow: false,
 	maxHeight: DEFAULT_MAX_HEIGHT,
 	expanded: false,
 };
 
-export default BloxScrollView;
+export default COMPANYScrollView;

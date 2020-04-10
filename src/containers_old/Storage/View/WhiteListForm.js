@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import AddNewButton from '../../../components/Common/BloxButton';
+import AddNewButton from '../../../components/Common/COMPANYButton';
 
 class WhiteListForm extends Component {
 	constructor(props) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Button, Modal, ModalBody, ModalFooter } from 'mdbreact';
-import SubmitButton from '../../components/Common/BloxButton';
+import SubmitButton from '../../components/Common/COMPANYButton';
 
 import { TicketApi } from '../../services/ticket';
 import { TYPES, SEVERITIES } from '../Support/TicketConstants';

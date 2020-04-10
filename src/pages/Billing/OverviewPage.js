@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { DIMENSIONS } from 'services/layoutManager';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import TicketCount from 'sub_components/Common/TicketCountRow';
-import RecentPayment from 'blox_components/Billing/RecentPayment';
-import RecentInvoices from 'blox_components/Billing/RecentInvoices';
-import TotalAmountDue from 'blox_components/Billing/TotalAmountDue/TotalAmountDue';
+import RecentPayment from 'COMPANY_components/Billing/RecentPayment';
+import RecentInvoices from 'COMPANY_components/Billing/RecentInvoices';
+import TotalAmountDue from 'COMPANY_components/Billing/TotalAmountDue/TotalAmountDue';
 import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
 import { SITE_PAGES, SITE_MODULES } from 'utils/CommonConstants';
 import { MENU as BILLING_MENU } from 'utils/BillingConstants';
@@ -112,7 +112,7 @@ class OverviewPage extends Component {
 		} = this.state;
 
 		return (
-			<BloxPage
+			<COMPANYPage
 				name='page billing-overview-page'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
@@ -160,7 +160,7 @@ class OverviewPage extends Component {
 						</ComponentWrapper>
 					)}
 				</div>
-			</BloxPage>
+			</COMPANYPage>
 		);
 	}
 }
@@ -173,6 +173,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(
-	OverviewPage,
-);
+export default connect(
+	mapStateToProps,
+	{ updateModule, updatePage, addPageToBreadCrumbs },
+)(OverviewPage);

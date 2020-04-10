@@ -7,7 +7,7 @@ import { BillingUtils } from '../../../services/billing';
 import { SITE_PAGES } from '../../../components/Common/CommonConstants';
 import { updatePage } from '../../../actions/siteTracking';
 import InvoiceAmountDueOverview from '../../../components/Billing/InvoiceAmountDueOverview';
-import BloxButton from '../../../components/Common/BloxButton';
+import COMPANYButton from '../../../components/Common/COMPANYButton';
 
 class CurrentInvoices extends Component {
 	constructor(props) {
@@ -68,10 +68,10 @@ class CurrentInvoices extends Component {
 						)}
 						{eligibleForOnlinePayment && screenSize < 2559 && (
 							<div className='pay-now-button'>
-								<BloxButton
+								<COMPANYButton
 									title='PAY NOW'
 									enabled={true}
-									customClass='blox-button gradient'
+									customClass='COMPANY-button gradient'
 									onClick={this.goToPayments}
 								/>
 							</div>

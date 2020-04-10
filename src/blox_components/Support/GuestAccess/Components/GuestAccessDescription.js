@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import Map from 'components_old/Common/Map';
-import TextInput from 'sub_components/Common/BloxTextInput';
-import Button from 'sub_components/Common/BloxButton';
+import TextInput from 'sub_components/Common/COMPANYTextInput';
+import Button from 'sub_components/Common/COMPANYButton';
 import { INPUT_TYPES } from 'utils/CommonConstants';
 import { WIZARD_TITLE_PREFIXES } from 'utils/TicketConstants';
 import { getTitlePlaceholder, getGuestAccessTickets } from 'utils/SupportUtils';
@@ -238,7 +238,7 @@ class GuestAccessDescription extends Component {
 				<Button
 					title='NEXT'
 					enabled={completedFields.length > 4}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

@@ -29,7 +29,7 @@
 			padding-bottom: 1.04vh;
 			padding-left: 1vw;
 			padding-right: 0.5vw;
-			background-color: $DCBLOX_White;
+			background-color: $COMPANY_White;
 			border: 15px solid #cfcecf;
 			margin: 0 2.5vw;
 			height: auto;
@@ -67,7 +67,7 @@
 				margin: 0 auto;
 			}
 			input[type='button'].disabled {
-				background-color: rgba($Bright_Emerald, 0.20);
+				background-color: rgba($Bright_Emerald, 0.2);
 				color: $White;
 				font-family: $font-family-primary-heads;
 				border-radius: 0.5vh;
@@ -97,7 +97,7 @@
 				width: 18vw;
 				height: 6vh;
 				border-radius: 2vh;
-				background: $DCBLOX_White;
+				background: $COMPANY_White;
 				padding: 0.6vw;
 				font-size: 0.7vw;
 				color: $Blue;
@@ -113,7 +113,7 @@
 		input,
 		select {
 			width: 100%;
-			border: 1px solid $DCBLOX_White;
+			border: 1px solid $COMPANY_White;
 			height: 4.15vh;
 			padding-left: 0.35vw;
 			// @include Text-Style-Storage-Form-Field-Value;
@@ -168,7 +168,7 @@
 	}
 }
 strong {
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 	margin-right: 0.2vw;
 }
 
@@ -179,7 +179,7 @@ strong {
 .blue-border {
 	border: $Blue 0.5px;
 	border-style: solid;
-	background-color: $DCBLOX_Red;
+	background-color: $COMPANY_Red;
 }
 
 .modal-message {

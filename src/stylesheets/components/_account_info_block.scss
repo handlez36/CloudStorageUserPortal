@@ -6,7 +6,7 @@
 	line-height: 1.23;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 	padding-top: 1.5vh;
 	padding-bottom: 0vh;
 }
@@ -20,7 +20,7 @@
 	line-height: 1.21;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 	padding-bottom: 0.5vh;
 }
 
@@ -33,7 +33,7 @@
 	line-height: 1.25;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 	padding-top: 1vh;
 	padding-bottom: 1vh;
 }
@@ -53,7 +53,7 @@
 		@extend .next-payment-due-style;
 	}
 	strong {
-		color: $DCBLOX_Black;
+		color: $COMPANY_Black;
 	}
 	.additional-text {
 		@extend .additional-text-style;
@@ -74,7 +74,7 @@
 		@extend .next-payment-due-style;
 	}
 	strong {
-		color: $DCBLOX_Black;
+		color: $COMPANY_Black;
 	}
 	.additional-text {
 		@extend .additional-text-style;

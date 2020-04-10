@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Wizard from '../../../components/Forms/BloxWizard';
+import Wizard from '../../../components/Forms/COMPANYWizard';
 import SelectInvoiceScreen from '../../../components/Billing/SelectInvoiceScreen';
 import PaymentMethodScreen from './PaymentMethod';
 import PaymentSummary from './PaymentSummary';
 import Modal from '../../../components/Common/ErrorModal';
-import Button from '../../../components/Common/BloxButton';
+import Button from '../../../components/Common/COMPANYButton';
 import { Utils } from '../../../services/utils';
 import { BillingApi, BillingUtils } from '../../../services/billing';
 import { INVOICE_SUMMARY_HEADERS, MENU } from '../BillingConstants';
@@ -106,7 +106,7 @@ class OnlinePayment extends Component {
 				<Button
 					title='TRY AGAIN'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={this.toggleErrorModal}
 				/>
 			</div>
@@ -123,7 +123,7 @@ class OnlinePayment extends Component {
 				<Button
 					title='OKAY'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={this.toggleErrorModal}
 				/>
 			</div>
@@ -143,7 +143,7 @@ class OnlinePayment extends Component {
 				<Button
 					title='OKAY'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={() => {
 						refreshInvoices();
 						this.toggleErrorModal();

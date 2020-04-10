@@ -1,6 +1,6 @@
 import React from 'react';
 import Field from './Field';
-import Button from '../../../components/Common/BloxButton';
+import Button from '../../../components/Common/COMPANYButton';
 
 const manageWhitelistTooltip =
 	'Click on this button to manage the IP addresses/subnets that have been whitelisted for this share.';
@@ -61,7 +61,7 @@ const DataTable = ({
 			<div key='manage-whitelist-section' className='manage-whitelist-section'>
 				<div className='manage-whitelist'>
 					<Button
-						customClass='blox-button'
+						customClass='COMPANY-button'
 						title='MANAGE WHITELIST'
 						enabled={true}
 						onClick={toggleWhiteListOpen}
@@ -87,7 +87,7 @@ const DataTable = ({
 			<div className='buttonSpace' />
 			<div key='manage-password-section' className='manage-password-section'>
 				<Button
-					customClass='blox-button'
+					customClass='COMPANY-button'
 					title={share.storage_type === 'file' ? 'GET A NEW PASSWORD' : 'GET A NEW SECRET KEY'}
 					enabled={true}
 					onClick={changeStoragePassword}

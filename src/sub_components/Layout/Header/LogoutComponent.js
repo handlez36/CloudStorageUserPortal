@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { AvatarApi } from 'services/avatar';
 import { UserProfileApi } from 'services/userProfile';
 import { UserApi } from 'services/user';
-import BloxButton from 'sub_components/Common/BloxButton';
+import COMPANYButton from 'sub_components/Common/COMPANYButton';
 import { logoutUser } from 'actions/auth';
 
 class LogoutComponent extends Component {
@@ -39,7 +39,7 @@ class LogoutComponent extends Component {
 
 	logoutUser = () => {
 		const { logoutUser } = this.props;
-		const logoutButton = document.querySelector('.blox-button.logout');
+		const logoutButton = document.querySelector('.COMPANY-button.logout');
 
 		if (logoutButton) {
 			logoutButton.classList.add(this.props.module);
@@ -67,9 +67,9 @@ class LogoutComponent extends Component {
 					</div>
 					<div className='name header11'>{this.getUserName(auth_status)}</div>
 					<div className='logout-button '>
-						<BloxButton
+						<COMPANYButton
 							title='LOGOUT'
-							customClass='blox-button logout'
+							customClass='COMPANY-button logout'
 							enabled={true}
 							onClick={this.logoutUser}
 						/>

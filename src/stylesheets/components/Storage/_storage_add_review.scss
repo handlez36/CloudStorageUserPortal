@@ -165,8 +165,8 @@
 						-webkit-transition: none;
 					}
 					input[type='radio']:checked ~ .check::before {
-						background: $DCBLOX_Lime;
-						box-shadow: 0px 0px 15px $DCBLOX_Lime !important;
+						background: $COMPANY_Lime;
+						box-shadow: 0px 0px 15px $COMPANY_Lime !important;
 						height: calculateVw(12, 1440);
 						width: calculateVw(12, 1440);
 						position: absolute;

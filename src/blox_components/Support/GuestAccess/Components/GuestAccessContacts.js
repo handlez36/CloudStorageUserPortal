@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import TextInput from 'sub_components/Common/BloxTextInput';
+import TextInput from 'sub_components/Common/COMPANYTextInput';
 import RadioButton from 'components_old/Common/Radio';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import { INPUT_TYPES, PHONEMASK } from 'utils/CommonConstants';
 
 const FIELDS = {
@@ -230,7 +230,7 @@ class GuestAccessContacts extends Component {
 				<Button
 					title='NEXT'
 					enabled={completedFields.length === Object.keys(FIELDS).length - 1}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

@@ -4,7 +4,7 @@ import MaskedInput from 'react-text-mask';
 import { PHONEMASK } from 'utils/CommonConstants';
 import { Utils } from 'services/utils';
 import { INPUT_TYPES } from 'utils/CommonConstants';
-import ScrollView from './BloxScrollViewNew';
+import ScrollView from './COMPANYScrollViewNew';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Checkmark = `${CDN_URL}common/icons-forms-check.svg`;
@@ -16,7 +16,7 @@ const DEFAULT_DEFAULT_CHARACTER_COUNT_MESSAGE = {
 const MAX_TEXT_AREA_HEIGHT = Utils.scalePxUsingVh(140);
 let timeout = null;
 
-class BloxTextInput extends Component {
+class COMPANYTextInput extends Component {
 	state = {
 		active: this.props.active || false,
 		dirty: false,
@@ -311,7 +311,7 @@ class BloxTextInput extends Component {
 		const isTextArea = type === 'TEXTAREA';
 		return (
 			<div
-				className={`blox-text-input ${isTextArea ? 'text-area-field' : ''} ${
+				className={`COMPANY-text-input ${isTextArea ? 'text-area-field' : ''} ${
 					active ? 'active' : ''
 				} ${errors ? 'error' : ''}`}
 			>
@@ -343,7 +343,7 @@ class BloxTextInput extends Component {
 	}
 }
 
-BloxTextInput.propTypes = {
+COMPANYTextInput.propTypes = {
 	type: string,
 	label: string.isRequired,
 	name: string.isRequired, // For textarea, please ensure name is unique for each expandable section component
@@ -360,11 +360,11 @@ BloxTextInput.propTypes = {
 	}),
 };
 
-BloxTextInput.defaultProps = {
+COMPANYTextInput.defaultProps = {
 	type: INPUT_TYPES.INPUT,
 	characterMinMessages: DEFAULT_DEFAULT_CHARACTER_COUNT_MESSAGE,
 	validations: [],
 	markComplete: () => {},
 };
 
-export default BloxTextInput;
+export default COMPANYTextInput;

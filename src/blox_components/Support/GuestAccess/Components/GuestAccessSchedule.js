@@ -2,9 +2,9 @@ import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import DateTime from 'react-datetime';
 
-import TextInput from 'sub_components/Common/BloxTextInput';
-import BloxDurationSlider from 'components_old/Forms/BloxDurationSlider';
-import Button from 'sub_components/Common/BloxButton';
+import TextInput from 'sub_components/Common/COMPANYTextInput';
+import COMPANYDurationSlider from 'components_old/Forms/COMPANYDurationSlider';
+import Button from 'sub_components/Common/COMPANYButton';
 import { INPUT_TYPES } from 'utils/CommonConstants';
 import DateTimeClock from 'components_old/Common/DateTimePicker';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
@@ -186,7 +186,7 @@ class GuestAccessSchedule extends Component {
 					)}
 					<div className='date-field-label'>How long will they need?</div>
 					<div className='slider'>
-						<BloxDurationSlider
+						<COMPANYDurationSlider
 							name='testslider'
 							additionalClass='sample-duration'
 							min='30m'
@@ -201,7 +201,7 @@ class GuestAccessSchedule extends Component {
 				<Button
 					title='NEXT'
 					enabled={completedFields.length >= 2}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

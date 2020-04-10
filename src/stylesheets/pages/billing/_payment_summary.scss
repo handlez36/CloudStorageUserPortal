@@ -100,7 +100,7 @@
 		margin-top: calculateVh(10px, $standard-screen-height-mid);
 		background-color: $White;
 	}
-	.blox-button.circle-large {
+	.COMPANY-button.circle-large {
 		display: none;
 	}
 }
@@ -156,7 +156,7 @@
 			}
 		}
 	}
-	.blox-button.circle-large {
+	.COMPANY-button.circle-large {
 		display: block;
 		margin-top: calculateVh(11px, $standard-screen-height-mid);
 		width: calculateVw(51px, $standard-screen-width-mid);
@@ -347,7 +347,7 @@
 				font-size: 26px;
 				width: 120%;
 				margin-left: 15px;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 			}
 			.value {
 				font-size: 26px;

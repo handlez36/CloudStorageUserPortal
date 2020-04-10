@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Client from 'braintree-web/client';
 import HostedFields from 'braintree-web/hosted-fields';
 
-import Input from '../../../components/Forms/BloxTextInput';
-import Button from '../../../components/Common/BloxButton';
+import Input from '../../../components/Forms/COMPANYTextInput';
+import Button from '../../../components/Common/COMPANYButton';
 import ErrorModal from '../../../components/Common/ErrorModal';
 import { INPUT_TYPES } from '../../../components/Common/CommonConstants';
 import { AmexCardIcon, VisaCardIcon, MastercardCardIcon } from './CardTypeIcons';
@@ -222,7 +222,7 @@ class PaymentMethod extends Component {
 				<Button
 					title='OK'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={this.props.resetWizard}
 				/>
 			</div>
@@ -364,7 +364,7 @@ class PaymentMethod extends Component {
 					id='submit-button'
 					title='NEXT'
 					enabled={completedFields.length > 4 && !submitted}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>

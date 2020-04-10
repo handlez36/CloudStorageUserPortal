@@ -7,7 +7,7 @@
 	// flex-direction: column;
 	// align-items: center;
 	background-color: transparent;
-	//box-shadow: 3px 3px 8px 0px rgba($DCBLOX_Black, 0.15);
+	//box-shadow: 3px 3px 8px 0px rgba($COMPANY_Black, 0.15);
 
 	.image-box {
 		width: 100%;
@@ -41,7 +41,7 @@
 
 	.input {
 		margin-left: 2vw;
-		.blox-text-input.active {
+		.COMPANY-text-input.active {
 			input {
 				border-bottom: 1px solid $Emerald;
 			}
@@ -49,7 +49,7 @@
 	}
 	.large-message {
 		@include Roster-Modal;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		width: 40vw;
 		text-align: center;
 		margin-left: -7vw;
@@ -84,7 +84,7 @@
 			z-index: 4000;
 		}
 
-		.blox-button {
+		.COMPANY-button {
 			width: calculateVw(140, 1440);
 			font-size: 0.8em;
 			&.icon {
@@ -128,7 +128,7 @@
 	.header-button {
 		margin-left: 0.4vw;
 
-		.blox-button {
+		.COMPANY-button {
 			font-size: 1em;
 			width: calculateVw(90, 1440);
 			height: calculateVh(80, 1440);

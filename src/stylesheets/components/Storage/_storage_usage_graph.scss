@@ -54,7 +54,7 @@
 				opacity: 0.3;
 			}
 			.name {
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 			}
 		}
 
@@ -92,7 +92,7 @@
 				fill: #fff;
 			}
 			.location-name {
-				fill: $DCBLOX_White;
+				fill: $COMPANY_White;
 				$map: (
 					576: 10,
 					1440: 14,
@@ -233,7 +233,7 @@
 					font-size: least-squares-fit($size_map) !important;
 					padding: -0.2vw;
 					line-height: 3;
-					fill: $DCBLOX_Gray !important;
+					fill: $COMPANY_Gray !important;
 					opacity: 0.8 !important;
 					@include ScaleFontSizeBelowLowestResolution(map-get($size_map, 576));
 				}

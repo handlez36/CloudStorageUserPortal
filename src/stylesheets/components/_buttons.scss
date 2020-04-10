@@ -33,16 +33,16 @@
 	height: 2.5vh;
 	margin-left: 0;
 
-	background-color: $DCBLOX_Purple;
-	border: 1px solid $DCBLOX_Purple;
+	background-color: $COMPANY_Purple;
+	border: 1px solid $COMPANY_Purple;
 	cursor: pointer;
 	@include Text-Style-57;
 	color: $White;
 }
 
 .submit-button:hover {
-	background-color: $DCBLOX_Purple;
-	border: 1px solid $DCBLOX_Purple;
+	background-color: $COMPANY_Purple;
+	border: 1px solid $COMPANY_Purple;
 	color: $White;
 }
 

@@ -8,7 +8,7 @@
 	.link-container-overlay {
 		flex: 9;
 		@include Body-Copy-2560;
-		color: $DCBLOX_Gray;
+		color: $COMPANY_Gray;
 		background-color: $Cool_Gray_Light_3;
 		height: calculateVh(40, 1440);
 		min-height: 30px;

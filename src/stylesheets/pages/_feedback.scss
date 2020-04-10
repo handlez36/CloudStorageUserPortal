@@ -29,7 +29,7 @@
 			);
 			font-size: least-squares-fit($map);
 		}
-		.blox-text-input {
+		.COMPANY-text-input {
 			min-height: calculateVh(120px, $standard-screen-height-mid);
 		}
 		.feedback-submit-button {
@@ -58,7 +58,7 @@
 		// .feedback {
 		// 	margin-top: 3vh;
 		// 	max-height: calculateVh(120px, $standard-screen-height-mid);
-		.blox-text-input {
+		.COMPANY-text-input {
 			&.active {
 				.label-row {
 					label {

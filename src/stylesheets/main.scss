@@ -60,18 +60,18 @@ This file should not contain anything but @import and comments.
 @import 'components/expandable_content_heading';
 @import 'components/expandable_content_body';
 @import 'components/expandable_content_field';
-@import 'components/blox_text_input';
-@import 'components/blox_scroll_view';
+@import 'components/COMPANY_text_input';
+@import 'components/COMPANY_scroll_view';
 @import 'components/radio';
 @import 'components/tooltip';
 @import 'components/new-ticket';
-@import 'components/blox_duration_slider';
+@import 'components/COMPANY_duration_slider';
 @import 'components/page_header';
 @import 'components/page_status';
 @import 'components/error_modal';
 @import 'components/ticket_docu_sign';
 @import 'components/map';
-// @import 'components/blox_cycle_view';
+// @import 'components/COMPANY_cycle_view';
 @import 'components/ticket_number';
 @import 'components/mfa_options';
 // @import 'components/menu_header';
@@ -84,7 +84,7 @@ This file should not contain anything but @import and comments.
 // @import 'components/portal_user_list';
 @import 'components/roster_add_modal';
 @import 'components/invoice_payment_item';
-@import 'components/blox_wizard';
+@import 'components/COMPANY_wizard';
 @import 'components/total_amount';
 @import 'components/animated_icon';
 @import 'components/forgot_password';
@@ -133,7 +133,7 @@ This file should not contain anything but @import and comments.
 * Layout components
 */
 @import 'components/Layout/cross_grid';
-@import 'components/Layout/blox_grid';
+@import 'components/Layout/COMPANY_grid';
 @import 'components/Layout/component_wrapper';
 
 /**
@@ -150,7 +150,7 @@ This file should not contain anything but @import and comments.
 /**
 * Navigationv3 components
 */
-@import 'components/Navigationv3/blox_navigation_section';
+@import 'components/Navigationv3/COMPANY_navigation_section';
 @import 'components/Navigationv3/primary_nav';
 @import 'components/Navigationv3/secondary_nav';
 
@@ -209,13 +209,13 @@ This file should not contain anything but @import and comments.
 */
 @import 'components/Commonv3/large_card';
 @import 'components/Commonv3/ticket_count_row';
-@import 'components/Commonv3/blox_card';
-@import 'components/Commonv3/blox_button';
+@import 'components/Commonv3/COMPANY_card';
+@import 'components/Commonv3/COMPANY_button';
 @import 'components/Commonv3/portal_message';
 @import 'components/Commonv3/icon_input';
 @import 'components/Commonv3/credential_input';
 @import 'components/Commonv3/toggle_switch';
-@import 'components/Commonv3/blox_cycle_view';
+@import 'components/Commonv3/COMPANY_cycle_view';
 
 /**
 * Common components

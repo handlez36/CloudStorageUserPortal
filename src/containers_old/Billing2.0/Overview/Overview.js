@@ -15,7 +15,7 @@ import { Utils } from '../../../services/utils';
 import InvoiceAmountDueOverview from '../../../components/Billing/InvoiceAmountDueOverview';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const BillingTicketBackground = `${CDN_URL}billing/open-donut.svg`;
-/** TODO: Apply BloxGrid */
+/** TODO: Apply COMPANYGrid */
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 class Overview extends Component {

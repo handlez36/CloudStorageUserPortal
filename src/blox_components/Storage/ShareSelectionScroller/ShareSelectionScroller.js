@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import AddStorage from 'blox_components/Storage/AddStorage/Components/AddStorage';
+import AddStorage from 'COMPANY_components/Storage/AddStorage/Components/AddStorage';
 import Carousel from 'sub_components/Storage/Carousel';
 import { StorageApi } from 'services/storage';
 

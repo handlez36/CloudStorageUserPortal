@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { DIMENSIONS } from 'services/layoutManager';
-//import AvatarSelection from 'blox_components/Profile/AvatarSelection/AvatarSelection';
-import CurrentInvoices from 'blox_components/Billing/CurrentInvoices/CurrentInvoices';
-import BloxPage from 'sub_components/Layout/BloxPage';
+//import AvatarSelection from 'COMPANY_components/Profile/AvatarSelection/AvatarSelection';
+import CurrentInvoices from 'COMPANY_components/Billing/CurrentInvoices/CurrentInvoices';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
@@ -23,7 +23,7 @@ const CurrentInvoicesPage = ({ breakpoint, location }) => {
 	const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 	return (
-		<BloxPage
+		<COMPANYPage
 			name='page profile-avatar-page'
 			layout={LAYOUT_CONFIG[breakpoint]}
 			breakpoint={breakpoint}
@@ -34,7 +34,7 @@ const CurrentInvoicesPage = ({ breakpoint, location }) => {
 					<CurrentInvoices />
 				</ComponentWrapper>
 			</div>
-		</BloxPage>
+		</COMPANYPage>
 	);
 };
 

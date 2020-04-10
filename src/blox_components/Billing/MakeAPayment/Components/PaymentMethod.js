@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Client from 'braintree-web/client';
 import HostedFields from 'braintree-web/hosted-fields';
 
-import Input from 'sub_components/Common/BloxTextInput';
-import Button from 'sub_components/Common/BloxButton';
+import Input from 'sub_components/Common/COMPANYTextInput';
+import Button from 'sub_components/Common/COMPANYButton';
 import ErrorModal from 'sub_components/Common/ErrorModal';
 import { INPUT_TYPES } from 'utils/CommonConstants';
 import { UserProfileApi } from 'services/userProfile';
@@ -227,7 +227,7 @@ class PaymentMethod extends Component {
 				<Button
 					title='OK'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={this.props.resetWizard}
 				/>
 			</div>
@@ -369,7 +369,7 @@ class PaymentMethod extends Component {
 					id='submit-button'
 					title='NEXT'
 					enabled={completedFields.length > 4 && !submitted}
-					customClass='blox-button circle-large'
+					customClass='COMPANY-button circle-large'
 					onClick={this.sendParams}
 				/>
 			</div>
@@ -384,4 +384,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, null)(PaymentMethod);
+export default connect(
+	mapStateToProps,
+	null,
+)(PaymentMethod);

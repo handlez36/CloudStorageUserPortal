@@ -8,7 +8,7 @@ const STAGES = {
 	COMPLETE: 'COMPLETE',
 };
 
-class BloxWizard extends Component {
+class COMPANYWizard extends Component {
 	constructor(props) {
 		super(props);
 
@@ -214,7 +214,9 @@ class BloxWizard extends Component {
 		return (
 			<div
 				className={`${
-					active === STAGES.REVIEW ? 'review blox-wizard-review' : 'populate blox-wizard-populate'
+					active === STAGES.REVIEW
+						? 'review COMPANY-wizard-review'
+						: 'populate COMPANY-wizard-populate'
 				}`}
 			>
 				<PageHeader
@@ -224,10 +226,10 @@ class BloxWizard extends Component {
 					moduleTitle={moduleTitle}
 					progressAttributes={progressAttributes}
 				/>
-				<div className='blox-wizard'>{this.displayActiveStep(active, steps)}</div>
+				<div className='COMPANY-wizard'>{this.displayActiveStep(active, steps)}</div>
 			</div>
 		);
 	}
 }
 
-export default BloxWizard;
+export default COMPANYWizard;

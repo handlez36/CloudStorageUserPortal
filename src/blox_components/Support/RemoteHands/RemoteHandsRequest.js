@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 
-import Wizard from 'components_old/Forms/BloxWizard';
+import Wizard from 'components_old/Forms/COMPANYWizard';
 import ErrorModal from 'sub_components/Common/ErrorModal';
 import { MENU } from 'utils/TicketConstants';
 import { updateModule, updatePage, addPageToBreadCrumbs } from 'actions/siteTracking';
@@ -266,6 +266,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { updateModule, updatePage, addPageToBreadCrumbs })(
-	RemoteHandsRequest,
-);
+export default connect(
+	mapStateToProps,
+	{ updateModule, updatePage, addPageToBreadCrumbs },
+)(RemoteHandsRequest);

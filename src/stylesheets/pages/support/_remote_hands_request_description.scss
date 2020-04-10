@@ -6,12 +6,12 @@
 	padding-right: calculateVw(35px, $standard-screen-width-mid);
 
 	.description {
-		.blox-text-input {
+		.COMPANY-text-input {
 			width: 100%;
 		}
 	}
 
-	.blox-button {
+	.COMPANY-button {
 		.title {
 			opacity: 1;
 		}
@@ -27,7 +27,7 @@
 		transition: opacity 0.5s ease;
 		margin-top: calculateVh(22px);
 		opacity: 0;
-		.blox-text-input {
+		.COMPANY-text-input {
 			width: 50%;
 		}
 		input,
@@ -93,14 +93,14 @@
 	padding-right: calculateVw(35px, $standard-screen-width-mid);
 	height: 100%;
 
-	.blox-button {
+	.COMPANY-button {
 		.title {
 			opacity: 1;
 		}
 	}
 
 	.description {
-		.blox-text-input {
+		.COMPANY-text-input {
 			width: 100%;
 		}
 	}
@@ -117,7 +117,7 @@
 		margin-top: calculateVh(22px);
 		opacity: 0;
 		// pointer-events: none;
-		.blox-text-input {
+		.COMPANY-text-input {
 			width: 45%;
 		}
 		input,
@@ -162,7 +162,7 @@
 		margin-top: calculateVh(22px);
 		opacity: 0;
 		pointer-events: none;
-		.blox-text-input {
+		.COMPANY-text-input {
 			width: 25%;
 		}
 		input,

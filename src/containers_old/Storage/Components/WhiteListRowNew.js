@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 
 import RemoveIpIcon from './RemoveIpIcon';
-import InputField from '../../../components/Forms/BloxTextInput';
+import InputField from '../../../components/Forms/COMPANYTextInput';
 import DropDownFilter from '../../../components/Common/DropDownFilter';
 import { INPUT_TYPES, numberMask } from '../../../components/Common/CommonConstants';
 import { Utils } from '../../../services/utils';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 import { Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
-import ModalButton from 'sub_components/Commmon/BloxButton';
+import ModalButton from 'sub_components/Commmon/COMPANYButton';
 
 const PortalModal = ({
 	additionalClass,
@@ -49,7 +49,7 @@ PortalModal.propTypes = {
 };
 
 PortalModal.defaultProps = {
-	buttonClass: 'blox-button',
+	buttonClass: 'COMPANY-button',
 };
 
 export default PortalModal;

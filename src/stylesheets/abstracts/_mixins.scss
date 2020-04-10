@@ -28,7 +28,7 @@
 	);
 	font-size: least-squares-fit($map);
 	font-family: $proxima-nova-semibold;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Billing-Amount-Medium {
 	font-size: 26px;
@@ -290,7 +290,7 @@
 	// line-height: 23px;
 	line-height: 1.2;
 	letter-spacing: 0.8px;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Callouts {
 	$map: (
@@ -363,7 +363,7 @@
 	font-stretch: normal;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 }
 
 @mixin Create-Ticket-Label {
@@ -445,7 +445,7 @@
 	line-height: 1;
 	letter-spacing: 0.11em; //6px;
 	text-align: left;
-	color: $DCBLOX_Purple;
+	color: $COMPANY_Purple;
 }
 
 //used in sharedetails for the pdf download section
@@ -457,7 +457,7 @@
 	line-height: 1;
 	letter-spacing: 0.09em; //3.8px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 //portal title    Text-Style-6
 @mixin Main-Title-Large {
@@ -468,7 +468,7 @@
 	line-height: 0.76;
 	letter-spacing: 3.4px;
 	text-align: left;
-	color: $DCBLOX_Purple;
+	color: $COMPANY_Purple;
 }
 
 @mixin Text-Style-2 {
@@ -478,7 +478,7 @@
 	line-height: 1.67;
 	letter-spacing: 2.3px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 //medium text 20px-30px
 
@@ -501,7 +501,7 @@
 	line-height: 1.03;
 	letter-spacing: 2.9px;
 	text-align: left;
-	color: $DCBLOX_Purple;
+	color: $COMPANY_Purple;
 }
 
 @mixin Text-Style-36 {
@@ -522,7 +522,7 @@
 	line-height: 1.08;
 	letter-spacing: 2.4px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-37 {
@@ -532,7 +532,7 @@
 	font-stretch: condensed;
 	line-height: 1.08;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-11 {
@@ -566,7 +566,7 @@
 	line-height: 1.5;
 	letter-spacing: 2px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-25 {
@@ -577,7 +577,7 @@
 	line-height: 1.5;
 	letter-spacing: 2px;
 	text-align: left;
-	color: $DCBLOX_Purple;
+	color: $COMPANY_Purple;
 }
 @mixin Text-Style-7 {
 	font-family: $font-family-primary-subheads; //Bourgeois
@@ -587,7 +587,7 @@
 	line-height: 1.3;
 	letter-spacing: 2px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-9 {
 	font-family: $font-family-primary-heads; //Bourgeois
@@ -597,7 +597,7 @@
 	line-height: 2.5;
 	letter-spacing: 2px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-50 {
@@ -609,7 +609,7 @@
 	line-height: 1.67;
 	letter-spacing: 1.4px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-49 {
@@ -617,7 +617,7 @@
 	font-size: calculateFontSize(10px, 18px);
 	line-height: 0.83;
 	text-align: left;
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 }
 @mixin Text-Style-45 {
 	font-family: $proxima-nova-light; //ProximaNovaThin;
@@ -625,21 +625,21 @@
 	line-height: 1.67;
 	letter-spacing: 1.4px;
 	text-align: left;
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 }
 @mixin Text-Style-14 {
 	font-family: $proxima-nova-light; //ProximaNovaThin;
 	font-size: calculateFontSize(11px, 18px);
 	line-height: 1.44;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-44 {
 	font-family: $proxima-nova-light; //ProximaNovaThin;
 	font-size: calculateFontSize(13px, 16px);
 	line-height: 1.88;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-24 {
@@ -650,14 +650,14 @@
 	line-height: 1.29;
 	letter-spacing: 1.1px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-47 {
 	font-family: $proxima-nova-light; //ProximaNovaThin;
 	font-size: 14px;
 	line-height: 1.14;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-48 {
 	font-family: $proxima-nova-light; //ProximaNovaThin;
@@ -665,7 +665,7 @@
 	font-size: calculateFontSize(10px, 14px);
 	line-height: 1.07;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-23 {
 	font-family: $proxima-nova-light; //ProximaNovaThin;
@@ -673,7 +673,7 @@
 	font-size: calculateFontSize(7px, 14px);
 	line-height: 1.29;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-th {
@@ -697,7 +697,7 @@
 	line-height: 2.29;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-td-over-white {
 	font-size: calculateFontSize(7px, 15.5px);
@@ -706,7 +706,7 @@
 	line-height: 2.29;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-td-highlighted {
 	font-family: $proxima-nova-regular;
@@ -716,7 +716,7 @@
 	line-height: 2.29;
 	letter-spacing: normal;
 	text-align: center;
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 }
 @mixin Text-Style-exit-button {
 	font-family: $font-family-primary-heads;
@@ -737,7 +737,7 @@
 	line-height: 1.67;
 	letter-spacing: 1.8px;
 	text-align: center;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 }
 @mixin Text-Style-User-Contact-Section-Title {
 	// width: 105px;
@@ -750,7 +750,7 @@
 	// line-height: 2.5;
 	letter-spacing: 1.2px;
 	text-align: left;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 }
 @mixin Text-Style-Storage-Form-Section-Title {
 	font-family: $font-family-primary-heads;
@@ -760,7 +760,7 @@
 	// line-height: 2.5;
 	letter-spacing: 1.2px;
 	text-align: left;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 }
 @mixin Text-Style-User-Contact-Field-Name {
 	font-family: $font-family-primary-subheads;
@@ -771,7 +771,7 @@
 	// line-height: 3.75;
 	letter-spacing: 0.8px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-Storage-Form-Field-Name {
 	font-family: $font-family-primary-subheads;
@@ -782,7 +782,7 @@
 	// line-height: 3.75;
 	letter-spacing: 2.2px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-User-Contact-Field-Value {
 	font-family: $proxima-nova-light;
@@ -791,7 +791,7 @@
 	font-stretch: normal;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 }
 @mixin Text-Style-Storage-Form-Field-Value {
 	font-family: $proxima-nova-light;
@@ -800,7 +800,7 @@
 	font-stretch: normal;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 }
 @mixin Text-Style-Profile-Card-Name {
 	font-family: $font-family-primary-heads;
@@ -810,7 +810,7 @@
 	line-height: 1.67;
 	letter-spacing: 1.8px;
 	text-align: center;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 }
 @mixin Text-Style-Credential-Icons {
 	font-size: calculateFontSize(9px, 18px);
@@ -823,7 +823,7 @@
 	line-height: 1.17;
 	letter-spacing: 0.9px;
 	text-align: center;
-	color: $DCBLOX_Purple;
+	color: $COMPANY_Purple;
 }
 @mixin Text-Style-58 {
 	font-family: $font-family-primary-heads;
@@ -833,7 +833,7 @@
 	line-height: 0.92;
 	letter-spacing: 2.6px;
 	text-align: right;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-Button {
 	font-family: $font-family-primary-heads;
@@ -848,7 +848,7 @@
 	line-height: 1.17;
 	letter-spacing: 0.9px;
 	text-align: center;
-	color: $DCBLOX_Purple;
+	color: $COMPANY_Purple;
 }
 @mixin Text-Style-59 {
 	font-family: $font-family-primary-heads;
@@ -859,7 +859,7 @@
 	line-height: 0.8;
 	letter-spacing: 3px;
 	text-align: right;
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 }
 @mixin Text-Style-60 {
 	font-family: $font-family-primary-heads;
@@ -871,7 +871,7 @@
 	line-height: 1.09;
 	letter-spacing: 2.2px;
 	text-align: right;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-61 {
 	font-family: $font-family-primary-heads;
@@ -882,7 +882,7 @@
 	line-height: 1.09;
 	letter-spacing: 2.2px;
 	text-align: right;
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 }
 @mixin Text-Style-Conversation-Header {
 	font-family: $font-family-primary-subheads;
@@ -918,7 +918,7 @@
 	line-height: 1;
 	letter-spacing: 2.4px;
 	text-align: right;
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 }
 
 @mixin Text-Style-Conversation-Add-Comment {
@@ -930,7 +930,7 @@
 	line-height: 1.14;
 	letter-spacing: 1.1px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-67 {
 	font-family: $font-family-primary-heads;
@@ -941,7 +941,7 @@
 	line-height: 0.94;
 	letter-spacing: 0.9px;
 	text-align: left;
-	color: $DCBLOX_Purple;
+	color: $COMPANY_Purple;
 }
 @mixin Text-Style-68 {
 	font-family: $proxima-nova-regular;
@@ -955,7 +955,7 @@
 	font-stretch: condensed;
 	line-height: 13px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-69 {
 	font-family: $proxima-nova-regular;
@@ -966,7 +966,7 @@
 	line-height: 1.14;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 }
 @mixin Proxima-Bold {
 	font-family: $proxima-nova-bold;
@@ -980,7 +980,7 @@
 	line-height: 13px;
 	//letter-spacing: 1.1px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-70 {
@@ -995,7 +995,7 @@
 	line-height: 13px;
 	//letter-spacing: 1.1px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-71 {
 	font-family: $font-family-primary-heads;
@@ -1018,7 +1018,7 @@
 	line-height: 1.5;
 	letter-spacing: 1px;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-73 {
 	font-family: $font-family-primary-heads;
@@ -1030,7 +1030,7 @@
 	line-height: normal;
 	letter-spacing: 0.9px;
 	text-align: right;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 @mixin Text-Style-74 {
 	font-family: $font-family-primary-heads;
@@ -1041,7 +1041,7 @@
 	line-height: 1.5;
 	letter-spacing: 1.5px;
 	text-align: center;
-	color: $DCBLOX_White;
+	color: $COMPANY_White;
 }
 @mixin Ticket-Description-Style {
 	font-family: $proxima-nova-light;
@@ -1069,7 +1069,7 @@
 	letter-spacing: 4px;
 	color: $Cool_Gray_Med_2;
 	line-height: 48px;
-	text-shadow: 0 2px 15px $DCBLOX_Black;
+	text-shadow: 0 2px 15px $COMPANY_Black;
 }
 @mixin Login-Sm-Message-Text-Style {
 	font-family: $font-family-primary-subheads;
@@ -1084,7 +1084,7 @@
 	letter-spacing: 1px;
 	line-height: 34px;
 	color: $White;
-	text-shadow: 0 2px 15px $DCBLOX_Black;
+	text-shadow: 0 2px 15px $COMPANY_Black;
 }
 @mixin Login-Md-Message-Text-Style {
 	font-family: $font-family-primary-subheads;
@@ -1099,7 +1099,7 @@
 	letter-spacing: 2.8px;
 	line-height: 34px;
 	color: $White;
-	text-shadow: 0 2px 15px $DCBLOX_Black;
+	text-shadow: 0 2px 15px $COMPANY_Black;
 }
 @mixin Text-Style-75 {
 	font-family: $font-family-primary-subheads;
@@ -1110,7 +1110,7 @@
 	line-height: 1.5;
 	letter-spacing: 2px;
 	text-align: center;
-	color: $DCBLOX_White;
+	color: $COMPANY_White;
 }
 @mixin Text-Style-Whitelist-Format {
 	font-family: $proxima-nova-light;
@@ -1119,7 +1119,7 @@
 	font-stretch: normal;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Black;
+	color: $COMPANY_Black;
 }
 @mixin Text-Style-Password-Registration-Username {
 	font-family: $font-family-primary-heads; //Bourgeois
@@ -1145,7 +1145,7 @@
 	font-size: calculateFontSize(6px, 18px);
 	line-height: 1.44;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	letter-spacing: 0.01vw;
 }
 @mixin Text-Style-Billing-Nav {
@@ -1192,7 +1192,7 @@
 	line-height: 20px;
 	letter-spacing: 0.75px;
 	text-align: center;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Accordian-Header {
@@ -1214,7 +1214,7 @@
 	line-height: 1.06;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Accordian-Bold-Value {
@@ -1225,7 +1225,7 @@
 	line-height: 1.06;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Accordian-Alerted-Value {
@@ -1236,7 +1236,7 @@
 	line-height: 1.06;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 }
 
 @mixin Text-Style-Accordian-Detail-Headers {
@@ -1258,7 +1258,7 @@
 	line-height: 1.22;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Text-Style-Page-Title {
@@ -1269,7 +1269,7 @@
 	line-height: 1.05;
 	letter-spacing: normal;
 	text-align: left;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Support-Section-Header {
@@ -1283,7 +1283,7 @@
 	font-family: $font-family-primary-subheads;
 	line-height: 3vh;
 	letter-spacing: 1.4px;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 }
 
 @mixin Login-MFA-Radio-Label {

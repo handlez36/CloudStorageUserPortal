@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Radio from 'components_old/Common/Radio';
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import { StorageApi } from 'services/storage';
 import { Utils } from 'services/utils';
 import * as StorageUtils from 'utils/StorageUtils';
@@ -11,7 +11,7 @@ let REQUEST_SUBMITTED = false;
 
 function disableSubmitButton() {
 	REQUEST_SUBMITTED = true;
-	const submitButton = document.querySelector('.blox-button');
+	const submitButton = document.querySelector('.COMPANY-button');
 	if (submitButton) {
 		submitButton.classList.add('disabled');
 	}
@@ -19,7 +19,7 @@ function disableSubmitButton() {
 
 function enableSubmitButton() {
 	REQUEST_SUBMITTED = false;
-	const submitButton = document.querySelector('.blox-button');
+	const submitButton = document.querySelector('.COMPANY-button');
 	if (submitButton) {
 		submitButton.classList.remove('disabled');
 	}
@@ -78,10 +78,7 @@ function checkValid(data) {
 
 const StorageAddReview = ({ data, update, completeAdd, refreshStorageInfo }) => {
 	const { type, public: isPublic, primary, redundant, secondary, whitelist } = data;
-	const typeOptions = [
-		{ value: 'file', name: 'File' },
-		{ value: 'object', name: 'Object' },
-	];
+	const typeOptions = [{ value: 'file', name: 'File' }, { value: 'object', name: 'Object' }];
 	const accessibilityOptions = [
 		{ value: 'Private', name: 'Private' },
 		{ value: 'Public', name: 'Public' },
@@ -92,10 +89,7 @@ const StorageAddReview = ({ data, update, completeAdd, refreshStorageInfo }) => 
 		{ value: 'Chattanooga', name: 'Chattanooga' },
 		{ value: 'Huntsville', name: 'Huntsville' },
 	];
-	const redundancyOptions = [
-		{ value: 'Yes', name: 'Yes' },
-		{ value: 'No', name: 'No' },
-	];
+	const redundancyOptions = [{ value: 'Yes', name: 'Yes' }, { value: 'No', name: 'No' }];
 	const secondaryLocationOptions = primaryLocationOptions.filter(
 		option => primary && option.name !== primary,
 	);
@@ -190,7 +184,9 @@ const StorageAddReview = ({ data, update, completeAdd, refreshStorageInfo }) => 
 				title='SUBMIT'
 				onClick={() => submitStorageRequest(data, completeAdd, refreshStorageInfo)}
 				enabled={checkValid(data)}
-				customClass={`blox-button ${REQUEST_SUBMITTED ? 'disabled' : ''} bright-emerald-gradient`}
+				customClass={`COMPANY-button ${
+					REQUEST_SUBMITTED ? 'disabled' : ''
+				} bright-emerald-gradient`}
 			/>
 		</div>
 	);

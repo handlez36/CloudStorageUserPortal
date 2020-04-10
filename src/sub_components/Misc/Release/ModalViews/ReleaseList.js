@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import map from 'lodash/map';
 
-import ScrollView from './../../../Common/BloxScrollViewNew';
+import ScrollView from './../../../Common/COMPANYScrollViewNew';
 import { ReleaseApi } from './../../../../services/release';
 import { TicketApi } from './../../../../services/ticket';
 import { Utils } from './../../../../services/utils';

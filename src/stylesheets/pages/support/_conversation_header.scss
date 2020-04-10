@@ -3,7 +3,7 @@
 	min-height: 3.19vh;
 	height: 3.19vh;
 	padding-left: 0.74vw;
-	background-color: $DCBLOX_Purple;
+	background-color: $COMPANY_Purple;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -28,6 +28,6 @@
 		margin-top: 0.6vh;
 		flex: 0 1 auto;
 		@include Text-Style-62;
-		color: $DCBLOX_White;
+		color: $COMPANY_White;
 	}
 }

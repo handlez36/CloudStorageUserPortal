@@ -5,7 +5,7 @@ import {
 	animateConvoCycle,
 } from 'containers_old/Support/TicketHistory/Conversations/ConvoCycleAnimations';
 
-import CycleView from './BloxCycleView';
+import CycleView from './COMPANYCycleView';
 import AccordianItem from './AccordianItem';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 

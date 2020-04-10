@@ -31,7 +31,7 @@
 		width: $input-box-width;
 		height: $input-box-height;
 		min-height: 40px;
-		border-bottom: solid 2px $DCBLOX_Lime;
+		border-bottom: solid 2px $COMPANY_Lime;
 
 		//box-shadow: 1px 1px 20px 0 rgb(63, 62, 62), -1px -1px 20px 0 rgb(63, 62, 62);
 
@@ -106,7 +106,7 @@
 		height: 45px;
 		padding-top: 5px;
 		line-height: 1.1em;
-		color: $DCBLOX_White;
+		color: $COMPANY_White;
 
 		.icon {
 			display: inline-block;
@@ -128,9 +128,9 @@
 		.indicator.SUCCESS {
 			position: relative;
 			z-index: 1;
-			background-color: $DCBLOX_Lime !important;
-			border-color: $DCBLOX_Lime !important;
-			box-shadow: 0px 0px 7px $DCBLOX_Lime !important;
+			background-color: $COMPANY_Lime !important;
+			border-color: $COMPANY_Lime !important;
+			box-shadow: 0px 0px 7px $COMPANY_Lime !important;
 			animation: beat 1.5s ease 0s 1 forwards;
 		}
 
@@ -172,7 +172,7 @@
 		height: 45px;
 		padding-left: 1.17vw;
 		width: calc(0.82 * #{$input-box-width});
-		caret-color: $DCBLOX_Red;
+		caret-color: $COMPANY_Red;
 		color: $Cool_Gray_Med_2;
 		background-color: rgba(129, 113, 153, 1);
 		border: 0px solid rgba(129, 113, 153, 1);

@@ -2,7 +2,7 @@ import React from 'react';
 import { string } from 'prop-types';
 import each from 'lodash/each';
 
-import BloxGrid from './BloxMicroGrid';
+import COMPANYGrid from './COMPANYMicroGrid';
 import LayoutManager from './../../services/layoutManager';
 
 const createGrid = (layoutConfig, breakpoint) => {
@@ -18,22 +18,22 @@ const createGrid = (layoutConfig, breakpoint) => {
 	return grid;
 };
 
-const BloxPage = ({ name, layout, parentEl, breakpoint, children }) => {
+const COMPANYPage = ({ name, layout, parentEl, breakpoint, children }) => {
 	const grid = createGrid(layout, breakpoint);
 
 	return (
-		<BloxGrid name={name} parentEl={parentEl} contentGrid={grid}>
+		<COMPANYGrid name={name} parentEl={parentEl} contentGrid={grid}>
 			{children}
-		</BloxGrid>
+		</COMPANYGrid>
 	);
 };
 
-BloxPage.propTypes = {
+COMPANYPage.propTypes = {
 	parentEl: string,
 };
 
-BloxPage.defaultProps = {
+COMPANYPage.defaultProps = {
 	parentEl: '.main-content',
 };
 
-export default BloxPage;
+export default COMPANYPage;

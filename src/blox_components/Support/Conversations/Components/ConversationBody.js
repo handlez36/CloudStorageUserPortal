@@ -3,13 +3,13 @@ import { object, array } from 'prop-types';
 
 import { Comment } from '../Comment';
 import { AvatarApi } from '../../../../services/avatar';
-import BloxCycleView from '../../../../components/Common/BloxCycleView';
+import COMPANYCycleView from '../../../../components/Common/COMPANYCycleView';
 
 const ConversationBody = ({ auth_status, convos }) => {
 	const avatarApi = new AvatarApi();
 
 	return (
-		<BloxCycleView itemClass='.comment' itemWrapperClass='.conversation-body'>
+		<COMPANYCycleView itemClass='.comment' itemWrapperClass='.conversation-body'>
 			<div className='conversation-body'>
 				{convos.map((convo, index) => (
 					<Comment
@@ -19,7 +19,7 @@ const ConversationBody = ({ auth_status, convos }) => {
 					/>
 				))}
 			</div>
-		</BloxCycleView>
+		</COMPANYCycleView>
 	);
 	// return (
 	// 	<div className='conversation-body'>

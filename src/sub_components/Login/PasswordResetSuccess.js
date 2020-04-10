@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 import Modal from './../Common/ErrorModal';
-import Button from './../Common/BloxButton';
+import Button from './../Common/COMPANYButton';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const checkMark = `${CDN_URL}billing/check-mark-circle.svg`;
@@ -27,7 +27,7 @@ class PasswordResetSuccess extends React.Component {
 				<Button
 					title='OKAY'
 					enabled={true}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 					onClick={toggle}
 				/>
 			</Fragment>

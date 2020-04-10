@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'react-tippy/dist/tippy.css';
 import Radio from '../../components/Common/Radio';
 import ToolTip from '../../components/Common/ToolTip';
-import AddNewButton from './BloxButton';
+import AddNewButton from './COMPANYButton';
 import TicketCreate from '../../containers/Support/TicketCreate/TicketCreate';
 
 export default class ButtonTester extends Component {
@@ -20,11 +20,11 @@ export default class ButtonTester extends Component {
 	};
 
 	render() {
-		const normalButtonClass = 'blox-button';
-		const largeCircleButtonClass = 'blox-button circle-large';
-		const smallCircleButtonClass = 'blox-button circle-small';
-		const whiteButtonClass = 'blox-button white';
-		const whiteEditButtonClass = 'blox-button white edit';
+		const normalButtonClass = 'COMPANY-button';
+		const largeCircleButtonClass = 'COMPANY-button circle-large';
+		const smallCircleButtonClass = 'COMPANY-button circle-small';
+		const whiteButtonClass = 'COMPANY-button white';
+		const whiteEditButtonClass = 'COMPANY-button white edit';
 		const options = [
 			{ value: 'Atlanta', name: 'Atlanta', clickCallback: this.clickCallback },
 			{ value: 'Huntsville', name: 'Huntsville', clickCallback: this.clickCallback },

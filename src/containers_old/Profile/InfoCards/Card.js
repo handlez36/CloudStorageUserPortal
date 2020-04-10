@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BloxButton from 'sub_components/Common/BloxButton';
+import COMPANYButton from 'sub_components/Common/COMPANYButton';
 import { InfoTableNew } from './InfoTableNew';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
@@ -288,10 +288,10 @@ class Card extends Component {
 
 								{type === 'userProfile' && (
 									<div className='card-button'>
-										<BloxButton
+										<COMPANYButton
 											title='EDIT CONTACT INFO'
 											enabled={true}
-											customClass='blox-button gradient'
+											customClass='COMPANY-button gradient'
 											onClick={this.goToContactInfo}
 										/>
 									</div>

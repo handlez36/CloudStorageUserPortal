@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Card from 'sub_components/Common/BloxCard';
+import Card from 'sub_components/Common/COMPANYCard';
 import { PROFILE_OVERVIEW_CARDS as CARDS } from 'utils/ProfileConstants';
 import { COMPANY_INFO_REQUEST_SUCCESS } from 'actions/company';
 
@@ -92,4 +92,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, null)(CompanyProfile);
+export default connect(
+	mapStateToProps,
+	null,
+)(CompanyProfile);

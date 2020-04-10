@@ -139,8 +139,8 @@
 	&.support {
 		background-image: linear-gradient(
 			to left,
-			$DCBLOX_Purple 40%,
-			$DCBLOX_Purple 35%,
+			$COMPANY_Purple 40%,
+			$COMPANY_Purple 35%,
 			$Cool_Gray_Dark_2 30%,
 			$Cool_Gray_Dark_2 0%
 		);
@@ -186,7 +186,7 @@
 	padding-top: 8px;
 	height: 14px;
 	cursor: pointer;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	&.active {
 		font-family: $font-family-primary-heads;
 		animation-direction: reverse;
@@ -197,7 +197,7 @@
 			@include Active-Nav-Menu($Emerald);
 		}
 		&.profile {
-			@include Active-Nav-Menu($DCBLOX_Purple);
+			@include Active-Nav-Menu($COMPANY_Purple);
 		}
 		&.support {
 			@include Active-Nav-Menu($Dark_Blue);
@@ -214,7 +214,7 @@
 	// 		@include Active-Nav-Menu($Emerald);
 	// 	}
 	// 	&.profile {
-	// 		@include Active-Nav-Menu($DCBLOX_Purple);
+	// 		@include Active-Nav-Menu($COMPANY_Purple);
 	// 	}
 	// 	&.support {
 	// 		@include Active-Nav-Menu($Dark_Blue);
@@ -241,7 +241,7 @@
 	padding-top: 8px;
 	height: 14px;
 	cursor: pointer;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	&.active {
 		font-family: $font-family-primary-heads;
 		&.billing {
@@ -251,7 +251,7 @@
 			@include Active-Nav-Menu($Emerald);
 		}
 		&.profile {
-			@include Active-Nav-Menu($DCBLOX_Purple);
+			@include Active-Nav-Menu($COMPANY_Purple);
 		}
 		&.support {
 			@include Active-Nav-Menu($Dark_Blue);
@@ -276,7 +276,7 @@
 	padding-top: 8px;
 	height: 16px;
 	cursor: pointer;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	&.active {
 		font-family: $font-family-primary-heads;
 		font-size: 14px;
@@ -288,7 +288,7 @@
 			@include Active-Nav-Menu($Emerald);
 		}
 		&.profile {
-			@include Active-Nav-Menu($DCBLOX_Purple);
+			@include Active-Nav-Menu($COMPANY_Purple);
 		}
 		&.support {
 			@include Active-Nav-Menu($Dark_Blue);
@@ -322,7 +322,7 @@
 	font-size: 20px;
 	line-height: 1px;
 	letter-spacing: 1px;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 24px;
 		letter-spacing: 1.2px;
@@ -339,7 +339,7 @@
 	letter-spacing: 1px;
 	line-height: 12px;
 	// text-transform: uppercase;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 24px;
@@ -373,7 +373,7 @@
 	font-size: 16px;
 	line-height: 1;
 	letter-spacing: normal;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 20px;
 	}
@@ -387,7 +387,7 @@
 	line-height: 1.05px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: 1025px) and (max-width: 1440px) {
 		font-size: 18px;
 		letter-spacing: 1.35px;
@@ -403,7 +403,7 @@
 	line-height: 1.05;
 	letter-spacing: 0.6px;
 	text-transform: uppercase;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	// @media screen and (min-width: 1025px) and (max-width: 1440px) {
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 14px;
@@ -439,7 +439,7 @@
 	font-size: 14px;
 	line-height: 1;
 	letter-spacing: -0.7px;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-family: $proxima-nova-regular;
 		font-size: 20px;
@@ -494,7 +494,7 @@
 	font-size: 14px;
 	line-height: 1;
 	letter-spacing: 0.7px;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	text-transform: uppercase;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 16px;
@@ -526,7 +526,7 @@
 	font-size: 14px;
 	line-height: 1.43;
 	letter-spacing: normal;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 16px;
 		line-height: 1.38;
@@ -541,7 +541,7 @@
 	font-size: 14px;
 	line-height: 1.43px;
 	letter-spacing: normal;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: 1025px) and (max-width: 1440px) {
 		font-size: 16px;
 		line-height: 1.38px;
@@ -556,7 +556,7 @@
 	font-size: 16px;
 	line-height: 1.38px;
 	letter-spacing: normal;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: 1025px) and (max-width: 1440px) {
 		font-size: 18px;
 		line-height: 1.33px;
@@ -572,7 +572,7 @@
 	font-size: 18px;
 	line-height: 1.33px;
 	letter-spacing: normal;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: 1025px) and (max-width: 1440px) {
 		font-size: 20px;
 		line-height: 1.3px;
@@ -621,7 +621,7 @@
 	font-family: $proxima-nova-light;
 	font-size: 36px;
 	letter-spacing: -1.8px;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	text-align: center;
 	line-height: 36px;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
@@ -640,7 +640,7 @@
 	font-family: $proxima-nova-regular;
 	font-size: 16px;
 	line-height: 20px;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	text-align: center;
 
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
@@ -656,7 +656,7 @@
 	font-family: $proxima-nova-bold;
 	font-size: 16px;
 	line-height: 22px;
-	color: $DCBLOX_Red;
+	color: $COMPANY_Red;
 	text-align: center;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 16px;
@@ -755,7 +755,7 @@
 	font-size: 16px;
 	line-height: 1.43;
 	letter-spacing: normal;
-	color: $DCBLOX_Gray;
+	color: $COMPANY_Gray;
 	@media screen and (min-width: ($medium-res + 1px)) and (max-width: $high-res) {
 		font-size: 18px;
 		line-height: 1.38;

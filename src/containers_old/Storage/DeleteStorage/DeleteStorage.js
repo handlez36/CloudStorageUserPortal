@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import BloxButton from '../../../components/Common/BloxButton';
+import COMPANYButton from '../../../components/Common/COMPANYButton';
 import { UserProfileApi } from '../../../services/userProfile';
 import { TicketApi } from '../../../services/ticket';
-import InputField from '../../../components/Forms/BloxTextInput';
+import InputField from '../../../components/Forms/COMPANYTextInput';
 import { TYPES, SEVERITIES } from '../../Support/TicketConstants';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 
@@ -69,20 +69,20 @@ class DeleteStorage extends Component {
 				</div>
 				<div className='buttons'>
 					<div className='cancel-button'>
-						<BloxButton
+						<COMPANYButton
 							title='NOPE. CHANGED MY MIND.'
 							enabled={true}
-							customClass='blox-button emerald-gradient'
+							customClass='COMPANY-button emerald-gradient'
 							onClick={() => this.props.selectMenuItem('SHARE DETAILS')}
 						/>
 					</div>
 					<div className='proceed-button'>
-						<BloxButton
+						<COMPANYButton
 							title='YEP. DELETE IT NOW!'
 							imageId={'delete-button'}
 							icon={DeleteIconHover}
 							enabled={true}
-							customClass='blox-button orange-gradient icon'
+							customClass='COMPANY-button orange-gradient icon'
 							onClick={() => this.getStep('TWO')}
 						/>
 					</div>
@@ -125,10 +125,10 @@ class DeleteStorage extends Component {
 
 				<div className='buttons'>
 					<div className='cancel-button'>
-						<BloxButton
+						<COMPANYButton
 							title='BACK TO MY SHARES'
 							enabled={true}
-							customClass='blox-button emerald-gradient'
+							customClass='COMPANY-button emerald-gradient'
 							onClick={() => this.props.selectMenuItem('MANAGE STORAGE')}
 						/>
 					</div>
@@ -203,20 +203,20 @@ class DeleteStorage extends Component {
 					</div>
 					<div className='buttons'>
 						<div className='cancel-button'>
-							<BloxButton
+							<COMPANYButton
 								title='NOPE. CHANGED MY MIND.'
 								enabled={true}
-								customClass='blox-button emerald-gradient'
+								customClass='COMPANY-button emerald-gradient'
 								onClick={() => this.props.selectMenuItem('SHARE DETAILS')}
 							/>
 						</div>
 						<div className='proceed-button'>
-							<BloxButton
+							<COMPANYButton
 								title='MAKE IT SO!'
 								imageId={'make-it-so'}
 								icon={DeleteIconHover}
 								enabled={valid}
-								customClass='blox-button orange-gradient icon'
+								customClass='COMPANY-button orange-gradient icon'
 								onClick={this.deleteStorage}
 							/>
 						</div>

@@ -2,13 +2,13 @@ import React from 'react';
 import { object, array } from 'prop-types';
 
 import { AvatarApi } from 'services/avatar';
-import BloxCycleView from 'components_old/Common/BloxCycleView';
+import COMPANYCycleView from 'components_old/Common/COMPANYCycleView';
 import { Comment } from '../Comment';
 const ConversationBody = ({ auth_status, convos }) => {
 	const avatarApi = new AvatarApi();
 
 	return (
-		<BloxCycleView itemClass='.comment' itemWrapperClass='.conversation-body'>
+		<COMPANYCycleView itemClass='.comment' itemWrapperClass='.conversation-body'>
 			<div className='conversation-body'>
 				{convos.map((convo, index) => (
 					<Comment
@@ -18,7 +18,7 @@ const ConversationBody = ({ auth_status, convos }) => {
 					/>
 				))}
 			</div>
-		</BloxCycleView>
+		</COMPANYCycleView>
 	);
 	// return (
 	// 	<div className='conversation-body'>

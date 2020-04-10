@@ -47,7 +47,7 @@
 			}
 			.count {
 				text-align: left;
-				color: $DCBLOX_Gray;
+				color: $COMPANY_Gray;
 				padding-top: 1vh;
 			}
 			.manage {
@@ -60,7 +60,7 @@
 				padding-top: 1vh;
 			}
 		}
-		.blox-button {
+		.COMPANY-button {
 			&.gradient {
 				width: calculateVw(120, 1440);
 				height: calculateVw(25, 1440);
@@ -107,7 +107,7 @@
 				.new-title {
 					@include Text-Style-Ticket-Indicator;
 					align-self: center !important;
-					color: $DCBLOX_Gray;
+					color: $COMPANY_Gray;
 					padding-top: 0.5vh;
 				}
 				.count {
@@ -161,7 +161,7 @@
 					@include Text-Style-Status-Head;
 				}
 				text {
-					fill: $DCBLOX_Gray;
+					fill: $COMPANY_Gray;
 				}
 				.indicator-open-count {
 					margin-left: -1vw;
@@ -208,7 +208,7 @@
 				flex: 1 0 auto;
 				align-items: flex-end;
 				padding-top: calculateVh(15px, $standard-screen-height-mid);
-				.blox-button.gradient {
+				.COMPANY-button.gradient {
 					width: calculateVw(121.5px, $standard-screen-width-mid);
 					height: calculateVh(34px, $standard-screen-height-mid);
 					font-size: calculateVw(12, 1440);
@@ -323,11 +323,11 @@
 			&.pending {
 				cursor: default;
 				.share-details {
-					color: $DCBLOX_Gray;
+					color: $COMPANY_Gray;
 					opacity: 0.3;
 					background-color: $White;
 					.new {
-						color: $DCBLOX_Gray;
+						color: $COMPANY_Gray;
 					}
 				}
 				.share-icon {
@@ -345,10 +345,10 @@
 				.share-details {
 					background-color: $Cool_Gray_Light_3;
 					.name {
-						color: $DCBLOX_Gray;
+						color: $COMPANY_Gray;
 					}
 					.usage {
-						color: $DCBLOX_Gray;
+						color: $COMPANY_Gray;
 					}
 				}
 				.share-icon {
@@ -410,7 +410,7 @@
 			.share-details {
 				&.pending {
 					.name {
-						color: $DCBLOX_Gray;
+						color: $COMPANY_Gray;
 					}
 				}
 				.name {
@@ -518,7 +518,7 @@
 				width: 40px;
 				height: 40px;
 			}
-			.view-more .blox-button.gradient {
+			.view-more .COMPANY-button.gradient {
 				width: 95px;
 				height: 24px;
 			}
@@ -588,7 +588,7 @@
 					width: 40px;
 					height: 40px;
 				}
-				.view-more .blox-button.gradient {
+				.view-more .COMPANY-button.gradient {
 					width: 112px;
 					height: 32px;
 				}
@@ -663,7 +663,7 @@
 					padding-top: 0;
 					padding-bottom: 40px;
 				}
-				.view-more .blox-button.gradient {
+				.view-more .COMPANY-button.gradient {
 					width: 120px;
 					height: 40px;
 				}

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import InputField from 'sub_components/Common/BloxTextInput';
+import InputField from 'sub_components/Common/COMPANYTextInput';
 import DropDownFilter from 'components_old/Common/DropDownFilter';
 import { INPUT_TYPES, numberMask } from 'utils/CommonConstants';
 import { Utils } from 'services/utils';

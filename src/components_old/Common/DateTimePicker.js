@@ -5,7 +5,7 @@ import 'react-day-picker/lib/style.css';
 import 'react-timepicker/timepicker.css';
 import { Timepicker } from 'react-timepicker';
 import ResizeObserver from 'resize-observer-polyfill';
-import BloxButton from 'sub_components/Common/BloxButton';
+import COMPANYButton from 'sub_components/Common/COMPANYButton';
 import { ClientData } from 'services/clientData';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const Arrow = `${CDN_URL}common/icons-arrow-circle.svg`;
@@ -38,7 +38,7 @@ class DateTimePicker extends Component {
 	};
 
 	repositionTimepickerBackground = () => {
-		const wrapper = document.querySelector('.dcblox-date-time-picker-wrapper.time');
+		const wrapper = document.querySelector('.wrapper.time');
 		const svg = document.querySelector('.timepicker svg');
 		const el = document.querySelector('.shadow-img');
 
@@ -69,7 +69,7 @@ class DateTimePicker extends Component {
 				});
 
 				setTimeout(() => {
-					const wrapper = document.querySelector(`.dcblox-date-time-picker-wrapper .timepicker`);
+					const wrapper = document.querySelector(`.wrapper .timepicker`);
 					if (wrapper) {
 						this.myObserver.observe(wrapper);
 					}
@@ -168,7 +168,7 @@ class DateTimePicker extends Component {
 		return (
 			<Fragment>
 				{show && !daySelected && (
-					<div className='dcblox-date-time-picker-wrapper'>
+					<div className='wrapper'>
 						<DayPicker
 							modifiers={[weekends, past]}
 							weekdaysShort={['S', 'M', 'T', 'W', 'T', 'F', 'S']}
@@ -176,10 +176,10 @@ class DateTimePicker extends Component {
 							onDayClick={this.handleDayClick}
 						/>
 						<div className='select-button'>
-							<BloxButton
+							<COMPANYButton
 								title='SELECT DATE'
 								enabled={selectedDay}
-								customClass='blox-button'
+								customClass='COMPANY-button'
 								onClick={this.daySelected}
 							/>
 						</div>
@@ -189,7 +189,7 @@ class DateTimePicker extends Component {
 					</div>
 				)}
 				{show && daySelected && (
-					<div className='dcblox-date-time-picker-wrapper time'>
+					<div className='wrapper time'>
 						<div className='top-row'>
 							<div className='back-arrow' onClick={this.backToDatePicker}>
 								<img src={Arrow} />
@@ -201,10 +201,10 @@ class DateTimePicker extends Component {
 						</div>
 						{error && <div className='error'>Please select a time between 9:00AM and 5:00PM</div>}
 						<div className='done-button'>
-							<BloxButton
+							<COMPANYButton
 								title='DONE'
 								enabled={!error}
-								customClass='blox-button'
+								customClass='COMPANY-button'
 								onClick={() => this.timeSelected(hours, minutes)}
 							/>
 						</div>

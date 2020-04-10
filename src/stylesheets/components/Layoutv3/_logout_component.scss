@@ -36,7 +36,7 @@
 		.name {
 			width: GetSize(29);
 			white-space: nowrap;
-			color: $DCBLOX_Gray;
+			color: $COMPANY_Gray;
 			background-color: $Warm_Gray_Light_1;
 			padding-left: GetSize(1);
 		}
@@ -47,7 +47,7 @@
 		width: GetSize(10);
 		transition: opacity 3s ease-in;
 
-		.blox-button {
+		.COMPANY-button {
 			display: flex;
 			align-content: center;
 			height: GetSize(3);
@@ -98,7 +98,7 @@
 		.logout-button {
 			margin-left: GetSize(13);
 			margin-top: GetSize(11);
-			.blox-button {
+			.COMPANY-button {
 				display: flex;
 				align-content: center;
 				height: GetSize(3);
@@ -133,7 +133,7 @@
 		}
 		.logout-button {
 			width: GetSize(14);
-			.blox-button {
+			.COMPANY-button {
 				height: GetSize(4);
 				width: GetSize(14);
 			}

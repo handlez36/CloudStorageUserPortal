@@ -7,8 +7,8 @@ import Modal from 'sub_components/Common/PortalModal';
 import ErrorModal from 'sub_components/Common/ErrorModal';
 import { ADD_STORAGE_LAYOUT_GRID } from 'utils/StorageUtils';
 import { MENU } from 'utils/StorageConstants';
-import BloxGrid from 'components_old/Layout/BloxGrid';
-import Button from 'sub_components/Common/BloxButton';
+import COMPANYGrid from 'components_old/Layout/COMPANYGrid';
+import Button from 'sub_components/Common/COMPANYButton';
 import TopNavBar from './Components/TopNavBar';
 import TopSection from './Components/TopSection';
 import TopRightSection from './Components/TopRightSection';
@@ -105,7 +105,12 @@ const NamingErrorBody = (toggleOpen, storageName) => (
 		</div>
 		<div className='buttons-row'>
 			<div className='try-again-option'>
-				<Button title='TRY AGAIN' enabled={true} customClass='blox-button' onClick={toggleOpen} />
+				<Button
+					title='TRY AGAIN'
+					enabled={true}
+					customClass='COMPANY-button'
+					onClick={toggleOpen}
+				/>
 			</div>
 		</div>
 	</Fragment>
@@ -451,7 +456,7 @@ class StorageAddWizard extends Component {
 					/>
 				)}
 				{phase && phase !== PHASES.CONFIRMATION && (
-					<BloxGrid
+					<COMPANYGrid
 						namespace='storage-add-wizard'
 						layouts={ADD_STORAGE_LAYOUT_GRID}
 						layoutClassname={`storage-add-layout ${layoutClassname}`}
@@ -533,7 +538,7 @@ class StorageAddWizard extends Component {
 						>
 							{this.getScreen()}
 						</div>
-					</BloxGrid>
+					</COMPANYGrid>
 				)}
 				{phase !== PHASES.CONFIRMATION && <div className='lower-half-background' />}
 			</div>
@@ -541,4 +546,7 @@ class StorageAddWizard extends Component {
 	}
 }
 
-export default connect(null, { updateModule, updatePage, addPageToBreadCrumbs })(StorageAddWizard);
+export default connect(
+	null,
+	{ updateModule, updatePage, addPageToBreadCrumbs },
+)(StorageAddWizard);

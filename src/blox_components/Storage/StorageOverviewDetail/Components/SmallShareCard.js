@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import Button from 'sub_components/Common/BloxButton';
+import Button from 'sub_components/Common/COMPANYButton';
 import { STORAGE_AVATAR_URL_PREFIX } from 'utils/Misc/CommonConstants';
 
 const CDN_URL = process.env.REACT_APP_CDN_URL;
@@ -119,7 +119,7 @@ class SmallShareCard extends Component {
 							id={id}
 							title='QUICK VIEW'
 							enabled={hover}
-							customClass='blox-button quick-view'
+							customClass='COMPANY-button quick-view'
 							onClick={onClick}
 						/>
 					</Fragment>

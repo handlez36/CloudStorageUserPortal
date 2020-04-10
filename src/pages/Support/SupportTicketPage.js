@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import { DIMENSIONS } from 'services/layoutManager';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
-import TicketCreate from '../../blox_components/Support/TicketCreate/TicketCreate';
+import TicketCreate from '../../COMPANY_components/Support/TicketCreate/TicketCreate';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -23,7 +23,7 @@ class SupportTicketPage extends Component {
 		const { breakpoint, location, match, history } = this.props;
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 		return (
-			<BloxPage
+			<COMPANYPage
 				name='page support-ticket-page'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
@@ -34,7 +34,7 @@ class SupportTicketPage extends Component {
 						<TicketCreate match={match} history={history} />
 					</ComponentWrapper>
 				</div>
-			</BloxPage>
+			</COMPANYPage>
 		);
 	}
 }

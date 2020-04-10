@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import capitalize from 'lodash/capitalize';
 
-import Card from 'sub_components/Common/BloxCard';
+import Card from 'sub_components/Common/COMPANYCard';
 import { AvatarApi } from 'services/avatar';
 import { PROFILE_OVERVIEW_CARDS as CARDS } from 'utils/ProfileConstants';
 
@@ -93,4 +93,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, null)(MyProfile);
+export default connect(
+	mapStateToProps,
+	null,
+)(MyProfile);

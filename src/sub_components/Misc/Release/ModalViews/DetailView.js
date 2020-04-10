@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 
-import ScrollView from './../../../Common/BloxScrollViewNew';
-import Button from './../../../Common/BloxButton';
+import ScrollView from './../../../Common/COMPANYScrollViewNew';
+import Button from './../../../Common/COMPANYButton';
 import { ReleaseNotesApi } from './../../../../services/releaseNotes';
 import { Utils } from './../../../../services/utils';
 import { SCREENS } from './../../../../utils/Misc/ReleaseConstants';
@@ -52,7 +52,7 @@ class DetailView extends Component {
 								<Button
 									title='VIEW ALL RELEASES'
 									onClick={() => updateScreen(SCREENS.LIST, null)}
-									customClass='blox-button'
+									customClass='COMPANY-button'
 									enabled
 								/>
 							</div>

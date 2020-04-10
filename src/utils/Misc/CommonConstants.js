@@ -138,7 +138,7 @@ export const SITE_MODULES = {
 
 export const SITE_PAGES = {
 	[SITE_MODULES.LOGIN]: 'LOGIN',
-	HOME: 'BLOX DASHBOARD',
+	HOME: 'COMPANY DASHBOARD',
 	[SITE_MODULES.SUPPORT]: {
 		[SUPPORT_MENU.OVERVIEW]: 'OVERVIEW',
 		[SUPPORT_MENU.TICKET_HISTORY]: 'TICKET HISTORY',
@@ -165,17 +165,17 @@ export const SITE_PAGES = {
 	},
 };
 
-export const STORAGE_AVATAR_URL_PREFIX = 'https://www.mydcblox.com/cdn/library/storage';
+export const STORAGE_AVATAR_URL_PREFIX = 'hidden';
 
 export const SITE_COLORS = {
-	DCBLOX_Red: '#f23722',
-	DCBLOX_Purple: '#583a6b',
-	DCBLOX_Black: '#000000',
-	DCBLOX_Gray: '#5b595b',
-	DCBLOX_White: '#efeeed',
-	DCBLOX_Aqua: '#79d2de',
-	DCBLOX_Lime: '#b5d334',
-	DCBLOX_Orange: '#fcaf17',
+	COMPANY_Red: '#f23722',
+	COMPANY_Purple: '#583a6b',
+	COMPANY_Black: '#000000',
+	COMPANY_Gray: '#5b595b',
+	COMPANY_White: '#efeeed',
+	COMPANY_Aqua: '#79d2de',
+	COMPANY_Lime: '#b5d334',
+	COMPANY_Orange: '#fcaf17',
 	Med_Lime: '#a8ad00',
 	Dark_Lime: '#949300',
 	Med_Rust: '#df6a2e',

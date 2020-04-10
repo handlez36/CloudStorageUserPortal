@@ -72,7 +72,7 @@ class HomePortalMessage extends Component {
 				<br />
 				{/* {this.renderCompanyList(memberships)} */}
 				{/* <span className=" home-welcome text-style-5">
-          Explanation text for first timeusers? Hover instructional text over the BLOX Modules?
+          Explanation text for first timeusers? Hover instructional text over the COMPANY Modules?
           </span> */}
 			</div>
 		);
@@ -86,4 +86,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { switchCompany, getCompanyInfo })(HomePortalMessage);
+export default connect(
+	mapStateToProps,
+	{ switchCompany, getCompanyInfo },
+)(HomePortalMessage);

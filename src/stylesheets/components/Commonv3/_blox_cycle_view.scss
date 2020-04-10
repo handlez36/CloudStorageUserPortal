@@ -1,4 +1,4 @@
-.blox-cycle-view {
+.COMPANY-cycle-view {
 	position: relative;
 	.upper-section {
 		position: absolute;
@@ -67,7 +67,7 @@
 	}
 }
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
-	.blox-cycle-view {
+	.COMPANY-cycle-view {
 		.upper-section .up-arrow img,
 		.lower-section .down-arrow img {
 			width: GetSize(3);
@@ -76,7 +76,7 @@
 	}
 }
 @media screen and (min-width: $high-res + 1) {
-	.blox-cycle-view {
+	.COMPANY-cycle-view {
 		.lower-section .down-arrow {
 			margin-top: GetSize(-4);
 		}

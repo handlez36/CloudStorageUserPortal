@@ -6,7 +6,7 @@ import CancelModal from '../../../components/Common/ErrorModal';
 import ExpandableSection from '../../../components/Common/ExpandableSection';
 import ExpandableContent from '../../../components/Support/ExpandableContentComponent';
 import TicketLogistics from './TicketHistoryDetailLogistics';
-import Button from '../../../components/Common/BloxButton';
+import Button from '../../../components/Common/COMPANYButton';
 import { STATUS } from '../TicketConstants';
 import { TICKET_ICONS } from '../TicketConstants';
 
@@ -33,7 +33,7 @@ const ConfirmationBody = (onCancel, onConfirm) => (
 					NO
 				</div>
 				<div className='yes-option'>
-					<Button title='YES' enabled={true} customClass='blox-button' onClick={onConfirm} />
+					<Button title='YES' enabled={true} customClass='COMPANY-button' onClick={onConfirm} />
 				</div>
 			</div>
 		</div>

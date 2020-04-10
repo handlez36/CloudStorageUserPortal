@@ -4,7 +4,7 @@ import Dropzone from 'react-dropzone';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { Progress } from 'react-sweet-progress';
-import SubmitButton from '../../../../components/Common/BloxButton';
+import SubmitButton from '../../../../components/Common/COMPANYButton';
 import { AttachmentApi } from '../../../../services/attachment';
 import { TICKET_ATTACHMENT_PHASE as PHASE } from '../../TicketConstants';
 

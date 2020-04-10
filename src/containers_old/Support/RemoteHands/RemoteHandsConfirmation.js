@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import TicketNumber from '../../../components/Common/TicketNumber';
-import BloxButton from '../../../components/Common/BloxButton';
+import COMPANYButton from '../../../components/Common/COMPANYButton';
 
 import { CONFIRMATION } from '../../Support/TicketConstants';
 
@@ -22,16 +22,16 @@ class RemoteHandsConfirmation extends Component {
 					<TicketNumber number={ticketNumber} />
 				</div>
 				<div className='buttons'>
-					<BloxButton
+					<COMPANYButton
 						title='NEW REQUEST'
 						enabled={true}
-						customClass='blox-button white'
+						customClass='COMPANY-button white'
 						onClick={startNewRequest}
 					/>
-					<BloxButton
+					<COMPANYButton
 						title='DONE'
 						enabled={true}
-						customClass='blox-button'
+						customClass='COMPANY-button'
 						onClick={onComplete}
 					/>
 				</div>

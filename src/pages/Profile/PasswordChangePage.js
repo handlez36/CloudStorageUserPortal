@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import { DIMENSIONS } from 'services/layoutManager';
-import PasswordChange from 'blox_components/Profile/PasswordChange';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import PasswordChange from 'COMPANY_components/Profile/PasswordChange';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 
@@ -24,7 +24,7 @@ class PasswordChangePage extends Component {
 		const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 		return (
-			<BloxPage
+			<COMPANYPage
 				name='page profile-password-page'
 				layout={LAYOUT_CONFIG[breakpoint]}
 				breakpoint={breakpoint}
@@ -35,7 +35,7 @@ class PasswordChangePage extends Component {
 						<PasswordChange />
 					</ComponentWrapper>
 				</div>
-			</BloxPage>
+			</COMPANYPage>
 		);
 	}
 }

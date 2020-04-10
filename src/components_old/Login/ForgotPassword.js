@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import ForgotPasswordModal from '../../components/Common/ErrorModal';
-import Button from '../../components/Common/BloxButton';
-import TextInput from '../../components/Forms/BloxTextInput';
+import Button from '../../components/Common/COMPANYButton';
+import TextInput from '../../components/Forms/COMPANYTextInput';
 import { INPUT_TYPES } from '../../components/Common/CommonConstants';
 import { UserApi } from '../../services/user';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
@@ -39,7 +39,7 @@ const ForgotPasswordBody = (onChange, onFieldComplete, email, label, onClick) =>
 					title='RESET PASSWORD'
 					enabled={true}
 					onClick={onClick}
-					customClass='blox-button gradient'
+					customClass='COMPANY-button gradient'
 				/>
 			</div>
 		</div>

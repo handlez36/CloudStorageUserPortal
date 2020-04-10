@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { string, object } from 'prop-types';
-import Button from 'sub_components/Commmon/BloxButton';
+import Button from 'sub_components/Commmon/COMPANYButton';
 
 class MenuHeader extends Component {
 	constructor(props) {
@@ -80,7 +80,7 @@ class MenuHeader extends Component {
 				<Button
 					title='INVITE NEW USER'
 					enabled={true}
-					customClass='blox-button'
+					customClass='COMPANY-button'
 					onClick={onInviteUser}
 				/>
 			);
@@ -89,7 +89,7 @@ class MenuHeader extends Component {
 				<Button
 					title='ADD TO ROSTER'
 					enabled={true}
-					customClass='blox-button'
+					customClass='COMPANY-button'
 					onClick={addToRoster}
 				/>
 			);

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import BloxGrid from 'sub_components/Layout/BloxMicroGrid';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import COMPANYGrid from 'sub_components/Layout/COMPANYMicroGrid';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
 import { DIMENSIONS } from 'services/layoutManager';
 import LogoutComponent from './LogoutComponent';
@@ -34,7 +34,7 @@ const HeaderSection = props => {
 
 	console.log('Column Count: ', columnCount);
 	return (
-		<BloxGrid name='header-grid' parentEl='.portal-header' contentGrid={grid} skipColUpdate>
+		<COMPANYGrid name='header-grid' parentEl='.portal-header' contentGrid={grid} skipColUpdate>
 			<div key={`logoutComponent-${columnCount}`} className='logout-component-section'>
 				<LogoutComponent module={props.module} history={props.history} />
 			</div>
@@ -44,10 +44,10 @@ const HeaderSection = props => {
 			<div key={`accountsComponent-${columnCount}`} className='accounts-component'>
 				<AccountsComponent breakpoint={props.breakpoint} module={props.module} />
 			</div>
-		</BloxGrid>
+		</COMPANYGrid>
 	);
 	// return (
-	// 	<BloxPage
+	// 	<COMPANYPage
 	// 		name='header-grid'
 	// 		layout={LAYOUT_CONFIG[props.breakpoint]}
 	// 		breakpoint={props.breakpoint}
@@ -62,7 +62,7 @@ const HeaderSection = props => {
 	// 		<div key={`accountsComponent-${columnCount}`} className='accounts-component'>
 	// 			<AccountsComponent breakpoint={props.breakpoint} module={props.module} />
 	// 		</div>
-	// 	</BloxPage>
+	// 	</COMPANYPage>
 	// );
 };
 

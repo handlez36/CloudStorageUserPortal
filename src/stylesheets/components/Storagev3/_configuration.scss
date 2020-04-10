@@ -69,20 +69,20 @@
 			position: absolute;
 			top: 36%;
 			left: 52%;
-			.blox-button {
+			.COMPANY-button {
 				@include Status-Head;
 				.title {
 					opacity: 0.8;
 					letter-spacing: 0.1vw;
 				}
 			}
-			.blox-button:hover {
+			.COMPANY-button:hover {
 				.title {
 					opacity: 1;
 				}
 			}
 			&.selected {
-				.blox-button:hover {
+				.COMPANY-button:hover {
 					.title {
 						opacity: 1;
 					}
@@ -172,7 +172,7 @@
 			.reset-button {
 				top: 36%;
 				left: 52%;
-				.blox-button {
+				.COMPANY-button {
 					.title {
 						letter-spacing: 0.1vw;
 					}

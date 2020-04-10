@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { DIMENSIONS } from 'services/layoutManager';
-import BloxPage from 'sub_components/Layout/BloxPage';
+import COMPANYPage from 'sub_components/Layout/COMPANYPage';
 import ComponentWrapper from 'sub_components/Layout/ComponentWrapper';
 import { RESOLUTIONS, BREAKPOINT_COLCOUNT_MAP } from 'services/config';
-import BillingHistory from 'blox_components/Billing/InvoiceHistory/InvoiceHistory';
+import BillingHistory from 'COMPANY_components/Billing/InvoiceHistory/InvoiceHistory';
 
 const LAYOUT_CONFIG = {
 	[RESOLUTIONS.LOW]: {
@@ -22,7 +22,7 @@ const InvoiceHistoryPage = ({ breakpoint, location }) => {
 	const columnCount = BREAKPOINT_COLCOUNT_MAP[breakpoint];
 
 	return (
-		<BloxPage
+		<COMPANYPage
 			name='page invoice-history-page'
 			layout={LAYOUT_CONFIG[breakpoint]}
 			breakpoint={breakpoint}
@@ -33,7 +33,7 @@ const InvoiceHistoryPage = ({ breakpoint, location }) => {
 					<BillingHistory />
 				</ComponentWrapper>
 			</div>
-		</BloxPage>
+		</COMPANYPage>
 	);
 };
 

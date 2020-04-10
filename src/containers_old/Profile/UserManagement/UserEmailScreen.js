@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { string } from 'prop-types';
 import { INPUT_TYPES } from 'utils/CommonConstants';
-import TextInput from 'components_old/Forms/BloxTextInput';
+import TextInput from 'components_old/Forms/COMPANYTextInput';
 
 class UserEmailScreen extends Component {
 	onChange = event => {

@@ -1,4 +1,4 @@
-.blox-card {
+.COMPANY-card {
 	width: 100%;
 	height: 100%;
 	align-items: stretch;
@@ -29,7 +29,7 @@
 		.summary-row .summary-content {
 			@include FlexboxColumn;
 			justify-content: flex-end;
-			color: $DCBLOX_Gray;
+			color: $COMPANY_Gray;
 		}
 		.summary-row .summary-content .name {
 			line-height: 8px;
@@ -87,7 +87,7 @@
 	}
 }
 @media screen and (min-width: $medium-res + 1) and (max-width: $high-res) {
-	.blox-card {
+	.COMPANY-card {
 		.card-top-section {
 			height: GetSize(14);
 			max-height: GetSize(14);
@@ -130,7 +130,7 @@
 	}
 }
 @media screen and (min-width: $high-res + 1) {
-	.blox-card {
+	.COMPANY-card {
 		.card-top-section {
 			height: GetSize(24);
 			max-height: GetSize(24);

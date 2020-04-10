@@ -3,7 +3,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import TicketCountRow from '../Support/TicketCountRow';
 import TicketType from '../Support/TicketCreate/NewTicketType';
 import LargeCard from '../../components/Common/LargeCard';
-import Button from '../../components/Common/BloxButton';
+import Button from '../../components/Common/COMPANYButton';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 const CDN_URL = process.env.REACT_APP_CDN_URL;
 const remoteHands = `${CDN_URL}common/remote-hands-icon-test.svg`;
@@ -189,7 +189,7 @@ class SelectionScreen extends Component {
 						button={
 							<Button
 								title='NEW REQUEST'
-								customClass='blox-button'
+								customClass='COMPANY-button'
 								onClick={() => this.startTicketWizard('REMOTE HANDS')}
 								enabled
 							/>
@@ -207,7 +207,7 @@ class SelectionScreen extends Component {
 						button={
 							<Button
 								title='NEW REQUEST'
-								customClass='blox-button'
+								customClass='COMPANY-button'
 								onClick={() => this.startTicketWizard('GUEST ACCESS')}
 								enabled
 							/>
